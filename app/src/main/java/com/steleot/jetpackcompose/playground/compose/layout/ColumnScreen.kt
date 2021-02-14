@@ -1,8 +1,48 @@
 package com.steleot.jetpackcompose.playground.compose.layout
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import java.util.*
 
 @Composable
 fun ColumnScreen() {
+    DefaultScaffold(
+        title = FoundationLayoutNavRoutes.Column.capitalize(Locale.getDefault())
+    ) {
+        DefaultColumn()
+    }
+}
 
+@Composable
+fun DefaultColumn() {
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Text(
+            text = "First item",
+            modifier = Modifier.padding(16.dp).background(Color.Blue)
+        )
+        Text(
+            text = "Second item",
+            modifier = Modifier.background(Color.Red).padding(16.dp)
+        )
+        Text(
+            text = "Third item",
+            modifier = Modifier.padding(16.dp).fillMaxWidth().background(Color.Green)
+        )
+        Text(
+            text = "Fourth item",
+            modifier = Modifier.background(Color.Yellow).fillMaxWidth(0.6f).padding(16.dp)
+        )
+    }
 }

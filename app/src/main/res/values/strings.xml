@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Jetpack Compose Playground</string>
+    <!-- resource -->
+    <string name="string_resource">String from strings.xml</string>
+    <string name="color_resource">Color from colors.xml</string>
+    <string name="string_with_font">String from strings.xml with font : %s</string>
+    <string name="string_with_format">This is %s</string>
+    <string-array name="string_array">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
 </resources>

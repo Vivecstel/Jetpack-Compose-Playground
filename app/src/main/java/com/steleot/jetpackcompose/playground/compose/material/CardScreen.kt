@@ -1,7 +1,149 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Card
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import java.util.*
 
 @Composable
 fun CardScreen() {
+    DefaultScaffold(
+        title = MaterialNavRoutes.Card.capitalize(Locale.getDefault())
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            DefaultCard()
+            ShapeCard()
+            BackgroundColorCard()
+            ContentColorCard()
+            BorderCard()
+            ElevationCard()
+        }
+    }
+}
+
+@Composable
+fun DefaultCard() {
+    Card {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewDefaultCard() {
+    DefaultCard()
+}
+
+@Composable
+fun ShapeCard() {
+    Card(
+        shape = CutCornerShape(12.dp)
+    ) {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewShapeCard() {
+    ShapeCard()
+}
+
+@Composable
+fun BackgroundColorCard() {
+    Card(
+        backgroundColor = Color.LightGray
+    ) {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewBackgroundColorCard() {
+    BackgroundColorCard()
+}
+
+@Composable
+fun ContentColorCard() {
+    Card(
+        backgroundColor = Color.Black,
+        contentColor = Color.White
+    ) {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewContentColorCard() {
+    ContentColorCard()
+}
+
+@Composable
+fun BorderCard() {
+    Card(
+        border = BorderStroke(2.dp, Color.Black)
+    ) {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewBorderCard() {
+    BorderCard()
+}
+
+@Composable
+fun ElevationCard() {
+    Card(
+        elevation = 12.dp
+    ) {
+        Text(
+            text = "Jetpack Compose Playground",
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewElevationCard() {
+    ElevationCard()
 }

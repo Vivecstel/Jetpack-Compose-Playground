@@ -30,16 +30,14 @@ object Libraries {
     const val composeLifecycle =
         "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeLifecycle}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/activity */
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivity}"
 
-    /* https://developer.android.com/jetpack/androidx/releases/fragment */
-    const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+    /* https://developer.android.com/jetpack/androidx/releases/appcompat */
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
 
     /* https://developer.android.com/jetpack/androidx/releases/lifecycle */
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
-
-    /* https://github.com/material-components/material-components-android */
-    const val material = "com.google.android.material:material:${Versions.material}"
 
     /* https://developer.android.com/jetpack/androidx/releases/startup */
     const val startUp = "androidx.startup:startup-runtime:${Versions.startUp}"

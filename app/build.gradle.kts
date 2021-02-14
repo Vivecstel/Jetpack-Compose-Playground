@@ -14,11 +14,6 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments["room.schemaLocation"] = "$projectDir/schemas"
-            }
-        }
     }
 
     buildTypes {
@@ -34,7 +29,6 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion = Versions.kotlin
         kotlinCompilerExtensionVersion = Versions.compose
     }
 
@@ -68,6 +62,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
     }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/AL2.0")
+        resources.excludes.add("META-INF/LGPL2.1")
+    }
 }
 
 dependencies {
@@ -84,7 +83,7 @@ dependencies {
     implementation(Libraries.composeNavigation)
     implementation(Libraries.composeLifecycle)
     implementation(Libraries.composeActivity)
-    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation(Libraries.appCompat)
     implementation(Libraries.viewModel)
     implementation(Libraries.startUp)
     implementation(Libraries.coroutines)
@@ -93,4 +92,7 @@ dependencies {
     implementation(Libraries.accompanistInsets)
     implementation(Libraries.coil)
     implementation(Libraries.timber)
+
+    androidTestImplementation(TestLibraries.composeUi)
+    androidTestImplementation(TestLibraries.composeUiJunit)
 }
