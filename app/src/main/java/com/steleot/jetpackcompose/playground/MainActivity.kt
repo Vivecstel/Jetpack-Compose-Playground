@@ -82,7 +82,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Slider) { SliderScreen() }
                 composable(route = MaterialNavRoutes.SnackBar) { SnackBarScreen() }
                 composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
-                composable(route = MaterialNavRoutes.TabBar) { TabBarScreen() }
+                composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
                 composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
                 composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
                 /* material icons */

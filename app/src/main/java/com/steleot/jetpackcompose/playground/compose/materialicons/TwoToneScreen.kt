@@ -77,6 +77,7 @@ private val list = listOf(
     Icons.TwoTone.Warning,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun TwoToneGrid() {
@@ -87,10 +88,4 @@ fun TwoToneGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewTwoToneGrid() {
-    TwoToneGrid()
 }

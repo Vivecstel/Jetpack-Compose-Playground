@@ -17,6 +17,7 @@ import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
+@Preview
 @Composable
 fun StringScreen() {
     DefaultScaffold(
@@ -46,10 +47,4 @@ fun StringScreen() {
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewStringScreen() {
-    StringScreen()
 }

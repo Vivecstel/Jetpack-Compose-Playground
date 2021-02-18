@@ -37,6 +37,7 @@ fun AlertDialogScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultAlertDialog() {
     val showingDialog = remember { mutableStateOf(false) }
@@ -74,11 +75,6 @@ fun DefaultAlertDialog() {
 }
 
 @Preview
-@Composable
-fun PreviewDefaultAlertDialog() {
-    DefaultAlertDialog()
-}
-
 @Composable
 fun ContentColorAlertDialog() {
     val showingDialog = remember { mutableStateOf(false) }
@@ -122,11 +118,6 @@ fun ContentColorAlertDialog() {
 
 @Preview
 @Composable
-fun PreviewContentColorAlertDialog() {
-    ContentColorAlertDialog()
-}
-
-@Composable
 fun BackgroundColorAlertDialog() {
     val showingDialog = remember { mutableStateOf(false) }
     if (showingDialog.value) {
@@ -158,10 +149,4 @@ fun BackgroundColorAlertDialog() {
             text = "Show Background Color Alert Dialog"
         )
     }
-}
-
-@Preview
-@Composable
-fun PreviewBackgroundColorAlertDialog() {
-    BackgroundColorAlertDialog()
 }

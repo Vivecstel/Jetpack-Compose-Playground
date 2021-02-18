@@ -137,6 +137,7 @@ private val list = listOf(
     Icons.Filled.AvTimer,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ExtendedFilledGrid() {
@@ -147,10 +148,4 @@ fun ExtendedFilledGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewExtendedFilledGrid() {
-    ExtendedFilledGrid()
 }

@@ -45,11 +45,10 @@ fun MainScreen(
             items(list) {
                 DefaultListItem(
                     text = it,
-                    modifier = Modifier.fillMaxWidth(),
-                    cardClickAction = {
-                        navController.navigate(it)
-                    }
-                )
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    navController.navigate(it)
+                }
             }
         }
     }

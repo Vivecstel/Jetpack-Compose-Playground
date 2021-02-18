@@ -17,6 +17,7 @@ import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
+@Preview
 @Composable
 fun ColorScreen() {
     DefaultScaffold(
@@ -39,10 +40,4 @@ fun ColorScreen() {
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewColorScreen() {
-    ColorScreen()
 }

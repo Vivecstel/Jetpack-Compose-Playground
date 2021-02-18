@@ -17,6 +17,7 @@ import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
+@Preview
 @Composable
 fun FontScreen() {
     DefaultScaffold(
@@ -59,10 +60,4 @@ fun FontScreen() {
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewCFontScreen() {
-    FontScreen()
 }

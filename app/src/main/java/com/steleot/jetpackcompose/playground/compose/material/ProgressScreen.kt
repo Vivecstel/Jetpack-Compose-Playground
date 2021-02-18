@@ -34,6 +34,7 @@ fun ProgressScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultCircularProgressIndicator() {
     CircularProgressIndicator()
@@ -41,21 +42,11 @@ fun DefaultCircularProgressIndicator() {
 
 @Preview
 @Composable
-fun PreviewDefaultCircularProgressIndicator() {
-    DefaultCircularProgressIndicator()
-}
-
-@Composable
 fun StaticCircularProgressIndicator() {
     CircularProgressIndicator(0.5f, color = Color.Cyan)
 }
 
 @Preview
-@Composable
-fun PreviewStaticCircularProgressIndicator() {
-    StaticCircularProgressIndicator()
-}
-
 @Composable
 fun StrokeCircularProgressIndicator() {
     CircularProgressIndicator(0.5f, strokeWidth = 8.dp)
@@ -63,31 +54,15 @@ fun StrokeCircularProgressIndicator() {
 
 @Preview
 @Composable
-fun PreviewStrokeCircularProgressIndicator() {
-    StrokeCircularProgressIndicator()
-}
-
-@Composable
 fun DefaultLinearProgressIndicator() {
     LinearProgressIndicator()
 }
 
 @Preview
 @Composable
-fun PreviewDefaultLinearProgressIndicator() {
-    StrokeCircularProgressIndicator()
-}
-
-@Composable
 fun ColoredLinearProgressIndicator() {
     LinearProgressIndicator(
         backgroundColor = Color.White,
         color = Color.Red
     )
-}
-
-@Preview
-@Composable
-fun PreviewColoredLinearProgressIndicator() {
-    ColoredLinearProgressIndicator()
 }

@@ -137,6 +137,7 @@ private val list = listOf(
     Icons.Outlined.AvTimer,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ExtendedOutlinedGrid() {
@@ -147,10 +148,4 @@ fun ExtendedOutlinedGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewExtendedOutlinedGrid() {
-    ExtendedOutlinedGrid()
 }

@@ -33,6 +33,7 @@ fun DividerScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultDivider() {
     Divider()
@@ -40,21 +41,11 @@ fun DefaultDivider() {
 
 @Preview
 @Composable
-fun PreviewDefaultDivider() {
-    DefaultDivider()
-}
-
-@Composable
 fun ColoredDivider() {
     Divider(color = Color.Red)
 }
 
 @Preview
-@Composable
-fun PreviewColoredDivider() {
-    ColoredDivider()
-}
-
 @Composable
 fun ThickDividerComponent() {
     Divider(thickness = 12.dp)
@@ -62,17 +53,6 @@ fun ThickDividerComponent() {
 
 @Preview
 @Composable
-fun PreviewThickDividerComponent() {
-    ThickDividerComponent()
-}
-
-@Composable
 fun IndentDivider() {
     Divider(startIndent = 12.dp)
-}
-
-@Preview
-@Composable
-fun PreviewIndentDivider() {
-    IndentDivider()
 }

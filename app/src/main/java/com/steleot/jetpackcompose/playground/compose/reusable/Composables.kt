@@ -10,13 +10,16 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
 import java.util.*
 
+@Preview
 @Composable
 fun DefaultListItem(
-    text: String,
+    @PreviewParameter(DefaultListItemPreviewParameter::class) text: String,
     modifier: Modifier = Modifier,
     cardClickAction: () -> Unit = {},
 ) {
@@ -33,15 +36,16 @@ fun DefaultListItem(
     }
 }
 
-@Preview
-@Composable
-fun PreviewDefaultListItem() {
-    DefaultListItem("Android")
+object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
+    override val values: Sequence<String>
+        get() = sequenceOf("Jetpack Compose Playground")
+
 }
 
+@Preview
 @Composable
 fun DefaultTopAppBar(
-    title: String,
+    @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     showBackArrow: Boolean = false,
 ) {
     val ambient = LocalOnBackPressedDispatcherOwner.current
@@ -61,15 +65,9 @@ fun DefaultTopAppBar(
     )
 }
 
-@Preview
-@Composable
-fun PreviewDefaultTopAppBar() {
-    DefaultTopAppBar("Preview Android")
-}
-
 @Composable
 fun DefaultScaffold(
-    title: String,
+    title: String = "",
     bodyContent: @Composable (PaddingValues) -> Unit
 ) {
     Scaffold(

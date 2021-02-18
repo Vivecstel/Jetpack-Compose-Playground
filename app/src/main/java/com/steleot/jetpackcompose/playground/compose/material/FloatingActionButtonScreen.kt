@@ -39,6 +39,7 @@ fun FloatingActionButtonScreen() {
     }
 }
 
+@Preview
 @Composable
 fun IconFloatingActionButton() {
     FloatingActionButton(onClick = {}) {
@@ -50,11 +51,6 @@ fun IconFloatingActionButton() {
 }
 
 @Preview
-@Composable
-fun PreviewIconFloatingActionButton() {
-    IconFloatingActionButton()
-}
-
 @Composable
 fun ColoredFloatingActionButton() {
     FloatingActionButton(
@@ -71,11 +67,6 @@ fun ColoredFloatingActionButton() {
 
 @Preview
 @Composable
-fun PreviewColoredFloatingActionButton() {
-    ColoredFloatingActionButton()
-}
-
-@Composable
 fun ElevatedFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
@@ -91,11 +82,6 @@ fun ElevatedFloatingActionButton() {
 
 @Preview
 @Composable
-fun PreviewElevatedFloatingActionButton() {
-    ElevatedFloatingActionButton()
-}
-
-@Composable
 fun ShapeFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
@@ -106,10 +92,4 @@ fun ShapeFloatingActionButton() {
             contentDescription = "my description"
         )
     }
-}
-
-@Preview
-@Composable
-fun PreviewShapeFloatingActionButton() {
-    ShapeFloatingActionButton()
 }

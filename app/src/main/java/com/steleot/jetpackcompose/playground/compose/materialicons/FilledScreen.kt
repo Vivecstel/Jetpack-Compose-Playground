@@ -77,6 +77,7 @@ private val list = listOf(
     Icons.Filled.Warning,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun FilledGrid() {
@@ -87,10 +88,4 @@ fun FilledGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewFilledGrid() {
-    FilledGrid()
 }

@@ -24,7 +24,7 @@ private val routes = listOf(
     MaterialNavRoutes.Slider,
     MaterialNavRoutes.SnackBar,
     MaterialNavRoutes.Switch,
-    MaterialNavRoutes.TabBar,
+    MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,
     MaterialNavRoutes.TopAppBar,
 )

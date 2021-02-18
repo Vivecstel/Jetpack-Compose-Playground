@@ -137,6 +137,7 @@ private val list = listOf(
     Icons.TwoTone.AvTimer,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ExtendedTwoToneGrid() {
@@ -147,10 +148,4 @@ fun ExtendedTwoToneGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewExtendedTwoToneGrid() {
-    ExtendedTwoToneGrid()
 }

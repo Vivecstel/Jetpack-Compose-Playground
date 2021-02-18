@@ -77,6 +77,7 @@ private val list = listOf(
     Icons.Sharp.Warning,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun SharpGrid() {
@@ -87,10 +88,4 @@ fun SharpGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewSharpGrid() {
-    SharpGrid()
 }

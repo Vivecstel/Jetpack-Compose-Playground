@@ -1,15 +1,235 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Switch
+import androidx.compose.material.SwitchDefaults.colors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
-fun SwitchScreen() {
+fun SwitchScreen() { // todo crash on orientation
     DefaultScaffold(
         title = MaterialNavRoutes.Switch.capitalize(Locale.getDefault())
     ) {
-
+        Column(
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            DefaultSwitch()
+            DisabledSwitch()
+            CheckedThumbColorSwitch()
+            CheckedTrackColorSwitch()
+            CheckedTrackAlphaSwitch()
+            UncheckedThumbColorSwitch()
+            UncheckedTrackColorSwitch()
+            UncheckedTrackAlphaSwitch()
+            DisabledCheckedThumbColorSwitch()
+            DisabledCheckedTrackColorSwitch()
+            DisabledUncheckedThumbColorSwitch()
+            DisabledUncheckedTrackColorSwitch()
+        }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultSwitch() {
+    val isChecked = remember { mutableStateOf(false) }
+    Switch(
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        }
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DisabledSwitch() {
+    val isChecked = remember { mutableStateOf(false) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        enabled = false
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CheckedThumbColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            checkedThumbColor = Color.Red
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CheckedTrackColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            checkedTrackColor = Color.Red
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CheckedTrackAlphaSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            checkedTrackColor = Color.Red,
+            checkedTrackAlpha = 0.1f
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UncheckedThumbColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            uncheckedThumbColor = Color.Gray
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UncheckedTrackColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            uncheckedTrackColor = Color.LightGray
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UncheckedTrackAlphaSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            uncheckedTrackColor = Color.LightGray,
+            uncheckedTrackAlpha = 0.1f
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DisabledCheckedThumbColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            disabledCheckedThumbColor = Color.Green
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DisabledCheckedTrackColorSwitch() {
+    val isChecked = remember { mutableStateOf(true) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            disabledCheckedTrackColor = Color.DarkGray
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DisabledUncheckedThumbColorSwitch() {
+    val isChecked = remember { mutableStateOf(false) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            disabledUncheckedThumbColor = Color.Gray
+        )
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DisabledUncheckedTrackColorSwitch() {
+    val isChecked = remember { mutableStateOf(false) }
+    Switch(
+        modifier = Modifier.padding(16.dp),
+        checked = isChecked.value,
+        onCheckedChange = { checked ->
+            isChecked.value = checked
+        },
+        colors = colors(
+            disabledUncheckedTrackColor = Color.LightGray
+        )
+    )
 }

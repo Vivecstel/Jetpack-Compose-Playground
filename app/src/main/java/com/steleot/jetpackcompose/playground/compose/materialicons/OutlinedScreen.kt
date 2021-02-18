@@ -77,6 +77,7 @@ private val list = listOf(
     Icons.Outlined.Warning,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OutlinedGrid() {
@@ -87,10 +88,4 @@ fun OutlinedGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewOutlinedGrid() {
-    OutlinedGrid()
 }

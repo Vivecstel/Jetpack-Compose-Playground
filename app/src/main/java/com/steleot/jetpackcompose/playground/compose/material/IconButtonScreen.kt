@@ -32,6 +32,7 @@ fun IconButtonScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultIconButton() {
     IconButton(
@@ -47,11 +48,6 @@ fun DefaultIconButton() {
 
 @Preview
 @Composable
-fun PreviewDefaultIconButton() {
-    DefaultIconButton()
-}
-
-@Composable
 fun DisabledIconButton() {
     IconButton(
         onClick = {},
@@ -63,10 +59,4 @@ fun DisabledIconButton() {
         },
         enabled = false
     )
-}
-
-@Preview
-@Composable
-fun PreviewDisabledIconButton() {
-    DisabledIconButton()
 }

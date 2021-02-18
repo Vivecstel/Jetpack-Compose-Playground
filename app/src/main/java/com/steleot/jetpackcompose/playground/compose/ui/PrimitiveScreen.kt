@@ -19,6 +19,7 @@ import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
+@Preview
 @Composable
 fun PrimitiveScreen() {
     DefaultScaffold(
@@ -51,10 +52,4 @@ fun PrimitiveScreen() {
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewPrimitiveScreen() {
-    PrimitiveScreen()
 }

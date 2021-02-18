@@ -137,6 +137,7 @@ private val list = listOf(
     Icons.Sharp.AvTimer,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ExtendedSharpGrid() {
@@ -147,10 +148,4 @@ fun ExtendedSharpGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewExtendedSharpGrid() {
-    ExtendedSharpGrid()
 }

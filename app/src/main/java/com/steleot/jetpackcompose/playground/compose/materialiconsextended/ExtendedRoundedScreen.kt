@@ -137,6 +137,7 @@ private val list = listOf(
     Icons.Rounded.AvTimer,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ExtendedRoundedGrid() {
@@ -147,10 +148,4 @@ fun ExtendedRoundedGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewExtendedRoundedGrid() {
-    ExtendedRoundedGrid()
 }

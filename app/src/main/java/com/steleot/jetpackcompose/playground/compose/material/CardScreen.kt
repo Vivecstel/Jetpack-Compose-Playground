@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -41,6 +40,7 @@ fun CardScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultCard() {
     Card {
@@ -52,11 +52,6 @@ fun DefaultCard() {
 }
 
 @Preview
-@Composable
-fun PreviewDefaultCard() {
-    DefaultCard()
-}
-
 @Composable
 fun ShapeCard() {
     Card(
@@ -71,11 +66,6 @@ fun ShapeCard() {
 
 @Preview
 @Composable
-fun PreviewShapeCard() {
-    ShapeCard()
-}
-
-@Composable
 fun BackgroundColorCard() {
     Card(
         backgroundColor = Color.LightGray
@@ -88,11 +78,6 @@ fun BackgroundColorCard() {
 }
 
 @Preview
-@Composable
-fun PreviewBackgroundColorCard() {
-    BackgroundColorCard()
-}
-
 @Composable
 fun ContentColorCard() {
     Card(
@@ -108,11 +93,6 @@ fun ContentColorCard() {
 
 @Preview
 @Composable
-fun PreviewContentColorCard() {
-    ContentColorCard()
-}
-
-@Composable
 fun BorderCard() {
     Card(
         border = BorderStroke(2.dp, Color.Black)
@@ -126,11 +106,6 @@ fun BorderCard() {
 
 @Preview
 @Composable
-fun PreviewBorderCard() {
-    BorderCard()
-}
-
-@Composable
 fun ElevationCard() {
     Card(
         elevation = 12.dp
@@ -140,10 +115,4 @@ fun ElevationCard() {
             modifier = Modifier.padding(16.dp)
         )
     }
-}
-
-@Preview
-@Composable
-fun PreviewElevationCard() {
-    ElevationCard()
 }

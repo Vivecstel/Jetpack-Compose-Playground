@@ -31,6 +31,7 @@ fun IconScreen() {
     }
 }
 
+@Preview
 @Composable
 fun DefaultIcon() {
     Icon(
@@ -41,11 +42,6 @@ fun DefaultIcon() {
 
 @Preview
 @Composable
-fun PreviewDefaultIcon() {
-    DefaultIcon()
-}
-
-@Composable
 fun TintedIcon() {
     Icon(
         Icons.Default.AddAlarm,
@@ -53,10 +49,4 @@ fun TintedIcon() {
         modifier = Modifier.preferredSize(48.dp),
         tint = Color.Magenta,
     )
-}
-
-@Preview
-@Composable
-fun PreviewTintedIcon() {
-    TintedIcon()
 }

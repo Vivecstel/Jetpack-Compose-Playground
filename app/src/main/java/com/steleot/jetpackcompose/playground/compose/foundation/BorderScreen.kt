@@ -40,6 +40,7 @@ fun BorderScreen() {
     }
 }
 
+@Preview
 @Composable
 fun Border() {
     Card(border = BorderStroke(2.dp, Color.Black)) {
@@ -52,11 +53,6 @@ fun Border() {
 
 @Preview
 @Composable
-fun PreviewBorder() {
-    Border()
-}
-
-@Composable
 fun BorderSolidBrush() {
     Card(border = BorderStroke(2.dp, SolidColor(Color.Red))) {
         Text(
@@ -67,11 +63,6 @@ fun BorderSolidBrush() {
 }
 
 @Preview
-@Composable
-fun PreviewBorderSolidBrush() {
-    BorderSolidBrush()
-}
-
 @Composable
 fun BorderLinearGradientBrush() {
     Card(border = BorderStroke(4.dp, linearGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
@@ -84,11 +75,6 @@ fun BorderLinearGradientBrush() {
 
 @Preview
 @Composable
-fun PreviewBorderLinearGradientBrush() {
-    BorderLinearGradientBrush()
-}
-
-@Composable
 fun BorderRadialGradientBrush() {
     Card(border = BorderStroke(4.dp, radialGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
         Text(
@@ -100,11 +86,6 @@ fun BorderRadialGradientBrush() {
 
 @Preview
 @Composable
-fun PreviewBorderRadialGradientBrush() {
-    BorderRadialGradientBrush()
-}
-
-@Composable
 fun BorderSweepGradientBrush() {
     Card(border = BorderStroke(4.dp, sweepGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
         Text(
@@ -112,10 +93,4 @@ fun BorderSweepGradientBrush() {
             modifier = Modifier.padding(12.dp)
         )
     }
-}
-
-@Preview
-@Composable
-fun PreviewBorderSweepGradientBrush() {
-    BorderSweepGradientBrush()
 }

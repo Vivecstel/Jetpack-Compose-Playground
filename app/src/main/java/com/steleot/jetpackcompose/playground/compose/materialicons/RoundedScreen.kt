@@ -77,6 +77,7 @@ private val list = listOf(
     Icons.Rounded.Warning,
 )
 
+@Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun RoundedGrid() {
@@ -87,10 +88,4 @@ fun RoundedGrid() {
             Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewRoundedGrid() {
-    RoundedGrid()
 }
