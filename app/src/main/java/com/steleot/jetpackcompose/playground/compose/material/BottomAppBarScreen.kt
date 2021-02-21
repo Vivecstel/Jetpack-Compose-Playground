@@ -64,7 +64,7 @@ fun BottomAppBarScreen() {
                         if (selectedLayout.value == 6) 0 else selectedLayout.value + 1
                 }
             ) {
-                Text(text = "Switch to bottom app bar")
+                Text(text = "Switch bottom app bar")
             }
         }
     }

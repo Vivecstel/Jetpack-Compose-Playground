@@ -54,6 +54,7 @@ object MaterialNavRoutes {
     const val Icon = "icon"
     const val ModalBottomSheetLayout = "model bottom sheet layout"
     const val ListItem = "list item"
+    const val OutlinedTextField = "outlined text field"
     const val Progress = "progress"
     const val RadioButton = "radio button"
     const val Scaffold = "scaffold"
