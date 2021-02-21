@@ -33,7 +33,10 @@ object FoundationNavRoutes {
 }
 
 object FoundationLayoutNavRoutes {
+    const val AspectRatio = "aspect ratio"
+    const val Box = "box"
     const val Column = "column"
+    const val ConstraintLayout = "constraint layout"
     const val Row = "row"
     const val Spacer = "spacer"
 }
@@ -41,6 +44,7 @@ object FoundationLayoutNavRoutes {
 object MaterialNavRoutes {
     const val AlertDialog = "alert dialog"
     const val BottomAppBar = "bottom app bar"
+    const val BottomDrawerLayout = "bottom drawer layout"
     const val BottomNavigation = "bottom navigation"
     const val BottomSheetScaffold = "bottom sheet scaffold"
     const val Button = "button"
@@ -53,6 +57,7 @@ object MaterialNavRoutes {
     const val IconToggleButton = "icon toggle button"
     const val Icon = "icon"
     const val ModalBottomSheetLayout = "model bottom sheet layout"
+    const val ModalDrawerLayout = "model drawer layout"
     const val ListItem = "list item"
     const val OutlinedTextField = "outlined text field"
     const val Progress = "progress"
@@ -67,6 +72,7 @@ object MaterialNavRoutes {
     const val TabRow = "tab row"
     const val TextField = "text field"
     const val TopAppBar = "top app bar"
+    const val TriStateCheckbox = "tri state checkbox"
 }
 
 object MaterialIconsNavRoutes {

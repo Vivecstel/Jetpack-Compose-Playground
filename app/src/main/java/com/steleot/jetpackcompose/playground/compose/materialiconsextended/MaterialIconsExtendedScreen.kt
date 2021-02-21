@@ -7,7 +7,7 @@ import com.steleot.jetpackcompose.playground.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
-private val routes = listOf(
+val routes = listOf(
     MaterialIconsExtendedNavRoutes.ExtendedFilled,
     MaterialIconsExtendedNavRoutes.ExtendedOutlined,
     MaterialIconsExtendedNavRoutes.ExtendedRounded,

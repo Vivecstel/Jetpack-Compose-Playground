@@ -7,7 +7,7 @@ import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
-private val routes = listOf(
+val routes = listOf(
     UiNavRoutes.Color,
     UiNavRoutes.Drawable,
     UiNavRoutes.Font,

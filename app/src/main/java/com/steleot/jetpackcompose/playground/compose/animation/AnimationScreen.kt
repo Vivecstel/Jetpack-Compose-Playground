@@ -7,7 +7,7 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
-private val routes = listOf(
+val routes = listOf(
     AnimationNavRoutes.AnimatedValues,
     AnimationNavRoutes.CrossfadeAnimation,
     AnimationNavRoutes.GestureAnimation,

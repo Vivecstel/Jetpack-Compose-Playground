@@ -10,10 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.animation.*
 import com.steleot.jetpackcompose.playground.compose.foundation.*
-import com.steleot.jetpackcompose.playground.compose.layout.ColumnScreen
-import com.steleot.jetpackcompose.playground.compose.layout.LayoutScreen
-import com.steleot.jetpackcompose.playground.compose.layout.RowScreen
-import com.steleot.jetpackcompose.playground.compose.layout.SpacerScreen
+import com.steleot.jetpackcompose.playground.compose.layout.*
 import com.steleot.jetpackcompose.playground.compose.material.*
 import com.steleot.jetpackcompose.playground.compose.materialicons.*
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
@@ -61,30 +58,44 @@ fun PlaygroundApp() {
                 composable(route = FoundationNavRoutes.Text) { TextScreen() }
                 composable(route = FoundationNavRoutes.TextStyle) { TextStyleScreen() }
                 /* layout */
+                composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
+                composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
                 composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
+                composable(route = FoundationLayoutNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = FoundationLayoutNavRoutes.Row) { RowScreen() }
                 composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
                 /* material */
                 composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
-                composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
                 composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
+                composable(route = MaterialNavRoutes.BottomDrawerLayout) { BottomDrawerLayoutScreen() }
                 composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
+                composable(route = MaterialNavRoutes.BottomSheetScaffold) { BottomSheetScaffoldScreen() }
                 composable(route = MaterialNavRoutes.Button) { ButtonScreen() }
                 composable(route = MaterialNavRoutes.Card) { CardScreen() }
                 composable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
                 composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
+                composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
                 composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
                 composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
                 composable(route = MaterialNavRoutes.Icon) { IconScreen() }
+                composable(route = MaterialNavRoutes.IconToggleButton) { IconToggleButtonScreen() }
+                composable(route = MaterialNavRoutes.ListItem) { ListItemScreen() }
+                composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
+                composable(route = MaterialNavRoutes.ModalDrawerLayout) { ModalDrawerLayoutScreen() }
+                composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
                 composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
                 composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
                 composable(route = MaterialNavRoutes.Scaffold) { ScaffoldScreen() }
+                composable(route = MaterialNavRoutes.ScrollableTabRow) { ScrollableTabRowScreen() }
                 composable(route = MaterialNavRoutes.Slider) { SliderScreen() }
                 composable(route = MaterialNavRoutes.SnackBar) { SnackBarScreen() }
+                composable(route = MaterialNavRoutes.Surface) { SurfaceScreen() }
+                composable(route = MaterialNavRoutes.Swipeable) { SwipeableScreen() }
                 composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
                 composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
                 composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
                 composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
+                composable(route = MaterialNavRoutes.TriStateCheckbox) { TriStateCheckboxScreen() }
                 /* material icons */
                 composable(route = MaterialIconsNavRoutes.Filled) { FilledScreen() }
                 composable(route = MaterialIconsNavRoutes.Outlined) { OutlinedScreen() }

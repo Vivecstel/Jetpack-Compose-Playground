@@ -7,26 +7,38 @@ import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
-private val routes = listOf(
+val routes = listOf(
     MaterialNavRoutes.AlertDialog,
     MaterialNavRoutes.BottomAppBar,
+    MaterialNavRoutes.BottomDrawerLayout,
     MaterialNavRoutes.BottomNavigation,
+    MaterialNavRoutes.BottomSheetScaffold,
     MaterialNavRoutes.Button,
     MaterialNavRoutes.Card,
     MaterialNavRoutes.Checkbox,
     MaterialNavRoutes.Divider,
     MaterialNavRoutes.FloatingActionButton,
+    MaterialNavRoutes.ExtendedFloatingActionButton,
+    MaterialNavRoutes.IconToggleButton,
     MaterialNavRoutes.IconButton,
     MaterialNavRoutes.Icon,
+    MaterialNavRoutes.ModalBottomSheetLayout,
+    MaterialNavRoutes.ModalDrawerLayout,
+    MaterialNavRoutes.ListItem,
+    MaterialNavRoutes.OutlinedTextField,
     MaterialNavRoutes.Progress,
     MaterialNavRoutes.RadioButton,
     MaterialNavRoutes.Scaffold,
+    MaterialNavRoutes.ScrollableTabRow,
     MaterialNavRoutes.Slider,
     MaterialNavRoutes.SnackBar,
+    MaterialNavRoutes.Surface,
+    MaterialNavRoutes.Swipeable,
     MaterialNavRoutes.Switch,
     MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,
     MaterialNavRoutes.TopAppBar,
+    MaterialNavRoutes.TriStateCheckbox,
 )
 
 @Composable

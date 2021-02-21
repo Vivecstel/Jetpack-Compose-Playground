@@ -7,8 +7,11 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
-private val routes = listOf(
+val routes = listOf(
+    FoundationLayoutNavRoutes.AspectRatio,
+    FoundationLayoutNavRoutes.Box,
     FoundationLayoutNavRoutes.Column,
+    FoundationLayoutNavRoutes.ConstraintLayout,
     FoundationLayoutNavRoutes.Row,
     FoundationLayoutNavRoutes.Spacer,
 )
