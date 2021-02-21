@@ -17,6 +17,7 @@ import dev.chrisbanes.accompanist.insets.statusBarsPadding
 
 private val routes = listOf(
     MainNavRoutes.Animation,
+    MainNavRoutes.ConstraintLayout,
     MainNavRoutes.Foundation,
     MainNavRoutes.FoundationLayout,
     MainNavRoutes.Material,

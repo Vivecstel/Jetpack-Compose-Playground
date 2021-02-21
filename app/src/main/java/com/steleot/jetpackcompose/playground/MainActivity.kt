@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.animation.*
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.*
 import com.steleot.jetpackcompose.playground.compose.layout.*
 import com.steleot.jetpackcompose.playground.compose.material.*
@@ -36,6 +37,7 @@ fun PlaygroundApp() {
                 /* main */
                 composable(route = MainNavRoutes.Main) { MainScreen(navController) }
                 composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
+                composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
                 composable(route = MainNavRoutes.FoundationLayout) { LayoutScreen(navController) }
                 composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
@@ -61,7 +63,6 @@ fun PlaygroundApp() {
                 composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
                 composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
-                composable(route = FoundationLayoutNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = FoundationLayoutNavRoutes.Row) { RowScreen() }
                 composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
                 /* material */

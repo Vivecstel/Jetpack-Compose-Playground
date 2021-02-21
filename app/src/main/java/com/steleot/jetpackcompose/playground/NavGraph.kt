@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground
 object MainNavRoutes {
     const val Main = "main"
     const val Animation = "animation"
+    const val ConstraintLayout = "constraint layout"
     const val Foundation = "foundation"
     const val FoundationLayout = "foundation layout"
     const val Material = "material"
@@ -36,7 +37,6 @@ object FoundationLayoutNavRoutes {
     const val AspectRatio = "aspect ratio"
     const val Box = "box"
     const val Column = "column"
-    const val ConstraintLayout = "constraint layout"
     const val Row = "row"
     const val Spacer = "spacer"
 }

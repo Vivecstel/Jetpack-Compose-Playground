@@ -11,7 +11,6 @@ val routes = listOf(
     FoundationLayoutNavRoutes.AspectRatio,
     FoundationLayoutNavRoutes.Box,
     FoundationLayoutNavRoutes.Column,
-    FoundationLayoutNavRoutes.ConstraintLayout,
     FoundationLayoutNavRoutes.Row,
     FoundationLayoutNavRoutes.Spacer,
 )
