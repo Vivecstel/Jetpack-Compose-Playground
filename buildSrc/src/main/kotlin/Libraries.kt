@@ -24,7 +24,8 @@ object Libraries {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/compose/navigation */
-    const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
+    const val composeNavigation =
+        "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
 
     /* https://developer.android.com/jetpack/androidx/releases/lifecycle */
     const val composeLifecycle =

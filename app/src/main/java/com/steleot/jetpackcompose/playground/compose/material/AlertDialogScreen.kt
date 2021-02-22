@@ -1,9 +1,13 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CutCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -57,7 +61,8 @@ private fun DefaultAlertDialog() {
                     horizontalArrangement = Arrangement.End,
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text(text = "Close",
+                    Text(
+                        text = "Close",
                         modifier = Modifier.padding(16.dp).clickable(onClick = {
                             showingDialog.value = false
                         })
@@ -90,14 +95,16 @@ private fun ContentColorAlertDialog() {
                 Text(text = "Title")
             },
             confirmButton = {
-                Text(text = "Continue",
+                Text(
+                    text = "Continue",
                     modifier = Modifier.padding(16.dp).clickable(onClick = {
                         showingDialog.value = false
                     })
                 )
             },
             dismissButton = {
-                Text(text = "Close",
+                Text(
+                    text = "Close",
                     modifier = Modifier.padding(16.dp).clickable(onClick = {
                         showingDialog.value = false
                     })
@@ -132,7 +139,8 @@ private fun BackgroundColorAlertDialog() {
                 Text(text = "Title")
             },
             confirmButton = {
-                Text(text = "Close",
+                Text(
+                    text = "Close",
                     modifier = Modifier.padding(16.dp).clickable(onClick = {
                         showingDialog.value = false
                     })

@@ -1,10 +1,24 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.TableChart
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -87,11 +101,11 @@ private fun RowScope.HelperNavigationItems(
         val selected = selectedItem.value == index
         val onClick = { selectedItem.value = index }
         when (selectedNavigationItem) {
-            0 -> DefaultBottomNavigationItem(item, selected, onClick,)
-            1 -> LabelBottomNavigationItem(item, selected, onClick,)
-            2 -> AlwaysShowLabelBottomNavigationItem(item, selected, onClick,)
-            3 -> SelectedColorBottomNavigationItem(item, selected, onClick,)
-            4 -> UnselectedColorBottomNavigationItem(item, selected, onClick,)
+            0 -> DefaultBottomNavigationItem(item, selected, onClick)
+            1 -> LabelBottomNavigationItem(item, selected, onClick)
+            2 -> AlwaysShowLabelBottomNavigationItem(item, selected, onClick)
+            3 -> SelectedColorBottomNavigationItem(item, selected, onClick)
+            4 -> UnselectedColorBottomNavigationItem(item, selected, onClick)
         }
     }
 }
