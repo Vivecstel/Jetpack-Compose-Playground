@@ -8,8 +8,13 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
 val routes = listOf(
+    FoundationNavRoutes.Background,
     FoundationNavRoutes.Border,
+    FoundationNavRoutes.Canvas,
     FoundationNavRoutes.Clickable,
+    FoundationNavRoutes.Focusable,
+    FoundationNavRoutes.Image,
+    FoundationNavRoutes.Scroll,
     FoundationNavRoutes.Shape,
     FoundationNavRoutes.Text,
     FoundationNavRoutes.TextStyle,

@@ -54,8 +54,13 @@ fun PlaygroundApp() {
                 composable(route = AnimationNavRoutes.SingleValueColorAnimation) { SingleValueFloatAnimationScreen() }
                 composable(route = AnimationNavRoutes.TransitionAnimation) { TransitionAnimationScreen() }
                 /* foundation */
+                composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
                 composable(route = FoundationNavRoutes.Border) { BorderScreen() }
+                composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
                 composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
+                composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
+                composable(route = FoundationNavRoutes.Image) { ImageScreen() }
+                composable(route = FoundationNavRoutes.Scroll) { ScrollScreen() }
                 composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
                 composable(route = FoundationNavRoutes.Text) { TextScreen() }
                 composable(route = FoundationNavRoutes.TextStyle) { TextStyleScreen() }

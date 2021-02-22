@@ -26,8 +26,13 @@ object AnimationNavRoutes {
 }
 
 object FoundationNavRoutes {
+    const val Background = "background"
     const val Border = "border"
+    const val Canvas = "canvas"
     const val Clickable = "clickable"
+    const val Focusable = "focusable"
+    const val Image = "image"
+    const val Scroll = "scroll"
     const val Shape = "shape"
     const val Text = "text"
     const val TextStyle = "text style"
