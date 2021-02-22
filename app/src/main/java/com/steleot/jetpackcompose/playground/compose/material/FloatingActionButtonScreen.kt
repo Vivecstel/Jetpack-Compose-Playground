@@ -34,7 +34,7 @@ fun FloatingActionButtonScreen() {
             IconFloatingActionButton()
             ColoredFloatingActionButton()
             ElevatedFloatingActionButton()
-            ShapeFloatingActionButton()
+            RectangleShapeFloatingActionButton()
         }
     }
 }
@@ -82,14 +82,14 @@ private fun ElevatedFloatingActionButton() {
 
 @Preview
 @Composable
-private fun ShapeFloatingActionButton() {
+private fun RectangleShapeFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
         shape = RectangleShape
     ) {
         Icon(
             imageVector = Icons.Filled.Star,
-            contentDescription = "my description"
+            contentDescription = "Rectangle Shape Floating Action Button"
         )
     }
 }

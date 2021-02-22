@@ -16,6 +16,7 @@ val routes = listOf(
     MaterialNavRoutes.Button,
     MaterialNavRoutes.Card,
     MaterialNavRoutes.Checkbox,
+    MaterialNavRoutes.DropdownMenu,
     MaterialNavRoutes.Divider,
     MaterialNavRoutes.FloatingActionButton,
     MaterialNavRoutes.ExtendedFloatingActionButton,

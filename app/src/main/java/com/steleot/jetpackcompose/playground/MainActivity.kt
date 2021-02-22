@@ -25,10 +25,9 @@ import com.steleot.jetpackcompose.playground.compose.foundation.ClickableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FocusableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FoundationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ImageScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.IndicationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.TextScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.TextStyleScreen
 import com.steleot.jetpackcompose.playground.compose.layout.AspectRationScreen
 import com.steleot.jetpackcompose.playground.compose.layout.BoxScreen
 import com.steleot.jetpackcompose.playground.compose.layout.ColumnScreen
@@ -44,6 +43,7 @@ import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.CardScreen
 import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
 import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
+import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
 import com.steleot.jetpackcompose.playground.compose.material.ExtendedFloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.FloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconButtonScreen
@@ -134,10 +134,9 @@ fun PlaygroundApp() {
                 composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
                 composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
                 composable(route = FoundationNavRoutes.Image) { ImageScreen() }
+                composable(route = FoundationNavRoutes.Indication) { IndicationScreen() }
                 composable(route = FoundationNavRoutes.Scroll) { ScrollScreen() }
                 composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
-                composable(route = FoundationNavRoutes.Text) { TextScreen() }
-                composable(route = FoundationNavRoutes.TextStyle) { TextStyleScreen() }
                 /* layout */
                 composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
@@ -154,6 +153,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Card) { CardScreen() }
                 composable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
                 composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
+                composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
                 composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
                 composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
                 composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }

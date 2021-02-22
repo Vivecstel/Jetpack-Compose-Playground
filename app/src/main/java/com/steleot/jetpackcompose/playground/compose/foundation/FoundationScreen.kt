@@ -14,10 +14,9 @@ val routes = listOf(
     FoundationNavRoutes.Clickable,
     FoundationNavRoutes.Focusable,
     FoundationNavRoutes.Image,
+    FoundationNavRoutes.Indication,
     FoundationNavRoutes.Scroll,
     FoundationNavRoutes.Shape,
-    FoundationNavRoutes.Text,
-    FoundationNavRoutes.TextStyle,
 )
 
 @Composable

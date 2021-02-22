@@ -32,10 +32,9 @@ object FoundationNavRoutes {
     const val Clickable = "clickable"
     const val Focusable = "focusable"
     const val Image = "image"
+    const val Indication = "indication"
     const val Scroll = "scroll"
     const val Shape = "shape"
-    const val Text = "text"
-    const val TextStyle = "text style"
 }
 
 object FoundationLayoutNavRoutes {
@@ -56,6 +55,7 @@ object MaterialNavRoutes {
     const val Card = "card"
     const val Checkbox = "checkbox"
     const val Divider = "divider"
+    const val DropdownMenu = "dropdown menu"
     const val FloatingActionButton = "floating action button"
     const val ExtendedFloatingActionButton = "extended floating action button"
     const val IconButton = "icon button"
