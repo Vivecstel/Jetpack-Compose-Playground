@@ -35,24 +35,24 @@ fun DividerScreen() {
 
 @Preview
 @Composable
-fun DefaultDivider() {
+private fun DefaultDivider() {
     Divider()
 }
 
 @Preview
 @Composable
-fun ColoredDivider() {
+private fun ColoredDivider() {
     Divider(color = Color.Red)
 }
 
 @Preview
 @Composable
-fun ThickDividerComponent() {
+private fun ThickDividerComponent() {
     Divider(thickness = 12.dp)
 }
 
 @Preview
 @Composable
-fun IndentDivider() {
+private fun IndentDivider() {
     Divider(startIndent = 12.dp)
 }

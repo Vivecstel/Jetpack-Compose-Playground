@@ -42,7 +42,7 @@ fun CardScreen() {
 
 @Preview
 @Composable
-fun DefaultCard() {
+private fun DefaultCard() {
     Card {
         Text(
             text = "Jetpack Compose Playground",
@@ -53,7 +53,7 @@ fun DefaultCard() {
 
 @Preview
 @Composable
-fun ShapeCard() {
+private fun ShapeCard() {
     Card(
         shape = CutCornerShape(12.dp)
     ) {
@@ -66,7 +66,7 @@ fun ShapeCard() {
 
 @Preview
 @Composable
-fun BackgroundColorCard() {
+private fun BackgroundColorCard() {
     Card(
         backgroundColor = Color.LightGray
     ) {
@@ -79,7 +79,7 @@ fun BackgroundColorCard() {
 
 @Preview
 @Composable
-fun ContentColorCard() {
+private fun ContentColorCard() {
     Card(
         backgroundColor = Color.Black,
         contentColor = Color.White
@@ -93,7 +93,7 @@ fun ContentColorCard() {
 
 @Preview
 @Composable
-fun BorderCard() {
+private fun BorderCard() {
     Card(
         border = BorderStroke(2.dp, Color.Black)
     ) {
@@ -106,7 +106,7 @@ fun BorderCard() {
 
 @Preview
 @Composable
-fun ElevationCard() {
+private fun ElevationCard() {
     Card(
         elevation = 12.dp
     ) {

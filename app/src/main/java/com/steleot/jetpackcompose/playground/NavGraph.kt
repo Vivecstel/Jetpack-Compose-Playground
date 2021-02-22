@@ -101,5 +101,6 @@ object UiNavRoutes {
     const val Drawable = "drawable"
     const val Font = "font"
     const val Primitive = "primitive"
+    const val Shadow = "shadow"
     const val String = "string"
 }

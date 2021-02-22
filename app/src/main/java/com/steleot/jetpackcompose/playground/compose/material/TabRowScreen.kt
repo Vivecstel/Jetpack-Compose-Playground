@@ -38,7 +38,7 @@ fun TabRowScreen() {
 
 @Preview
 @Composable
-fun DefaultTabRow() {
+private fun DefaultTabRow() {
     val tabs = listOf("One", "Two", "Three")
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
@@ -61,7 +61,7 @@ fun DefaultTabRow() {
 
 @Preview
 @Composable
-fun BackgroundColorTabRow() {
+private fun BackgroundColorTabRow() {
     val tabs = listOf("One", "Two", "Three")
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
@@ -85,7 +85,7 @@ fun BackgroundColorTabRow() {
 
 @Preview
 @Composable
-fun ContentColorTabRow() {
+private fun ContentColorTabRow() {
     val tabs = listOf("One", "Two", "Three")
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
@@ -109,7 +109,7 @@ fun ContentColorTabRow() {
 
 @Preview
 @Composable
-fun DividerTabRow() {
+private fun DividerTabRow() {
     val tabs = listOf("One", "Two", "Three")
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
@@ -140,7 +140,7 @@ fun DividerTabRow() {
 
 @Preview
 @Composable
-fun IndicatorTabRow() {
+private fun IndicatorTabRow() {
     val tabs = listOf("One", "Two", "Three")
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(

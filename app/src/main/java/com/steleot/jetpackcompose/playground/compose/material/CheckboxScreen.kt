@@ -41,7 +41,7 @@ fun CheckboxScreen() {
 
 @Preview
 @Composable
-fun DefaultCheckbox() {
+private fun DefaultCheckbox() {
     val isChecked = remember { mutableStateOf(false) }
     Checkbox(
         checked = isChecked.value,
@@ -53,7 +53,7 @@ fun DefaultCheckbox() {
 
 @Preview
 @Composable
-fun CheckedColorCheckbox() {
+private fun CheckedColorCheckbox() {
     val isChecked = remember { mutableStateOf(false) }
     Checkbox(
         checked = isChecked.value,
@@ -68,7 +68,7 @@ fun CheckedColorCheckbox() {
 
 @Preview
 @Composable
-fun UncheckedColorCheckbox() {
+private fun UncheckedColorCheckbox() {
     val isChecked = remember { mutableStateOf(false) }
     Checkbox(
         checked = isChecked.value,
@@ -83,7 +83,7 @@ fun UncheckedColorCheckbox() {
 
 @Preview
 @Composable
-fun CheckmarkColorCheckbox() {
+private fun CheckmarkColorCheckbox() {
     val isChecked = remember { mutableStateOf(false) }
     Checkbox(
         checked = isChecked.value,
@@ -98,7 +98,7 @@ fun CheckmarkColorCheckbox() {
 
 @Preview
 @Composable
-fun DisabledColorCheckbox() {
+private fun DisabledColorCheckbox() {
     val isChecked = remember { mutableStateOf(true) }
     Checkbox(
         enabled = false,
@@ -114,7 +114,7 @@ fun DisabledColorCheckbox() {
 
 @Preview
 @Composable
-fun DisabledIndeterminateColorCheckbox() {
+private fun DisabledIndeterminateColorCheckbox() {
     val isChecked = remember { mutableStateOf(true) }
     Checkbox(
         enabled = false,
@@ -130,7 +130,7 @@ fun DisabledIndeterminateColorCheckbox() {
 
 @Preview
 @Composable
-fun DisabledCheckbox() {
+private fun DisabledCheckbox() {
     val isChecked = remember { mutableStateOf(true) }
     Checkbox(
         checked = isChecked.value,
@@ -143,7 +143,7 @@ fun DisabledCheckbox() {
 
 @Preview
 @Composable
-fun LabeledCheckbox() {
+private fun LabeledCheckbox() {
     val isChecked = remember { mutableStateOf(false) }
     Row (modifier = Modifier.clickable(onClick = {
         isChecked.value = !isChecked.value

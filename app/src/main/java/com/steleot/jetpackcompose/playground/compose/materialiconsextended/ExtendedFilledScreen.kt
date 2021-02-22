@@ -140,7 +140,7 @@ private val list = listOf(
 @Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ExtendedFilledGrid() {
+private fun ExtendedFilledGrid() {
     LazyVerticalGrid(
         GridCells.Adaptive(60.dp)
     ) {

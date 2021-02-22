@@ -41,7 +41,7 @@ fun FloatingActionButtonScreen() {
 
 @Preview
 @Composable
-fun IconFloatingActionButton() {
+private fun IconFloatingActionButton() {
     FloatingActionButton(onClick = {}) {
         Icon(
             imageVector = Icons.Outlined.Star,
@@ -52,7 +52,7 @@ fun IconFloatingActionButton() {
 
 @Preview
 @Composable
-fun ColoredFloatingActionButton() {
+private fun ColoredFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
         backgroundColor = Color.Red,
@@ -67,7 +67,7 @@ fun ColoredFloatingActionButton() {
 
 @Preview
 @Composable
-fun ElevatedFloatingActionButton() {
+private fun ElevatedFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
         shape = CutCornerShape(15.dp),
@@ -82,7 +82,7 @@ fun ElevatedFloatingActionButton() {
 
 @Preview
 @Composable
-fun ShapeFloatingActionButton() {
+private fun ShapeFloatingActionButton() {
     FloatingActionButton(
         onClick = {},
         shape = RectangleShape

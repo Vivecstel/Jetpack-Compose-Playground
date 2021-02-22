@@ -39,7 +39,7 @@ fun RadioButtonScreen() {
 
 @Preview
 @Composable
-fun DefaultRadioButton(
+private fun DefaultRadioButton(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -53,7 +53,7 @@ fun DefaultRadioButton(
 
 @Preview
 @Composable
-fun DisabledRadioButton(
+private fun DisabledRadioButton(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -68,7 +68,7 @@ fun DisabledRadioButton(
 
 @Preview
 @Composable
-fun SelectedColoredRadioButton(
+private fun SelectedColoredRadioButton(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -85,7 +85,7 @@ fun SelectedColoredRadioButton(
 
 @Preview
 @Composable
-fun UnselectedColoredRadioButton(
+private fun UnselectedColoredRadioButton(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -102,7 +102,7 @@ fun UnselectedColoredRadioButton(
 
 @Preview
 @Composable
-fun DisabledColoredRadioButton(
+private fun DisabledColoredRadioButton(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -118,7 +118,7 @@ fun DisabledColoredRadioButton(
 }
 
 @Composable
-fun RadioButtonWithLabel(
+private fun RadioButtonWithLabel(
     text: String = "Jetpack Compose Playground"
 ) {
     val state = remember { mutableStateOf("") }
@@ -138,7 +138,7 @@ fun RadioButtonWithLabel(
 
 @Preview
 @Composable
-fun RadioButtonGroup(
+private fun RadioButtonGroup(
     items: List<String> = listOf("Jetpack", "Compose", "Playground")
 ) {
     val state = remember { mutableStateOf("") }

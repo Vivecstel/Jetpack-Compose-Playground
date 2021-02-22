@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.preferredSize
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
@@ -34,13 +36,15 @@ fun IconButtonScreen() {
 
 @Preview
 @Composable
-fun DefaultIconButton() {
+private fun DefaultIconButton() {
     IconButton(
         onClick = {},
+
         content = {
             Icon(
                 Icons.Default.Palette,
-                contentDescription = "Default Icon Button"
+                modifier = Modifier.preferredSize(48.dp),
+                contentDescription = "Default Icon Button",
             )
         }
     )
@@ -48,7 +52,7 @@ fun DefaultIconButton() {
 
 @Preview
 @Composable
-fun DisabledIconButton() {
+private fun DisabledIconButton() {
     IconButton(
         onClick = {},
         content = {

@@ -47,7 +47,7 @@ fun TextFieldScreen() {
 
 @Preview
 @Composable
-fun DefaultTextField() {
+private fun DefaultTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,
@@ -59,7 +59,7 @@ fun DefaultTextField() {
 
 @Preview
 @Composable
-fun BackgroundColorTextField() {
+private fun BackgroundColorTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,
@@ -72,7 +72,7 @@ fun BackgroundColorTextField() {
 
 @Preview
 @Composable
-fun StyledTextField() {
+private fun StyledTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,
@@ -87,7 +87,7 @@ fun StyledTextField() {
 
 @Preview
 @Composable
-fun ImeActionTextField() {
+private fun ImeActionTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,
@@ -102,7 +102,7 @@ fun ImeActionTextField() {
 }
 
 @Composable
-fun PasswordKeyboardTypeTextField() {
+private fun PasswordKeyboardTypeTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,
@@ -118,7 +118,7 @@ fun PasswordKeyboardTypeTextField() {
 }
 
 @Composable
-fun ShapedTextField() {
+private fun ShapedTextField() {
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     TextField(
         value = state.value,

@@ -119,6 +119,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                 composable(route = UiNavRoutes.Font) { FontScreen() }
                 composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
+                composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
                 composable(route = UiNavRoutes.String) { StringScreen() }
             }
         }

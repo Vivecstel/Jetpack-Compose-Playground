@@ -12,6 +12,7 @@ val routes = listOf(
     UiNavRoutes.Drawable,
     UiNavRoutes.Font,
     UiNavRoutes.Primitive,
+    UiNavRoutes.Shadow,
     UiNavRoutes.String,
 )
 

@@ -39,7 +39,7 @@ fun SliderScreen() {
 
 @Preview
 @Composable
-fun DefaultSlider() {
+private fun DefaultSlider() {
     val state = remember { mutableStateOf(0f) }
     Slider(
         value = state.value,
@@ -52,7 +52,7 @@ fun DefaultSlider() {
 
 @Preview
 @Composable
-fun RangedSlider() {
+private fun RangedSlider() {
     val state = remember { mutableStateOf(0f) }
     Slider(
         value = state.value,
@@ -66,7 +66,7 @@ fun RangedSlider() {
 
 @Preview
 @Composable
-fun SteppedSlider() {
+private fun SteppedSlider() {
     val state = remember { mutableStateOf(0f) }
     Slider(
         value = state.value,
@@ -81,7 +81,7 @@ fun SteppedSlider() {
 
 @Preview
 @Composable
-fun ColoredSlider() {
+private fun ColoredSlider() {
     val state = remember { mutableStateOf(0f) }
     Slider(
         value = state.value,
@@ -98,7 +98,7 @@ fun ColoredSlider() {
 
 @Preview
 @Composable
-fun EndListenerSlider() {
+private fun EndListenerSlider() {
     val state = remember { mutableStateOf(0f) }
     val endState = remember { mutableStateOf(0f) }
     Column(horizontalAlignment = Alignment.CenterHorizontally) {

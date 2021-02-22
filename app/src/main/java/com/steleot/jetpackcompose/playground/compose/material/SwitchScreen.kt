@@ -48,7 +48,7 @@ fun SwitchScreen() { // todo crash on orientation
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultSwitch() {
+private fun DefaultSwitch() {
     val isChecked = remember { mutableStateOf(false) }
     Switch(
         checked = isChecked.value,
@@ -60,7 +60,7 @@ fun DefaultSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun DisabledSwitch() {
+private fun DisabledSwitch() {
     val isChecked = remember { mutableStateOf(false) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -74,7 +74,7 @@ fun DisabledSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun CheckedThumbColorSwitch() {
+private fun CheckedThumbColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -90,7 +90,7 @@ fun CheckedThumbColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun CheckedTrackColorSwitch() {
+private fun CheckedTrackColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -106,7 +106,7 @@ fun CheckedTrackColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun CheckedTrackAlphaSwitch() {
+private fun CheckedTrackAlphaSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -123,7 +123,7 @@ fun CheckedTrackAlphaSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun UncheckedThumbColorSwitch() {
+private fun UncheckedThumbColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -139,7 +139,7 @@ fun UncheckedThumbColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun UncheckedTrackColorSwitch() {
+private fun UncheckedTrackColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -155,7 +155,7 @@ fun UncheckedTrackColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun UncheckedTrackAlphaSwitch() {
+private fun UncheckedTrackAlphaSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -172,7 +172,7 @@ fun UncheckedTrackAlphaSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun DisabledCheckedThumbColorSwitch() {
+private fun DisabledCheckedThumbColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -188,7 +188,7 @@ fun DisabledCheckedThumbColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun DisabledCheckedTrackColorSwitch() {
+private fun DisabledCheckedTrackColorSwitch() {
     val isChecked = remember { mutableStateOf(true) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -204,7 +204,7 @@ fun DisabledCheckedTrackColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun DisabledUncheckedThumbColorSwitch() {
+private fun DisabledUncheckedThumbColorSwitch() {
     val isChecked = remember { mutableStateOf(false) }
     Switch(
         modifier = Modifier.padding(16.dp),
@@ -220,7 +220,7 @@ fun DisabledUncheckedThumbColorSwitch() {
 
 @Preview(showBackground = true)
 @Composable
-fun DisabledUncheckedTrackColorSwitch() {
+private fun DisabledUncheckedTrackColorSwitch() {
     val isChecked = remember { mutableStateOf(false) }
     Switch(
         modifier = Modifier.padding(16.dp),

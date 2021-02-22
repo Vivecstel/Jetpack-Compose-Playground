@@ -80,7 +80,7 @@ private val list = listOf(
 @Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun TwoToneGrid() {
+private fun TwoToneGrid() {
     LazyVerticalGrid(
         GridCells.Adaptive(60.dp)
     ) {

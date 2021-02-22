@@ -54,7 +54,7 @@ fun ButtonScreen() {
 
 @Preview
 @Composable
-fun DefaultButton() {
+private fun DefaultButton() {
     Button(
         onClick = {},
         modifier = Modifier.padding(vertical = 4.dp)
@@ -68,7 +68,7 @@ fun DefaultButton() {
 
 @Preview
 @Composable
-fun CutCornerShapeButton() {
+private fun CutCornerShapeButton() {
     Button(
         onClick = {},
         shape = CutCornerShape(12.dp),
@@ -83,7 +83,7 @@ fun CutCornerShapeButton() {
 
 @Preview
 @Composable
-fun RoundedCornerShapeButton() {
+private fun RoundedCornerShapeButton() {
     Button(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
@@ -98,7 +98,7 @@ fun RoundedCornerShapeButton() {
 
 @Preview
 @Composable
-fun BackgroundColorButton() {
+private fun BackgroundColorButton() {
     Button(
         onClick = {},
         colors = buttonColors(
@@ -115,7 +115,7 @@ fun BackgroundColorButton() {
 
 @Preview
 @Composable
-fun ContentColorButton() {
+private fun ContentColorButton() {
     Button(
         onClick = {},
         colors = buttonColors(
@@ -132,7 +132,7 @@ fun ContentColorButton() {
 
 @Preview
 @Composable
-fun DisabledBackgroundColorButton() {
+private fun DisabledBackgroundColorButton() {
     Button(
         enabled = false,
         onClick = {},
@@ -150,7 +150,7 @@ fun DisabledBackgroundColorButton() {
 
 @Preview
 @Composable
-fun DisabledContentColorButton() {
+private fun DisabledContentColorButton() {
     Button(
         enabled = false,
         onClick = {},
@@ -169,7 +169,7 @@ fun DisabledContentColorButton() {
 
 @Preview
 @Composable
-fun ContentPaddingButton() {
+private fun ContentPaddingButton() {
     Button(
         onClick = {},
         contentPadding = PaddingValues(32.dp),
@@ -184,7 +184,7 @@ fun ContentPaddingButton() {
 
 @Preview
 @Composable
-fun ElevationPaddingButton() {
+private fun ElevationPaddingButton() {
     Button(
         onClick = {},
         elevation = elevation(
@@ -203,7 +203,7 @@ fun ElevationPaddingButton() {
 
 @Preview
 @Composable
-fun BorderButton() {
+private fun BorderButton() {
     Button(
         onClick = {},
         border = BorderStroke(2.dp, Color.Red),
@@ -218,7 +218,7 @@ fun BorderButton() {
 
 @Preview
 @Composable
-fun DisabledButton() {
+private fun DisabledButton() {
     Button(
         onClick = {},
         enabled = true,
@@ -233,7 +233,7 @@ fun DisabledButton() {
 
 @Preview
 @Composable
-fun OutlinedDefaultButton() {
+private fun OutlinedDefaultButton() {
     OutlinedButton(
         onClick = {},
         modifier = Modifier.padding(vertical = 4.dp),
@@ -248,7 +248,7 @@ fun OutlinedDefaultButton() {
 
 @Preview
 @Composable
-fun TextDefaultButton() {
+private fun TextDefaultButton() {
     TextButton(
         onClick = {},
         modifier = Modifier.padding(vertical = 4.dp),

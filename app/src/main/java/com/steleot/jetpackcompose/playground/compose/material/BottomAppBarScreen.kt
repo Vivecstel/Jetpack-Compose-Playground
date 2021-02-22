@@ -72,7 +72,7 @@ fun BottomAppBarScreen() {
 
 @Preview
 @Composable
-fun DefaultBottomAppBar() {
+private fun DefaultBottomAppBar() {
     BottomAppBar {
         BottomBarText()
     }
@@ -88,7 +88,7 @@ private fun BottomBarText() {
 
 @Preview
 @Composable
-fun BackgroundColorBottomAppBar() {
+private fun BackgroundColorBottomAppBar() {
     BottomAppBar(
         backgroundColor = Color.Yellow
     ) {
@@ -98,7 +98,7 @@ fun BackgroundColorBottomAppBar() {
 
 @Preview
 @Composable
-fun ContentColorBottomAppBar() {
+private fun ContentColorBottomAppBar() {
     BottomAppBar(
         contentColor = Color.Black
     ) {
@@ -108,7 +108,7 @@ fun ContentColorBottomAppBar() {
 
 @Preview
 @Composable
-fun ElevationBottomAppBar() {
+private fun ElevationBottomAppBar() {
     BottomAppBar(
         elevation = 12.dp,
     ) {
@@ -117,7 +117,7 @@ fun ElevationBottomAppBar() {
 }
 
 @Composable
-fun StyledBottomAppBar() {
+private fun StyledBottomAppBar() {
     BottomAppBar(
         elevation = 12.dp,
         contentColor = Color.Blue,

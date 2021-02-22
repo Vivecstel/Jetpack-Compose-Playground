@@ -140,7 +140,7 @@ private val list = listOf(
 @Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ExtendedRoundedGrid() {
+private fun ExtendedRoundedGrid() {
     LazyVerticalGrid(
         GridCells.Adaptive(60.dp)
     ) {

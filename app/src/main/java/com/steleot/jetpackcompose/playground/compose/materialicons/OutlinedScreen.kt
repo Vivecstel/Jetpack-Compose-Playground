@@ -80,7 +80,7 @@ private val list = listOf(
 @Preview
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OutlinedGrid() {
+private fun OutlinedGrid() {
     LazyVerticalGrid(
         GridCells.Adaptive(60.dp)
     ) {
