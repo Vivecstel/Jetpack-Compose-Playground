@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.layout
+package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

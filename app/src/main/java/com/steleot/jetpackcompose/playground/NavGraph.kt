@@ -40,8 +40,11 @@ object FoundationNavRoutes {
 object FoundationLayoutNavRoutes {
     const val AspectRatio = "aspect ratio"
     const val Box = "box"
+    const val BoxWithConstraints = "box with constraints"
     const val Column = "column"
+    const val Offset = "offset"
     const val Row = "row"
+    const val Size = "size"
     const val Spacer = "spacer"
 }
 

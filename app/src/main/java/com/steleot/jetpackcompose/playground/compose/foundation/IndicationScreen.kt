@@ -23,13 +23,13 @@ fun IndicationScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Indication.capitalize(Locale.getDefault())
     ) {
-        val interactionSource = remember { InteractionState() }
+        val interaction = remember { InteractionState() }
         Column {
             Text(
                 text = "Click me and my neighbour will indicate as well!",
                 modifier = Modifier
                     .clickable(
-                        interactionState = interactionSource,
+                        interactionState = interaction,
                         indication = rememberRipple()
                     ) { }
                     .padding(10.dp)
@@ -38,7 +38,7 @@ fun IndicationScreen() {
             Text(
                 text = "I'm neighbour and I indicate when you click the other one",
                 modifier = Modifier
-                    .indication(interactionSource, LocalIndication.current)
+                    .indication(interaction, LocalIndication.current)
                     .padding(10.dp)
             )
         }

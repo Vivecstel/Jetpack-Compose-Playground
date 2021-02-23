@@ -1,9 +1,9 @@
-package com.steleot.jetpackcompose.playground.compose.layout
+package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -15,34 +15,34 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
-fun ColumnScreen() {
+fun RowScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Column.capitalize(Locale.getDefault())
+        title = FoundationLayoutNavRoutes.Row.capitalize(Locale.getDefault())
     ) {
-        DefaultColumn()
+        DefaultRow()
     }
 }
 
 @Composable
-fun DefaultColumn() {
-    Column(
+fun DefaultRow() {
+    Row(
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "First item",
+            text = "One",
             modifier = Modifier.padding(16.dp).background(Color.Blue)
         )
         Text(
-            text = "Second item",
+            text = "Two",
             modifier = Modifier.background(Color.Red).padding(16.dp)
         )
         Text(
-            text = "Third item",
-            modifier = Modifier.padding(16.dp).fillMaxWidth().background(Color.Green)
+            text = "Three",
+            modifier = Modifier.padding(16.dp).fillMaxHeight().background(Color.Green)
         )
         Text(
-            text = "Fourth item",
-            modifier = Modifier.background(Color.Yellow).fillMaxWidth(0.6f).padding(16.dp)
+            text = "Four",
+            modifier = Modifier.background(Color.Yellow).fillMaxHeight(0.6f).padding(16.dp)
         )
     }
 }

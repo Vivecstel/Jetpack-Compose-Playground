@@ -28,12 +28,15 @@ import com.steleot.jetpackcompose.playground.compose.foundation.ImageScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.IndicationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
-import com.steleot.jetpackcompose.playground.compose.layout.AspectRationScreen
-import com.steleot.jetpackcompose.playground.compose.layout.BoxScreen
-import com.steleot.jetpackcompose.playground.compose.layout.ColumnScreen
-import com.steleot.jetpackcompose.playground.compose.layout.LayoutScreen
-import com.steleot.jetpackcompose.playground.compose.layout.RowScreen
-import com.steleot.jetpackcompose.playground.compose.layout.SpacerScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.SizeScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.AspectRationScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxWithConstraintsScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.ColumnScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.LayoutScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.OffsetScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.RowScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScreen
 import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerLayoutScreen
@@ -140,8 +143,11 @@ fun PlaygroundApp() {
                 /* layout */
                 composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
+                composable(route = FoundationLayoutNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
                 composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
+                composable(route = FoundationLayoutNavRoutes.Offset) { OffsetScreen() }
                 composable(route = FoundationLayoutNavRoutes.Row) { RowScreen() }
+                composable(route = FoundationLayoutNavRoutes.Size) { SizeScreen() }
                 composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
                 /* material */
                 composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }

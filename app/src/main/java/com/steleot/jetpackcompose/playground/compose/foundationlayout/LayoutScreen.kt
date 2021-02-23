@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.layout
+package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -10,8 +10,11 @@ import java.util.*
 val routes = listOf(
     FoundationLayoutNavRoutes.AspectRatio,
     FoundationLayoutNavRoutes.Box,
+    FoundationLayoutNavRoutes.BoxWithConstraints,
     FoundationLayoutNavRoutes.Column,
+    FoundationLayoutNavRoutes.Offset,
     FoundationLayoutNavRoutes.Row,
+    FoundationLayoutNavRoutes.Size,
     FoundationLayoutNavRoutes.Spacer,
 )
 
