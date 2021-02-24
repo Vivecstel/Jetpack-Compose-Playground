@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
@@ -49,7 +49,7 @@ private fun TintedIcon() {
     Icon(
         Icons.Default.AddAlarm,
         contentDescription = "Tinted Icon",
-        modifier = Modifier.preferredSize(48.dp),
+        modifier = Modifier.size(48.dp),
         tint = Color.Magenta,
     )
 }

@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,7 +39,7 @@ fun ShadowScreen() {
 @Composable
 private fun DefaultShadow() {
     Box(
-        modifier = Modifier.preferredSize(50.dp)
+        modifier = Modifier.size(50.dp)
             .shadow(elevation = 16.dp)
             .background(Color.Magenta)
     )
@@ -49,7 +49,7 @@ private fun DefaultShadow() {
 @Composable
 private fun ShapeShadow() {
     Box(
-        modifier = Modifier.preferredSize(50.dp)
+        modifier = Modifier.size(50.dp)
             .shadow(elevation = 16.dp, shape = RectangleShape)
             .background(Color.Green)
     )
@@ -59,7 +59,7 @@ private fun ShapeShadow() {
 @Composable
 private fun ClipShadow() {
     Box(
-        modifier = Modifier.preferredSize(50.dp)
+        modifier = Modifier.size(50.dp)
             .shadow(elevation = 16.dp, shape = RectangleShape, clip = false)
             .background(Color.Red)
     )

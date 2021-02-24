@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -69,7 +69,7 @@ fun CrossfadeColorAnimation() {
 
     Column(modifier = Modifier.fillMaxWidth()) {
         Crossfade(targetState = current) { _ ->
-            Box(Modifier.fillMaxWidth().preferredHeight(120.dp).clickable(onClick = {
+            Box(Modifier.fillMaxWidth().height(120.dp).clickable(onClick = {
                 current.value = if (current.value == colors[0]) colors[1] else colors[0]
             }).background(current.value))
         }

@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.TextField
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -69,7 +70,9 @@ private fun BackgroundColorTextField() {
         onValueChange = { state.value = it },
         textStyle = TextStyle(color = Color.Black),
         modifier = Modifier.padding(16.dp).fillMaxWidth(),
-        backgroundColor = Color.Magenta
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = Color.Magenta
+        ),
     )
 }
 
@@ -83,7 +86,9 @@ private fun StyledTextField() {
             state.value = value
         },
         textStyle = TextStyle(color = Color.Magenta, fontSize = 20.sp),
-        activeColor = Color.Blue,
+        colors = TextFieldDefaults.textFieldColors(
+            focusedIndicatorColor = Color.Blue,
+        ),
         modifier = Modifier.padding(16.dp).fillMaxWidth(),
     )
 }

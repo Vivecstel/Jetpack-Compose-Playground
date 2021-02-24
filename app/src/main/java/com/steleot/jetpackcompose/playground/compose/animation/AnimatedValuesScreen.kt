@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -44,7 +44,7 @@ fun AnimatedFloat() {
     val viewHeight = if (expandedState.value) remember { AnimatableFloat(150f) } else remember {
         AnimatableFloat(50f)
     }
-    Box(modifier = Modifier.fillMaxWidth().preferredHeight(viewHeight.value.dp).clickable(
+    Box(modifier = Modifier.fillMaxWidth().height(viewHeight.value.dp).clickable(
         onClick = {
             expandedState.value = !expandedState.value
         }
@@ -63,7 +63,7 @@ fun AnimatedColor() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .preferredHeight(40.dp)
+            .height(40.dp)
             .clickable(onClick = {
                 expandedState.value = !expandedState.value
             }).background(viewColor.value)

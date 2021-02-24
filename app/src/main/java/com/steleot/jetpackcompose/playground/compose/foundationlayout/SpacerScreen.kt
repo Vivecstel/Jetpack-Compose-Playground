@@ -4,8 +4,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -26,32 +27,32 @@ fun SpacerScreen() {
             Text(
                 text = "There"
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.requiredHeight(16.dp))
             Text(
                 text = "is"
             )
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.requiredHeight(32.dp))
             Text(
                 text = "spacer"
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.requiredHeight(16.dp))
             Row {
                 Text(
                     text = "between"
                 )
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.requiredWidth(16.dp))
                 Text(
                     text = "even"
                 )
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.requiredWidth(16.dp))
                 Text(
                     text = "in"
                 )
-                Spacer(modifier = Modifier.width(32.dp))
+                Spacer(modifier = Modifier.requiredWidth(32.dp))
                 Text(
                     text = "row"
                 )
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.requiredWidth(16.dp))
             }
         }
     }

@@ -8,9 +8,10 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.PointMode
-import androidx.compose.ui.graphics.imageFromResource
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.imageResource
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -48,7 +49,7 @@ fun CanvasScreen() {
                 topLeft = Offset(60f, 60f)
             )
             drawImage(
-                imageFromResource(context.resources, R.drawable.ic_baseline_alarm_24dp),
+                ImageBitmap.imageResource(context.resources, R.drawable.ic_baseline_alarm_24dp),
                 Offset(90f, 10f)
             )
             drawRoundRect(

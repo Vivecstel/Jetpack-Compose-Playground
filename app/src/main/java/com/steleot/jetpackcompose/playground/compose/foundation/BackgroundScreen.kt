@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+
 import java.util.*
 
 @Composable
@@ -29,13 +30,13 @@ fun BackgroundScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier.preferredSize(50.dp).background(Color.Green))
+            Box(modifier = Modifier.size(50.dp).background(Color.Green))
             Box(
-                modifier = Modifier.preferredSize(50.dp)
+                modifier = Modifier.size(50.dp)
                     .background(Color.Red, shape = RoundedCornerShape(12.dp))
             )
             Box(
-                modifier = Modifier.preferredSize(50.dp)
+                modifier = Modifier.size(50.dp)
                     .background(
                         brush = Brush.horizontalGradient(
                             colors = listOf(Color.Red, Color.Blue, Color.Green),

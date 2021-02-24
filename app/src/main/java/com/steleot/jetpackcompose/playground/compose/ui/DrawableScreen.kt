@@ -4,7 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,7 +37,7 @@ fun DrawableScreen() {
                     R.drawable.ic_android_black_24dp
                 ),
                 contentDescription = "Vector image from painter resource",
-                modifier = Modifier.preferredSize(32.dp),
+                modifier = Modifier.size(32.dp),
                 colorFilter = ColorFilter.tint(colors.primary)
             )
             Image(
@@ -46,7 +46,7 @@ fun DrawableScreen() {
                     R.drawable.ic_baseline_alarm_24dp
                 ),
                 contentDescription = "Drawable image from painter resource",
-                modifier = Modifier.preferredSize(48.dp),
+                modifier = Modifier.size(48.dp),
                 colorFilter = ColorFilter.tint(colors.primaryVariant)
             )
         }

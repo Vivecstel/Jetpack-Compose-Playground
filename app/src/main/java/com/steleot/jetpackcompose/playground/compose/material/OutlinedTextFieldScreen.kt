@@ -6,12 +6,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -36,7 +35,9 @@ fun OutlinedTextFieldScreen() {
         title = MaterialNavRoutes.OutlinedTextField.capitalize(Locale.getDefault())
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -57,7 +58,9 @@ private fun DefaultOutlinedTextField() {
         onValueChange = { state.value = it },
         label = { Text("Jetpack") },
         textStyle = TextStyle(color = Color.Black),
-        modifier = Modifier.padding(16.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
     )
 }
 
@@ -72,8 +75,12 @@ private fun StyledOutlinedTextField() {
         },
         label = { Text("Jetpack") },
         textStyle = TextStyle(color = Color.Magenta, fontSize = 20.sp),
-        activeColor = Color.Blue,
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            textColor = Color.Blue
+        ),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
     )
 }
 
@@ -87,7 +94,9 @@ private fun ImeActionOutlinedTextField() {
             state.value = value
         },
         label = { Text("Jetpack") },
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         keyboardOptions = KeyboardOptions.Default.copy(
             imeAction = ImeAction.Done,
         ),
@@ -103,7 +112,9 @@ private fun PasswordKeyboardTypeOutlinedTextField() {
             state.value = value
         },
         label = { Text("Jetpack") },
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Password
         ),

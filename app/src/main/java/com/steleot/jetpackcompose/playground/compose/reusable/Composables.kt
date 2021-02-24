@@ -74,7 +74,7 @@ fun DefaultTopAppBar(
 @Composable
 fun DefaultScaffold(
     title: String,
-    bodyContent: @Composable (PaddingValues) -> Unit,
+    content: @Composable (PaddingValues) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.statusBarsPadding(),
@@ -84,6 +84,6 @@ fun DefaultScaffold(
                 showBackArrow = true,
             )
         },
-        bodyContent = bodyContent,
+        content = content,
     )
 }

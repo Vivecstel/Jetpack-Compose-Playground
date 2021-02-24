@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
@@ -43,7 +43,7 @@ private fun DefaultIconButton() {
         content = {
             Icon(
                 Icons.Default.Palette,
-                modifier = Modifier.preferredSize(48.dp),
+                modifier = Modifier.size(48.dp),
                 contentDescription = "Default Icon Button",
             )
         }

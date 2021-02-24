@@ -4,7 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,9 +19,9 @@ fun AspectRationScreen() {
         title = FoundationLayoutNavRoutes.AspectRatio.capitalize(Locale.getDefault())
     ) {
         Column {
-            Box(modifier = Modifier.height(50.dp).aspectRatio(0.25f).background(Color.Green))
-            Box(modifier = Modifier.height(100.dp).aspectRatio(0.55f).background(Color.Magenta))
-            Box(modifier = Modifier.height(200.dp).aspectRatio(0.75f).background(Color.Red))
+            Box(modifier = Modifier.requiredHeight(50.dp).aspectRatio(0.25f).background(Color.Green))
+            Box(modifier = Modifier.requiredHeight(100.dp).aspectRatio(0.55f).background(Color.Magenta))
+            Box(modifier = Modifier.requiredHeight(200.dp).aspectRatio(0.75f).background(Color.Red))
         }
     }
 }

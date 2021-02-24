@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
@@ -61,7 +61,7 @@ private fun IconListItem() {
         icon = {
             Icon(
                 Icons.Default.Palette,
-                modifier = Modifier.preferredSize(36.dp),
+                modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Icon",
             )
         }
@@ -104,7 +104,7 @@ private fun TrailingListItem() {
         trailing = {
             Icon(
                 Icons.Default.Palette,
-                modifier = Modifier.preferredSize(36.dp),
+                modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Trailing",
             )
         }
@@ -124,7 +124,7 @@ private fun FullListItem() {
         icon = {
             Icon(
                 Icons.Default.Palette,
-                modifier = Modifier.preferredSize(36.dp),
+                modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Icon",
             )
         },
@@ -137,7 +137,7 @@ private fun FullListItem() {
         trailing = {
             Icon(
                 Icons.Default.PedalBike,
-                modifier = Modifier.preferredSize(36.dp),
+                modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Trailing",
             )
         }

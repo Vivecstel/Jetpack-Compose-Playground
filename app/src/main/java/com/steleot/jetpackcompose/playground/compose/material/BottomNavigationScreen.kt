@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Button
@@ -49,7 +49,7 @@ fun BottomNavigationScreen() {
             ) {
                 Text(text = "Switch to bottom navigation")
             }
-            Spacer(modifier = Modifier.preferredHeight(32.dp))
+            Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = {
                     selectedNavigationItem.value =
@@ -58,7 +58,7 @@ fun BottomNavigationScreen() {
             ) {
                 Text(text = "Switch to bottom navigation item")
             }
-            Spacer(modifier = Modifier.preferredHeight(32.dp))
+            Spacer(modifier = Modifier.height(32.dp))
             HelperView(selectedNavigationView.value, selectedNavigationItem.value)
         }
     }
@@ -183,7 +183,7 @@ private fun RowScope.AlwaysShowLabelBottomNavigationItem(
     BottomNavigationItem(
         icon = { Icon(imageVector = pair.second, contentDescription = "") },
         label = { Text(text = pair.first) },
-        alwaysShowLabels = false,
+        alwaysShowLabel = false,
         selected = selected,
         onClick = onClick,
     )

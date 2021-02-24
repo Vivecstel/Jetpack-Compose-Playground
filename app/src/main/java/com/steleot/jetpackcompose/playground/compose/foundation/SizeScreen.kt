@@ -5,15 +5,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.defaultMinSizeConstraints
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.sizeIn
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -64,8 +64,8 @@ fun SizeScreen() {
 private fun LastSizeBox() {
     Box(
         Modifier
-            .size(100.dp, 100.dp)
-            .size(50.dp, 50.dp)
+            .requiredSize(100.dp, 100.dp)
+            .requiredSize(50.dp, 50.dp)
             .background(Color.Red)
     )
 }
@@ -75,8 +75,8 @@ private fun LastSizeBox() {
 private fun LastWidthBox() {
     Box(
         Modifier
-            .width(100.dp)
-            .width(50.dp)
+            .requiredWidth(100.dp)
+            .requiredWidth(50.dp)
             .aspectRatio(1f)
             .background(Color.Magenta)
     )
@@ -87,8 +87,8 @@ private fun LastWidthBox() {
 private fun LastHeightBox() {
     Box(
         Modifier
-            .height(100.dp)
-            .height(50.dp)
+            .requiredHeight(100.dp)
+            .requiredHeight(50.dp)
             .aspectRatio(1f)
             .background(Color.Blue)
     )
@@ -98,7 +98,7 @@ private fun LastHeightBox() {
 @Composable
 private fun SizeBox() {
     Box {
-        Box(Modifier.size(100.dp, 100.dp).background(Color.Red))
+        Box(Modifier.requiredSize(100.dp, 100.dp).background(Color.Red))
     }
 }
 
@@ -106,7 +106,7 @@ private fun SizeBox() {
 @Composable
 private fun WidthBox() {
     Box {
-        Box(Modifier.width(100.dp).aspectRatio(1f).background(Color.Magenta))
+        Box(Modifier.requiredWidth(100.dp).aspectRatio(1f).background(Color.Magenta))
     }
 }
 
@@ -114,7 +114,7 @@ private fun WidthBox() {
 @Composable
 private fun HeightBox() {
     Box {
-        Box(Modifier.height(100.dp).aspectRatio(1f).background(Color.Blue))
+        Box(Modifier.requiredHeight(100.dp).aspectRatio(1f).background(Color.Blue))
     }
 }
 
@@ -122,17 +122,17 @@ private fun HeightBox() {
 @Composable
 private fun FillWidthBox() {
     Box(Modifier.fillMaxWidth().background(Color.Red), contentAlignment = Alignment.Center) {
-        Box(Modifier.size(100.dp).background(color = Color.Magenta))
+        Box(Modifier.requiredSize(100.dp).background(color = Color.Magenta))
     }
 }
 
 @Preview
 @Composable
 private fun FillHalfWidthBox() {
-    Box(Modifier.size(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
+    Box(Modifier.requiredSize(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
         Box(
             Modifier.fillMaxWidth(fraction = 0.5f)
-                .height(30.dp)
+                .requiredHeight(30.dp)
                 .background(color = Color.Magenta)
         )
     }
@@ -142,17 +142,17 @@ private fun FillHalfWidthBox() {
 @Composable
 private fun FillHeightBox() {
     Box(Modifier.fillMaxHeight().background(Color.Red), contentAlignment = Alignment.Center) {
-        Box(Modifier.size(100.dp).background(color = Color.Magenta))
+        Box(Modifier.requiredSize(100.dp).background(color = Color.Magenta))
     }
 }
 
 @Preview
 @Composable
 private fun FillHalfHeightBox() {
-    Box(Modifier.size(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
+    Box(Modifier.requiredSize(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
         // The inner Box will be (30.dp x 50.dp).
         Box(
-            Modifier.width(30.dp)
+            Modifier.requiredWidth(30.dp)
                 .fillMaxHeight(0.5f)
                 .background(color = Color.Magenta)
         )
@@ -163,16 +163,16 @@ private fun FillHalfHeightBox() {
 @Composable
 private fun FillSizeModifier() {
     Box(Modifier.fillMaxSize().background(Color.Red), contentAlignment = Alignment.Center) {
-        Box(Modifier.size(100.dp).background(color = Color.Magenta))
+        Box(Modifier.requiredSize(100.dp).background(color = Color.Magenta))
     }
 }
 
 @Preview
 @Composable
 private fun FillHalfSizeModifier() {
-    Box(Modifier.size(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
+    Box(Modifier.requiredSize(100.dp).background(Color.Red), contentAlignment = Alignment.Center) {
         Box(
-            Modifier.width(30.dp)
+            Modifier.requiredWidth(30.dp)
                 .fillMaxSize(0.5f)
                 .background(color = Color.Magenta)
         )
@@ -185,7 +185,7 @@ private fun WrapContentAlignedBox() {
     Box(
         Modifier.sizeIn(minWidth = 40.dp, minHeight = 40.dp)
             .wrapContentSize(Alignment.TopCenter)
-            .size(20.dp)
+            .requiredSize(20.dp)
             .background(Color.Blue)
     )
 }
@@ -194,9 +194,9 @@ private fun WrapContentAlignedBox() {
 @Composable
 private fun WrapContentVerticallyAlignedBox() {
     Box(
-        Modifier.size(50.dp)
+        Modifier.requiredSize(50.dp)
             .wrapContentHeight(Alignment.CenterVertically)
-            .height(20.dp)
+            .requiredHeight(20.dp)
             .background(Color.Blue)
     )
 }
@@ -205,9 +205,9 @@ private fun WrapContentVerticallyAlignedBox() {
 @Composable
 private fun WrapContentHorizontallyAlignedBox() {
     Box(
-        Modifier.size(50.dp)
+        Modifier.requiredSize(50.dp)
             .wrapContentWidth(Alignment.CenterHorizontally)
-            .width(20.dp)
+            .requiredWidth(20.dp)
             .background(Color.Blue)
     )
 }
@@ -218,7 +218,7 @@ private fun MinSizeBox() {
     @Composable
     fun DefaultMinBox(modifier: Modifier = Modifier) {
         Box(
-            modifier.defaultMinSizeConstraints(minWidth = 100.dp, minHeight = 100.dp)
+            modifier.defaultMinSize(minWidth = 100.dp, minHeight = 100.dp)
                 .background(Color.Blue)
         )
     }

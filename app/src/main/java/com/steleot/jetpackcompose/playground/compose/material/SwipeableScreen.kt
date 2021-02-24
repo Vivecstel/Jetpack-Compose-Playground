@@ -1,10 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FractionalThreshold
 import androidx.compose.material.Text
@@ -13,7 +14,6 @@ import androidx.compose.material.swipeable
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.gesture.scrollorientationlocking.Orientation
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
@@ -45,7 +45,7 @@ fun SwipeableExample() {
 
     Box(
         modifier = Modifier
-            .width(width)
+            .requiredWidth(width)
             .swipeable(
                 state = swipeableState,
                 anchors = anchors,
@@ -57,11 +57,11 @@ fun SwipeableExample() {
         Box(
             Modifier
                 .offset { IntOffset(swipeableState.offset.value.roundToInt(), 0) }
-                .size(squareSize)
+                .requiredSize(squareSize)
                 .background(Color.Red),
             contentAlignment = Alignment.Center
         ) {
-            Text(swipeableState.value, color = Color.White, fontSize = 24.sp)
+            Text(swipeableState.currentValue, color = Color.White, fontSize = 24.sp)
         }
     }
 }

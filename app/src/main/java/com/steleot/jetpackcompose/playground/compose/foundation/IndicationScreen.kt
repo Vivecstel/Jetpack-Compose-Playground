@@ -1,13 +1,13 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
-import androidx.compose.foundation.InteractionState
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.indication
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
@@ -23,22 +23,22 @@ fun IndicationScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Indication.capitalize(Locale.getDefault())
     ) {
-        val interaction = remember { InteractionState() }
+        val interactionSource = remember { MutableInteractionSource() }
         Column {
             Text(
                 text = "Click me and my neighbour will indicate as well!",
                 modifier = Modifier
                     .clickable(
-                        interactionState = interaction,
+                        interactionSource = interactionSource,
                         indication = rememberRipple()
                     ) { }
                     .padding(10.dp)
             )
-            Spacer(Modifier.preferredSize(10.dp))
+            Spacer(Modifier.size(10.dp))
             Text(
                 text = "I'm neighbour and I indicate when you click the other one",
                 modifier = Modifier
-                    .indication(interaction, LocalIndication.current)
+                    .indication(interactionSource, LocalIndication.current)
                     .padding(10.dp)
             )
         }

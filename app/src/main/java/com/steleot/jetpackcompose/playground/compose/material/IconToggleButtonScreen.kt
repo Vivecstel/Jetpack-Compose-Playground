@@ -4,8 +4,6 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconToggleButton
@@ -47,7 +45,7 @@ fun DefaultIconToggleButton() {
     IconToggleButton(
         checked = checked,
         onCheckedChange = { checked = it },
-        modifier = Modifier.preferredSize(72.dp),
+        modifier = Modifier.size(72.dp),
     ) {
         val tint by animateColorAsState(
             if (checked) Color.Red
@@ -57,7 +55,7 @@ fun DefaultIconToggleButton() {
             Icons.Filled.Favorite,
             contentDescription = "Default Icon Toggle Button",
             tint = tint,
-            modifier = Modifier.preferredSize(32.dp)
+            modifier = Modifier.size(32.dp)
         )
     }
 }

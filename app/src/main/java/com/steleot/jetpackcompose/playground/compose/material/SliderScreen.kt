@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Slider
+import androidx.compose.material.SliderDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -90,9 +91,11 @@ private fun ColoredSlider() {
         },
         modifier = Modifier.padding(horizontal = 16.dp),
         steps = 5,
-        thumbColor = Color.Red,
-        activeTickColor = Color.Magenta,
-        inactiveTickColor = Color.Yellow
+        colors = SliderDefaults.colors(
+            thumbColor = Color.Red,
+            activeTickColor = Color.Magenta,
+            inactiveTickColor = Color.Yellow,
+        ),
     )
 }
 
@@ -109,10 +112,12 @@ private fun EndListenerSlider() {
                 state.value = it
             },
             modifier = Modifier.padding(horizontal = 16.dp),
-            onValueChangeEnd = {
+            onValueChangeFinished = {
                 endState.value = state.value
             },
-            thumbColor = Color.Red,
+            colors = SliderDefaults.colors(
+                thumbColor = Color.Red,
+            )
         )
     }
 }
