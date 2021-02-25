@@ -22,13 +22,18 @@ import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ClickableScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.DraggableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FocusableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FoundationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ImageScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.IndicationScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.LazyColumnScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.LazyGridScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.LazyRowScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.SizeScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.TransformableScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.AspectRationScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxWithConstraintsScreen
@@ -135,11 +140,16 @@ fun PlaygroundApp() {
                 composable(route = FoundationNavRoutes.Border) { BorderScreen() }
                 composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
                 composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
+                composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
                 composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
                 composable(route = FoundationNavRoutes.Image) { ImageScreen() }
                 composable(route = FoundationNavRoutes.Indication) { IndicationScreen() }
+                composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
+                composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
+                composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
                 composable(route = FoundationNavRoutes.Scroll) { ScrollScreen() }
                 composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
+                composable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
                 /* layout */
                 composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }

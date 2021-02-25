@@ -30,11 +30,16 @@ object FoundationNavRoutes {
     const val Border = "border"
     const val Canvas = "canvas"
     const val Clickable = "clickable"
+    const val Draggable = "draggable"
     const val Focusable = "focusable"
     const val Image = "image"
     const val Indication = "indication"
+    const val LazyColumn = "lazycolumn"
+    const val LazyGrid = "lazyGrid"
+    const val LazyRow = "lazyRow"
     const val Scroll = "scroll"
     const val Shape = "shape"
+    const val Transformable = "transformable"
 }
 
 object FoundationLayoutNavRoutes {
