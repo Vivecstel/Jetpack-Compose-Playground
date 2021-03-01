@@ -32,7 +32,9 @@ fun ButtonScreen() {
     ) {
         val scrollState = rememberScrollState()
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(scrollState),
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(scrollState),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultButton()

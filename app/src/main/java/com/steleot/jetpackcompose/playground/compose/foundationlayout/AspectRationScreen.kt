@@ -19,9 +19,22 @@ fun AspectRationScreen() {
         title = FoundationLayoutNavRoutes.AspectRatio.capitalize(Locale.getDefault())
     ) {
         Column {
-            Box(modifier = Modifier.requiredHeight(50.dp).aspectRatio(0.25f).background(Color.Green))
-            Box(modifier = Modifier.requiredHeight(100.dp).aspectRatio(0.55f).background(Color.Magenta))
-            Box(modifier = Modifier.requiredHeight(200.dp).aspectRatio(0.75f).background(Color.Red))
+            Box(
+                modifier = Modifier
+                    .requiredHeight(50.dp)
+                    .aspectRatio(0.25f)
+                    .background(Color.Green)
+            )
+            Box(
+                modifier = Modifier
+                    .requiredHeight(100.dp)
+                    .aspectRatio(0.55f)
+                    .background(Color.Magenta)
+            )
+            Box(modifier = Modifier
+                .requiredHeight(200.dp)
+                .aspectRatio(0.75f)
+                .background(Color.Red))
         }
     }
 }

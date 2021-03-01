@@ -118,7 +118,8 @@ private fun TrailingListItem() {
 @Composable
 private fun FullListItem() {
     ListItem(
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier
+            .padding(16.dp)
             .background(Color.Gray, RoundedCornerShape(8.dp))
             .padding(8.dp),
         icon = {

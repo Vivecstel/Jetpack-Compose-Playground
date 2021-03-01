@@ -39,7 +39,8 @@ fun ShadowScreen() {
 @Composable
 private fun DefaultShadow() {
     Box(
-        modifier = Modifier.size(50.dp)
+        modifier = Modifier
+            .size(50.dp)
             .shadow(elevation = 16.dp)
             .background(Color.Magenta)
     )
@@ -49,7 +50,8 @@ private fun DefaultShadow() {
 @Composable
 private fun ShapeShadow() {
     Box(
-        modifier = Modifier.size(50.dp)
+        modifier = Modifier
+            .size(50.dp)
             .shadow(elevation = 16.dp, shape = RectangleShape)
             .background(Color.Green)
     )
@@ -59,7 +61,8 @@ private fun ShapeShadow() {
 @Composable
 private fun ClipShadow() {
     Box(
-        modifier = Modifier.size(50.dp)
+        modifier = Modifier
+            .size(50.dp)
             .shadow(elevation = 16.dp, shape = RectangleShape, clip = false)
             .background(Color.Red)
     )

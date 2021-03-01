@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.requiredHeight
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Tab
@@ -127,7 +127,8 @@ private fun DividerTabRow() {
         selectedTabIndex = selectedTab.value,
         divider = {
             Divider(
-                modifier = Modifier.requiredHeight(8.dp)
+                modifier = Modifier
+                    .requiredHeight(8.dp)
                     .fillMaxWidth()
                     .background(color = Color.Red)
             )
@@ -161,7 +162,9 @@ private fun IndicatorTabRow() {
                 tabPositions[selectedTab.value]
             )
             Box(
-                modifier.fillMaxWidth().height(5.dp)
+                modifier
+                    .fillMaxWidth()
+                    .height(5.dp)
                     .background(
                         color = Color.White,
                         shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)

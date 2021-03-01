@@ -4,10 +4,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,7 +21,9 @@ fun SpacerScreen() {
         title = FoundationLayoutNavRoutes.Spacer.capitalize(Locale.getDefault())
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(32.dp)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(32.dp)
         ) {
             Text(
                 text = "There"

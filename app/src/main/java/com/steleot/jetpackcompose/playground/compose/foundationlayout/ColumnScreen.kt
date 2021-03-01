@@ -30,19 +30,29 @@ fun DefaultColumn() {
     ) {
         Text(
             text = "First item",
-            modifier = Modifier.padding(16.dp).background(Color.Blue)
+            modifier = Modifier
+                .padding(16.dp)
+                .background(Color.Blue)
         )
         Text(
             text = "Second item",
-            modifier = Modifier.background(Color.Red).padding(16.dp)
+            modifier = Modifier
+                .background(Color.Red)
+                .padding(16.dp)
         )
         Text(
             text = "Third item",
-            modifier = Modifier.padding(16.dp).fillMaxWidth().background(Color.Green)
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+                .background(Color.Green)
         )
         Text(
             text = "Fourth item",
-            modifier = Modifier.background(Color.Yellow).fillMaxWidth(0.6f).padding(16.dp)
+            modifier = Modifier
+                .background(Color.Yellow)
+                .fillMaxWidth(0.6f)
+                .padding(16.dp)
         )
     }
 }

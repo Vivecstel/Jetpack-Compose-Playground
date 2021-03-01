@@ -30,19 +30,29 @@ fun DefaultRow() {
     ) {
         Text(
             text = "One",
-            modifier = Modifier.padding(16.dp).background(Color.Blue)
+            modifier = Modifier
+                .padding(16.dp)
+                .background(Color.Blue)
         )
         Text(
             text = "Two",
-            modifier = Modifier.background(Color.Red).padding(16.dp)
+            modifier = Modifier
+                .background(Color.Red)
+                .padding(16.dp)
         )
         Text(
             text = "Three",
-            modifier = Modifier.padding(16.dp).fillMaxHeight().background(Color.Green)
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxHeight()
+                .background(Color.Green)
         )
         Text(
             text = "Four",
-            modifier = Modifier.background(Color.Yellow).fillMaxHeight(0.6f).padding(16.dp)
+            modifier = Modifier
+                .background(Color.Yellow)
+                .fillMaxHeight(0.6f)
+                .padding(16.dp)
         )
     }
 }

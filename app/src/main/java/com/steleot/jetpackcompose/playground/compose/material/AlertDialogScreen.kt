@@ -63,9 +63,11 @@ private fun DefaultAlertDialog() {
                 ) {
                     Text(
                         text = "Close",
-                        modifier = Modifier.padding(16.dp).clickable(onClick = {
-                            showingDialog.value = false
-                        })
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .clickable(onClick = {
+                                showingDialog.value = false
+                            })
                     )
                 }
             })
@@ -97,17 +99,21 @@ private fun ContentColorAlertDialog() {
             confirmButton = {
                 Text(
                     text = "Continue",
-                    modifier = Modifier.padding(16.dp).clickable(onClick = {
-                        showingDialog.value = false
-                    })
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .clickable(onClick = {
+                            showingDialog.value = false
+                        })
                 )
             },
             dismissButton = {
                 Text(
                     text = "Close",
-                    modifier = Modifier.padding(16.dp).clickable(onClick = {
-                        showingDialog.value = false
-                    })
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .clickable(onClick = {
+                            showingDialog.value = false
+                        })
                 )
             },
             contentColor = Color.White,
@@ -141,9 +147,11 @@ private fun BackgroundColorAlertDialog() {
             confirmButton = {
                 Text(
                     text = "Close",
-                    modifier = Modifier.padding(16.dp).clickable(onClick = {
-                        showingDialog.value = false
-                    })
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .clickable(onClick = {
+                            showingDialog.value = false
+                        })
                 )
             },
             backgroundColor = Color.White,

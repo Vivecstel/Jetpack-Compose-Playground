@@ -6,9 +6,9 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
-fun TransitionAnimationScreen() {
+fun TransitionScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.TransitionAnimation.capitalize(Locale.getDefault())
+        title = AnimationNavRoutes.Transition.capitalize(Locale.getDefault())
     ) {
 
     }

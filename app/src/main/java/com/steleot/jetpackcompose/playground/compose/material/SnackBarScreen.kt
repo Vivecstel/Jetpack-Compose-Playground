@@ -45,7 +45,9 @@ fun SnackBarScreen() {
         }
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -138,7 +140,8 @@ private fun ActionOnNewLineSnackbar() {
         action = {
             Text(
                 text = "Undo",
-                modifier = Modifier.padding(end = 16.dp)
+                modifier = Modifier
+                    .padding(end = 16.dp)
                     .clickable(onClick = {}),
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,

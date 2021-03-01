@@ -17,7 +17,7 @@ object Versions {
     const val lifecycle = "2.3.0"
     const val startUp = "1.0.0"
     const val coroutines = "1.4.2"
-    const val accompanist = "0.6.0"
+    const val accompanist = "0.6.1"
     const val coil = "1.1.1"
     const val timber = "4.7.1"
 }

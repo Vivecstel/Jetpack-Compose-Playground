@@ -26,17 +26,23 @@ fun BackgroundScreen() {
         title = FoundationNavRoutes.Background.capitalize(Locale.getDefault())
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(32.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(32.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier.size(50.dp).background(Color.Green))
+            Box(modifier = Modifier
+                .size(50.dp)
+                .background(Color.Green))
             Box(
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .background(Color.Red, shape = RoundedCornerShape(12.dp))
             )
             Box(
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .background(
                         brush = Brush.horizontalGradient(
                             colors = listOf(Color.Red, Color.Blue, Color.Green),

@@ -14,15 +14,20 @@ object MainNavRoutes {
 }
 
 object AnimationNavRoutes {
+    const val Animatable = "animatable"
     const val AnimatedValues = "animated values"
+    const val AnimatedVisibility = "animated visibility"
+    const val AnimationModifier = "animation Modifier"
     const val CrossfadeAnimation = "crossfade animation"
     const val GestureAnimation = "gesture animation"
     const val GrowingShape = "growing shape"
+    const val InfiniteTransition = "infinite transition"
     const val InteractionAnimation = "interaction animation"
     const val RotatingShape = "rotating shape"
     const val SingleValueColorAnimation = "single value color animation"
     const val SingleValueFloatAnimation = "single value float animation"
-    const val TransitionAnimation = "transition animation"
+    const val SuspendAnimation = "suspend animation"
+    const val Transition = "transition"
 }
 
 object FoundationNavRoutes {

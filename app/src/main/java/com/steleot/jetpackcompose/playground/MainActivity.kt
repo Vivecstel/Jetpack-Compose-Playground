@@ -8,15 +8,19 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
+import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
+import com.steleot.jetpackcompose.playground.compose.animation.AnimationModifierScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.CrossfadeAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.GestureAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.GrowingShapeScreen
+import com.steleot.jetpackcompose.playground.compose.animation.InfiniteTransitionScreen
 import com.steleot.jetpackcompose.playground.compose.animation.InteractionAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.RotatingShapeScreen
 import com.steleot.jetpackcompose.playground.compose.animation.SingleValueFloatAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.TransitionAnimationScreen
+import com.steleot.jetpackcompose.playground.compose.animation.TransitionScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
@@ -127,14 +131,18 @@ fun PlaygroundApp() {
                 }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                 /* animation */
+                composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                 composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
+                composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
+                composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
                 composable(route = AnimationNavRoutes.CrossfadeAnimation) { CrossfadeAnimationScreen() }
                 composable(route = AnimationNavRoutes.GestureAnimation) { GestureAnimationScreen() }
                 composable(route = AnimationNavRoutes.GrowingShape) { GrowingShapeScreen() }
+                composable(route = AnimationNavRoutes.InfiniteTransition) { InfiniteTransitionScreen() }
                 composable(route = AnimationNavRoutes.InteractionAnimation) { InteractionAnimationScreen() }
                 composable(route = AnimationNavRoutes.RotatingShape) { RotatingShapeScreen() }
                 composable(route = AnimationNavRoutes.SingleValueColorAnimation) { SingleValueFloatAnimationScreen() }
-                composable(route = AnimationNavRoutes.TransitionAnimation) { TransitionAnimationScreen() }
+                composable(route = AnimationNavRoutes.Transition) { TransitionScreen() }
                 /* foundation */
                 composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
                 composable(route = FoundationNavRoutes.Border) { BorderScreen() }

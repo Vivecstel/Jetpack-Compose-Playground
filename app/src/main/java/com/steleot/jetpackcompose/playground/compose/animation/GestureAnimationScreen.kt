@@ -83,14 +83,19 @@ fun GestureAnimationExample() {
     }
     Column {
         Button(
-            modifier = Modifier.padding(10.dp).align(Alignment.CenterHorizontally),
+            modifier = Modifier
+                .padding(10.dp)
+                .align(Alignment.CenterHorizontally),
             onClick = { useRed = !useRed }
         ) {
             Text("Change Color")
         }
         Box(
-            modifier.fillMaxSize().wrapContentSize(Alignment.Center)
-                .requiredSize((100 * scale).dp).background(color)
+            modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+                .requiredSize((100 * scale).dp)
+                .background(color)
         )
     }
 }

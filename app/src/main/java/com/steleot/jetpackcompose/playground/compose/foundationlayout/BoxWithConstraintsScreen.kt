@@ -21,11 +21,20 @@ fun BoxWithConstraintsScreen() {
         BoxWithConstraints {
             val rectangleHeight = 100.dp
             if (maxHeight < rectangleHeight * 2) {
-                Box(Modifier.requiredSize(50.dp, rectangleHeight).background(Color.Blue))
+                Box(
+                    Modifier
+                        .requiredSize(50.dp, rectangleHeight)
+                        .background(Color.Blue))
             } else {
                 Column {
-                    Box(Modifier.requiredSize(50.dp, rectangleHeight).background(Color.Blue))
-                    Box(Modifier.requiredSize(50.dp, rectangleHeight).background(Color.Gray))
+                    Box(
+                        Modifier
+                            .requiredSize(50.dp, rectangleHeight)
+                            .background(Color.Blue))
+                    Box(
+                        Modifier
+                            .requiredSize(50.dp, rectangleHeight)
+                            .background(Color.Gray))
                 }
             }
         }

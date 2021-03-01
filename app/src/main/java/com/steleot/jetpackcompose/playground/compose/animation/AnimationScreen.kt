@@ -8,15 +8,19 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
 val routes = listOf(
+    AnimationNavRoutes.Animatable,
     AnimationNavRoutes.AnimatedValues,
+    AnimationNavRoutes.AnimatedVisibility,
+    AnimationNavRoutes.AnimationModifier,
     AnimationNavRoutes.CrossfadeAnimation,
     AnimationNavRoutes.GestureAnimation,
     AnimationNavRoutes.GrowingShape,
+    AnimationNavRoutes.InfiniteTransition,
     AnimationNavRoutes.InteractionAnimation,
     AnimationNavRoutes.RotatingShape,
     AnimationNavRoutes.SingleValueColorAnimation,
     AnimationNavRoutes.SingleValueFloatAnimation,
-    AnimationNavRoutes.TransitionAnimation,
+    AnimationNavRoutes.Transition,
 )
 
 @Composable

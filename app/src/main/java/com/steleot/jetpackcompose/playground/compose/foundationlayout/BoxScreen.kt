@@ -17,13 +17,23 @@ fun BoxScreen() {
         title = FoundationLayoutNavRoutes.Box.capitalize(Locale.getDefault())
     ) {
         Box(
-            modifier = Modifier.fillMaxSize().background(Color.Yellow),
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Yellow),
             contentAlignment = Alignment.Center
         ) {
-            Box(modifier = Modifier.fillMaxSize(fraction = 0.8f).background(Color.Green))
-            Box(modifier = Modifier.fillMaxSize(fraction = 0.6f).background(Color.Red))
-            Box(modifier = Modifier.fillMaxSize(fraction = 0.4f).background(Color.Cyan))
-            Box(modifier = Modifier.fillMaxSize(fraction = 0.2f).background(Color.Black))
+            Box(modifier = Modifier
+                .fillMaxSize(fraction = 0.8f)
+                .background(Color.Green))
+            Box(modifier = Modifier
+                .fillMaxSize(fraction = 0.6f)
+                .background(Color.Red))
+            Box(modifier = Modifier
+                .fillMaxSize(fraction = 0.4f)
+                .background(Color.Cyan))
+            Box(modifier = Modifier
+                .fillMaxSize(fraction = 0.2f)
+                .background(Color.Black))
         }
     }
 }

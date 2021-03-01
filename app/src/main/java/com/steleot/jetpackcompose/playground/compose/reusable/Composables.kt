@@ -30,7 +30,8 @@ fun DefaultListItem(
     cardClickAction: () -> Unit = {},
 ) {
     Card(
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 4.dp)
             .clickable(onClick = cardClickAction)
     ) {
         Text(

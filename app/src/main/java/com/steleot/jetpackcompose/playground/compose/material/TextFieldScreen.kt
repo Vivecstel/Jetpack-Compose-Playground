@@ -35,7 +35,9 @@ fun TextFieldScreen() {
         title = MaterialNavRoutes.TextField.capitalize(Locale.getDefault())
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -57,7 +59,9 @@ private fun DefaultTextField() {
         value = state.value,
         onValueChange = { state.value = it },
         textStyle = TextStyle(color = Color.Black),
-        modifier = Modifier.padding(16.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
     )
 }
 
@@ -69,7 +73,9 @@ private fun BackgroundColorTextField() {
         value = state.value,
         onValueChange = { state.value = it },
         textStyle = TextStyle(color = Color.Black),
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = Color.Magenta
         ),
@@ -89,7 +95,9 @@ private fun StyledTextField() {
         colors = TextFieldDefaults.textFieldColors(
             focusedIndicatorColor = Color.Blue,
         ),
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
     )
 }
 
@@ -102,7 +110,9 @@ private fun ImeActionTextField() {
         onValueChange = { value ->
             state.value = value
         },
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         keyboardOptions = KeyboardOptions.Default.copy(
             imeAction = ImeAction.Done,
         ),
@@ -117,7 +127,9 @@ private fun PasswordKeyboardTypeTextField() {
         onValueChange = { value ->
             state.value = value
         },
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Password
         ),
@@ -132,7 +144,9 @@ private fun ShapedTextField() {
         value = state.value,
         onValueChange = { state.value = it },
         textStyle = TextStyle(color = Color.Black),
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
         shape = CutCornerShape(8.dp)
     )
 }

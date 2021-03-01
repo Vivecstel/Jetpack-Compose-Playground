@@ -9,10 +9,10 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,7 +45,8 @@ fun OffsetScreen() {
 private fun Offset() {
     Text(
         "Layout offset modifier",
-        Modifier.wrapContentSize(Alignment.Center)
+        Modifier
+            .wrapContentSize(Alignment.Center)
             .offset(10.dp, 20.dp)
     )
 }
@@ -55,7 +56,8 @@ private fun Offset() {
 private fun AbsoluteOffset() {
     Text(
         "Layout offset modifier",
-        Modifier.wrapContentSize(Alignment.Center)
+        Modifier
+            .wrapContentSize(Alignment.Center)
             .absoluteOffset(10.dp, 20.dp)
     )
 }

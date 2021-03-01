@@ -28,7 +28,9 @@ fun AnimatedValuesScreen() {
         title = AnimationNavRoutes.AnimatedValues.capitalize(Locale.getDefault())
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(32.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(32.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -44,11 +46,15 @@ fun AnimatedFloat() {
     val viewHeight = if (expandedState.value) remember { AnimatableFloat(150f) } else remember {
         AnimatableFloat(50f)
     }
-    Box(modifier = Modifier.fillMaxWidth().height(viewHeight.value.dp).clickable(
-        onClick = {
-            expandedState.value = !expandedState.value
-        }
-    ).background(Color.Red))
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .height(viewHeight.value.dp)
+        .clickable(
+            onClick = {
+                expandedState.value = !expandedState.value
+            }
+        )
+        .background(Color.Red))
 }
 
 @Composable
@@ -66,6 +72,7 @@ fun AnimatedColor() {
             .height(40.dp)
             .clickable(onClick = {
                 expandedState.value = !expandedState.value
-            }).background(viewColor.value)
+            })
+            .background(viewColor.value)
     )
 }
