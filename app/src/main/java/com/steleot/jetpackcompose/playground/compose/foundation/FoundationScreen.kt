@@ -19,7 +19,7 @@ val routes = listOf(
     FoundationNavRoutes.LazyColumn,
     FoundationNavRoutes.LazyGrid,
     FoundationNavRoutes.LazyRow,
-    FoundationNavRoutes.Scroll,
+    FoundationNavRoutes.Scrollable,
     FoundationNavRoutes.Shape,
     FoundationNavRoutes.Transformable,
 )

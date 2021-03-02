@@ -41,7 +41,7 @@ fun AnimationModifierScreen() {
 }
 
 @Composable
-fun AnimateContent() {
+private fun AnimateContent() {
     val shortText = "Hi"
     val longText = "Very long text\nthat spans across\nmultiple lines"
     var short by remember { mutableStateOf(true) }

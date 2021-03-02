@@ -41,7 +41,7 @@ fun AnimatedValuesScreen() {
 }
 
 @Composable
-fun AnimatedFloat() {
+private fun AnimatedFloat() {
     val expandedState = remember { mutableStateOf(false) }
     val viewHeight = if (expandedState.value) remember { AnimatableFloat(150f) } else remember {
         AnimatableFloat(50f)
@@ -58,7 +58,7 @@ fun AnimatedFloat() {
 }
 
 @Composable
-fun AnimatedColor() {
+private fun AnimatedColor() {
     val expandedState = remember { mutableStateOf(false) }
     val viewColor =
         if (expandedState.value) remember { AnimatableColor(Color.Red) } else remember {

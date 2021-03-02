@@ -14,13 +14,11 @@ val routes = listOf(
     AnimationNavRoutes.AnimationModifier,
     AnimationNavRoutes.CrossfadeAnimation,
     AnimationNavRoutes.GestureAnimation,
-    AnimationNavRoutes.GrowingShape,
     AnimationNavRoutes.InfiniteTransition,
-    AnimationNavRoutes.InteractionAnimation,
     AnimationNavRoutes.RotatingShape,
     AnimationNavRoutes.SingleValueColorAnimation,
     AnimationNavRoutes.SingleValueFloatAnimation,
-    AnimationNavRoutes.Transition,
+    AnimationNavRoutes.SuspendAnimation,
 )
 
 @Composable

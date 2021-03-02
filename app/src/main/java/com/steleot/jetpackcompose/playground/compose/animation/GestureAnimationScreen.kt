@@ -43,7 +43,7 @@ fun GestureAnimationScreen() {
 private enum class ComponentState { Pressed, Released }
 
 @Composable
-fun GestureAnimationExample() {
+private fun GestureAnimationExample() {
     var useRed by remember { mutableStateOf(false) }
     var toState by remember { mutableStateOf(ComponentState.Released) }
     val modifier = Modifier.pointerInput(Unit) {

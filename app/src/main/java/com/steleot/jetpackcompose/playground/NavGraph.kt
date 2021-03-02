@@ -9,7 +9,6 @@ object MainNavRoutes {
     const val Material = "material"
     const val MaterialIcons = "material icons"
     const val MaterialIConsExtended = "material icons extended"
-    const val MaterialRipple = "material ripple"
     const val Ui = "ui"
 }
 
@@ -20,30 +19,30 @@ object AnimationNavRoutes {
     const val AnimationModifier = "animation Modifier"
     const val CrossfadeAnimation = "crossfade animation"
     const val GestureAnimation = "gesture animation"
-    const val GrowingShape = "growing shape"
     const val InfiniteTransition = "infinite transition"
-    const val InteractionAnimation = "interaction animation"
     const val RotatingShape = "rotating shape"
     const val SingleValueColorAnimation = "single value color animation"
     const val SingleValueFloatAnimation = "single value float animation"
-    const val SuspendAnimation = "suspend animation"
-    const val Transition = "transition"
-}
+    const val SuspendAnimation = "suspend animation"}
 
 object FoundationNavRoutes {
     const val Background = "background"
     const val Border = "border"
     const val Canvas = "canvas"
     const val Clickable = "clickable"
+    const val DragGestureDetector = "drag gesture detector"
     const val Draggable = "draggable"
     const val Focusable = "focusable"
     const val Image = "image"
     const val Indication = "indication"
-    const val LazyColumn = "lazycolumn"
-    const val LazyGrid = "lazyGrid"
-    const val LazyRow = "lazyRow"
-    const val Scroll = "scroll"
+    const val LazyColumn = "lazy column"
+    const val LazyGrid = "lazy grid"
+    const val LazyRow = "lazy row"
+    const val Scrollable = "scrollable"
+    const val Scroller = "scroller"
     const val Shape = "shape"
+    const val Toggeable = "toggeable"
+    const val TransformGesture = "transform gesture"
     const val Transformable = "transformable"
 }
 
@@ -52,7 +51,9 @@ object FoundationLayoutNavRoutes {
     const val Box = "box"
     const val BoxWithConstraints = "box with constraints"
     const val Column = "column"
+    const val Intrinsic = "intrinsic"
     const val Offset = "offset"
+    const val Padding = "padding"
     const val Row = "row"
     const val Size = "size"
     const val Spacer = "spacer"

@@ -65,7 +65,7 @@ fun AnimatedVisibilityScreen() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun AnimatedFloatingActionButton() {
+private fun AnimatedFloatingActionButton() {
     var expanded by remember { mutableStateOf(true) }
     FloatingActionButton(
         onClick = { expanded = !expanded },
@@ -90,7 +90,7 @@ fun AnimatedFloatingActionButton() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun FadeTransition() {
+private fun FadeTransition() {
     var visible by remember { mutableStateOf(true) }
     AnimatedVisibility(
         visible = visible,
@@ -113,7 +113,7 @@ fun FadeTransition() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun ExpandShrinkVertically() {
+private fun ExpandShrinkVertically() {
     var visible by remember { mutableStateOf(true) }
 
     AnimatedVisibility(
@@ -127,7 +127,8 @@ fun ExpandShrinkVertically() {
             animationSpec = tween()
         )
     ) {
-        Text("Content to appear/disappear",
+        Text(
+            "Content to appear/disappear",
             Modifier
                 .fillMaxWidth()
                 .requiredHeight(75.dp)
@@ -138,7 +139,7 @@ fun ExpandShrinkVertically() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun ExpandInShrinkOut() {
+private fun ExpandInShrinkOut() {
     var visible by remember { mutableStateOf(true) }
 
     AnimatedVisibility(
@@ -154,7 +155,8 @@ fun ExpandInShrinkOut() {
             animationSpec = tween(100, easing = FastOutSlowInEasing)
         )
     ) {
-        Text("Content to appear/disappear",
+        Text(
+            "Content to appear/disappear",
             Modifier
                 .fillMaxWidth()
                 .requiredHeight(75.dp)
@@ -165,7 +167,7 @@ fun ExpandInShrinkOut() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun ColumnAnimatedVisibility() {
+private fun ColumnAnimatedVisibility() {
     var itemIndex by remember { mutableStateOf(0) }
     val colors = listOf(Color.Red, Color.Green, Color.Blue)
     Column(

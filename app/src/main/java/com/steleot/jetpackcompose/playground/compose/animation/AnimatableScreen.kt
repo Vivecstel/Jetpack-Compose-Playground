@@ -38,7 +38,7 @@ fun AnimatableScreen() {
 }
 
 @Composable
-fun AnimatableExample() {
+private fun AnimatableExample() {
     val animatedOffset = remember { Animatable(Offset(0f, 0f), Offset.VectorConverter) }
 
     Box(

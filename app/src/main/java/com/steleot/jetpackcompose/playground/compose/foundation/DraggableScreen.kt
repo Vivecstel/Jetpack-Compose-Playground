@@ -50,13 +50,12 @@ fun DraggableScreen() {
 }
 
 @Composable
-fun DraggableHorizontalBox() {
+private fun DraggableHorizontalBox() {
     val max = 300.dp
     val min = 0.dp
     val (minPx, maxPx) = with(LocalDensity.current) { min.toPx() to max.toPx() }
     val offsetPosition = remember { mutableStateOf(0f) }
 
-    // seekbar itself
     Box(
         modifier = Modifier
             .width(max)
@@ -79,7 +78,7 @@ fun DraggableHorizontalBox() {
 }
 
 @Composable
-fun DraggableBox() {
+private fun DraggableBox() {
     Box(modifier = Modifier.fillMaxSize()) {
         var offsetX by remember { mutableStateOf(0f) }
         var offsetY by remember { mutableStateOf(0f) }
