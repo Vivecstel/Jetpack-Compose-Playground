@@ -9,12 +9,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.painter.ColorPainter
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,6 +44,7 @@ fun ImageScreen() {
             ColorPainterImage()
             BitmapImage()
             VectorImage()
+            CustomImage()
         }
     }
 }
@@ -80,6 +85,26 @@ private fun BitmapImage() {
 private fun VectorImage() {
     Image(
         imageVector = Icons.Filled.Build,
+        contentDescription = "Vector"
+    )
+}
+
+@Preview
+@Composable
+private fun CustomImage() {
+    val customPainter = remember {
+        object : Painter() {
+
+            override val intrinsicSize: Size
+                get() = Size(100.0f, 100.0f)
+
+            override fun DrawScope.onDraw() {
+                drawRect(color = Color.Cyan)
+            }
+        }
+    }
+    Image(
+        painter = customPainter,
         contentDescription = "Vector"
     )
 }

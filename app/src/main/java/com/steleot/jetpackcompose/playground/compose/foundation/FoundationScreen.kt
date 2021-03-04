@@ -13,15 +13,19 @@ val routes = listOf(
     FoundationNavRoutes.Canvas,
     FoundationNavRoutes.Clickable,
     FoundationNavRoutes.Draggable,
+    FoundationNavRoutes.DragGestureDetector,
     FoundationNavRoutes.Focusable,
     FoundationNavRoutes.Image,
-    FoundationNavRoutes.Indication,
+    FoundationNavRoutes.InteractionSource,
     FoundationNavRoutes.LazyColumn,
     FoundationNavRoutes.LazyGrid,
     FoundationNavRoutes.LazyRow,
     FoundationNavRoutes.Scrollable,
+    FoundationNavRoutes.Scroller,
     FoundationNavRoutes.Shape,
+    FoundationNavRoutes.Toggeable,
     FoundationNavRoutes.Transformable,
+    FoundationNavRoutes.TransformGesture,
 )
 
 @Composable

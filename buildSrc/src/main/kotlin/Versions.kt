@@ -5,8 +5,8 @@ object Versions {
 
     /* plugins */
     const val androidPlugin = "7.0.0-alpha08"
-    const val benManes = "0.36.0"
-    const val detekt = "1.16.0-RC2"
+    const val benManes = "0.38.0"
+    const val detekt = "1.16.0-RC3"
 
     /* libraries */
     const val compose = "1.0.0-beta01"

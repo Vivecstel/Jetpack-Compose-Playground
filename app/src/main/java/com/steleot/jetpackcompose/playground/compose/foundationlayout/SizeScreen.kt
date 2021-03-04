@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundation
+package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

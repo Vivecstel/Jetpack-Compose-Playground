@@ -25,17 +25,20 @@ import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ClickableScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.DragGestureDetectorScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.DraggableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FocusableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FoundationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ImageScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.IndicationScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.InteractionSourceScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.LazyColumnScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.LazyGridScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.LazyRowScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollableScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.ScrollerScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.SizeScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.ToggeableScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.TransformGestureScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.TransformableScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.AspectRationScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxScreen
@@ -44,6 +47,7 @@ import com.steleot.jetpackcompose.playground.compose.foundationlayout.ColumnScre
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.LayoutScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.OffsetScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.RowScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.SizeScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScreen
 import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
@@ -147,15 +151,19 @@ fun PlaygroundApp() {
                 composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
                 composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
                 composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
+                composable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
                 composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
                 composable(route = FoundationNavRoutes.Image) { ImageScreen() }
-                composable(route = FoundationNavRoutes.Indication) { IndicationScreen() }
+                composable(route = FoundationNavRoutes.InteractionSource) { InteractionSourceScreen() }
                 composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
                 composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
                 composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
                 composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
+                composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
                 composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
+                composable(route = FoundationNavRoutes.Toggeable) { ToggeableScreen() }
                 composable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
+                composable(route = FoundationNavRoutes.TransformGesture) { TransformGestureScreen() }
                 /* layout */
                 composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }

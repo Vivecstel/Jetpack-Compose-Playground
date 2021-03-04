@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.animation
 
 import androidx.compose.animation.core.Transition
 import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -18,7 +19,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -43,11 +43,11 @@ fun SingleValueFloatAnimationScreen() {
 private fun SingleValueAnimationFloatExample() {
     var enabled by remember { mutableStateOf(true) }
     val transition: Transition<Boolean> = updateTransition(targetState = enabled)
-    val padding: Dp by transition.animateDp { state ->
-        if (state) 0.dp else 100.dp
+    val number: Float by transition.animateFloat { state ->
+        if (state) 0f else 100f
     }
     Box(modifier = Modifier
-        .padding(padding)
+        .padding(number.dp)
         .clickable(
             onClick = {
                 enabled = !enabled
