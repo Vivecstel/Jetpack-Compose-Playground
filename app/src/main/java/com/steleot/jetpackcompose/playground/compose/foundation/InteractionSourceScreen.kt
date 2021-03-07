@@ -81,7 +81,9 @@ fun SimpleInteractionSourceExample() {
         ) {
             Text(
                 text, style = LocalTextStyle.current.copy(textAlign = TextAlign.Center),
-                modifier = Modifier.fillMaxSize().wrapContentSize()
+                modifier = Modifier
+                    .fillMaxSize()
+                    .wrapContentSize()
             )
         }
     }

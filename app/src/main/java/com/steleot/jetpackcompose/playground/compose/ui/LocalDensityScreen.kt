@@ -25,7 +25,7 @@ fun LocalDensityScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-               text = "32 dp are $sizeInPx pixels for this phone"
+                text = "32 dp are $sizeInPx pixels for this phone"
             )
         }
     }

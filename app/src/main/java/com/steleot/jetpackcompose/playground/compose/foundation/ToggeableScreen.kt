@@ -10,17 +10,17 @@ import androidx.compose.foundation.selection.triStateToggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.state.ToggleableState
+import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
-import androidx.compose.ui.state.ToggleableState
-import androidx.compose.ui.unit.dp
 
 @Composable
 fun ToggeableScreen() {
@@ -52,7 +52,7 @@ fun ToggleableExample() {
 
 @Composable
 fun TriStateToggleableExample() {
-    var checked by remember { mutableStateOf( ToggleableState.Indeterminate) }
+    var checked by remember { mutableStateOf(ToggleableState.Indeterminate) }
     Text(
         modifier = Modifier.triStateToggleable(
             state = checked,

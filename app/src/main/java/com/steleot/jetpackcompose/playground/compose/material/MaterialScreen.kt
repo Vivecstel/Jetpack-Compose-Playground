@@ -35,6 +35,7 @@ val routes = listOf(
     MaterialNavRoutes.SnackBar,
     MaterialNavRoutes.Surface,
     MaterialNavRoutes.Swipeable,
+    MaterialNavRoutes.SwipeToDismiss,
     MaterialNavRoutes.Switch,
     MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,

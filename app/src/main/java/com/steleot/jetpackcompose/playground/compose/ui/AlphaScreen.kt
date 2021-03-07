@@ -26,7 +26,11 @@ fun AlphaScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(Modifier.size(100.dp).alpha(alpha = 0.5f).background(Color.Red))
+            Box(
+                Modifier
+                    .size(100.dp)
+                    .alpha(alpha = 0.5f)
+                    .background(Color.Red))
         }
     }
 }

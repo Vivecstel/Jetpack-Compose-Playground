@@ -23,7 +23,8 @@ object AnimationNavRoutes {
     const val RotatingShape = "rotating shape"
     const val SingleValueColorAnimation = "single value color animation"
     const val SingleValueFloatAnimation = "single value float animation"
-    const val SuspendAnimation = "suspend animation"}
+    const val SuspendAnimation = "suspend animation"
+}
 
 object FoundationNavRoutes {
     const val Background = "background"

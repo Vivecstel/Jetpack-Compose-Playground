@@ -29,12 +29,14 @@ fun ScaleScreen() {
             Box(
                 Modifier
                     .scale(2f)
-                    .size(100.dp, 100.dp).background(Color.Red)
+                    .size(100.dp, 100.dp)
+                    .background(Color.Red)
             )
             Box(
                 Modifier
                     .scale(scaleX = 2f, scaleY = 3f)
-                    .size(100.dp, 100.dp).background(Color.Blue)
+                    .size(100.dp, 100.dp)
+                    .background(Color.Blue)
             )
         }
     }

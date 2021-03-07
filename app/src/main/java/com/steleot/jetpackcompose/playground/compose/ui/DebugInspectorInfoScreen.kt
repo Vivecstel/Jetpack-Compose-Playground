@@ -28,7 +28,12 @@ fun DebugInspectorInfoScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier.size(100.dp).debugColorModifier(Color.Red).debugModifier(50.dp, 50.dp, Color.Red))
+            Box(
+                modifier = Modifier
+                    .size(100.dp)
+                    .debugColorModifier(Color.Red)
+                    .debugModifier(50.dp, 50.dp, Color.Red)
+            )
             Box(modifier = Modifier.debugModifier(50.dp, 50.dp, Color.Green))
         }
     }
@@ -52,6 +57,8 @@ fun Modifier.debugModifier(width: Dp, height: Dp, color: Color) = composed(
         properties["color"] = color
     },
     factory = {
-        Modifier.size(width, height).background(color)
+        Modifier
+            .size(width, height)
+            .background(color)
     }
 )

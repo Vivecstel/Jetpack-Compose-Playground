@@ -24,17 +24,20 @@ fun BoxWithConstraintsScreen() {
                 Box(
                     Modifier
                         .requiredSize(50.dp, rectangleHeight)
-                        .background(Color.Blue))
+                        .background(Color.Blue)
+                )
             } else {
                 Column {
                     Box(
                         Modifier
                             .requiredSize(50.dp, rectangleHeight)
-                            .background(Color.Blue))
+                            .background(Color.Blue)
+                    )
                     Box(
                         Modifier
                             .requiredSize(50.dp, rectangleHeight)
-                            .background(Color.Gray))
+                            .background(Color.Gray)
+                    )
                 }
             }
         }

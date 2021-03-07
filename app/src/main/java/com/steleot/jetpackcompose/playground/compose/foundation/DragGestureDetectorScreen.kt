@@ -11,10 +11,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.consumePositionChange
@@ -43,11 +43,13 @@ fun AwaitVerticalDragOrCancellationExample() {
     val offsetY = remember { mutableStateOf(0f) }
     var height by remember { mutableStateOf(0f) }
     Box(
-        Modifier.fillMaxSize()
+        Modifier
+            .fillMaxSize()
             .onSizeChanged { height = it.height.toFloat() }
     ) {
         Box(
-            Modifier.offset { IntOffset(offsetX.value.roundToInt(), offsetY.value.roundToInt()) }
+            Modifier
+                .offset { IntOffset(offsetX.value.roundToInt(), offsetY.value.roundToInt()) }
                 .fillMaxWidth()
                 .height(50.dp)
                 .background(Color.Blue)

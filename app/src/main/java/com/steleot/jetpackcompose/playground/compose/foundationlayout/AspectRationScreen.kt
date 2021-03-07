@@ -31,10 +31,12 @@ fun AspectRationScreen() {
                     .aspectRatio(0.55f)
                     .background(Color.Magenta)
             )
-            Box(modifier = Modifier
-                .requiredHeight(200.dp)
-                .aspectRatio(0.75f)
-                .background(Color.Red))
+            Box(
+                modifier = Modifier
+                    .requiredHeight(200.dp)
+                    .aspectRatio(0.75f)
+                    .background(Color.Red)
+            )
         }
     }
 }

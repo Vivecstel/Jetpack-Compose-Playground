@@ -16,7 +16,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -90,7 +89,9 @@ private fun ControlledScrollableRowExample() {
 @Composable
 private fun Square(index: Int) {
     Box(
-        Modifier.size(75.dp, 200.dp).background(colors[index % colors.size]),
+        Modifier
+            .size(75.dp, 200.dp)
+            .background(colors[index % colors.size]),
         contentAlignment = Alignment.Center
     ) {
         Text(index.toString())

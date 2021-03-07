@@ -104,7 +104,8 @@ private fun SizeBox() {
         Box(
             Modifier
                 .requiredSize(100.dp, 100.dp)
-                .background(Color.Red))
+                .background(Color.Red)
+        )
     }
 }
 
@@ -116,7 +117,8 @@ private fun WidthBox() {
             Modifier
                 .requiredWidth(100.dp)
                 .aspectRatio(1f)
-                .background(Color.Magenta))
+                .background(Color.Magenta)
+        )
     }
 }
 
@@ -128,7 +130,8 @@ private fun HeightBox() {
             Modifier
                 .requiredHeight(100.dp)
                 .aspectRatio(1f)
-                .background(Color.Blue))
+                .background(Color.Blue)
+        )
     }
 }
 
@@ -138,11 +141,13 @@ private fun FillWidthBox() {
     Box(
         Modifier
             .fillMaxWidth()
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         Box(
             Modifier
                 .requiredSize(100.dp)
-                .background(color = Color.Magenta))
+                .background(color = Color.Magenta)
+        )
     }
 }
 
@@ -152,7 +157,8 @@ private fun FillHalfWidthBox() {
     Box(
         Modifier
             .requiredSize(100.dp)
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         Box(
             Modifier
                 .fillMaxWidth(fraction = 0.5f)
@@ -168,11 +174,13 @@ private fun FillHeightBox() {
     Box(
         Modifier
             .fillMaxHeight()
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         Box(
             Modifier
                 .requiredSize(100.dp)
-                .background(color = Color.Magenta))
+                .background(color = Color.Magenta)
+        )
     }
 }
 
@@ -182,7 +190,8 @@ private fun FillHalfHeightBox() {
     Box(
         Modifier
             .requiredSize(100.dp)
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         // The inner Box will be (30.dp x 50.dp).
         Box(
             Modifier
@@ -199,11 +208,13 @@ private fun FillSizeModifier() {
     Box(
         Modifier
             .fillMaxSize()
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         Box(
             Modifier
                 .requiredSize(100.dp)
-                .background(color = Color.Magenta))
+                .background(color = Color.Magenta)
+        )
     }
 }
 
@@ -213,7 +224,8 @@ private fun FillHalfSizeModifier() {
     Box(
         Modifier
             .requiredSize(100.dp)
-            .background(Color.Red), contentAlignment = Alignment.Center) {
+            .background(Color.Red), contentAlignment = Alignment.Center
+    ) {
         Box(
             Modifier
                 .requiredWidth(30.dp)

@@ -29,17 +29,23 @@ fun BrushScreen() {
         ) {
             val linear = Brush.linearGradient(listOf(Color.Red, Color.Blue))
 
-            Box(modifier = Modifier.size(120.dp).background(linear))
+            Box(modifier = Modifier
+                .size(120.dp)
+                .background(linear))
 
             Spacer(modifier = Modifier.size(20.dp))
 
             val radial = Brush.radialGradient(listOf(Color.Green, Color.Magenta))
-            Box(modifier = Modifier.size(120.dp).background(radial))
+            Box(modifier = Modifier
+                .size(120.dp)
+                .background(radial))
 
             Spacer(modifier = Modifier.size(20.dp))
 
             val sweep = Brush.sweepGradient(listOf(Color.Cyan, Color.Magenta))
-            Box(modifier = Modifier.size(120.dp).background(sweep))
+            Box(modifier = Modifier
+                .size(120.dp)
+                .background(sweep))
         }
     }
 }

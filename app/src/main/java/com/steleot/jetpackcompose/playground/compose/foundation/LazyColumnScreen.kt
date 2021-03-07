@@ -23,15 +23,19 @@ fun LazyColumnScreen() {
 
         LazyColumn {
             items(itemsList) {
-                Text("Item is $it", modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp))
+                Text(
+                    "Item is $it", modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                )
             }
 
             item {
-                Text("Single item", modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp))
+                Text(
+                    "Single item", modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                )
             }
 
             itemsIndexed(itemsIndexedList) { index, item ->

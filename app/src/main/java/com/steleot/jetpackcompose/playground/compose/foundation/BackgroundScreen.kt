@@ -32,9 +32,11 @@ fun BackgroundScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier
-                .size(50.dp)
-                .background(Color.Green))
+            Box(
+                modifier = Modifier
+                    .size(50.dp)
+                    .background(Color.Green)
+            )
             Box(
                 modifier = Modifier
                     .size(50.dp)

@@ -76,6 +76,7 @@ import com.steleot.jetpackcompose.playground.compose.material.ScrollableTabRowSc
 import com.steleot.jetpackcompose.playground.compose.material.SliderScreen
 import com.steleot.jetpackcompose.playground.compose.material.SnackBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.SurfaceScreen
+import com.steleot.jetpackcompose.playground.compose.material.SwipeToDismissScreen
 import com.steleot.jetpackcompose.playground.compose.material.SwipeableScreen
 import com.steleot.jetpackcompose.playground.compose.material.SwitchScreen
 import com.steleot.jetpackcompose.playground.compose.material.TabRowScreen
@@ -105,7 +106,6 @@ import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
 import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LaunchedEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
@@ -121,6 +121,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
+import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -219,6 +220,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.SnackBar) { SnackBarScreen() }
                 composable(route = MaterialNavRoutes.Surface) { SurfaceScreen() }
                 composable(route = MaterialNavRoutes.Swipeable) { SwipeableScreen() }
+                composable(route = MaterialNavRoutes.SwipeToDismiss) { SwipeToDismissScreen() }
                 composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
                 composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
                 composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }

@@ -56,7 +56,9 @@ private fun AndroidViewExample() {
 
 @Composable
 private fun AndroidViewBindingExample() {
-    AndroidView({ context -> AndroidViewBindingExampleBinding.inflate(LayoutInflater.from(context)).apply {
-        second.setBackgroundColor(Color.Gray.toArgb())
-    }.root})
+    AndroidView({ context ->
+        AndroidViewBindingExampleBinding.inflate(LayoutInflater.from(context)).apply {
+            second.setBackgroundColor(Color.Gray.toArgb())
+        }.root
+    })
 }

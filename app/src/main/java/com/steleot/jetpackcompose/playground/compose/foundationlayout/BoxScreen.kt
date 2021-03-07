@@ -22,18 +22,26 @@ fun BoxScreen() {
                 .background(Color.Yellow),
             contentAlignment = Alignment.Center
         ) {
-            Box(modifier = Modifier
-                .fillMaxSize(fraction = 0.8f)
-                .background(Color.Green))
-            Box(modifier = Modifier
-                .fillMaxSize(fraction = 0.6f)
-                .background(Color.Red))
-            Box(modifier = Modifier
-                .fillMaxSize(fraction = 0.4f)
-                .background(Color.Cyan))
-            Box(modifier = Modifier
-                .fillMaxSize(fraction = 0.2f)
-                .background(Color.Black))
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(fraction = 0.8f)
+                    .background(Color.Green)
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(fraction = 0.6f)
+                    .background(Color.Red)
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(fraction = 0.4f)
+                    .background(Color.Cyan)
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(fraction = 0.2f)
+                    .background(Color.Black)
+            )
         }
     }
 }
