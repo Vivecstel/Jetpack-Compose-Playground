@@ -94,13 +94,23 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
+import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
+import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
+import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
 import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
+import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
+import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
+import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
+import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
 import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
+import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 
@@ -219,12 +229,22 @@ fun PlaygroundApp() {
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedSharp) { ExtendedSharpScreen() }
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
                 /* ui */
+                composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
+                composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
+                composable(route = UiNavRoutes.Brush) { BrushScreen() }
                 composable(route = UiNavRoutes.Color) { ColorScreen() }
                 composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                 composable(route = UiNavRoutes.Font) { FontScreen() }
+                composable(route = UiNavRoutes.Layout) { UiLayoutScreen() }
+                composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
+                composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
+                composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
                 composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
+                composable(route = UiNavRoutes.Rotate) { RotateScreen() }
+                composable(route = UiNavRoutes.Scale) { ScaleScreen() }
                 composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
                 composable(route = UiNavRoutes.String) { StringScreen() }
+                composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
             }
         }
     }

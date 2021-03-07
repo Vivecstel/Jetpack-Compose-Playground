@@ -147,12 +147,12 @@ private fun ExpandInShrinkOut() {
         enter = expandIn(
             expandFrom = Alignment.BottomStart,
             initialSize = { IntSize(50, 50) },
-            animationSpec = tween(100, easing = LinearOutSlowInEasing)
+            animationSpec = tween(500, easing = LinearOutSlowInEasing)
         ),
         exit = shrinkOut(
             shrinkTowards = Alignment.CenterStart,
             targetSize = { fullSize -> IntSize(fullSize.width / 10, fullSize.height / 5) },
-            animationSpec = tween(100, easing = FastOutSlowInEasing)
+            animationSpec = tween(500, easing = FastOutSlowInEasing)
         )
     ) {
         Text(

@@ -1,8 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.animation
 
-import androidx.compose.animation.animateColor
-import androidx.compose.animation.core.Transition
-import androidx.compose.animation.core.updateTransition
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -40,10 +39,10 @@ fun SingleValueColorAnimationScreen() {
 @Composable
 private fun SingleValueAnimationColorExample() {
     var enabled by remember { mutableStateOf(true) }
-    val transition: Transition<Boolean> = updateTransition(targetState = enabled)
-    val color: Color by transition.animateColor { state ->
-        if (state) Color.Green else Color.Red
-    }
+    val color by animateColorAsState(
+        targetValue = if (enabled) Color.Green else Color.Red,
+        animationSpec = tween(500)
+    )
     Box {
         Box(
             Modifier

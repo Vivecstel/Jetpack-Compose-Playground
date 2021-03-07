@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.animation
 
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -54,7 +55,9 @@ private fun AnimateContent() {
             .clickable { short = !short }
             .padding(20.dp)
             .wrapContentSize()
-            .animateContentSize()
+            .animateContentSize(
+                tween(500)
+            )
     ) {
         Text(
             if (short) {
