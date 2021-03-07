@@ -3,24 +3,30 @@ package com.steleot.jetpackcompose.playground.compose.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
-fun LayoutScreen() {
+fun LocalDensityScreen() {
+    val sizeInPx = with(LocalDensity.current) { 32.dp.toPx() }
     DefaultScaffold(
-        title = UiNavRoutes.Layout.capitalize(Locale.getDefault())
+        title = UiNavRoutes.LocalDensity.capitalize(Locale.getDefault())
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
+            Text(
+               text = "32 dp are $sizeInPx pixels for this phone"
+            )
         }
     }
 }

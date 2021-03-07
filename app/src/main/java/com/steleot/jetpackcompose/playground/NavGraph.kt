@@ -115,13 +115,18 @@ object MaterialIconsExtendedNavRoutes {
 }
 
 object UiNavRoutes {
+    const val AlignmentLine = "alignment line"
     const val Alpha = "alpha"
     const val AndroidViewBinding = "android view binding"
     const val Brush = "brush"
     const val Color = "color"
+    const val DebugInspectorInfo = "debug inspector info"
+    const val DisposableEffect = "disposable effect"
     const val Drawable = "drawable"
     const val Font = "font"
+    const val LaunchedEffect = "launched effect"
     const val Layout = "layout"
+    const val LocalDensity = "local density"
     const val OnGloballyPositioned = "on globally positioned"
     const val OnSizeChanged = "on size changed"
     const val PathEffect = "path effect"
@@ -130,6 +135,9 @@ object UiNavRoutes {
     const val Rotate = "rotate"
     const val Scale = "scale"
     const val Shadow = "shadow"
+    const val SideEffect = "side effect"
+    const val SoftwareKeyboardController = "Software keyboard controller"
     const val String = "string"
+    const val SubComposeLayout = "sub compose layout"
     const val ZIndex = "z index"
 }

@@ -8,13 +8,16 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.*
 
 val routes = listOf(
+    UiNavRoutes.AlignmentLine,
     UiNavRoutes.Alpha,
     UiNavRoutes.AndroidViewBinding,
     UiNavRoutes.Brush,
     UiNavRoutes.Color,
+    UiNavRoutes.DebugInspectorInfo,
     UiNavRoutes.Drawable,
     UiNavRoutes.Font,
     UiNavRoutes.Layout,
+    UiNavRoutes.LocalDensity,
     UiNavRoutes.OnGloballyPositioned,
     UiNavRoutes.OnSizeChanged,
     UiNavRoutes.PathEffect,
@@ -23,7 +26,9 @@ val routes = listOf(
     UiNavRoutes.Rotate,
     UiNavRoutes.Scale,
     UiNavRoutes.Shadow,
+    UiNavRoutes.SoftwareKeyboardController,
     UiNavRoutes.String,
+    UiNavRoutes.SubComposeLayout,
     UiNavRoutes.ZIndex,
 )
 

@@ -11,9 +11,9 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
-fun LayoutScreen() {
+fun SubComposeLayoutScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Layout.capitalize(Locale.getDefault())
+        title = UiNavRoutes.SubComposeLayout.capitalize(Locale.getDefault())
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
