@@ -30,7 +30,8 @@ fun AlphaScreen() {
                 Modifier
                     .size(100.dp)
                     .alpha(alpha = 0.5f)
-                    .background(Color.Red))
+                    .background(Color.Red)
+            )
         }
     }
 }

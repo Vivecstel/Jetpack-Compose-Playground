@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
+    kotlin(BuildPlugins.kapt)
 }
 
 android {
@@ -83,15 +84,20 @@ dependencies {
     implementation(Libraries.composeNavigation)
     implementation(Libraries.composeLifecycle)
     implementation(Libraries.composeActivity)
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha03")
+    implementation(Libraries.composeConstraint)
     implementation(Libraries.appCompat)
     implementation(Libraries.viewModel)
     implementation(Libraries.startUp)
     implementation(Libraries.coroutines)
     implementation(Libraries.coroutinesAndroid)
     implementation(Libraries.accompanistCoil)
+    implementation(Libraries.accompanistGlide)
+    implementation(Libraries.accompanistPicasso)
     implementation(Libraries.accompanistInsets)
     implementation(Libraries.coil)
+    implementation(Libraries.glide)
+    kapt(Libraries.glideCompiler)
+    implementation(Libraries.picasso)
     implementation(Libraries.timber)
 
     androidTestImplementation(TestLibraries.composeUi)

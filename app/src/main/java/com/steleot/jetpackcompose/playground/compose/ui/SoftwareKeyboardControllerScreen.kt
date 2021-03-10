@@ -27,7 +27,7 @@ import java.util.*
 @Composable
 fun SoftwareKeyboardControllerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.DebugInspectorInfo.capitalize(Locale.getDefault())
+        title = UiNavRoutes.SoftwareKeyboardController.capitalize(Locale.getDefault())
     ) {
         SoftwareKeyboardControllerExample()
     }

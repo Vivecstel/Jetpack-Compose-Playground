@@ -10,6 +10,7 @@ object MainNavRoutes {
     const val MaterialIcons = "material icons"
     const val MaterialIConsExtended = "material icons extended"
     const val Ui = "ui"
+    const val Accompanist = "accompanist"
 }
 
 object AnimationNavRoutes {
@@ -119,6 +120,7 @@ object UiNavRoutes {
     const val AlignmentLine = "alignment line"
     const val Alpha = "alpha"
     const val AndroidViewBinding = "android view binding"
+    const val AnnotatedString = "annotated string"
     const val Brush = "brush"
     const val Color = "color"
     const val DebugInspectorInfo = "debug inspector info"
@@ -137,8 +139,17 @@ object UiNavRoutes {
     const val Scale = "scale"
     const val Shadow = "shadow"
     const val SideEffect = "side effect"
-    const val SoftwareKeyboardController = "Software keyboard controller"
+    const val SoftwareKeyboardController = "software keyboard controller"
+    const val SpanStyle = "span style"
     const val String = "string"
     const val SubComposeLayout = "sub compose layout"
+    const val TextDecoration = "text decoration"
+    const val VisualTransformation = "visual transformation"
     const val ZIndex = "z index"
+}
+
+object AccompanistNavRoutes {
+    const val Coil = "coil"
+    const val Glide = "glide"
+    const val Picasso = "picasso"
 }

@@ -34,6 +34,9 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/activity */
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivity}"
 
+    /* https://developer.android.com/jetpack/compose/layout */
+    const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
+
     /* https://developer.android.com/jetpack/androidx/releases/appcompat */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
 
@@ -49,13 +52,21 @@ object Libraries {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
     /* https://github.com/chrisbanes/accompanist */
-    const val accompanistCoil =
-        "dev.chrisbanes.accompanist:accompanist-coil:${Versions.accompanist}"
+    const val accompanistCoil = "dev.chrisbanes.accompanist:accompanist-coil:${Versions.accompanist}"
+    const val accompanistGlide= "dev.chrisbanes.accompanist:accompanist-glide:${Versions.accompanist}"
+    const val accompanistPicasso = "dev.chrisbanes.accompanist:accompanist-picasso:${Versions.accompanist}"
     const val accompanistInsets =
         "dev.chrisbanes.accompanist:accompanist-insets:${Versions.accompanist}"
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"
+
+    /* https://github.com/bumptech/glide */
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
+    /* https://github.com/square/picasso */
+    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
 
     /* https://github.com/JakeWharton/timber */
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"

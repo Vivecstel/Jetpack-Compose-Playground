@@ -8,6 +8,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.accompanist.AccompanistScreen
+import com.steleot.jetpackcompose.playground.compose.accompanist.CoilScreen
+import com.steleot.jetpackcompose.playground.compose.accompanist.GlideScreen
+import com.steleot.jetpackcompose.playground.compose.accompanist.PicassoScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
@@ -98,6 +102,7 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Mater
 import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
+import com.steleot.jetpackcompose.playground.compose.ui.AnnotatedStringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
@@ -109,15 +114,19 @@ import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
+import com.steleot.jetpackcompose.playground.compose.ui.PopupScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
 import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SideEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SoftwareKeyboardControllerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.SpanStyleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SubComposeLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.ui.TextDecorationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
+import com.steleot.jetpackcompose.playground.compose.ui.VisualTransformationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
@@ -152,6 +161,7 @@ fun PlaygroundApp() {
                     )
                 }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
+                composable(route = MainNavRoutes.Accompanist) { AccompanistScreen(navController) }
                 /* animation */
                 composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                 composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
@@ -242,6 +252,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
                 composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
                 composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
+                composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
                 composable(route = UiNavRoutes.Brush) { BrushScreen() }
                 composable(route = UiNavRoutes.Color) { ColorScreen() }
                 composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
@@ -254,15 +265,23 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
                 composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
                 composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
+                composable(route = UiNavRoutes.Popup) { PopupScreen() }
                 composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
                 composable(route = UiNavRoutes.Rotate) { RotateScreen() }
                 composable(route = UiNavRoutes.Scale) { ScaleScreen() }
                 composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
                 composable(route = UiNavRoutes.SideEffect) { SideEffectScreen() }
                 composable(route = UiNavRoutes.SoftwareKeyboardController) { SoftwareKeyboardControllerScreen() }
+                composable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
                 composable(route = UiNavRoutes.String) { StringScreen() }
                 composable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
+                composable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
+                composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
                 composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
+                /* accompanist */
+                composable(route = AccompanistNavRoutes.Coil) { CoilScreen() }
+                composable(route = AccompanistNavRoutes.Glide) { GlideScreen() }
+                composable(route = AccompanistNavRoutes.Picasso) { PicassoScreen() }
             }
         }
     }

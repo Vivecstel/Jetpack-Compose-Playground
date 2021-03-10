@@ -11,6 +11,7 @@ val routes = listOf(
     UiNavRoutes.AlignmentLine,
     UiNavRoutes.Alpha,
     UiNavRoutes.AndroidViewBinding,
+    UiNavRoutes.AnnotatedString,
     UiNavRoutes.Brush,
     UiNavRoutes.Color,
     UiNavRoutes.DebugInspectorInfo,
@@ -27,8 +28,11 @@ val routes = listOf(
     UiNavRoutes.Scale,
     UiNavRoutes.Shadow,
     UiNavRoutes.SoftwareKeyboardController,
+    UiNavRoutes.SpanStyle,
     UiNavRoutes.String,
     UiNavRoutes.SubComposeLayout,
+    UiNavRoutes.TextDecoration,
+    UiNavRoutes.VisualTransformation,
     UiNavRoutes.ZIndex,
 )
 

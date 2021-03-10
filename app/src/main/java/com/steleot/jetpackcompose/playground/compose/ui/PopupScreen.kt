@@ -36,7 +36,7 @@ fun PopupScreen() {
                     Box(
                         Modifier
                             .size(popupWidth, popupHeight)
-                            .background(Color.White, RoundedCornerShape(cornerSize))
+                            .background(Color.Magenta, RoundedCornerShape(cornerSize))
                     )
                 }
             }
