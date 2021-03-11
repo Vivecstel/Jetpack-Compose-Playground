@@ -8,10 +8,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import com.steleot.jetpackcompose.playground.compose.accompanist.AccompanistScreen
-import com.steleot.jetpackcompose.playground.compose.accompanist.CoilScreen
-import com.steleot.jetpackcompose.playground.compose.accompanist.GlideScreen
-import com.steleot.jetpackcompose.playground.compose.accompanist.PicassoScreen
+import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
+import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
+import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
+import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
@@ -25,6 +25,7 @@ import com.steleot.jetpackcompose.playground.compose.animation.SingleValueColorA
 import com.steleot.jetpackcompose.playground.compose.animation.SingleValueFloatAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.SuspendAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
@@ -161,7 +162,7 @@ fun PlaygroundApp() {
                     )
                 }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
-                composable(route = MainNavRoutes.Accompanist) { AccompanistScreen(navController) }
+                composable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen(navController) }
                 /* animation */
                 composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                 composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
@@ -278,10 +279,11 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
                 composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
                 composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
-                /* accompanist */
-                composable(route = AccompanistNavRoutes.Coil) { CoilScreen() }
-                composable(route = AccompanistNavRoutes.Glide) { GlideScreen() }
-                composable(route = AccompanistNavRoutes.Picasso) { PicassoScreen() }
+                /* external */
+                composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Picasso) { PicassoScreen() }
             }
         }
     }

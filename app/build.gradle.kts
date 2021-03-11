@@ -99,6 +99,7 @@ dependencies {
     kapt(Libraries.glideCompiler)
     implementation(Libraries.picasso)
     implementation(Libraries.timber)
+    implementation(Libraries.lottie)
 
     androidTestImplementation(TestLibraries.composeUi)
     androidTestImplementation(TestLibraries.composeUiJunit)

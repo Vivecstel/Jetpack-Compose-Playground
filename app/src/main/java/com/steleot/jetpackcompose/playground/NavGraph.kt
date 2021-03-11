@@ -10,7 +10,7 @@ object MainNavRoutes {
     const val MaterialIcons = "material icons"
     const val MaterialIConsExtended = "material icons extended"
     const val Ui = "ui"
-    const val Accompanist = "accompanist"
+    const val ExternalLibraries = "external libraries"
 }
 
 object AnimationNavRoutes {
@@ -148,8 +148,9 @@ object UiNavRoutes {
     const val ZIndex = "z index"
 }
 
-object AccompanistNavRoutes {
+object ExternalLibrariesNavRoutes {
     const val Coil = "coil"
     const val Glide = "glide"
+    const val Lottie = "lottie"
     const val Picasso = "picasso"
 }

@@ -23,4 +23,5 @@ object Versions {
     const val glide = "4.12.0"
     const val picasso = "2.71828"
     const val timber = "4.7.1"
+    const val lottie = "1.0.0-alpha07-SNAPSHOT"
 }

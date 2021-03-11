@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.accompanist
+package com.steleot.jetpackcompose.playground.compose.external
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -15,16 +15,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import coil.transform.CircleCropTransformation
-import com.steleot.jetpackcompose.playground.AccompanistNavRoutes
+import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import dev.chrisbanes.accompanist.coil.CoilImage
+import dev.chrisbanes.accompanist.picasso.PicassoImage
 import java.util.*
 
 @Composable
-fun CoilScreen() {
+fun PicassoScreen() {
     DefaultScaffold(
-        title = AccompanistNavRoutes.Coil.capitalize(Locale.getDefault())
+        title = ExternalLibrariesNavRoutes.Picasso.capitalize(Locale.getDefault())
     ) {
         Column(
             modifier = Modifier
@@ -34,20 +33,20 @@ fun CoilScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            CoilImage(
+            PicassoImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description"
+                contentDescription = "Content description"
             )
-            CoilImage(
+            PicassoImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description",
+                contentDescription = "Content description",
                 requestBuilder = {
-                    transformations(CircleCropTransformation())
+                    rotate(180f)
                 }
             )
-            CoilImage(
+            PicassoImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description",
+                contentDescription = "Content description",
                 loading = {
                     Box(Modifier.matchParentSize()) {
                         CircularProgressIndicator(Modifier.align(Alignment.Center))

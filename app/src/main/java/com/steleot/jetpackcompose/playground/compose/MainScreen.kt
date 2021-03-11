@@ -24,7 +24,7 @@ private val routes = listOf(
     MainNavRoutes.MaterialIcons,
     MainNavRoutes.MaterialIConsExtended,
     MainNavRoutes.Ui,
-    MainNavRoutes.Accompanist,
+    MainNavRoutes.ExternalLibraries,
 )
 
 @Composable

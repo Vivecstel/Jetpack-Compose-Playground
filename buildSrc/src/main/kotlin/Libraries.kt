@@ -71,4 +71,6 @@ object Libraries {
     /* https://github.com/JakeWharton/timber */
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
+    /* https://github.com/kazemihabib/compose-shimmer */
+    const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
 }

@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.accompanist
+package com.steleot.jetpackcompose.playground.compose.external
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -15,16 +15,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.request.RequestOptions
-import com.steleot.jetpackcompose.playground.AccompanistNavRoutes
+import coil.transform.CircleCropTransformation
+import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import dev.chrisbanes.accompanist.glide.GlideImage
+import dev.chrisbanes.accompanist.coil.CoilImage
 import java.util.*
 
 @Composable
-fun GlideScreen() {
+fun CoilScreen() {
     DefaultScaffold(
-        title = AccompanistNavRoutes.Glide.capitalize(Locale.getDefault())
+        title = ExternalLibrariesNavRoutes.Coil.capitalize(Locale.getDefault())
     ) {
         Column(
             modifier = Modifier
@@ -34,22 +34,20 @@ fun GlideScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            GlideImage(
+            CoilImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description"
+                contentDescription = "Content description"
             )
-            GlideImage(
+            CoilImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description",
+                contentDescription = "Content description",
                 requestBuilder = {
-                    val options = RequestOptions()
-                    options.centerCrop()
-                    apply(options)
+                    transformations(CircleCropTransformation())
                 }
             )
-            GlideImage(
+            CoilImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "My content description",
+                contentDescription = "Content description",
                 loading = {
                     Box(Modifier.matchParentSize()) {
                         CircularProgressIndicator(Modifier.align(Alignment.Center))
