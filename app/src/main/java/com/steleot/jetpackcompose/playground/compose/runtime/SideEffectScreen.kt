@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.ui
+package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.runtime.Composable
 

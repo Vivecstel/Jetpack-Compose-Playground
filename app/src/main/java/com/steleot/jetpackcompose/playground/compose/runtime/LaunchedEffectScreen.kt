@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.ui
+package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -12,14 +12,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
-import com.steleot.jetpackcompose.playground.UiNavRoutes
+import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
 @Composable
 fun LaunchedEffectScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LaunchedEffect.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.LaunchedEffect.capitalize(Locale.getDefault())
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

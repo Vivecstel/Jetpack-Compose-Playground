@@ -100,6 +100,19 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.CompositionLocalScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.DisposableEffectScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.ImmutableScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.KeyScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.LaunchedEffectScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateListScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateMapScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.ProduceStateScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableStateHolderScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.SaverScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.SideEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
@@ -108,11 +121,9 @@ import com.steleot.jetpackcompose.playground.compose.ui.AnnotatedStringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
-import com.steleot.jetpackcompose.playground.compose.ui.DisposableEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
 import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
 import com.steleot.jetpackcompose.playground.compose.ui.GraphicsLayerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LaunchedEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
@@ -122,12 +133,12 @@ import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
 import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
-import com.steleot.jetpackcompose.playground.compose.ui.SideEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SoftwareKeyboardControllerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SpanStyleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SubComposeLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.ui.TextDecorationScreen
+import com.steleot.jetpackcompose.playground.compose.ui.TextIndentScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.ui.VisualTransformationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
@@ -163,6 +174,7 @@ fun PlaygroundApp() {
                         navController
                     )
                 }
+                composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                 composable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen(navController) }
                 /* animation */
@@ -251,6 +263,19 @@ fun PlaygroundApp() {
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedRounded) { ExtendedRoundedScreen() }
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedSharp) { ExtendedSharpScreen() }
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
+                /* runtime */
+                composable(route = RuntimeNavRoutes.CompositionLocal) { CompositionLocalScreen() }
+                composable(route = RuntimeNavRoutes.DisposableEffect) { DisposableEffectScreen() }
+                composable(route = RuntimeNavRoutes.Immutable) { ImmutableScreen() }
+                composable(route = RuntimeNavRoutes.Key) { KeyScreen() }
+                composable(route = RuntimeNavRoutes.LaunchedEffect) { LaunchedEffectScreen() }
+                composable(route = RuntimeNavRoutes.MutableStateList) { MutableStateListScreen() }
+                composable(route = RuntimeNavRoutes.MutableStateMap) { MutableStateMapScreen() }
+                composable(route = RuntimeNavRoutes.ProduceState) { ProduceStateScreen() }
+                composable(route = RuntimeNavRoutes.RememberSaveable) { RememberSaveableScreen() }
+                composable(route = RuntimeNavRoutes.RememberSaveableStateHolder) { RememberSaveableStateHolderScreen() }
+                composable(route = RuntimeNavRoutes.Saver) { SaverScreen() }
+                composable(route = RuntimeNavRoutes.SideEffect) { SideEffectScreen() }
                 /* ui */
                 composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
                 composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
@@ -260,11 +285,9 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Brush) { BrushScreen() }
                 composable(route = UiNavRoutes.Color) { ColorScreen() }
                 composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
-                composable(route = UiNavRoutes.DisposableEffect) { DisposableEffectScreen() }
                 composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                 composable(route = UiNavRoutes.Font) { FontScreen() }
                 composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
-                composable(route = UiNavRoutes.LaunchedEffect) { LaunchedEffectScreen() }
                 composable(route = UiNavRoutes.Layout) { UiLayoutScreen() }
                 composable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
                 composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
@@ -275,12 +298,12 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Rotate) { RotateScreen() }
                 composable(route = UiNavRoutes.Scale) { ScaleScreen() }
                 composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
-                composable(route = UiNavRoutes.SideEffect) { SideEffectScreen() }
                 composable(route = UiNavRoutes.SoftwareKeyboardController) { SoftwareKeyboardControllerScreen() }
                 composable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
                 composable(route = UiNavRoutes.String) { StringScreen() }
                 composable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
                 composable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
+                composable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
                 composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
                 composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
                 /* external */

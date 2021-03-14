@@ -23,6 +23,7 @@ private val routes = listOf(
     MainNavRoutes.Material,
     MainNavRoutes.MaterialIcons,
     MainNavRoutes.MaterialIConsExtended,
+    MainNavRoutes.Runtime,
     MainNavRoutes.Ui,
     MainNavRoutes.ExternalLibraries,
 )

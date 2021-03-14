@@ -19,7 +19,6 @@ val routes = listOf(
     UiNavRoutes.Drawable,
     UiNavRoutes.Font,
     UiNavRoutes.GraphicsLayer,
-    UiNavRoutes.LaunchedEffect,
     UiNavRoutes.Layout,
     UiNavRoutes.LocalDensity,
     UiNavRoutes.OnGloballyPositioned,
@@ -35,6 +34,7 @@ val routes = listOf(
     UiNavRoutes.String,
     UiNavRoutes.SubComposeLayout,
     UiNavRoutes.TextDecoration,
+    UiNavRoutes.TextIndent,
     UiNavRoutes.VisualTransformation,
     UiNavRoutes.ZIndex,
 )

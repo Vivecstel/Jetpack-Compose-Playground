@@ -9,6 +9,7 @@ object MainNavRoutes {
     const val Material = "material"
     const val MaterialIcons = "material icons"
     const val MaterialIConsExtended = "material icons extended"
+    const val Runtime = "runtime"
     const val Ui = "ui"
     const val ExternalLibraries = "external libraries"
 }
@@ -116,6 +117,21 @@ object MaterialIconsExtendedNavRoutes {
     const val ExtendedTwoTone = "extended twotone"
 }
 
+object RuntimeNavRoutes {
+    const val CompositionLocal = "composition local"
+    const val DisposableEffect = "disposable effect"
+    const val Immutable = "immutable"
+    const val Key = "key"
+    const val LaunchedEffect = "launched effect"
+    const val MutableStateList = "mutableState list"
+    const val MutableStateMap = "mutableState map"
+    const val ProduceState = "produce state"
+    const val RememberSaveable = "remember saveable"
+    const val RememberSaveableStateHolder = "remember saveable state holder"
+    const val Saver = "saver"
+    const val SideEffect = "side effect"
+}
+
 object UiNavRoutes {
     const val AlignmentLine = "alignment line"
     const val Alpha = "alpha"
@@ -125,11 +141,9 @@ object UiNavRoutes {
     const val Brush = "brush"
     const val Color = "color"
     const val DebugInspectorInfo = "debug inspector info"
-    const val DisposableEffect = "disposable effect"
     const val Drawable = "drawable"
     const val Font = "font"
     const val GraphicsLayer = "graphics layer"
-    const val LaunchedEffect = "launched effect"
     const val Layout = "layout"
     const val LocalDensity = "local density"
     const val OnGloballyPositioned = "on globally positioned"
@@ -140,12 +154,12 @@ object UiNavRoutes {
     const val Rotate = "rotate"
     const val Scale = "scale"
     const val Shadow = "shadow"
-    const val SideEffect = "side effect"
     const val SoftwareKeyboardController = "software keyboard controller"
     const val SpanStyle = "span style"
     const val String = "string"
     const val SubComposeLayout = "sub compose layout"
     const val TextDecoration = "text decoration"
+    const val TextIndent = "text indent"
     const val VisualTransformation = "visual transformation"
     const val ZIndex = "z index"
 }
