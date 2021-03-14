@@ -57,7 +57,7 @@ fun SubComposeLayoutScreen() {
 }
 
 @Composable
-fun SubcomposeLayoutExample(
+private fun SubcomposeLayoutExample(
     mainContent: @Composable () -> Unit,
     dependentContent: @Composable (IntSize) -> Unit
 ) {

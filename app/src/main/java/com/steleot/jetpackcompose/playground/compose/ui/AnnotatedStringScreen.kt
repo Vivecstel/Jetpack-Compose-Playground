@@ -34,7 +34,7 @@ fun AnnotatedStringScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .verticalScroll(scrollState),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(text = annotatedStringConstructorExample())

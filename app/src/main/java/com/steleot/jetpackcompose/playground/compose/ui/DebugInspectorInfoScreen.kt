@@ -39,7 +39,7 @@ fun DebugInspectorInfoScreen() {
     }
 }
 
-fun Modifier.debugColorModifier(color: Color) = composed(
+private fun Modifier.debugColorModifier(color: Color) = composed(
     inspectorInfo = debugInspectorInfo {
         name = "debugColorModifier"
         value = color
@@ -49,7 +49,7 @@ fun Modifier.debugColorModifier(color: Color) = composed(
     }
 )
 
-fun Modifier.debugModifier(width: Dp, height: Dp, color: Color) = composed(
+private fun Modifier.debugModifier(width: Dp, height: Dp, color: Color) = composed(
     inspectorInfo = debugInspectorInfo {
         name = "debugModifier"
         properties["width"] = width

@@ -103,6 +103,7 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Mater
 import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
+import com.steleot.jetpackcompose.playground.compose.ui.AnimatedVectorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AnnotatedStringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
@@ -110,6 +111,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DisposableEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
 import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
+import com.steleot.jetpackcompose.playground.compose.ui.GraphicsLayerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LaunchedEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
@@ -253,6 +255,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
                 composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
                 composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
+                composable(route = UiNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
                 composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
                 composable(route = UiNavRoutes.Brush) { BrushScreen() }
                 composable(route = UiNavRoutes.Color) { ColorScreen() }
@@ -260,6 +263,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.DisposableEffect) { DisposableEffectScreen() }
                 composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                 composable(route = UiNavRoutes.Font) { FontScreen() }
+                composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
                 composable(route = UiNavRoutes.LaunchedEffect) { LaunchedEffectScreen() }
                 composable(route = UiNavRoutes.Layout) { UiLayoutScreen() }
                 composable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }

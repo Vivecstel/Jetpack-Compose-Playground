@@ -20,7 +20,7 @@ fun AlignmentLineScreen() {
 
         @Composable
         fun LineProviderLayout(exampleLinePosition: Int) {
-            val size = 20
+            val size = 50
             Layout({}, modifier = Modifier.background(Color.Blue)) { _, _ ->
                 layout(size, size, mapOf(exampleLine to exampleLinePosition)) {}
             }
@@ -32,7 +32,7 @@ fun AlignmentLineScreen() {
         }, modifier = Modifier.background(Color.Red)) { measurables, constraints ->
             val placeables = measurables.map { it.measure(constraints) }
             layout(constraints.maxWidth, constraints.maxHeight) {
-                placeables[0].place(0, 3)
+                placeables[0].place(0, 50)
                 placeables[1].place(constraints.maxWidth / 2, 0)
             }
         }

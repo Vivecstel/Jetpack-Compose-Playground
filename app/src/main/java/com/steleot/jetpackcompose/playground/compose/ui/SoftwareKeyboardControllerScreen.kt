@@ -5,11 +5,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,7 +35,7 @@ fun SoftwareKeyboardControllerScreen() {
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun SoftwareKeyboardControllerExample() {
+private fun SoftwareKeyboardControllerExample() {
     val keyboardController = LocalSoftwareKeyboardController.current
 
     val focusRequester = FocusRequester()
@@ -43,7 +43,7 @@ fun SoftwareKeyboardControllerExample() {
         mutableStateOf("Close keyboard on done ime action (blue ✔️)")
     }
     Column(Modifier.padding(16.dp)) {
-        BasicTextField(
+        TextField(
             text,
             setText,
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),

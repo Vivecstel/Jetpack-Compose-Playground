@@ -72,7 +72,7 @@ android {
 
 dependencies {
 
-    // core / lifecycle runtime
+    implementation(Libraries.kotlinReflect)
     implementation(Libraries.composeAnimation)
     implementation(Libraries.composeCompiler)
     implementation(Libraries.composeFoundation)
