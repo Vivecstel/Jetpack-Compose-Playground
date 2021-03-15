@@ -18,6 +18,7 @@ val routes = listOf(
     RuntimeNavRoutes.MutableStateList,
     RuntimeNavRoutes.MutableStateMap,
     RuntimeNavRoutes.ProduceState,
+    RuntimeNavRoutes.RememberCoroutineScope,
     RuntimeNavRoutes.RememberSaveable,
     RuntimeNavRoutes.RememberSaveableStateHolder,
     RuntimeNavRoutes.Remember,

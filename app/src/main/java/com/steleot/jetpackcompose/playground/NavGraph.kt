@@ -128,6 +128,7 @@ object RuntimeNavRoutes {
     const val MutableStateList = "mutableState list"
     const val MutableStateMap = "mutableState map"
     const val ProduceState = "produce state"
+    const val RememberCoroutineScope = "remember coroutine scope"
     const val RememberSaveable = "remember saveable"
     const val RememberSaveableStateHolder = "remember saveable state holder"
     const val Remember = "remember"

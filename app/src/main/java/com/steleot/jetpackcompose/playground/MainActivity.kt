@@ -263,6 +263,7 @@ fun PlaygroundApp() {
                 composable(route = RuntimeNavRoutes.MutableStateList) { MutableStateListScreen() }
                 composable(route = RuntimeNavRoutes.MutableStateMap) { MutableStateMapScreen() }
                 composable(route = RuntimeNavRoutes.ProduceState) { ProduceStateScreen() }
+                composable(route = RuntimeNavRoutes.RememberCoroutineScope) { RememberCoroutineScopeScreen() }
                 composable(route = RuntimeNavRoutes.RememberSaveable) { RememberSaveableScreen() }
                 composable(route = RuntimeNavRoutes.RememberSaveableStateHolder) { RememberSaveableStateHolderScreen() }
                 composable(route = RuntimeNavRoutes.Remember) { RememberScreen() }
