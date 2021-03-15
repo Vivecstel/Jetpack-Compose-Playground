@@ -16,13 +16,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/DrawableScreen.kt"
 
 @Preview
 @Composable
 fun DrawableScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Drawable.capitalize(Locale.getDefault())
+        title = UiNavRoutes.Drawable.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         val colors = MaterialTheme.colors
         Column(

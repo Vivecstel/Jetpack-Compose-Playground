@@ -22,12 +22,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "material/AlertDialogScreen.kt"
 
 @Composable
 fun AlertDialogScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.AlertDialog.capitalize(Locale.getDefault())
+        title = MaterialNavRoutes.AlertDialog.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

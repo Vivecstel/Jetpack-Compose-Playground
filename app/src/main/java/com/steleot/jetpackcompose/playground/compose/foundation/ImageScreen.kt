@@ -26,12 +26,15 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundation/ImageScreen.kt"
 
 @Composable
 fun ImageScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Image.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.Image.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

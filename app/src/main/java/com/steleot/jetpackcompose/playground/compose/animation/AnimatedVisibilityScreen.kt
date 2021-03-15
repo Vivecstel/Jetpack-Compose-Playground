@@ -40,12 +40,15 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "animation/AnimatedVisibilityScreen.kt"
 
 @Composable
 fun AnimatedVisibilityScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.AnimatedVisibility.capitalize(Locale.getDefault())
+        title = AnimationNavRoutes.AnimatedVisibility.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

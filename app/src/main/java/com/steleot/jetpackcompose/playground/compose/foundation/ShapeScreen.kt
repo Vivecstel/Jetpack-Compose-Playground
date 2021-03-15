@@ -23,12 +23,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundation/ShapeScreen.kt"
 
 @Composable
 fun ShapeScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Shape.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.Shape.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

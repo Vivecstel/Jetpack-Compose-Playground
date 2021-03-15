@@ -14,12 +14,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/ScaleScreen.kt"
 
 @Composable
 fun ScaleScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Scale.capitalize(Locale.getDefault())
+        title = UiNavRoutes.Scale.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

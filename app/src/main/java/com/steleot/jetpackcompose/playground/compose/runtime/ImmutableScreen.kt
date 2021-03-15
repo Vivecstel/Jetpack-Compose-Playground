@@ -13,10 +13,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/ImmutableScreen.kt"
+
 @Composable
 fun ImmutableScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.Immutable.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.Immutable.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -40,6 +40,8 @@ import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.*
 
+private const val Url = "material/SwipeToDismissScreen.kt"
+
 private val items = listOf(
     "Cupcake",
     "Donut",
@@ -60,7 +62,8 @@ private val items = listOf(
 @Composable
 fun SwipeToDismissScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.SwipeToDismiss.capitalize(Locale.getDefault())
+        title = MaterialNavRoutes.SwipeToDismiss.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         SwipeToDismissExample()
     }

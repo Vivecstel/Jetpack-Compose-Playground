@@ -27,12 +27,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "material/OutlinedTextFieldScreen.kt"
 
 @Composable
 fun OutlinedTextFieldScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.OutlinedTextField.capitalize(Locale.getDefault())
+        title = MaterialNavRoutes.OutlinedTextField.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

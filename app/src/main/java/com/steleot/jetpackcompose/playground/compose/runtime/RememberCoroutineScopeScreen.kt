@@ -23,10 +23,13 @@ import java.util.Locale
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+private const val Url = "runtime/RememberCoroutineScopeScreen.kt"
+
 @Composable
 fun RememberCoroutineScopeScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

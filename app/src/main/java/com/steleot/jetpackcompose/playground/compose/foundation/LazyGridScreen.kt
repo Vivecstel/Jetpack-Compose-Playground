@@ -10,13 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundation/LazyGridScreen.kt"
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyGridScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.LazyGrid.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.LazyGrid.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         val itemsList = (0..50).toList()
         val itemsIndexedList = listOf("A", "B", "C", "D", "E", "F")

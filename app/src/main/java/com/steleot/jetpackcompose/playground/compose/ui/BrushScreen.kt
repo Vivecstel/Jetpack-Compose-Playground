@@ -17,12 +17,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/BrushScreen.kt"
 
 @Composable
 fun BrushScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Brush.capitalize(Locale.getDefault())
+        title = UiNavRoutes.Brush.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

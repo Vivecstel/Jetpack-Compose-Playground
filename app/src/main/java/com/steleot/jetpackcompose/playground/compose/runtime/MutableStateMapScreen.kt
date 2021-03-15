@@ -19,10 +19,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/MutableStateMapScreen.kt"
+
 @Composable
 fun MutableStateMapScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.MutableStateMap.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.MutableStateMap.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         MutableStateMapExample()
     }

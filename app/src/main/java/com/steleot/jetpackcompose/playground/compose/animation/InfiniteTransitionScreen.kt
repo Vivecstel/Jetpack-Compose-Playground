@@ -22,12 +22,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "animation/InfiniteTransitionScreen.kt"
 
 @Composable
 fun InfiniteTransitionScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.InfiniteTransition.capitalize(Locale.getDefault())
+        title = AnimationNavRoutes.InfiniteTransition.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

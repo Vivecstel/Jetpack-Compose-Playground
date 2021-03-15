@@ -16,12 +16,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundation/TransformableScreen.kt"
 
 @Composable
 fun TransformableScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Transformable.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.Transformable.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         var scale by remember { mutableStateOf(1f) }
         var rotation by remember { mutableStateOf(0f) }

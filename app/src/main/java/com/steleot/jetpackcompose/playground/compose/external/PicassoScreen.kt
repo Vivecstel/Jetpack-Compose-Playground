@@ -18,12 +18,15 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import dev.chrisbanes.accompanist.picasso.PicassoImage
-import java.util.*
+import java.util.Locale
+
+private const val Url = "external/PicassoScreen.kt"
 
 @Composable
 fun PicassoScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Picasso.capitalize(Locale.getDefault())
+        title = ExternalLibrariesNavRoutes.Picasso.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

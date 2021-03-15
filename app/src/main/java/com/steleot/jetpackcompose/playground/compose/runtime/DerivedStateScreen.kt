@@ -2,11 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -21,10 +18,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/DerivedStateScreen.kt"
+
 @Composable
 fun DerivedStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DerivedState.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.DerivedState.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         DerivedStateExample()
     }

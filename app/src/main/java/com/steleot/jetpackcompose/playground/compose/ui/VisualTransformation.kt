@@ -16,14 +16,17 @@ import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/VisualTransformationScreen.kt"
 
 @Composable
 fun VisualTransformationScreen() {
     val password = remember { mutableStateOf(TextFieldValue(text = "password")) }
     val creditCard = remember { mutableStateOf(TextFieldValue(text = "1234567890123456")) }
     DefaultScaffold(
-        title = UiNavRoutes.VisualTransformation.capitalize(Locale.getDefault())
+        title = UiNavRoutes.VisualTransformation.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -19,13 +19,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import java.util.Locale
 import kotlinx.coroutines.launch
-import java.util.*
+
+private const val Url = "foundation/ScrollerScreen.kt"
 
 @Composable
 fun ScrollerScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Scroller.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.Scroller.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         ControlledScrollableRowExample()
     }

@@ -15,13 +15,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/StringScreen.kt"
 
 @Preview
 @Composable
 fun StringScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.String.capitalize(Locale.getDefault())
+        title = UiNavRoutes.String.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

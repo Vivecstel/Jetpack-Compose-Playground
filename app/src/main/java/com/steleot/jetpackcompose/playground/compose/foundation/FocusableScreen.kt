@@ -18,12 +18,15 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundation/FocusableScreen.kt"
 
 @Composable
 fun FocusableScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Focusable.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.Focusable.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

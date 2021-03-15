@@ -23,15 +23,18 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import java.util.Locale
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-import java.util.*
 import kotlin.math.roundToInt
+
+private const val Url = "animation/AnimatableScreen.kt"
 
 @Composable
 fun AnimatableScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.Animatable.capitalize(Locale.getDefault())
+        title = AnimationNavRoutes.Animatable.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         AnimatableExample()
     }

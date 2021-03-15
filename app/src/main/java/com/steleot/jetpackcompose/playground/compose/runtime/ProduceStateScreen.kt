@@ -10,10 +10,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/ProduceStateScreen.kt"
+
 @Composable
 fun ProduceStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.ProduceState.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.ProduceState.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

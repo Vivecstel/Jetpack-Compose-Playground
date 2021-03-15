@@ -19,12 +19,15 @@ import coil.transform.CircleCropTransformation
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import dev.chrisbanes.accompanist.coil.CoilImage
-import java.util.*
+import java.util.Locale
+
+private const val Url = "external/CoilScreen.kt"
 
 @Composable
 fun CoilScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Coil.capitalize(Locale.getDefault())
+        title = ExternalLibrariesNavRoutes.Coil.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

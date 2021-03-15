@@ -14,10 +14,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/DisposableEffectScreen.kt"
+
 @Composable
 fun DisposableEffectScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -51,8 +54,10 @@ private class Subscription {
 }
 
 private object UserAPI {
-    fun subscribeToUser(userId:
-                        Int, user: (User) -> Unit): Subscription {
+    fun subscribeToUser(
+        userId:
+        Int, user: (User) -> Unit
+    ): Subscription {
         user(User(userId, "Jetpack Compose Playground"))
         return Subscription()
     }

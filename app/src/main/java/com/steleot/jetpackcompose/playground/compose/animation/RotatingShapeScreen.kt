@@ -22,12 +22,15 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "animation/RotatingShapeScreen.kt"
 
 @Composable
 fun RotatingShapeScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.RotatingShape.capitalize(Locale.getDefault())
+        title = AnimationNavRoutes.RotatingShape.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

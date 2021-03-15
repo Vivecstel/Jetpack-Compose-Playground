@@ -24,8 +24,10 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
+import java.util.Locale
 import kotlinx.coroutines.launch
-import java.util.*
+
+private const val Url = "material/SnackBarScreen.kt"
 
 @Composable
 fun SnackBarScreen() {
@@ -37,6 +39,7 @@ fun SnackBarScreen() {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.SnackBar.capitalize(Locale.getDefault()),
                 showBackArrow = true,
+                link = Url,
             )
         },
         scaffoldState = state,

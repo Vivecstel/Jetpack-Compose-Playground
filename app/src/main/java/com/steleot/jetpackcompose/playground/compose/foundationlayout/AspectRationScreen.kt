@@ -11,12 +11,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundationlayout/AspectRationScreen.kt"
 
 @Composable
 fun AspectRationScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.AspectRatio.capitalize(Locale.getDefault())
+        title = FoundationLayoutNavRoutes.AspectRatio.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column {
             Box(

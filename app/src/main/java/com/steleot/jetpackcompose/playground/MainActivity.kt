@@ -8,10 +8,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
-import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
-import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
-import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
@@ -25,7 +21,11 @@ import com.steleot.jetpackcompose.playground.compose.animation.SingleValueColorA
 import com.steleot.jetpackcompose.playground.compose.animation.SingleValueFloatAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.SuspendAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
+import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
+import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
 import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
+import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
@@ -100,8 +100,24 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.*
+import com.steleot.jetpackcompose.playground.compose.runtime.CollectAsStateScreen
 import com.steleot.jetpackcompose.playground.compose.runtime.CompositionLocalScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.DerivedStateScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.DisposableEffectScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.ImmutableScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.KeyScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.LaunchedEffectScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateListScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateMapScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.ProduceStateScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberCoroutineScopeScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableStateHolderScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RememberScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.SaverScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.SideEffectScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.SnapshotFlowScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
@@ -165,7 +181,11 @@ fun PlaygroundApp() {
                 }
                 composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
-                composable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen(navController) }
+                composable(route = MainNavRoutes.ExternalLibraries) {
+                    ExternalLibrariesScreen(
+                        navController
+                    )
+                }
                 /* animation */
                 composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                 composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }

@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
+import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,14 +14,17 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import androidx.core.net.toUri
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
-import java.util.*
+import java.util.Locale
 
 @Preview
 @Composable
@@ -49,13 +53,18 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 
 }
 
+private const val BaseUrl =
+    "https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/"
+
 @Preview
 @Composable
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     showBackArrow: Boolean = false,
+    link: String? = null
 ) {
-    val ambient = LocalOnBackPressedDispatcherOwner.current
+    val backDispatcher = LocalOnBackPressedDispatcherOwner.current
+    val context = LocalContext.current
     TopAppBar(
         title = {
             Text(text = title)
@@ -63,9 +72,20 @@ fun DefaultTopAppBar(
         navigationIcon = {
             if (showBackArrow) {
                 IconButton(onClick = {
-                    ambient.onBackPressedDispatcher.onBackPressed()
+                    backDispatcher.onBackPressedDispatcher.onBackPressed()
                 }) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back Arrow")
+                    Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back Arrow")
+                }
+            }
+        },
+        actions = {
+            link?.let {
+                IconButton(onClick = {
+                    context.startActivity(Intent(Intent.ACTION_VIEW).apply {
+                        data = "$BaseUrl$link".toUri()
+                    })
+                }) {
+                    Icon(imageVector = Icons.Filled.ExitToApp, contentDescription = "Exit to App")
                 }
             }
         }
@@ -75,6 +95,7 @@ fun DefaultTopAppBar(
 @Composable
 fun DefaultScaffold(
     title: String,
+    link: String? = null,
     content: @Composable (PaddingValues) -> Unit,
 ) {
     Scaffold(
@@ -83,6 +104,7 @@ fun DefaultScaffold(
             DefaultTopAppBar(
                 title = title,
                 showBackArrow = true,
+                link = link,
             )
         },
         content = content,

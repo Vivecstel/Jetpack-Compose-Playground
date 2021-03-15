@@ -9,12 +9,15 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "constraintlayout/ConstraintLayoutScreen.kt"
 
 @Composable
 fun ConstraintLayoutScreen() {
     DefaultScaffold(
-        title = MainNavRoutes.ConstraintLayout.capitalize(Locale.getDefault())
+        title = MainNavRoutes.ConstraintLayout.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         ConstraintLayout(
             modifier = Modifier.padding(32.dp)

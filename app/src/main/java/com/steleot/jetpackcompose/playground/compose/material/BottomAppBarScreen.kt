@@ -24,7 +24,9 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
-import java.util.*
+import java.util.Locale
+
+private const val Url = "material/BottomAppBarScreen.kt"
 
 @Composable
 fun BottomAppBarScreen() {
@@ -35,6 +37,7 @@ fun BottomAppBarScreen() {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.BottomAppBar.capitalize(Locale.getDefault()),
                 showBackArrow = true,
+                link = Url,
             )
         },
         bottomBar = {

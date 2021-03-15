@@ -25,20 +25,23 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
 import kotlin.math.roundToInt
+
+private const val Url = "foundation/DragGestureDetectorScreen.kt"
 
 @Composable
 fun DragGestureDetectorScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.DragGestureDetector.capitalize(Locale.getDefault())
+        title = FoundationNavRoutes.DragGestureDetector.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         AwaitVerticalDragOrCancellationExample()
     }
 }
 
 @Composable
-fun AwaitVerticalDragOrCancellationExample() {
+private fun AwaitVerticalDragOrCancellationExample() {
     val offsetX = remember { mutableStateOf(0f) }
     val offsetY = remember { mutableStateOf(0f) }
     var height by remember { mutableStateOf(0f) }

@@ -27,12 +27,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "material/TextFieldScreen.kt"
 
 @Composable
 fun TextFieldScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.TextField.capitalize(Locale.getDefault())
+        title = MaterialNavRoutes.TextField.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier

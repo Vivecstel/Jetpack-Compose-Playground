@@ -17,10 +17,13 @@ import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
+private const val Url = "runtime/RememberScreen.kt"
+
 @Composable
 fun RememberScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.Remember.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.Remember.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -63,7 +66,7 @@ private fun DelegatedRememberExample() {
 private fun ReadOnlyRememberExample() {
 
     @Composable
-    fun observeData(): State<String> = object: State<String> {
+    fun observeData(): State<String> = object : State<String> {
         override val value: String = "Current value"
     }
 

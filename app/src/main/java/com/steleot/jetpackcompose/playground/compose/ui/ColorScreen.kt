@@ -15,13 +15,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "ui/ColorScreen.kt"
 
 @Preview
 @Composable
 fun ColorScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Color.capitalize(Locale.getDefault())
+        title = UiNavRoutes.Color.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -9,12 +9,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.FoundationLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.*
+import java.util.Locale
+
+private const val Url = "foundationlayout/BoxScreen.kt"
 
 @Composable
 fun BoxScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Box.capitalize(Locale.getDefault())
+        title = FoundationLayoutNavRoutes.Box.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Box(
             modifier = Modifier

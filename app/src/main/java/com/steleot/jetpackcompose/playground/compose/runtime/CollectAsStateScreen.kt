@@ -18,10 +18,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flow
 
+private const val Url = "runtime/CollectAsStateScreen.kt"
+
 @Composable
 fun CollectAsStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.CollectAsState.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.CollectAsState.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

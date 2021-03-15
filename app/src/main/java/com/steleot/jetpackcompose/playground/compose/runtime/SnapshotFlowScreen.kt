@@ -23,10 +23,13 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+private const val Url = "runtime/SnapshotFlowScreen.kt"
+
 @Composable
 fun SnapshotFlowScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.SnapshotFlow.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.SnapshotFlow.capitalize(Locale.getDefault()),
+        link = Url,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
