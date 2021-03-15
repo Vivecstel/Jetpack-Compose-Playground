@@ -46,6 +46,15 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/lifecycle */
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
 
+    /* https://firebase.google.com/docs/android/learn-more */
+    const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebase}"
+    const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
+    const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+
+    /* https://developer.android.com/training/dependency-injection/hilt-android */
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+
     /* https://developer.android.com/jetpack/androidx/releases/startup */
     const val startUp = "androidx.startup:startup-runtime:${Versions.startUp}"
 

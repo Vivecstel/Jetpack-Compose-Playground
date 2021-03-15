@@ -1,20 +1,40 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     kotlin(BuildPlugins.kapt)
+    id(BuildPlugins.googleServices)
+    id(BuildPlugins.crashlytics)
 }
 
 android {
     compileSdkVersion(AndroidConfiguration.compileSdk)
-    buildToolsVersion = "30.0.3"
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
-        applicationId("com.steleot.jetpackcompose.playground")
+        applicationId(AndroidConfiguration.appId)
         minSdkVersion(AndroidConfiguration.minSdk)
         targetSdkVersion(AndroidConfiguration.targetSdk)
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = AndroidConfiguration.versionCode
+        versionName = AndroidConfiguration.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        if (rootProject.file("signing/signing_info.properties").exists()) {
+            val properties = Properties().apply {
+                load(FileInputStream(rootProject.file("signing/signing_info.properties")))
+            }
+
+            create("release") {
+                storeFile = rootProject.file(properties.getProperty("storeFile"))
+                storePassword = properties.getProperty("storePassword")
+                keyAlias = properties.getProperty("keyAlias")
+                keyPassword = properties.getProperty("keyPassword")
+            }
+        }
     }
 
     buildTypes {
@@ -56,7 +76,7 @@ android {
         shaders = false
     }
 
-    lintOptions {
+    lint {
         isAbortOnError = true
     }
 
@@ -87,6 +107,9 @@ dependencies {
     implementation(Libraries.composeConstraint)
     implementation(Libraries.appCompat)
     implementation(Libraries.viewModel)
+    implementation(platform(Libraries.firebaseBom))
+    implementation(Libraries.firebaseAnalytics)
+    implementation(Libraries.firebaseCrashlytics)
     implementation(Libraries.startUp)
     implementation(Libraries.coroutines)
     implementation(Libraries.coroutinesAndroid)

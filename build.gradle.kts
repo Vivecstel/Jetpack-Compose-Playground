@@ -14,6 +14,8 @@ buildscript {
     }
     dependencies {
         classpath(GradleLibraries.androidPlugin)
+        classpath(GradleLibraries.googleServices)
+        classpath(GradleLibraries.crashlytics)
     }
 }
 
