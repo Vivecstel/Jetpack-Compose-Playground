@@ -85,4 +85,7 @@ object Libraries {
 
     /* https://github.com/kazemihabib/compose-shimmer */
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
+
+    /* https://firebase.google.com/docs/admob/android/quick-start */
+    const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

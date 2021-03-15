@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.android.gms.ads.MobileAds
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
@@ -64,6 +65,7 @@ import com.steleot.jetpackcompose.playground.compose.material.CardScreen
 import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
 import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
 import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
+import com.steleot.jetpackcompose.playground.compose.material.ElevationScreen
 import com.steleot.jetpackcompose.playground.compose.material.ExtendedFloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.FloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconButtonScreen
@@ -154,6 +156,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayout
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        MobileAds.initialize(this)
         setContent {
             PlaygroundApp()
         }
@@ -167,7 +170,7 @@ fun PlaygroundApp() {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
                 /* main */
-                composable(route = MainNavRoutes.Main) { MainScreen(navController) }
+                composable(route = MainNavRoutes.Main) { MainScreen(navController, showAd = true) }
                 composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                 composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
@@ -238,6 +241,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
                 composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
                 composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
+                composable(route = MaterialNavRoutes.Elevation) { ElevationScreen() }
                 composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
                 composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
                 composable(route = MaterialNavRoutes.Icon) { IconScreen() }

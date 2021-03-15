@@ -21,7 +21,7 @@ object Versions {
     const val composeConstraint = "1.0.0-alpha04"
     const val appCompat = "1.3.0-beta01"
     const val lifecycle = "2.3.0"
-    const val firebase = "26.6.0"
+    const val firebase = "26.7.0"
     const val hilt = "2.33-beta"
     const val startUp = "1.0.0"
     const val coroutines = "1.4.2"
@@ -31,4 +31,5 @@ object Versions {
     const val picasso = "2.71828"
     const val timber = "4.7.1"
     const val lottie = "1.0.0-alpha07-SNAPSHOT"
+    const val adMob = "19.7.0"
 }

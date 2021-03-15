@@ -123,6 +123,7 @@ dependencies {
     implementation(Libraries.picasso)
     implementation(Libraries.timber)
     implementation(Libraries.lottie)
+    implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)
     androidTestImplementation(TestLibraries.composeUiJunit)
