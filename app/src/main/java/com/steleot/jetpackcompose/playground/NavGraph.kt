@@ -118,6 +118,7 @@ object MaterialIconsExtendedNavRoutes {
 }
 
 object RuntimeNavRoutes {
+    const val CollectAsState = "collect as state"
     const val CompositionLocal = "composition local"
     const val DerivedState = "derived state"
     const val DisposableEffect = "disposable effect"
@@ -129,8 +130,10 @@ object RuntimeNavRoutes {
     const val ProduceState = "produce state"
     const val RememberSaveable = "remember saveable"
     const val RememberSaveableStateHolder = "remember saveable state holder"
+    const val Remember = "remember"
     const val Saver = "saver"
     const val SideEffect = "side effect"
+    const val SnapshotFlow = "snapshot flow"
 }
 
 object UiNavRoutes {

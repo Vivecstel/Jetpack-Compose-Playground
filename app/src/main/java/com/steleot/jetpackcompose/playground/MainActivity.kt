@@ -253,6 +253,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedSharp) { ExtendedSharpScreen() }
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
                 /* runtime */
+                composable(route = RuntimeNavRoutes.CollectAsState) { CollectAsStateScreen() }
                 composable(route = RuntimeNavRoutes.CompositionLocal) { CompositionLocalScreen() }
                 composable(route = RuntimeNavRoutes.DerivedState) { DerivedStateScreen() }
                 composable(route = RuntimeNavRoutes.DisposableEffect) { DisposableEffectScreen() }
@@ -264,8 +265,10 @@ fun PlaygroundApp() {
                 composable(route = RuntimeNavRoutes.ProduceState) { ProduceStateScreen() }
                 composable(route = RuntimeNavRoutes.RememberSaveable) { RememberSaveableScreen() }
                 composable(route = RuntimeNavRoutes.RememberSaveableStateHolder) { RememberSaveableStateHolderScreen() }
+                composable(route = RuntimeNavRoutes.Remember) { RememberScreen() }
                 composable(route = RuntimeNavRoutes.Saver) { SaverScreen() }
                 composable(route = RuntimeNavRoutes.SideEffect) { SideEffectScreen() }
+                composable(route = RuntimeNavRoutes.SnapshotFlow) { SnapshotFlowScreen() }
                 /* ui */
                 composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
                 composable(route = UiNavRoutes.Alpha) { AlphaScreen() }

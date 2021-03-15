@@ -8,6 +8,7 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.Locale
 
 val routes = listOf(
+    RuntimeNavRoutes.CollectAsState,
     RuntimeNavRoutes.CompositionLocal,
     RuntimeNavRoutes.DerivedState,
     RuntimeNavRoutes.DisposableEffect,
@@ -19,8 +20,10 @@ val routes = listOf(
     RuntimeNavRoutes.ProduceState,
     RuntimeNavRoutes.RememberSaveable,
     RuntimeNavRoutes.RememberSaveableStateHolder,
+    RuntimeNavRoutes.Remember,
     RuntimeNavRoutes.Saver,
     RuntimeNavRoutes.SideEffect,
+    RuntimeNavRoutes.SnapshotFlow,
 )
 
 @Composable
