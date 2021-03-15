@@ -81,7 +81,7 @@ private fun Screen1() {
 }
 
 @Composable
-private fun CustomButton(
+internal fun CustomButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     content: @Composable () -> Unit
