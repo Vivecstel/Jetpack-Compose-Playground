@@ -6,14 +6,14 @@ object Versions {
     /* plugins */
     const val androidPlugin = "7.0.0-alpha09"
     const val benManes = "0.38.0"
-    const val detekt = "1.16.0-RC3"
+    const val detekt = "1.16.0"
 
     /* libraries */
     const val compose = "1.0.0-beta02"
     const val composeNavigation = "1.0.0-alpha09"
     const val composeLifecycle = "1.0.0-alpha03"
     const val composeActivity = "1.3.0-alpha04"
-    const val composeConstraint = "1.0.0-alpha03"
+    const val composeConstraint = "1.0.0-alpha04"
     const val appCompat = "1.3.0-beta01"
     const val lifecycle = "2.3.0"
     const val startUp = "1.0.0"
