@@ -4,6 +4,8 @@
 
     <application tools:ignore="AllowBackup,MissingApplicationIcon">
 
+        <activity android:name="androidx.activity.ComponentActivity" />
+
         <meta-data
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
