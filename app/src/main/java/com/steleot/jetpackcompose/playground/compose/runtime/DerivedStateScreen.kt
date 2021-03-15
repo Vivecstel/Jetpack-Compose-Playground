@@ -24,7 +24,7 @@ import java.util.Locale
 @Composable
 fun DerivedStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.CompositionLocal.capitalize(Locale.getDefault())
+        title = RuntimeNavRoutes.DerivedState.capitalize(Locale.getDefault())
     ) {
         DerivedStateExample()
     }
@@ -41,29 +41,9 @@ fun DerivedStateExample() {
             .padding(32.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        IntItem(a) { value -> a = value }
-        IntItem(b) { value -> b = value }
+        IntManipulateComponent(a) { value -> a = value }
+        IntManipulateComponent(b) { value -> b = value }
         CountDisplay(sum)
-    }
-}
-
-@Composable
-private fun IntItem(
-    value: Int,
-    setValue: (Int) -> Unit
-) {
-    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        Button(
-            onClick = { setValue(value - 1) }
-        ) {
-            Text(text = "Decrement")
-        }
-        Text(text = value.toString(), modifier = Modifier.weight(1f))
-        Button(
-            onClick = { setValue(value + 1) }
-        ) {
-            Text(text = "Increment")
-        }
     }
 }
 

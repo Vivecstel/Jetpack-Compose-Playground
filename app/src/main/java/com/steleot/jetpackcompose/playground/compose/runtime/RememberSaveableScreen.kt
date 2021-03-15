@@ -39,15 +39,23 @@ fun RememberSaveableScreen() {
 @Composable
 private fun RememberSaveableExample() {
     var count by rememberSaveable { mutableStateOf(0)}
+    IntManipulateComponent(count) { value -> count = value }
+}
+
+@Composable
+internal fun IntManipulateComponent(
+    value: Int,
+    setValue: (Int) -> Unit
+) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         Button(
-            onClick = { count-- }
+            onClick = { setValue(value - 1) }
         ) {
             Text(text = "Decrement")
         }
-        Text(text = count.toString(), modifier = Modifier.weight(1f))
+        Text(text = value.toString(), modifier = Modifier.weight(1f))
         Button(
-            onClick = { count++ }
+            onClick = { setValue(value + 1) }
         ) {
             Text(text = "Increment")
         }
