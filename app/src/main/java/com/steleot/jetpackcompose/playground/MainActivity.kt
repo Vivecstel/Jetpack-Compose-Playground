@@ -100,19 +100,8 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.*
 import com.steleot.jetpackcompose.playground.compose.runtime.CompositionLocalScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.DisposableEffectScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.ImmutableScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.KeyScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.LaunchedEffectScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateListScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateMapScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.ProduceStateScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableStateHolderScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.SaverScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.SideEffectScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
@@ -265,6 +254,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
                 /* runtime */
                 composable(route = RuntimeNavRoutes.CompositionLocal) { CompositionLocalScreen() }
+                composable(route = RuntimeNavRoutes.DerivedState) { DerivedStateScreen() }
                 composable(route = RuntimeNavRoutes.DisposableEffect) { DisposableEffectScreen() }
                 composable(route = RuntimeNavRoutes.Immutable) { ImmutableScreen() }
                 composable(route = RuntimeNavRoutes.Key) { KeyScreen() }

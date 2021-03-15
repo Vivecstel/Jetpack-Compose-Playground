@@ -5,10 +5,11 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.*
+import java.util.Locale
 
 val routes = listOf(
     RuntimeNavRoutes.CompositionLocal,
+    RuntimeNavRoutes.DerivedState,
     RuntimeNavRoutes.DisposableEffect,
     RuntimeNavRoutes.Immutable,
     RuntimeNavRoutes.Key,

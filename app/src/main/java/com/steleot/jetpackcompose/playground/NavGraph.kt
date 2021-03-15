@@ -119,6 +119,7 @@ object MaterialIconsExtendedNavRoutes {
 
 object RuntimeNavRoutes {
     const val CompositionLocal = "composition local"
+    const val DerivedState = "derived state"
     const val DisposableEffect = "disposable effect"
     const val Immutable = "immutable"
     const val Key = "key"

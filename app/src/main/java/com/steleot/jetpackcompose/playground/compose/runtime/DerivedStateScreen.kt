@@ -1,0 +1,73 @@
+package com.steleot.jetpackcompose.playground.compose.runtime
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import java.util.Locale
+
+@Composable
+fun DerivedStateScreen() {
+    DefaultScaffold(
+        title = RuntimeNavRoutes.CompositionLocal.capitalize(Locale.getDefault())
+    ) {
+        DerivedStateExample()
+    }
+}
+
+@Composable
+fun DerivedStateExample() {
+    var a by remember { mutableStateOf(0) }
+    var b by remember { mutableStateOf(0) }
+    val sum = remember { derivedStateOf { a + b } }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(32.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        IntItem(a) { value -> a = value }
+        IntItem(b) { value -> b = value }
+        CountDisplay(sum)
+    }
+}
+
+@Composable
+private fun IntItem(
+    value: Int,
+    setValue: (Int) -> Unit
+) {
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        Button(
+            onClick = { setValue(value - 1) }
+        ) {
+            Text(text = "Decrement")
+        }
+        Text(text = value.toString(), modifier = Modifier.weight(1f))
+        Button(
+            onClick = { setValue(value + 1) }
+        ) {
+            Text(text = "Increment")
+        }
+    }
+}
+
+@Composable
+private fun CountDisplay(count: State<Int>) {
+    Text("Count: ${count.value}")
+}
