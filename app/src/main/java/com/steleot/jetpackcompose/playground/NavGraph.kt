@@ -11,6 +11,7 @@ object MainNavRoutes {
     const val MaterialIConsExtended = "material icons extended"
     const val Runtime = "runtime"
     const val Ui = "ui"
+    const val ViewModel = "view model"
     const val ExternalLibraries = "external libraries"
 }
 
@@ -167,6 +168,12 @@ object UiNavRoutes {
     const val TextIndent = "text indent"
     const val VisualTransformation = "visual transformation"
     const val ZIndex = "z index"
+}
+
+object ViewModelNavRoutes {
+    const val Flow = "flow"
+    const val LiveData = "live data"
+    const val State = "state"
 }
 
 object ExternalLibrariesNavRoutes {

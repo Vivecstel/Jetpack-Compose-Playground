@@ -149,6 +149,10 @@ import com.steleot.jetpackcompose.playground.compose.ui.TextIndentScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.ui.VisualTransformationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
+import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScreen
+import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
+import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
+import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
@@ -184,6 +188,7 @@ fun PlaygroundApp() {
                 }
                 composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
+                composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                 composable(route = MainNavRoutes.ExternalLibraries) {
                     ExternalLibrariesScreen(
                         navController
@@ -324,6 +329,10 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
                 composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
                 composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
+                /* view model */
+                composable(route = ViewModelNavRoutes.Flow) { ViewModelFlowScreen() }
+                composable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
+                composable(route = ViewModelNavRoutes.State) { StateScreen() }
                 /* external */
                 composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }

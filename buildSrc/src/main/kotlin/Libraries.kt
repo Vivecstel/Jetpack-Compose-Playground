@@ -19,6 +19,7 @@ object Libraries {
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-runtime */
     const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.compose}"
+    const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-ui */
     const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"

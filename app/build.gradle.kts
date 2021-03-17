@@ -99,6 +99,7 @@ dependencies {
     implementation(Libraries.composeMaterial)
     implementation(Libraries.composeMaterialIcons)
     implementation(Libraries.composeRuntime)
+    implementation(Libraries.composeLiveData)
     implementation(Libraries.composeUi)
     implementation(Libraries.composeUiTooling)
     implementation(Libraries.composeNavigation)
