@@ -56,6 +56,7 @@ import com.steleot.jetpackcompose.playground.compose.foundationlayout.RowScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.SizeScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScreen
 import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
+import com.steleot.jetpackcompose.playground.compose.material.BackdropScaffoldScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomNavigationScreen
@@ -63,6 +64,7 @@ import com.steleot.jetpackcompose.playground.compose.material.BottomSheetScaffol
 import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.CardScreen
 import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
+import com.steleot.jetpackcompose.playground.compose.material.ContentAlphaScreen
 import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
 import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
 import com.steleot.jetpackcompose.playground.compose.material.ElevationScreen
@@ -236,6 +238,7 @@ fun PlaygroundApp() {
                 composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
                 /* material */
                 composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
+                composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
                 composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
                 composable(route = MaterialNavRoutes.BottomDrawerLayout) { BottomDrawerLayoutScreen() }
                 composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
@@ -243,6 +246,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Button) { ButtonScreen() }
                 composable(route = MaterialNavRoutes.Card) { CardScreen() }
                 composable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
+                composable(route = MaterialNavRoutes.ContentAlpha) { ContentAlphaScreen() }
                 composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
                 composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
                 composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }

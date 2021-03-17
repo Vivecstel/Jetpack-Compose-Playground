@@ -22,7 +22,7 @@ private const val Url = "material/ElevationScreen.kt"
 @Composable
 fun ElevationScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.AlertDialog.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.Elevation.capitalize(Locale.getDefault()),
         link = Url,
     ) {
         Column(
