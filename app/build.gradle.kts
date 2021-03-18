@@ -117,6 +117,7 @@ dependencies {
     implementation(Libraries.accompanistGlide)
     implementation(Libraries.accompanistPicasso)
     implementation(Libraries.accompanistInsets)
+    implementation(Libraries.accompanistFlow)
     implementation(Libraries.coil)
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)

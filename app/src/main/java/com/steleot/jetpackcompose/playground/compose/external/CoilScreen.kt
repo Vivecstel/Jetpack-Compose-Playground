@@ -16,9 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.transform.CircleCropTransformation
+import com.google.accompanist.coil.CoilImage
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import dev.chrisbanes.accompanist.coil.CoilImage
 import java.util.Locale
 
 private const val Url = "external/CoilScreen.kt"

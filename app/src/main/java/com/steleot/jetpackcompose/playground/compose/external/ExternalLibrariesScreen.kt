@@ -9,6 +9,7 @@ import java.util.Locale
 
 val routes = listOf(
     ExternalLibrariesNavRoutes.Coil,
+    ExternalLibrariesNavRoutes.Flow,
     ExternalLibrariesNavRoutes.Glide,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Picasso,

@@ -24,6 +24,7 @@ allprojects {
         google()
         jcenter()
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
+        mavenCentral()
     }
 }
 

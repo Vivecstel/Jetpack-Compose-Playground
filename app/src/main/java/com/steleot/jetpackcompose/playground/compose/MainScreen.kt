@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
+import com.google.accompanist.insets.statusBarsPadding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -23,7 +24,6 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import dev.chrisbanes.accompanist.insets.statusBarsPadding
 
 private val routes = listOf(
     MainNavRoutes.Animation,

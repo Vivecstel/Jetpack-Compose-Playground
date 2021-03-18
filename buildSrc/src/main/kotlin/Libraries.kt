@@ -35,7 +35,8 @@ object Libraries {
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivity}"
 
     /* https://developer.android.com/jetpack/compose/layout */
-    const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
+    const val composeConstraint =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
 
     /* https://developer.android.com/jetpack/androidx/releases/appcompat */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
@@ -61,11 +62,16 @@ object Libraries {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
     /* https://github.com/chrisbanes/accompanist */
-    const val accompanistCoil = "dev.chrisbanes.accompanist:accompanist-coil:${Versions.accompanist}"
-    const val accompanistGlide= "dev.chrisbanes.accompanist:accompanist-glide:${Versions.accompanist}"
-    const val accompanistPicasso = "dev.chrisbanes.accompanist:accompanist-picasso:${Versions.accompanist}"
+    const val accompanistCoil =
+        "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
+    const val accompanistGlide =
+        "com.google.accompanist:accompanist-glide:${Versions.accompanist}"
+    const val accompanistPicasso =
+        "com.google.accompanist:accompanist-picasso:${Versions.accompanist}"
     const val accompanistInsets =
-        "dev.chrisbanes.accompanist:accompanist-insets:${Versions.accompanist}"
+        "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
+    const val accompanistFlow =
+        "com.google.accompanist:accompanist-flowlayout:${Versions.accompanist}"
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"

@@ -16,7 +16,6 @@ object Versions {
     /* libraries */
     const val compose = "1.0.0-beta02"
     const val composeNavigation = "1.0.0-alpha09"
-    const val composeLifecycle = "1.0.0-alpha03"
     const val composeActivity = "1.3.0-alpha04"
     const val composeConstraint = "1.0.0-alpha05"
     const val appCompat = "1.3.0-beta01"
@@ -24,8 +23,8 @@ object Versions {
     const val firebase = "26.7.0"
     const val hilt = "2.33-beta"
     const val startUp = "1.0.0"
-    const val coroutines = "1.4.2"
-    const val accompanist = "0.6.2"
+    const val coroutines = "1.4.3"
+    const val accompanist = "0.6.3-SNAPSHOT"
     const val coil = "1.1.1"
     const val glide = "4.12.0"
     const val picasso = "2.71828"

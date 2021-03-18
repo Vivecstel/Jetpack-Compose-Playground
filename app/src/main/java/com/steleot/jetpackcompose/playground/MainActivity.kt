@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.android.gms.ads.MobileAds
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
@@ -24,6 +25,7 @@ import com.steleot.jetpackcompose.playground.compose.animation.SuspendAnimationS
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
 import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
+import com.steleot.jetpackcompose.playground.compose.external.FlowScreen
 import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
 import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
 import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
@@ -176,7 +178,6 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveData
 import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
-import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
 class MainActivity : ComponentActivity() {
@@ -379,6 +380,7 @@ fun PlaygroundApp() {
                 composable(route = ViewModelNavRoutes.State) { StateScreen() }
                 /* external */
                 composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Flow) { FlowScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Picasso) { PicassoScreen() }
