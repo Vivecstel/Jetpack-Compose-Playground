@@ -50,8 +50,10 @@ import com.steleot.jetpackcompose.playground.compose.foundationlayout.AspectRati
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxWithConstraintsScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.ColumnScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.LayoutScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.FoundationLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.IntrinsicScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.OffsetScreen
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.PaddingScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.RowScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.SizeScreen
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScreen
@@ -138,11 +140,15 @@ import com.steleot.jetpackcompose.playground.compose.ui.LocalAccessibilityManage
 import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillTreeScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalClipboardManagerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalConfigurationScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalContextScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalFocusManagerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalFontLoaderScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalHapticFeedbackScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalLayoutDirectionScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalLifecycleOwnerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalSavedStateRegistryOwnerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalTextInputServiceScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalTextToolbarScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalUriHandlerScreen
@@ -194,7 +200,7 @@ fun PlaygroundApp() {
                 composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                 composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
-                composable(route = MainNavRoutes.FoundationLayout) { LayoutScreen(navController) }
+                composable(route = MainNavRoutes.FoundationLayout) { FoundationLayoutScreen(navController) }
                 composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
                 composable(route = MainNavRoutes.MaterialIcons) { MaterialIconsScreen(navController) }
                 composable(route = MainNavRoutes.MaterialIConsExtended) {
@@ -246,7 +252,9 @@ fun PlaygroundApp() {
                 composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
                 composable(route = FoundationLayoutNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
                 composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
+                composable(route = FoundationLayoutNavRoutes.Intrinsic) { IntrinsicScreen() }
                 composable(route = FoundationLayoutNavRoutes.Offset) { OffsetScreen() }
+                composable(route = FoundationLayoutNavRoutes.Padding) { PaddingScreen() }
                 composable(route = FoundationLayoutNavRoutes.Row) { RowScreen() }
                 composable(route = FoundationLayoutNavRoutes.Size) { SizeScreen() }
                 composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
@@ -335,11 +343,15 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
                 composable(route = UiNavRoutes.LocalAutofillTree) { LocalAutofillTreeScreen() }
                 composable(route = UiNavRoutes.LocalClipboardManager) { LocalClipboardManagerScreen() }
+                composable(route = UiNavRoutes.LocalConfiguration) { LocalConfigurationScreen() }
+                composable(route = UiNavRoutes.LocalContext) { LocalContextScreen() }
                 composable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
                 composable(route = UiNavRoutes.LocalFocusManager) { LocalFocusManagerScreen() }
                 composable(route = UiNavRoutes.LocalFontLoader) { LocalFontLoaderScreen() }
                 composable(route = UiNavRoutes.LocalHapticFeedback) { LocalHapticFeedbackScreen() }
                 composable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
+                composable(route = UiNavRoutes.LocalLifecycleOwner) { LocalLifecycleOwnerScreen() }
+                composable(route = UiNavRoutes.LocalSavedStateRegistryOwner) { LocalSavedStateRegistryOwnerScreen() }
                 composable(route = UiNavRoutes.LocalTextInputService) { LocalTextInputServiceScreen() }
                 composable(route = UiNavRoutes.LocalTextToolbar) { LocalTextToolbarScreen() }
                 composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }

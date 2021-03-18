@@ -12,14 +12,16 @@ val routes = listOf(
     FoundationLayoutNavRoutes.Box,
     FoundationLayoutNavRoutes.BoxWithConstraints,
     FoundationLayoutNavRoutes.Column,
+//    FoundationLayoutNavRoutes.Intrinsic,
     FoundationLayoutNavRoutes.Offset,
+//    FoundationLayoutNavRoutes.Padding,
     FoundationLayoutNavRoutes.Row,
     FoundationLayoutNavRoutes.Size,
     FoundationLayoutNavRoutes.Spacer,
 )
 
 @Composable
-fun LayoutScreen(navController: NavHostController) {
+fun FoundationLayoutScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
         title = MainNavRoutes.FoundationLayout.capitalize(Locale.getDefault()),
