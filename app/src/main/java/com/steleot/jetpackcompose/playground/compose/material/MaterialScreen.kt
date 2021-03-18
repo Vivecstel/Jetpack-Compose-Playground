@@ -9,7 +9,7 @@ import java.util.Locale
 
 val routes = listOf(
     MaterialNavRoutes.AlertDialog,
-//    MaterialNavRoutes.BackdropScaffold,
+    MaterialNavRoutes.BackdropScaffold,
     MaterialNavRoutes.BottomAppBar,
 //    MaterialNavRoutes.BottomDrawerLayout,
     MaterialNavRoutes.BottomNavigation,

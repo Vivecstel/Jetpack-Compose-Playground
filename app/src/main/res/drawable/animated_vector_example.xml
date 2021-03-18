@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt" >
+    xmlns:aapt="http://schemas.android.com/aapt">
     <aapt:attr name="android:drawable">
         <vector
             android:height="64dp"
             android:width="64dp"
             android:viewportHeight="600"
-            android:viewportWidth="600" >
+            android:viewportWidth="600">
             <group
                 android:name="rotationGroup"
                 android:pivotX="300.0"
                 android:pivotY="300.0"
-                android:rotation="45.0" >
+                android:rotation="45.0">
                 <path
                     android:name="v"
                     android:fillColor="#000000"
@@ -30,7 +30,7 @@
         </aapt:attr>
     </target>
 
-    <target android:name="v" >
+    <target android:name="v">
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
@@ -38,7 +38,7 @@
                     android:propertyName="pathData"
                     android:valueFrom="M300,70 l 0,-70 70,70 0,0 -70,70z"
                     android:valueTo="M300,70 l 0,-70 70,0  0,140 -70,0 z"
-                    android:valueType="pathType"/>
+                    android:valueType="pathType" />
             </set>
         </aapt:attr>
     </target>

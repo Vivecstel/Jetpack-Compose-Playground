@@ -198,6 +198,7 @@ object ExternalLibrariesNavRoutes {
     const val Coil = "coil"
     const val Flow = "flow"
     const val Glide = "glide"
+    const val Insets = "insets"
     const val Lottie = "lottie"
     const val Picasso = "picasso"
 }

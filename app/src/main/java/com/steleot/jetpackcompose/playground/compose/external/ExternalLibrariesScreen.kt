@@ -11,6 +11,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Coil,
     ExternalLibrariesNavRoutes.Flow,
     ExternalLibrariesNavRoutes.Glide,
+//    ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Picasso,
 )

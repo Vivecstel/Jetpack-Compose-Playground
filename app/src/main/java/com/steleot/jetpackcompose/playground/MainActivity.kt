@@ -27,6 +27,7 @@ import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
 import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
 import com.steleot.jetpackcompose.playground.compose.external.FlowScreen
 import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
+import com.steleot.jetpackcompose.playground.compose.external.InsetsScreen
 import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
 import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
@@ -382,6 +383,7 @@ fun PlaygroundApp() {
                 composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Flow) { FlowScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Picasso) { PicassoScreen() }
             }
