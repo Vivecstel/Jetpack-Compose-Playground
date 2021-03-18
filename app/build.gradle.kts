@@ -103,7 +103,6 @@ dependencies {
     implementation(Libraries.composeUi)
     implementation(Libraries.composeUiTooling)
     implementation(Libraries.composeNavigation)
-    implementation(Libraries.composeLifecycle)
     implementation(Libraries.composeActivity)
     implementation(Libraries.composeConstraint)
     implementation(Libraries.appCompat)

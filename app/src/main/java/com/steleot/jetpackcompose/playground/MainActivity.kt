@@ -64,7 +64,7 @@ import com.steleot.jetpackcompose.playground.compose.material.BottomSheetScaffol
 import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.CardScreen
 import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
-import com.steleot.jetpackcompose.playground.compose.material.ContentAlphaScreen
+import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaScreen
 import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
 import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
 import com.steleot.jetpackcompose.playground.compose.material.ElevationScreen
@@ -74,6 +74,7 @@ import com.steleot.jetpackcompose.playground.compose.material.IconButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconToggleButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.ListItemScreen
+import com.steleot.jetpackcompose.playground.compose.material.LocalContentColorScreen
 import com.steleot.jetpackcompose.playground.compose.material.MaterialScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalDrawerLayoutScreen
@@ -133,7 +134,20 @@ import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
 import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
 import com.steleot.jetpackcompose.playground.compose.ui.GraphicsLayerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalAccessibilityManagerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillTreeScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalClipboardManagerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalFocusManagerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalFontLoaderScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalHapticFeedbackScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalLayoutDirectionScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalTextInputServiceScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalTextToolbarScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalUriHandlerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalViewConfigurationScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalWindowInfoScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
@@ -246,7 +260,6 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Button) { ButtonScreen() }
                 composable(route = MaterialNavRoutes.Card) { CardScreen() }
                 composable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
-                composable(route = MaterialNavRoutes.ContentAlpha) { ContentAlphaScreen() }
                 composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
                 composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
                 composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
@@ -256,6 +269,8 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Icon) { IconScreen() }
                 composable(route = MaterialNavRoutes.IconToggleButton) { IconToggleButtonScreen() }
                 composable(route = MaterialNavRoutes.ListItem) { ListItemScreen() }
+                composable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
+                composable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
                 composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
                 composable(route = MaterialNavRoutes.ModalDrawerLayout) { ModalDrawerLayoutScreen() }
                 composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
@@ -316,7 +331,20 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Font) { FontScreen() }
                 composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
                 composable(route = UiNavRoutes.Layout) { UiLayoutScreen() }
+                composable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }
+                composable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
+                composable(route = UiNavRoutes.LocalAutofillTree) { LocalAutofillTreeScreen() }
+                composable(route = UiNavRoutes.LocalClipboardManager) { LocalClipboardManagerScreen() }
                 composable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
+                composable(route = UiNavRoutes.LocalFocusManager) { LocalFocusManagerScreen() }
+                composable(route = UiNavRoutes.LocalFontLoader) { LocalFontLoaderScreen() }
+                composable(route = UiNavRoutes.LocalHapticFeedback) { LocalHapticFeedbackScreen() }
+                composable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
+                composable(route = UiNavRoutes.LocalTextInputService) { LocalTextInputServiceScreen() }
+                composable(route = UiNavRoutes.LocalTextToolbar) { LocalTextToolbarScreen() }
+                composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
+                composable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
+                composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
                 composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
                 composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
                 composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }

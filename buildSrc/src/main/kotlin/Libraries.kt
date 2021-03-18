@@ -31,10 +31,6 @@ object Libraries {
     const val composeNavigation =
         "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
 
-    /* https://developer.android.com/jetpack/androidx/releases/lifecycle */
-    const val composeLifecycle =
-        "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeLifecycle}"
-
     /* https://developer.android.com/jetpack/androidx/releases/activity */
     const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivity}"
 

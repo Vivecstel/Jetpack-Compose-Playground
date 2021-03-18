@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -85,7 +86,11 @@ fun DefaultTopAppBar(
                         data = "$BaseUrl$link".toUri()
                     })
                 }) {
-                    Icon(imageVector = Icons.Filled.ExitToApp, contentDescription = "Exit to App")
+                    Icon(
+                        imageVector = Icons.Filled.ExitToApp,
+                        contentDescription = "Exit to App",
+                        tint = Color.White
+                    )
                 }
             }
         }
