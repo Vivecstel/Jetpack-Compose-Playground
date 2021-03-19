@@ -44,7 +44,7 @@ val routes = listOf(
     MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,
     MaterialNavRoutes.TopAppBar,
-//    MaterialNavRoutes.TriStateCheckbox,
+    MaterialNavRoutes.TriStateCheckbox,
 )
 
 @Composable
