@@ -67,7 +67,7 @@ object MaterialNavRoutes {
     const val AlertDialog = "alert dialog"
     const val BackdropScaffold = "backdrop scaffold"
     const val BottomAppBar = "bottom app bar"
-    const val BottomDrawerLayout = "bottom drawer layout"
+    const val BottomDrawer = "bottom drawer layout"
     const val BottomNavigation = "bottom navigation"
     const val BottomSheetScaffold = "bottom sheet scaffold"
     const val Button = "button"

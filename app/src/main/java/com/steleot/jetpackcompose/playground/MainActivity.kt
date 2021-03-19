@@ -63,7 +63,7 @@ import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScre
 import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
 import com.steleot.jetpackcompose.playground.compose.material.BackdropScaffoldScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
-import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomNavigationScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomSheetScaffoldScreen
 import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
@@ -264,7 +264,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
                 composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
                 composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
-                composable(route = MaterialNavRoutes.BottomDrawerLayout) { BottomDrawerLayoutScreen() }
+                composable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
                 composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
                 composable(route = MaterialNavRoutes.BottomSheetScaffold) { BottomSheetScaffoldScreen() }
                 composable(route = MaterialNavRoutes.Button) { ButtonScreen() }

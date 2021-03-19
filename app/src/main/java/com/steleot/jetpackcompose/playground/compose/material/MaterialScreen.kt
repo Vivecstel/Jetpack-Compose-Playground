@@ -11,7 +11,7 @@ val routes = listOf(
     MaterialNavRoutes.AlertDialog,
     MaterialNavRoutes.BackdropScaffold,
     MaterialNavRoutes.BottomAppBar,
-//    MaterialNavRoutes.BottomDrawerLayout,
+    MaterialNavRoutes.BottomDrawer,
     MaterialNavRoutes.BottomNavigation,
     MaterialNavRoutes.BottomSheetScaffold,
     MaterialNavRoutes.Button,
