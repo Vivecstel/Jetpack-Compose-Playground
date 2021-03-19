@@ -10,7 +10,6 @@ plugins {
 buildscript {
     repositories {
         google()
-        jcenter()
     }
     dependencies {
         classpath(GradleLibraries.androidPlugin)
@@ -22,8 +21,8 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
+        maven("https://kotlin.bintray.com/kotlinx")
         mavenCentral()
     }
 }
