@@ -12,7 +12,7 @@ val routes = listOf(
     FoundationLayoutNavRoutes.Box,
     FoundationLayoutNavRoutes.BoxWithConstraints,
     FoundationLayoutNavRoutes.Column,
-//    FoundationLayoutNavRoutes.Intrinsic,
+    FoundationLayoutNavRoutes.Intrinsic,
     FoundationLayoutNavRoutes.Offset,
     FoundationLayoutNavRoutes.Padding,
     FoundationLayoutNavRoutes.Row,
