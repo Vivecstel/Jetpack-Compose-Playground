@@ -196,7 +196,7 @@ object ViewModelNavRoutes {
 
 object ExternalLibrariesNavRoutes {
     const val Coil = "coil"
-    const val Flow = "flow"
+    const val FlowLayout = "flow layout"
     const val Glide = "glide"
     const val Insets = "insets"
     const val Lottie = "lottie"

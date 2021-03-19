@@ -19,12 +19,12 @@ import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
 
-private const val Url = "external/FlowScreen.kt"
+private const val Url = "external/FlowLayoutScreen.kt"
 
 @Composable
-fun FlowScreen() {
+fun FlowLayoutScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Flow.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.FlowLayout.capitalize(Locale.getDefault()),
         link = Url,
     ) {
         Row {

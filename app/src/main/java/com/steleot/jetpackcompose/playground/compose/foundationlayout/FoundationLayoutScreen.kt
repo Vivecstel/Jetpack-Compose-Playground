@@ -14,7 +14,7 @@ val routes = listOf(
     FoundationLayoutNavRoutes.Column,
 //    FoundationLayoutNavRoutes.Intrinsic,
     FoundationLayoutNavRoutes.Offset,
-//    FoundationLayoutNavRoutes.Padding,
+    FoundationLayoutNavRoutes.Padding,
     FoundationLayoutNavRoutes.Row,
     FoundationLayoutNavRoutes.Size,
     FoundationLayoutNavRoutes.Spacer,

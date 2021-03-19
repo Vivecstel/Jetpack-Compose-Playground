@@ -21,7 +21,7 @@ import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-private const val Url = "viewmodel/FlowScreen.kt"
+private const val Url = "viewmodel/FlowLayoutScreen.kt"
 
 @Composable
 fun ViewModelFlowScreen() {
