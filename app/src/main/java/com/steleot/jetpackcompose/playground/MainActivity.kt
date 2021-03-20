@@ -200,7 +200,13 @@ fun PlaygroundApp() {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
                 /* main */
-                composable(route = MainNavRoutes.Main) { MainScreen(navController, showAd = true) }
+                composable(route = MainNavRoutes.Main) {
+                    MainScreen(
+                        navController,
+                        showAd = true,
+                        navigateToSearch = null
+                    )
+                }
                 composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                 composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }

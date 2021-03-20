@@ -45,6 +45,7 @@ fun MainScreen(
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
     showBackArrow: Boolean = false,
+    navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = false,
 ) {
     Scaffold(
@@ -53,6 +54,7 @@ fun MainScreen(
             DefaultTopAppBar(
                 title = title,
                 showBackArrow = showBackArrow,
+                navigateToSearch = navigateToSearch
             )
         }
     ) {

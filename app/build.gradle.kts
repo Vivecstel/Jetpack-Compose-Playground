@@ -80,10 +80,6 @@ android {
         isAbortOnError = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
-    }
-
     packagingOptions {
         resources.excludes.add("META-INF/AL2.0")
         resources.excludes.add("META-INF/LGPL2.1")
@@ -92,7 +88,7 @@ android {
 
 dependencies {
 
-    implementation(Libraries.kotlinReflect)
+    debugImplementation(Libraries.kotlinReflect)
     implementation(Libraries.composeAnimation)
     implementation(Libraries.composeCompiler)
     implementation(Libraries.composeFoundation)

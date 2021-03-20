@@ -15,10 +15,12 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -28,10 +30,20 @@ import androidx.core.net.toUri
 import com.google.accompanist.insets.statusBarsPadding
 import java.util.Locale
 
-@Preview
 @Composable
 fun DefaultListItem(
-    @PreviewParameter(DefaultListItemPreviewParameter::class) text: String,
+    text: String,
+    modifier: Modifier = Modifier,
+    cardClickAction: () -> Unit = {},
+) {
+    DefaultListItem(
+        AnnotatedString(text.capitalize(Locale.getDefault())), modifier, cardClickAction
+    )
+}
+
+@Composable
+fun DefaultListItem(
+    text: AnnotatedString,
     modifier: Modifier = Modifier,
     cardClickAction: () -> Unit = {},
 ) {
@@ -41,7 +53,7 @@ fun DefaultListItem(
             .clickable(onClick = cardClickAction)
     ) {
         Text(
-            text.capitalize(Locale.getDefault()),
+            text,
             style = MaterialTheme.typography.body1,
             modifier = modifier
                 .padding(16.dp)
@@ -63,22 +75,16 @@ private const val BaseUrl =
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     showBackArrow: Boolean = false,
+    navigateToSearch: (() -> Unit)? = null,
     link: String? = null
 ) {
-    val backDispatcher = LocalOnBackPressedDispatcherOwner.current
     val context = LocalContext.current
     TopAppBar(
         title = {
             Text(text = title, maxLines = 1, overflow = TextOverflow.Ellipsis)
         },
         navigationIcon = {
-            if (showBackArrow) {
-                IconButton(onClick = {
-                    backDispatcher.onBackPressedDispatcher.onBackPressed()
-                }) {
-                    Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back Arrow")
-                }
-            }
+            if (showBackArrow) BackArrow()
         },
         actions = {
             link?.let {
@@ -94,8 +100,27 @@ fun DefaultTopAppBar(
                     )
                 }
             }
+            navigateToSearch?.let {
+                IconButton(onClick = it) {
+                    Icon(
+                        imageVector = Icons.Filled.Search,
+                        contentDescription = "Search",
+                        tint = Color.White
+                    )
+                }
+            }
         }
     )
+}
+
+@Composable
+fun BackArrow() {
+    val backDispatcher = LocalOnBackPressedDispatcherOwner.current
+    IconButton(onClick = {
+        backDispatcher.onBackPressedDispatcher.onBackPressed()
+    }) {
+        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back Arrow")
+    }
 }
 
 @Composable

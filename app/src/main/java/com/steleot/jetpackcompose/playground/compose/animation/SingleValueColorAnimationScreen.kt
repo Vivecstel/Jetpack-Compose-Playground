@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
@@ -39,6 +40,7 @@ fun SingleValueColorAnimationScreen() {
     }
 }
 
+@Preview
 @Composable
 private fun SingleValueAnimationColorExample() {
     var enabled by remember { mutableStateOf(true) }
