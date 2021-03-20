@@ -1,7 +1,13 @@
 package com.steleot.jetpackcompose.playground.compose
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandIn
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.LocalTextStyle
@@ -10,8 +16,13 @@ import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
@@ -40,6 +51,7 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.route
 import com.steleot.jetpackcompose.playground.compose.ui.routes as uiRoutes
 import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewModelRoutes
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
@@ -47,21 +59,41 @@ fun SearchScreen(navController: NavHostController) {
     val search: String by viewModel.search.collectAsState()
     val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
 
+    var visible by rememberSaveable { mutableStateOf(false) }
+
     Scaffold(
         modifier = Modifier.statusBarsPadding(),
         topBar = {
             TopAppBar(
                 title = {
-                    TextField(
-                        value = search,
-                        onValueChange = { value -> viewModel.onSearchChange(value) },
-                        textStyle = LocalTextStyle.current.copy(
-                            fontSize = 16.sp
-                        ),
-                        colors = TextFieldDefaults.textFieldColors(
-                            cursorColor = Color.White
+                    AnimatedVisibility(
+                        visible = visible,
+                        enter = expandIn(
+                            expandFrom = Alignment.BottomStart,
+                            animationSpec = tween(
+                                500,
+                                delayMillis = 250,
+                                easing = LinearOutSlowInEasing
+                            )
                         )
-                    )
+                    ) {
+                        TextField(
+                            value = search,
+                            onValueChange = { value -> viewModel.onSearchChange(value) },
+                            textStyle = LocalTextStyle.current.copy(
+                                fontSize = 16.sp
+                            ),
+                            colors = TextFieldDefaults.textFieldColors(
+                                cursorColor = Color.White
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(end = 16.dp)
+                        )
+                    }
+                    LaunchedEffect(true) {
+                        visible = true
+                    }
                 },
                 navigationIcon = {
                     BackArrow()

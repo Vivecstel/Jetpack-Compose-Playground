@@ -68,7 +68,8 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 }
 
 private const val BaseUrl =
-    "https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/"
+    "https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/" +
+            "src/main/java/com/steleot/jetpackcompose/playground/compose/"
 
 @Preview
 @Composable

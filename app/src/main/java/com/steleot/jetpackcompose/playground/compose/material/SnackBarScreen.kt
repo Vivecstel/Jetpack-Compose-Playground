@@ -73,10 +73,12 @@ fun SnackBarScreen() {
     }
 }
 
+private const val ConstantText = "Jetpack Compose Playground Snackbar"
+
 @Preview
 @Composable
 private fun DefaultSnackbar(
-    text: String = "Jetpack Compose Playground Snackbar"
+    text: String = ConstantText
 ) {
     Snackbar(
         content = { Text(text = text, color = Color.White) }
@@ -87,7 +89,7 @@ private fun DefaultSnackbar(
 @Composable
 private fun ShapeSnackbar() {
     Snackbar(
-        content = { Text(text = "Jetpack Compose Playground Snackbar", color = Color.White) },
+        content = { Text(text = ConstantText, color = Color.White) },
         shape = RoundedCornerShape(8.dp)
     )
 }
@@ -96,7 +98,7 @@ private fun ShapeSnackbar() {
 @Composable
 private fun BackgroundColorSnackbar() {
     Snackbar(
-        content = { Text(text = "Jetpack Compose Playground Snackbar", color = Color.White) },
+        content = { Text(text = ConstantText, color = Color.White) },
         backgroundColor = Color.Red,
     )
 }
@@ -105,7 +107,7 @@ private fun BackgroundColorSnackbar() {
 @Composable
 private fun ElevationSnackbar() {
     Snackbar(
-        content = { Text(text = "Jetpack Compose Playground Snackbar", color = Color.White) },
+        content = { Text(text = ConstantText, color = Color.White) },
         elevation = 8.dp
     )
 }
@@ -114,7 +116,7 @@ private fun ElevationSnackbar() {
 @Composable
 private fun ActionSnackbar() {
     Snackbar(
-        content = { Text(text = "Jetpack Compose Playground Snackbar", color = Color.White) },
+        content = { Text(text = ConstantText, color = Color.White) },
         action = {
             Text(
                 text = "Undo",
@@ -136,7 +138,7 @@ private fun ActionOnNewLineSnackbar() {
     Snackbar(
         content = {
             Text(
-                text = "Jetpack Compose Playground Snackbar Jetpack Compose Playground Snackbar",
+                text = "$ConstantText $ConstantText",
                 color = Color.White
             )
         },

@@ -52,8 +52,13 @@ fun ListItemScreen() {
 @Composable
 private fun DefaultListItem() {
     ListItem {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
+}
+
+@Composable
+private fun DefaultText() {
+    Text(text = "Jetpack Compose Playground")
 }
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -69,7 +74,7 @@ private fun IconListItem() {
             )
         }
     ) {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
 }
 
@@ -82,7 +87,7 @@ private fun SecondaryTextListItem() {
             Text(text = "Jetpack Compose Playground Secondary text")
         }
     ) {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
 }
 
@@ -95,7 +100,7 @@ private fun OverlineTextListItem() {
             Text(text = "Jetpack Compose Playground Overline text")
         }
     ) {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
 }
 
@@ -112,7 +117,7 @@ private fun TrailingListItem() {
             )
         }
     ) {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
 }
 
@@ -146,6 +151,6 @@ private fun FullListItem() {
             )
         }
     ) {
-        Text(text = "Jetpack Compose Playground")
+        DefaultText()
     }
 }

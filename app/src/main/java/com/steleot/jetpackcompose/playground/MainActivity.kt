@@ -154,6 +154,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.LocalHapticFeedbackScree
 import com.steleot.jetpackcompose.playground.compose.ui.LocalLayoutDirectionScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalLifecycleOwnerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalSavedStateRegistryOwnerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalSoftwareKeyboardControllerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalTextInputServiceScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalTextToolbarScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalUriHandlerScreen
@@ -167,7 +168,6 @@ import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
 import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalSoftwareKeyboardControllerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SpanStyleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SubComposeLayoutScreen

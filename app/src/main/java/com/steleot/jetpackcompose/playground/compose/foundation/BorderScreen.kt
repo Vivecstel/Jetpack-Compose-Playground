@@ -49,21 +49,23 @@ fun BorderScreen() {
 @Composable
 private fun Border() {
     Card(border = BorderStroke(2.dp, Color.Black)) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(12.dp)
-        )
+        DefaultText()
     }
+}
+
+@Composable
+private fun DefaultText() {
+    Text(
+        text = "Jetpack Compose Playground",
+        modifier = Modifier.padding(12.dp)
+    )
 }
 
 @Preview
 @Composable
 private fun BorderSolidBrush() {
     Card(border = BorderStroke(2.dp, SolidColor(Color.Red))) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(12.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -71,10 +73,7 @@ private fun BorderSolidBrush() {
 @Composable
 private fun BorderLinearGradientBrush() {
     Card(border = BorderStroke(4.dp, linearGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(12.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -82,10 +81,7 @@ private fun BorderLinearGradientBrush() {
 @Composable
 private fun BorderRadialGradientBrush() {
     Card(border = BorderStroke(4.dp, radialGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(12.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -93,9 +89,6 @@ private fun BorderRadialGradientBrush() {
 @Composable
 private fun BorderSweepGradientBrush() {
     Card(border = BorderStroke(4.dp, sweepGradient(listOf(Color.Red, Color.Blue, Color.Cyan)))) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(12.dp)
-        )
+        DefaultText()
     }
 }

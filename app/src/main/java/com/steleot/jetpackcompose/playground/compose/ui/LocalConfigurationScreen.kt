@@ -39,15 +39,19 @@ fun LocalConfigurationScreen() {
 @Composable
 private fun LocalConfigurationExample() {
     val configuration = LocalConfiguration.current
-    Text(text = """
+    Text(
+        text = """
         Local configuration values:
         densityDpi: ${configuration.densityDpi}
         fontScale: ${configuration.fontScale}
         locale: ${configuration.locale}
-        orientation: ${when (configuration.orientation){
-            Configuration.ORIENTATION_PORTRAIT -> "Portrait"
-            else -> "Landscape"
-        } }
+        orientation: ${
+            when (configuration.orientation) {
+                Configuration.ORIENTATION_PORTRAIT -> "Portrait"
+                else -> "Landscape"
+            }
+        }
         etc.
-    """.trimIndent())
+    """.trimIndent()
+    )
 }

@@ -32,9 +32,11 @@ fun DropdownMenuScreen() {
     ) {
         var expanded by remember { mutableStateOf(false) }
 
-        Box(modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center)) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+        ) {
             IconButton(onClick = { expanded = true }) {
                 Icon(Icons.Default.MoreVert, contentDescription = "Localized description")
             }

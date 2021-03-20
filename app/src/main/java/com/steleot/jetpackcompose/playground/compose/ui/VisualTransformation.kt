@@ -65,19 +65,23 @@ private fun creditCardFilter(text: AnnotatedString): TransformedText {
     }
     val creditCardOffsetTranslator = object : OffsetMapping {
         override fun originalToTransformed(offset: Int): Int {
-            if (offset <= 3) return offset
-            if (offset <= 7) return offset + 1
-            if (offset <= 11) return offset + 2
-            if (offset <= 16) return offset + 3
-            return 19
+            return when {
+                offset <= 3 -> offset
+                offset <= 7 -> offset + 1
+                offset <= 11 -> offset + 2
+                offset <= 16 -> offset + 3
+                else -> 19
+            }
         }
 
         override fun transformedToOriginal(offset: Int): Int {
-            if (offset <= 4) return offset
-            if (offset <= 9) return offset - 1
-            if (offset <= 14) return offset - 2
-            if (offset <= 19) return offset - 3
-            return 16
+            return when {
+                offset <= 4 -> offset
+                offset <= 9 -> offset - 1
+                offset <= 14 -> offset - 2
+                offset <= 19 -> offset - 3
+                else -> 16
+            }
         }
     }
 

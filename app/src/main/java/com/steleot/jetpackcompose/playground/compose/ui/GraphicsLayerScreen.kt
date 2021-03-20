@@ -48,60 +48,62 @@ fun GraphicsLayerScreen() {
     }
 }
 
+private const val ConstantText = "Hello Jetpack compose"
+
 @Composable
 private fun GraphicsLayerScaleXExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(scaleX = 0.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(scaleX = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerScaleYExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(scaleY = 0.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(scaleY = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerAlphaExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(alpha = 0.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(alpha = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerTranslationXExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(translationX = 0.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(translationX = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerTranslationYExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(translationY = 0.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(translationY = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerShadowElevationExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(shadowElevation = 1.5f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(shadowElevation = 1.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerRotationXExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(rotationX = 180f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(rotationX = 180f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerRotationYExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(rotationY = 180f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(rotationY = 180f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerRotationZExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(rotationZ = 180f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(rotationZ = 180f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerCameraDistanceExample() {
-    Text("Hello Jetpack compose", Modifier.graphicsLayer(cameraDistance = 16f, clip = true))
+    Text(ConstantText, Modifier.graphicsLayer(cameraDistance = 16f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerTransformOriginExample() {
     Text(
-        "Hello Jetpack compose",
+        ConstantText,
         Modifier.graphicsLayer(transformOrigin = TransformOrigin(2f, 2f), clip = true)
     )
 }

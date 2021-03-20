@@ -1,5 +1,5 @@
 build:
-  maxIssues: 10
+  maxIssues: 25
 
 comments:
   CommentOverPrivateProperty:
@@ -72,6 +72,8 @@ naming:
     variablePattern: '[a-z][A-Za-z0-9]*'
     privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
     excludeClassPattern: '$^'
+  TopLevelPropertyNaming:
+    active: false
 
 performance:
   ArrayPrimitive:
@@ -117,14 +119,10 @@ style:
     excludes: [ '**/*.kt' ]
     includes: [ '**/detekt-api/src/main/**/api/*.kt' ]
   MaxLineLength:
-    excludes: [ '**/test/**', '**/*.Test.kt', '**/*.Spec.kt' ]
+    excludes: [ '**/test/**', '**/*.Test.kt', '**/*.Spec.kt', '**/MainActivity.kt' ]
     excludeCommentStatements: true
   MagicNumber:
-    ignoreHashCodeFunction: true
-    ignorePropertyDeclaration: true
-    ignoreAnnotation: true
-    ignoreEnums: true
-    ignoreNumbers: [ '-1', '0', '1', '2', '100', '1000', '8080' ]
+    active: false
   MayBeConst:
     active: true
   NestedClassesVisibility:

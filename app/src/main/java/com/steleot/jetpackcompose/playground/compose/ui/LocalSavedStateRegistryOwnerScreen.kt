@@ -37,6 +37,8 @@ fun LocalSavedStateRegistryOwnerScreen() {
 @Composable
 private fun LocalSavedStateRegistryOwnerExample() {
     val savedStateRegistryOwner = LocalSavedStateRegistryOwner.current
-    Text(text = "Local Saved State Registry Owner:\n" +
-            "isRestored: ${savedStateRegistryOwner.savedStateRegistry.isRestored}")
+    Text(
+        text = "Local Saved State Registry Owner:\n" +
+                "isRestored: ${savedStateRegistryOwner.savedStateRegistry.isRestored}"
+    )
 }

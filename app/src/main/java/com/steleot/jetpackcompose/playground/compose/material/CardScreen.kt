@@ -49,11 +49,16 @@ fun CardScreen() {
 @Composable
 private fun DefaultCard() {
     Card {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
+}
+
+@Composable
+private fun DefaultText() {
+    Text(
+        text = "Jetpack Compose Playground",
+        modifier = Modifier.padding(16.dp)
+    )
 }
 
 @Preview
@@ -62,10 +67,7 @@ private fun ShapeCard() {
     Card(
         shape = CutCornerShape(12.dp)
     ) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -75,10 +77,7 @@ private fun BackgroundColorCard() {
     Card(
         backgroundColor = Color.LightGray
     ) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -89,10 +88,7 @@ private fun ContentColorCard() {
         backgroundColor = Color.Black,
         contentColor = Color.White
     ) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -102,10 +98,7 @@ private fun BorderCard() {
     Card(
         border = BorderStroke(2.dp, Color.Black)
     ) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -115,9 +108,6 @@ private fun ElevationCard() {
     Card(
         elevation = 12.dp
     ) {
-        Text(
-            text = "Jetpack Compose Playground",
-            modifier = Modifier.padding(16.dp)
-        )
+        DefaultText()
     }
 }

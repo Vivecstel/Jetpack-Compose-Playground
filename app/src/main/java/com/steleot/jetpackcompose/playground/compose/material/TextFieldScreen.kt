@@ -54,10 +54,12 @@ fun TextFieldScreen() {
     }
 }
 
+private const val DefaultText = "Jetpack"
+
 @Preview
 @Composable
 private fun DefaultTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },
@@ -71,7 +73,7 @@ private fun DefaultTextField() {
 @Preview
 @Composable
 private fun BackgroundColorTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },
@@ -88,7 +90,7 @@ private fun BackgroundColorTextField() {
 @Preview
 @Composable
 private fun StyledTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -107,7 +109,7 @@ private fun StyledTextField() {
 @Preview
 @Composable
 private fun ImeActionTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -124,7 +126,7 @@ private fun ImeActionTextField() {
 
 @Composable
 private fun PasswordKeyboardTypeTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -142,7 +144,7 @@ private fun PasswordKeyboardTypeTextField() {
 
 @Composable
 private fun ShapedTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
+    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },

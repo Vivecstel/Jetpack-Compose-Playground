@@ -44,10 +44,12 @@ fun RadioButtonScreen() {
     }
 }
 
+private const val ConstantText = "Jetpack Compose Playground"
+
 @Preview
 @Composable
 private fun DefaultRadioButton(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -61,7 +63,7 @@ private fun DefaultRadioButton(
 @Preview
 @Composable
 private fun DisabledRadioButton(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -76,7 +78,7 @@ private fun DisabledRadioButton(
 @Preview
 @Composable
 private fun SelectedColoredRadioButton(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -93,7 +95,7 @@ private fun SelectedColoredRadioButton(
 @Preview
 @Composable
 private fun UnselectedColoredRadioButton(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -110,7 +112,7 @@ private fun UnselectedColoredRadioButton(
 @Preview
 @Composable
 private fun DisabledColoredRadioButton(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -126,7 +128,7 @@ private fun DisabledColoredRadioButton(
 
 @Composable
 private fun RadioButtonWithLabel(
-    text: String = "Jetpack Compose Playground"
+    text: String = ConstantText
 ) {
     val state = remember { mutableStateOf("") }
     Row(modifier = Modifier.padding(10.dp)) {
