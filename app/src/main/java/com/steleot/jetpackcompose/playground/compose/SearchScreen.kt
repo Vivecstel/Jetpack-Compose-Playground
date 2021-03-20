@@ -56,7 +56,7 @@ fun SearchScreen(navController: NavHostController) {
                         value = search,
                         onValueChange = { value -> viewModel.onSearchChange(value) },
                         textStyle = LocalTextStyle.current.copy(
-                            fontSize = 14.sp
+                            fontSize = 16.sp
                         ),
                         colors = TextFieldDefaults.textFieldColors(
                             cursorColor = Color.White
