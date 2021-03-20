@@ -26,7 +26,7 @@ fun LocalClipboardManagerScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 32.dp),
+                .padding(32.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

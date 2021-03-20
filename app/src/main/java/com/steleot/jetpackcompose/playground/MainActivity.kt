@@ -167,7 +167,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
 import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
-import com.steleot.jetpackcompose.playground.compose.ui.SoftwareKeyboardControllerScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalSoftwareKeyboardControllerScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SpanStyleScreen
 import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.SubComposeLayoutScreen
@@ -368,6 +368,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
                 composable(route = UiNavRoutes.LocalLifecycleOwner) { LocalLifecycleOwnerScreen() }
                 composable(route = UiNavRoutes.LocalSavedStateRegistryOwner) { LocalSavedStateRegistryOwnerScreen() }
+                composable(route = UiNavRoutes.LocalSoftwareKeyboardController) { LocalSoftwareKeyboardControllerScreen() }
                 composable(route = UiNavRoutes.LocalTextInputService) { LocalTextInputServiceScreen() }
                 composable(route = UiNavRoutes.LocalTextToolbar) { LocalTextToolbarScreen() }
                 composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
@@ -381,7 +382,6 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Rotate) { RotateScreen() }
                 composable(route = UiNavRoutes.Scale) { ScaleScreen() }
                 composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
-                composable(route = UiNavRoutes.SoftwareKeyboardController) { SoftwareKeyboardControllerScreen() }
                 composable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
                 composable(route = UiNavRoutes.String) { StringScreen() }
                 composable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
