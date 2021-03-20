@@ -26,7 +26,7 @@ val routes = listOf(
     MaterialNavRoutes.IconButton,
     MaterialNavRoutes.Icon,
     MaterialNavRoutes.ModalBottomSheetLayout,
-    MaterialNavRoutes.ModalDrawerLayout,
+    MaterialNavRoutes.ModalDrawer,
     MaterialNavRoutes.ListItem,
     MaterialNavRoutes.LocalContentAlpha,
     MaterialNavRoutes.LocalContentColor,

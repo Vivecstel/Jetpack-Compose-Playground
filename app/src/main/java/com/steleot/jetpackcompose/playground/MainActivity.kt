@@ -83,7 +83,7 @@ import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaS
 import com.steleot.jetpackcompose.playground.compose.material.LocalContentColorScreen
 import com.steleot.jetpackcompose.playground.compose.material.MaterialScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.material.ModalDrawerLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.material.ModalDrawerScreen
 import com.steleot.jetpackcompose.playground.compose.material.OutlinedTextFieldScreen
 import com.steleot.jetpackcompose.playground.compose.material.ProgressScreen
 import com.steleot.jetpackcompose.playground.compose.material.RadioButtonScreen
@@ -289,7 +289,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
                 composable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
                 composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
-                composable(route = MaterialNavRoutes.ModalDrawerLayout) { ModalDrawerLayoutScreen() }
+                composable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
                 composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
                 composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
                 composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }

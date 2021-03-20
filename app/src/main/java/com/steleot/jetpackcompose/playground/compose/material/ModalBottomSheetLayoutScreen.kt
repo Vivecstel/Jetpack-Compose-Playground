@@ -40,7 +40,7 @@ fun ModalBottomSheetLayoutScreen() {
 
 @Composable
 @OptIn(ExperimentalMaterialApi::class)
-fun ModalBottomSheetLayoutExample() {
+private fun ModalBottomSheetLayoutExample() {
     val state = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
     val scope = rememberCoroutineScope()
     ModalBottomSheetLayout(
