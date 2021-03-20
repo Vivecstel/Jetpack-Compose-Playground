@@ -4,8 +4,8 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
-import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import org.junit.Rule
 import org.junit.Test
 
@@ -15,10 +15,10 @@ class ButtonScreenTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun MyTest() {
+    fun TestButtonScreen() {
         composeTestRule.setContent {
-            ProvideWindowInsets {
-                PlaygroundTheme {
+            PlaygroundTheme {
+                ProvideWindowInsets {
                     ButtonScreen()
                 }
             }

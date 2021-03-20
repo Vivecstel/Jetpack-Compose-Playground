@@ -13,6 +13,7 @@ object MainNavRoutes {
     const val Ui = "ui"
     const val ViewModel = "view model"
     const val ExternalLibraries = "external libraries"
+    const val Search = "search"
 }
 
 object AnimationNavRoutes {
@@ -99,6 +100,7 @@ object MaterialNavRoutes {
     const val Switch = "switch"
     const val TabRow = "tab row"
     const val TextField = "text field"
+    const val Text = "text"
     const val TopAppBar = "top app bar"
     const val TriStateCheckbox = "tri state checkbox"
 }

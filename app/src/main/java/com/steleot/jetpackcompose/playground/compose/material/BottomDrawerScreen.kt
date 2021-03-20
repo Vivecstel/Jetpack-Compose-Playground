@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

@@ -28,7 +28,7 @@ private const val Url = "runtime/RememberCoroutineScopeScreen.kt"
 @Composable
 fun RememberCoroutineScopeScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.RememberCoroutineScope.capitalize(Locale.getDefault()),
         link = Url,
     ) {
         Column(

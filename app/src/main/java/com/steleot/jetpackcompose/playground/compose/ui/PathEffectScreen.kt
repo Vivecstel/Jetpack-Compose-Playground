@@ -30,7 +30,7 @@ fun PathEffectScreen() {
         close()
     }
     DefaultScaffold(
-        title = UiNavRoutes.Brush.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.PathEffect.capitalize(Locale.getDefault()),
         link = Url,
     ) {
         Column(

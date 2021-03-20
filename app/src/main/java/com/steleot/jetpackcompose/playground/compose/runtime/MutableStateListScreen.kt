@@ -42,7 +42,9 @@ private fun MutableStateListExample() {
     val scrollState = rememberScrollState()
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(32.dp)
     ) {
         Row {
             TextField(

@@ -26,7 +26,7 @@ val routes = listOf(
     MaterialNavRoutes.IconButton,
     MaterialNavRoutes.Icon,
     MaterialNavRoutes.ModalBottomSheetLayout,
-//    MaterialNavRoutes.ModalDrawerLayout,
+    MaterialNavRoutes.ModalDrawerLayout,
     MaterialNavRoutes.ListItem,
     MaterialNavRoutes.LocalContentAlpha,
     MaterialNavRoutes.LocalContentColor,
@@ -43,6 +43,7 @@ val routes = listOf(
     MaterialNavRoutes.Switch,
     MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,
+    MaterialNavRoutes.Text,
     MaterialNavRoutes.TopAppBar,
     MaterialNavRoutes.TriStateCheckbox,
 )

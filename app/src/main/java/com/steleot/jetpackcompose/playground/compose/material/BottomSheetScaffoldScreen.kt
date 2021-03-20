@@ -22,11 +22,11 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -64,13 +64,17 @@ fun BottomSheetScaffoldExample() {
     BottomSheetScaffold(
         sheetContent = {
             Box(
-                Modifier.fillMaxWidth().height(128.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .height(128.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Text("Swipe up to expand sheet")
             }
             Column(
-                Modifier.fillMaxWidth().padding(64.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(64.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text("Sheet content")
@@ -112,7 +116,9 @@ fun BottomSheetScaffoldExample() {
         sheetPeekHeight = 128.dp,
         drawerContent = {
             Column(
-                Modifier.fillMaxWidth().padding(16.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text("Drawer content")

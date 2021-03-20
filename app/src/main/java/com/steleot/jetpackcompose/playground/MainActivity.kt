@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.android.gms.ads.MobileAds
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
@@ -69,7 +70,6 @@ import com.steleot.jetpackcompose.playground.compose.material.BottomSheetScaffol
 import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.CardScreen
 import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
-import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaScreen
 import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
 import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
 import com.steleot.jetpackcompose.playground.compose.material.ElevationScreen
@@ -79,6 +79,7 @@ import com.steleot.jetpackcompose.playground.compose.material.IconButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconScreen
 import com.steleot.jetpackcompose.playground.compose.material.IconToggleButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.ListItemScreen
+import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaScreen
 import com.steleot.jetpackcompose.playground.compose.material.LocalContentColorScreen
 import com.steleot.jetpackcompose.playground.compose.material.MaterialScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
@@ -96,6 +97,7 @@ import com.steleot.jetpackcompose.playground.compose.material.SwipeableScreen
 import com.steleot.jetpackcompose.playground.compose.material.SwitchScreen
 import com.steleot.jetpackcompose.playground.compose.material.TabRowScreen
 import com.steleot.jetpackcompose.playground.compose.material.TextFieldScreen
+import com.steleot.jetpackcompose.playground.compose.material.TextScreen
 import com.steleot.jetpackcompose.playground.compose.material.TopAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.TriStateCheckboxScreen
 import com.steleot.jetpackcompose.playground.compose.materialicons.FilledScreen
@@ -174,9 +176,9 @@ import com.steleot.jetpackcompose.playground.compose.ui.TextIndentScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.ui.VisualTransformationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
+import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
-import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
@@ -193,8 +195,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PlaygroundApp() {
-    ProvideWindowInsets {
-        PlaygroundTheme {
+    PlaygroundTheme {
+        ProvideWindowInsets {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
                 /* main */
@@ -202,7 +204,11 @@ fun PlaygroundApp() {
                 composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                 composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
                 composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
-                composable(route = MainNavRoutes.FoundationLayout) { FoundationLayoutScreen(navController) }
+                composable(route = MainNavRoutes.FoundationLayout) {
+                    FoundationLayoutScreen(
+                        navController
+                    )
+                }
                 composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
                 composable(route = MainNavRoutes.MaterialIcons) { MaterialIconsScreen(navController) }
                 composable(route = MainNavRoutes.MaterialIConsExtended) {
@@ -218,6 +224,7 @@ fun PlaygroundApp() {
                         navController
                     )
                 }
+                composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
                 /* animation */
                 composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                 composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
@@ -296,6 +303,7 @@ fun PlaygroundApp() {
                 composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
                 composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
                 composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
+                composable(route = MaterialNavRoutes.Text) { TextScreen() }
                 composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
                 composable(route = MaterialNavRoutes.TriStateCheckbox) { TriStateCheckboxScreen() }
                 /* material icons */

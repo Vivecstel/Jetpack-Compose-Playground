@@ -15,6 +15,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -58,7 +59,11 @@ internal fun IntManipulateComponent(
         ) {
             Text(text = "Decrement")
         }
-        Text(text = value.toString(), modifier = Modifier.weight(1f))
+        Text(
+            text = value.toString(),
+            modifier = Modifier.weight(1f),
+            textAlign = TextAlign.Center
+        )
         Button(
             onClick = { setValue(value + 1) }
         ) {
