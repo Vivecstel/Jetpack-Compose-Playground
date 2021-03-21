@@ -61,4 +61,4 @@ private fun PersonView(person: Person) {
 }
 
 @Immutable
-private data class Person(val name: String, val phoneNumber: String)
+data class Person(val name: String, val phoneNumber: String = "")

@@ -17,13 +17,13 @@ val routes = listOf(
     RuntimeNavRoutes.LaunchedEffect,
     RuntimeNavRoutes.MutableStateList,
     RuntimeNavRoutes.MutableStateMap,
-//    RuntimeNavRoutes.ProduceState,
+    RuntimeNavRoutes.ProduceState,
     RuntimeNavRoutes.RememberCoroutineScope,
     RuntimeNavRoutes.RememberSaveable,
     RuntimeNavRoutes.RememberSaveableStateHolder,
     RuntimeNavRoutes.Remember,
     RuntimeNavRoutes.Saver,
-//    RuntimeNavRoutes.SideEffect,
+    RuntimeNavRoutes.SideEffect,
     RuntimeNavRoutes.SnapshotFlow,
 )
 
