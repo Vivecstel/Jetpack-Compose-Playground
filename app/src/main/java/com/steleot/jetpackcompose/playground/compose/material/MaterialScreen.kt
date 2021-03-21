@@ -43,7 +43,7 @@ val routes = listOf(
     MaterialNavRoutes.Switch,
     MaterialNavRoutes.TabRow,
     MaterialNavRoutes.TextField,
-//    MaterialNavRoutes.Text,
+    MaterialNavRoutes.Text,
     MaterialNavRoutes.TopAppBar,
     MaterialNavRoutes.TriStateCheckbox,
 )
