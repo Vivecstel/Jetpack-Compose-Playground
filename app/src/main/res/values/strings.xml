@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Playground</string>
+    <string name="app_name">Jetpack Compose Playground</string>
     <!-- resource -->
     <string name="jetpack_compose_playground">Jetpack Compose Playground</string>
     <string name="string_resource">String from strings.xml</string>
