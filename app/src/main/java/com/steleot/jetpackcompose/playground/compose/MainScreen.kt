@@ -42,7 +42,7 @@ private val routes = listOf(
 @Composable
 fun MainScreen(
     navController: NavHostController,
-    title: String = stringResource(id = R.string.app_name),
+    title: String = stringResource(id = R.string.jetpack_compose_playground),
     list: List<String> = routes,
     showBackArrow: Boolean = false,
     navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },

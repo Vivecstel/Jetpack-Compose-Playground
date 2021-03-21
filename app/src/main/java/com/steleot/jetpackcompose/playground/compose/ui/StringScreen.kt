@@ -38,7 +38,7 @@ fun StringScreen() {
             Text(
                 text = stringResource(
                     id = R.string.string_with_format,
-                    formatArgs = arrayOf(stringResource(id = R.string.app_name))
+                    formatArgs = arrayOf(stringResource(id = R.string.jetpack_compose_playground))
                 ),
                 modifier = Modifier.padding(16.dp)
             )
