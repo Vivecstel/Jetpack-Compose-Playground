@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.4.31"
 
     /* plugins */
-    const val androidPlugin = "7.0.0-alpha10"
+    const val androidPlugin = "7.0.0-alpha11"
     const val googleServices = "4.3.5"
     const val crashlytics = "2.5.1"
     const val benManes = "0.38.0"
