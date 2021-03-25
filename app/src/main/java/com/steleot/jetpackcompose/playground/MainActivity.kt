@@ -30,7 +30,7 @@ import com.steleot.jetpackcompose.playground.compose.external.FlowLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
 import com.steleot.jetpackcompose.playground.compose.external.InsetsScreen
 import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
-import com.steleot.jetpackcompose.playground.compose.external.PicassoScreen
+import com.steleot.jetpackcompose.playground.compose.external.PagerScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
@@ -399,7 +399,7 @@ fun PlaygroundApp() {
                 composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
-                composable(route = ExternalLibrariesNavRoutes.Picasso) { PicassoScreen() }
+                composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
             }
         }
     }

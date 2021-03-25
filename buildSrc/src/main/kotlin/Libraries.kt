@@ -66,12 +66,14 @@ object Libraries {
         "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
     const val accompanistGlide =
         "com.google.accompanist:accompanist-glide:${Versions.accompanist}"
-    const val accompanistPicasso =
-        "com.google.accompanist:accompanist-picasso:${Versions.accompanist}"
     const val accompanistInsets =
         "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
     const val accompanistFlow =
         "com.google.accompanist:accompanist-flowlayout:${Versions.accompanist}"
+    const val accompanistPager =
+        "com.google.accompanist:accompanist-pager:${Versions.accompanist}"
+    const val accompanistPagerIndicators =
+        "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}"
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"

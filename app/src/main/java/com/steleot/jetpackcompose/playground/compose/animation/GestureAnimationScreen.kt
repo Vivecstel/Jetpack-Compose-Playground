@@ -61,7 +61,7 @@ private fun GestureAnimationExample() {
         })
     }
 
-    val transition: Transition<ComponentState> = updateTransition(targetState = toState)
+    val transition: Transition<ComponentState> = updateTransition(targetState = toState, label = "")
     val scale: Float by transition.animateFloat(
         transitionSpec = { spring(stiffness = 50f) }
     ) { state ->

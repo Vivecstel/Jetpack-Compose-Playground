@@ -74,7 +74,7 @@ private fun CrossfadeColorAnimation() {
     val current = remember { mutableStateOf(colors[0]) }
 
     Column(modifier = Modifier.fillMaxWidth()) {
-        Crossfade(targetState = current) { _ ->
+        Crossfade(targetState = current) {
             Box(
                 Modifier
                     .fillMaxWidth()

@@ -13,7 +13,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Glide,
 //    ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
-    ExternalLibrariesNavRoutes.Picasso,
+    ExternalLibrariesNavRoutes.Pager,
 )
 
 @Composable

@@ -202,5 +202,5 @@ object ExternalLibrariesNavRoutes {
     const val Glide = "glide"
     const val Insets = "insets"
     const val Lottie = "lottie"
-    const val Picasso = "picasso"
+    const val Pager = "pager"
 }

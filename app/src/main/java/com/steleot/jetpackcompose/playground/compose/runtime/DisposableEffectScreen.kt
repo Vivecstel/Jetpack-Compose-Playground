@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale
+import timber.log.Timber
 
 private const val Url = "runtime/DisposableEffectScreen.kt"
 
@@ -50,7 +51,9 @@ private fun disposableEffectExample(
 }
 
 private class Subscription {
-    fun unsubscribe() {}
+    fun unsubscribe() {
+        Timber.d("unsubscribe successful")
+    }
 }
 
 private object UserAPI {
