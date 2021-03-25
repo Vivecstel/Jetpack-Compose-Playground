@@ -2,22 +2,38 @@
 
 ## Introduction
 
-Jetpack Compose Playground is a small showcase application and repository of what Jetpack Compose has to offer and how it improves everyday Android UI development.
+Jetpack Compose Playground is a small showcase application and repository showing what Jetpack Compose has to offer and how it improves everyday Android UI development.
 Based on [official link](https://developer.android.com/jetpack/compose) and the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens with examples for most components and cases.
 This application supposed to be used be developers in order to see hands on the examples for jetpack compose.
-Each screen has a button link directing the user to the github file containing the code.
-Some code examples are from [androidx compose samples](https://github.com/androidx/androidx/tree/androidx-main/compose), [accompanist](https://github.com/google/accompanist).
+Each screen has a button link directing the user to the Github file containing the code.
+Some code examples are from [androidx compose samples](https://github.com/androidx/androidx/tree/androidx-main/compose) and [accompanist](https://github.com/google/accompanist).
 
 Please provide any feedback via github issues or via email on : steleor@gmail.com
 
+The application will be updated as soon as possible when a new release of compose is available.
+
 ## Screens
 
-<img src="screenshots/1.png" width="250" />
+### mobile
 
-<img src="screenshots/2.png" width="250" />
+<img src="screenshots/mobile_1.png" width="250" /> <img src="screenshots/mobile_2.png" width="250" />
 
-<img src="screenshots/3.png" width="250" />
+<img src="screenshots/mobile_3.png" width="250" /> <img src="screenshots/mobile_4.png" width="250" />
 
-<img src="screenshots/4.png" width="250" />
+<img src="screenshots/mobile_5.png" width="250" />
 
-<img src="screenshots/5.png" width="250" />
+### tablet 7-inch
+
+<img src="screenshots/tablet_7_1.png" width="250" /> <img src="screenshots/tablet_7_2.png" width="250" />
+
+<img src="screenshots/tablet_7_3.png" width="250" /> <img src="screenshots/tablet_7_4.png" width="250" />
+
+<img src="screenshots/tablet_7_5.png" width="250" />
+
+### tablet 10-inch
+
+<img src="screenshots/tablet_10_1.png" width="250" /> <img src="screenshots/tablet_10_2.png" width="250" />
+
+<img src="screenshots/tablet_10_3.png" width="250" /> <img src="screenshots/tablet_10_4.png" width="250" />
+
+<img src="screenshots/tablet_10_5.png" width="250" />
