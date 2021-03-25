@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Jetpack Compose Playground is a small showcase application and repository of what Jetpack Compose has to offer and how it improves everyday Android UI development.
+Jetpack Compose Playground is a small showcase application and repository showing what Jetpack Compose has to offer and how it improves everyday Android UI development.
 Based on [official link](https://developer.android.com/jetpack/compose) and the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens with examples for most components and cases.
 This application supposed to be used be developers in order to see hands on the examples for jetpack compose.
 Each screen has a button link directing the user to the github file containing the code.
