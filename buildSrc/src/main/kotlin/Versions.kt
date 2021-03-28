@@ -7,9 +7,9 @@ object Versions {
     const val kotlin = "1.4.31"
 
     /* plugins */
-    const val androidPlugin = "7.0.0-alpha11"
+    const val androidPlugin = "7.0.0-alpha12"
     const val googleServices = "4.3.5"
-    const val crashlytics = "2.5.1"
+    const val crashlytics = "2.5.2"
     const val benManes = "0.38.0"
     const val detekt = "1.16.0"
 
@@ -20,7 +20,7 @@ object Versions {
     const val composeConstraint = "1.0.0-alpha05"
     const val appCompat = "1.3.0-rc01"
     const val lifecycle = "2.4.0-alpha01"
-    const val firebase = "26.7.0"
+    const val firebase = "26.8.0"
     const val hilt = "2.33-beta"
     const val startUp = "1.0.0"
     const val coroutines = "1.4.3"
