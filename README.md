@@ -8,7 +8,7 @@ This application supposed to be used be developers in order to see hands on the 
 Each screen has a button link directing the user to the Github file containing the code.
 Some code examples are from [androidx compose samples](https://github.com/androidx/androidx/tree/androidx-main/compose) and [accompanist](https://github.com/google/accompanist).
 
-Please provide any feedback via github issues or via email on : steleor@gmail.com
+Please provide any feedback via github issues or via email on : steleotr@gmail.com
 
 The application will be updated as soon as possible when a new release of compose is available.
 
