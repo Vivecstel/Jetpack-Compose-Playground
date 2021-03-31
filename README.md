@@ -11,6 +11,10 @@ Some code examples are from [androidx compose samples](https://github.com/androi
 Please provide any feedback via github issues or via email on : steleotr@gmail.com
 
 The application will be updated as soon as possible when a new release of compose is available.
+Download from:
+<a href="https://play.google.com/store/apps/details?id=com.steleot.jetpackcompose.playground">
+  <img src="screenshots/google-play-badge.png" width="250">
+</a>
 
 ## Screens
 
