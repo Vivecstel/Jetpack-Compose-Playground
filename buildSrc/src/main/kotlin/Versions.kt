@@ -4,7 +4,7 @@ object Versions {
     const val buildTools = "30.0.2"
 
     /* kotlin */
-    const val kotlin = "1.4.31"
+    const val kotlin = "1.4.32"
 
     /* plugins */
     const val androidPlugin = "7.0.0-alpha12"
@@ -29,6 +29,6 @@ object Versions {
     const val glide = "4.12.0"
     const val picasso = "2.71828"
     const val timber = "4.7.1"
-    const val lottie = "1.0.0-alpha07-SNAPSHOT"
+    const val lottie = "1.0.0-beta03-1"
     const val adMob = "19.8.0"
 }
