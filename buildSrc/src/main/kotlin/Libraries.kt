@@ -38,6 +38,9 @@ object Libraries {
     const val composeConstraint =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/paging */
+    const val composePaging = "androidx.paging:paging-compose:${Versions.composePaging}"
+
     /* https://developer.android.com/jetpack/androidx/releases/appcompat */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
 
@@ -74,6 +77,8 @@ object Libraries {
         "com.google.accompanist:accompanist-pager:${Versions.accompanist}"
     const val accompanistPagerIndicators =
         "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}"
+    const val accompanistSystemuicontroller =
+        "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"
@@ -90,6 +95,9 @@ object Libraries {
 
     /* https://github.com/kazemihabib/compose-shimmer */
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
+
+    /* https://github.com/DevSrSouza/compose-icons */
+    const val iconPack = "br.com.devsrsouza.compose.icons.android:ICON_PACK:${Versions.iconPack}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

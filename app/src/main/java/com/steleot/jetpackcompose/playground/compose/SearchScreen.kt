@@ -138,6 +138,7 @@ class SearchViewModel : ViewModel() {
     private val routes: List<String> =
         (animationRoutes +
                 listOf(MainNavRoutes.ConstraintLayout) +
+                listOf(MainNavRoutes.Paging) +
                 foundationRoutes +
                 foundationLayoutRoutes +
                 materialRoutes +
