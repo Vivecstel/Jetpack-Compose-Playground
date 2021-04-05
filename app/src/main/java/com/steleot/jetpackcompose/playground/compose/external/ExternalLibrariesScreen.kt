@@ -11,9 +11,11 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Coil,
     ExternalLibrariesNavRoutes.FlowLayout,
     ExternalLibrariesNavRoutes.Glide,
+//    ExternalLibrariesNavRoutes.IconPack,
 //    ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Pager,
+    ExternalLibrariesNavRoutes.SystemUiController,
 )
 
 @Composable

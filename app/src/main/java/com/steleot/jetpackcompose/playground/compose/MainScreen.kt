@@ -36,6 +36,7 @@ private val routes = listOf(
     MainNavRoutes.Runtime,
     MainNavRoutes.Ui,
     MainNavRoutes.ViewModel,
+    MainNavRoutes.Paging,
     MainNavRoutes.ExternalLibraries,
 )
 

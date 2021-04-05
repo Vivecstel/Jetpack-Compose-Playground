@@ -12,6 +12,7 @@ object MainNavRoutes {
     const val Runtime = "runtime"
     const val Ui = "ui"
     const val ViewModel = "view model"
+    const val Paging = "paging"
     const val ExternalLibraries = "external libraries"
     const val Search = "search"
 }
@@ -200,7 +201,9 @@ object ExternalLibrariesNavRoutes {
     const val Coil = "coil"
     const val FlowLayout = "flow layout"
     const val Glide = "glide"
+    const val IconPack = "icon pack"
     const val Insets = "insets"
     const val Lottie = "lottie"
     const val Pager = "pager"
+    const val SystemUiController = "system ui controller"
 }
