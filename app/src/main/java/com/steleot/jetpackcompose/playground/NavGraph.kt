@@ -31,6 +31,13 @@ object AnimationNavRoutes {
     const val SuspendAnimation = "suspend animation"
 }
 
+object ConstraintLayoutNavRoutes {
+    const val Barrier = "barrier"
+    const val Chain = "chain"
+    const val ConstraintSet = "constraint set"
+    const val CreateRefs = "create refs"
+}
+
 object FoundationNavRoutes {
     const val Background = "background"
     const val Border = "border"

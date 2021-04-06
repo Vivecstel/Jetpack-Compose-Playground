@@ -42,6 +42,7 @@ import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
 import com.steleot.jetpackcompose.playground.compose.external.routes as externalRoutes
 import com.steleot.jetpackcompose.playground.compose.foundation.routes as foundationRoutes
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.routes as foundationLayoutRoutes
@@ -55,10 +56,8 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewMod
 @Composable
 fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
-
     val search: String by viewModel.search.collectAsState()
     val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
-
     var visible by rememberSaveable { mutableStateOf(false) }
 
     Scaffold(
@@ -137,7 +136,7 @@ class SearchViewModel : ViewModel() {
 
     private val routes: List<String> =
         (animationRoutes +
-                listOf(MainNavRoutes.ConstraintLayout) +
+                constraintLayoutRoutes +
                 listOf(MainNavRoutes.Paging) +
                 foundationRoutes +
                 foundationLayoutRoutes +

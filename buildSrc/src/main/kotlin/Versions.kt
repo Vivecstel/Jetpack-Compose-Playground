@@ -32,5 +32,5 @@ object Versions {
     const val timber = "4.7.1"
     const val lottie = "1.0.0-beta03-1"
     const val iconPack = "0.2.0"
-    const val adMob = "19.8.0"
+    const val adMob = "20.0.0"
 }

@@ -26,7 +26,11 @@ import com.steleot.jetpackcompose.playground.compose.animation.RotatingShapeScre
 import com.steleot.jetpackcompose.playground.compose.animation.SingleValueColorAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.SingleValueFloatAnimationScreen
 import com.steleot.jetpackcompose.playground.compose.animation.SuspendAnimationScreen
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.BarrierScreen
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.ChainScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintSetScreen
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.CreateRefsScreen
 import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
 import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
 import com.steleot.jetpackcompose.playground.compose.external.FlowLayoutScreen
@@ -216,7 +220,11 @@ fun PlaygroundApp() {
                         )
                     }
                     composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
-                    composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
+                    composable(route = MainNavRoutes.ConstraintLayout) {
+                        ConstraintLayoutScreen(
+                            navController
+                        )
+                    }
                     composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
                     composable(route = MainNavRoutes.FoundationLayout) {
                         FoundationLayoutScreen(
@@ -256,6 +264,11 @@ fun PlaygroundApp() {
                     composable(route = AnimationNavRoutes.SingleValueColorAnimation) { SingleValueColorAnimationScreen() }
                     composable(route = AnimationNavRoutes.SingleValueFloatAnimation) { SingleValueFloatAnimationScreen() }
                     composable(route = AnimationNavRoutes.SuspendAnimation) { SuspendAnimationScreen() }
+                    /* constraint layout */
+                    composable(route = ConstraintLayoutNavRoutes.Barrier) { BarrierScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.Chain) { ChainScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.ConstraintSet) { ConstraintSetScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
                     /* foundation */
                     composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
                     composable(route = FoundationNavRoutes.Border) { BorderScreen() }

@@ -30,7 +30,7 @@ private const val Url = "paging/PagingScreen.kt"
 @Composable
 fun PagingScreen() {
     DefaultScaffold(
-        title = MainNavRoutes.ConstraintLayout.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Paging.capitalize(Locale.getDefault()),
         link = Url,
     ) {
         PagingExample()
