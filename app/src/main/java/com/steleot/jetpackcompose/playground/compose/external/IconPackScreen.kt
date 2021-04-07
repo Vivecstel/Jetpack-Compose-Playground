@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.external
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import java.util.Locale

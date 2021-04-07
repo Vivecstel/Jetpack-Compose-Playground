@@ -63,7 +63,7 @@ private fun GestureAnimationExample() {
 
     val transition: Transition<ComponentState> = updateTransition(targetState = toState, label = "")
     val scale: Float by transition.animateFloat(
-        transitionSpec = { spring(stiffness = 50f) }
+        transitionSpec = { spring(stiffness = 50f) }, label = ""
     ) { state ->
         if (state == ComponentState.Pressed) 3f else 1f
     }
@@ -77,7 +77,7 @@ private fun GestureAnimationExample() {
             } else {
                 tween(durationMillis = 500)
             }
-        }
+        }, label = ""
     ) { state ->
         when (state) {
             ComponentState.Pressed -> MaterialTheme.colors.primary

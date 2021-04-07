@@ -68,11 +68,11 @@ fun AnimatedVisibilityScreen() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-private fun AnimatedFloatingActionButton() {
+private fun ColumnScope.AnimatedFloatingActionButton() {
     var expanded by remember { mutableStateOf(true) }
     FloatingActionButton(
         onClick = { expanded = !expanded },
-        modifier = with(ColumnScope) { Modifier.align(Alignment.CenterHorizontally) }
+        modifier = Modifier.align(Alignment.CenterHorizontally)
     ) {
         Row(Modifier.padding(start = 12.dp, end = 12.dp)) {
             Icon(

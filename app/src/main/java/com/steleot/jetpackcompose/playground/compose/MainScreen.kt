@@ -26,6 +26,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 
 private val routes = listOf(
+    MainNavRoutes.Activity,
     MainNavRoutes.Animation,
     MainNavRoutes.ConstraintLayout,
     MainNavRoutes.Foundation,

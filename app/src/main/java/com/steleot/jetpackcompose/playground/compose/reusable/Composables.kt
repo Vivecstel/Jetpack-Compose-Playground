@@ -118,7 +118,7 @@ fun DefaultTopAppBar(
 fun BackArrow() {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
     IconButton(onClick = {
-        backDispatcher.onBackPressedDispatcher.onBackPressed()
+        backDispatcher?.onBackPressedDispatcher?.onBackPressed()
     }) {
         Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back Arrow")
     }

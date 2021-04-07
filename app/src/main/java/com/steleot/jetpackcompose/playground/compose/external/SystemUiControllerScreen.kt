@@ -40,7 +40,7 @@ private fun SystemUiControllerExample(navController: NavHostController) {
     val useDarkIcons = MaterialTheme.colors.isLight
     val originalStatusBarColor = colorResource(id = R.color.colorPrimaryDark)
 
-    backDispatcher.onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+    backDispatcher?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             systemUiController.setSystemBarsColor(
                 color = originalStatusBarColor,

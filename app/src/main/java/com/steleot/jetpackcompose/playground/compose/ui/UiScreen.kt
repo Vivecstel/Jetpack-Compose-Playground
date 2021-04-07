@@ -14,6 +14,7 @@ val routes = listOf(
     UiNavRoutes.AnimatedVector,
     UiNavRoutes.AnnotatedString,
     UiNavRoutes.Brush,
+    UiNavRoutes.Clip,
     UiNavRoutes.Color,
     UiNavRoutes.DebugInspectorInfo,
     UiNavRoutes.Drawable,

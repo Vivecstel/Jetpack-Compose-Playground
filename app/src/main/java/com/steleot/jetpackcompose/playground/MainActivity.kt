@@ -14,6 +14,9 @@ import com.google.accompanist.systemuicontroller.rememberAndroidSystemUiControll
 import com.google.android.gms.ads.MobileAds
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.SearchScreen
+import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
+import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
+import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
@@ -149,6 +152,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AnimatedVectorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.AnnotatedStringScreen
 import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
+import com.steleot.jetpackcompose.playground.compose.ui.ClipScreen
 import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
 import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
@@ -222,6 +226,7 @@ fun PlaygroundApp() {
                             navigateToSearch = null
                         )
                     }
+                    composable(route = MainNavRoutes.Activity) { ActivityScreen(navController) }
                     composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                     composable(route = MainNavRoutes.ConstraintLayout) {
                         ConstraintLayoutScreen(
@@ -255,6 +260,13 @@ fun PlaygroundApp() {
                         )
                     }
                     composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
+                    /* activity */
+                    composable(route = ActivityNavRoutes.BackHandler) {
+                        BackHandlerScreen(
+                            navController
+                        )
+                    }
+                    composable(route = ActivityNavRoutes.LauncherForActivityResult) { LauncherForActivityResultScreen() }
                     /* animation */
                     composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                     composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
@@ -381,6 +393,7 @@ fun PlaygroundApp() {
                     composable(route = UiNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
                     composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
                     composable(route = UiNavRoutes.Brush) { BrushScreen() }
+                    composable(route = UiNavRoutes.Clip) { ClipScreen() }
                     composable(route = UiNavRoutes.Color) { ColorScreen() }
                     composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
                     composable(route = UiNavRoutes.Drawable) { DrawableScreen() }

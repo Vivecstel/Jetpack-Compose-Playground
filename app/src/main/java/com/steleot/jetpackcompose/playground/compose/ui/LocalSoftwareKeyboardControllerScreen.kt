@@ -51,7 +51,7 @@ private fun LocalSoftwareKeyboardControllerExample() {
             setText,
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
             keyboardActions = KeyboardActions(
-                onDone = { keyboardController?.hideSoftwareKeyboard() }
+                onDone = { keyboardController?.hide() }
             ),
             modifier = Modifier
                 .focusRequester(focusRequester)
@@ -61,7 +61,7 @@ private fun LocalSoftwareKeyboardControllerExample() {
         Button(
             onClick = {
                 focusRequester.requestFocus()
-                keyboardController?.showSoftwareKeyboard()
+                keyboardController?.show()
             },
             modifier = Modifier.fillMaxWidth()
         ) {

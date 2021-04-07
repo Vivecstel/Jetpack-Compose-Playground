@@ -41,6 +41,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
 import com.steleot.jetpackcompose.playground.compose.external.routes as externalRoutes
@@ -135,7 +136,8 @@ private fun getListAnnotatedString(
 class SearchViewModel : ViewModel() {
 
     private val routes: List<String> =
-        (animationRoutes +
+        (activityRoutes +
+                animationRoutes +
                 constraintLayoutRoutes +
                 listOf(MainNavRoutes.Paging) +
                 foundationRoutes +
