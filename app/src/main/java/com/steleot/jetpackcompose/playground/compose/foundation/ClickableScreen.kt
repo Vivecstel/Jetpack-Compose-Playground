@@ -28,14 +28,14 @@ fun ClickableScreen() {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            ClickableText()
+            ClickableTextExample()
         }
     }
 }
 
 @Preview
 @Composable
-private fun ClickableText() {
+private fun ClickableTextExample() {
     Text(
         text = "Clickable Text",
         modifier = Modifier

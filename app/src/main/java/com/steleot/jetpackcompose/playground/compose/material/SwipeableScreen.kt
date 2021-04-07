@@ -2,10 +2,15 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.requiredWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FractionalThreshold
 import androidx.compose.material.Text
@@ -32,13 +37,20 @@ fun SwipeableScreen() {
         title = MaterialNavRoutes.Swipeable.capitalize(Locale.getDefault()),
         link = Url,
     ) {
-        SwipeableExample()
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            SwipeableExample()
+            SwipeableSwitch()
+        }
     }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun SwipeableExample() {
+private fun SwipeableExample() {
     val width = 350.dp
     val squareSize = 50.dp
 
@@ -66,5 +78,35 @@ fun SwipeableExample() {
         ) {
             Text(swipeableState.currentValue, color = Color.White, fontSize = 24.sp)
         }
+    }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+private fun SwipeableSwitch() {
+    val width = 96.dp
+    val squareSize = 48.dp
+
+    val swipeableState = rememberSwipeableState(0)
+    val sizePx = with(LocalDensity.current) { squareSize.toPx() }
+    val anchors = mapOf(0f to 0, sizePx to 1)
+
+    Box(
+        modifier = Modifier
+            .width(width)
+            .swipeable(
+                state = swipeableState,
+                anchors = anchors,
+                thresholds = { _, _ -> FractionalThreshold(0.3f) },
+                orientation = Orientation.Horizontal
+            )
+            .background(Color.LightGray)
+    ) {
+        Box(
+            Modifier
+                .offset { IntOffset(swipeableState.offset.value.roundToInt(), 0) }
+                .size(squareSize)
+                .background(Color.DarkGray)
+        )
     }
 }

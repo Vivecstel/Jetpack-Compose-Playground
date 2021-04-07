@@ -44,6 +44,7 @@ import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ClickableScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.ClickableTextScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.DragGestureDetectorScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.DraggableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.FocusableScreen
@@ -55,7 +56,9 @@ import com.steleot.jetpackcompose.playground.compose.foundation.LazyGridScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.LazyRowScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ScrollerScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.SelectionContainerScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.StickyHeaderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.ToggeableScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.TransformGestureScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.TransformableScreen
@@ -274,6 +277,7 @@ fun PlaygroundApp() {
                     composable(route = FoundationNavRoutes.Border) { BorderScreen() }
                     composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
                     composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
+                    composable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
                     composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
                     composable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
                     composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
@@ -284,7 +288,9 @@ fun PlaygroundApp() {
                     composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
                     composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
                     composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
+                    composable(route = FoundationNavRoutes.SelectionContainer) { SelectionContainerScreen() }
                     composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
+                    composable(route = FoundationNavRoutes.StickyHeader) { StickyHeaderScreen() }
                     composable(route = FoundationNavRoutes.Toggeable) { ToggeableScreen() }
                     composable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
                     composable(route = FoundationNavRoutes.TransformGesture) { TransformGestureScreen() }
