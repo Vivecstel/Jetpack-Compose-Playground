@@ -23,7 +23,7 @@ object Versions {
     const val lifecycle = "2.4.0-alpha01"
     const val firebase = "26.8.0"
     const val hilt = "2.33-beta"
-    const val startUp = "1.0.0"
+    const val startUp = "1.1.0-alpha01"
     const val coroutines = "1.4.3"
     const val accompanist = "0.7.1"
     const val coil = "1.1.1"
