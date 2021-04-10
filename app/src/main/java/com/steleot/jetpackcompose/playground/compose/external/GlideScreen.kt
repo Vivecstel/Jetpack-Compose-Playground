@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
@@ -31,37 +32,46 @@ fun GlideScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(32.dp)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             GlideImage(
                 data = "https://picsum.photos/300/300",
-                contentDescription = "Content description"
-            )
+                contentDescription = "Content description",
+                modifier = Modifier.size(150.dp)
+            ) {
+                Box(Modifier.matchParentSize()) {
+                    CircularProgressIndicator(Modifier.align(Alignment.Center))
+                }
+            }
             GlideImage(
                 data = "https://picsum.photos/300/300",
                 contentDescription = "Content description",
                 requestBuilder = {
                     apply(RequestOptions().circleCrop())
+                },
+                modifier = Modifier.size(150.dp)
+            ) {
+                Box(Modifier.matchParentSize()) {
+                    CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
-            )
+            }
             GlideImage(
                 data = "https://picsum.photos/300/300",
                 contentDescription = "Content description",
-                loading = {
-                    Box(Modifier.matchParentSize()) {
-                        CircularProgressIndicator(Modifier.align(Alignment.Center))
-                    }
-                },
                 error = {
                     Image(
                         imageVector = Icons.Filled.Build,
                         contentDescription = "Vector"
                     )
+                },
+                modifier = Modifier.size(150.dp)
+            ) {
+                Box(Modifier.matchParentSize()) {
+                    CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
-            )
+            }
         }
     }
 }
