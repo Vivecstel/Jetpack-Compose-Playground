@@ -16,14 +16,13 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalFocusManagerScreen.kt"
 
 @Composable
 fun LocalFocusManagerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalFocusManager.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalFocusManager,
         link = Url,
     ) {
         Column(

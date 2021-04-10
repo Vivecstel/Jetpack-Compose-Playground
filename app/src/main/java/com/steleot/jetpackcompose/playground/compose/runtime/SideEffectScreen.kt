@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -28,7 +27,7 @@ private val touchHandler = TouchHandler(false)
 @Composable
 fun SideEffectScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.SideEffect.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.SideEffect,
         link = Url,
     ) {
         Column(

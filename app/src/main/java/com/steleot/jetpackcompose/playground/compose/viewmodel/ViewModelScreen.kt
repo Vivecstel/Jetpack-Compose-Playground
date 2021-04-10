@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     ViewModelNavRoutes.Flow,
@@ -17,7 +16,7 @@ val routes = listOf(
 fun ViewModelScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.ViewModel.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.ViewModel,
         list = routes,
         showBackArrow = true
     )

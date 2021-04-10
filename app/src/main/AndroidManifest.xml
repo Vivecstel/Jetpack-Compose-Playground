@@ -14,7 +14,6 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>

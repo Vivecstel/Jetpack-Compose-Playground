@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     UiNavRoutes.AlignmentLine,
@@ -61,7 +60,7 @@ val routes = listOf(
 fun UiScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.Ui.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Ui,
         list = routes,
         showBackArrow = true
     )

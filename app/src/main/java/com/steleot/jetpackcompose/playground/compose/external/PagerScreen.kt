@@ -28,7 +28,6 @@ import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.google.accompanist.pager.rememberPagerState
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlin.math.absoluteValue
 
 private const val Url = "external/PagerScreen.kt"
@@ -36,7 +35,7 @@ private const val Url = "external/PagerScreen.kt"
 @Composable
 fun PagerScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Pager.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.Pager,
         link = Url,
     ) {
         PagerExample()
@@ -51,7 +50,9 @@ private fun PagerExample() {
         HorizontalPager(
             state = pagerState,
             offscreenLimit = 2,
-            modifier = Modifier.weight(1f),
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
         ) { page ->
             Card(
                 Modifier

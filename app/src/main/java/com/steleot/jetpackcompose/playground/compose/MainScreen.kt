@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
-import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -38,6 +38,7 @@ private val routes = listOf(
     MainNavRoutes.Ui,
     MainNavRoutes.ViewModel,
     MainNavRoutes.Paging,
+    MainNavRoutes.CustomExamples,
     MainNavRoutes.ExternalLibraries,
 )
 
@@ -51,7 +52,7 @@ fun MainScreen(
     showAd: Boolean = false,
 ) {
     Scaffold(
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
                 title = title,

@@ -22,14 +22,13 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalSoftwareKeyboardControllerScreen.kt"
 
 @Composable
 fun LocalSoftwareKeyboardControllerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalSoftwareKeyboardController.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalSoftwareKeyboardController,
         link = Url,
     ) {
         LocalSoftwareKeyboardControllerExample()

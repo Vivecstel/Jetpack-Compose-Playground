@@ -11,7 +11,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalDensityScreen.kt"
 
@@ -19,7 +18,7 @@ private const val Url = "ui/LocalDensityScreen.kt"
 fun LocalDensityScreen() {
     val sizeInPx = with(LocalDensity.current) { 32.dp.toPx() }
     DefaultScaffold(
-        title = UiNavRoutes.LocalDensity.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalDensity,
         link = Url,
     ) {
         Column(

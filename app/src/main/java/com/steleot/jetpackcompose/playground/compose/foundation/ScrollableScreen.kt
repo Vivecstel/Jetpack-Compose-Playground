@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlin.math.roundToInt
 
 private const val Url = "foundation/ScrollableScreen.kt"
@@ -26,7 +25,7 @@ private const val Url = "foundation/ScrollableScreen.kt"
 @Composable
 fun ScrollableScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Scrollable.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.Scrollable,
         link = Url,
     ) {
         ScrollableExample()

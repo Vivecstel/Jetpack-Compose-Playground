@@ -15,14 +15,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/ClipScreen.kt"
 
 @Composable
 fun ClipScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Clip.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.Clip,
         link = Url,
     ) {
         Column(

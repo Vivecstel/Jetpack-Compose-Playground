@@ -13,14 +13,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalContextScreen.kt"
 
 @Composable
 fun LocalContextScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalContext.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalContext,
         link = Url,
     ) {
         Column(

@@ -13,14 +13,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "viewmodel/StateScreen.kt"
 
 @Composable
 fun StateScreen() {
     DefaultScaffold(
-        title = ViewModelNavRoutes.State.capitalize(Locale.getDefault()),
+        title = ViewModelNavRoutes.State,
         link = Url,
     ) {
         Column(

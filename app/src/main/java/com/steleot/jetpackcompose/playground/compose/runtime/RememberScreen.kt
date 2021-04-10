@@ -15,14 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "runtime/RememberScreen.kt"
 
 @Composable
 fun RememberScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.Remember.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.Remember,
         link = Url,
     ) {
         Column(

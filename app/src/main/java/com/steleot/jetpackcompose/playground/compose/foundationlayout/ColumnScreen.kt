@@ -12,14 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "foundationlayout/ColumnScreen.kt"
 
 @Composable
 fun ColumnScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Column.capitalize(Locale.getDefault()),
+        title = FoundationLayoutNavRoutes.Column,
         link = Url,
     ) {
         DefaultColumn()

@@ -21,7 +21,7 @@ object Versions {
     const val composePaging = "1.0.0-alpha08"
     const val appCompat = "1.3.0-rc01"
     const val lifecycle = "2.4.0-alpha01"
-    const val firebase = "26.8.0"
+    const val firebase = "27.0.0"
     const val hilt = "2.33-beta"
     const val startUp = "1.1.0-alpha01"
     const val coroutines = "1.4.3"

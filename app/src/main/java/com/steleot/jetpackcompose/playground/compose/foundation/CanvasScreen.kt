@@ -15,7 +15,6 @@ import androidx.compose.ui.res.imageResource
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "foundation/CanvasScreen.kt"
 
@@ -23,7 +22,7 @@ private const val Url = "foundation/CanvasScreen.kt"
 fun CanvasScreen() {
     val context = LocalContext.current
     DefaultScaffold(
-        title = FoundationNavRoutes.Canvas.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.Canvas,
         link = Url,
     ) {
         Canvas(

@@ -29,14 +29,13 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "animation/GestureAnimationScreen.kt"
 
 @Composable
 fun GestureAnimationScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.GestureAnimation.capitalize(Locale.getDefault()),
+        title = AnimationNavRoutes.GestureAnimation,
         link = Url,
     ) {
         GestureAnimationExample()

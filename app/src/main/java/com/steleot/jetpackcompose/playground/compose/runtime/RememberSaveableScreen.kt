@@ -19,14 +19,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "runtime/RememberSaveableScreen.kt"
 
 @Composable
 fun RememberSaveableScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.RememberSaveable.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.RememberSaveable,
         link = Url,
     ) {
         Column(

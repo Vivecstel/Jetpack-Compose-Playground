@@ -21,7 +21,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import java.util.Locale
@@ -34,7 +34,7 @@ fun SnackBarScreen() {
     val state = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     Scaffold(
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.SnackBar.capitalize(Locale.getDefault()),

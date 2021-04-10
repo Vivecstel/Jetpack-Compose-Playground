@@ -19,7 +19,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -28,7 +27,7 @@ private const val Url = "runtime/RememberCoroutineScopeScreen.kt"
 @Composable
 fun RememberCoroutineScopeScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.RememberCoroutineScope.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.RememberCoroutineScope,
         link = Url,
     ) {
         Column(

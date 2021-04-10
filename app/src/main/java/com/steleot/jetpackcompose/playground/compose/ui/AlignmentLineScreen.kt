@@ -9,14 +9,13 @@ import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.Layout
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/AlignmentLineScreen.kt"
 
 @Composable
 fun AlignmentLineScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.AlignmentLine.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.AlignmentLine,
         link = Url,
     ) {
         val exampleLine = remember { FirstBaseline }

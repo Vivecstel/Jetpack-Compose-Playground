@@ -20,14 +20,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "animation/SingleValueFloatAnimationScreen.kt"
 
 @Composable
 fun SingleValueFloatAnimationScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.SingleValueFloatAnimation.capitalize(Locale.getDefault()),
+        title = AnimationNavRoutes.SingleValueFloatAnimation,
         link = Url,
     ) {
         Column(

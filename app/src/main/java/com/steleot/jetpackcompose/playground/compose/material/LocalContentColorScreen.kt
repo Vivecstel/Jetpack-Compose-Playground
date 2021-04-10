@@ -13,14 +13,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "material/LocalContentColorScreen.kt"
 
 @Composable
 fun LocalContentColorScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.LocalContentColor.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.LocalContentColor,
         link = Url,
     ) {
         Column(

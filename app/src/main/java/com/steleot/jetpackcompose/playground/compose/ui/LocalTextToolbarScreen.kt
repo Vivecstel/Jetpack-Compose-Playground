@@ -12,14 +12,13 @@ import androidx.compose.ui.platform.LocalTextToolbar
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalTextToolbarScreen.kt"
 
 @Composable
 fun LocalTextToolbarScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalTextToolbar.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalTextToolbar,
         link = Url,
     ) {
         Column(

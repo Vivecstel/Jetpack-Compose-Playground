@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     FoundationNavRoutes.Background,
@@ -35,7 +34,7 @@ val routes = listOf(
 fun FoundationScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.Foundation.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Foundation,
         list = routes,
         showBackArrow = true
     )

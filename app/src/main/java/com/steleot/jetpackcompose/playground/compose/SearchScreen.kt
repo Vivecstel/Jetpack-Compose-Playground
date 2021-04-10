@@ -34,7 +34,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
-import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
@@ -44,6 +44,7 @@ import kotlinx.coroutines.flow.StateFlow
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
+import com.steleot.jetpackcompose.playground.compose.customexamples.routes as customExamplesRoutes
 import com.steleot.jetpackcompose.playground.compose.external.routes as externalRoutes
 import com.steleot.jetpackcompose.playground.compose.foundation.routes as foundationRoutes
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.routes as foundationLayoutRoutes
@@ -62,7 +63,7 @@ fun SearchScreen(navController: NavHostController) {
     var visible by rememberSaveable { mutableStateOf(false) }
 
     Scaffold(
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             TopAppBar(
                 title = {
@@ -147,6 +148,7 @@ class SearchViewModel : ViewModel() {
                 materialIconsExtendedRoutes +
                 uiRoutes +
                 viewModelRoutes +
+                customExamplesRoutes +
                 externalRoutes).sorted()
     private val _search = MutableStateFlow("")
     val search: StateFlow<String> = _search

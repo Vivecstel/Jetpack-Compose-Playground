@@ -23,14 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "material/ButtonScreen.kt"
 
 @Composable
 fun ButtonScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Button.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.Button,
         link = Url,
     ) {
         val scrollState = rememberScrollState()

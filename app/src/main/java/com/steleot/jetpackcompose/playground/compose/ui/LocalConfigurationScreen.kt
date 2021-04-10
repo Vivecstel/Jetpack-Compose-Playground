@@ -13,14 +13,13 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalConfigurationScreen.kt"
 
 @Composable
 fun LocalConfigurationScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalConfiguration.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalConfiguration,
         link = Url,
     ) {
         Column(

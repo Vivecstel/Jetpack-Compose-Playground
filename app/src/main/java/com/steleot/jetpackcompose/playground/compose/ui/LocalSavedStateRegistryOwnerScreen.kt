@@ -12,14 +12,13 @@ import androidx.compose.ui.platform.LocalSavedStateRegistryOwner
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalSavedStateRegistryOwnerScreen.kt"
 
 @Composable
 fun LocalSavedStateRegistryOwnerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalSavedStateRegistryOwner.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalSavedStateRegistryOwner,
         link = Url,
     ) {
         Column(

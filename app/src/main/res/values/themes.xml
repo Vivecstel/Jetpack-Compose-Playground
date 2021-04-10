@@ -7,15 +7,6 @@
         <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
     <style name="TestLayoutStyle">
         <item name="android:background">@android:color/darker_gray</item>
     </style>

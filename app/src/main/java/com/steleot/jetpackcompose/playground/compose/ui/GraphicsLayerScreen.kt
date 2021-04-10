@@ -15,14 +15,13 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/GraphicsLayerScreen.kt"
 
 @Composable
 fun GraphicsLayerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.GraphicsLayer.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.GraphicsLayer,
         link = Url,
     ) {
         Column(

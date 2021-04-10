@@ -11,7 +11,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "runtime/CompositionLocalScreen.kt"
@@ -19,7 +18,7 @@ private const val Url = "runtime/CompositionLocalScreen.kt"
 @Composable
 fun CompositionLocalScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.CompositionLocal.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.CompositionLocal,
         link = Url,
     ) {
         Column(

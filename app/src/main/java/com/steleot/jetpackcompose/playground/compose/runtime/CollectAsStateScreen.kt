@@ -11,7 +11,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -23,7 +22,7 @@ private const val Url = "runtime/CollectAsStateScreen.kt"
 @Composable
 fun CollectAsStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.CollectAsState.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.CollectAsState,
         link = Url,
     ) {
         Column(

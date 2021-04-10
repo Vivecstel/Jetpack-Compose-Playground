@@ -17,14 +17,13 @@ import com.airbnb.lottie.compose.rememberLottieAnimationState
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "external/LottieScreen.kt"
 
 @Composable
 fun LottieScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Coil.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.Coil,
         link = Url,
     ) {
         Column(

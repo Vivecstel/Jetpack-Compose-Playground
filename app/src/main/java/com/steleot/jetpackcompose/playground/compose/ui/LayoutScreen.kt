@@ -18,14 +18,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/FoundationLayoutScreen.kt"
 
 @Composable
 fun LayoutScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Layout.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.Layout,
         link = Url,
     ) {
         Column(

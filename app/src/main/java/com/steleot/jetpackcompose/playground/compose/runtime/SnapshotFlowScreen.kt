@@ -17,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.delay
@@ -28,7 +27,7 @@ private const val Url = "runtime/SnapshotFlowScreen.kt"
 @Composable
 fun SnapshotFlowScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.SnapshotFlow.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.SnapshotFlow,
         link = Url,
     ) {
         Column(

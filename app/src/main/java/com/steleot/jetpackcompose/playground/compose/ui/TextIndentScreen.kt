@@ -13,14 +13,13 @@ import androidx.compose.ui.text.style.TextIndent
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/TextIndentScreen.kt"
 
 @Composable
 fun TextIndentScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.TextIndent.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.TextIndent,
         link = Url,
     ) {
         Column(

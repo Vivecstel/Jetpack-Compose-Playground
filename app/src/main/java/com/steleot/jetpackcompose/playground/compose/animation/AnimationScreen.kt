@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     AnimationNavRoutes.Animatable,
@@ -25,7 +24,7 @@ val routes = listOf(
 fun AnimationScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.Animation.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Animation,
         list = routes,
         showBackArrow = true,
     )

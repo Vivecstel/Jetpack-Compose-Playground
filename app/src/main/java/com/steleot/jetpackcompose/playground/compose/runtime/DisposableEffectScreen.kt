@@ -12,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "runtime/DisposableEffectScreen.kt"
@@ -20,7 +19,7 @@ private const val Url = "runtime/DisposableEffectScreen.kt"
 @Composable
 fun DisposableEffectScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DisposableEffect.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.DisposableEffect,
         link = Url,
     ) {
         Column(

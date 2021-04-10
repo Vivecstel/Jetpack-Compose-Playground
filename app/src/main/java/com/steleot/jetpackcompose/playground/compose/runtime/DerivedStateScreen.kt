@@ -16,14 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "runtime/DerivedStateScreen.kt"
 
 @Composable
 fun DerivedStateScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.DerivedState.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.DerivedState,
         link = Url,
     ) {
         DerivedStateExample()

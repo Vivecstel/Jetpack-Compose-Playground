@@ -21,10 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import java.util.Locale
 
 private const val Url = "material/BottomAppBarScreen.kt"
 
@@ -32,10 +31,10 @@ private const val Url = "material/BottomAppBarScreen.kt"
 fun BottomAppBarScreen() {
     val selectedLayout = remember { mutableStateOf(0) }
     Scaffold(
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
-                title = MaterialNavRoutes.BottomAppBar.capitalize(Locale.getDefault()),
+                title = MaterialNavRoutes.BottomAppBar,
                 showBackArrow = true,
                 link = Url,
             )

@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     RuntimeNavRoutes.CollectAsState,
@@ -31,7 +30,7 @@ val routes = listOf(
 fun RuntimeScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.Runtime.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Runtime,
         list = routes,
         showBackArrow = true
     )

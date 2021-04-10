@@ -14,14 +14,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "viewmodel/LiveDataScreen.kt"
 
 @Composable
 fun ViewModelLiveDataScreen() {
     DefaultScaffold(
-        title = ViewModelNavRoutes.LiveData.capitalize(Locale.getDefault()),
+        title = ViewModelNavRoutes.LiveData,
         link = Url,
     ) {
         Column(

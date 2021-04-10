@@ -19,14 +19,13 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.accompanist.glide.GlideImage
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "external/GlideScreen.kt"
 
 @Composable
 fun GlideScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Glide.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.Glide,
         link = Url,
     ) {
         Column(

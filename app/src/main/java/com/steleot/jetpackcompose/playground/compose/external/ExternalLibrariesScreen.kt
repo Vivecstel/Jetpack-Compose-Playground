@@ -5,14 +5,13 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     ExternalLibrariesNavRoutes.Coil,
     ExternalLibrariesNavRoutes.FlowLayout,
     ExternalLibrariesNavRoutes.Glide,
 //    ExternalLibrariesNavRoutes.IconPack,
-//    ExternalLibrariesNavRoutes.Insets,
+    ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Pager,
     ExternalLibrariesNavRoutes.SystemUiController,
@@ -22,7 +21,7 @@ val routes = listOf(
 fun ExternalLibrariesScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.ExternalLibraries.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.ExternalLibraries,
         list = routes,
         showBackArrow = true,
     )

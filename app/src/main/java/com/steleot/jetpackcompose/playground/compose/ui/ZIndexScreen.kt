@@ -11,14 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.zIndex
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/ZIndexScreen.kt"
 
 @Composable
 fun ZIndexScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.ZIndex.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.ZIndex,
         link = Url,
     ) {
         Column(

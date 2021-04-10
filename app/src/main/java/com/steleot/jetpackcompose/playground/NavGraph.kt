@@ -14,6 +14,7 @@ object MainNavRoutes {
     const val Ui = "ui"
     const val ViewModel = "view model"
     const val Paging = "paging"
+    const val CustomExamples = "custom examples"
     const val ExternalLibraries = "external libraries"
     const val Search = "search"
 }
@@ -212,6 +213,10 @@ object ViewModelNavRoutes {
     const val Flow = "flow"
     const val LiveData = "live data"
     const val State = "state"
+}
+
+object CustomExamplesNavRoutes {
+    const val FirstBaselineToTop = "First Baseline to Top"
 }
 
 object ExternalLibrariesNavRoutes {

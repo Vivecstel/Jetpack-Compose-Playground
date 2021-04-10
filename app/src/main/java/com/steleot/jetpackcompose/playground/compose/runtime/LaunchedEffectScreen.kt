@@ -14,14 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "runtime/LaunchedEffectScreen.kt"
 
 @Composable
 fun LaunchedEffectScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.LaunchedEffect.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.LaunchedEffect,
         link = Url,
     ) {
         Column(

@@ -19,14 +19,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/AnimatedVectorScreen.kt"
 
 @Composable
 fun AnimatedVectorScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.AnimatedVector.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.AnimatedVector,
         link = Url,
     ) {
         Column(

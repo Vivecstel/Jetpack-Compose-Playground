@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     MaterialIconsExtendedNavRoutes.ExtendedFilled,
@@ -19,7 +18,7 @@ val routes = listOf(
 fun MaterialIconsExtendedScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.MaterialIConsExtended.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.MaterialIConsExtended,
         list = routes,
         showBackArrow = true
     )

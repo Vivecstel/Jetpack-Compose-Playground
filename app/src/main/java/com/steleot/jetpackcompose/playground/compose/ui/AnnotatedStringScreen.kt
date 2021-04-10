@@ -22,14 +22,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/AnnotatedStringScreen.kt"
 
 @Composable
 fun AnnotatedStringScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.AnnotatedString.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.AnnotatedString,
         link = Url,
     ) {
         val scrollState = rememberScrollState()

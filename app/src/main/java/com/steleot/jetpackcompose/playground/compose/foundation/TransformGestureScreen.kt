@@ -17,7 +17,6 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.IntOffset
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlin.math.roundToInt
 
 private const val Url = "foundation/TransformGestureScreen.kt"
@@ -25,7 +24,7 @@ private const val Url = "foundation/TransformGestureScreen.kt"
 @Composable
 fun TransformGestureScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.TransformGesture.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.TransformGesture,
         link = Url,
     ) {
         DetectTransformGesturesExample()

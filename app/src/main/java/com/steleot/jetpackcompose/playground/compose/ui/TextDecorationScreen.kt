@@ -11,14 +11,13 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/TextDecorationScreen.kt"
 
 @Composable
 fun TextDecorationScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.TextDecoration.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.TextDecoration,
         link = Url,
     ) {
         Column(

@@ -15,14 +15,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/SpanStyleScreen.kt"
 
 @Composable
 fun SpanStyleScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.SpanStyle.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.SpanStyle,
         link = Url,
     ) {
         Column(

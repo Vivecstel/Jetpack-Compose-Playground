@@ -18,7 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import androidx.compose.animation.Animatable as AnimatableColor
 import androidx.compose.animation.core.Animatable as AnimatableFloat
 
@@ -27,7 +26,7 @@ private const val Url = "animation/AnimatedValuesScreen.kt"
 @Composable
 fun AnimatedValuesScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.AnimatedValues.capitalize(Locale.getDefault()),
+        title = AnimationNavRoutes.AnimatedValues,
         link = Url,
     ) {
         Column(

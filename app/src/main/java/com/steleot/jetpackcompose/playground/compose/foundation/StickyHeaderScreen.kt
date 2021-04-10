@@ -13,7 +13,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "foundation/StickyHeaderScreen.kt"
 
@@ -23,7 +22,7 @@ private val routesGrouped = routes.groupBy { it.first().toString() }
 @Composable
 fun StickyHeaderScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.StickyHeader.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.StickyHeader,
         link = Url,
     ) {
         LazyColumn {

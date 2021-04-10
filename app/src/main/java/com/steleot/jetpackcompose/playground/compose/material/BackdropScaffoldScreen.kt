@@ -28,7 +28,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/BackdropScaffoldScreen.kt"
@@ -36,7 +35,7 @@ private const val Url = "material/BackdropScaffoldScreen.kt"
 @Composable
 fun BackdropScaffoldScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.BackdropScaffold.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.BackdropScaffold,
         link = Url,
     ) {
         BackdropScaffoldExample()

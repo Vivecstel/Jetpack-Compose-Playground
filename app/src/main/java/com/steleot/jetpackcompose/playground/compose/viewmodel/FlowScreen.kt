@@ -17,7 +17,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -26,7 +25,7 @@ private const val Url = "viewmodel/FlowLayoutScreen.kt"
 @Composable
 fun ViewModelFlowScreen() {
     DefaultScaffold(
-        title = ViewModelNavRoutes.Flow.capitalize(Locale.getDefault()),
+        title = ViewModelNavRoutes.Flow,
         link = Url,
     ) {
         Column(

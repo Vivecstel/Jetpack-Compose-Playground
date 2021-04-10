@@ -12,14 +12,13 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalLifecycleOwnerScreen.kt"
 
 @Composable
 fun LocalLifecycleOwnerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalLifecycleOwner.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalLifecycleOwner,
         link = Url,
     ) {
         Column(

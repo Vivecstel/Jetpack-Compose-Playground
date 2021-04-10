@@ -24,14 +24,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "runtime/RememberSaveableStateHolderScreen.kt"
 
 @Composable
 fun RememberSaveableStateHolderScreen() {
     DefaultScaffold(
-        title = RuntimeNavRoutes.RememberSaveableStateHolder.capitalize(Locale.getDefault()),
+        title = RuntimeNavRoutes.RememberSaveableStateHolder,
         link = Url,
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

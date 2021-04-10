@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import java.util.Locale
 
 @Composable
@@ -131,7 +131,7 @@ fun DefaultScaffold(
     content: @Composable (PaddingValues) -> Unit,
 ) {
     Scaffold(
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
                 title = title,
