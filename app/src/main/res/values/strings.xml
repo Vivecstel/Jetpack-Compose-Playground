@@ -12,4 +12,7 @@
         <item>Four</item>
         <item>Five</item>
     </string-array>
+    <string name="profile">Profile</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="scrollable">Scrollable</string>
 </resources>

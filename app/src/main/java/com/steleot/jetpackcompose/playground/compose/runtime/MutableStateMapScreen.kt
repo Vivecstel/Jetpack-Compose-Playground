@@ -34,11 +34,13 @@ fun MutableStateMapScreen() {
 private fun MutableStateMapExample() {
     var name by remember { mutableStateOf("name") }
     var saying by remember { mutableStateOf("saying") }
-    val sayings = mutableStateMapOf(
-        "Caesar" to "Et tu, Brute?",
-        "Hamlet" to "To be or not to be",
-        "Richard III" to "My kingdom for a horse"
-    )
+    val sayings = remember {
+        mutableStateMapOf(
+            "Caesar" to "Et tu, Brute?",
+            "Hamlet" to "To be or not to be",
+            "Richard III" to "My kingdom for a horse"
+        )
+    }
 
     Column(
         modifier = Modifier
