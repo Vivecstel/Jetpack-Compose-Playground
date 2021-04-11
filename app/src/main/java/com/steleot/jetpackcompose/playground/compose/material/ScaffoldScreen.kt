@@ -20,18 +20,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.theme.colors
 import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/ScaffoldScreen.kt"
-
-private val colors = listOf(
-    Color(0xFFffd7d7.toInt()),
-    Color(0xFFffe9d6.toInt()),
-    Color(0xFFfffbd0.toInt()),
-    Color(0xFFe3ffd9.toInt()),
-    Color(0xFFd0fff8.toInt())
-)
 
 @Composable
 fun ScaffoldScreen() {

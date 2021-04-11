@@ -60,7 +60,11 @@ fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
     val search: String by viewModel.search.collectAsState()
     val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
-    var visible by rememberSaveable { mutableStateOf(false) }
+    var visible by rememberSaveable { mutableStateOf(false)}
+
+    LaunchedEffect(Unit) {
+        visible = true
+    }
 
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
@@ -68,11 +72,12 @@ fun SearchScreen(navController: NavHostController) {
             TopAppBar(
                 title = {
                     AnimatedVisibility(
-                        visible = visible,
+                        visible = true,
+                        initiallyVisible = visible,
                         enter = expandIn(
                             expandFrom = Alignment.BottomStart,
                             animationSpec = tween(
-                                500,
+                                250,
                                 delayMillis = 250,
                                 easing = LinearOutSlowInEasing
                             )
@@ -91,9 +96,6 @@ fun SearchScreen(navController: NavHostController) {
                                 .fillMaxWidth()
                                 .padding(end = 16.dp)
                         )
-                    }
-                    LaunchedEffect(true) {
-                        visible = true
                     }
                 },
                 navigationIcon = {

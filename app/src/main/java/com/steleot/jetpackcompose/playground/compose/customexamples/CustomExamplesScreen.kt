@@ -8,6 +8,8 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 import java.util.Locale
 
 val routes = listOf(
+    CustomExamplesNavRoutes.AnimatedList,
+    CustomExamplesNavRoutes.AnimatedText,
     CustomExamplesNavRoutes.FirstBaselineToTop,
 )
 

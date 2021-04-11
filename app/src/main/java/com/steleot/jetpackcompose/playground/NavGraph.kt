@@ -216,7 +216,9 @@ object ViewModelNavRoutes {
 }
 
 object CustomExamplesNavRoutes {
-    const val FirstBaselineToTop = "First Baseline to Top"
+    const val AnimatedList = "animated list"
+    const val AnimatedText = "animated text"
+    const val FirstBaselineToTop = "first baseline to top"
 }
 
 object ExternalLibrariesNavRoutes {

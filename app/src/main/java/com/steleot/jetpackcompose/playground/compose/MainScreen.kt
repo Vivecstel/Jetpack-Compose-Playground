@@ -24,22 +24,23 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import java.util.Locale
 
 private val routes = listOf(
     MainNavRoutes.Activity,
     MainNavRoutes.Animation,
     MainNavRoutes.ConstraintLayout,
+    MainNavRoutes.CustomExamples,
+    MainNavRoutes.ExternalLibraries,
     MainNavRoutes.Foundation,
     MainNavRoutes.FoundationLayout,
     MainNavRoutes.Material,
     MainNavRoutes.MaterialIcons,
     MainNavRoutes.MaterialIConsExtended,
+    MainNavRoutes.Paging,
     MainNavRoutes.Runtime,
     MainNavRoutes.Ui,
     MainNavRoutes.ViewModel,
-    MainNavRoutes.Paging,
-    MainNavRoutes.CustomExamples,
-    MainNavRoutes.ExternalLibraries,
 )
 
 @Composable
@@ -55,7 +56,7 @@ fun MainScreen(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
-                title = title,
+                title = title.capitalize(Locale.getDefault()),
                 showBackArrow = showBackArrow,
                 navigateToSearch = navigateToSearch
             )

@@ -35,6 +35,8 @@ import com.steleot.jetpackcompose.playground.compose.constraintlayout.ChainScree
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintSetScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.CreateRefsScreen
+import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedListScreen
+import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedTextScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.CustomExamplesScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.FirstBaselineToTopScreen
 import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
@@ -448,6 +450,8 @@ fun PlaygroundApp() {
                     composable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
                     composable(route = ViewModelNavRoutes.State) { StateScreen() }
                     /* custom examples */
+                    composable(route = CustomExamplesNavRoutes.AnimatedList) { AnimatedListScreen() }
+                    composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }

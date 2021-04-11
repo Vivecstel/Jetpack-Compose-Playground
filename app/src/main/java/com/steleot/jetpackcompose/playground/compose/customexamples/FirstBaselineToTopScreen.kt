@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
-private const val Url = "custom/FirstBaselineToTopScreen.kt"
+private const val Url = "customexamples/FirstBaselineToTopScreen.kt"
 
 @Composable
 fun FirstBaselineToTopScreen() {
