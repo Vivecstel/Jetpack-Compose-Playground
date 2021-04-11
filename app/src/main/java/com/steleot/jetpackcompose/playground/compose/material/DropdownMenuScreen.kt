@@ -20,14 +20,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "material/DropdownMenuScreen.kt"
 
 @Composable
 fun DropdownMenuScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.DropdownMenu.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.DropdownMenu,
         link = Url,
     ) {
         var expanded by remember { mutableStateOf(false) }

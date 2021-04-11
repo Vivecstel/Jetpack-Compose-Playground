@@ -26,7 +26,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "foundation/InteractionSourceScreen.kt"
@@ -34,7 +33,7 @@ private const val Url = "foundation/InteractionSourceScreen.kt"
 @Composable
 fun InteractionSourceScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.InteractionSource.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.InteractionSource,
         link = Url,
     ) {
         SimpleInteractionSourceExample()

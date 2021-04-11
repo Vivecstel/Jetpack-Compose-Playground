@@ -21,7 +21,6 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.delay
 import kotlin.math.ceil
 
@@ -30,7 +29,7 @@ private const val Url = "paging/PagingScreen.kt"
 @Composable
 fun PagingScreen() {
     DefaultScaffold(
-        title = MainNavRoutes.Paging.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.Paging,
         link = Url,
     ) {
         PagingExample()

@@ -12,14 +12,13 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalLayoutDirectionScreen.kt"
 
 @Composable
 fun LocalLayoutDirectionScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalLayoutDirection.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalLayoutDirection,
         link = Url,
     ) {
         Column(

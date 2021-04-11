@@ -122,14 +122,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "materialiconsextended/ExtendedTwoToneScreen.kt"
 
 @Composable
 fun ExtendedTwoToneScreen() {
     DefaultScaffold(
-        title = MaterialIconsExtendedNavRoutes.ExtendedTwoTone.capitalize(Locale.getDefault()),
+        title = MaterialIconsExtendedNavRoutes.ExtendedTwoTone,
         link = Url,
     ) {
         ExtendedTwoToneGrid()

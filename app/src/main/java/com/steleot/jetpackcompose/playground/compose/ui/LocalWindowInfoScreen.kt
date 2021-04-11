@@ -12,14 +12,13 @@ import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalWindowInfoScreen.kt"
 
 @Composable
 fun LocalWindowInfoScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalWindowInfo.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalWindowInfo,
         link = Url,
     ) {
         Column(

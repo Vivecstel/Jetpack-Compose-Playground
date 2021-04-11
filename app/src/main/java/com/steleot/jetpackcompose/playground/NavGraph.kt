@@ -2,21 +2,22 @@ package com.steleot.jetpackcompose.playground
 
 object MainNavRoutes {
     const val Main = "main"
+    const val Search = "search"
     const val Activity = "activity"
     const val Animation = "animation"
     const val ConstraintLayout = "constraint layout"
+    const val CustomExamples = "custom examples"
+    const val ExternalLibraries = "external libraries"
     const val Foundation = "foundation"
     const val FoundationLayout = "foundation layout"
     const val Material = "material"
     const val MaterialIcons = "material icons"
     const val MaterialIConsExtended = "material icons extended"
+    const val Navigation = "navigation"
+    const val Paging = "paging"
     const val Runtime = "runtime"
     const val Ui = "ui"
     const val ViewModel = "view model"
-    const val Paging = "paging"
-    const val CustomExamples = "custom examples"
-    const val ExternalLibraries = "external libraries"
-    const val Search = "search"
 }
 
 object ActivityNavRoutes {
@@ -216,7 +217,7 @@ object ViewModelNavRoutes {
 }
 
 object CustomExamplesNavRoutes {
-    const val AnimatedList = "animated list"
+    const val AnimatedDeleteList = "animated delete list"
     const val AnimatedText = "animated text"
     const val FirstBaselineToTop = "first baseline to top"
 }

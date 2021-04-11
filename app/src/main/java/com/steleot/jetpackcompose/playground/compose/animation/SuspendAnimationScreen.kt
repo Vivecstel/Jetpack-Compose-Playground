@@ -21,14 +21,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import com.steleot.jetpackcompose.playground.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "animation/SuspendAnimationScreen.kt"
 
 @Composable
 fun SuspendAnimationScreen() {
     DefaultScaffold(
-        title = AnimationNavRoutes.SuspendAnimation.capitalize(Locale.getDefault()),
+        title = AnimationNavRoutes.SuspendAnimation,
         link = Url,
     ) {
         Column(

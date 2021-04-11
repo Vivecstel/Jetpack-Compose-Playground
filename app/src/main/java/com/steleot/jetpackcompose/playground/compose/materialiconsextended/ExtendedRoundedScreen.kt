@@ -122,14 +122,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "materialiconsextended/ExtendedRoundedScreen.kt"
 
 @Composable
 fun ExtendedRoundedScreen() {
     DefaultScaffold(
-        title = MaterialIconsExtendedNavRoutes.ExtendedRounded.capitalize(Locale.getDefault()),
+        title = MaterialIconsExtendedNavRoutes.ExtendedRounded,
         link = Url,
     ) {
         ExtendedRoundedGrid()

@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.external
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box

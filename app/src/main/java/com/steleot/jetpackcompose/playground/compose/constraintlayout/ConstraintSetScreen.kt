@@ -16,14 +16,13 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import com.steleot.jetpackcompose.playground.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "constraintlayout/ConstraintSetScreen.kt"
 
 @Composable
 fun ConstraintSetScreen() {
     DefaultScaffold(
-        title = ConstraintLayoutNavRoutes.ConstraintSet.capitalize(Locale.getDefault()),
+        title = ConstraintLayoutNavRoutes.ConstraintSet,
         link = Url,
     ) {
         Column(

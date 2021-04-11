@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.external
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,14 +10,13 @@ import androidx.compose.ui.Modifier
 import com.google.accompanist.insets.LocalWindowInsets
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "external/InsetsScreen.kt"
 
 @Composable
 fun InsetsScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Insets.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.Insets,
         link = Url,
     ) {
         Column(

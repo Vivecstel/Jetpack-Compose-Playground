@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.external
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -17,14 +17,13 @@ import com.google.accompanist.flowlayout.FlowColumn
 import com.google.accompanist.flowlayout.FlowRow
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "external/FlowLayoutScreen.kt"
 
 @Composable
 fun FlowLayoutScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.FlowLayout.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.FlowLayout,
         link = Url,
     ) {
         Row {

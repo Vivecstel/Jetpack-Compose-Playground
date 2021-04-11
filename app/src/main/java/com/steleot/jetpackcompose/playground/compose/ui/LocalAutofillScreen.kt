@@ -19,14 +19,13 @@ import androidx.compose.ui.platform.LocalAutofill
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalAutofillScreen.kt"
 
 @Composable
 fun LocalAutofillScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalAutofill.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalAutofill,
         link = Url,
     ) {
         Column(

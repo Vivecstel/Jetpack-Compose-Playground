@@ -13,14 +13,13 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "constraintlayout/CreateRefsScreen.kt"
 
 @Composable
 fun CreateRefsScreen() {
     DefaultScaffold(
-        title = ConstraintLayoutNavRoutes.CreateRefs.capitalize(Locale.getDefault()),
+        title = ConstraintLayoutNavRoutes.CreateRefs,
         link = Url,
     ) {
         Column(

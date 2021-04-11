@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlin.math.roundToInt
 
 private const val Url = "foundation/DraggableScreen.kt"
@@ -36,7 +35,7 @@ private const val Url = "foundation/DraggableScreen.kt"
 @Composable
 fun DraggableScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Draggable.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.Draggable,
         link = Url,
     ) {
         Column(

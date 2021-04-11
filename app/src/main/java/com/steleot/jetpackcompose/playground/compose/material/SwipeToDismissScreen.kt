@@ -62,7 +62,7 @@ private val items = listOf(
 @Composable
 fun SwipeToDismissScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.SwipeToDismiss.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.SwipeToDismiss,
         link = Url,
     ) {
         SwipeToDismissExample()

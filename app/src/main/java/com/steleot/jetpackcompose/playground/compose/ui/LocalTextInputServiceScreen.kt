@@ -17,14 +17,13 @@ import androidx.compose.ui.platform.LocalTextInputService
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalTextInputServiceScreen.kt"
 
 @Composable
 fun LocalTextInputServiceScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalTextInputService.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalTextInputService,
         link = Url,
     ) {
         Column(

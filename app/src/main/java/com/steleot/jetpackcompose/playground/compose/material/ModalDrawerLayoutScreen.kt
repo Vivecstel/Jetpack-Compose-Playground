@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/ModalDrawerScreen.kt"
@@ -24,7 +23,7 @@ private const val Url = "material/ModalDrawerScreen.kt"
 @Composable
 fun ModalDrawerScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.ModalDrawer.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.ModalDrawer,
         link = Url,
     ) {
         ModalDrawerExample()

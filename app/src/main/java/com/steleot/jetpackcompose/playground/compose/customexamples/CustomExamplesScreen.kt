@@ -5,10 +5,9 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
-    CustomExamplesNavRoutes.AnimatedList,
+    CustomExamplesNavRoutes.AnimatedDeleteList,
     CustomExamplesNavRoutes.AnimatedText,
     CustomExamplesNavRoutes.FirstBaselineToTop,
 )
@@ -17,7 +16,7 @@ val routes = listOf(
 fun CustomExamplesScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.CustomExamples.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.CustomExamples,
         list = routes,
         showBackArrow = true,
     )

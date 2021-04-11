@@ -14,14 +14,13 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalHapticFeedbackScreen.kt"
 
 @Composable
 fun LocalHapticFeedbackScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalHapticFeedback.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalHapticFeedback,
         link = Url,
     ) {
         Column(

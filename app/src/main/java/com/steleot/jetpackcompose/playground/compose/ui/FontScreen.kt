@@ -15,7 +15,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/FontScreen.kt"
 
@@ -23,7 +22,7 @@ private const val Url = "ui/FontScreen.kt"
 @Composable
 fun FontScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.Font.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.Font,
         link = Url,
     ) {
         Column(

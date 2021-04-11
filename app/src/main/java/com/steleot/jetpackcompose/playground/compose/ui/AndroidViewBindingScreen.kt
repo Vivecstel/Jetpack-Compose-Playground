@@ -23,14 +23,13 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.databinding.AndroidViewBindingExampleBinding
-import java.util.Locale
 
 private const val Url = "ui/AndroidViewBindingScreen.kt"
 
 @Composable
 fun AndroidViewBindingScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.AndroidViewBinding.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.AndroidViewBinding,
         link = Url,
     ) {
         Column(

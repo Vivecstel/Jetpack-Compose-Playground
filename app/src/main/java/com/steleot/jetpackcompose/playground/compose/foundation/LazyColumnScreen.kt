@@ -11,14 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "foundation/LazyColumnScreen.kt"
 
 @Composable
 fun LazyColumnScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.LazyColumn.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.LazyColumn,
         link = Url,
     ) {
         val itemsList = (0..50).toList()

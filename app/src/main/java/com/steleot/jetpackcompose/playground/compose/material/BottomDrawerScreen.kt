@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/BottomDrawerScreen.kt"
@@ -27,7 +26,7 @@ private const val Url = "material/BottomDrawerScreen.kt"
 @Composable
 fun BottomDrawerScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.BottomDrawer.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.BottomDrawer,
         link = Url,
     ) {
         BottomDrawerExample()

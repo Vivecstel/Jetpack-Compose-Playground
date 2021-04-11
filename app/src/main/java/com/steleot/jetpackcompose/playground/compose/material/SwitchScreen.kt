@@ -18,14 +18,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "material/SwitchScreen.kt"
 
 @Composable
 fun SwitchScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Switch.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.Switch,
         link = Url,
     ) {
         Column(

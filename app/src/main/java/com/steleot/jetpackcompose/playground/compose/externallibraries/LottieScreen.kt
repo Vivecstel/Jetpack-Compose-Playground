@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.external
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

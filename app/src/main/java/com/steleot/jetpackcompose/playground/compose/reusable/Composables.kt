@@ -82,7 +82,7 @@ fun DefaultTopAppBar(
     val context = LocalContext.current
     TopAppBar(
         title = {
-            Text(text = title, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(text = title.capitalize(Locale.getDefault()), maxLines = 1, overflow = TextOverflow.Ellipsis)
         },
         navigationIcon = {
             if (showBackArrow) BackArrow()

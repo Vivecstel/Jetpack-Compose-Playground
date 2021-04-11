@@ -23,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/ModalBottomSheetLayoutScreen.kt"
@@ -31,7 +30,7 @@ private const val Url = "material/ModalBottomSheetLayoutScreen.kt"
 @Composable
 fun ModalBottomSheetLayoutScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.ModalBottomSheetLayout.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.ModalBottomSheetLayout,
         link = Url,
     ) {
         ModalBottomSheetLayoutExample()

@@ -45,14 +45,14 @@ import com.steleot.jetpackcompose.playground.compose.activity.routes as activity
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
 import com.steleot.jetpackcompose.playground.compose.customexamples.routes as customExamplesRoutes
-import com.steleot.jetpackcompose.playground.compose.external.routes as externalRoutes
+import com.steleot.jetpackcompose.playground.compose.externallibraries.routes as externalRoutes
 
-private const val Url = "customexamples/AnimatedListScreen.kt"
+private const val Url = "customexamples/AnimatedDeleteListScreen.kt"
 
 @Composable
-fun AnimatedListScreen() {
+fun AnimatedDeleteListScreen() {
     DefaultScaffold(
-        title = CustomExamplesNavRoutes.AnimatedList,
+        title = CustomExamplesNavRoutes.AnimatedDeleteList,
         link = Url,
     ) {
         Column(

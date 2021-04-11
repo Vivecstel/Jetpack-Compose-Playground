@@ -35,19 +35,19 @@ import com.steleot.jetpackcompose.playground.compose.constraintlayout.ChainScree
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintSetScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.CreateRefsScreen
-import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedListScreen
+import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedDeleteListScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedTextScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.CustomExamplesScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.FirstBaselineToTopScreen
-import com.steleot.jetpackcompose.playground.compose.external.CoilScreen
-import com.steleot.jetpackcompose.playground.compose.external.ExternalLibrariesScreen
-import com.steleot.jetpackcompose.playground.compose.external.FlowLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.external.GlideScreen
-import com.steleot.jetpackcompose.playground.compose.external.IconPackScreen
-import com.steleot.jetpackcompose.playground.compose.external.InsetsScreen
-import com.steleot.jetpackcompose.playground.compose.external.LottieScreen
-import com.steleot.jetpackcompose.playground.compose.external.PagerScreen
-import com.steleot.jetpackcompose.playground.compose.external.SystemUiControllerScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.CoilScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ExternalLibrariesScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.FlowLayoutScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.GlideScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.IconPackScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.InsetsScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.LottieScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.PagerScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.SystemUiControllerScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
@@ -132,6 +132,7 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
+import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
 import com.steleot.jetpackcompose.playground.compose.runtime.CollectAsStateScreen
 import com.steleot.jetpackcompose.playground.compose.runtime.CompositionLocalScreen
@@ -232,10 +233,21 @@ fun PlaygroundApp() {
                             navigateToSearch = null
                         )
                     }
+                    composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
                     composable(route = MainNavRoutes.Activity) { ActivityScreen(navController) }
                     composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
                     composable(route = MainNavRoutes.ConstraintLayout) {
                         ConstraintLayoutScreen(
+                            navController
+                        )
+                    }
+                    composable(route = MainNavRoutes.CustomExamples) {
+                        CustomExamplesScreen(
+                            navController
+                        )
+                    }
+                    composable(route = MainNavRoutes.ExternalLibraries) {
+                        ExternalLibrariesScreen(
                             navController
                         )
                     }
@@ -256,21 +268,11 @@ fun PlaygroundApp() {
                             navController
                         )
                     }
+                    composable(route = MainNavRoutes.Navigation) { NavigationScreen() }
+                    composable(route = MainNavRoutes.Paging) { PagingScreen() }
                     composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                     composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
-                    composable(route = MainNavRoutes.Paging) { PagingScreen() }
-                    composable(route = MainNavRoutes.CustomExamples) {
-                        CustomExamplesScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.ExternalLibraries) {
-                        ExternalLibrariesScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
                     /* activity */
                     composable(route = ActivityNavRoutes.BackHandler) {
                         BackHandlerScreen(
@@ -450,7 +452,7 @@ fun PlaygroundApp() {
                     composable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
                     composable(route = ViewModelNavRoutes.State) { StateScreen() }
                     /* custom examples */
-                    composable(route = CustomExamplesNavRoutes.AnimatedList) { AnimatedListScreen() }
+                    composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     /* external */

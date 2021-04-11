@@ -5,7 +5,6 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
-import java.util.Locale
 
 val routes = listOf(
     ConstraintLayoutNavRoutes.Barrier,
@@ -18,7 +17,7 @@ val routes = listOf(
 fun ConstraintLayoutScreen(navController: NavHostController) {
     MainScreen(
         navController = navController,
-        title = MainNavRoutes.ConstraintLayout.capitalize(Locale.getDefault()),
+        title = MainNavRoutes.ConstraintLayout,
         list = routes,
         showBackArrow = true,
     )

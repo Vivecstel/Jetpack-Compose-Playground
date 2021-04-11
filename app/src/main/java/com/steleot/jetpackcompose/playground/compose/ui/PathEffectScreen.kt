@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/PathEffectScreen.kt"
 
@@ -30,7 +29,7 @@ fun PathEffectScreen() {
         close()
     }
     DefaultScaffold(
-        title = UiNavRoutes.PathEffect.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.PathEffect,
         link = Url,
     ) {
         Column(

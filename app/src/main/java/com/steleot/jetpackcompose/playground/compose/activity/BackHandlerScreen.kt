@@ -17,14 +17,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "activity/BackHandlerScreen.kt"
 
 @Composable
 fun BackHandlerScreen(navController: NavHostController) {
     DefaultScaffold(
-        title = ActivityNavRoutes.BackHandler.capitalize(Locale.getDefault()),
+        title = ActivityNavRoutes.BackHandler,
         link = Url,
     ) {
         BackHandlerExample(navController)

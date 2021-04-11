@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.external
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
@@ -18,7 +18,6 @@ import com.google.accompanist.systemuicontroller.LocalSystemUiController
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 
 private const val Url = "external/SystemUiControllerScreen.kt"
@@ -26,7 +25,7 @@ private const val Url = "external/SystemUiControllerScreen.kt"
 @Composable
 fun SystemUiControllerScreen(navController: NavHostController) {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.SystemUiController.capitalize(Locale.getDefault()),
+        title = ExternalLibrariesNavRoutes.SystemUiController,
         link = Url,
     ) {
         SystemUiControllerExample(navController)

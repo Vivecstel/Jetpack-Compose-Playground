@@ -11,14 +11,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "foundation/SelectionContainerScreen.kt"
 
 @Composable
 fun SelectionContainerScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.SelectionContainer.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.SelectionContainer,
         link = Url,
     ) {
         Column(

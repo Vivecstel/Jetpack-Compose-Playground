@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "constraintlayout/BarrierScreen.kt"
@@ -20,7 +19,7 @@ private const val Url = "constraintlayout/BarrierScreen.kt"
 @Composable
 fun BarrierScreen() {
     DefaultScaffold(
-        title = ConstraintLayoutNavRoutes.Barrier.capitalize(Locale.getDefault()),
+        title = ConstraintLayoutNavRoutes.Barrier,
         link = Url,
     ) {
         Column(

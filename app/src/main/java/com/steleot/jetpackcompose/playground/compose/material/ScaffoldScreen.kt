@@ -16,12 +16,11 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.theme.colors
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/ScaffoldScreen.kt"
@@ -31,11 +30,12 @@ fun ScaffoldScreen() {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     Scaffold(
+        modifier = Modifier.systemBarsPadding(),
         scaffoldState = scaffoldState,
         drawerContent = { Text("Drawer content") },
         topBar = {
             DefaultTopAppBar(
-                title = MaterialNavRoutes.Scaffold.capitalize(Locale.getDefault()),
+                title = MaterialNavRoutes.Scaffold,
                 showBackArrow = true,
                 link = Url,
             )

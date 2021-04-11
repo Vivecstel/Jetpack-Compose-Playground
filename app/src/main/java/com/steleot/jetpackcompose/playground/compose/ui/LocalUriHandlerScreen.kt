@@ -13,14 +13,13 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "ui/LocalUriHandlerScreen.kt"
 
 @Composable
 fun LocalUriHandlerScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalUriHandler.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.LocalUriHandler,
         link = Url,
     ) {
         Column(

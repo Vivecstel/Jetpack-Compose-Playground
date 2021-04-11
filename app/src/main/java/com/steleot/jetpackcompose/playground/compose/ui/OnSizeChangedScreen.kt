@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onSizeChanged
 import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "ui/OnSizeChangedScreen.kt"
@@ -18,7 +17,7 @@ private const val Url = "ui/OnSizeChangedScreen.kt"
 @Composable
 fun OnSizeChangedScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.OnSizeChanged.capitalize(Locale.getDefault()),
+        title = UiNavRoutes.OnSizeChanged,
         link = Url,
     ) {
         Column(

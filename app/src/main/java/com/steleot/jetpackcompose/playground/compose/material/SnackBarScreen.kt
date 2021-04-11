@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/SnackBarScreen.kt"
@@ -37,7 +36,7 @@ fun SnackBarScreen() {
         modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
-                title = MaterialNavRoutes.SnackBar.capitalize(Locale.getDefault()),
+                title = MaterialNavRoutes.SnackBar,
                 showBackArrow = true,
                 link = Url,
             )

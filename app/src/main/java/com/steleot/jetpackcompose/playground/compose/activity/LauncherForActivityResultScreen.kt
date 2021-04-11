@@ -20,14 +20,13 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 
 private const val Url = "activity/LauncherForActivityResultScreen.kt"
 
 @Composable
 fun LauncherForActivityResultScreen() {
     DefaultScaffold(
-        title = ActivityNavRoutes.LauncherForActivityResult.capitalize(Locale.getDefault()),
+        title = ActivityNavRoutes.LauncherForActivityResult,
         link = Url,
     ) {
         Column(

@@ -29,12 +29,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.theme.colors
-import java.util.Locale
 import kotlinx.coroutines.launch
 
 private const val Url = "material/BottomSheetScaffoldScreen.kt"
@@ -42,7 +40,7 @@ private const val Url = "material/BottomSheetScaffoldScreen.kt"
 @Composable
 fun BottomSheetScaffoldScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.BottomSheetScaffold.capitalize(Locale.getDefault()),
+        title = MaterialNavRoutes.BottomSheetScaffold,
         link = Url,
     ) {
         BottomSheetScaffoldExample()

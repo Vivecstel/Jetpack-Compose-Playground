@@ -13,7 +13,6 @@ import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import timber.log.Timber
 
 private const val Url = "constraintlayout/ChainScreen.kt"
@@ -21,7 +20,7 @@ private const val Url = "constraintlayout/ChainScreen.kt"
 @Composable
 fun ChainScreen() {
     DefaultScaffold(
-        title = ConstraintLayoutNavRoutes.Chain.capitalize(Locale.getDefault()),
+        title = ConstraintLayoutNavRoutes.Chain,
         link = Url,
     ) {
         Column(

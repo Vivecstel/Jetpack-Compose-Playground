@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import java.util.Locale
 import kotlin.math.roundToInt
 
 private const val Url = "foundation/DragGestureDetectorScreen.kt"
@@ -33,7 +32,7 @@ private const val Url = "foundation/DragGestureDetectorScreen.kt"
 @Composable
 fun DragGestureDetectorScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.DragGestureDetector.capitalize(Locale.getDefault()),
+        title = FoundationNavRoutes.DragGestureDetector,
         link = Url,
     ) {
         AwaitVerticalDragOrCancellationExample()
