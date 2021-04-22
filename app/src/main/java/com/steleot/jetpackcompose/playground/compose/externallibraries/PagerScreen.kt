@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
@@ -20,7 +21,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import com.google.accompanist.coil.CoilImage
+import com.google.accompanist.coil.rememberCoilPainter
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
@@ -77,15 +78,16 @@ private fun PagerExample() {
 
             ) {
                 Box {
-                    CoilImage(
-                        data = randomSampleImageUrl(width = 600),
+                    Image(
+                        painter = rememberCoilPainter(
+                            request = randomSampleImageUrl(width = 600),
+                            fadeIn = true
+                        ),
                         contentDescription = null,
-                        fadeIn = true,
                         modifier = Modifier
                             .fillMaxWidth(0.8f)
                             .aspectRatio(1f)
                     )
-
                     ProfilePicture(
                         Modifier
                             .align(Alignment.BottomCenter)
@@ -113,7 +115,7 @@ private fun PagerExample() {
     }
 }
 
-private fun randomSampleImageUrl(
+internal fun randomSampleImageUrl(
     seed: Int = (0..100000).random(),
     width: Int = 300,
     height: Int = width,
@@ -128,10 +130,9 @@ private fun ProfilePicture(modifier: Modifier = Modifier) {
         shape = CircleShape,
         border = BorderStroke(4.dp, MaterialTheme.colors.surface)
     ) {
-        CoilImage(
-            data = randomSampleImageUrl(),
+        Image(
+            painter = rememberCoilPainter(request = randomSampleImageUrl(), fadeIn = true),
             contentDescription = null,
-            fadeIn = true,
             modifier = Modifier.size(72.dp)
         )
     }

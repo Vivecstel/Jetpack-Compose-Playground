@@ -47,19 +47,19 @@ fun CrossfadeAnimationScreen() {
 @Composable
 private fun CrossfadeTextAnimation() {
     val strings = listOf("This the first text", "This is the second text")
-    val currentString = remember { mutableStateOf(strings[0]) }
+    val current = remember { mutableStateOf(strings[0]) }
 
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Crossfade(targetState = currentString) { color ->
+        Crossfade(targetState = current) {
             Text(
-                text = color.value,
+                text = it.value,
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable(onClick = {
-                        currentString.value =
-                            if (currentString.value == strings[0]) strings[1] else strings[0]
+                        current.value =
+                            if (current.value == strings[0]) strings[1] else strings[0]
                     }),
                 style = TextStyle(textAlign = TextAlign.Center)
             )
@@ -79,7 +79,7 @@ private fun CrossfadeColorAnimation() {
                     .fillMaxWidth()
                     .height(120.dp)
                     .clickable(onClick = {
-                        current.value = if (current.value == colors[0]) colors[1] else colors[0]
+                        current.value = if (it.value == colors[0]) colors[1] else colors[0]
                     })
                     .background(current.value)
             )

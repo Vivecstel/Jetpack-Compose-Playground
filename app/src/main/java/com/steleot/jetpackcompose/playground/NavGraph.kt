@@ -230,5 +230,6 @@ object ExternalLibrariesNavRoutes {
     const val Insets = "insets"
     const val Lottie = "lottie"
     const val Pager = "pager"
+    const val SwipeRefresh = "swipeRefresh"
     const val SystemUiController = "system ui controller"
 }

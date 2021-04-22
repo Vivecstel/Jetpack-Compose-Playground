@@ -16,9 +16,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.transform.CircleCropTransformation
-import com.google.accompanist.coil.CoilImage
+import com.google.accompanist.coil.rememberCoilPainter
+import com.google.accompanist.imageloading.ImageLoadState
+import com.google.accompanist.imageloading.LoadPainter
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import timber.log.Timber
 
 private const val Url = "external/CoilScreen.kt"
 
@@ -35,41 +38,43 @@ fun CoilScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            CoilImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                modifier = Modifier.size(150.dp)
-            ) {
+            CoilImageExample()
+            CoilImageExample(
+                rememberCoilPainter(
+                    request = "https://picsum.photos/300/300",
+                    requestBuilder = {
+                        transformations(CircleCropTransformation())
+                    })
+            )
+            CoilImageExample()
+        }
+    }
+}
+
+@Composable
+private fun CoilImageExample(
+    painter: LoadPainter<Any> = rememberCoilPainter("https://picsum.photos/300/300")
+) {
+    Box {
+        Image(
+            painter = painter,
+            contentDescription = "Content description",
+            modifier = Modifier.size(150.dp)
+        )
+        when (painter.loadState) {
+            ImageLoadState.Loading -> {
                 Box(Modifier.matchParentSize()) {
                     CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
             }
-            CoilImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                requestBuilder = {
-                    transformations(CircleCropTransformation())
-                },
-                modifier = Modifier.size(150.dp)
-            ) {
-                Box(Modifier.matchParentSize()) {
-                    CircularProgressIndicator(Modifier.align(Alignment.Center))
-                }
+            is ImageLoadState.Error -> {
+                Image(
+                    imageVector = Icons.Filled.Build,
+                    contentDescription = "Vector"
+                )
             }
-            CoilImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                error = {
-                    Image(
-                        imageVector = Icons.Filled.Build,
-                        contentDescription = "Vector"
-                    )
-                },
-                modifier = Modifier.size(150.dp)
-            ) {
-                Box(Modifier.matchParentSize()) {
-                    CircularProgressIndicator(Modifier.align(Alignment.Center))
-                }
+            else -> {
+                Timber.d("Else image load states")
             }
         }
     }

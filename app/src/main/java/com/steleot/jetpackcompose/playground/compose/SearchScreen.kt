@@ -51,6 +51,7 @@ import com.steleot.jetpackcompose.playground.compose.foundationlayout.routes as 
 import com.steleot.jetpackcompose.playground.compose.material.routes as materialRoutes
 import com.steleot.jetpackcompose.playground.compose.materialicons.routes as materialIconsRoutes
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.routes as materialIconsExtendedRoutes
+import com.steleot.jetpackcompose.playground.compose.runtime.routes as runtimeRoutes
 import com.steleot.jetpackcompose.playground.compose.ui.routes as uiRoutes
 import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewModelRoutes
 
@@ -148,6 +149,7 @@ class SearchViewModel : ViewModel() {
                 materialRoutes +
                 materialIconsRoutes +
                 materialIconsExtendedRoutes +
+                runtimeRoutes +
                 uiRoutes +
                 viewModelRoutes +
                 customExamplesRoutes +

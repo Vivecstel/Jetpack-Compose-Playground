@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -49,6 +50,7 @@ fun FirstBaselineToTopScreen() {
     }
 }
 
+@SuppressLint("ModifierFactoryUnreferencedReceiver")
 @Suppress("unused")
 fun Modifier.firstBaselineToTop(
     firstBaselineToTop: Dp

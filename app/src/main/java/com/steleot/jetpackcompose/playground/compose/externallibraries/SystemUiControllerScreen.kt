@@ -14,11 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.navigation.NavHostController
-import com.google.accompanist.systemuicontroller.LocalSystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-
 
 private const val Url = "external/SystemUiControllerScreen.kt"
 
@@ -35,7 +34,7 @@ fun SystemUiControllerScreen(navController: NavHostController) {
 @Composable
 private fun SystemUiControllerExample(navController: NavHostController) {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
-    val systemUiController = LocalSystemUiController.current
+    val systemUiController = rememberSystemUiController()
     val useDarkIcons = MaterialTheme.colors.isLight
     val originalStatusBarColor = colorResource(id = R.color.colorPrimaryDark)
 

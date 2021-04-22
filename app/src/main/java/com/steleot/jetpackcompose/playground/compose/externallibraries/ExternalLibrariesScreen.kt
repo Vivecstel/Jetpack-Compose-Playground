@@ -14,6 +14,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Pager,
+    ExternalLibrariesNavRoutes.SwipeRefresh,
     ExternalLibrariesNavRoutes.SystemUiController,
 )
 

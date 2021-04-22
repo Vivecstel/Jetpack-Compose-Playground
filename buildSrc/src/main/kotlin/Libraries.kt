@@ -79,6 +79,8 @@ object Libraries {
         "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}"
     const val accompanistSystemuicontroller =
         "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
+    const val accompanistSwipeRefresh =
+        "com.google.accompanist:accompanist-swiperefresh:${Versions.accompanist}"
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"

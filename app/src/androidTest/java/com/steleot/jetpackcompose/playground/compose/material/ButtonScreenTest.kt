@@ -15,7 +15,7 @@ class ButtonScreenTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun TestButtonScreen() {
+    fun testButtonScreen() {
         composeTestRule.setContent {
             PlaygroundTheme {
                 ProvideWindowInsets {

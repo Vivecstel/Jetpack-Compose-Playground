@@ -15,10 +15,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.request.RequestOptions
-import com.google.accompanist.glide.GlideImage
+import coil.transform.CircleCropTransformation
+import com.google.accompanist.coil.rememberCoilPainter
+import com.google.accompanist.glide.rememberGlidePainter
+import com.google.accompanist.imageloading.ImageLoadState
+import com.google.accompanist.imageloading.LoadPainter
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import timber.log.Timber
 
 private const val Url = "external/GlideScreen.kt"
 
@@ -35,41 +39,43 @@ fun GlideScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            GlideImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                modifier = Modifier.size(150.dp)
-            ) {
+            GlideImageExample()
+            GlideImageExample(
+                rememberCoilPainter(
+                    request = "https://picsum.photos/300/300",
+                    requestBuilder = {
+                        transformations(CircleCropTransformation())
+                    })
+            )
+            GlideImageExample()
+        }
+    }
+}
+
+@Composable
+private fun GlideImageExample(
+    painter: LoadPainter<Any> = rememberGlidePainter("https://picsum.photos/300/300")
+) {
+    Box {
+        Image(
+            painter = painter,
+            contentDescription = "Content description",
+            modifier = Modifier.size(150.dp)
+        )
+        when (painter.loadState) {
+            ImageLoadState.Loading -> {
                 Box(Modifier.matchParentSize()) {
                     CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
             }
-            GlideImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                requestBuilder = {
-                    apply(RequestOptions().circleCrop())
-                },
-                modifier = Modifier.size(150.dp)
-            ) {
-                Box(Modifier.matchParentSize()) {
-                    CircularProgressIndicator(Modifier.align(Alignment.Center))
-                }
+            is ImageLoadState.Error -> {
+                Image(
+                    imageVector = Icons.Filled.Build,
+                    contentDescription = "Vector"
+                )
             }
-            GlideImage(
-                data = "https://picsum.photos/300/300",
-                contentDescription = "Content description",
-                error = {
-                    Image(
-                        imageVector = Icons.Filled.Build,
-                        contentDescription = "Vector"
-                    )
-                },
-                modifier = Modifier.size(150.dp)
-            ) {
-                Box(Modifier.matchParentSize()) {
-                    CircularProgressIndicator(Modifier.align(Alignment.Center))
-                }
+            else -> {
+                Timber.d("Else image load states")
             }
         }
     }

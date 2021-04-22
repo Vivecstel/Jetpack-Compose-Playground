@@ -117,6 +117,7 @@ dependencies {
     implementation(Libraries.accompanistPager)
     implementation(Libraries.accompanistPagerIndicators)
     implementation(Libraries.accompanistSystemuicontroller)
+    implementation(Libraries.accompanistSwipeRefresh)
     implementation(Libraries.coil)
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)

@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 @Composable
 fun PlaygroundTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
+    content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
         DarkColorPalette

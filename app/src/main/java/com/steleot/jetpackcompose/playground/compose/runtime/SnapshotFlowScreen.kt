@@ -5,11 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.snapshots.Snapshot
@@ -17,10 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 private const val Url = "runtime/SnapshotFlowScreen.kt"
 
@@ -47,11 +45,10 @@ private fun SnapshotFlowExample() {
     var person by remember { mutableStateOf("Jetpack Compose Playground") }
     val snapshot = snapshotFlow { "$greeting, $person" }
     val state by snapshot.collectAsState("")
-    val scope = rememberCoroutineScope()
 
     Text(text = state)
 
-    scope.launch(Dispatchers.IO) {
+    LaunchedEffect(true) {
         delay(1_000L)
         Snapshot.withMutableSnapshot {
             greeting = "Ahoy"
