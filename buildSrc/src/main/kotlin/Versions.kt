@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.4.32"
 
     /* plugins */
-    const val androidPlugin = "7.0.0-alpha14"
+    const val androidPlugin = "7.0.0-alpha15"
     const val googleServices = "4.3.5"
     const val crashlytics = "2.5.2"
     const val benManes = "0.38.0"
@@ -32,5 +32,5 @@ object Versions {
     const val timber = "4.7.1"
     const val lottie = "1.0.0-beta03-1"
     const val iconPack = "0.2.0"
-    const val adMob = "20.0.0"
+    const val adMob = "20.1.0"
 }
