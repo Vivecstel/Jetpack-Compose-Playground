@@ -12,6 +12,7 @@ val routes = listOf(
     AnimationNavRoutes.AnimatedVisibility,
     AnimationNavRoutes.AnimationModifier,
     AnimationNavRoutes.CrossfadeAnimation,
+    AnimationNavRoutes.DoubleTapToLike,
     AnimationNavRoutes.GestureAnimation,
     AnimationNavRoutes.InfiniteTransition,
     AnimationNavRoutes.RotatingShape,

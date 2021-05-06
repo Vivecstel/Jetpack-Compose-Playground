@@ -1,11 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
@@ -63,7 +59,7 @@ private fun GlideImageExample(
             modifier = Modifier.size(150.dp)
         )
         when (painter.loadState) {
-            ImageLoadState.Loading -> {
+            is ImageLoadState.Loading -> {
                 Box(Modifier.matchParentSize()) {
                     CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }

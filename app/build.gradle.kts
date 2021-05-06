@@ -1,5 +1,5 @@
 import java.io.FileInputStream
-import java.util.Properties
+import java.util.*
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -97,6 +97,7 @@ dependencies {
     implementation(Libraries.composeRuntime)
     implementation(Libraries.composeLiveData)
     implementation(Libraries.composeUi)
+    implementation(Libraries.composeUiUtil)
     implementation(Libraries.composeUiTooling)
     implementation(Libraries.composeNavigation)
     implementation(Libraries.composeActivity)

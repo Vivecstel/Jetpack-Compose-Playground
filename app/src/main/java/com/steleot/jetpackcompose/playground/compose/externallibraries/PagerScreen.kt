@@ -2,14 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -22,11 +15,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import com.google.accompanist.coil.rememberCoilPainter
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.HorizontalPagerIndicator
-import com.google.accompanist.pager.calculateCurrentOffsetForPage
-import com.google.accompanist.pager.rememberPagerState
+import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import kotlin.math.absoluteValue
@@ -46,11 +35,10 @@ fun PagerScreen() {
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 private fun PagerExample() {
-    val pagerState = rememberPagerState(pageCount = 10)
+    val pagerState = rememberPagerState(pageCount = 10, initialOffscreenLimit = 2)
     Column(Modifier.fillMaxSize()) {
         HorizontalPager(
             state = pagerState,
-            offscreenLimit = 2,
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth(),

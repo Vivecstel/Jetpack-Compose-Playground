@@ -23,6 +23,7 @@ object Libraries {
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-ui */
     const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
+    const val composeUiUtil = "androidx.compose.ui:ui-util:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/ui */
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"

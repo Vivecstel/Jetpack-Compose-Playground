@@ -10,18 +10,9 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.LocalTextStyle
-import androidx.compose.material.Scaffold
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
-import androidx.compose.material.TopAppBar
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,9 +29,9 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
-import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import java.util.*
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes

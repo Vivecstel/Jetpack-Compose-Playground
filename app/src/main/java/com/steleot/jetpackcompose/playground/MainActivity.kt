@@ -15,188 +15,22 @@ import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
-import com.steleot.jetpackcompose.playground.compose.animation.AnimatableScreen
-import com.steleot.jetpackcompose.playground.compose.animation.AnimatedValuesScreen
-import com.steleot.jetpackcompose.playground.compose.animation.AnimatedVisibilityScreen
-import com.steleot.jetpackcompose.playground.compose.animation.AnimationModifierScreen
-import com.steleot.jetpackcompose.playground.compose.animation.AnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.CrossfadeAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.GestureAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.InfiniteTransitionScreen
-import com.steleot.jetpackcompose.playground.compose.animation.RotatingShapeScreen
-import com.steleot.jetpackcompose.playground.compose.animation.SingleValueColorAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.SingleValueFloatAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.animation.SuspendAnimationScreen
-import com.steleot.jetpackcompose.playground.compose.constraintlayout.BarrierScreen
-import com.steleot.jetpackcompose.playground.compose.constraintlayout.ChainScreen
-import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintSetScreen
-import com.steleot.jetpackcompose.playground.compose.constraintlayout.CreateRefsScreen
+import com.steleot.jetpackcompose.playground.compose.animation.*
+import com.steleot.jetpackcompose.playground.compose.constraintlayout.*
 import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedDeleteListScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedTextScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.CustomExamplesScreen
 import com.steleot.jetpackcompose.playground.compose.customexamples.FirstBaselineToTopScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.CoilScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.ExternalLibrariesScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.FlowLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.GlideScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.IconPackScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.InsetsScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.LottieScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.PagerScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.SwipeRefreshScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.SystemUiControllerScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.CanvasScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ClickableScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ClickableTextScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.DragGestureDetectorScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.DraggableScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.FocusableScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.FoundationScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ImageScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.InteractionSourceScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.LazyColumnScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.LazyGridScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.LazyRowScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ScrollableScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ScrollerScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.SelectionContainerScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ShapeScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.StickyHeaderScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.ToggeableScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.TransformGestureScreen
-import com.steleot.jetpackcompose.playground.compose.foundation.TransformableScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.AspectRationScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.BoxWithConstraintsScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.ColumnScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.FoundationLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.IntrinsicScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.OffsetScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.PaddingScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.RowScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.SizeScreen
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.SpacerScreen
-import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
-import com.steleot.jetpackcompose.playground.compose.material.BackdropScaffoldScreen
-import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
-import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerScreen
-import com.steleot.jetpackcompose.playground.compose.material.BottomNavigationScreen
-import com.steleot.jetpackcompose.playground.compose.material.BottomSheetScaffoldScreen
-import com.steleot.jetpackcompose.playground.compose.material.ButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.CardScreen
-import com.steleot.jetpackcompose.playground.compose.material.CheckboxScreen
-import com.steleot.jetpackcompose.playground.compose.material.DividerScreen
-import com.steleot.jetpackcompose.playground.compose.material.DropdownMenuScreen
-import com.steleot.jetpackcompose.playground.compose.material.ElevationScreen
-import com.steleot.jetpackcompose.playground.compose.material.ExtendedFloatingActionButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.FloatingActionButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.IconButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.IconScreen
-import com.steleot.jetpackcompose.playground.compose.material.IconToggleButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.ListItemScreen
-import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaScreen
-import com.steleot.jetpackcompose.playground.compose.material.LocalContentColorScreen
-import com.steleot.jetpackcompose.playground.compose.material.MaterialScreen
-import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.material.ModalDrawerScreen
-import com.steleot.jetpackcompose.playground.compose.material.OutlinedTextFieldScreen
-import com.steleot.jetpackcompose.playground.compose.material.ProgressScreen
-import com.steleot.jetpackcompose.playground.compose.material.RadioButtonScreen
-import com.steleot.jetpackcompose.playground.compose.material.ScaffoldScreen
-import com.steleot.jetpackcompose.playground.compose.material.ScrollableTabRowScreen
-import com.steleot.jetpackcompose.playground.compose.material.SliderScreen
-import com.steleot.jetpackcompose.playground.compose.material.SnackBarScreen
-import com.steleot.jetpackcompose.playground.compose.material.SurfaceScreen
-import com.steleot.jetpackcompose.playground.compose.material.SwipeToDismissScreen
-import com.steleot.jetpackcompose.playground.compose.material.SwipeableScreen
-import com.steleot.jetpackcompose.playground.compose.material.SwitchScreen
-import com.steleot.jetpackcompose.playground.compose.material.TabRowScreen
-import com.steleot.jetpackcompose.playground.compose.material.TextFieldScreen
-import com.steleot.jetpackcompose.playground.compose.material.TextScreen
-import com.steleot.jetpackcompose.playground.compose.material.TopAppBarScreen
-import com.steleot.jetpackcompose.playground.compose.material.TriStateCheckboxScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.FilledScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.MaterialIconsScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.OutlinedScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.RoundedScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.SharpScreen
-import com.steleot.jetpackcompose.playground.compose.materialicons.TwoToneScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedFilledScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedOutlinedScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedRoundedScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedSharpScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.ExtendedTwoToneScreen
-import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.*
+import com.steleot.jetpackcompose.playground.compose.foundation.*
+import com.steleot.jetpackcompose.playground.compose.foundationlayout.*
+import com.steleot.jetpackcompose.playground.compose.material.*
+import com.steleot.jetpackcompose.playground.compose.materialicons.*
+import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.CollectAsStateScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.CompositionLocalScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.DerivedStateScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.DisposableEffectScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.ImmutableScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.KeyScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.LaunchedEffectScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateListScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.MutableStateMapScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.ProduceStateScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberCoroutineScopeScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberSaveableStateHolderScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RememberScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.SaverScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.SideEffectScreen
-import com.steleot.jetpackcompose.playground.compose.runtime.SnapshotFlowScreen
-import com.steleot.jetpackcompose.playground.compose.ui.AlignmentLineScreen
-import com.steleot.jetpackcompose.playground.compose.ui.AlphaScreen
-import com.steleot.jetpackcompose.playground.compose.ui.AndroidViewBindingScreen
-import com.steleot.jetpackcompose.playground.compose.ui.AnimatedVectorScreen
-import com.steleot.jetpackcompose.playground.compose.ui.AnnotatedStringScreen
-import com.steleot.jetpackcompose.playground.compose.ui.BrushScreen
-import com.steleot.jetpackcompose.playground.compose.ui.ClipScreen
-import com.steleot.jetpackcompose.playground.compose.ui.ColorScreen
-import com.steleot.jetpackcompose.playground.compose.ui.DebugInspectorInfoScreen
-import com.steleot.jetpackcompose.playground.compose.ui.DrawableScreen
-import com.steleot.jetpackcompose.playground.compose.ui.FontScreen
-import com.steleot.jetpackcompose.playground.compose.ui.GraphicsLayerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalAccessibilityManagerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalAutofillTreeScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalClipboardManagerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalConfigurationScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalContextScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalFocusManagerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalFontLoaderScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalHapticFeedbackScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalLayoutDirectionScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalLifecycleOwnerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalSavedStateRegistryOwnerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalSoftwareKeyboardControllerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalTextInputServiceScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalTextToolbarScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalUriHandlerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalViewConfigurationScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalWindowInfoScreen
-import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
-import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
-import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
-import com.steleot.jetpackcompose.playground.compose.ui.PopupScreen
-import com.steleot.jetpackcompose.playground.compose.ui.PrimitiveScreen
-import com.steleot.jetpackcompose.playground.compose.ui.RotateScreen
-import com.steleot.jetpackcompose.playground.compose.ui.ScaleScreen
-import com.steleot.jetpackcompose.playground.compose.ui.ShadowScreen
-import com.steleot.jetpackcompose.playground.compose.ui.SpanStyleScreen
-import com.steleot.jetpackcompose.playground.compose.ui.StringScreen
-import com.steleot.jetpackcompose.playground.compose.ui.SubComposeLayoutScreen
-import com.steleot.jetpackcompose.playground.compose.ui.TextDecorationScreen
-import com.steleot.jetpackcompose.playground.compose.ui.TextIndentScreen
-import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
-import com.steleot.jetpackcompose.playground.compose.ui.VisualTransformationScreen
-import com.steleot.jetpackcompose.playground.compose.ui.ZIndexScreen
+import com.steleot.jetpackcompose.playground.compose.runtime.*
+import com.steleot.jetpackcompose.playground.compose.ui.*
 import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
@@ -282,6 +116,7 @@ fun PlaygroundApp() {
                 composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
                 composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
                 composable(route = AnimationNavRoutes.CrossfadeAnimation) { CrossfadeAnimationScreen() }
+                composable(route = AnimationNavRoutes.DoubleTapToLike) { DoubleTapToLikeScreen() }
                 composable(route = AnimationNavRoutes.GestureAnimation) { GestureAnimationScreen() }
                 composable(route = AnimationNavRoutes.InfiniteTransition) { InfiniteTransitionScreen() }
                 composable(route = AnimationNavRoutes.RotatingShape) { RotatingShapeScreen() }
@@ -405,6 +240,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.Clip) { ClipScreen() }
                 composable(route = UiNavRoutes.Color) { ColorScreen() }
                 composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
+                composable(route = UiNavRoutes.Dialog) { DialogScreen() }
                 composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                 composable(route = UiNavRoutes.Font) { FontScreen() }
                 composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
@@ -428,6 +264,7 @@ fun PlaygroundApp() {
                 composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
                 composable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
                 composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
+                composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
                 composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
                 composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
                 composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }

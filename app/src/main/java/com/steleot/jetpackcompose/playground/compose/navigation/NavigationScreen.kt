@@ -1,11 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.navigation
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
@@ -63,7 +59,8 @@ fun Profile(navController: NavHostController) {
     Column(
         Modifier
             .fillMaxSize()
-            .then(Modifier.padding(8.dp))) {
+            .then(Modifier.padding(8.dp))
+    ) {
         Text(text = stringResource(Screen.Profile.resourceId))
         Spacer(Modifier.weight(1f))
         NavigateButton(stringResource(Screen.Dashboard.resourceId)) {
@@ -82,7 +79,8 @@ fun Dashboard(navController: NavController, title: String? = null) {
     Column(
         Modifier
             .fillMaxSize()
-            .then(Modifier.padding(8.dp))) {
+            .then(Modifier.padding(8.dp))
+    ) {
         Text(text = title ?: stringResource(Screen.Dashboard.resourceId))
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)
@@ -94,7 +92,8 @@ fun Scrollable(navController: NavController) {
     Column(
         Modifier
             .fillMaxSize()
-            .then(Modifier.padding(8.dp))) {
+            .then(Modifier.padding(8.dp))
+    ) {
         NavigateButton(stringResource(Screen.Dashboard.resourceId)) {
             navController.navigate(Screen.Dashboard.route)
         }

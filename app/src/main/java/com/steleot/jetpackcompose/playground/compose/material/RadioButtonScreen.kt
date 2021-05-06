@@ -1,10 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.RadioButton
 import androidx.compose.material.RadioButtonDefaults.colors
 import androidx.compose.material.Text
