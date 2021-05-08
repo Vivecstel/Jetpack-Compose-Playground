@@ -32,6 +32,10 @@
             <meta-data
                 android:name="com.steleot.jetpackcompose.playground.initializer.TimberInitializer"
                 android:value="androidx.startup" />
+
+            <meta-data
+                android:name="com.steleot.jetpackcompose.playground.initializer.FrescoInitiliazer"
+                android:value="androidx.startup" />
         </provider>
 
         <meta-data

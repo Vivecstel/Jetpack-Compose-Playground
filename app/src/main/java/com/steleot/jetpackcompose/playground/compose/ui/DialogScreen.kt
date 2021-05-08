@@ -44,7 +44,8 @@ private fun DefaultDialog() {
             Box(
                 Modifier
                     .size(dialogWidth, dialogHeight)
-                    .background(Color.White))
+                    .background(Color.White)
+            )
         }
     }
 

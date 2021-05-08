@@ -23,7 +23,7 @@ private const val Url = "external/LottieScreen.kt"
 @Composable
 fun LottieScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Coil,
+        title = ExternalLibrariesNavRoutes.Lottie,
         link = Url,
     ) {
         Column(

@@ -22,7 +22,7 @@ private const val Url = "external/SwipeRefreshScreen.kt"
 @Composable
 fun SwipeRefreshScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Coil,
+        title = ExternalLibrariesNavRoutes.SwipeRefresh,
         link = Url,
     ) {
         var refreshing by remember { mutableStateOf(false) }

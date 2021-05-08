@@ -20,12 +20,12 @@ import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "external/GlideScreen.kt"
+private const val Url = "external/GlideAccompanistScreen.kt"
 
 @Composable
-fun GlideScreen() {
+fun GlideAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Glide,
+        title = ExternalLibrariesNavRoutes.GlideAccompanist,
         link = Url,
     ) {
         Column(
@@ -38,7 +38,7 @@ fun GlideScreen() {
             GlideImageExample()
             GlideImageExample(
                 rememberCoilPainter(
-                    request = "https://picsum.photos/300/300",
+                    request = randomSampleImageUrl(),
                     requestBuilder = {
                         transformations(CircleCropTransformation())
                     })
@@ -50,7 +50,7 @@ fun GlideScreen() {
 
 @Composable
 private fun GlideImageExample(
-    painter: LoadPainter<Any> = rememberGlidePainter("https://picsum.photos/300/300")
+    painter: LoadPainter<Any> = rememberGlidePainter(randomSampleImageUrl())
 ) {
     Box {
         Image(

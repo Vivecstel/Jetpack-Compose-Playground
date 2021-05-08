@@ -289,9 +289,12 @@ fun PlaygroundApp() {
                 composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                 composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                 /* external */
-                composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
+                composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
+                composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
                 composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
-                composable(route = ExternalLibrariesNavRoutes.Glide) { GlideScreen() }
+                composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
+                composable(route = ExternalLibrariesNavRoutes.GlideAccompanist) { GlideAccompanistScreen() }
+                composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
                 composable(route = ExternalLibrariesNavRoutes.IconPack) { IconPackScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }

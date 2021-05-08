@@ -15,6 +15,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
@@ -54,6 +56,7 @@ fun SearchScreen(navController: NavHostController) {
     val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
 
+
     LaunchedEffect(Unit) {
         visible = true
     }
@@ -75,19 +78,9 @@ fun SearchScreen(navController: NavHostController) {
                             )
                         )
                     ) {
-                        TextField(
-                            value = search,
-                            onValueChange = { value -> viewModel.onSearchChange(value) },
-                            textStyle = LocalTextStyle.current.copy(
-                                fontSize = 16.sp
-                            ),
-                            colors = TextFieldDefaults.textFieldColors(
-                                cursorColor = Color.White
-                            ),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(end = 16.dp)
-                        )
+                        SearchTextField(search) {
+                            viewModel.onSearchChange(it)
+                        }
                     }
                 },
                 navigationIcon = {
@@ -109,6 +102,31 @@ fun SearchScreen(navController: NavHostController) {
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun SearchTextField(
+    searchText: String, onSearchTextChange: (String) -> Unit
+) {
+    val focusRequester = FocusRequester()
+    TextField(
+        value = searchText,
+        onValueChange = { onSearchTextChange(it) },
+        textStyle = LocalTextStyle.current.copy(
+            fontSize = 16.sp
+        ),
+        colors = TextFieldDefaults.textFieldColors(
+            cursorColor = Color.White
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .focusRequester(focusRequester)
+            .padding(end = 16.dp)
+    )
+    DisposableEffect(Unit) {
+        focusRequester.requestFocus()
+        onDispose { }
     }
 }
 

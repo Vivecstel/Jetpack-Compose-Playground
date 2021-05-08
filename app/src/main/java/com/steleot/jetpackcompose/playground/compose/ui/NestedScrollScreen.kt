@@ -60,9 +60,11 @@ private fun NestedScrollConnectionExample() {
     ) {
         LazyColumn(contentPadding = PaddingValues(top = toolbarHeight)) {
             items(100) { index ->
-                Text("I'm item $index", modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp))
+                Text(
+                    "I'm item $index", modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                )
             }
         }
         TopAppBar(

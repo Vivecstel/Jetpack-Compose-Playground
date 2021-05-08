@@ -7,9 +7,12 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 
 val routes = listOf(
-    ExternalLibrariesNavRoutes.Coil,
+    ExternalLibrariesNavRoutes.CoilAccompanist,
+    ExternalLibrariesNavRoutes.CoilLandscapist,
     ExternalLibrariesNavRoutes.FlowLayout,
-    ExternalLibrariesNavRoutes.Glide,
+    ExternalLibrariesNavRoutes.FrescoLandscapist,
+    ExternalLibrariesNavRoutes.GlideAccompanist,
+    ExternalLibrariesNavRoutes.GlideLandscapist,
 //    ExternalLibrariesNavRoutes.IconPack,
     ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,

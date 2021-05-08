@@ -19,12 +19,12 @@ import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "external/CoilScreen.kt"
+private const val Url = "external/CoilAccompanistScreen.kt"
 
 @Composable
-fun CoilScreen() {
+fun CoilAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Coil,
+        title = ExternalLibrariesNavRoutes.CoilAccompanist,
         link = Url,
     ) {
         Column(
@@ -37,7 +37,7 @@ fun CoilScreen() {
             CoilImageExample()
             CoilImageExample(
                 rememberCoilPainter(
-                    request = "https://picsum.photos/300/300",
+                    request = randomSampleImageUrl(),
                     requestBuilder = {
                         transformations(CircleCropTransformation())
                     })
@@ -49,7 +49,7 @@ fun CoilScreen() {
 
 @Composable
 private fun CoilImageExample(
-    painter: LoadPainter<Any> = rememberCoilPainter("https://picsum.photos/300/300")
+    painter: LoadPainter<Any> = rememberCoilPainter(randomSampleImageUrl())
 ) {
     Box {
         Image(

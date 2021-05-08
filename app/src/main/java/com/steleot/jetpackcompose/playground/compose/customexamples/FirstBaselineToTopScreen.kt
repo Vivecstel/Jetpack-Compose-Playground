@@ -48,7 +48,7 @@ fun FirstBaselineToTopScreen() {
 
 @SuppressLint("ModifierFactoryUnreferencedReceiver")
 @Suppress("unused")
-fun Modifier.firstBaselineToTop(
+private fun Modifier.firstBaselineToTop(
     firstBaselineToTop: Dp
 ) = Modifier.layout { measurable, constraints ->
     val placeable = measurable.measure(constraints)

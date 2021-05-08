@@ -83,6 +83,11 @@ object Libraries {
     const val accompanistSwipeRefresh =
         "com.google.accompanist:accompanist-swiperefresh:${Versions.accompanist}"
 
+    /* https://github.com/skydoves/Landscapist */
+    const val landscapistCoil = "com.github.skydoves:landscapist-coil:${Versions.landscapist}"
+    const val landscapistGlide = "com.github.skydoves:landscapist-glide:${Versions.landscapist}"
+    const val landscapistFresco = "com.github.skydoves:landscapist-fresco:${Versions.landscapist}"
+
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"
 
@@ -90,8 +95,8 @@ object Libraries {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 
-    /* https://github.com/square/picasso */
-    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
+    /* https://github.com/facebook/fresco */
+    const val fresco = "com.facebook.fresco:fresco:${Versions.fresco}"
 
     /* https://github.com/JakeWharton/timber */
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
