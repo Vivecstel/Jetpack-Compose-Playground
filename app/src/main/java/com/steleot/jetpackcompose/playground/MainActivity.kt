@@ -59,8 +59,7 @@ fun PlaygroundApp() {
                 composable(route = MainNavRoutes.Main) {
                     MainScreen(
                         navController,
-                        showAd = true,
-                        navigateToSearch = null
+                        showAd = true
                     )
                 }
                 composable(route = MainNavRoutes.Search) { SearchScreen(navController) }

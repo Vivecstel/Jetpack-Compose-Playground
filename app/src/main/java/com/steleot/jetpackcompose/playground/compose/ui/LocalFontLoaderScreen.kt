@@ -40,9 +40,9 @@ fun LocalFontLoaderScreen() {
 @Composable
 private fun LocalFontLoaderExample() {
     val fontLoader = LocalFontLoader.current
-    val typeface = fontLoader.load(Font(R.font.ballet_font)) as Typeface
+    val typeface = fontLoader.load(Font(R.font.reggae_one_font)) as Typeface
     Text(
-        text = "Local Font Loader with ballet font",
+        text = "Local Font Loader with reggae one font",
         fontFamily = FontFamily(typeface)
     )
 }

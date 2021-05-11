@@ -7,7 +7,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -33,32 +32,28 @@ fun FontScreen() {
             Text(
                 text = stringResource(
                     id = R.string.string_with_font,
-                    formatArgs = arrayOf("Ballet")
+                    formatArgs = arrayOf("Goblin one")
                 ),
-                fontFamily = fontResource(
-                    fontFamily = FontFamily(
-                        listOf(
-                            Font(
-                                resId = R.font.ballet_font,
-                            )
+                fontFamily = FontFamily(
+                    listOf(
+                        Font(
+                            resId = R.font.goblin_one_font,
                         )
                     )
-                ).fontFamily
+                )
             )
             Text(
                 text = stringResource(
                     id = R.string.string_with_font,
                     formatArgs = arrayOf("Reggae one")
                 ),
-                fontFamily = fontResource(
-                    fontFamily = FontFamily(
-                        listOf(
-                            Font(
-                                resId = R.font.reggae_one_font,
-                            )
+                fontFamily = FontFamily(
+                    listOf(
+                        Font(
+                            resId = R.font.reggae_one_font,
                         )
                     )
-                ).fontFamily
+                )
             )
         }
     }
