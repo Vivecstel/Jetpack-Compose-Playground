@@ -50,7 +50,6 @@ private fun CurrentUserFailure() {
 private val ActiveUser = compositionLocalOf {
     Timber.e("No active user found. Better to throw an exception here instead of timber.")
     User(name = "Default User")
-
 }
 
 internal class User(

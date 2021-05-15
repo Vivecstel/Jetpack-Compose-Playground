@@ -18,6 +18,7 @@ object MainNavRoutes {
     const val Runtime = "runtime"
     const val Ui = "ui"
     const val ViewModel = "view model"
+    const val Settings = "settings"
 }
 
 object ActivityNavRoutes {

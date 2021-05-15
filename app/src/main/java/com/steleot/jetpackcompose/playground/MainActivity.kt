@@ -10,8 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.android.gms.ads.MobileAds
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.logEvent
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.SearchScreen
+import com.steleot.jetpackcompose.playground.compose.SettingsScreen
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
@@ -36,30 +39,46 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScre
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+import javax.inject.Inject
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var firebaseAnalytics: FirebaseAnalytics
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         MobileAds.initialize(this)
         setContent {
-            PlaygroundApp()
+            PlaygroundApp(firebaseAnalytics)
         }
     }
 }
 
 @Composable
-fun PlaygroundApp() {
+fun PlaygroundApp(firebaseAnalytics: FirebaseAnalytics) {
     PlaygroundTheme {
         ProvideWindowInsets {
             val navController = rememberNavController()
+            navController.addOnDestinationChangedListener { _, _, arguments ->
+                arguments?.getString("android-support-nav:controller:route")?.let { screen ->
+                    Timber.d("Screen : $screen")
+                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+                        param(FirebaseAnalytics.Param.SCREEN_NAME, screen)
+                    }
+                }
+            }
             NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
                 /* main */
                 composable(route = MainNavRoutes.Main) {
                     MainScreen(
                         navController,
-                        showAd = true
+                        showSettings = true
                     )
                 }
                 composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
@@ -102,6 +121,7 @@ fun PlaygroundApp() {
                 composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                 composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
+                composable(route = MainNavRoutes.Settings) { SettingsScreen() }
                 /* activity */
                 composable(route = ActivityNavRoutes.BackHandler) {
                     BackHandlerScreen(

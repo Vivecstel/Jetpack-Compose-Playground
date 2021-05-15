@@ -3,7 +3,11 @@ package com.steleot.jetpackcompose.playground.compose
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -48,7 +52,8 @@ fun MainScreen(
     list: List<String> = routes,
     showBackArrow: Boolean = false,
     navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
-    showAd: Boolean = false,
+    showSettings: Boolean = false,
+    showAd: Boolean = true,
 ) {
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
@@ -58,6 +63,18 @@ fun MainScreen(
                 showBackArrow = showBackArrow,
                 navigateToSearch = navigateToSearch
             )
+        },
+        floatingActionButton = {
+            if (showSettings) {
+                FloatingActionButton(onClick = {
+                    navController.navigate(MainNavRoutes.Settings)
+                }) {
+                    Icon(
+                        imageVector = Icons.Outlined.Settings,
+                        contentDescription = "Icon Floating Action Button"
+                    )
+                }
+            }
         }
     ) {
         Column(

@@ -7,6 +7,7 @@ plugins {
     kotlin(BuildPlugins.kapt)
     id(BuildPlugins.googleServices)
     id(BuildPlugins.crashlytics)
+    id(BuildPlugins.hilt)
 }
 
 android {
@@ -108,6 +109,8 @@ dependencies {
     implementation(platform(Libraries.firebaseBom))
     implementation(Libraries.firebaseAnalytics)
     implementation(Libraries.firebaseCrashlytics)
+    implementation(Libraries.hilt)
+    kapt(Libraries.hiltCompiler)
     implementation(Libraries.startUp)
     implementation(Libraries.coroutines)
     implementation(Libraries.coroutinesAndroid)

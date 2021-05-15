@@ -23,4 +23,7 @@ object BuildPlugins {
 
     /* https://firebase.google.com/docs/crashlytics/get-started?platform=android */
     const val crashlytics = "com.google.firebase.crashlytics"
+
+    /* https://developer.android.com/training/dependency-injection/hilt-android */
+    const val hilt = "dagger.hilt.android.plugin"
 }

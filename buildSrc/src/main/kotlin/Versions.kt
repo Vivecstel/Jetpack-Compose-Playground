@@ -8,10 +8,10 @@ object Versions {
 
     /* plugins */
     const val androidPlugin = "7.0.0-alpha15"
-    const val googleServices = "4.3.5"
+    const val googleServices = "4.3.8"
     const val crashlytics = "2.5.2"
     const val benManes = "0.38.0"
-    const val detekt = "1.17.0-RC2"
+    const val detekt = "1.17.0"
 
     /* libraries */
     const val compose = "1.0.0-beta06"
@@ -21,8 +21,8 @@ object Versions {
     const val composePaging = "1.0.0-alpha08"
     const val appCompat = "1.3.0-rc01"
     const val lifecycle = "2.4.0-alpha01"
-    const val firebase = "27.1.0"
-    const val hilt = "2.33-beta"
+    const val firebase = "28.0.1"
+    const val hilt = "2.35"
     const val startUp = "1.1.0-alpha01"
     const val coroutines = "1.4.3"
     const val accompanist = "0.9.1"
