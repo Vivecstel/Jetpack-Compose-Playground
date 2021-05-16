@@ -26,9 +26,10 @@ class InAppReviewHelper @Inject constructor(
                     try {
                         val reviewInfo = reviewManager.requestReviewFlow().await()
                         reviewManager.launchReviewFlow(activity, reviewInfo).await()
-                    } finally {
                         Timber.d("Finished review. Saving timestamp.")
                         protoManager.setReviewTimeStamp(currentTimeMillis)
+                    } catch (e: Exception) {
+                        Timber.e(e)
                     }
                 } else {
                     Timber.d("One month hasn't been reached yet to request in app review.")

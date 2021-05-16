@@ -13,7 +13,6 @@ suspend fun <T> Task<T>.await(): T {
         return if (e == null) {
             result
         } else {
-            Timber.e(e)
             throw e
         }
     }
@@ -26,7 +25,6 @@ suspend fun <T> Task<T>.await(): T {
                     cont.cancel()
                 }
             } else {
-                Timber.e(e)
                 cont.resumeWithException(e)
             }
         }
