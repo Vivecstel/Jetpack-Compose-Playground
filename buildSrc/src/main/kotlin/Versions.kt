@@ -30,6 +30,8 @@ object Versions {
     const val coroutines = "1.4.3"
     const val dataStore = "1.0.0-beta01"
     const val protobuf = "4.0.0-rc-2"
+    const val playCore = "1.10.0"
+    const val playCoreKtx = "1.8.1"
     const val accompanist = "0.9.1"
     const val landscapist = "1.2.1"
     const val coil = "1.2.1"

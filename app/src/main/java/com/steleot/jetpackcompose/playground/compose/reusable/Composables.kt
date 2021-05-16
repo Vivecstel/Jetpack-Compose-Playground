@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
+import android.app.Activity
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.clickable
@@ -11,6 +12,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -22,6 +24,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.google.accompanist.insets.systemBarsPadding
+import com.steleot.jetpackcompose.playground.LocalInAppReviewer
 import java.util.*
 
 @Composable
@@ -49,8 +52,8 @@ fun DefaultListItem(
         Text(
             text,
             style = MaterialTheme.typography.body1,
-            modifier = modifier
-                .padding(16.dp)
+            color = Color.White,
+            modifier = modifier.padding(16.dp)
         )
     }
 }
@@ -78,6 +81,8 @@ fun DefaultTopAppBar(
         title = {
             Text(
                 text = title.capitalize(Locale.getDefault()),
+                style = MaterialTheme.typography.h6,
+                color = Color.White,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -118,7 +123,11 @@ fun BackArrow() {
     IconButton(onClick = {
         backDispatcher?.onBackPressedDispatcher?.onBackPressed()
     }) {
-        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back Arrow")
+        Icon(
+            imageVector = Icons.Filled.ArrowBack,
+            contentDescription = "Back Arrow",
+            tint = Color.White
+        )
     }
 }
 
@@ -128,6 +137,8 @@ fun DefaultScaffold(
     link: String? = null,
     content: @Composable (PaddingValues) -> Unit,
 ) {
+    val context = LocalContext.current
+    val inAppReviewer = LocalInAppReviewer.current
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
@@ -139,4 +150,7 @@ fun DefaultScaffold(
         },
         content = content,
     )
+    LaunchedEffect(Unit) {
+        if (context is Activity) inAppReviewer.requestReview(context)
+    }
 }

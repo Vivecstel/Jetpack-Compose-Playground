@@ -1,8 +1,8 @@
-import java.io.FileInputStream
-import java.util.*
 import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
+import java.io.FileInputStream
+import java.util.*
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -124,6 +124,8 @@ dependencies {
     implementation(Libraries.coroutinesAndroid)
     implementation(Libraries.dataStore)
     implementation(Libraries.protobufJavaLite)
+    implementation(Libraries.playCore)
+    implementation(Libraries.playCoreKtx)
     implementation(Libraries.accompanistCoil)
     implementation(Libraries.accompanistGlide)
     implementation(Libraries.accompanistInsets)

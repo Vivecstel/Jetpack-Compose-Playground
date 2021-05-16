@@ -17,13 +17,20 @@ class ProtoManager @Inject constructor(
     @ApplicationContext private val context: Context,
 ) {
 
-    val isAnalyticsEnabled get() = context.internalDataStore.data.map { settings ->
-        settings.analyticsEnabled
-    }
+    val isAnalyticsEnabled
+        get() = context.internalDataStore.data.map { settings ->
+            settings.analyticsEnabled
+        }
 
-    val isCrashlyticsEnabled get() = context.internalDataStore.data.map { settings ->
-        settings.crashlyticsEnabled
-    }
+    val isCrashlyticsEnabled
+        get() = context.internalDataStore.data.map { settings ->
+            settings.crashlyticsEnabled
+        }
+
+    val reviewTimeStamp
+        get() = context.internalDataStore.data.map { settings ->
+            settings.reviewTimeStamp
+        }
 
     suspend fun setIsAnalyticsEnabled(isEnabled: Boolean) {
         context.internalDataStore.updateData { settings ->
@@ -37,6 +44,14 @@ class ProtoManager @Inject constructor(
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setCrashlyticsEnabled(isEnabled)
+                .build()
+        }
+    }
+
+    suspend fun setReviewTimeStamp(timeStamp: Long) {
+        context.internalDataStore.updateData { settings ->
+            settings.toBuilder()
+                .setReviewTimeStamp(timeStamp)
                 .build()
         }
     }

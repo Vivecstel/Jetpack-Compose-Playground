@@ -73,6 +73,10 @@ object Libraries {
     const val protobufProtoc = "com.google.protobuf:protoc:${Versions.protobuf}"
     const val protobufJavaLite = "com.google.protobuf:protobuf-javalite:${Versions.protobuf}"
 
+    /* https://developer.android.com/guide/playcore */
+    const val playCore = "com.google.android.play:core:${Versions.playCore}"
+    const val playCoreKtx = "com.google.android.play:core-ktx:${Versions.playCoreKtx}"
+
     /* https://github.com/chrisbanes/accompanist */
     const val accompanistCoil =
         "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
