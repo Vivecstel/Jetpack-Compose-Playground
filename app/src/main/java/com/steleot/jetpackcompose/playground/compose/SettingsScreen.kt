@@ -1,11 +1,17 @@
 package com.steleot.jetpackcompose.playground.compose
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.accompanist.insets.systemBarsPadding
@@ -25,6 +31,7 @@ import javax.inject.Inject
 fun SettingsScreen(viewModel: SettingsViewModel) {
     val analyticsEnabled: Boolean by viewModel.analyticsEnabled.collectAsState()
     val crashlyticsEnabled: Boolean by viewModel.crashlyticsEnabled.collectAsState()
+    val context = LocalContext.current
 
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
@@ -41,6 +48,17 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
             }
             SettingsListItem("Firebase crashlytics collection", crashlyticsEnabled) {
                 viewModel.onCrashlyticsChanged(it)
+            }
+            Button(
+                modifier = Modifier.padding(vertical = 16.dp).align(Alignment.CenterHorizontally),
+                onClick = {
+                    context.startActivity(Intent(Intent.ACTION_SENDTO).apply {
+                        data = Uri.parse("mailto:")
+                        putExtra(Intent.EXTRA_EMAIL, arrayOf("steleot@hotmail.com"))
+                        putExtra(Intent.EXTRA_SUBJECT, "Feedback on Jetpack Compose Playground")
+                    })
+                }) {
+                Text(text = "Send Feedback")
             }
         }
     }
