@@ -5,6 +5,7 @@ plugins {
     kotlin(BuildPlugins.kotlinJvm) version Versions.kotlin
     id(BuildPlugins.benManes) version Versions.benManes
     id(BuildPlugins.detekt) version Versions.detekt
+    id(BuildPlugins.gradleDoctor) version Versions.doctor
 }
 
 buildscript {
@@ -24,6 +25,7 @@ allprojects {
         google()
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
         maven("https://kotlin.bintray.com/kotlinx")
+        maven("https://jitpack.io")
         mavenCentral()
     }
 }

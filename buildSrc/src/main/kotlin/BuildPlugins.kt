@@ -26,4 +26,10 @@ object BuildPlugins {
 
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "dagger.hilt.android.plugin"
+
+    /* https://github.com/runningcode/gradle-doctor */
+    const val gradleDoctor = "com.osacky.doctor"
+
+    /* https://github.com/protocolbuffers/protobuf */
+    const val protobuf = "com.google.protobuf"
 }

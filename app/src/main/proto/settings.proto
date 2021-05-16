@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.steleot.jetpackcompose.playground.datastore";
+option java_multiple_files = true;
+
+message SettingsProto {
+    bool analyticsEnabled = 1;
+    bool crashlyticsEnabled = 2;
+}

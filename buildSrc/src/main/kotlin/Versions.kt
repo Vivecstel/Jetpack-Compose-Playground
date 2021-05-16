@@ -9,9 +9,11 @@ object Versions {
     /* plugins */
     const val androidPlugin = "7.0.0-alpha15"
     const val googleServices = "4.3.8"
-    const val crashlytics = "2.5.2"
+    const val crashlytics = "2.6.1"
     const val benManes = "0.38.0"
     const val detekt = "1.17.0"
+    const val doctor = "0.7.0"
+    const val protobufPlugin = "0.8.16"
 
     /* libraries */
     const val compose = "1.0.0-beta06"
@@ -22,9 +24,12 @@ object Versions {
     const val appCompat = "1.3.0-rc01"
     const val lifecycle = "2.4.0-alpha01"
     const val firebase = "28.0.1"
-    const val hilt = "2.35"
+    const val hilt = "2.35.1"
+    const val hiltCompose = "1.0.0-alpha01"
     const val startUp = "1.1.0-alpha01"
     const val coroutines = "1.4.3"
+    const val dataStore = "1.0.0-beta01"
+    const val protobuf = "4.0.0-rc-2"
     const val accompanist = "0.9.1"
     const val landscapist = "1.2.1"
     const val coil = "1.2.1"
@@ -32,6 +37,7 @@ object Versions {
     const val fresco = "2.3.0"
     const val timber = "4.7.1"
     const val lottie = "1.0.0-beta03-1"
+    const val ratingBar = "1.0.3"
     const val iconPack = "0.2.0"
     const val adMob = "20.1.0"
 }

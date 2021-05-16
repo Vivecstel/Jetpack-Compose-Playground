@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.core.view.WindowCompat
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
+import androidx.navigation.compose.KEY_ROUTE
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,6 +17,7 @@ import com.google.firebase.analytics.ktx.logEvent
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.SettingsScreen
+import com.steleot.jetpackcompose.playground.compose.SettingsViewModel
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
@@ -38,7 +41,7 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
-import com.steleot.jetpackcompose.playground.theme.PlaygroundTheme
+import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import javax.inject.Inject
@@ -55,18 +58,18 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         MobileAds.initialize(this)
         setContent {
-            PlaygroundApp(firebaseAnalytics)
+            JetpackComposeApp(firebaseAnalytics)
         }
     }
 }
 
 @Composable
-fun PlaygroundApp(firebaseAnalytics: FirebaseAnalytics) {
-    PlaygroundTheme {
+fun JetpackComposeApp(firebaseAnalytics: FirebaseAnalytics) {
+    JetpackComposeTheme {
         ProvideWindowInsets {
             val navController = rememberNavController()
             navController.addOnDestinationChangedListener { _, _, arguments ->
-                arguments?.getString("android-support-nav:controller:route")?.let { screen ->
+                arguments?.getString(KEY_ROUTE)?.let { screen ->
                     Timber.d("Screen : $screen")
                     firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
                         param(FirebaseAnalytics.Param.SCREEN_NAME, screen)
@@ -121,7 +124,9 @@ fun PlaygroundApp(firebaseAnalytics: FirebaseAnalytics) {
                 composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
                 composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                 composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
-                composable(route = MainNavRoutes.Settings) { SettingsScreen() }
+                composable(route = MainNavRoutes.Settings) {
+                    SettingsScreen(hiltNavGraphViewModel(it) as SettingsViewModel)
+                }
                 /* activity */
                 composable(route = ActivityNavRoutes.BackHandler) {
                     BackHandlerScreen(
@@ -318,6 +323,7 @@ fun PlaygroundApp(firebaseAnalytics: FirebaseAnalytics) {
                 composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
                 composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
+                composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
                 composable(route = ExternalLibrariesNavRoutes.SwipeRefresh) { SwipeRefreshScreen() }
                 composable(route = ExternalLibrariesNavRoutes.SystemUiController) {
                     SystemUiControllerScreen(

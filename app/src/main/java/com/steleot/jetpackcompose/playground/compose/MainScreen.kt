@@ -21,7 +21,6 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
-import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
@@ -116,7 +115,7 @@ private fun AdView() {
         update = { view ->
             view.loadAd(AdRequest.Builder().build())
             val context = view.context
-            if (context is MainActivity) {
+            if (context is LifecycleOwner) {
                 context.lifecycle.addObserver(object :
                     DefaultLifecycleObserver {
                     override fun onPause(owner: LifecycleOwner) {

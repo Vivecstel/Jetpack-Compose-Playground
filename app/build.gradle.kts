@@ -1,5 +1,8 @@
 import java.io.FileInputStream
 import java.util.*
+import com.google.protobuf.gradle.generateProtoTasks
+import com.google.protobuf.gradle.protobuf
+import com.google.protobuf.gradle.protoc
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -8,6 +11,7 @@ plugins {
     id(BuildPlugins.googleServices)
     id(BuildPlugins.crashlytics)
     id(BuildPlugins.hilt)
+    id(BuildPlugins.protobuf) version Versions.protobufPlugin
 }
 
 android {
@@ -42,7 +46,10 @@ android {
         getByName("release") {
             signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -111,9 +118,12 @@ dependencies {
     implementation(Libraries.firebaseCrashlytics)
     implementation(Libraries.hilt)
     kapt(Libraries.hiltCompiler)
+    implementation(Libraries.hiltNavigation)
     implementation(Libraries.startUp)
     implementation(Libraries.coroutines)
     implementation(Libraries.coroutinesAndroid)
+    implementation(Libraries.dataStore)
+    implementation(Libraries.protobufJavaLite)
     implementation(Libraries.accompanistCoil)
     implementation(Libraries.accompanistGlide)
     implementation(Libraries.accompanistInsets)
@@ -131,9 +141,26 @@ dependencies {
     implementation(Libraries.fresco)
     implementation(Libraries.timber)
     implementation(Libraries.lottie)
+    implementation(Libraries.ratingBar)
 //    implementation(Libraries.iconPack)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)
     androidTestImplementation(TestLibraries.composeUiJunit)
+}
+
+protobuf {
+    protoc {
+        artifact = Libraries.protobufProtoc
+    }
+
+    generateProtoTasks {
+        all().forEach { task ->
+            task.plugins {
+                create("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
 }

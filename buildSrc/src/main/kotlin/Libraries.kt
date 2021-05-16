@@ -56,6 +56,7 @@ object Libraries {
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/startup */
     const val startUp = "androidx.startup:startup-runtime:${Versions.startUp}"
@@ -64,6 +65,13 @@ object Libraries {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    /* https://developer.android.com/topic/libraries/architecture/datastore */
+    const val dataStore = "androidx.datastore:datastore:${Versions.dataStore}"
+
+    /* https://github.com/protocolbuffers/protobuf */
+    const val protobufProtoc = "com.google.protobuf:protoc:${Versions.protobuf}"
+    const val protobufJavaLite = "com.google.protobuf:protobuf-javalite:${Versions.protobuf}"
 
     /* https://github.com/chrisbanes/accompanist */
     const val accompanistCoil =
@@ -103,6 +111,9 @@ object Libraries {
 
     /* https://github.com/kazemihabib/compose-shimmer */
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
+
+    /* https://github.com/a914-gowtham/compose-ratingbar */
+    const val ratingBar = "com.github.a914-gowtham:compose-ratingbar:${Versions.ratingBar}"
 
     /* https://github.com/DevSrSouza/compose-icons */
     const val iconPack = "br.com.devsrsouza.compose.icons.android:ICON_PACK:${Versions.iconPack}"
