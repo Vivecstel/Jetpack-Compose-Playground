@@ -5,7 +5,7 @@ plugins {
     kotlin(BuildPlugins.kotlinJvm) version Versions.kotlin
     id(BuildPlugins.benManes) version Versions.benManes
     id(BuildPlugins.detekt) version Versions.detekt
-    id(BuildPlugins.gradleDoctor) version Versions.doctor
+//    id(BuildPlugins.gradleDoctor) version Versions.doctor
 }
 
 buildscript {

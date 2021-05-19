@@ -17,7 +17,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.navigate
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize

@@ -11,8 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import coil.transform.CircleCropTransformation
-import com.google.accompanist.coil.rememberCoilPainter
+import com.bumptech.glide.request.RequestOptions
 import com.google.accompanist.glide.rememberGlidePainter
 import com.google.accompanist.imageloading.ImageLoadState
 import com.google.accompanist.imageloading.LoadPainter
@@ -37,10 +36,10 @@ fun GlideAccompanistScreen() {
         ) {
             GlideImageExample()
             GlideImageExample(
-                rememberCoilPainter(
+                rememberGlidePainter(
                     request = randomSampleImageUrl(),
                     requestBuilder = {
-                        transformations(CircleCropTransformation())
+                        apply(RequestOptions().circleCrop())
                     })
             )
             GlideImageExample()

@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.navigate
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
@@ -67,8 +66,7 @@ fun SearchScreen(navController: NavHostController) {
             TopAppBar(
                 title = {
                     AnimatedVisibility(
-                        visible = true,
-                        initiallyVisible = visible,
+                        visible = visible,
                         enter = expandIn(
                             expandFrom = Alignment.BottomStart,
                             animationSpec = tween(

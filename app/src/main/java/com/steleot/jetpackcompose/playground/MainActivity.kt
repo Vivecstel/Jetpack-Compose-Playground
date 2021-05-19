@@ -7,8 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.core.view.WindowCompat
-import androidx.hilt.navigation.compose.hiltNavGraphViewModel
-import androidx.navigation.compose.KEY_ROUTE
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -19,7 +18,6 @@ import com.google.firebase.analytics.ktx.logEvent
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.SettingsScreen
-import com.steleot.jetpackcompose.playground.compose.SettingsViewModel
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
@@ -77,11 +75,11 @@ fun JetpackComposeApp(
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
                 val navController = rememberNavController()
-                navController.addOnDestinationChangedListener { _, _, arguments ->
-                    arguments?.getString(KEY_ROUTE)?.let { screen ->
-                        Timber.d("Screen : $screen")
+                navController.addOnDestinationChangedListener { _, destination, _ ->
+                    destination.route?.let { route ->
+                        Timber.d("Route : $route")
                         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-                            param(FirebaseAnalytics.Param.SCREEN_NAME, screen)
+                            param(FirebaseAnalytics.Param.SCREEN_NAME, route)
                         }
                     }
                 }
@@ -134,7 +132,7 @@ fun JetpackComposeApp(
                     composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                     composable(route = MainNavRoutes.Settings) {
-                        SettingsScreen(hiltNavGraphViewModel(it) as SettingsViewModel)
+                        SettingsScreen(hiltViewModel(it))
                     }
                     /* activity */
                     composable(route = ActivityNavRoutes.BackHandler) {
