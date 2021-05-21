@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.4.32"
 
     /* plugins */
-    const val androidPlugin = "7.0.0-beta01"
+    const val androidPlugin = "7.0.0-beta02"
     const val googleServices = "4.3.8"
     const val crashlytics = "2.6.1"
     const val benManes = "0.38.0"
@@ -33,12 +33,12 @@ object Versions {
     const val playCore = "1.10.0"
     const val playCoreKtx = "1.8.1"
     const val accompanist = "0.10.0"
-    const val landscapist = "1.2.1"
+    const val landscapist = "1.2.2-SNAPSHOT"
     const val coil = "1.2.1"
     const val glide = "4.12.0"
     const val fresco = "2.3.0"
     const val timber = "4.7.1"
-    const val lottie = "1.0.0-beta03-1"
+    const val lottie = "1.0.0-beta07-1"
     const val ratingBar = "1.0.3"
     const val iconPack = "0.2.0"
     const val adMob = "20.1.0"

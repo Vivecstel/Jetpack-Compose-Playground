@@ -143,7 +143,7 @@ dependencies {
     implementation(Libraries.fresco)
     implementation(Libraries.timber)
     implementation(Libraries.lottie)
-    implementation(Libraries.ratingBar)
+//    implementation(Libraries.ratingBar)
 //    implementation(Libraries.iconPack)
     implementation(Libraries.adMob)
 

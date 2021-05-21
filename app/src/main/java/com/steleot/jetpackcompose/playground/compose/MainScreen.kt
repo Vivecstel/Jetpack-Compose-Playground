@@ -11,6 +11,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -106,6 +107,7 @@ fun MainScreen(
 
 @Composable
 private fun AdView() {
+    val lifecycleOwner = LocalLifecycleOwner.current
     AndroidView(
         factory = { context ->
             AdView(context).apply {
@@ -115,23 +117,20 @@ private fun AdView() {
         },
         update = { view ->
             view.loadAd(AdRequest.Builder().build())
-            val context = view.context
-            if (context is LifecycleOwner) {
-                context.lifecycle.addObserver(object :
-                    DefaultLifecycleObserver {
-                    override fun onPause(owner: LifecycleOwner) {
-                        view.pause()
-                    }
+            lifecycleOwner.lifecycle.addObserver(object :
+                DefaultLifecycleObserver {
+                override fun onPause(owner: LifecycleOwner) {
+                    view.pause()
+                }
 
-                    override fun onResume(owner: LifecycleOwner) {
-                        view.resume()
-                    }
+                override fun onResume(owner: LifecycleOwner) {
+                    view.resume()
+                }
 
-                    override fun onDestroy(owner: LifecycleOwner) {
-                        view.destroy()
-                    }
-                })
-            }
+                override fun onDestroy(owner: LifecycleOwner) {
+                    view.destroy()
+                }
+            })
         }
     )
 }
