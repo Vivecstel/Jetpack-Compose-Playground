@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground.helpers
 import com.google.android.play.core.tasks.Task
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.suspendCancellableCoroutine
-import timber.log.Timber
 import kotlin.coroutines.resumeWithException
 
 @OptIn(ExperimentalCoroutinesApi::class)

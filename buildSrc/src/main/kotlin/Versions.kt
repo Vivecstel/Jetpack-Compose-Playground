@@ -11,7 +11,7 @@ object Versions {
     const val googleServices = "4.3.8"
     const val crashlytics = "2.6.1"
     const val benManes = "0.38.0"
-    const val detekt = "1.17.0"
+    const val detekt = "1.17.1"
     const val doctor = "0.7.0"
     const val protobufPlugin = "0.8.16"
 
@@ -32,6 +32,8 @@ object Versions {
     const val protobuf = "4.0.0-rc-2"
     const val playCore = "1.10.0"
     const val playCoreKtx = "1.8.1"
+    const val cameraX = "1.1.0-alpha04"
+    const val cameraView = "1.0.0-alpha24"
     const val accompanist = "0.10.0"
     const val landscapist = "1.2.2"
     const val coil = "1.2.1"

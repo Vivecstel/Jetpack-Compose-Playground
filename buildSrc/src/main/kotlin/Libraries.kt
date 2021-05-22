@@ -77,6 +77,12 @@ object Libraries {
     const val playCore = "com.google.android.play:core:${Versions.playCore}"
     const val playCoreKtx = "com.google.android.play:core-ktx:${Versions.playCoreKtx}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/camera */
+    const val cameraxCore = "androidx.camera:camera-core:${Versions.cameraX}"
+    const val camerax2 = "androidx.camera:camera-camera2:${Versions.cameraX}"
+    const val cameraxLifecycle = "androidx.camera:camera-lifecycle:${Versions.cameraX}"
+    const val cameraxView = "androidx.camera:camera-view:${Versions.cameraView}"
+
     /* https://github.com/chrisbanes/accompanist */
     const val accompanistCoil =
         "com.google.accompanist:accompanist-coil:${Versions.accompanist}"

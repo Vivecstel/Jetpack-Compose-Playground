@@ -23,10 +23,7 @@ import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
 import com.steleot.jetpackcompose.playground.compose.animation.*
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.*
-import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedDeleteListScreen
-import com.steleot.jetpackcompose.playground.compose.customexamples.AnimatedTextScreen
-import com.steleot.jetpackcompose.playground.compose.customexamples.CustomExamplesScreen
-import com.steleot.jetpackcompose.playground.compose.customexamples.FirstBaselineToTopScreen
+import com.steleot.jetpackcompose.playground.compose.customexamples.*
 import com.steleot.jetpackcompose.playground.compose.externallibraries.*
 import com.steleot.jetpackcompose.playground.compose.foundation.*
 import com.steleot.jetpackcompose.playground.compose.foundationlayout.*
@@ -319,6 +316,7 @@ fun JetpackComposeApp(
                     /* custom examples */
                     composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
+                    composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }

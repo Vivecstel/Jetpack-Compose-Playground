@@ -50,7 +50,9 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
                 viewModel.onCrashlyticsChanged(it)
             }
             Button(
-                modifier = Modifier.padding(vertical = 16.dp).align(Alignment.CenterHorizontally),
+                modifier = Modifier
+                    .padding(vertical = 16.dp)
+                    .align(Alignment.CenterHorizontally),
                 onClick = {
                     context.startActivity(Intent(Intent.ACTION_SENDTO).apply {
                         data = Uri.parse("mailto:")

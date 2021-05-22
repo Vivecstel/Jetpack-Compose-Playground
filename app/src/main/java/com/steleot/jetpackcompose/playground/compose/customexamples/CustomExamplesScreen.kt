@@ -9,6 +9,7 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 val routes = listOf(
     CustomExamplesNavRoutes.AnimatedDeleteList,
     CustomExamplesNavRoutes.AnimatedText,
+    CustomExamplesNavRoutes.CameraX,
     CustomExamplesNavRoutes.FirstBaselineToTop,
 )
 

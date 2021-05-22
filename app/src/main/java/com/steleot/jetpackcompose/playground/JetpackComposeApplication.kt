@@ -17,12 +17,16 @@ import javax.inject.Inject
 class JetpackComposeApplication : Application() {
 
     private val scope = CoroutineScope(Dispatchers.Main)
+
     @Inject
     lateinit var inAppReviewHelper: InAppReviewHelper
+
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
+
     @Inject
     lateinit var firebaseCrashlytics: FirebaseCrashlytics
+
     @Inject
     lateinit var protoManager: ProtoManager
 
