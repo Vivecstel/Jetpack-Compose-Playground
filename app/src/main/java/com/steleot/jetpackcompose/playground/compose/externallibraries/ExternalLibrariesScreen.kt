@@ -13,11 +13,12 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.FrescoLandscapist,
     ExternalLibrariesNavRoutes.GlideAccompanist,
     ExternalLibrariesNavRoutes.GlideLandscapist,
-//    ExternalLibrariesNavRoutes.IconPack,
     ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.Pager,
     ExternalLibrariesNavRoutes.RatingBar,
+    ExternalLibrariesNavRoutes.RevealSwipe,
+    ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton,
     ExternalLibrariesNavRoutes.SwipeRefresh,
     ExternalLibrariesNavRoutes.SystemUiController,
 )

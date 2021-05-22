@@ -53,6 +53,7 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var inAppReviewHelper: InAppReviewHelper
+
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
 
@@ -326,11 +327,12 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideAccompanist) { GlideAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.IconPack) { IconPackScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }
                     composable(route = ExternalLibrariesNavRoutes.SwipeRefresh) { SwipeRefreshScreen() }
                     composable(route = ExternalLibrariesNavRoutes.SystemUiController) {
                         SystemUiControllerScreen(

@@ -119,8 +119,11 @@ object Libraries {
     /* https://github.com/a914-gowtham/compose-ratingbar */
     const val ratingBar = "com.github.a914-gowtham:compose-ratingbar:${Versions.ratingBar}"
 
-    /* https://github.com/DevSrSouza/compose-icons */
-    const val iconPack = "br.com.devsrsouza.compose.icons.android:ICON_PACK:${Versions.iconPack}"
+    /* https://github.com/ch4rl3x/RevealSwipe */
+    const val revealSwipe = "de.charlex.compose:revealswipe:${Versions.revealSwipe}"
+
+    /* https://github.com/ch4rl3x/SpeedDialFloatingActionButton */
+    const val speedDial = "de.charlex.compose:speeddial:${Versions.speedDial}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

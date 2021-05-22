@@ -144,7 +144,8 @@ dependencies {
     implementation(Libraries.timber)
     implementation(Libraries.lottie)
     implementation(Libraries.ratingBar)
-//    implementation(Libraries.iconPack)
+    implementation(Libraries.revealSwipe)
+    implementation(Libraries.speedDial)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)

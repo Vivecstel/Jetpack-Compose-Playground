@@ -238,6 +238,8 @@ object ExternalLibrariesNavRoutes {
     const val Lottie = "lottie"
     const val Pager = "pager"
     const val RatingBar = "rating bar"
+    const val RevealSwipe = "reveal swipe"
+    const val SpeedDialFloatingActionButton = "speed dial floating action button"
     const val SwipeRefresh = "swipeRefresh"
     const val SystemUiController = "system ui controller"
 }

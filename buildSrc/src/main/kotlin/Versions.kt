@@ -40,6 +40,7 @@ object Versions {
     const val timber = "4.7.1"
     const val lottie = "1.0.0-beta07-1"
     const val ratingBar = "1.0.5"
-    const val iconPack = "0.2.0"
+    const val revealSwipe = "1.0.0-beta03"
+    const val speedDial = "1.0.0-beta02"
     const val adMob = "20.1.0"
 }
