@@ -85,9 +85,6 @@ private fun CameraPreview() {
                 }, executor)
                 preview
             },
-            update = { view: PreviewView ->
-                view.layoutParams = ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
-            },
             modifier = Modifier.size(200.dp),
         )
     }
