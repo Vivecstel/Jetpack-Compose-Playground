@@ -327,6 +327,9 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }

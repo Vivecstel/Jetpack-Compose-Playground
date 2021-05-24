@@ -36,6 +36,7 @@ object Versions {
     const val cameraView = "1.0.0-alpha24"
     const val accompanist = "0.10.0"
     const val landscapist = "1.2.2"
+    const val orchestra = "1.0.4"
     const val coil = "1.2.1"
     const val glide = "4.12.0"
     const val fresco = "2.3.0"
