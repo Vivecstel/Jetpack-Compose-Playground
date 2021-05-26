@@ -16,28 +16,37 @@ Download from:
   <img src="screenshots/google-play-badge.png" width="250">
 </a>
 
+## Instructions
+
+In order to run the project:
+
+* Use latest Android Studio Beta.
+
+<img src="screenshots/android_studio.png" width="150" />
+
+* Change appId constant in AndroidConfiguration.kt to your applicationId.
+
+<img src="screenshots/android_configuration.png" width="250" />
+
+* Create a firebase android project with the applicationId you provided and download and add google-services.json to the project under app/src folder.7
+
+<img src="screenshots/google_services.png" width="150" />
+
 ## Screens
 
 ### mobile
 
-<img src="screenshots/mobile_1.png" width="250" /> <img src="screenshots/mobile_2.png" width="250" />
+<img src="screenshots/mobile_1.png" width="200" /> <img src="screenshots/mobile_2.png" width="200" /> <img src="screenshots/mobile_3.png" width="200" />
 
-<img src="screenshots/mobile_3.png" width="250" /> <img src="screenshots/mobile_4.png" width="250" />
-
-<img src="screenshots/mobile_5.png" width="250" />
+<img src="screenshots/mobile_4.png" width="200" /> <img src="screenshots/mobile_5.png" width="200" />
 
 ### tablet 7-inch
 
-<img src="screenshots/tablet_7_1.png" width="250" /> <img src="screenshots/tablet_7_2.png" width="250" />
+<img src="screenshots/tablet_7_1.png" width="200" /> <img src="screenshots/tablet_7_2.png" width="200" /> <img src="screenshots/tablet_7_3.png" width="200" />
 
-<img src="screenshots/tablet_7_3.png" width="250" /> <img src="screenshots/tablet_7_4.png" width="250" />
-
-<img src="screenshots/tablet_7_5.png" width="250" />
+<img src="screenshots/tablet_7_4.png" width="200" /> <img src="screenshots/tablet_7_5.png" width="200" />
 
 ### tablet 10-inch
 
-<img src="screenshots/tablet_10_1.png" width="250" /> <img src="screenshots/tablet_10_2.png" width="250" />
-
-<img src="screenshots/tablet_10_3.png" width="250" /> <img src="screenshots/tablet_10_4.png" width="250" />
-
-<img src="screenshots/tablet_10_5.png" width="250" />
+<img src="screenshots/tablet_10_1.png" width="200" /> <img src="screenshots/tablet_10_2.png" width="250" /> <img src="screenshots/tablet_10_3.png" width="200" />''
+<img src="screenshots/tablet_10_4.png" width="200" /> <img src="screenshots/tablet_10_5.png" width="200" />
