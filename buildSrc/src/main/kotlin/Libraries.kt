@@ -108,7 +108,8 @@ object Libraries {
 
     /* https://github.com/skydoves/Orchestra */
     const val orchestraBalloon = "com.github.skydoves:orchestra-balloon:${Versions.orchestra}"
-    const val orchestraColorPicker = "com.github.skydoves:orchestra-colorpicker:${Versions.orchestra}"
+    const val orchestraColorPicker =
+        "com.github.skydoves:orchestra-colorpicker:${Versions.orchestra}"
     const val orchestraSpinner = "com.github.skydoves:orchestra-spinner:${Versions.orchestra}"
 
     /* https://github.com/coil-kt/coil/ */

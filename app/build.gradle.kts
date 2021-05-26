@@ -27,8 +27,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    val isReleasedEnabled = rootProject.file("signing/signing_info.properties").exists()
+
     signingConfigs {
-        if (rootProject.file("signing/signing_info.properties").exists()) {
+        if (isReleasedEnabled) {
             val properties = Properties().apply {
                 load(FileInputStream(rootProject.file("signing/signing_info.properties")))
             }
@@ -43,13 +45,15 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        if (isReleasedEnabled) {
+            getByName("release") {
+                signingConfig = signingConfigs.getByName("release")
+                isMinifyEnabled = true
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
+            }
         }
     }
 
