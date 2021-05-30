@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.LocalInAppReviewer
-import java.util.*
+import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 
 @Composable
 fun DefaultListItem(
@@ -34,7 +34,7 @@ fun DefaultListItem(
     cardClickAction: () -> Unit = {},
 ) {
     DefaultListItem(
-        AnnotatedString(text.capitalize(Locale.getDefault())), modifier, cardClickAction
+        AnnotatedString(text.capitalizeFirstLetter()), modifier, cardClickAction
     )
 }
 
@@ -80,7 +80,7 @@ fun DefaultTopAppBar(
     TopAppBar(
         title = {
             Text(
-                text = title.capitalize(Locale.getDefault()),
+                text = title.capitalizeFirstLetter(),
                 style = MaterialTheme.typography.h6,
                 color = Color.White,
                 maxLines = 1,

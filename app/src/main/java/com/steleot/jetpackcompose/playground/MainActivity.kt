@@ -318,6 +318,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
+                    composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }

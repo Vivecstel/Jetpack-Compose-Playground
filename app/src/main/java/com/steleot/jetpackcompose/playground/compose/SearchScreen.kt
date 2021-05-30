@@ -30,6 +30,7 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
+import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.util.*
@@ -92,7 +93,7 @@ fun SearchScreen(navController: NavHostController) {
             items(filteredRoutes) { item ->
                 DefaultListItem(
                     text = getListAnnotatedString(
-                        item.capitalize(Locale.getDefault()), search
+                        item.capitalizeFirstLetter(), search
                     ),
                     modifier = Modifier.fillMaxWidth()
                 ) {

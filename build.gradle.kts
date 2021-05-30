@@ -26,6 +26,7 @@ allprojects {
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
         maven("https://kotlin.bintray.com/kotlinx")
         maven("https://jitpack.io")
+        maven("https://androidx.dev/snapshots/builds/7410176/artifacts/repository")
         mavenCentral()
     }
 }

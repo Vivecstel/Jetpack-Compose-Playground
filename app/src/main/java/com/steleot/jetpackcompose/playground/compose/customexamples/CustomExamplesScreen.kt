@@ -11,6 +11,7 @@ val routes = listOf(
     CustomExamplesNavRoutes.AnimatedText,
     CustomExamplesNavRoutes.CameraX,
     CustomExamplesNavRoutes.FirstBaselineToTop,
+    CustomExamplesNavRoutes.StaggeredGridList,
 )
 
 @Composable

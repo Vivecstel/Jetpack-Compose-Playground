@@ -222,9 +222,11 @@ object ViewModelNavRoutes {
 
 object CustomExamplesNavRoutes {
     const val AnimatedDeleteList = "animated delete list"
+    const val AnimatedShowList = "animated show list"
     const val AnimatedText = "animated text"
     const val CameraX = "cameraX"
     const val FirstBaselineToTop = "first baseline to top"
+    const val StaggeredGridList = "staggered grid list"
 }
 
 object ExternalLibrariesNavRoutes {

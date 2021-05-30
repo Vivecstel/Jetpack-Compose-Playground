@@ -4,7 +4,7 @@ object Versions {
     const val buildTools = "30.0.2"
 
     /* kotlin */
-    const val kotlin = "1.4.32"
+    const val kotlin = "1.5.10"
 
     /* plugins */
     const val androidPlugin = "7.0.0-beta03"
@@ -16,7 +16,7 @@ object Versions {
     const val protobufPlugin = "0.8.16"
 
     /* libraries */
-    const val compose = "1.0.0-beta07"
+    const val compose = "1.0.0-SNAPSHOT"
     const val composeNavigation = "2.4.0-alpha01"
     const val composeActivity = "1.3.0-alpha08"
     const val composeConstraint = "1.0.0-alpha07"
@@ -27,7 +27,7 @@ object Versions {
     const val hilt = "2.36"
     const val hiltCompose = "1.0.0-alpha02"
     const val startUp = "1.1.0-beta01"
-    const val coroutines = "1.4.3"
+    const val coroutines = "1.5.0"
     const val dataStore = "1.0.0-beta01"
     const val protobuf = "4.0.0-rc-2"
     const val playCore = "1.10.0"

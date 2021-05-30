@@ -8,6 +8,7 @@ import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,7 +30,7 @@ import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.theme.colors
-import java.util.*
+import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
@@ -49,16 +50,16 @@ fun AnimatedDeleteListScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            AnimatedListExample(
-                (activityRoutes +
-                        animationRoutes +
-                        constraintLayoutRoutes +
-                        customExamplesRoutes +
-                        externalRoutes).sorted()
-            )
+            AnimatedListExample(routesList)
         }
     }
 }
+
+val routesList get(): List<String> = (activityRoutes +
+        animationRoutes +
+        constraintLayoutRoutes +
+        customExamplesRoutes +
+        externalRoutes).sorted()
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalMaterialApi::class)
 @Composable
@@ -75,53 +76,62 @@ private fun AnimatedListExample(routes: List<String>) {
                     )
                 )
             ) {
-                Card(
-                    shape = RoundedCornerShape(4.dp),
-                    modifier = Modifier
-                        .fillParentMaxWidth()
-                        .padding(vertical = 8.dp)
-                ) {
-                    ListItem(
-                        icon = {
-                            Box(
-                                modifier = Modifier
-                                    .size(36.dp)
-                                    .clip(CircleShape)
-                                    .background(colors[index % colors.size])
-                            ) {
-                                Text(
-                                    text = route.toUpperCase(Locale.getDefault()).first()
-                                        .toString(),
-                                    fontSize = 20.sp,
-                                    color = Color.Black,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier.align(Alignment.Center)
-                                )
-                            }
-                        },
-                        trailing = {
-                            IconButton(
-                                onClick = {
-                                    deletedRouteList.add(route)
-                                }
-                            ) {
-                                Icon(
-                                    Icons.Filled.Delete,
-                                    contentDescription = "Delete route",
-                                )
-                            }
+                CardExample(index, route) {
+                    IconButton(
+                        onClick = {
+                            deletedRouteList.add(route)
                         }
                     ) {
-                        Text(
-                            text = route.capitalize(Locale.getDefault()),
-                            style = TextStyle(
-                                fontSize = 16.sp,
-                                textAlign = TextAlign.Start
-                            )
+                        Icon(
+                            Icons.Filled.Delete,
+                            contentDescription = "Delete route",
                         )
                     }
                 }
             }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+internal fun LazyItemScope.CardExample(
+    index: Int,
+    route: String,
+    trailing: @Composable (() -> Unit)? = null,
+) {
+    Card(
+        shape = RoundedCornerShape(4.dp),
+        modifier = Modifier
+            .fillParentMaxWidth()
+            .padding(vertical = 8.dp)
+    ) {
+        ListItem(
+            icon = {
+                Box(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .clip(CircleShape)
+                        .background(colors[index % colors.size])
+                ) {
+                    Text(
+                        text = route.first().uppercaseChar().toString(),
+                        fontSize = 20.sp,
+                        color = Color.Black,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.align(Alignment.Center)
+                    )
+                }
+            },
+            trailing = trailing
+        ) {
+            Text(
+                text = route.capitalizeFirstLetter(),
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Start
+                )
+            )
         }
     }
 }
