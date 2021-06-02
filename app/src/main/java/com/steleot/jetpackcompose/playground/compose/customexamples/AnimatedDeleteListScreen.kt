@@ -55,11 +55,12 @@ fun AnimatedDeleteListScreen() {
     }
 }
 
-val routesList get(): List<String> = (activityRoutes +
-        animationRoutes +
-        constraintLayoutRoutes +
-        customExamplesRoutes +
-        externalRoutes).sorted()
+val routesList
+    get(): List<String> = (activityRoutes +
+            animationRoutes +
+            constraintLayoutRoutes +
+            customExamplesRoutes +
+            externalRoutes).sorted()
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalMaterialApi::class)
 @Composable

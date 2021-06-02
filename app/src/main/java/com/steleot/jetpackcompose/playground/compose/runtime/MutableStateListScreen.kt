@@ -34,17 +34,19 @@ private fun MutableStateListExample() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(32.dp)
+            .padding(16.dp)
     ) {
         Row {
             TextField(
                 value = name,
-                onValueChange = { name = it }
+                onValueChange = { name = it },
+                modifier = Modifier.weight(2f)
             )
             Button(
                 onClick = { names.add(name) },
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
+                    .weight(1f)
                     .padding(horizontal = 8.dp)
             ) {
                 Text("Add")

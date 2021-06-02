@@ -79,15 +79,19 @@ private fun HelperView(
     }
 }
 
+private const val Person = "Person"
+private const val TableChart = "Table Chart"
+private const val Settings = "Settings"
+
 @Preview
 @Composable
 private fun RowScope.HelperNavigationItems(
     selectedItem: MutableState<Int> = mutableStateOf(0),
     selectedNavigationItem: Int = 0,
     items: List<Pair<String, ImageVector>> = listOf(
-        Pair("Person", Icons.Filled.Person),
-        Pair("Table Chart", Icons.Filled.TableChart),
-        Pair("Settings", Icons.Filled.Settings)
+        Pair(Person, Icons.Filled.Person),
+        Pair(TableChart, Icons.Filled.TableChart),
+        Pair(Settings, Icons.Filled.Settings)
     ),
 ) {
     items.forEachIndexed { index, item ->
@@ -140,7 +144,7 @@ private fun ElevationBottomNavigation(
 @Preview
 @Composable
 private fun RowScope.DefaultBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair("Person", Icons.Filled.Person),
+    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
@@ -154,7 +158,7 @@ private fun RowScope.DefaultBottomNavigationItem(
 @Preview
 @Composable
 private fun RowScope.LabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair("Person", Icons.Filled.Person),
+    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
@@ -169,7 +173,7 @@ private fun RowScope.LabelBottomNavigationItem(
 @Preview
 @Composable
 private fun RowScope.AlwaysShowLabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair("Person", Icons.Filled.Person),
+    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
@@ -185,7 +189,7 @@ private fun RowScope.AlwaysShowLabelBottomNavigationItem(
 @Preview
 @Composable
 private fun RowScope.SelectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair("Person", Icons.Filled.Person),
+    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
@@ -200,7 +204,7 @@ private fun RowScope.SelectedColorBottomNavigationItem(
 @Preview
 @Composable
 private fun RowScope.UnselectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair("Person", Icons.Filled.Person),
+    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {

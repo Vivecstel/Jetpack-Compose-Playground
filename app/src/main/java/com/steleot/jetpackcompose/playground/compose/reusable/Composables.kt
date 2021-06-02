@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground.compose.reusable
 import android.app.Activity
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
@@ -38,6 +37,7 @@ fun DefaultListItem(
     )
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DefaultListItem(
     text: AnnotatedString,
@@ -45,9 +45,9 @@ fun DefaultListItem(
     cardClickAction: () -> Unit = {},
 ) {
     Card(
+        onClick = cardClickAction,
         modifier = Modifier
             .padding(horizontal = 16.dp, vertical = 4.dp)
-            .clickable(onClick = cardClickAction)
     ) {
         Text(
             text,

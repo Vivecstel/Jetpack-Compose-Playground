@@ -1,3 +1,5 @@
+@file:Suppress("MemberVisibilityCanBePrivate")
+
 object AndroidConfiguration {
 
     const val minSdk = 23

@@ -33,7 +33,6 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import java.util.*
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
@@ -138,7 +137,7 @@ private fun getListAnnotatedString(
     return with(AnnotatedString.Builder()) {
         append(text.substring(0 until startIndex))
         withStyle(SpanStyle(color = Color.Red)) {
-            append(if (startIndex == 0) search.capitalize(Locale.getDefault()) else search)
+            append(if (startIndex == 0) search.capitalizeFirstLetter() else search)
         }
         append(text.substring(endIndex until text.length))
         toAnnotatedString()
