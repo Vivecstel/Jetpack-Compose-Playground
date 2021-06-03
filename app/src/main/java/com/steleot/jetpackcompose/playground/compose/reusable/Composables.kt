@@ -72,11 +72,11 @@ private const val BaseUrl =
 @Composable
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
+    modifier: Modifier = Modifier,
     showBackArrow: Boolean = false,
     navigateToSearch: (() -> Unit)? = null,
     link: String? = null
 ) {
-    val context = LocalContext.current
     TopAppBar(
         title = {
             Text(
@@ -87,22 +87,13 @@ fun DefaultTopAppBar(
                 overflow = TextOverflow.Ellipsis
             )
         },
+        modifier = modifier,
         navigationIcon = {
             if (showBackArrow) BackArrow()
         },
         actions = {
             link?.let {
-                IconButton(onClick = {
-                    context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-                        data = "$BaseUrl$link".toUri()
-                    })
-                }) {
-                    Icon(
-                        imageVector = Icons.Filled.ExitToApp,
-                        contentDescription = "Exit to App",
-                        tint = Color.White
-                    )
-                }
+                GoToGithubButton(it)
             }
             navigateToSearch?.let {
                 IconButton(onClick = it) {
@@ -115,6 +106,22 @@ fun DefaultTopAppBar(
             }
         }
     )
+}
+
+@Composable
+fun GoToGithubButton(link: String) {
+    val context = LocalContext.current
+    IconButton(onClick = {
+        context.startActivity(Intent(Intent.ACTION_VIEW).apply {
+            data = "$BaseUrl$link".toUri()
+        })
+    }) {
+        Icon(
+            imageVector = Icons.Filled.ExitToApp,
+            contentDescription = "Exit to App",
+            tint = Color.White
+        )
+    }
 }
 
 @Composable
@@ -133,14 +140,28 @@ fun BackArrow() {
 
 @Composable
 fun DefaultScaffold(
-    title: String,
-    link: String? = null,
+    topBar: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit,
 ) {
     val context = LocalContext.current
     val inAppReviewer = LocalInAppReviewer.current
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
+        topBar = topBar,
+        content = content,
+    )
+    LaunchedEffect(Unit) {
+        if (context is Activity) inAppReviewer.requestReview(context)
+    }
+}
+
+@Composable
+fun DefaultScaffold(
+    title: String,
+    link: String? = null,
+    content: @Composable (PaddingValues) -> Unit,
+) {
+    DefaultScaffold(
         topBar = {
             DefaultTopAppBar(
                 title = title,
@@ -148,9 +169,6 @@ fun DefaultScaffold(
                 link = link,
             )
         },
-        content = content,
+        content = content
     )
-    LaunchedEffect(Unit) {
-        if (context is Activity) inAppReviewer.requestReview(context)
-    }
 }

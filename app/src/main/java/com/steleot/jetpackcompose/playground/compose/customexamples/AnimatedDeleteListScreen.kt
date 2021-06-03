@@ -6,9 +6,11 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -45,17 +47,11 @@ fun AnimatedDeleteListScreen() {
         title = CustomExamplesNavRoutes.AnimatedDeleteList,
         link = Url,
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            AnimatedListExample(routesList)
-        }
+        AnimatedDeleteListExample(routesList)
     }
 }
 
-val routesList
+internal val routesList
     get(): List<String> = (activityRoutes +
             animationRoutes +
             constraintLayoutRoutes +
@@ -64,7 +60,7 @@ val routesList
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalMaterialApi::class)
 @Composable
-private fun AnimatedListExample(routes: List<String>) {
+private fun AnimatedDeleteListExample(routes: List<String>) {
     val deletedRouteList = remember { mutableStateListOf<String>() }
     LazyColumn(contentPadding = PaddingValues(16.dp)) {
         itemsIndexed(routes) { index, route ->
@@ -77,7 +73,7 @@ private fun AnimatedListExample(routes: List<String>) {
                     )
                 )
             ) {
-                CardExample(index, route) {
+                CardExample(index, route, Modifier.fillParentMaxWidth()) {
                     IconButton(
                         onClick = {
                             deletedRouteList.add(route)
@@ -96,15 +92,15 @@ private fun AnimatedListExample(routes: List<String>) {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-internal fun LazyItemScope.CardExample(
+internal fun CardExample(
     index: Int,
     route: String,
+    modifier: Modifier = Modifier,
     trailing: @Composable (() -> Unit)? = null,
 ) {
     Card(
         shape = RoundedCornerShape(4.dp),
-        modifier = Modifier
-            .fillParentMaxWidth()
+        modifier = modifier
             .padding(vertical = 8.dp)
     ) {
         ListItem(

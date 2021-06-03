@@ -221,9 +221,13 @@ object ViewModelNavRoutes {
 }
 
 object CustomExamplesNavRoutes {
+    const val AdMobBanner = "ad mob banner"
     const val AnimatedDeleteList = "animated delete list"
+    const val AnimatedExtendedFloatingActionButton = "animated extended floating action button"
+    const val AnimatedShowList = "animated show list"
     const val AnimatedText = "animated text"
     const val CameraX = "cameraX"
+    const val CollapsingToolbar = "collapsing toolbar"
     const val FirstBaselineToTop = "first baseline to top"
     const val StaggeredGridList = "staggered grid list"
 }

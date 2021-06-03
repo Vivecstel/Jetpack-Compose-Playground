@@ -11,19 +11,13 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 
@@ -98,39 +92,9 @@ fun MainScreen(
                         .requiredHeight(55.dp),
                     horizontalArrangement = Arrangement.Center,
                 ) {
-                    AdView()
+                    AdViewExample(R.string.main_screen_banner_id)
                 }
             }
         }
     }
-}
-
-@Composable
-private fun AdView() {
-    val lifecycleOwner = LocalLifecycleOwner.current
-    AndroidView(
-        factory = { context ->
-            AdView(context).apply {
-                adSize = AdSize.BANNER
-                adUnitId = context.getString(R.string.ad_unit_id)
-            }
-        },
-        update = { view ->
-            view.loadAd(AdRequest.Builder().build())
-            lifecycleOwner.lifecycle.addObserver(object :
-                DefaultLifecycleObserver {
-                override fun onPause(owner: LifecycleOwner) {
-                    view.pause()
-                }
-
-                override fun onResume(owner: LifecycleOwner) {
-                    view.resume()
-                }
-
-                override fun onDestroy(owner: LifecycleOwner) {
-                    view.destroy()
-                }
-            })
-        }
-    )
 }

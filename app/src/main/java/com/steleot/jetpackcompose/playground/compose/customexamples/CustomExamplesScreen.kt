@@ -7,9 +7,13 @@ import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
 
 val routes = listOf(
+    CustomExamplesNavRoutes.AdMobBanner,
     CustomExamplesNavRoutes.AnimatedDeleteList,
+    CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton,
+    CustomExamplesNavRoutes.AnimatedShowList,
     CustomExamplesNavRoutes.AnimatedText,
     CustomExamplesNavRoutes.CameraX,
+    CustomExamplesNavRoutes.CollapsingToolbar,
     CustomExamplesNavRoutes.FirstBaselineToTop,
     CustomExamplesNavRoutes.StaggeredGridList,
 )

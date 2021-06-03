@@ -314,9 +314,13 @@ fun JetpackComposeApp(
                     composable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
                     composable(route = ViewModelNavRoutes.State) { StateScreen() }
                     /* custom examples */
+                    composable(route = CustomExamplesNavRoutes.AdMobBanner) { AdMobBannerScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
+                    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) { AnimatedExtendedFloatingActionButtonScreen() }
+                    composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
+                    composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
                     /* external */
