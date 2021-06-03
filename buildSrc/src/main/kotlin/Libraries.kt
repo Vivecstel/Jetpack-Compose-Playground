@@ -129,7 +129,7 @@ object Libraries {
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
 
     /* https://github.com/a914-gowtham/compose-ratingbar */
-    const val ratingBar = "com.github.a914-gowtham:compose-ratingbar:${Versions.ratingBar}"
+    const val ratingBar = "io.github.a914-gowtham:compose-ratingbar:${Versions.ratingBar}"
 
     /* https://github.com/ch4rl3x/RevealSwipe */
     const val revealSwipe = "de.charlex.compose:revealswipe:${Versions.revealSwipe}"
