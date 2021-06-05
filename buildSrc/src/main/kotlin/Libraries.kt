@@ -137,6 +137,12 @@ object Libraries {
     /* https://github.com/ch4rl3x/SpeedDialFloatingActionButton */
     const val speedDial = "de.charlex.compose:speeddial:${Versions.speedDial}"
 
+    /* https://github.com/Gurupreet/FontAwesomeCompose */
+    const val fontAwesome = "com.github.Gurupreet:FontAwesomeCompose:${Versions.fontAwesome}"
+
+    /* https://github.com/humawork/compose-charts */
+    const val composeCharts = "ma.hu:compose-charts:${Versions.composeCharts}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

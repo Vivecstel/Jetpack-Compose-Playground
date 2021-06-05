@@ -326,7 +326,9 @@ fun JetpackComposeApp(
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideAccompanist) { GlideAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }

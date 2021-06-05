@@ -157,6 +157,8 @@ dependencies {
     implementation(Libraries.ratingBar)
     implementation(Libraries.revealSwipe)
     implementation(Libraries.speedDial)
+    implementation(Libraries.fontAwesome)
+    implementation(Libraries.composeCharts)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)
