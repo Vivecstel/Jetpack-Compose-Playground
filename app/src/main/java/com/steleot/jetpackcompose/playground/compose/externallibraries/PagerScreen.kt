@@ -1,24 +1,19 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.util.lerp
-import com.google.accompanist.coil.rememberCoilPainter
+import androidx.compose.foundation.shape.*
+import androidx.compose.material.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.*
+import androidx.compose.ui.graphics.*
+import androidx.compose.ui.unit.*
+import androidx.compose.ui.util.*
+import com.google.accompanist.coil.*
 import com.google.accompanist.pager.*
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import kotlin.math.absoluteValue
+import com.steleot.jetpackcompose.playground.*
+import com.steleot.jetpackcompose.playground.compose.reusable.*
+import kotlin.math.*
 
 private const val Url = "external/PagerScreen.kt"
 

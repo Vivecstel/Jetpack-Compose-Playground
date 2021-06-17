@@ -41,8 +41,8 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
 @AndroidEntryPoint
@@ -141,6 +141,7 @@ fun JetpackComposeApp(
                     composable(route = ActivityNavRoutes.LauncherForActivityResult) { LauncherForActivityResultScreen() }
                     /* animation */
                     composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
+                    composable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }
                     composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
                     composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
                     composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
@@ -216,6 +217,7 @@ fun JetpackComposeApp(
                     composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
                     composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
                     composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
+                    composable(route = MaterialNavRoutes.RangeSlider) { RangeSliderScreen() }
                     composable(route = MaterialNavRoutes.Scaffold) { ScaffoldScreen() }
                     composable(route = MaterialNavRoutes.ScrollableTabRow) { ScrollableTabRowScreen() }
                     composable(route = MaterialNavRoutes.Slider) { SliderScreen() }
@@ -321,6 +323,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
+                    composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
                     /* external */
@@ -339,6 +342,8 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
                     composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }

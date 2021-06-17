@@ -100,6 +100,10 @@ object Libraries {
         "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
     const val accompanistSwipeRefresh =
         "com.google.accompanist:accompanist-swiperefresh:${Versions.accompanist}"
+    const val accompanistPermissions =
+        "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
+    const val accompanistPlaceholderMaterial =
+        "com.google.accompanist:accompanist-placeholder-material:${Versions.accompanist}"
 
     /* https://github.com/skydoves/Landscapist */
     const val landscapistCoil = "com.github.skydoves:landscapist-coil:${Versions.landscapist}"

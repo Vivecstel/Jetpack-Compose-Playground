@@ -2,18 +2,22 @@
 
 ## Introduction
 
-Jetpack Compose Playground is a small showcase application and repository showing what Jetpack Compose has to offer and how it improves everyday Android UI development.
-Based on [official link](https://developer.android.com/jetpack/compose) and the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens with examples for most components and cases.
-This application is supposed to be used by developers in order to see hands on the examples for jetpack compose.
-Each screen has a button link directing the user to the Github file containing the code.
-Some code examples are from [androidx compose samples](https://github.com/androidx/androidx/tree/androidx-main/compose) and [accompanist](https://github.com/google/accompanist).
+Jetpack Compose Playground is a small showcase application and repository showing what Jetpack
+Compose has to offer and how it improves everyday Android UI development. Based
+on [official link](https://developer.android.com/jetpack/compose) and
+the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
+with examples for most components and cases. This application is supposed to be used by developers
+in order to see hands on the examples for jetpack compose. Each screen has a button link directing
+the user to the Github file containing the code. Some code examples are
+from [androidx compose samples](https://github.com/androidx/androidx/tree/androidx-main/compose)
+and [accompanist](https://github.com/google/accompanist).
 
 Please provide any feedback via github issues or via email on : steleotr@gmail.com
 
 The application will be updated as soon as possible when a new release of compose is available.
 Download from:
 <a href="https://play.google.com/store/apps/details?id=com.steleot.jetpackcompose.playground">
-  <img src="screenshots/google-play-badge.png" width="250">
+<img src="screenshots/google-play-badge.png" width="250">
 </a>
 
 ## Instructions
@@ -28,7 +32,8 @@ In order to run the project:
 
 <img src="screenshots/android_configuration.png" width="250" />
 
-* Create a firebase android project with the applicationId you provided and download and add google-services.json to the project under app/src folder.7
+* Create a firebase android project with the applicationId you provided and download and add
+  google-services.json to the project under app/src folder.7
 
 <img src="screenshots/google_services.png" width="150" />
 

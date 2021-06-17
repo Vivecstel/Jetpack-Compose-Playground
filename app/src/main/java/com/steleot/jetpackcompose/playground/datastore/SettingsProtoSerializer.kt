@@ -3,9 +3,9 @@ package com.steleot.jetpackcompose.playground.datastore
 import androidx.datastore.core.Serializer
 import com.google.protobuf.InvalidProtocolBufferException
 import com.steleot.jetpackcompose.playground.BuildConfig
-import timber.log.Timber
 import java.io.InputStream
 import java.io.OutputStream
+import timber.log.Timber
 
 @Suppress("BlockingMethodInNonBlockingContext")
 object SettingsProtoSerializer : Serializer<SettingsProto> {

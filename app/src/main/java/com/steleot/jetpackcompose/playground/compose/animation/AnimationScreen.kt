@@ -8,6 +8,7 @@ import com.steleot.jetpackcompose.playground.compose.MainScreen
 
 val routes = listOf(
     AnimationNavRoutes.Animatable,
+    AnimationNavRoutes.AnimatedContent,
     AnimationNavRoutes.AnimatedValues,
     AnimationNavRoutes.AnimatedVisibility,
     AnimationNavRoutes.AnimationModifier,

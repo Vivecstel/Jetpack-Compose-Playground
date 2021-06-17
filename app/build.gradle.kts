@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -141,6 +141,8 @@ dependencies {
     implementation(Libraries.accompanistPagerIndicators)
     implementation(Libraries.accompanistSystemuicontroller)
     implementation(Libraries.accompanistSwipeRefresh)
+    implementation(Libraries.accompanistPermissions)
+    implementation(Libraries.accompanistPlaceholderMaterial)
     implementation(Libraries.landscapistCoil)
     implementation(Libraries.landscapistGlide)
     implementation(Libraries.landscapistFresco)

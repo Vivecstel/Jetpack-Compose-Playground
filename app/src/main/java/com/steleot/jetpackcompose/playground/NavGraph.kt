@@ -28,6 +28,7 @@ object ActivityNavRoutes {
 
 object AnimationNavRoutes {
     const val Animatable = "animatable"
+    const val AnimatedContent = "animated content"
     const val AnimatedValues = "animated values"
     const val AnimatedVisibility = "animated visibility"
     const val AnimationModifier = "animation Modifier"
@@ -111,6 +112,7 @@ object MaterialNavRoutes {
     const val OutlinedTextField = "outlined text field"
     const val Progress = "progress"
     const val RadioButton = "radio button"
+    const val RangeSlider = "range slider"
     const val Scaffold = "scaffold"
     const val ScrollableTabRow = "scrollable Tab row"
     const val Slider = "slider"
@@ -228,6 +230,7 @@ object CustomExamplesNavRoutes {
     const val AnimatedText = "animated text"
     const val CameraX = "cameraX"
     const val CollapsingToolbar = "collapsing toolbar"
+    const val ColorMatrix = "color matrix"
     const val FirstBaselineToTop = "first baseline to top"
     const val StaggeredGridList = "staggered grid list"
 }
@@ -248,6 +251,8 @@ object ExternalLibrariesNavRoutes {
     const val OrchestraColorPicker = "orchestra color picker"
     const val OrchestraSpinner = "orchestra spinner"
     const val Pager = "pager"
+    const val PermissionsAccompanist = "permissions accompanist"
+    const val PlaceholderAccompanist = "placeholder accompanist"
     const val RatingBar = "rating bar"
     const val RevealSwipe = "reveal swipe"
     const val SpeedDialFloatingActionButton = "speed dial floating action button"
