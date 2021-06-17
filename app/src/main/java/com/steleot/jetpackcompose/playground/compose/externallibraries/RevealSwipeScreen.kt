@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -47,6 +48,7 @@ fun RevealSwipeScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun RevealSwipeExample(
     pair: Pair<String, Color>

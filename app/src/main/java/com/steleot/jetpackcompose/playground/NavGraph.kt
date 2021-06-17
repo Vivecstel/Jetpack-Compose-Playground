@@ -236,6 +236,7 @@ object ExternalLibrariesNavRoutes {
     const val CoilAccompanist = "coil accompanist"
     const val CoilLandscapist = "coil landscapist"
     const val ComposeCharts = "compose charts"
+    const val ComposeNeumorphism = "compose neumorphism"
     const val FlowLayout = "flow layout"
     const val FontAwesome = "font awesome"
     const val FrescoLandscapist = "fresco landscapist"

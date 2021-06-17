@@ -73,7 +73,6 @@ android {
                 "-Xskip-prerelease-check",
                 "-Xopt-in=kotlin.RequiresOptIn"
             )
-            useIR = true
         }
     }
 
@@ -159,6 +158,7 @@ dependencies {
     implementation(Libraries.speedDial)
     implementation(Libraries.fontAwesome)
     implementation(Libraries.composeCharts)
+    implementation(Libraries.composeNeumorphism)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)

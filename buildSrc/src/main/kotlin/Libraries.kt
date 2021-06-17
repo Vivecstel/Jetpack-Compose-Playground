@@ -143,6 +143,10 @@ object Libraries {
     /* https://github.com/humawork/compose-charts */
     const val composeCharts = "ma.hu:compose-charts:${Versions.composeCharts}"
 
+    /* https://github.com/CuriousNikhil/neumorphic-compose */
+    const val composeNeumorphism =
+        "me.nikhilchaudhari:composeNeumorphism:${Versions.composeNeumorphism}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

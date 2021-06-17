@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +17,7 @@ import timber.log.Timber
 
 private const val Url = "external/SpeedDialFloatingActionButtonScreen.kt"
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun SpeedDialFloatingActionButtonScreen() {
     DefaultScaffold(
