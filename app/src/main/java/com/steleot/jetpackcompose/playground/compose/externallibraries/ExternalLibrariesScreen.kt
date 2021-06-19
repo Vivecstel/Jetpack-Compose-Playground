@@ -18,7 +18,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.GlideLandscapist,
     ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
-//    ExternalLibrariesNavRoutes.OrchestraBalloon,
+    ExternalLibrariesNavRoutes.OrchestraBalloon,
     ExternalLibrariesNavRoutes.OrchestraColorPicker,
 //    ExternalLibrariesNavRoutes.OrchestraSpinner,
     ExternalLibrariesNavRoutes.Pager,

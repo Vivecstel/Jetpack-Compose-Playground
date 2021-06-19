@@ -324,6 +324,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
                     composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
+                    composable(route = CustomExamplesNavRoutes.CurvedScrollView) { CurvedScrollViewScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
                     /* external */

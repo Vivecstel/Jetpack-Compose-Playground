@@ -231,6 +231,7 @@ object CustomExamplesNavRoutes {
     const val CameraX = "cameraX"
     const val CollapsingToolbar = "collapsing toolbar"
     const val ColorMatrix = "color matrix"
+    const val CurvedScrollView = "curved scroll view"
     const val FirstBaselineToTop = "first baseline to top"
     const val StaggeredGridList = "staggered grid list"
 }
