@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.skydoves.orchestra.spinner.Spinner
+//import com.skydoves.orchestra.spinner.Spinner
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
@@ -21,10 +21,11 @@ fun OrchestraSpinnerScreen() {
         title = ExternalLibrariesNavRoutes.OrchestraSpinner,
         link = Url,
     ) {
-        OrchestraSpinnerExample()
+//        OrchestraSpinnerExample()
     }
 }
 
+/*
 @Composable
 private fun OrchestraSpinnerExample() {
     val coffeeList = remember { listOf("Americano", "Cold Brew", "Espresso", "Latte") }
@@ -48,4 +49,4 @@ private fun OrchestraSpinnerExample() {
             selectedItem = item
         }
     )
-}
+}*/

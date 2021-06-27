@@ -12,6 +12,7 @@ val routes = listOf(
     CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton,
     CustomExamplesNavRoutes.AnimatedShowList,
     CustomExamplesNavRoutes.AnimatedText,
+    CustomExamplesNavRoutes.BarChart,
     CustomExamplesNavRoutes.CameraX,
     CustomExamplesNavRoutes.CollapsingToolbar,
     CustomExamplesNavRoutes.ColorMatrix,

@@ -151,6 +151,9 @@ object Libraries {
     const val composeNeumorphism =
         "me.nikhilchaudhari:composeNeumorphism:${Versions.composeNeumorphism}"
 
+    /* https://github.com/jeziellago/compose-markdown */
+    const val composeMarkdown = "com.github.jeziellago:compose-markdown:${Versions.composeMarkdown}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

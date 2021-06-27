@@ -10,6 +10,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.CoilAccompanist,
     ExternalLibrariesNavRoutes.CoilLandscapist,
 //    ExternalLibrariesNavRoutes.ComposeCharts,
+    ExternalLibrariesNavRoutes.ComposeMarkdown,
 //    ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.FlowLayout,
 //    ExternalLibrariesNavRoutes.FontAwesome,

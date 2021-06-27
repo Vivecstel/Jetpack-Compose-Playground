@@ -3,15 +3,15 @@ package com.steleot.jetpackcompose.playground
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.*
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
@@ -40,9 +40,11 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveData
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
+import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import timber.log.Timber
+import javax.inject.Inject
 import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
 @AndroidEntryPoint
@@ -69,7 +71,12 @@ fun JetpackComposeApp(
     inAppReviewHelper: InAppReviewHelper,
     firebaseAnalytics: FirebaseAnalytics,
 ) {
-    JetpackComposeTheme {
+    val isDarkTheme = isSystemInDarkTheme()
+    var theme by remember { mutableStateOf(ThemeState(isDarkTheme = isDarkTheme)) }
+    val systemUiController = rememberSystemUiController()
+    JetpackComposeTheme(
+        colorPallete = theme.pallete
+    ) {
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
                 val navController = rememberNavController()
@@ -130,7 +137,12 @@ fun JetpackComposeApp(
                     composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                     composable(route = MainNavRoutes.Settings) {
-                        SettingsScreen(hiltViewModel(it))
+                        SettingsScreen(hiltViewModel(it), theme) { newTheme ->
+                            theme = newTheme
+                            systemUiController.setSystemBarsColor(
+                                newTheme.pallete.getMaterialColors(newTheme.isDarkTheme).primaryVariant
+                            )
+                        }
                     }
                     /* activity */
                     composable(route = ActivityNavRoutes.BackHandler) {
@@ -321,6 +333,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) { AnimatedExtendedFloatingActionButtonScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
+                    composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
                     composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
@@ -331,6 +344,7 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }

@@ -9,7 +9,7 @@ object Versions {
     /* plugins */
     const val androidPlugin = "7.1.0-alpha02"
     const val googleServices = "4.3.8"
-    const val crashlytics = "2.7.0"
+    const val crashlytics = "2.7.1"
     const val benManes = "0.39.0"
     const val detekt = "1.17.1"
     const val doctor = "0.7.0"
@@ -23,7 +23,7 @@ object Versions {
     const val composePaging = "1.0.0-alpha10"
     const val appCompat = "1.4.0-alpha02"
     const val lifecycle = "2.4.0-alpha02"
-    const val firebase = "28.1.0"
+    const val firebase = "28.2.0"
     const val hilt = "2.37"
     const val hiltCompose = "1.0.0-alpha03"
     const val startUp = "1.1.0-beta01"
@@ -48,5 +48,6 @@ object Versions {
     const val fontAwesome = "1.0.1-alpha01"
     const val composeCharts = "0.1.7"
     const val composeNeumorphism = "1.0.0-alpha"
+    const val composeMarkdown = "0.2.2"
     const val adMob = "20.2.0"
 }

@@ -12,8 +12,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import me.nikhilchaudhari.library.neumorphic
-import me.nikhilchaudhari.library.shapes.Punched
+/*import me.nikhilchaudhari.library.neumorphic
+import me.nikhilchaudhari.library.shapes.Punched*/
 
 private const val Url = "external/ComposeNeumorphismScreen.kt"
 
@@ -23,10 +23,11 @@ fun ComposeNeumorphismScreen() {
         title = ExternalLibrariesNavRoutes.ComposeNeumorphism,
         link = Url,
     ) {
-        NeumorphicExample()
+//        NeumorphicExample()
     }
 }
 
+/*
 @Composable
 private fun NeumorphicExample() {
     Card(
@@ -42,4 +43,4 @@ private fun NeumorphicExample() {
     ) {
         Text(text = "Press me")
     }
-}
+}*/

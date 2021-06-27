@@ -27,7 +27,7 @@ fun AdMobBannerScreen() {
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             AdViewExample(R.string.ad_mob_banner_id)

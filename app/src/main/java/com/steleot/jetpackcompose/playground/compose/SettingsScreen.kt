@@ -2,9 +2,12 @@ package com.steleot.jetpackcompose.playground.compose
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -20,15 +23,22 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
+import com.steleot.jetpackcompose.playground.theme.ColorPallete
+import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @Composable
-fun SettingsScreen(viewModel: SettingsViewModel) {
+fun SettingsScreen(
+    viewModel: SettingsViewModel,
+    theme: ThemeState,
+    setTheme: (ThemeState) -> Unit
+) {
     val analyticsEnabled: Boolean by viewModel.analyticsEnabled.collectAsState()
     val crashlyticsEnabled: Boolean by viewModel.crashlyticsEnabled.collectAsState()
     val context = LocalContext.current
@@ -46,9 +56,13 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
             SettingsListItem("Firebase analytics collection", analyticsEnabled) {
                 viewModel.onAnalyticsChanged(it)
             }
+            Divider()
             SettingsListItem("Firebase crashlytics collection", crashlyticsEnabled) {
                 viewModel.onCrashlyticsChanged(it)
             }
+            Divider()
+            ChangeThemePalleteItem(theme, setTheme)
+            Divider()
             Button(
                 modifier = Modifier
                     .padding(vertical = 16.dp)
@@ -86,6 +100,67 @@ private fun SettingsListItem(
             text,
             style = MaterialTheme.typography.body1,
         )
+    }
+}
+
+private val availableThemes = listOf(
+    ColorPallete.PURPLE,
+    ColorPallete.GREEN,
+    ColorPallete.ORANGE,
+    ColorPallete.BLUE,
+    ColorPallete.YELLOW,
+)
+
+@Composable
+private fun ChangeThemePalleteItem(
+    theme: ThemeState,
+    setTheme: (ThemeState) -> Unit
+) {
+    Column(
+        modifier = Modifier.padding(16.dp)
+    ) {
+        Text(
+            text = "Change Application Theme",
+            style = MaterialTheme.typography.body1
+        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp)
+                .horizontalScroll(rememberScrollState())
+        ) {
+            availableThemes.forEach { colorPallete ->
+                val isSelected = colorPallete == theme.pallete
+                Box(
+                    Modifier
+                        .padding(end = 8.dp)
+                        .size(48.dp)
+                        .background(
+                            colorPallete.getMaterialColors(theme.isDarkTheme).primary,
+                            CircleShape
+                        )
+                        .clickable {
+                            setTheme(theme.copy(pallete = colorPallete))
+                        }
+                        .then(
+                            if (isSelected) {
+                                Modifier.border(
+                                    BorderStroke(2.dp, MaterialTheme.colors.onSurface),
+                                    shape = CircleShape
+                                )
+                            } else Modifier
+                        )
+                ) {
+                    if (isSelected) {
+                        Icon(
+                            Icons.Filled.Check,
+                            contentDescription = "Theme Selected",
+                            modifier = Modifier.align(Alignment.Center)
+                        )
+                    }
+                }
+            }
+        }
     }
 }
 
