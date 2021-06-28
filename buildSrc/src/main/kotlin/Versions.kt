@@ -45,9 +45,9 @@ object Versions {
     const val ratingBar = "1.0.72"
     const val revealSwipe = "1.0.0-beta05"
     const val speedDial = "1.0.0-beta03"
-    const val fontAwesome = "1.0.1-alpha01"
+    const val fontAwesome = "1.0.0-beta02"
     const val composeCharts = "0.1.7"
     const val composeNeumorphism = "1.0.0-alpha"
-    const val composeMarkdown = "0.2.2"
+    const val composeMarkdown = "0.2.3"
     const val adMob = "20.2.0"
 }

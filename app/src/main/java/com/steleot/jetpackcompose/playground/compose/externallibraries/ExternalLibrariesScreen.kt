@@ -13,7 +13,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.ComposeMarkdown,
 //    ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.FlowLayout,
-//    ExternalLibrariesNavRoutes.FontAwesome,
+    ExternalLibrariesNavRoutes.FontAwesome,
     ExternalLibrariesNavRoutes.FrescoLandscapist,
     ExternalLibrariesNavRoutes.GlideAccompanist,
     ExternalLibrariesNavRoutes.GlideLandscapist,

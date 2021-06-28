@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-//import dev.jeziellago.compose.markdowntext.MarkdownText
+import dev.jeziellago.compose.markdowntext.MarkdownText
 
 private const val Url = "external/ComposeMarkdownScreen.kt"
 
@@ -29,12 +29,11 @@ fun ComposeMarkdownScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-//            ComposeMarkdownExample()
+            ComposeMarkdownExample()
         }
     }
 }
 
-/*
 @Composable
 private fun ComposeMarkdownExample() {
     val markdown = """  
@@ -43,14 +42,13 @@ private fun ComposeMarkdownExample() {
 	* [Link](https://example.com)  
 	![Image](https://example.com/img.png)  
 	<a href="https://www.google.com/">Google</a>  
-"""
+""".trimIndent()
     MarkdownText(
         modifier = Modifier.padding(8.dp),
         markdown = markdown,
         textAlign = TextAlign.Center,
         fontSize = 12.sp,
         color = LocalContentColor.current,
-        maxLines = 3,
         style = MaterialTheme.typography.overline,
     )
-}*/
+}
