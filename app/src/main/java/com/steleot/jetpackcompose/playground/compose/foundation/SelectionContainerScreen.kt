@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.steleot.jetpackcompose.playground.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "foundation/SelectionContainerScreen.kt"

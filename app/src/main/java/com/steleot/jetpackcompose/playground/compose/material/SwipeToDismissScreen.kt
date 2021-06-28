@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.*
 import androidx.compose.ui.unit.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
+import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import java.util.*
 
 private const val Url = "material/SwipeToDismissScreen.kt"

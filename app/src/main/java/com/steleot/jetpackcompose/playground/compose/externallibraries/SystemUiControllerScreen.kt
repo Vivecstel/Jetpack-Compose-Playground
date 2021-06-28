@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "external/SystemUiControllerScreen.kt"

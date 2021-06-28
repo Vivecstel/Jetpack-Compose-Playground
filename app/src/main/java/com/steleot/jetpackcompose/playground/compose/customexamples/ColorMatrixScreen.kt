@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.glide.rememberGlidePainter
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.externallibraries.randomSampleImageUrl
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 

@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.guru.fontawesomecomposelib.FaIcon
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "materialiconsextended/FontAwesomeScreen.kt"

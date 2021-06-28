@@ -15,7 +15,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
-import com.steleot.jetpackcompose.playground.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "foundation/ClickableTextScreen.kt"

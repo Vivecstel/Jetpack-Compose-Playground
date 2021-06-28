@@ -8,7 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "runtime/DerivedStateScreen.kt"

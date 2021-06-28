@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.AnimationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch

@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
 import com.steleot.jetpackcompose.playground.BuildConfig
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "externallibraries/PermissionsAccompanistScreen.kt"

@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.AnimationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "animation/AnimationModifierScreen.kt"

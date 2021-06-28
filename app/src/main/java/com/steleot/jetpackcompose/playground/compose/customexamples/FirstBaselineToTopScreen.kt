@@ -13,7 +13,7 @@ import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "customexamples/FirstBaselineToTopScreen.kt"

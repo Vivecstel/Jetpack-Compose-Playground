@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.Properties
+import java.util.*
 
 plugins {
     id(BuildPlugins.androidApplication)

@@ -14,7 +14,7 @@ import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "ui/VisualTransformationScreen.kt"

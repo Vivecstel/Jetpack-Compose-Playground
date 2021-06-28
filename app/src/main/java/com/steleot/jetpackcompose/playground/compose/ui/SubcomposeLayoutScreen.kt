@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "ui/SubComposeLayoutScreen.kt"

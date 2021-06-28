@@ -5,9 +5,9 @@ import android.content.Context
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
+import javax.inject.Inject
 
 class InAppReviewHelper @Inject constructor(
     @ApplicationContext context: Context,

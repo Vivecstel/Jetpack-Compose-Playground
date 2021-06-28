@@ -12,7 +12,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.steleot.jetpackcompose.playground.ViewModelNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "viewmodel/LiveDataScreen.kt"

@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.MaterialIconsExtendedNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "materialiconsextended/ExtendedTwoToneScreen.kt"

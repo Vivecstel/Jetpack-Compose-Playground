@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

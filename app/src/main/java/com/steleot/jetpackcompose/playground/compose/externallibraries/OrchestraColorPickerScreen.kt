@@ -18,7 +18,7 @@ import com.skydoves.orchestra.colorpicker.AlphaSlideBar
 import com.skydoves.orchestra.colorpicker.AlphaTileBox
 import com.skydoves.orchestra.colorpicker.BrightnessSlideBar
 import com.skydoves.orchestra.colorpicker.ColorPicker
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "external/OrchestraColorPickerScreen.kt"

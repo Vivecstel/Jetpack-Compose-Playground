@@ -16,7 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.AnimationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 
 private const val Url = "animation/InfiniteTransitionScreen.kt"

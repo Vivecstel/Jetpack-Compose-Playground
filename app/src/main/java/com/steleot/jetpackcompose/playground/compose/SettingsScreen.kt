@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
@@ -20,9 +21,9 @@ import androidx.lifecycle.viewModelScope
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ColorPallete
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
@@ -103,14 +104,6 @@ private fun SettingsListItem(
     }
 }
 
-private val availableThemes = listOf(
-    ColorPallete.PURPLE,
-    ColorPallete.GREEN,
-    ColorPallete.ORANGE,
-    ColorPallete.BLUE,
-    ColorPallete.YELLOW,
-)
-
 @Composable
 private fun ChangeThemePalleteItem(
     theme: ThemeState,
@@ -129,16 +122,14 @@ private fun ChangeThemePalleteItem(
                 .padding(top = 8.dp)
                 .horizontalScroll(rememberScrollState())
         ) {
-            availableThemes.forEach { colorPallete ->
+            ColorPallete.values().forEach { colorPallete ->
                 val isSelected = colorPallete == theme.pallete
                 Box(
                     Modifier
                         .padding(end = 8.dp)
                         .size(48.dp)
-                        .background(
-                            colorPallete.getMaterialColors(theme.isDarkTheme).primary,
-                            CircleShape
-                        )
+                        .clip(CircleShape)
+                        .background(colorPallete.getMaterialColors(theme.isDarkTheme).primary)
                         .clickable {
                             setTheme(theme.copy(pallete = colorPallete))
                         }

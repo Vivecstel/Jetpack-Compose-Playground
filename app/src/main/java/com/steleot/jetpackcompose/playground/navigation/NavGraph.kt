@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground
+package com.steleot.jetpackcompose.playground.navigation
 
 object MainNavRoutes {
     const val Main = "main"
