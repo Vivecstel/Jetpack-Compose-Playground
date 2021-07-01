@@ -10,7 +10,7 @@ val routes = listOf(
     UiNavRoutes.AlignmentLine,
     UiNavRoutes.Alpha,
     UiNavRoutes.AndroidViewBinding,
-    UiNavRoutes.AnimatedVector,
+//    UiNavRoutes.AnimatedVector,
     UiNavRoutes.AnnotatedString,
     UiNavRoutes.Brush,
     UiNavRoutes.Clip,

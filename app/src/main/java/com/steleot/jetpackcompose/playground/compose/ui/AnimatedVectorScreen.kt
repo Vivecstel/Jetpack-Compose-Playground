@@ -10,7 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.animatedVectorResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
@@ -37,15 +36,15 @@ fun AnimatedVectorScreen() {
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun AnimatorVectorExample() {
-    val image = animatedVectorResource(R.drawable.animated_vector_example)
-    var atEnd by remember { mutableStateOf(false) }
-    Image(
-        painter = image.painterFor(atEnd),
-        contentDescription = "Jetpack compose playground",
-        modifier = Modifier
-            .size(64.dp)
-            .clickable {
-                atEnd = !atEnd
-            }
-    )
+//    val image = animatedVectorResource(R.drawable.animated_vector_example)
+//    var atEnd by remember { mutableStateOf(false) }
+//    Image(
+//        painter = image.painterFor(atEnd),
+//        contentDescription = "Jetpack compose playground",
+//        modifier = Modifier
+//            .size(64.dp)
+//            .clickable {
+//                atEnd = !atEnd
+//            }
+//    )
 }

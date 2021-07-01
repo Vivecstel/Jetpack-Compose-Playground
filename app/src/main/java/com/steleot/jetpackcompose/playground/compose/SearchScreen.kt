@@ -27,9 +27,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -94,7 +94,7 @@ fun SearchScreen(navController: NavHostController) {
             items(filteredRoutes) { item ->
                 DefaultListItem(
                     text = getListAnnotatedString(
-                        item.capitalizeFirstLetter(), search
+                        item.capitalizeFirstLetter(), search, MaterialTheme.colors.secondary
                     ),
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -133,12 +133,13 @@ private fun SearchTextField(
 private fun getListAnnotatedString(
     text: String,
     search: String,
+    highlightedColor: Color,
 ): AnnotatedString {
     val startIndex = text.indexOf(search, ignoreCase = true)
     val endIndex = startIndex + search.length
     return with(AnnotatedString.Builder()) {
         append(text.substring(0 until startIndex))
-        withStyle(SpanStyle(color = Color.Red)) {
+        withStyle(SpanStyle(color = highlightedColor)) {
             append(if (startIndex == 0) search.capitalizeFirstLetter() else search)
         }
         append(text.substring(endIndex until text.length))
