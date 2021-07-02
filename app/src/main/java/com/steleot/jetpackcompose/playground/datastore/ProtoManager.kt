@@ -3,8 +3,8 @@ package com.steleot.jetpackcompose.playground.datastore
 import android.content.Context
 import androidx.datastore.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import kotlinx.coroutines.flow.map
 
 private const val FILE_NAME = "SettingsPrefFile"
 

@@ -2,9 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.compose.MainScreen
 
 val routes = listOf(
     CustomExamplesNavRoutes.AdMobBanner,

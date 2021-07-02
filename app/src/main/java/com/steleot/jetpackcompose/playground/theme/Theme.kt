@@ -6,12 +6,12 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun JetpackComposeTheme(
-    colorPallete: ColorPallete = ColorPallete.PURPLE,
+    colorPalette: ColorPalette,
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = colorPallete.getMaterialColors(darkTheme),
+        colors = colorPalette.getMaterialColors(darkTheme),
         typography = typography,
         shapes = shapes,
         content = content

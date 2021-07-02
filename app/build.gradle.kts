@@ -2,12 +2,13 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     kotlin(BuildPlugins.kapt)
+    id(BuildPlugins.parcelize)
     id(BuildPlugins.googleServices)
     id(BuildPlugins.crashlytics)
     id(BuildPlugins.hilt)

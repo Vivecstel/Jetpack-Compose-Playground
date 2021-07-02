@@ -1,6 +1,10 @@
 package com.steleot.jetpackcompose.playground.theme
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ThemeState(
-    var pallete: ColorPallete = ColorPallete.DEEP_PURPLE,
+    var colorPalette: ColorPalette = ColorPalette.DEEP_PURPLE,
     var isDarkTheme: Boolean = false,
-)
+) : Parcelable

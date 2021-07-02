@@ -2,9 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.compose.MainScreen
 
 val routes = listOf(
     FoundationLayoutNavRoutes.AspectRatio,

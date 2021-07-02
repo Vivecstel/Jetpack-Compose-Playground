@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
@@ -44,8 +45,8 @@ import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -72,9 +73,17 @@ fun JetpackComposeApp(
     firebaseAnalytics: FirebaseAnalytics,
 ) {
     val isDarkTheme = isSystemInDarkTheme()
-    var theme by remember { mutableStateOf(ThemeState(isDarkTheme = isDarkTheme)) }
+    var theme by rememberSaveable {
+        mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
+    }
+    val systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            theme.colorPalette.getMaterialColors(theme.isDarkTheme).primaryVariant
+        )
+    }
     JetpackComposeTheme(
-        colorPallete = theme.pallete
+        colorPalette = theme.colorPalette
     ) {
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
@@ -87,7 +96,6 @@ fun JetpackComposeApp(
                         }
                     }
                 }
-                val systemUiController = rememberSystemUiController()
                 NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
                     /* main */
                     composable(route = MainNavRoutes.Main) {
@@ -138,9 +146,6 @@ fun JetpackComposeApp(
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                     composable(route = MainNavRoutes.Settings) {
                         SettingsScreen(hiltViewModel(it), theme) { newTheme ->
-                            systemUiController.setSystemBarsColor(
-                                newTheme.pallete.getMaterialColors(newTheme.isDarkTheme).primaryVariant
-                            )
                             theme = newTheme
                         }
                     }

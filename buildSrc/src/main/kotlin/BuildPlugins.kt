@@ -18,6 +18,9 @@ object BuildPlugins {
     /* https://plugins.gradle.org/plugin/org.jetbrains.kotlin.kapt */
     const val kapt = "kapt"
 
+    /* https://plugins.gradle.org/plugin/org.jetbrains.kotlin.plugin.parcelize */
+    const val parcelize = "kotlin-parcelize"
+
     /* https://developers.google.com/android/guides/google-services-plugin */
     const val googleServices = "com.google.gms.google-services"
 

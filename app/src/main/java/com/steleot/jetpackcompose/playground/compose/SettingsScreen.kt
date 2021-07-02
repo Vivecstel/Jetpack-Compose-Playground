@@ -24,15 +24,15 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.theme.ColorPallete
+import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @Composable
 fun SettingsScreen(
@@ -62,7 +62,7 @@ fun SettingsScreen(
                 viewModel.onCrashlyticsChanged(it)
             }
             Divider()
-            ChangeThemePalleteItem(theme, setTheme)
+            ChangeThemePaletteItem(theme, setTheme)
             Divider()
             Button(
                 modifier = Modifier
@@ -105,7 +105,7 @@ private fun SettingsListItem(
 }
 
 @Composable
-private fun ChangeThemePalleteItem(
+private fun ChangeThemePaletteItem(
     theme: ThemeState,
     setTheme: (ThemeState) -> Unit
 ) {
@@ -122,16 +122,16 @@ private fun ChangeThemePalleteItem(
                 .padding(top = 8.dp)
                 .horizontalScroll(rememberScrollState())
         ) {
-            ColorPallete.values().forEach { colorPallete ->
-                val isSelected = colorPallete == theme.pallete
+            ColorPalette.values().forEach { colorPalette ->
+                val isSelected = colorPalette == theme.colorPalette
                 Box(
                     Modifier
                         .padding(end = 8.dp)
                         .size(48.dp)
                         .clip(CircleShape)
-                        .background(colorPallete.getMaterialColors(theme.isDarkTheme).primary)
+                        .background(colorPalette.getMaterialColors(theme.isDarkTheme).primary)
                         .clickable {
-                            setTheme(theme.copy(pallete = colorPallete))
+                            setTheme(theme.copy(colorPalette = colorPalette))
                         }
                         .then(
                             if (isSelected) {

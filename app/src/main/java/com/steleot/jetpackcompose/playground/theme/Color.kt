@@ -278,29 +278,29 @@ private val LightDeepOrangeColorPalette = lightColors(
     surface = deepOrange500,
 )
 
-enum class ColorPallete {
+enum class ColorPalette {
     RED, PINK, PURPLE, DEEP_PURPLE, INDIGO, BLUE, LIGHT_BLUE, CYAN, TEAL, GREEN, LIGHT_GREEN,
     LIME, YELLOW, AMBER, ORANGE, DEEP_ORANGE
 }
 
-fun ColorPallete.getMaterialColors(darkTheme: Boolean): Colors {
+fun ColorPalette.getMaterialColors(darkTheme: Boolean): Colors {
     return when (this) {
-        ColorPallete.RED -> if (darkTheme) DarkRedColorPalette else LightRedColorPalette
-        ColorPallete.PINK -> if (darkTheme) DarkPinkColorPalette else LightPinkColorPalette
-        ColorPallete.PURPLE -> if (darkTheme) DarkPurpleColorPalette else LightPurpleColorPalette
-        ColorPallete.DEEP_PURPLE -> if (darkTheme) DarkDeepPurpleColorPalette else LightDeepPurpleColorPalette
-        ColorPallete.INDIGO -> if (darkTheme) DarkIndigoColorPalette else LightIndigoColorPalette
-        ColorPallete.BLUE -> if (darkTheme) DarkBlueColorPalette else LightBlueColorPalette
-        ColorPallete.LIGHT_BLUE -> if (darkTheme) DarkLightBlueColorPalette else LightLightBlueColorPalette
-        ColorPallete.CYAN -> if (darkTheme) DarkCyanColorPalette else LightCyanColorPalette
-        ColorPallete.TEAL -> if (darkTheme) DarkTealColorPalette else LightTealColorPalette
-        ColorPallete.GREEN -> if (darkTheme) DarkGreenColorPalette else LightGreenColorPalette
-        ColorPallete.LIGHT_GREEN -> if (darkTheme) DarkLightGreenColorPalette else LightLightGreenColorPalette
-        ColorPallete.LIME -> if (darkTheme) DarkLimeColorPalette else LightLimeColorPalette
-        ColorPallete.YELLOW -> if (darkTheme) DarkYellowColorPalette else LightYellowColorPalette
-        ColorPallete.AMBER -> if (darkTheme) DarkAmberColorPalette else LightAmberColorPalette
-        ColorPallete.ORANGE -> if (darkTheme) DarkOrangeColorPalette else LightOrangeColorPalette
-        ColorPallete.DEEP_ORANGE -> if (darkTheme) DarkDeepOrangeColorPalette else LightDeepOrangeColorPalette
+        ColorPalette.RED -> if (darkTheme) DarkRedColorPalette else LightRedColorPalette
+        ColorPalette.PINK -> if (darkTheme) DarkPinkColorPalette else LightPinkColorPalette
+        ColorPalette.PURPLE -> if (darkTheme) DarkPurpleColorPalette else LightPurpleColorPalette
+        ColorPalette.DEEP_PURPLE -> if (darkTheme) DarkDeepPurpleColorPalette else LightDeepPurpleColorPalette
+        ColorPalette.INDIGO -> if (darkTheme) DarkIndigoColorPalette else LightIndigoColorPalette
+        ColorPalette.BLUE -> if (darkTheme) DarkBlueColorPalette else LightBlueColorPalette
+        ColorPalette.LIGHT_BLUE -> if (darkTheme) DarkLightBlueColorPalette else LightLightBlueColorPalette
+        ColorPalette.CYAN -> if (darkTheme) DarkCyanColorPalette else LightCyanColorPalette
+        ColorPalette.TEAL -> if (darkTheme) DarkTealColorPalette else LightTealColorPalette
+        ColorPalette.GREEN -> if (darkTheme) DarkGreenColorPalette else LightGreenColorPalette
+        ColorPalette.LIGHT_GREEN -> if (darkTheme) DarkLightGreenColorPalette else LightLightGreenColorPalette
+        ColorPalette.LIME -> if (darkTheme) DarkLimeColorPalette else LightLimeColorPalette
+        ColorPalette.YELLOW -> if (darkTheme) DarkYellowColorPalette else LightYellowColorPalette
+        ColorPalette.AMBER -> if (darkTheme) DarkAmberColorPalette else LightAmberColorPalette
+        ColorPalette.ORANGE -> if (darkTheme) DarkOrangeColorPalette else LightOrangeColorPalette
+        ColorPalette.DEEP_ORANGE -> if (darkTheme) DarkDeepOrangeColorPalette else LightDeepOrangeColorPalette
     }
 }
 

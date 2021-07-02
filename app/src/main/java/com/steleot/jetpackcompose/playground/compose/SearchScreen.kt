@@ -117,7 +117,7 @@ private fun SearchTextField(
             fontSize = 16.sp
         ),
         colors = TextFieldDefaults.textFieldColors(
-            cursorColor = Color.White
+            cursorColor = MaterialTheme.colors.onPrimary
         ),
         modifier = Modifier
             .fillMaxWidth()
@@ -153,12 +153,13 @@ class SearchViewModel : ViewModel() {
         (activityRoutes +
                 animationRoutes +
                 constraintLayoutRoutes +
-                listOf(MainNavRoutes.Paging) +
                 foundationRoutes +
                 foundationLayoutRoutes +
                 materialRoutes +
                 materialIconsRoutes +
                 materialIconsExtendedRoutes +
+                listOf(MainNavRoutes.Navigation) +
+                listOf(MainNavRoutes.Paging) +
                 runtimeRoutes +
                 uiRoutes +
                 viewModelRoutes +

@@ -52,7 +52,6 @@ fun DefaultListItem(
         Text(
             text,
             style = MaterialTheme.typography.body1,
-            color = Color.White,
             modifier = modifier.padding(16.dp)
         )
     }
@@ -82,7 +81,6 @@ fun DefaultTopAppBar(
             Text(
                 text = title.capitalizeFirstLetter(),
                 style = MaterialTheme.typography.h6,
-                color = Color.White,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -100,7 +98,6 @@ fun DefaultTopAppBar(
                     Icon(
                         imageVector = Icons.Filled.Search,
                         contentDescription = "Search",
-                        tint = Color.White
                     )
                 }
             }
@@ -119,7 +116,6 @@ fun GoToGithubButton(link: String) {
         Icon(
             imageVector = Icons.Filled.ExitToApp,
             contentDescription = "Exit to App",
-            tint = Color.White
         )
     }
 }
@@ -133,7 +129,6 @@ fun BackArrow() {
         Icon(
             imageVector = Icons.Filled.ArrowBack,
             contentDescription = "Back Arrow",
-            tint = Color.White
         )
     }
 }
