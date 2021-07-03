@@ -33,7 +33,7 @@ val routes = listOf(
     MaterialNavRoutes.OutlinedTextField,
     MaterialNavRoutes.Progress,
     MaterialNavRoutes.RadioButton,
-//    MaterialNavRoutes.RangeSlider,
+    MaterialNavRoutes.RangeSlider,
     MaterialNavRoutes.Scaffold,
     MaterialNavRoutes.ScrollableTabRow,
     MaterialNavRoutes.Slider,

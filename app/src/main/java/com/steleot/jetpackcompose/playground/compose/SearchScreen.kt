@@ -57,7 +57,6 @@ fun SearchScreen(navController: NavHostController) {
     val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
 
-
     LaunchedEffect(Unit) {
         visible = true
     }
