@@ -345,7 +345,9 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
                     composable(route = CustomExamplesNavRoutes.CurvedScrollView) { CurvedScrollViewScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
+                    composable(route = CustomExamplesNavRoutes.MessageBubble) { MessageBubbleScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
+                    composable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }

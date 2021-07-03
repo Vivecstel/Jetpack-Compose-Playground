@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.5.10"
 
     /* plugins */
-    const val androidPlugin = "7.1.0-alpha02"
+    const val androidPlugin = "7.0.0-beta05"
     const val googleServices = "4.3.8"
     const val crashlytics = "2.7.1"
     const val benManes = "0.39.0"
@@ -35,7 +35,7 @@ object Versions {
     const val cameraX = "1.1.0-alpha06"
     const val cameraView = "1.0.0-alpha26"
     const val accompanist = "0.13.0"
-    const val landscapist = "1.2.5"
+    const val landscapist = "1.2.6"
     const val orchestra = "1.0.7"
     const val coil = "1.2.2"
     const val glide = "4.12.0"

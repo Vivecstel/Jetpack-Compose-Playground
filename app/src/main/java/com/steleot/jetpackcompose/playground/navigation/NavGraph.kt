@@ -235,7 +235,9 @@ object CustomExamplesNavRoutes {
     const val ColorMatrix = "color matrix"
     const val CurvedScrollView = "curved scroll view"
     const val FirstBaselineToTop = "first baseline to top"
+    const val MessageBubble = "message bubble"
     const val StaggeredGridList = "staggered grid list"
+    const val TearDrop = "tear drop"
 }
 
 object ExternalLibrariesNavRoutes {

@@ -40,7 +40,7 @@ fun BarChartScreen() {
                 Modifier
                     .fillMaxWidth()
                     .height(150.dp)
-                    .border(1.dp, Color.Red)
+                    .border(1.dp, MaterialTheme.colors.error)
                     .padding(top = 4.dp)
             )
         }

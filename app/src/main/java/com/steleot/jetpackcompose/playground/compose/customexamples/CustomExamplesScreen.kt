@@ -18,7 +18,9 @@ val routes = listOf(
     CustomExamplesNavRoutes.ColorMatrix,
     CustomExamplesNavRoutes.CurvedScrollView,
     CustomExamplesNavRoutes.FirstBaselineToTop,
+    CustomExamplesNavRoutes.MessageBubble,
     CustomExamplesNavRoutes.StaggeredGridList,
+    CustomExamplesNavRoutes.TearDrop,
 )
 
 @Composable
