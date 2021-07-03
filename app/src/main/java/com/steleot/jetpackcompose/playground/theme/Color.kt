@@ -53,6 +53,15 @@ private val orange700 = Color(0XFFF57C00)
 private val deepOrange200 = Color(0XFFFFAB91)
 private val deepOrange500 = Color(0XFFFF5722)
 private val deepOrange700 = Color(0XFFE64A19)
+private val brown200 = Color(0XFFBCAAA4)
+private val brown500 = Color(0XFF795548)
+private val brown700 = Color(0XFF5D4037)
+private val grey200 = Color(0XFFEEEEEE)
+private val grey500 = Color(0XFF9E9E9E)
+private val grey700 = Color(0XFF616161)
+private val blueGrey200 = Color(0XFFB0BEC5)
+private val blueGrey500 = Color(0XFF607D8B)
+private val blueGrey700 = Color(0XFF455A64)
 
 /* Material Red */
 private val DarkRedColorPalette = darkColors(
@@ -278,9 +287,51 @@ private val LightDeepOrangeColorPalette = lightColors(
     surface = deepOrange500,
 )
 
+/* Material Brown */
+private val DarkBrownColorPalette = darkColors(
+    primary = brown200,
+    primaryVariant = brown500,
+    secondary = teal200,
+    surface = brown200,
+)
+private val LightBrownColorPalette = lightColors(
+    primary = brown500,
+    primaryVariant = brown700,
+    secondary = teal200,
+    surface = brown500,
+)
+
+/* Material Grey */
+private val DarkGreyColorPalette = darkColors(
+    primary = grey200,
+    primaryVariant = grey500,
+    secondary = teal200,
+    surface = grey200,
+)
+private val LightGreyColorPalette = lightColors(
+    primary = grey500,
+    primaryVariant = grey700,
+    secondary = teal200,
+    surface = grey500,
+)
+
+/* Material Blue Grey */
+private val DarkBlueGreyColorPalette = darkColors(
+    primary = blueGrey200,
+    primaryVariant = blueGrey500,
+    secondary = teal200,
+    surface = blueGrey200,
+)
+private val LightBlueGreyColorPalette = lightColors(
+    primary = blueGrey500,
+    primaryVariant = blueGrey700,
+    secondary = teal200,
+    surface = blueGrey500,
+)
+
 enum class ColorPalette {
     RED, PINK, PURPLE, DEEP_PURPLE, INDIGO, BLUE, LIGHT_BLUE, CYAN, TEAL, GREEN, LIGHT_GREEN,
-    LIME, YELLOW, AMBER, ORANGE, DEEP_ORANGE
+    LIME, YELLOW, AMBER, ORANGE, DEEP_ORANGE, BROWN, GREY, BLUE_GREY
 }
 
 fun ColorPalette.getMaterialColors(darkTheme: Boolean): Colors {
@@ -301,6 +352,9 @@ fun ColorPalette.getMaterialColors(darkTheme: Boolean): Colors {
         ColorPalette.AMBER -> if (darkTheme) DarkAmberColorPalette else LightAmberColorPalette
         ColorPalette.ORANGE -> if (darkTheme) DarkOrangeColorPalette else LightOrangeColorPalette
         ColorPalette.DEEP_ORANGE -> if (darkTheme) DarkDeepOrangeColorPalette else LightDeepOrangeColorPalette
+        ColorPalette.BROWN -> if (darkTheme) DarkBrownColorPalette else LightBrownColorPalette
+        ColorPalette.GREY -> if (darkTheme) DarkGreyColorPalette else LightGreyColorPalette
+        ColorPalette.BLUE_GREY -> if (darkTheme) DarkBlueGreyColorPalette else LightBlueGreyColorPalette
     }
 }
 

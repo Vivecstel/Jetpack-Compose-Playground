@@ -109,24 +109,23 @@ private fun ChangeThemePaletteItem(
     theme: ThemeState,
     setTheme: (ThemeState) -> Unit
 ) {
-    Column(
-        modifier = Modifier.padding(16.dp)
-    ) {
+    Column {
         Text(
             text = "Change Application Theme",
-            style = MaterialTheme.typography.body1
+            style = MaterialTheme.typography.body1,
+            modifier = Modifier.padding(top = 16.dp, start = 16.dp)
         )
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 8.dp)
+                .padding(vertical = 16.dp)
                 .horizontalScroll(rememberScrollState())
         ) {
             ColorPalette.values().forEach { colorPalette ->
                 val isSelected = colorPalette == theme.colorPalette
                 Box(
                     Modifier
-                        .padding(end = 8.dp)
+                        .padding(start = 16.dp)
                         .size(48.dp)
                         .clip(CircleShape)
                         .background(colorPalette.getMaterialColors(theme.isDarkTheme).primary)

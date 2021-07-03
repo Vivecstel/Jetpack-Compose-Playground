@@ -33,12 +33,12 @@ fun ColorScreen() {
             Text(
                 text = stringResource(id = R.string.string_resource),
                 modifier = Modifier.padding(16.dp),
-                color = colorResource(id = R.color.colorPrimary)
+                color = colorResource(id = R.color.red_500)
             )
             Text(
                 text = stringResource(id = R.string.color_resource),
                 modifier = Modifier.padding(16.dp),
-                color = colorResource(id = R.color.colorAccent)
+                color = colorResource(id = R.color.teal_500)
             )
         }
     }
