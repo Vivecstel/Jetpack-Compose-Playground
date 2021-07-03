@@ -9,6 +9,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -41,15 +42,21 @@ private fun SystemUiControllerExample(
     val useDarkIcons = MaterialTheme.colors.isLight
     val originalStatusBarColor = MaterialTheme.colors.primaryVariant
 
-    backDispatcher?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {
-            systemUiController.setSystemBarsColor(
-                color = originalStatusBarColor,
-                darkIcons = !useDarkIcons
-            )
-            navController.popBackStack()
+    DisposableEffect(Unit) {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                systemUiController.setSystemBarsColor(
+                    color = originalStatusBarColor,
+                    darkIcons = !useDarkIcons
+                )
+                navController.popBackStack()
+            }
         }
-    })
+        backDispatcher?.onBackPressedDispatcher?.addCallback(callback)
+        onDispose {
+            callback.remove()
+        }
+    }
 
     Column(
         Modifier.fillMaxSize(),
