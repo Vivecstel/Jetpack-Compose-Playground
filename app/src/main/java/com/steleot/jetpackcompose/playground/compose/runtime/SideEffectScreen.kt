@@ -9,9 +9,8 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -55,7 +54,7 @@ private fun SideEffectExample(touchHandler: TouchHandler) {
                 Button(
                     onClick = { scope.launch { drawerState.close() } },
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = Color.Red
+                        backgroundColor = MaterialTheme.colors.secondary
                     )
                 ) {
                     Text("Click to close drawer")

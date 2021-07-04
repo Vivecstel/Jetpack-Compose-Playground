@@ -8,8 +8,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.snapshots.Snapshot
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.delay
 

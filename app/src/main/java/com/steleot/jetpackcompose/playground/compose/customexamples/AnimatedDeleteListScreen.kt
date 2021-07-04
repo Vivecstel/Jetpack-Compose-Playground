@@ -23,14 +23,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlin.collections.plus
@@ -116,7 +115,7 @@ internal fun CardExample(
                     Text(
                         text = route.first().uppercaseChar().toString(),
                         fontSize = 20.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colors.onSurface,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.align(Alignment.Center)
                     )

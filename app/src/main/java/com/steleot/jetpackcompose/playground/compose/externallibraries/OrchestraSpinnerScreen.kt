@@ -1,17 +1,9 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.dp
-import com.skydoves.orchestra.spinner.Spinner
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
+//import com.skydoves.orchestra.spinner.Spinner
+import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
 private const val Url = "external/OrchestraSpinnerScreen.kt"
 
@@ -21,10 +13,11 @@ fun OrchestraSpinnerScreen() {
         title = ExternalLibrariesNavRoutes.OrchestraSpinner,
         link = Url,
     ) {
-        OrchestraSpinnerExample()
+//        OrchestraSpinnerExample()
     }
 }
 
+/*
 @Composable
 private fun OrchestraSpinnerExample() {
     val coffeeList = remember { listOf("Americano", "Cold Brew", "Espresso", "Latte") }
@@ -48,4 +41,4 @@ private fun OrchestraSpinnerExample() {
             selectedItem = item
         }
     )
-}
+}*/

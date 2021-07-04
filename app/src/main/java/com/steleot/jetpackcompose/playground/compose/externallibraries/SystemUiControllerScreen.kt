@@ -9,44 +9,54 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.navigation.NavHostController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
-import com.steleot.jetpackcompose.playground.R
+import com.google.accompanist.systemuicontroller.SystemUiController
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.theme.colors
 
 private const val Url = "external/SystemUiControllerScreen.kt"
 
 @Composable
-fun SystemUiControllerScreen(navController: NavHostController) {
+fun SystemUiControllerScreen(
+    navController: NavHostController,
+    systemUiController: SystemUiController,
+) {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.SystemUiController,
         link = Url,
     ) {
-        SystemUiControllerExample(navController)
+        SystemUiControllerExample(navController, systemUiController)
     }
 }
 
 @Composable
-private fun SystemUiControllerExample(navController: NavHostController) {
+private fun SystemUiControllerExample(
+    navController: NavHostController,
+    systemUiController: SystemUiController,
+) {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
-    val systemUiController = rememberSystemUiController()
     val useDarkIcons = MaterialTheme.colors.isLight
-    val originalStatusBarColor = colorResource(id = R.color.colorPrimaryDark)
+    val originalStatusBarColor = MaterialTheme.colors.primaryVariant
 
-    backDispatcher?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {
-            systemUiController.setSystemBarsColor(
-                color = originalStatusBarColor,
-                darkIcons = !useDarkIcons
-            )
-            navController.popBackStack()
+    DisposableEffect(Unit) {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                systemUiController.setSystemBarsColor(
+                    color = originalStatusBarColor,
+                    darkIcons = !useDarkIcons
+                )
+                navController.popBackStack()
+            }
         }
-    })
+        backDispatcher?.onBackPressedDispatcher?.addCallback(callback)
+        onDispose {
+            callback.remove()
+        }
+    }
 
     Column(
         Modifier.fillMaxSize(),
@@ -55,7 +65,7 @@ private fun SystemUiControllerExample(navController: NavHostController) {
     ) {
         Button(onClick = {
             systemUiController.setStatusBarColor(
-                color = Color.Red,
+                color = colors.random(),
                 darkIcons = useDarkIcons
             )
         }) {
@@ -71,7 +81,7 @@ private fun SystemUiControllerExample(navController: NavHostController) {
         }
         Button(onClick = {
             systemUiController.setNavigationBarColor(
-                color = Color.Red,
+                color = colors.random(),
                 darkIcons = useDarkIcons
             )
         }) {

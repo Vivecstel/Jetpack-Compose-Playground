@@ -10,9 +10,9 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import kotlin.math.PI
 import kotlin.math.cos
 

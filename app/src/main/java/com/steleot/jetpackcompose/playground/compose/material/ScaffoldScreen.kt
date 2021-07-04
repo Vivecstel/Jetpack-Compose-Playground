@@ -13,8 +13,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import kotlinx.coroutines.launch
 

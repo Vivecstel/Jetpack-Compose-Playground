@@ -6,17 +6,12 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun JetpackComposeTheme(
+    colorPalette: ColorPalette,
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
-
     MaterialTheme(
-        colors = colors,
+        colors = colorPalette.getMaterialColors(darkTheme),
         typography = typography,
         shapes = shapes,
         content = content

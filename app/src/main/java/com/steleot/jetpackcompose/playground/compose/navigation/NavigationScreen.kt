@@ -4,13 +4,9 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.Divider
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -19,9 +15,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 private const val Url = "navigation/NavigationScreen.kt"
 
@@ -65,7 +61,7 @@ fun Profile(navController: NavHostController) {
         NavigateButton(stringResource(Screen.Dashboard.resourceId)) {
             navController.navigate(Screen.Dashboard.route)
         }
-        Divider(color = Color.Black)
+        Divider(color = MaterialTheme.colors.onSurface)
         NavigateButton(stringResource(Screen.Scrollable.resourceId)) {
             navController.navigate(Screen.Scrollable.route)
         }

@@ -2,15 +2,15 @@ package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.MainNavRoutes
-import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
 val routes = listOf(
     UiNavRoutes.AlignmentLine,
     UiNavRoutes.Alpha,
     UiNavRoutes.AndroidViewBinding,
-    UiNavRoutes.AnimatedVector,
+//    UiNavRoutes.AnimatedVector,
     UiNavRoutes.AnnotatedString,
     UiNavRoutes.Brush,
     UiNavRoutes.Clip,

@@ -15,10 +15,9 @@ import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
 private const val Url = "runtime/RememberSaveableStateHolderScreen.kt"
 
@@ -72,7 +71,7 @@ private fun Screen1() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         CustomButton(onClick = { counter++ }) {
-            Text("Counter=$counter on Screen1", color = Color.White)
+            Text("Counter=$counter on Screen1")
         }
     }
 }

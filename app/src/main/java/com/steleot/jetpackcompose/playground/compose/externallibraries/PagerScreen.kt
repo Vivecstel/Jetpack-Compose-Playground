@@ -13,6 +13,7 @@ import com.google.accompanist.coil.*
 import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import kotlin.math.*
 
 private const val Url = "external/PagerScreen.kt"

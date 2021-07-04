@@ -13,8 +13,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.UiNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
 private const val Url = "ui/ColorScreen.kt"
 
@@ -33,12 +33,12 @@ fun ColorScreen() {
             Text(
                 text = stringResource(id = R.string.string_resource),
                 modifier = Modifier.padding(16.dp),
-                color = colorResource(id = R.color.colorPrimary)
+                color = colorResource(id = R.color.red_500)
             )
             Text(
                 text = stringResource(id = R.string.color_resource),
                 modifier = Modifier.padding(16.dp),
-                color = colorResource(id = R.color.colorAccent)
+                color = colorResource(id = R.color.teal_500)
             )
         }
     }

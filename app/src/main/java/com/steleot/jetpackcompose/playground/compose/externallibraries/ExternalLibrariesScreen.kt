@@ -2,17 +2,18 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
-import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 val routes = listOf(
     ExternalLibrariesNavRoutes.CoilAccompanist,
     ExternalLibrariesNavRoutes.CoilLandscapist,
 //    ExternalLibrariesNavRoutes.ComposeCharts,
+    ExternalLibrariesNavRoutes.ComposeMarkdown,
 //    ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.FlowLayout,
-//    ExternalLibrariesNavRoutes.FontAwesome,
+    ExternalLibrariesNavRoutes.FontAwesome,
     ExternalLibrariesNavRoutes.FrescoLandscapist,
     ExternalLibrariesNavRoutes.GlideAccompanist,
     ExternalLibrariesNavRoutes.GlideLandscapist,

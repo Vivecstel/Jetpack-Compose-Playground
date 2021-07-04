@@ -5,21 +5,21 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 private val routes = listOf(
     MainNavRoutes.Activity,
@@ -66,7 +66,7 @@ fun MainScreen(
                     Icon(
                         imageVector = Icons.Outlined.Settings,
                         contentDescription = "Icon Floating Action Button",
-                        tint = Color.White
+                        tint = MaterialTheme.colors.onPrimary
                     )
                 }
             }

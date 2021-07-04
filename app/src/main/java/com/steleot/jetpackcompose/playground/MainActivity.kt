@@ -3,15 +3,16 @@ package com.steleot.jetpackcompose.playground
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
@@ -39,11 +40,13 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScre
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
+import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
+import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import timber.log.Timber
-import com.steleot.jetpackcompose.playground.compose.ui.LayoutScreen as UiLayoutScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -69,7 +72,19 @@ fun JetpackComposeApp(
     inAppReviewHelper: InAppReviewHelper,
     firebaseAnalytics: FirebaseAnalytics,
 ) {
-    JetpackComposeTheme {
+    val isDarkTheme = isSystemInDarkTheme()
+    var theme by rememberSaveable {
+        mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
+    }
+    val systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            theme.colorPalette.getMaterialColors(theme.isDarkTheme).primaryVariant
+        )
+    }
+    JetpackComposeTheme(
+        colorPalette = theme.colorPalette
+    ) {
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
                 val navController = rememberNavController()
@@ -130,7 +145,9 @@ fun JetpackComposeApp(
                     composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                     composable(route = MainNavRoutes.Settings) {
-                        SettingsScreen(hiltViewModel(it))
+                        SettingsScreen(hiltViewModel(it), theme) { newTheme ->
+                            theme = newTheme
+                        }
                     }
                     /* activity */
                     composable(route = ActivityNavRoutes.BackHandler) {
@@ -194,6 +211,7 @@ fun JetpackComposeApp(
                     /* material */
                     composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
                     composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
+                    composable(route = MaterialNavRoutes.BadgeBox) { BadgeBoxScreen() }
                     composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
                     composable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
                     composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
@@ -275,7 +293,7 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
                     composable(route = UiNavRoutes.Font) { FontScreen() }
                     composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
-                    composable(route = UiNavRoutes.Layout) { UiLayoutScreen() }
+                    composable(route = UiNavRoutes.Layout) { LayoutScreen() }
                     composable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }
                     composable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
                     composable(route = UiNavRoutes.LocalAutofillTree) { LocalAutofillTreeScreen() }
@@ -321,16 +339,20 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) { AnimatedExtendedFloatingActionButtonScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
                     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
+                    composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
                     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
                     composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
                     composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
                     composable(route = CustomExamplesNavRoutes.CurvedScrollView) { CurvedScrollViewScreen() }
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
+                    composable(route = CustomExamplesNavRoutes.MessageBubble) { MessageBubbleScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
+                    composable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
@@ -351,7 +373,8 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.SwipeRefresh) { SwipeRefreshScreen() }
                     composable(route = ExternalLibrariesNavRoutes.SystemUiController) {
                         SystemUiControllerScreen(
-                            navController
+                            navController,
+                            systemUiController
                         )
                     }
                 }

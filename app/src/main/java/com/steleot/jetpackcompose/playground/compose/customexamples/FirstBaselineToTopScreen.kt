@@ -3,18 +3,18 @@ package com.steleot.jetpackcompose.playground.compose.customexamples
 import android.annotation.SuppressLint
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
 private const val Url = "customexamples/FirstBaselineToTopScreen.kt"
 
@@ -30,13 +30,13 @@ fun FirstBaselineToTopScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier.border(1.dp, Color.Green)) {
+            Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
                 Text(
                     text = "Text with padding on First Baseline",
                     modifier = Modifier.firstBaselineToTop(paddingTop)
                 )
             }
-            Box(modifier = Modifier.border(1.dp, Color.Red)) {
+            Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
                 Text(
                     text = "Text with normal padding top",
                     modifier = Modifier.padding(top = paddingTop)

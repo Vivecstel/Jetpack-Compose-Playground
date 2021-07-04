@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground
+package com.steleot.jetpackcompose.playground.navigation
 
 object MainNavRoutes {
     const val Main = "main"
@@ -89,6 +89,7 @@ object FoundationLayoutNavRoutes {
 object MaterialNavRoutes {
     const val AlertDialog = "alert dialog"
     const val BackdropScaffold = "backdrop scaffold"
+    const val BadgeBox = "badge box"
     const val BottomAppBar = "bottom app bar"
     const val BottomDrawer = "bottom drawer layout"
     const val BottomNavigation = "bottom navigation"
@@ -228,18 +229,22 @@ object CustomExamplesNavRoutes {
     const val AnimatedExtendedFloatingActionButton = "animated extended floating action button"
     const val AnimatedShowList = "animated show list"
     const val AnimatedText = "animated text"
+    const val BarChart = "bar chart"
     const val CameraX = "cameraX"
     const val CollapsingToolbar = "collapsing toolbar"
     const val ColorMatrix = "color matrix"
     const val CurvedScrollView = "curved scroll view"
     const val FirstBaselineToTop = "first baseline to top"
+    const val MessageBubble = "message bubble"
     const val StaggeredGridList = "staggered grid list"
+    const val TearDrop = "tear drop"
 }
 
 object ExternalLibrariesNavRoutes {
     const val CoilAccompanist = "coil accompanist"
     const val CoilLandscapist = "coil landscapist"
     const val ComposeCharts = "compose charts"
+    const val ComposeMarkdown = "compose markdown"
     const val ComposeNeumorphism = "compose neumorphism"
     const val FlowLayout = "flow layout"
     const val FontAwesome = "font awesome"

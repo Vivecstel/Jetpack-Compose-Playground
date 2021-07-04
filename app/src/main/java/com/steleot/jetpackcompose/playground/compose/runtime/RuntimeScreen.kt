@@ -2,9 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.MainNavRoutes
-import com.steleot.jetpackcompose.playground.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
 val routes = listOf(
     RuntimeNavRoutes.CollectAsState,

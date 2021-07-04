@@ -2,9 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.animation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.AnimationNavRoutes
-import com.steleot.jetpackcompose.playground.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 val routes = listOf(
     AnimationNavRoutes.Animatable,

@@ -13,9 +13,9 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
 private const val Url = "customexamples/AdMobBannerScreen.kt"
 
@@ -27,7 +27,7 @@ fun AdMobBannerScreen() {
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             AdViewExample(R.string.ad_mob_banner_id)

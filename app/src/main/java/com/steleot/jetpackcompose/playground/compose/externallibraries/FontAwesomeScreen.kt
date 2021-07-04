@@ -2,14 +2,16 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import FaIcons
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.guru.fontawesomecomposelib.FaIcon
-import com.steleot.jetpackcompose.playground.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
 private const val Url = "materialiconsextended/FontAwesomeScreen.kt"
 
@@ -118,7 +120,7 @@ private fun FontAwesomeGrid() {
         GridCells.Adaptive(60.dp)
     ) {
         items(list) {
-            FaIcon(faIcon = it, size = 48.dp)
+            FaIcon(faIcon = it, modifier = Modifier.padding(8.dp), size = 36.dp)
         }
     }
 }

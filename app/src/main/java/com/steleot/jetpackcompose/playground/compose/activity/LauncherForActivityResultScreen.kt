@@ -21,8 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
 
 private const val Url = "activity/LauncherForActivityResultScreen.kt"

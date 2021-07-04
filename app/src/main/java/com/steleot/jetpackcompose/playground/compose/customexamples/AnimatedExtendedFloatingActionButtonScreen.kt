@@ -14,10 +14,9 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import com.steleot.jetpackcompose.playground.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
 private const val Url = "customexamples/AnimatedExtendedFloatingActionButtonScreen.kt"
 
@@ -52,7 +51,6 @@ private fun AnimatedExtendedFloatingActionButtonExample() {
         icon = {
             Icon(
                 imageVector = Icons.Filled.Home,
-                tint = Color.Red,
                 contentDescription = null,
                 modifier = animationModifier
             )
