@@ -17,7 +17,7 @@ private const val Url = "foundationlayout/BoxWithConstraintsScreen.kt"
 @Composable
 fun BoxWithConstraintsScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Box,
+        title = FoundationLayoutNavRoutes.BoxWithConstraints,
         link = Url,
     ) {
         BoxWithConstraints {
