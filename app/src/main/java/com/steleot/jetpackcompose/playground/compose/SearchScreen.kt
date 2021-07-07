@@ -172,6 +172,6 @@ class SearchViewModel : ViewModel() {
 
     fun onSearchChange(search: String) {
         _search.value = search
-        _filteredRoutes.value = routes.filter { search in it }
+        _filteredRoutes.value = routes.filter { search.lowercase() in it.lowercase() }
     }
 }
