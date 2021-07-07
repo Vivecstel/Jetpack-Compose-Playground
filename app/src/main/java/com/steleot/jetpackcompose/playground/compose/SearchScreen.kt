@@ -139,7 +139,7 @@ private fun getListAnnotatedString(
     return with(AnnotatedString.Builder()) {
         append(text.substring(0 until startIndex))
         withStyle(SpanStyle(color = highlightedColor)) {
-            append(if (startIndex == 0) search.capitalizeFirstLetter() else search)
+            append(text.substring(startIndex until endIndex))
         }
         append(text.substring(endIndex until text.length))
         toAnnotatedString()
@@ -172,6 +172,6 @@ class SearchViewModel : ViewModel() {
 
     fun onSearchChange(search: String) {
         _search.value = search
-        _filteredRoutes.value = routes.filter { search in it }
+        _filteredRoutes.value = routes.filter { it.contains(search, ignoreCase = true) }
     }
 }
