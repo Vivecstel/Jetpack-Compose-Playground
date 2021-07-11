@@ -7,13 +7,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieAnimationSpec
-import com.airbnb.lottie.compose.rememberLottieAnimationState
+import com.airbnb.lottie.compose.*
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
@@ -33,28 +32,62 @@ fun LottieScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            LottieAsset()
-            LottieRaw()
+            LottiePlayOnce()
+            LottieRepeatForever()
+            LottieRepeatForeverWithAnimateLottieCompositionAsState()
+            LottieRepeatForeverWithLottieAnimatable()
         }
     }
 }
 
 @Composable
-private fun LottieAsset() {
-    val animationSpec = remember { LottieAnimationSpec.Asset("loading.json") }
+private fun LottiePlayOnce() {
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.heart_like))
     LottieAnimation(
-        animationSpec,
-        modifier = Modifier.size(150.dp),
-        animationState = rememberLottieAnimationState(autoPlay = true, repeatCount = Int.MAX_VALUE)
+        composition,
+        modifier = Modifier.size(150.dp)
     )
 }
 
 @Composable
-private fun LottieRaw() {
-    val animationSpec = remember { LottieAnimationSpec.RawRes(R.raw.wave_loading) }
+private fun LottieRepeatForever() {
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.wave_loading))
     LottieAnimation(
-        animationSpec,
+        composition,
         modifier = Modifier.size(150.dp),
-        animationState = rememberLottieAnimationState(autoPlay = true, repeatCount = Int.MAX_VALUE)
+        iterations = LottieConstants.IterateForever,
+    )
+}
+
+@Composable
+private fun LottieRepeatForeverWithAnimateLottieCompositionAsState() {
+    val composition by rememberLottieComposition(LottieCompositionSpec.Asset("loading.json"))
+    val progress by animateLottieCompositionAsState(
+        composition,
+        iterations = LottieConstants.IterateForever,
+    )
+    LottieAnimation(
+        composition,
+        progress,
+        modifier = Modifier.size(150.dp)
+    )
+}
+
+private const val lottieUrl = "https://assets7.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"
+
+@Composable
+private fun LottieRepeatForeverWithLottieAnimatable() {
+    val anim = rememberLottieAnimatable()
+    val composition by rememberLottieComposition(LottieCompositionSpec.Url(lottieUrl))
+    LaunchedEffect(composition) {
+        anim.animate(
+            composition,
+            iterations = LottieConstants.IterateForever,
+        )
+    }
+    LottieAnimation(
+        anim.composition,
+        anim.progress,
+        modifier = Modifier.size(150.dp)
     )
 }
