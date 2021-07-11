@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @HiltAndroidApp
-class JetpackComposeApplication : Application() {
+class JetpackComposePlaygroundApplication : Application() {
 
     private val scope = CoroutineScope(Dispatchers.Main)
 

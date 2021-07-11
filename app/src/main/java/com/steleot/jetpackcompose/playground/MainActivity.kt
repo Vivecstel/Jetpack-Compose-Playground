@@ -73,17 +73,17 @@ fun JetpackComposeApp(
     firebaseAnalytics: FirebaseAnalytics,
 ) {
     val isDarkTheme = isSystemInDarkTheme()
-    var theme by rememberSaveable {
+    var themeState by rememberSaveable {
         mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
     }
     val systemUiController = rememberSystemUiController()
     SideEffect {
         systemUiController.setSystemBarsColor(
-            theme.colorPalette.getMaterialColors(theme.isDarkTheme).primaryVariant
+            themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
         )
     }
     JetpackComposeTheme(
-        colorPalette = theme.colorPalette
+        colorPalette = themeState.colorPalette
     ) {
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
@@ -145,8 +145,8 @@ fun JetpackComposeApp(
                     composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
                     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
                     composable(route = MainNavRoutes.Settings) {
-                        SettingsScreen(hiltViewModel(it), theme) { newTheme ->
-                            theme = newTheme
+                        SettingsScreen(hiltViewModel(it), themeState) { newTheme ->
+                            themeState = newTheme
                         }
                     }
                     /* activity */
