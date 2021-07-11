@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".JetpackComposeApplication"
+        android:name=".JetpackComposePlaygroundApplication"
         tools:ignore="AllowBackup">
         <activity
             android:name=".MainActivity"

@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.ui
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -37,26 +38,24 @@ fun DebugInspectorInfoScreen() {
     }
 }
 
+@SuppressLint("UnnecessaryComposedModifier")
 private fun Modifier.debugColorModifier(color: Color) = composed(
     inspectorInfo = debugInspectorInfo {
         name = "debugColorModifier"
         value = color
-    },
-    factory = {
-        Modifier.background(color)
-    }
-)
+    }) {
+    Modifier.background(color)
+}
 
+@SuppressLint("UnnecessaryComposedModifier")
 private fun Modifier.debugModifier(width: Dp, height: Dp, color: Color) = composed(
     inspectorInfo = debugInspectorInfo {
         name = "debugModifier"
         properties["width"] = width
         properties["height"] = height
         properties["color"] = color
-    },
-    factory = {
-        Modifier
-            .size(width, height)
-            .background(color)
-    }
-)
+    }) {
+    Modifier
+        .size(width, height)
+        .background(color)
+}

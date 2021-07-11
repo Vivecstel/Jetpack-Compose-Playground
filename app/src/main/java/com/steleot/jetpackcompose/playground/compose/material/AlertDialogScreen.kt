@@ -10,11 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.DialogProperties
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -38,6 +40,7 @@ fun AlertDialogScreen() {
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun DefaultAlertDialog() {
@@ -67,7 +70,9 @@ private fun DefaultAlertDialog() {
                             })
                     )
                 }
-            })
+            },
+            properties = DialogProperties(usePlatformDefaultWidth = true)
+        )
     }
     Button(
         onClick = { showingDialog.value = true },
@@ -78,6 +83,7 @@ private fun DefaultAlertDialog() {
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun ContentColorAlertDialog() {
@@ -114,7 +120,8 @@ private fun ContentColorAlertDialog() {
                 )
             },
             contentColor = Color.White,
-            shape = RectangleShape
+            shape = RectangleShape,
+            properties = DialogProperties(usePlatformDefaultWidth = true)
         )
     }
     Button(onClick = {
@@ -126,6 +133,7 @@ private fun ContentColorAlertDialog() {
     }
 }
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun BackgroundColorAlertDialog() {
@@ -153,6 +161,7 @@ private fun BackgroundColorAlertDialog() {
             },
             backgroundColor = Color.White,
             shape = CutCornerShape(12.dp),
+            properties = DialogProperties(usePlatformDefaultWidth = true)
         )
     }
     Button(onClick = {

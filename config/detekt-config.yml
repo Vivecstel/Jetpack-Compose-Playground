@@ -65,6 +65,8 @@ formatting:
     active: false
 
 naming:
+  FunctionNaming:
+    active: false
   MemberNameEqualsClassName:
     active: true
   VariableNaming:
