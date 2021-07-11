@@ -21,6 +21,7 @@ object Versions {
     const val composeActivity = "1.3.0-beta02"
     const val composeConstraint = "1.0.0-alpha08"
     const val composePaging = "1.0.0-alpha11"
+    const val composeWear = "1.0.0-alpha01"
     const val appCompat = "1.4.0-alpha03"
     const val lifecycle = "2.4.0-alpha02"
     const val firebase = "28.2.1"

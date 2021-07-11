@@ -42,6 +42,11 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/paging */
     const val composePaging = "androidx.paging:paging-compose:${Versions.composePaging}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/wear-compose */
+    const val composeWearFoundation =
+        "androidx.wear.compose:compose-foundation:${Versions.composeWear}"
+    const val composeWearMaterial = "androidx.wear.compose:compose-material:${Versions.composeWear}"
+
     /* https://developer.android.com/jetpack/androidx/releases/appcompat */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
 
