@@ -41,7 +41,7 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveData
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.navigation.*
-import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
+import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
@@ -82,7 +82,7 @@ fun JetpackComposeApp(
             themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
         )
     }
-    JetpackComposeTheme(
+    JetpackComposePlaygroundTheme(
         colorPalette = themeState.colorPalette
     ) {
         ProvideWindowInsets {
@@ -349,7 +349,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
                     composable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
                     /* external */
-                    composable(route = ExternalLibrariesNavRoutes.CoilAccompanist) { CoilAccompanistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
                     composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
@@ -357,7 +357,6 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.GlideAccompanist) { GlideAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }

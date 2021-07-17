@@ -1,3 +1,5 @@
 include(
-    "app"
+    "app",
+    ":base",
+    ":wear"
 )

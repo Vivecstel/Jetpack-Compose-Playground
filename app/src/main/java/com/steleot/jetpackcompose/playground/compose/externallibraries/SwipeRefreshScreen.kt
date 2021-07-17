@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.glide.rememberGlidePainter
+import coil.compose.rememberImagePainter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
@@ -53,7 +53,7 @@ fun SwipeRefreshScreen() {
                 items(30) { index ->
                     Row(Modifier.padding(16.dp)) {
                         Image(
-                            painter = rememberGlidePainter(randomSampleImageUrl(index)),
+                            painter = rememberImagePainter(randomSampleImageUrl(index)),
                             contentDescription = null,
                             modifier = Modifier.size(64.dp),
                         )

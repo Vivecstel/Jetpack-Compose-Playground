@@ -5,7 +5,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.google.accompanist.insets.ProvideWindowInsets
-import com.steleot.jetpackcompose.playground.theme.JetpackComposeTheme
+import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import org.junit.Rule
 import org.junit.Test
 
@@ -17,7 +17,7 @@ class ButtonScreenTest {
     @Test
     fun testButtonScreen() {
         composeTestRule.setContent {
-            JetpackComposeTheme {
+            JetpackComposePlaygroundTheme {
                 ProvideWindowInsets {
                     ButtonScreen()
                 }

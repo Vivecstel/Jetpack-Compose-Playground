@@ -1,7 +1,7 @@
 object Versions {
 
     /* build tools */
-    const val buildTools = "30.0.2"
+    const val buildTools = "31.0.0"
 
     /* kotlin */
     const val kotlin = "1.5.10"
@@ -11,16 +11,18 @@ object Versions {
     const val googleServices = "4.3.8"
     const val crashlytics = "2.7.1"
     const val benManes = "0.39.0"
-    const val detekt = "1.18.0-RC1"
+    const val detekt = "1.18.0-RC2"
     const val doctor = "0.7.0"
-    const val protobufPlugin = "0.8.16"
+    const val protobufPlugin = "0.8.17"
 
     /* libraries */
-    const val compose = "1.0.0-rc01"
+    const val compose = "1.0.0-rc02"
     const val composeNavigation = "2.4.0-alpha04"
-    const val composeActivity = "1.3.0-beta02"
     const val composeConstraint = "1.0.0-alpha08"
     const val composePaging = "1.0.0-alpha11"
+    const val composeWear = "1.0.0-alpha01"
+    const val core = "1.7.0-alpha01"
+    const val activity = "1.3.0-rc02"
     const val appCompat = "1.4.0-alpha03"
     const val lifecycle = "2.4.0-alpha02"
     const val firebase = "28.2.1"
@@ -34,10 +36,10 @@ object Versions {
     const val playCoreKtx = "1.8.1"
     const val cameraX = "1.1.0-alpha06"
     const val cameraView = "1.0.0-alpha26"
-    const val accompanist = "0.13.0"
-    const val landscapist = "1.2.6"
+    const val accompanist = "0.14.0"
+    const val landscapist = "1.2.8"
     const val orchestra = "1.0.7"
-    const val coil = "1.2.2"
+    const val coil = "1.3.0"
     const val glide = "4.12.0"
     const val fresco = "2.5.0"
     const val timber = "4.7.1"

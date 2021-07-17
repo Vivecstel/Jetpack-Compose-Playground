@@ -11,20 +11,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.ImagePainter
+import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
-import com.google.accompanist.coil.rememberCoilPainter
-import com.google.accompanist.imageloading.ImageLoadState
-import com.google.accompanist.imageloading.LoadPainter
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import timber.log.Timber
 
-private const val Url = "external/CoilAccompanistScreen.kt"
+private const val Url = "external/CoilScreen.kt"
 
 @Composable
-fun CoilAccompanistScreen() {
+fun CoilScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.CoilAccompanist,
+        title = ExternalLibrariesNavRoutes.Coil,
         link = Url,
     ) {
         Column(
@@ -36,9 +36,9 @@ fun CoilAccompanistScreen() {
         ) {
             CoilImageExample()
             CoilImageExample(
-                rememberCoilPainter(
-                    request = randomSampleImageUrl(),
-                    requestBuilder = {
+                rememberImagePainter(
+                    data = randomSampleImageUrl(),
+                    builder = {
                         transformations(CircleCropTransformation())
                     })
             )
@@ -47,9 +47,10 @@ fun CoilAccompanistScreen() {
     }
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun CoilImageExample(
-    painter: LoadPainter<Any> = rememberCoilPainter(randomSampleImageUrl())
+    painter: ImagePainter = rememberImagePainter(randomSampleImageUrl())
 ) {
     Box {
         Image(
@@ -57,13 +58,13 @@ private fun CoilImageExample(
             contentDescription = "Content description",
             modifier = Modifier.size(150.dp)
         )
-        when (painter.loadState) {
-            is ImageLoadState.Loading -> {
+        when (painter.state) {
+            is ImagePainter.State.Loading -> {
                 Box(Modifier.matchParentSize()) {
                     CircularProgressIndicator(Modifier.align(Alignment.Center))
                 }
             }
-            is ImageLoadState.Error -> {
+            is ImagePainter.State.Error -> {
                 Image(
                     imageVector = Icons.Filled.Build,
                     contentDescription = "Vector"

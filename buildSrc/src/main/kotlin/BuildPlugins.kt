@@ -11,6 +11,7 @@ object BuildPlugins {
 
     /* https://developer.android.com/studio/build */
     const val androidApplication = "com.android.application"
+    const val androidLibrary = "com.android.library"
 
     /* https://developer.android.com/kotlin/add-kotlin */
     const val kotlinAndroid = "kotlin-android"

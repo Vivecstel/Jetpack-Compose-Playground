@@ -28,6 +28,14 @@ allprojects {
         maven("https://jitpack.io")
         mavenCentral()
     }
+
+    configurations.all {
+        resolutionStrategy.force(
+            Libraries.composeAnimation, Libraries.composeFoundation, Libraries.composeRuntime,
+            Libraries.composeUi, Libraries.core, Libraries.coreKtx, Libraries.activity,
+            Libraries.viewModel, Libraries.liveData
+        )
+    }
 }
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
