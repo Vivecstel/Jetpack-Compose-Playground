@@ -61,9 +61,9 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.appCompat)
-    implementation(Libraries.composeActivity)
     implementation(Libraries.composeWearFoundation)
     implementation(Libraries.composeWearMaterial)
+    implementation(Libraries.appCompat)
+    implementation(Libraries.composeActivity)
     implementation(Libraries.timber)
 }

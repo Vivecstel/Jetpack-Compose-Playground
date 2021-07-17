@@ -9,7 +9,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.util.*
-import com.google.accompanist.coil.*
+import coil.compose.rememberImagePainter
 import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
@@ -63,9 +63,11 @@ private fun PagerExample() {
             ) {
                 Box {
                     Image(
-                        painter = rememberCoilPainter(
-                            request = randomSampleImageUrl(width = 600),
-                            fadeIn = true
+                        painter = rememberImagePainter(
+                            data = randomSampleImageUrl(width = 600),
+                            builder = {
+                                crossfade(true)
+                            }
                         ),
                         contentDescription = null,
                         modifier = Modifier
@@ -115,7 +117,9 @@ private fun ProfilePicture(modifier: Modifier = Modifier) {
         border = BorderStroke(4.dp, MaterialTheme.colors.surface)
     ) {
         Image(
-            painter = rememberCoilPainter(request = randomSampleImageUrl(), fadeIn = true),
+            painter = rememberImagePainter(
+                data = randomSampleImageUrl(),
+                builder = { crossfade(true) }),
             contentDescription = null,
             modifier = Modifier.size(72.dp)
         )

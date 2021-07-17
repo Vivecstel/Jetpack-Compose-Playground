@@ -5,7 +5,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 
 @Composable
-fun JetpackComposeTheme(
+fun JetpackComposePlaygroundTheme(
     colorPalette: ColorPalette,
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit

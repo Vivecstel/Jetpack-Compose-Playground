@@ -99,7 +99,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":base"))
     debugImplementation(Libraries.kotlinReflect)
     implementation(Libraries.composeAnimation)
     implementation(Libraries.composeCompiler)
@@ -112,9 +112,9 @@ dependencies {
     implementation(Libraries.composeUiUtil)
     implementation(Libraries.composeUiTooling)
     implementation(Libraries.composeNavigation)
-    implementation(Libraries.composeActivity)
     implementation(Libraries.composeConstraint)
     implementation(Libraries.composePaging)
+    implementation(Libraries.composeActivity)
     implementation(Libraries.appCompat)
     implementation(Libraries.viewModel)
     implementation(platform(Libraries.firebaseBom))
@@ -134,8 +134,6 @@ dependencies {
     implementation(Libraries.camerax2)
     implementation(Libraries.cameraxLifecycle)
     implementation(Libraries.cameraxView)
-    implementation(Libraries.accompanistCoil)
-    implementation(Libraries.accompanistGlide)
     implementation(Libraries.accompanistInsets)
     implementation(Libraries.accompanistFlow)
     implementation(Libraries.accompanistPager)
@@ -151,6 +149,7 @@ dependencies {
     implementation(Libraries.orchestraColorPicker)
 //    implementation(Libraries.orchestraSpinner)
     implementation(Libraries.coil)
+    implementation(Libraries.coilCompose)
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
     implementation(Libraries.fresco)

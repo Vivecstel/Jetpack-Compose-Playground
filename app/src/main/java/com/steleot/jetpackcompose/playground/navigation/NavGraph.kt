@@ -241,15 +241,14 @@ object CustomExamplesNavRoutes {
 }
 
 object ExternalLibrariesNavRoutes {
-    const val CoilAccompanist = "coil accompanist"
     const val CoilLandscapist = "coil landscapist"
+    const val Coil = "coil"
     const val ComposeCharts = "compose charts"
     const val ComposeMarkdown = "compose markdown"
     const val ComposeNeumorphism = "compose neumorphism"
     const val FlowLayout = "flow layout"
     const val FontAwesome = "font awesome"
     const val FrescoLandscapist = "fresco landscapist"
-    const val GlideAccompanist = "glide accompanist"
     const val GlideLandscapist = "glide landscapist"
     const val Insets = "insets"
     const val Lottie = "lottie"

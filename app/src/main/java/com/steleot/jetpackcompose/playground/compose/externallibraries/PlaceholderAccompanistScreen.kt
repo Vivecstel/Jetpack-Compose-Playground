@@ -14,7 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.glide.rememberGlidePainter
+import coil.compose.rememberImagePainter
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
@@ -74,7 +74,7 @@ fun PlaceholderAccompanistScreen() {
 private fun PlaceholderItemExample(
     text: String,
     modifier: Modifier = Modifier,
-    painter: Painter = rememberGlidePainter(randomSampleImageUrl()),
+    painter: Painter = rememberImagePainter(randomSampleImageUrl()),
     childModifier: Modifier = Modifier,
 ) {
     Row(modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {

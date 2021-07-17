@@ -32,9 +32,6 @@ object Libraries {
     const val composeNavigation =
         "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
 
-    /* https://developer.android.com/jetpack/androidx/releases/activity */
-    const val composeActivity = "androidx.activity:activity-compose:${Versions.composeActivity}"
-
     /* https://developer.android.com/jetpack/compose/layout */
     const val composeConstraint =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
@@ -47,11 +44,20 @@ object Libraries {
         "androidx.wear.compose:compose-foundation:${Versions.composeWear}"
     const val composeWearMaterial = "androidx.wear.compose:compose-material:${Versions.composeWear}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/core */
+    const val core = "androidx.core:core:${Versions.core}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.core}"
+
+    /* https://developer.android.com/jetpack/androidx/releases/activity */
+    const val activity = "androidx.activity:activity:${Versions.activity}"
+    const val composeActivity = "androidx.activity:activity-compose:${Versions.activity}"
+
     /* https://developer.android.com/jetpack/androidx/releases/appcompat */
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
 
     /* https://developer.android.com/jetpack/androidx/releases/lifecycle */
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata:${Versions.lifecycle}"
 
     /* https://firebase.google.com/docs/android/learn-more */
     const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebase}"
@@ -89,10 +95,6 @@ object Libraries {
     const val cameraxView = "androidx.camera:camera-view:${Versions.cameraView}"
 
     /* https://github.com/chrisbanes/accompanist */
-    const val accompanistCoil =
-        "com.google.accompanist:accompanist-coil:${Versions.accompanist}"
-    const val accompanistGlide =
-        "com.google.accompanist:accompanist-glide:${Versions.accompanist}"
     const val accompanistInsets =
         "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
     const val accompanistFlow =
@@ -123,6 +125,7 @@ object Libraries {
 
     /* https://github.com/coil-kt/coil/ */
     const val coil = "io.coil-kt:coil:${Versions.coil}"
+    const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
 
     /* https://github.com/bumptech/glide */
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"

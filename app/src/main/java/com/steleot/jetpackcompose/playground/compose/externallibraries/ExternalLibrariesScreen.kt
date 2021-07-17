@@ -7,15 +7,14 @@ import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRout
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 val routes = listOf(
-    ExternalLibrariesNavRoutes.CoilAccompanist,
     ExternalLibrariesNavRoutes.CoilLandscapist,
+    ExternalLibrariesNavRoutes.Coil,
 //    ExternalLibrariesNavRoutes.ComposeCharts,
     ExternalLibrariesNavRoutes.ComposeMarkdown,
 //    ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.FlowLayout,
     ExternalLibrariesNavRoutes.FontAwesome,
     ExternalLibrariesNavRoutes.FrescoLandscapist,
-    ExternalLibrariesNavRoutes.GlideAccompanist,
     ExternalLibrariesNavRoutes.GlideLandscapist,
     ExternalLibrariesNavRoutes.Insets,
     ExternalLibrariesNavRoutes.Lottie,
