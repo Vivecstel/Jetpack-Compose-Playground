@@ -111,7 +111,7 @@ private fun ChangeThemePaletteItem(
 ) {
     Column {
         Text(
-            text = "Change Application Theme",
+            text = "Change Application Theme Color",
             style = MaterialTheme.typography.body1,
             modifier = Modifier.padding(top = 16.dp, start = 16.dp)
         )

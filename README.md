@@ -60,6 +60,7 @@ Download from:
    - [CollapsingToolbar](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/CollapsingToolbarScreen.kt)
    - [ColorMatrix](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/ColorMatrixScreen.kt)
    - [CurvedScrollView](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/CurvedScrollViewScreen.kt)
+   - [CurvedText](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/CurvedTextScreen.kt)
    - [FirstBaselineToTop](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/FirstBaselineToTopScreen.kt)
    - [MessageBubble](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/MessageBubbleScreen.kt)
    - [StaggeredGridList](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/StaggeredGridListScreen.kt)

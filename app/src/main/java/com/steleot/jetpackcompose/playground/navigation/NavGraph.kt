@@ -234,6 +234,7 @@ object CustomExamplesNavRoutes {
     const val CollapsingToolbar = "collapsing toolbar"
     const val ColorMatrix = "color matrix"
     const val CurvedScrollView = "curved scroll view"
+    const val CurvedText = "curved text"
     const val FirstBaselineToTop = "first baseline to top"
     const val MessageBubble = "message bubble"
     const val StaggeredGridList = "staggered grid list"

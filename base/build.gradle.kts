@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.androidLibrary)
     id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.parcelize)
 }
 
 android {
@@ -19,5 +20,5 @@ android {
 }
 
 dependencies {
-
+    implementation(Libraries.composeUi)
 }

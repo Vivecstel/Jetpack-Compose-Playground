@@ -5,64 +5,6 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
 
-private val red200 = Color(0XFFEF9A9A)
-private val red500 = Color(0XFFF44336)
-private val red700 = Color(0XFFD32F2F)
-private val pink200 = Color(0XFFF48FB1)
-private val pink500 = Color(0XFFE91E63)
-private val pink700 = Color(0XFFC2185B)
-private val purple200 = Color(0XFFCE93D8)
-private val purple500 = Color(0XFF9C27B0)
-private val purple700 = Color(0XFF7B1FA2)
-private val deepPurple200 = Color(0XFFB39DDB)
-private val deepPurple500 = Color(0XFF673AB7)
-private val deepPurple700 = Color(0XFF512DA8)
-private val indigo200 = Color(0XFF9FA8DA)
-private val indigo500 = Color(0XFF3F51B5)
-private val indigo700 = Color(0XFF303f9f)
-private val blue200 = Color(0XFF90CAF9)
-private val blue500 = Color(0xFF2195F2)
-private val blue700 = Color(0xFF1976D2)
-private val lightBlue200 = Color(0XFF81D4FA)
-private val lightBlue500 = Color(0XFF03A9F4)
-private val lightBlue700 = Color(0XFF0288D1)
-private val cyan200 = Color(0XFF80DEEA)
-private val cyan500 = Color(0xFF00BCD4)
-private val cyan700 = Color(0xFF0097A7)
-private val teal200 = Color(0XFF80DEEA)
-private val teal500 = Color(0XFF009688)
-private val teal700 = Color(0XFF00796B)
-private val green200 = Color(0XFFA5D6A7)
-private val green500 = Color(0XFF4CAF50)
-private val green700 = Color(0XFF388E3C)
-private val lightGreen200 = Color(0XFFC5E1A5)
-private val lightGreen500 = Color(0XFF8BC34A)
-private val lightGreen700 = Color(0XFF689F38)
-private val lime200 = Color(0XFFE6EE9C)
-private val lime500 = Color(0XFFCDDC39)
-private val lime700 = Color(0XFFAFB42B)
-private val yellow200 = Color(0XFFFFF59D)
-private val yellow500 = Color(0XFFFFEB3B)
-private val yellow700 = Color(0XFFFBC02D)
-private val amber200 = Color(0XFFFFE082)
-private val amber500 = Color(0XFFFFC107)
-private val amber700 = Color(0XFFFFA000)
-private val orange200 = Color(0XFFFFCC80)
-private val orange500 = Color(0XFFFF9800)
-private val orange700 = Color(0XFFF57C00)
-private val deepOrange200 = Color(0XFFFFAB91)
-private val deepOrange500 = Color(0XFFFF5722)
-private val deepOrange700 = Color(0XFFE64A19)
-private val brown200 = Color(0XFFBCAAA4)
-private val brown500 = Color(0XFF795548)
-private val brown700 = Color(0XFF5D4037)
-private val grey200 = Color(0XFFEEEEEE)
-private val grey500 = Color(0XFF9E9E9E)
-private val grey700 = Color(0XFF616161)
-private val blueGrey200 = Color(0XFFB0BEC5)
-private val blueGrey500 = Color(0XFF607D8B)
-private val blueGrey700 = Color(0XFF455A64)
-
 /* Material Red */
 private val DarkRedColorPalette = darkColors(
     primary = red200,
@@ -328,11 +270,6 @@ private val LightBlueGreyColorPalette = lightColors(
     secondary = teal200,
     surface = blueGrey500,
 )
-
-enum class ColorPalette {
-    RED, PINK, PURPLE, DEEP_PURPLE, INDIGO, BLUE, LIGHT_BLUE, CYAN, TEAL, GREEN, LIGHT_GREEN,
-    LIME, YELLOW, AMBER, ORANGE, DEEP_ORANGE, BROWN, GREY, BLUE_GREY
-}
 
 fun ColorPalette.getMaterialColors(darkTheme: Boolean): Colors {
     return when (this) {

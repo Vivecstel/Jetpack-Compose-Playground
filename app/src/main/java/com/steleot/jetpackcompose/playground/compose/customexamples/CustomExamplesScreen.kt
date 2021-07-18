@@ -17,6 +17,7 @@ val routes = listOf(
     CustomExamplesNavRoutes.CollapsingToolbar,
     CustomExamplesNavRoutes.ColorMatrix,
     CustomExamplesNavRoutes.CurvedScrollView,
+    CustomExamplesNavRoutes.CurvedText,
     CustomExamplesNavRoutes.FirstBaselineToTop,
     CustomExamplesNavRoutes.MessageBubble,
     CustomExamplesNavRoutes.StaggeredGridList,
