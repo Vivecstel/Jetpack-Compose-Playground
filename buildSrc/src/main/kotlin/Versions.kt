@@ -18,7 +18,7 @@ object Versions {
     /* libraries */
     const val compose = "1.0.0-rc02"
     const val composeNavigation = "2.4.0-alpha05"
-    const val composeConstraint = "1.0.0-alpha08"
+    const val composeConstraint = "1.0.0-beta01"
     const val composePaging = "1.0.0-alpha12"
     const val composeWear = "1.0.0-alpha02"
     const val core = "1.7.0-alpha01"
@@ -28,7 +28,7 @@ object Versions {
     const val firebase = "28.2.1"
     const val hilt = "2.37"
     const val hiltCompose = "1.0.0-alpha03"
-    const val startUp = "1.1.0-beta01"
+    const val startUp = "1.1.0-rc01"
     const val coroutines = "1.5.0"
     const val dataStore = "1.0.0-rc02"
     const val protobuf = "4.0.0-rc-2"

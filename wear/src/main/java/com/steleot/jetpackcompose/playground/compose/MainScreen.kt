@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground
+package com.steleot.jetpackcompose.playground.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,9 +10,10 @@ import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
-private val routes = listOf(
+val routes = listOf(
     MainNavRoutes.Foundation,
     MainNavRoutes.Material,
+    MainNavRoutes.Settings,
 )
 
 @Composable
@@ -21,7 +22,7 @@ fun MainScreen(
     list: List<String> = routes,
 ) {
     Column(
-        modifier = androidx.compose.ui.Modifier
+        modifier = Modifier
             .verticalScroll(rememberScrollState())
     ) {
         list.forEach { item ->

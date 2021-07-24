@@ -7,9 +7,9 @@ object MainNavRoutes {
     const val Settings = "settings"
 }
 
-/*object FoundationNavRoutes {
-
-}*/
+object FoundationNavRoutes {
+    const val CurvedRow = "curved row"
+}
 
 object MaterialNavRoutes {
     const val AppCard = "app card"
@@ -18,7 +18,7 @@ object MaterialNavRoutes {
     const val Chip = "chip"
     const val CompatButton = "compat button"
     const val CompatChip = "compat chip"
-    const val SplitToggle = "split toggle"
+    const val SplitToggleChip = "split toggle chip"
     const val ToggleButton = "toggle button"
     const val ToggleChip = "toggle chip"
 }

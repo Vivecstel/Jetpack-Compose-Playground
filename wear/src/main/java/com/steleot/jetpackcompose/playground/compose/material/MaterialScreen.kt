@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.MainScreen
+import com.steleot.jetpackcompose.playground.compose.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
 val routes = listOf(
@@ -12,7 +12,7 @@ val routes = listOf(
     MaterialNavRoutes.Chip,
     MaterialNavRoutes.CompatButton,
     MaterialNavRoutes.CompatChip,
-    MaterialNavRoutes.SplitToggle,
+    MaterialNavRoutes.SplitToggleChip,
     MaterialNavRoutes.ToggleButton,
     MaterialNavRoutes.ToggleChip,
 )
