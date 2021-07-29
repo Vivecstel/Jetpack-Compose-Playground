@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.DialogProperties
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -71,7 +70,6 @@ private fun DefaultAlertDialog() {
                     )
                 }
             },
-            properties = DialogProperties(usePlatformDefaultWidth = true)
         )
     }
     Button(
@@ -121,7 +119,6 @@ private fun ContentColorAlertDialog() {
             },
             contentColor = Color.White,
             shape = RectangleShape,
-            properties = DialogProperties(usePlatformDefaultWidth = true)
         )
     }
     Button(onClick = {
@@ -161,7 +158,6 @@ private fun BackgroundColorAlertDialog() {
             },
             backgroundColor = Color.White,
             shape = CutCornerShape(12.dp),
-            properties = DialogProperties(usePlatformDefaultWidth = true)
         )
     }
     Button(onClick = {
