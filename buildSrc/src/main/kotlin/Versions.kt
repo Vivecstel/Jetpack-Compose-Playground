@@ -44,7 +44,7 @@ object Versions {
     const val fresco = "2.5.0"
     const val timber = "4.7.1"
     const val lottie = "4.0.0"
-    const val ratingBar = "1.0.72"
+    const val ratingBar = "1.1.0"
     const val revealSwipe = "1.0.0-beta05"
     const val speedDial = "1.0.0-beta03"
     const val fontAwesome = "1.0.0-beta02"

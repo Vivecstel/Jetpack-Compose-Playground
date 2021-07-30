@@ -246,9 +246,9 @@ Download from:
 
 In order to run the project:
 
-* Use latest Android Studio Beta.
+* Use latest Android Studio.
 
-<img src="screenshots/android_studio.png" width="150" />
+<img src="screenshots/android_studio.png" width="250" />
 
 * Change appId constant in AndroidConfiguration.kt to your applicationId.
 
@@ -257,7 +257,7 @@ In order to run the project:
 * Create a firebase android project with the applicationId you provided and download and add
   google-services.json to the project under app/src folder.
 
-<img src="screenshots/google_services.png" width="150" />
+<img src="screenshots/google_services.png" width="250" />
 
 ## Screens
 
