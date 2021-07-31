@@ -2,7 +2,7 @@
 
 Offering **more than 200 screens** with examples of **Jetpack Compose**.
 
-<img src="screenshots/jetpack_compose_playground.gif" width="250" />
+<img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
@@ -21,9 +21,18 @@ Please provide any feedback via github issues or via email on : **steleotr@gmail
 The application will be updated as soon as possible when a new release of compose is available.
 
 Download from:
+
 <a href="https://play.google.com/store/apps/details?id=com.steleot.jetpackcompose.playground">
-<img src="screenshots/google-play-badge.png" width="250">
+<img src="screenshots/google-play-badge.png" width="200">
 </a>
+
+### Featured in :star:
+
+![Jetc.dev](https://img.shields.io/badge/jetc.dev-%2373-red.svg)
+
+### Spread Some :heart:
+
+[![GitHub stars](https://img.shields.io/github/stars/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Star)](https://github.com/Vivecstel/Jetpack-Compose-Playground) [![GitHub forks](https://img.shields.io/github/forks/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Fork)](https://github.com/Vivecstel/Jetpack-Compose-Playground/fork) [![GitHub watchers](https://img.shields.io/github/watchers/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Watch)](https://github.com/Vivecstel/Jetpack-Compose-Playground)
 
 ## Available Screens
 
@@ -248,45 +257,45 @@ In order to run the project:
 
 * Use latest Android Studio.
 
-<img src="screenshots/android_studio.png" width="250" />
+<img src="screenshots/android_studio.png" width="450" />
 
 * Change appId constant in AndroidConfiguration.kt to your applicationId.
 
-<img src="screenshots/android_configuration.png" width="250" />
+<img src="screenshots/android_configuration.png" width="450" />
 
 * Create a firebase android project with the applicationId you provided and download and add
   google-services.json to the project under app/src folder.
 
-<img src="screenshots/google_services.png" width="250" />
+<img src="screenshots/google_services.png" width="450" />
 
 ## Screens
 
 ### mobile
 
-<img src="screenshots/mobile_1.png" width="250" /> <img src="screenshots/mobile_2.png" width="250" />
+<img src="screenshots/mobile_1.png" width="300" /> <img src="screenshots/mobile_2.png" width="300" />
 
-<img src="screenshots/mobile_3.png" width="250" /> <img src="screenshots/mobile_4.png" width="250" />
+<img src="screenshots/mobile_3.png" width="300" /> <img src="screenshots/mobile_4.png" width="300" />
 
-<img src="screenshots/mobile_5.png" width="250" /> <img src="screenshots/mobile_6.png" width="250" />
+<img src="screenshots/mobile_5.png" width="300" /> <img src="screenshots/mobile_6.png" width="300" />
 
-<img src="screenshots/mobile_7.png" width="250" /> <img src="screenshots/mobile_8.png" width="250" />
+<img src="screenshots/mobile_7.png" width="300" /> <img src="screenshots/mobile_8.png" width="300" />
 
 ### tablet 7-inch
 
-<img src="screenshots/tablet_7_1.png" width="250" /> <img src="screenshots/tablet_7_2.png" width="250" />
+<img src="screenshots/tablet_7_1.png" width="300" /> <img src="screenshots/tablet_7_2.png" width="300" />
 
-<img src="screenshots/tablet_7_3.png" width="250" /> <img src="screenshots/tablet_7_4.png" width="250" />
+<img src="screenshots/tablet_7_3.png" width="300" /> <img src="screenshots/tablet_7_4.png" width="300" />
 
-<img src="screenshots/tablet_7_5.png" width="250" /> <img src="screenshots/tablet_7_6.png" width="250" />
+<img src="screenshots/tablet_7_5.png" width="300" /> <img src="screenshots/tablet_7_6.png" width="300" />
 
-<img src="screenshots/tablet_7_7.png" width="250" /> <img src="screenshots/tablet_7_8.png" width="250" />
+<img src="screenshots/tablet_7_7.png" width="300" /> <img src="screenshots/tablet_7_8.png" width="300" />
 
 ### tablet 10-inch
 
-<img src="screenshots/tablet_10_1.png" width="250" /> <img src="screenshots/tablet_10_2.png" width="250" />
+<img src="screenshots/tablet_10_1.png" width="300" /> <img src="screenshots/tablet_10_2.png" width="300" />
 
-<img src="screenshots/tablet_10_3.png" width="250" /> <img src="screenshots/tablet_10_4.png" width="250" />
+<img src="screenshots/tablet_10_3.png" width="300" /> <img src="screenshots/tablet_10_4.png" width="300" />
 
-<img src="screenshots/tablet_10_5.png" width="250" /> <img src="screenshots/tablet_10_6.png" width="250" />
+<img src="screenshots/tablet_10_5.png" width="300" /> <img src="screenshots/tablet_10_6.png" width="300" />
 
-<img src="screenshots/tablet_10_7.png" width="250" /> <img src="screenshots/tablet_10_8.png" width="250" />
+<img src="screenshots/tablet_10_7.png" width="300" /> <img src="screenshots/tablet_10_8.png" width="300" />
