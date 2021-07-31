@@ -79,7 +79,11 @@ Download from:
  - ExternalLibraries
    - [CoilLandscapist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/CoilLandscapistScreen.kt)
    - [Coil](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/CoilScreen.kt)
-   - [ComposeMarkdown]()
+   - [ComposeCharts](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeChartsScreen.kt)
+   - [ComposeMarkdown](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeMarkdownScreen.kt)
+   - [ComposeRichTextPrinting](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextPrintingScreen.kt)
+   - [ComposeRichTextSlideshow](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextSlideshowScreen.kt)
+   - [ComposeRichTextUi](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextUiScreen.kt)
    - [FlowLayout](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/FlowLayoutScreen.kt)
    - [FontAwesome](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/FontAwesomeScreen.kt)
    - [FrescoLandscapist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/FrescoLandscapistScreen.kt)

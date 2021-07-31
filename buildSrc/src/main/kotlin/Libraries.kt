@@ -162,6 +162,17 @@ object Libraries {
     /* https://github.com/jeziellago/compose-markdown */
     const val composeMarkdown = "com.github.jeziellago:compose-markdown:${Versions.composeMarkdown}"
 
+    /* https://github.com/simonsickle/ComposedBarcodes */
+    const val composeBarcodes = "com.simonsickle:composed-barcodes:${Versions.composeBarcodes}"
+
+    /* https://github.com/halilozercan/compose-richtext */
+    const val composeRichtextUi =
+        "com.halilibo.compose-richtext:richtext-ui:${Versions.composeRichtext}"
+    const val composeRichtextPrinting =
+        "com.halilibo.compose-richtext:printing:${Versions.composeRichtext}"
+    const val composeRichtextSlideshow =
+        "com.halilibo.compose-richtext:slideshow:${Versions.composeRichtext}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

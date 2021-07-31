@@ -244,9 +244,13 @@ object CustomExamplesNavRoutes {
 object ExternalLibrariesNavRoutes {
     const val CoilLandscapist = "coil landscapist"
     const val Coil = "coil"
+    const val ComposeBarcodes = "compose barcodes"
     const val ComposeCharts = "compose charts"
     const val ComposeMarkdown = "compose markdown"
     const val ComposeNeumorphism = "compose neumorphism"
+    const val ComposeRichTextPrinting = "compose rich text printing"
+    const val ComposeRichTextSlideshow = "compose rich text slideshow"
+    const val ComposeRichTextUi = "compose rich text ui"
     const val FlowLayout = "flow layout"
     const val FontAwesome = "font awesome"
     const val FrescoLandscapist = "fresco landscapist"

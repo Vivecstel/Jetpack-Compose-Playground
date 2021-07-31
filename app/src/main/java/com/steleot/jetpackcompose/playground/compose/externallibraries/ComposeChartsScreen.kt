@@ -3,16 +3,21 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-/*import hu.ma.charts.pie.LegendPosition
+import hu.ma.charts.pie.LegendPosition
 import hu.ma.charts.pie.PieChart
 import hu.ma.charts.pie.PieChartData
-import hu.ma.charts.pie.PieChartEntry*/
+import hu.ma.charts.pie.PieChartEntry
 
 private const val Url = "external/ComposeChartsScreen.kt"
 
@@ -24,15 +29,14 @@ fun ComposeChartsScreen() {
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-//            PieChartExample()
+            PieChartExample()
         }
     }
 }
 
-/*
 private val Categories = listOf(
     "Teams",
     "Locations",
@@ -61,9 +65,8 @@ private fun PieChartExample() {
             )
         },
         colors = SimpleColors,
-        legendPosition = LegendPosition.Bottom,
+        legendPosition = LegendPosition.End,
         legendShape = CircleShape,
     )
-    PieChart(data = data)
+    PieChart(data = data, chartSize = 150.dp, modifier = Modifier.padding(32.dp))
 }
-*/
