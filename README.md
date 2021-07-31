@@ -34,6 +34,8 @@ Download from:
 
 [![GitHub stars](https://img.shields.io/github/stars/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Star)](https://github.com/Vivecstel/Jetpack-Compose-Playground) [![GitHub forks](https://img.shields.io/github/forks/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Fork)](https://github.com/Vivecstel/Jetpack-Compose-Playground/fork) [![GitHub watchers](https://img.shields.io/github/watchers/Vivecstel/Jetpack-Compose-Playground.svg?style=social&label=Watch)](https://github.com/Vivecstel/Jetpack-Compose-Playground)
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/LICENSE)
+
 ## Available Screens
 
  - Activity
