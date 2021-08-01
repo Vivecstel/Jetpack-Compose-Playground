@@ -11,6 +11,7 @@ val routes = listOf(
     AnimationNavRoutes.AnimatedContent,
     AnimationNavRoutes.AnimatedValues,
     AnimationNavRoutes.AnimatedVisibility,
+    AnimationNavRoutes.AnimateEnterExit,
     AnimationNavRoutes.AnimationModifier,
     AnimationNavRoutes.CrossfadeAnimation,
     AnimationNavRoutes.DoubleTapToLike,

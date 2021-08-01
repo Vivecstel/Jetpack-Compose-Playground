@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 200 screens** with examples of **Jetpack Compose**.
+Offering **more than 210 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 200 screens with
+has to offer and how it improves everyday Android UI development. It offers more 210 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -46,6 +46,7 @@ Download from:
    - [AnimatedContent](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedContentScreen.kt)
    - [AnimatedValues](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedValuesScreen.kt)
    - [AnimatedVisibility](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedVisibilityScreen.kt)
+   - [AnimateEnterExit](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimateEnterExitScreen.kt)
    - [AnimationModifier](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimationModifierScreen.kt)
    - [CrossfadeAnimation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/CrossfadeAnimationScreen.kt)
    - [DoubleTapToLike](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/DoubleTapToLikeScreen.kt)
@@ -106,6 +107,7 @@ Download from:
    - [Canvas](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/CanvasScreen.kt)
    - [Clickable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ClickableScreen.kt)
    - [ClickableText](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ClickableTextScreen.kt)
+   - [CombinedClickable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/CombinedClickableScreen.kt)
    - [DragGestureDetector](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DragGestureDetectorScreen.kt)
    - [Draggable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DraggableScreen.kt)
    - [Focusable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/FocusableScreen.kt)
@@ -116,6 +118,8 @@ Download from:
    - [LazyRow](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyRowScreen.kt)
    - [Scrollable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollableScreen.kt)
    - [Scroller](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollerScreen.kt)
+   - [SelectableGroup](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectableGroupScreen.kt)
+   - [Selectable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectableScreen.kt)
    - [SelectionContainer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectionContainerScreen.kt)
    - [Shape](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ShapeScreen.kt)
    - [StickyHeader](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/StickyHeaderScreen.kt)
@@ -217,6 +221,8 @@ Download from:
    - [DebugInspectorInfo](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/DebugInspectorInfoScreen.kt)
    - [Dialog](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/DialogScreen.kt)
    - [Drawable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/DrawableScreen.kt)
+   - [DrawBehind](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/DrawBehindScreen.kt)
+   - [DrawWithCache](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/DrawWithCacheScreen.kt)
    - [Font](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/FontScreen.kt)
    - [GraphicsLayer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/GraphicsLayerScreen.kt)
    - [Layout](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LayoutScreen.kt)
@@ -239,6 +245,7 @@ Download from:
    - [NestedScroll](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/NestedScrollScreen.kt)
    - [OnGloballyPositioned](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnGloballyPositionedScreen.kt)
    - [OnSizeChanged](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnSizeChangedScreen.kt)
+   - [Paint](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PaintScreen.kt)
    - [PathEffect](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PathEffectScreen.kt)
    - [Popup](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PopupScreen.kt)
    - [Primitive](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PrimitiveScreen.kt)
@@ -248,6 +255,7 @@ Download from:
    - [SpanStyle](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/SpanStyleScreen.kt)
    - [String](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/StringScreen.kt)
    - [SubComposeLayout](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/SubcomposeLayoutScreen.kt)
+   - [TestTag](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TestTagScreen.kt)
    - [TextDecoration](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TextDecorationScreen.kt)
    - [TextIndent](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TextIndentScreen.kt)
    - [VisualTransformation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/VisualTransformation.kt)

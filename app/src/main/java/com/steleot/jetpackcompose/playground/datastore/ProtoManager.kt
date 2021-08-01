@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.datastore
 import android.content.Context
 import androidx.datastore.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import kotlinx.coroutines.flow.map
 
@@ -13,26 +14,36 @@ private val Context.internalDataStore by dataStore(
     serializer = SettingsProtoSerializer
 )
 
-class ProtoManager @Inject constructor(
-    @ApplicationContext private val context: Context,
-) {
+interface ProtoManager {
 
-    val isAnalyticsEnabled
+    val isAnalyticsEnabled: Flow<Boolean>
+    val isCrashlyticsEnabled: Flow<Boolean>
+    val reviewTimeStamp: Flow<Long>
+    suspend fun setIsAnalyticsEnabled(isEnabled: Boolean)
+    suspend fun setIsCrashlyticsEnabled(isEnabled: Boolean)
+    suspend fun setReviewTimeStamp(timeStamp: Long)
+}
+
+class ProtoManagerImpl @Inject constructor(
+    @ApplicationContext private val context: Context,
+): ProtoManager {
+
+    override val isAnalyticsEnabled
         get() = context.internalDataStore.data.map { settings ->
             settings.analyticsEnabled
         }
 
-    val isCrashlyticsEnabled
+    override val isCrashlyticsEnabled
         get() = context.internalDataStore.data.map { settings ->
             settings.crashlyticsEnabled
         }
 
-    val reviewTimeStamp
+    override val reviewTimeStamp
         get() = context.internalDataStore.data.map { settings ->
             settings.reviewTimeStamp
         }
 
-    suspend fun setIsAnalyticsEnabled(isEnabled: Boolean) {
+    override suspend fun setIsAnalyticsEnabled(isEnabled: Boolean) {
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setAnalyticsEnabled(isEnabled)
@@ -40,7 +51,7 @@ class ProtoManager @Inject constructor(
         }
     }
 
-    suspend fun setIsCrashlyticsEnabled(isEnabled: Boolean) {
+    override suspend fun setIsCrashlyticsEnabled(isEnabled: Boolean) {
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setCrashlyticsEnabled(isEnabled)
@@ -48,7 +59,7 @@ class ProtoManager @Inject constructor(
         }
     }
 
-    suspend fun setReviewTimeStamp(timeStamp: Long) {
+    override suspend fun setReviewTimeStamp(timeStamp: Long) {
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setReviewTimeStamp(timeStamp)

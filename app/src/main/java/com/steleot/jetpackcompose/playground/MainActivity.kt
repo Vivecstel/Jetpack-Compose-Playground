@@ -161,6 +161,7 @@ fun JetpackComposeApp(
                     composable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }
                     composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
                     composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
+                    composable(route = AnimationNavRoutes.AnimateEnterExit) { AnimateEnterExitScreen() }
                     composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
                     composable(route = AnimationNavRoutes.CrossfadeAnimation) { CrossfadeAnimationScreen() }
                     composable(route = AnimationNavRoutes.DoubleTapToLike) { DoubleTapToLikeScreen() }
@@ -181,6 +182,7 @@ fun JetpackComposeApp(
                     composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
                     composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
                     composable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
+                    composable(route = FoundationNavRoutes.CombinedClickable) { CombinedClickableScreen() }
                     composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
                     composable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
                     composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
@@ -191,6 +193,8 @@ fun JetpackComposeApp(
                     composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
                     composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
                     composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
+                    composable(route = FoundationNavRoutes.SelectableGroup) { SelectableGroupScreen() }
+                    composable(route = FoundationNavRoutes.Selectable) { SelectableScreen() }
                     composable(route = FoundationNavRoutes.SelectionContainer) { SelectionContainerScreen() }
                     composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
                     composable(route = FoundationNavRoutes.StickyHeader) { StickyHeaderScreen() }
@@ -287,10 +291,14 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
                     composable(route = UiNavRoutes.Brush) { BrushScreen() }
                     composable(route = UiNavRoutes.Clip) { ClipScreen() }
+                    composable(route = UiNavRoutes.ClipToBounds) { ClipToBoundsScreen() }
                     composable(route = UiNavRoutes.Color) { ColorScreen() }
                     composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
                     composable(route = UiNavRoutes.Dialog) { DialogScreen() }
                     composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
+                    composable(route = UiNavRoutes.DrawBehind) { DrawBehindScreen() }
+                    composable(route = UiNavRoutes.DrawWithCache) { DrawWithCacheScreen() }
+                    composable(route = UiNavRoutes.DrawWithContent) { DrawWithContentScreen() }
                     composable(route = UiNavRoutes.Font) { FontScreen() }
                     composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
                     composable(route = UiNavRoutes.Layout) { LayoutScreen() }
@@ -315,7 +323,9 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
                     composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
                     composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
+                    composable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }
                     composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
+                    composable(route = UiNavRoutes.Paint) { PaintScreen() }
                     composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
                     composable(route = UiNavRoutes.Popup) { PopupScreen() }
                     composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
@@ -325,6 +335,7 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
                     composable(route = UiNavRoutes.String) { StringScreen() }
                     composable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
+                    composable(route = UiNavRoutes.TestTag) { TestTagScreen() }
                     composable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
                     composable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
                     composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }

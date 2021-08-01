@@ -5,19 +5,23 @@ import android.content.Context
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 
-class InAppReviewHelper @Inject constructor(
+interface InAppReviewHelper {
+    suspend fun requestReview(activity: Activity)
+    fun resetCounter()
+}
+
+class InAppReviewHelperImpl (
     @ApplicationContext context: Context,
     private val protoManager: ProtoManager
-) {
+): InAppReviewHelper {
 
     private val reviewManager = ReviewManagerFactory.create(context)
     private var counter: Int = 0
 
-    suspend fun requestReview(activity: Activity) {
+    override suspend fun requestReview(activity: Activity) {
         if (counter >= MAX_VISITS_THRESHOLD) {
             protoManager.reviewTimeStamp.collect { timeStamp ->
                 val currentTimeMillis = System.currentTimeMillis()
@@ -41,7 +45,7 @@ class InAppReviewHelper @Inject constructor(
         }
     }
 
-    fun resetCounter() {
+    override fun resetCounter() {
         counter = 0
     }
 

@@ -50,7 +50,7 @@ object Versions {
     const val fontAwesome = "1.0.0-beta02"
     const val composeCharts = "0.2.0"
     const val composeNeumorphism = "1.0.0-alpha"
-    const val composeMarkdown = "0.2.4"
+    const val composeMarkdown = "0.2.5"
     const val composeBarcodes = "1.0.0"
     const val composeRichtext = "0.5.0"
     const val adMob = "20.2.0"

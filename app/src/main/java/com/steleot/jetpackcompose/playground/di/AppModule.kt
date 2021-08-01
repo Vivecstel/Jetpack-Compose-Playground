@@ -4,7 +4,9 @@ import android.content.Context
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
+import com.steleot.jetpackcompose.playground.datastore.ProtoManagerImpl
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
+import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelperImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,12 +29,13 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideProtoManager(@ApplicationContext context: Context) = ProtoManager(context)
+    fun provideProtoManager(@ApplicationContext context: Context): ProtoManager =
+        ProtoManagerImpl(context)
 
     @Provides
     @Singleton
     fun provideInAppReviewHelper(
         @ApplicationContext context: Context,
         protoManager: ProtoManager
-    ) = InAppReviewHelper(context, protoManager)
+    ): InAppReviewHelper = InAppReviewHelperImpl(context, protoManager)
 }
