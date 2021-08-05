@@ -45,6 +45,7 @@ Download from:
    - [Animatable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatableScreen.kt)
    - [AnimatedContent](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedContentScreen.kt)
    - [AnimatedValues](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedValuesScreen.kt)
+   - [AnimatedVector](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedVectorScreen.kt)
    - [AnimatedVisibility](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimatedVisibilityScreen.kt)
    - [AnimateEnterExit](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimateEnterExitScreen.kt)
    - [AnimationModifier](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/animation/AnimationModifierScreen.kt)
@@ -140,7 +141,7 @@ Download from:
  - Material
    - [AlertDialog](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/AlertDialogScreen.kt)
    - [BackdropScaffold](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BackdropScaffoldScreen.kt)
-   - [BadgeBox](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BadgeBoxScreen.kt)
+   - [BadgedBox](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BadgedBoxScreen.kt)
    - [BottomAppBar](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomAppBarScreen.kt)
    - [BottomDrawer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomDrawerScreen.kt)
    - [BottomNavigation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomNavigationScreen.kt)

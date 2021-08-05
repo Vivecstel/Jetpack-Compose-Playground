@@ -13,11 +13,11 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import hu.ma.charts.legend.data.LegendPosition
 
-import hu.ma.charts.pie.LegendPosition
 import hu.ma.charts.pie.PieChart
-import hu.ma.charts.pie.PieChartData
-import hu.ma.charts.pie.PieChartEntry
+import hu.ma.charts.pie.data.PieChartData
+import hu.ma.charts.pie.data.PieChartEntry
 
 private const val Url = "external/ComposeChartsScreen.kt"
 

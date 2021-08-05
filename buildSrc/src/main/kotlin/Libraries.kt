@@ -5,6 +5,8 @@ object Libraries {
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-animation */
     const val composeAnimation = "androidx.compose.animation:animation:${Versions.compose}"
+    const val composeAnimationGraphics =
+        "androidx.compose.animation:animation-graphics:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-compiler */
     const val composeCompiler = "androidx.compose.compiler:compiler:${Versions.compose}"
@@ -28,10 +30,6 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/ui */
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
 
-    /* https://developer.android.com/jetpack/compose/navigation */
-    const val composeNavigation =
-        "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
-
     /* https://developer.android.com/jetpack/compose/layout */
     const val composeConstraint =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
@@ -43,6 +41,9 @@ object Libraries {
     const val composeWearFoundation =
         "androidx.wear.compose:compose-foundation:${Versions.composeWear}"
     const val composeWearMaterial = "androidx.wear.compose:compose-material:${Versions.composeWear}"
+
+    /* https://developer.android.com/jetpack/compose/navigation */
+    const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
 
     /* https://developer.android.com/jetpack/androidx/releases/core */
     const val core = "androidx.core:core:${Versions.core}"
@@ -111,6 +112,12 @@ object Libraries {
         "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
     const val accompanistPlaceholderMaterial =
         "com.google.accompanist:accompanist-placeholder-material:${Versions.accompanist}"
+    const val accompanistDrawablePainter =
+        "com.google.accompanist:accompanist-drawablepainter:${Versions.accompanist}"
+    const val accompanistNavigationAnimation =
+        "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanist}"
+    const val accompanistNavigationMaterial =
+        "com.google.accompanist:accompanist-navigation-material:${Versions.accompanist}"
 
     /* https://github.com/skydoves/Landscapist */
     const val landscapistCoil = "com.github.skydoves:landscapist-coil:${Versions.landscapist}"

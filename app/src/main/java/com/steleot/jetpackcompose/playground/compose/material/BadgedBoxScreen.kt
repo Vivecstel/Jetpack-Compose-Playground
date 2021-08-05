@@ -11,13 +11,13 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/BadgeBoxScreen.kt"
+private const val Url = "material/BadgedBoxScreen.kt"
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun BadgeBoxScreen() {
+fun BadgedBoxScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.BadgeBox,
+        title = MaterialNavRoutes.BadgedBox,
         link = Url,
     ) {
         Column(
@@ -27,7 +27,7 @@ fun BadgeBoxScreen() {
             BottomNavigation {
                 BottomNavigationItem(
                     icon = {
-                        BadgeBox(badgeContent = { Text("8") }) {
+                        BadgedBox(badge = { Text("8") }) {
                             Icon(
                                 Icons.Filled.Favorite,
                                 contentDescription = "Favorite"

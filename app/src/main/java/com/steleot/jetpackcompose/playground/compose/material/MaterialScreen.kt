@@ -9,7 +9,7 @@ import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 val routes = listOf(
     MaterialNavRoutes.AlertDialog,
     MaterialNavRoutes.BackdropScaffold,
-    MaterialNavRoutes.BadgeBox,
+    MaterialNavRoutes.BadgedBox,
     MaterialNavRoutes.BottomAppBar,
     MaterialNavRoutes.BottomDrawer,
     MaterialNavRoutes.BottomNavigation,

@@ -10,6 +10,7 @@ val routes = listOf(
     AnimationNavRoutes.Animatable,
     AnimationNavRoutes.AnimatedContent,
     AnimationNavRoutes.AnimatedValues,
+    AnimationNavRoutes.AnimatedVector,
     AnimationNavRoutes.AnimatedVisibility,
     AnimationNavRoutes.AnimateEnterExit,
     AnimationNavRoutes.AnimationModifier,

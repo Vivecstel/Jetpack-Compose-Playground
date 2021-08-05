@@ -160,6 +160,7 @@ fun JetpackComposeApp(
                     composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                     composable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }
                     composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
+                    composable(route = AnimationNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
                     composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
                     composable(route = AnimationNavRoutes.AnimateEnterExit) { AnimateEnterExitScreen() }
                     composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
@@ -215,7 +216,7 @@ fun JetpackComposeApp(
                     /* material */
                     composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
                     composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
-                    composable(route = MaterialNavRoutes.BadgeBox) { BadgeBoxScreen() }
+                    composable(route = MaterialNavRoutes.BadgedBox) { BadgedBoxScreen() }
                     composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
                     composable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
                     composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
@@ -287,7 +288,6 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
                     composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
                     composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
-                    composable(route = UiNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
                     composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
                     composable(route = UiNavRoutes.Brush) { BrushScreen() }
                     composable(route = UiNavRoutes.Clip) { ClipScreen() }
