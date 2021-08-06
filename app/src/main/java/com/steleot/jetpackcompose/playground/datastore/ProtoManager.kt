@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.datastore.dataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 private const val FILE_NAME = "SettingsPrefFile"
 
@@ -26,7 +26,7 @@ interface ProtoManager {
 
 class ProtoManagerImpl @Inject constructor(
     @ApplicationContext private val context: Context,
-): ProtoManager {
+) : ProtoManager {
 
     override val isAnalyticsEnabled
         get() = context.internalDataStore.data.map { settings ->

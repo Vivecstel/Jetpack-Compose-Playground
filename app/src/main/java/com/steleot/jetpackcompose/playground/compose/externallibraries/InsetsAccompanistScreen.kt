@@ -11,12 +11,12 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/InsetsScreen.kt"
+private const val Url = "external/InsetsAccompanistScreen.kt"
 
 @Composable
-fun InsetsScreen() {
+fun InsetsAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Insets,
+        title = ExternalLibrariesNavRoutes.InsetsAccompanist,
         link = Url,
     ) {
         Column(

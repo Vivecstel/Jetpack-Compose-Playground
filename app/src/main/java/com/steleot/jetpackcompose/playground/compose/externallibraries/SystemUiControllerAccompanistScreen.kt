@@ -18,15 +18,15 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 
-private const val Url = "external/SystemUiControllerScreen.kt"
+private const val Url = "external/SystemUiControllerAccompanistScreen.kt"
 
 @Composable
-fun SystemUiControllerScreen(
+fun SystemUiControllerAccompanistScreen(
     navController: NavHostController,
     systemUiController: SystemUiController,
 ) {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.SystemUiController,
+        title = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
         link = Url,
     ) {
         SystemUiControllerExample(navController, systemUiController)

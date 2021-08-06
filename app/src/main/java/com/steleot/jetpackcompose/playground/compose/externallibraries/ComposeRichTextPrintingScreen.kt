@@ -69,7 +69,9 @@ private fun DocumentScreenExample() {
                             "Jetpack Compose Playground document"
                         )
                     },
-                    modifier = Modifier.padding(vertical = 8.dp).hideWhenPrinting(),
+                    modifier = Modifier
+                        .padding(vertical = 8.dp)
+                        .hideWhenPrinting(),
                 ) {
                     Icon(
                         Icons.Outlined.Print,

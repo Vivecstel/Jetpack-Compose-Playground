@@ -45,8 +45,8 @@ import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -235,8 +235,10 @@ fun JetpackComposeApp(
                     composable(route = MaterialNavRoutes.ListItem) { ListItemScreen() }
                     composable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
                     composable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
+                    composable(route = MaterialNavRoutes.MaterialTheme) { MaterialThemeScreen() }
                     composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
                     composable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
+                    composable(route = MaterialNavRoutes.NavigationRail) { NavigationRailScreen() }
                     composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
                     composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
                     composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
@@ -301,6 +303,7 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.DrawWithContent) { DrawWithContentScreen() }
                     composable(route = UiNavRoutes.Font) { FontScreen() }
                     composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
+                    composable(route = UiNavRoutes.ImageBitmapToPixelMap) { ImageBitmapToPixelMapScreen() }
                     composable(route = UiNavRoutes.Layout) { LayoutScreen() }
                     composable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }
                     composable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
@@ -329,6 +332,7 @@ fun JetpackComposeApp(
                     composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
                     composable(route = UiNavRoutes.Popup) { PopupScreen() }
                     composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
+                    composable(route = UiNavRoutes.RelocationRequester) { RelocationRequesterScreen() }
                     composable(route = UiNavRoutes.Rotate) { RotateScreen() }
                     composable(route = UiNavRoutes.Scale) { ScaleScreen() }
                     composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
@@ -370,24 +374,27 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextPrinting) { ComposeRichTextPrintingScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.FlowLayout) { FlowLayoutScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.Insets) { InsetsScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) { NavigationAnimationAccompanistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) { NavigationMaterialAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
                     composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
                     composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.Pager) { PagerScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.PagerAccompanist) { PagerAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
                     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
                     composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.SwipeRefresh) { SwipeRefreshScreen() }
-                    composable(route = ExternalLibrariesNavRoutes.SystemUiController) {
-                        SystemUiControllerScreen(
+                    composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
+                        SystemUiControllerAccompanistScreen(
                             navController,
                             systemUiController
                         )

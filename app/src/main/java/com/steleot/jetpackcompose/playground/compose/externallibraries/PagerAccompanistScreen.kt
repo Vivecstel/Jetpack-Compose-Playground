@@ -16,12 +16,12 @@ import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import kotlin.math.*
 
-private const val Url = "external/PagerScreen.kt"
+private const val Url = "external/PagerAccompanistScreen.kt"
 
 @Composable
-fun PagerScreen() {
+fun PagerAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.Pager,
+        title = ExternalLibrariesNavRoutes.PagerAccompanist,
         link = Url,
     ) {
         PagerExample()

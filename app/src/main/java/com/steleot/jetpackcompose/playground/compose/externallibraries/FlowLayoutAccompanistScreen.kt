@@ -14,12 +14,12 @@ import com.google.accompanist.flowlayout.FlowRow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/FlowLayoutScreen.kt"
+private const val Url = "external/FlowLayoutAccompanistScreen.kt"
 
 @Composable
-fun FlowLayoutScreen() {
+fun FlowLayoutAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.FlowLayout,
+        title = ExternalLibrariesNavRoutes.FlowLayoutAccompanist,
         link = Url,
     ) {
         Row {

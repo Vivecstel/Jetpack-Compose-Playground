@@ -58,7 +58,9 @@ private fun MessageBubble(
         Surface(
             shape = if (isIncoming) IncomingShape else OutgoingShape,
             color = if (isIncoming) MaterialTheme.colors.secondary else MaterialTheme.colors.primary,
-            modifier = modifier.padding(8.dp).align(if (isIncoming) Alignment.Start else Alignment.End)
+            modifier = modifier
+                .padding(8.dp)
+                .align(if (isIncoming) Alignment.Start else Alignment.End)
         ) {
             Text(
                 text = text,

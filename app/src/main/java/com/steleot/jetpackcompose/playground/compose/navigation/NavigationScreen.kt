@@ -115,7 +115,7 @@ private fun NavigateButton(
 }
 
 @Composable
-fun NavigateBackButton(navController: NavController) {
+private fun NavigateBackButton(navController: NavController) {
     if (navController.previousBackStackEntry != null) {
         Button(
             onClick = { navController.popBackStack() },

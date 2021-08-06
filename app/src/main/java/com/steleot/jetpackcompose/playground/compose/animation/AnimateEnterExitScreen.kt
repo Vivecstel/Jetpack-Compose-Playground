@@ -80,7 +80,9 @@ private fun AnimateEnterExit(
                 Text(
                     text = "Jetpack Compose Playground",
                     color = MaterialTheme.colors.onSecondary,
-                    modifier = Modifier.align(Alignment.Center).padding(horizontal = 8.dp)
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .padding(horizontal = 8.dp)
                 )
             }
         }

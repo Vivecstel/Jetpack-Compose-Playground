@@ -17,12 +17,12 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import kotlinx.coroutines.delay
 
-private const val Url = "external/SwipeRefreshScreen.kt"
+private const val Url = "external/SwipeRefreshAccompanistScreen.kt"
 
 @Composable
-fun SwipeRefreshScreen() {
+fun SwipeRefreshAccompanistScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.SwipeRefresh,
+        title = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist,
         link = Url,
     ) {
         var refreshing by remember { mutableStateOf(false) }

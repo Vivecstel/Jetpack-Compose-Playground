@@ -13,10 +13,10 @@ interface InAppReviewHelper {
     fun resetCounter()
 }
 
-class InAppReviewHelperImpl (
+class InAppReviewHelperImpl(
     @ApplicationContext context: Context,
     private val protoManager: ProtoManager
-): InAppReviewHelper {
+) : InAppReviewHelper {
 
     private val reviewManager = ReviewManagerFactory.create(context)
     private var counter: Int = 0

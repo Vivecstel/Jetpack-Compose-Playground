@@ -33,15 +33,17 @@ fun DrawWithCacheScreen() {
 @Composable
 private fun DrawWithCacheExample() {
     Box(
-        Modifier.size(60.dp).drawWithCache {
-            val gradient = Brush.linearGradient(
-                colors = listOf(Color.Red, Color.Blue),
-                start = Offset.Zero,
-                end = Offset(size.width, size.height)
-            )
-            onDrawBehind {
-                drawRect(gradient)
+        Modifier
+            .size(60.dp)
+            .drawWithCache {
+                val gradient = Brush.linearGradient(
+                    colors = listOf(Color.Red, Color.Blue),
+                    start = Offset.Zero,
+                    end = Offset(size.width, size.height)
+                )
+                onDrawBehind {
+                    drawRect(gradient)
+                }
             }
-        }
     )
 }

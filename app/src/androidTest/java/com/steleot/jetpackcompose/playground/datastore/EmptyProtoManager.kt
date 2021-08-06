@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.datastore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
-class EmptyProtoManager: ProtoManager {
+class EmptyProtoManager : ProtoManager {
 
     override val isAnalyticsEnabled: Flow<Boolean> = flowOf(false)
 

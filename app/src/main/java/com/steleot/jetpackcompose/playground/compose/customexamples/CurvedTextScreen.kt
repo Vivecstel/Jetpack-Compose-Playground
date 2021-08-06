@@ -42,7 +42,9 @@ fun CurvedTextScreen() {
 private fun CurvedTextExample() {
     val colorPrimary = MaterialTheme.colors.primary
     Canvas(
-        modifier = Modifier.size(250.dp).border(1.dp, colorPrimary)
+        modifier = Modifier
+            .size(250.dp)
+            .border(1.dp, colorPrimary)
     ) {
         drawIntoCanvas {
             val topPadding = 90.dp.toPx()
