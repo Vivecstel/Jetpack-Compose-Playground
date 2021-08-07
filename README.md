@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 220 screens** with examples of **Jetpack Compose**.
+Offering **more than 230 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 220 screens with
+has to offer and how it improves everyday Android UI development. It offers more 230 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -60,8 +60,15 @@ Download from:
  - ConstraintLayout
    - [Barrier](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/BarrierScreen.kt)
    - [Chain](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/ChainScreen.kt)
+   - [Circular](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/CircularScreen.kt)
    - [ConstraintSet](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/ConstraintSetScreen.kt)
+   - [CreateGuideline](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/CreateGuidelineScreen.kt)
    - [CreateRefs](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/CreateRefsScreen.kt)
+   - [JsonConstraintSet](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/JsonConstraintSetScreen.kt)
+   - [JsonConstraintSetWithVariables](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/JsonConstraintSetWithVariablesScreen.kt)
+   - [MotionLayout1](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/MotionLayout1Screen.kt)
+   - [MotionLayout2](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/MotionLayout2Screen.kt)
+   - [MotionLayout3](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/constraintlayout/MotionLayout3Screen.kt)
  - CustomExamples
    - [AdMobBanner](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/AdMobBannerScreen.kt)
    - [AnimatedDeleteList](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/customexamples/AnimatedDeleteListScreen.kt)
