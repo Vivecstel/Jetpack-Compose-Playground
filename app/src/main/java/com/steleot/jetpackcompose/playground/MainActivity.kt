@@ -183,8 +183,15 @@ fun JetpackComposeApp(
                     /* constraint layout */
                     composable(route = ConstraintLayoutNavRoutes.Barrier) { BarrierScreen() }
                     composable(route = ConstraintLayoutNavRoutes.Chain) { ChainScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.Circular) { CircularScreen() }
                     composable(route = ConstraintLayoutNavRoutes.ConstraintSet) { ConstraintSetScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.CreateGuideline) { CreateGuidelineScreen() }
                     composable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSet) { JsonConstraintSetScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) { JsonConstraintSetWithVariablesScreen() }
+                    composable(route = ConstraintLayoutNavRoutes.MotionLayout1) { MotionLayout1Screen() }
+                    composable(route = ConstraintLayoutNavRoutes.MotionLayout2) { MotionLayout2Screen() }
+                    composable(route = ConstraintLayoutNavRoutes.MotionLayout3) { MotionLayout3Screen() }
                     /* foundation */
                     composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
                     composable(route = FoundationNavRoutes.Border) { BorderScreen() }

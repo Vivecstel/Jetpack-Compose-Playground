@@ -9,8 +9,15 @@ import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 val routes = listOf(
     ConstraintLayoutNavRoutes.Barrier,
     ConstraintLayoutNavRoutes.Chain,
+    ConstraintLayoutNavRoutes.Circular,
     ConstraintLayoutNavRoutes.ConstraintSet,
+    ConstraintLayoutNavRoutes.CreateGuideline,
     ConstraintLayoutNavRoutes.CreateRefs,
+    ConstraintLayoutNavRoutes.JsonConstraintSet,
+    ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables,
+    ConstraintLayoutNavRoutes.MotionLayout1,
+    ConstraintLayoutNavRoutes.MotionLayout2,
+    ConstraintLayoutNavRoutes.MotionLayout3,
 )
 
 @Composable
