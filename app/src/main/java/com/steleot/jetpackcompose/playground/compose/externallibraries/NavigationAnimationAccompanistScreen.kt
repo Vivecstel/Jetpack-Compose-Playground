@@ -165,20 +165,21 @@ private fun BlueScreen(navController: NavHostController) {
         Modifier
             .fillMaxSize()
             .background(Color.Blue)
+            .padding(16.dp)
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Horizontal",
             Modifier
                 .wrapContentWidth()
-                .then(Modifier.align(Alignment.CenterHorizontally))
+                .align(Alignment.CenterHorizontally)
         ) { navController.navigate("Red") }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Expand",
             Modifier
                 .wrapContentWidth()
-                .then(Modifier.align(Alignment.CenterHorizontally))
+                .align(Alignment.CenterHorizontally)
         ) { navController.navigate("Inner") }
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)
@@ -191,20 +192,21 @@ private fun RedScreen(navController: NavHostController) {
         Modifier
             .fillMaxSize()
             .background(Color.Red)
+            .padding(16.dp)
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Horizontal",
             Modifier
                 .wrapContentWidth()
-                .then(Modifier.align(Alignment.CenterHorizontally))
+                .align(Alignment.CenterHorizontally)
         ) { navController.navigate("Blue") }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Vertical",
             Modifier
                 .wrapContentWidth()
-                .then(Modifier.align(Alignment.CenterHorizontally))
+                .align(Alignment.CenterHorizontally)
         ) { navController.navigate("Green") }
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)
@@ -223,7 +225,7 @@ private fun GreenScreen(navController: NavHostController) {
             "Navigate to Red",
             Modifier
                 .wrapContentWidth()
-                .then(Modifier.align(Alignment.CenterHorizontally))
+                .align(Alignment.CenterHorizontally)
         ) { navController.navigate("Red") }
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)

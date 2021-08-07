@@ -175,6 +175,8 @@ object Libraries {
     /* https://github.com/halilozercan/compose-richtext */
     const val composeRichtextUi =
         "com.halilibo.compose-richtext:richtext-ui:${Versions.composeRichtext}"
+    const val composeRichtextUiMaterial =
+        "com.halilibo.compose-richtext:richtext-ui-material:${Versions.composeRichtext}"
     const val composeRichtextPrinting =
         "com.halilibo.compose-richtext:printing:${Versions.composeRichtext}"
     const val composeRichtextSlideshow =

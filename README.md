@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 210 screens** with examples of **Jetpack Compose**.
+Offering **more than 220 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 210 screens with
+has to offer and how it improves everyday Android UI development. It offers more 220 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -85,6 +85,7 @@ Download from:
    - [ComposeMarkdown](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeMarkdownScreen.kt)
    - [ComposeRichTextPrinting](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextPrintingScreen.kt)
    - [ComposeRichTextSlideshow](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextSlideshowScreen.kt)
+   - [ComposeRichTextUiMaterial](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextUiMaterialScreen.kt)
    - [ComposeRichTextUi](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextUiScreen.kt)
    - [DrawablePainterAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/DrawablePainterAccompanistScreen.kt)
    - [FlowLayoutAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/FlowLayoutAccompanistScreen.kt)

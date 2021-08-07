@@ -168,6 +168,7 @@ dependencies {
     implementation(Libraries.composeMarkdown)
     implementation(Libraries.composeBarcodes)
     implementation(Libraries.composeRichtextUi)
+    implementation(Libraries.composeRichtextUiMaterial)
     implementation(Libraries.composeRichtextPrinting)
     implementation(Libraries.composeRichtextSlideshow)
     implementation(Libraries.adMob)

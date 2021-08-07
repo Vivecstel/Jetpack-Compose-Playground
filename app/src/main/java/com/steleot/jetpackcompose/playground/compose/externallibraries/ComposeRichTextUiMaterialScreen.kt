@@ -14,14 +14,15 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.zachklipp.richtext.ui.*
+import com.zachklipp.richtext.ui.material.RichText
 import com.zachklipp.richtext.ui.string.richTextString
 
-private const val Url = "external/ComposeRichTextUiScreen.kt"
+private const val Url = "external/ComposeRichTextUiMaterialScreen.kt"
 
 @Composable
-fun ComposeRichTextUiScreen() {
+fun ComposeRichTextUiMaterialScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.ComposeRichTextUi,
+        title = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
         link = Url,
     ) {
         Column(
@@ -38,7 +39,7 @@ fun ComposeRichTextUiScreen() {
 
 @Composable
 private fun BasicRichTextExample() {
-    RichTextScope.Default.BasicRichText(modifier = Modifier.padding(16.dp)) {
+    RichText(modifier = Modifier.padding(16.dp)) {
         Heading(0, "Paragraphs")
         richTextString {
         }

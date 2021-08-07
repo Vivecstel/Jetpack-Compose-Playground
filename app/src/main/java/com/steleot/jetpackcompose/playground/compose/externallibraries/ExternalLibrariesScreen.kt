@@ -15,6 +15,7 @@ val routes = listOf(
 //    ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.ComposeRichTextPrinting,
     ExternalLibrariesNavRoutes.ComposeRichTextSlideshow,
+    ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
     ExternalLibrariesNavRoutes.ComposeRichTextUi,
     ExternalLibrariesNavRoutes.DrawablePainterAccompanist,
     ExternalLibrariesNavRoutes.FlowLayoutAccompanist,

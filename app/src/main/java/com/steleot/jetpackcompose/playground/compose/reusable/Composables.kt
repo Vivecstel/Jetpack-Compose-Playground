@@ -46,7 +46,8 @@ fun DefaultListItem(
     Card(
         onClick = cardClickAction,
         modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .padding(horizontal = 16.dp, vertical = 4.dp),
+        elevation = 4.dp
     ) {
         Text(
             text,

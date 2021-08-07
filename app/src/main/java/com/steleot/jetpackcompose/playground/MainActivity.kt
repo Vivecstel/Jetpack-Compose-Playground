@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -88,12 +89,19 @@ fun JetpackComposeApp(
         ProvideWindowInsets {
             CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
                 val navController = rememberNavController()
-                navController.addOnDestinationChangedListener { _, destination, _ ->
-                    destination.route?.let { route ->
-                        Timber.d("Route : $route")
-                        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-                            param(FirebaseAnalytics.Param.SCREEN_NAME, route)
+                DisposableEffect(Unit) {
+                    val listener =
+                        NavController.OnDestinationChangedListener { _, destination, _ ->
+                            destination.route?.let { route ->
+                                Timber.d("Route : $route")
+                                firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+                                    param(FirebaseAnalytics.Param.SCREEN_NAME, route)
+                                }
+                            }
                         }
+                    navController.addOnDestinationChangedListener(listener)
+                    onDispose {
+                        navController.removeOnDestinationChangedListener(listener)
                     }
                 }
                 NavHost(navController = navController, startDestination = MainNavRoutes.Main) {
@@ -373,6 +381,7 @@ fun JetpackComposeApp(
                     composable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextPrinting) { ComposeRichTextPrintingScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
+                    composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
                     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
                     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
                     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }

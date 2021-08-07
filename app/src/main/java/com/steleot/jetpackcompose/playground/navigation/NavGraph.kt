@@ -265,6 +265,7 @@ object ExternalLibrariesNavRoutes {
     const val ComposeNeumorphism = "compose neumorphism"
     const val ComposeRichTextPrinting = "compose rich text printing"
     const val ComposeRichTextSlideshow = "compose rich text slideshow"
+    const val ComposeRichTextUiMaterial = "compose rich text ui material"
     const val ComposeRichTextUi = "compose rich text ui"
     const val DrawablePainterAccompanist = "drawable painter accompanist"
     const val FlowLayoutAccompanist = "flow layout accompanist"
