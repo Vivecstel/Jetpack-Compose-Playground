@@ -1,5 +1,5 @@
 build:
-  maxIssues: 25
+  maxIssues: 40
 
 comments:
   CommentOverPrivateProperty:

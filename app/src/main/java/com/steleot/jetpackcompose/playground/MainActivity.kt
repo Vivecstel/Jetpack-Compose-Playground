@@ -222,6 +222,7 @@ fun JetpackComposeApp(
                     composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
                     composable(route = FoundationLayoutNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
                     composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
+                    composable(route = FoundationLayoutNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
                     composable(route = FoundationLayoutNavRoutes.Intrinsic) { IntrinsicScreen() }
                     composable(route = FoundationLayoutNavRoutes.Offset) { OffsetScreen() }
                     composable(route = FoundationLayoutNavRoutes.Padding) { PaddingScreen() }
@@ -378,6 +379,7 @@ fun JetpackComposeApp(
                     composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
                     composable(route = CustomExamplesNavRoutes.MessageBubble) { MessageBubbleScreen() }
                     composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
+                    composable(route = CustomExamplesNavRoutes.StyledText) { StyledTextScreen() }
                     composable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
                     /* external */
                     composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }

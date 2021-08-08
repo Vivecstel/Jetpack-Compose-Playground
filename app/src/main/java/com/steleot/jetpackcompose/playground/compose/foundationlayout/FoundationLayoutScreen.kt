@@ -11,6 +11,7 @@ val routes = listOf(
     FoundationLayoutNavRoutes.Box,
     FoundationLayoutNavRoutes.BoxWithConstraints,
     FoundationLayoutNavRoutes.Column,
+    FoundationLayoutNavRoutes.DefaultMinSize,
     FoundationLayoutNavRoutes.Intrinsic,
     FoundationLayoutNavRoutes.Offset,
     FoundationLayoutNavRoutes.Padding,

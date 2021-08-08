@@ -34,93 +34,96 @@ fun NavigationAnimationAccompanistScreen() {
     }
 }
 
+private const val Blue = "Blue"
+private const val Red = "Red"
+private const val Green = "Green"
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun NavigationAnimationExample() {
     val navController = rememberAnimatedNavController()
-    AnimatedNavHost(navController, startDestination = "Blue") {
+    AnimatedNavHost(navController, startDestination = Blue) {
         composable(
-            "Blue",
+            Blue,
             enterTransition = { initial, _ ->
                 when (initial.destination.route) {
-                    "Red" ->
+                    Red ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             exitTransition = { _, target ->
                 when (target.destination.route) {
-                    "Red" ->
+                    Red ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             popEnterTransition = { initial, _ ->
                 when (initial.destination.route) {
-                    "Red" ->
+                    Red ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             popExitTransition = { _, target ->
                 when (target.destination.route) {
-                    "Red" ->
+                    Red ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
                 }
             }
         ) { BlueScreen(navController) }
         composable(
-            "Red",
+            Red,
             enterTransition = { initial, _ ->
                 when (initial.destination.route) {
-                    "Blue" ->
+                    Blue ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
-                    "Green" ->
+                    Green ->
                         slideInVertically(initialOffsetY = { 1800 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             exitTransition = { _, target ->
                 when (target.destination.route) {
-                    "Blue" ->
+                    Blue ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
-                    "Green" ->
+                    Green ->
                         slideOutVertically(targetOffsetY = { -1800 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             popEnterTransition = { initial, _ ->
                 when (initial.destination.route) {
-                    "Blue" ->
+                    Blue ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
-                    "Green" ->
+                    Green ->
                         slideInVertically(initialOffsetY = { -1800 }, animationSpec = tween(700))
                     else -> null
                 }
             },
             popExitTransition = { _, target ->
                 when (target.destination.route) {
-                    "Blue" ->
+                    Blue ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
-                    "Green" ->
+                    Green ->
                         slideOutVertically(targetOffsetY = { 1800 }, animationSpec = tween(700))
                     else -> null
                 }
             }
         ) { RedScreen(navController) }
         navigation(
-            startDestination = "Green",
+            startDestination = Green,
             route = "Inner",
             enterTransition = { _, _ -> expandIn(animationSpec = tween(700)) },
             exitTransition = { _, _ -> shrinkOut(animationSpec = tween(700)) }
         ) {
             composable(
-                "Green",
+                Green,
                 enterTransition = { initial, _ ->
                     when (initial.destination.route) {
-                        "Red" ->
+                        Red ->
                             slideInVertically(
                                 initialOffsetY = { 1800 }, animationSpec = tween(700)
                             )
@@ -129,7 +132,7 @@ private fun NavigationAnimationExample() {
                 },
                 exitTransition = { _, target ->
                     when (target.destination.route) {
-                        "Red" ->
+                        Red ->
                             slideOutVertically(
                                 targetOffsetY = { -1800 }, animationSpec = tween(700)
                             )
@@ -138,7 +141,7 @@ private fun NavigationAnimationExample() {
                 },
                 popEnterTransition = { initial, _ ->
                     when (initial.destination.route) {
-                        "Red" ->
+                        Red ->
                             slideInVertically(
                                 initialOffsetY = { -1800 }, animationSpec = tween(700)
                             )
@@ -147,7 +150,7 @@ private fun NavigationAnimationExample() {
                 },
                 popExitTransition = { _, target ->
                     when (target.destination.route) {
-                        "Red" ->
+                        Red ->
                             slideOutVertically(
                                 targetOffsetY = { 1800 }, animationSpec = tween(700)
                             )
@@ -173,7 +176,7 @@ private fun BlueScreen(navController: NavHostController) {
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
-        ) { navController.navigate("Red") }
+        ) { navController.navigate(Red) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Expand",
@@ -200,14 +203,14 @@ private fun RedScreen(navController: NavHostController) {
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
-        ) { navController.navigate("Blue") }
+        ) { navController.navigate(Blue) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
             "Navigate Vertical",
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
-        ) { navController.navigate("Green") }
+        ) { navController.navigate(Green) }
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)
     }
@@ -226,7 +229,7 @@ private fun GreenScreen(navController: NavHostController) {
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
-        ) { navController.navigate("Red") }
+        ) { navController.navigate(Red) }
         Spacer(Modifier.weight(1f))
         NavigateBackButton(navController)
     }

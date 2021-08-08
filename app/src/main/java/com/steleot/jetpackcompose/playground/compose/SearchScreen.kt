@@ -29,6 +29,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
+import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -54,7 +55,7 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewMod
 fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
     val search: String by viewModel.search.collectAsState()
-    val filteredRoutes: List<String> by viewModel.filteredRoutes.collectAsState()
+    val filteredRoutes: List<Pair<String, Boolean>> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
@@ -90,14 +91,14 @@ fun SearchScreen(navController: NavHostController) {
         },
     ) {
         LazyColumn {
-            items(filteredRoutes) { item ->
+            items(filteredRoutes) { (route, shouldShowRibbon) ->
                 DefaultListItem(
                     text = getListAnnotatedString(
-                        item.capitalizeFirstLetter(), search, MaterialTheme.colors.secondary
+                        route.capitalizeFirstLetter(), search, MaterialTheme.colors.secondary
                     ),
-                    modifier = Modifier.fillMaxWidth()
+                    shouldShowRibbon = shouldShowRibbon
                 ) {
-                    navController.navigate(item)
+                    navController.navigate(route)
                 }
             }
         }
@@ -148,7 +149,7 @@ private fun getListAnnotatedString(
 
 class SearchViewModel : ViewModel() {
 
-    private val routes: List<String> =
+    private val routes =
         (activityRoutes +
                 animationRoutes +
                 constraintLayoutRoutes +
@@ -163,15 +164,17 @@ class SearchViewModel : ViewModel() {
                 uiRoutes +
                 viewModelRoutes +
                 customExamplesRoutes +
-                externalRoutes).sorted()
+                externalRoutes).sorted().map { route ->
+            route to (route in ribbonRoutes)
+        }
     private val _search = MutableStateFlow("")
     val search: StateFlow<String> = _search
 
     private val _filteredRoutes = MutableStateFlow(routes)
-    val filteredRoutes: StateFlow<List<String>> = _filteredRoutes
+    val filteredRoutes: StateFlow<List<Pair<String, Boolean>>> = _filteredRoutes
 
     fun onSearchChange(search: String) {
         _search.value = search
-        _filteredRoutes.value = routes.filter { it.contains(search, ignoreCase = true) }
+        _filteredRoutes.value = routes.filter { it.first.contains(search, ignoreCase = true) }
     }
 }

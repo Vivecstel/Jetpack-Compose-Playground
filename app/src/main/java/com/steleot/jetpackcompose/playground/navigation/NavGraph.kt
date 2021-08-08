@@ -90,6 +90,7 @@ object FoundationLayoutNavRoutes {
     const val Box = "box"
     const val BoxWithConstraints = "box with constraints"
     const val Column = "column"
+    const val DefaultMinSize = "default min size"
     const val Intrinsic = "intrinsic"
     const val Offset = "offset"
     const val Padding = "padding"
@@ -260,6 +261,7 @@ object CustomExamplesNavRoutes {
     const val FirstBaselineToTop = "first baseline to top"
     const val MessageBubble = "message bubble"
     const val StaggeredGridList = "staggered grid list"
+    const val StyledText = "styled text"
     const val TearDrop = "tear drop"
 }
 

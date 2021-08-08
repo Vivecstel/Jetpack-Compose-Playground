@@ -11,7 +11,7 @@ object Versions {
     const val googleServices = "4.3.8"
     const val crashlytics = "2.7.1"
     const val benManes = "0.39.0"
-    const val detekt = "1.18.0-RC2"
+    const val detekt = "1.18.0-RC3"
     const val doctor = "0.7.1"
     const val protobufPlugin = "0.8.17"
 

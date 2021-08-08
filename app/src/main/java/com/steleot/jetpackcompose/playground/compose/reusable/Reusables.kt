@@ -3,8 +3,11 @@ package com.steleot.jetpackcompose.playground.compose.reusable
 import android.app.Activity
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -14,7 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -28,11 +33,11 @@ import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 @Composable
 fun DefaultListItem(
     text: String,
-    modifier: Modifier = Modifier,
+    shouldShowRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
 ) {
     DefaultListItem(
-        AnnotatedString(text.capitalizeFirstLetter()), modifier, cardClickAction
+        AnnotatedString(text.capitalizeFirstLetter()), shouldShowRibbon, cardClickAction
     )
 }
 
@@ -40,20 +45,41 @@ fun DefaultListItem(
 @Composable
 fun DefaultListItem(
     text: AnnotatedString,
-    modifier: Modifier = Modifier,
+    shouldShowRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
 ) {
-    Card(
-        onClick = cardClickAction,
-        modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 4.dp),
-        elevation = 4.dp
-    ) {
-        Text(
-            text,
-            style = MaterialTheme.typography.body1,
-            modifier = modifier.padding(16.dp)
-        )
+    with(LocalDensity.current) {
+        val offset = 28.dp.toPx()
+        val secondaryColor = MaterialTheme.colors.secondary
+        Card(
+            onClick = cardClickAction,
+            modifier = Modifier
+                .padding(horizontal = 16.dp, vertical = 4.dp),
+            elevation = 4.dp
+        ) {
+            ListItem(
+                trailing = {
+                    if (shouldShowRibbon) {
+                        Canvas(
+                            modifier = Modifier
+                                .height(48.dp)
+                                .width(15.dp)
+                        ) {
+                            drawPath(
+                                getRibbonPath(size.width, size.height - offset),
+                                secondaryColor
+                            )
+                        }
+                    }
+                }
+            ) {
+                Text(
+                    text,
+                    style = MaterialTheme.typography.body1,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+        }
     }
 }
 

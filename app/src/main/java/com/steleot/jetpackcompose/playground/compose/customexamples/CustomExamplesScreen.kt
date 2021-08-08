@@ -21,6 +21,7 @@ val routes = listOf(
     CustomExamplesNavRoutes.FirstBaselineToTop,
     CustomExamplesNavRoutes.MessageBubble,
     CustomExamplesNavRoutes.StaggeredGridList,
+    CustomExamplesNavRoutes.StyledText,
     CustomExamplesNavRoutes.TearDrop,
 )
 

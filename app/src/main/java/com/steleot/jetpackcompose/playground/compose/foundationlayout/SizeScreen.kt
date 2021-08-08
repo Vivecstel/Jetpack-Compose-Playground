@@ -44,7 +44,6 @@ fun SizeScreen() {
             WrapContentAlignedBox()
             WrapContentVerticallyAlignedBox()
             WrapContentHorizontallyAlignedBox()
-            MinSizeBox()
         }
     }
 }
@@ -256,19 +255,4 @@ private fun WrapContentHorizontallyAlignedBox() {
             .requiredWidth(20.dp)
             .background(Color.Blue)
     )
-}
-
-@Preview
-@Composable
-private fun MinSizeBox() {
-    @Composable
-    fun DefaultMinBox(modifier: Modifier = Modifier) {
-        Box(
-            modifier
-                .defaultMinSize(minWidth = 100.dp, minHeight = 100.dp)
-                .background(Color.Blue)
-        )
-    }
-    DefaultMinBox()
-    DefaultMinBox(Modifier.sizeIn(minWidth = 50.dp, minHeight = 50.dp))
 }

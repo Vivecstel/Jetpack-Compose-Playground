@@ -10,6 +10,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -19,6 +20,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 private val routes = listOf(
@@ -49,6 +51,11 @@ fun MainScreen(
     showSettings: Boolean = false,
     showAd: Boolean = true,
 ) {
+    val routesWithRibbons = remember {
+        list.map { route ->
+            route to (route in ribbonRoutes)
+        }
+    }
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
@@ -77,12 +84,12 @@ fun MainScreen(
                 .padding(it)
                 .verticalScroll(rememberScrollState())
         ) {
-            list.forEach { item ->
+            routesWithRibbons.forEach { (route, shouldShowRibbon) ->
                 DefaultListItem(
-                    text = item,
-                    modifier = Modifier.fillMaxWidth()
+                    text = route,
+                    shouldShowRibbon = shouldShowRibbon
                 ) {
-                    navController.navigate(item)
+                    navController.navigate(route)
                 }
             }
             if (showAd) {
