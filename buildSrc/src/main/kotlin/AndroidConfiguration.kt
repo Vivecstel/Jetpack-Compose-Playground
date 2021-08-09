@@ -8,6 +8,6 @@ object AndroidConfiguration {
     const val targetSdk = compileSdk
 
     const val appId = "com.steleot.jetpackcompose.playground"
-    const val versionCode = 31
-    const val versionName = "2.6.0"
+    const val versionCode = 32
+    const val versionName = "2.7.0"
 }
