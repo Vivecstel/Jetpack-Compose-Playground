@@ -25,12 +25,12 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
 
-private const val Url = "activity/LauncherForActivityResultScreen.kt"
+private const val Url = "activity/LauncherForActivityResult1Screen.kt"
 
 @Composable
-fun LauncherForActivityResultScreen() {
+fun LauncherForActivityResult1Screen() {
     DefaultScaffold(
-        title = ActivityNavRoutes.LauncherForActivityResult,
+        title = ActivityNavRoutes.LauncherForActivityResult1,
         link = Url,
     ) {
         Column(

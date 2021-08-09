@@ -23,7 +23,8 @@ object MainNavRoutes {
 
 object ActivityNavRoutes {
     const val BackHandler = "back handler"
-    const val LauncherForActivityResult = "launch for activity result"
+    const val LauncherForActivityResult1 = "launch for activity result 1"
+    const val LauncherForActivityResult2 = "launch for activity result 2"
 }
 
 object AnimationNavRoutes {

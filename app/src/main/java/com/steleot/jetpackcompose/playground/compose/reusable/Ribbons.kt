@@ -16,6 +16,9 @@ fun getRibbonPath(
 
 val ribbonRoutes = listOf(
     /* 2.7.0 release */
+    MainNavRoutes.Activity,
+    ActivityNavRoutes.LauncherForActivityResult1,
+    ActivityNavRoutes.LauncherForActivityResult2,
     MainNavRoutes.CustomExamples,
     CustomExamplesNavRoutes.StyledText,
     MainNavRoutes.FoundationLayout,

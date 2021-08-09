@@ -32,13 +32,17 @@ fun PermissionsAccompanistScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            PermissionsAccompanistExample {
-                context.startActivity(
-                    Intent(
-                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                        Uri.fromParts("package", BuildConfig.APPLICATION_ID, null)
+            PermissionsAccompanistExample(
+                navigateToSettingsScreen = {
+                    context.startActivity(
+                        Intent(
+                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            Uri.fromParts("package", BuildConfig.APPLICATION_ID, null)
+                        )
                     )
-                )
+                }
+            ) {
+                Text("Feature not available")
             }
         }
     }
@@ -46,8 +50,9 @@ fun PermissionsAccompanistScreen() {
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
-private fun PermissionsAccompanistExample(
-    navigateToSettingsScreen: () -> Unit
+fun PermissionsAccompanistExample(
+    navigateToSettingsScreen: () -> Unit,
+    successContent: @Composable () -> Unit,
 ) {
     val cameraPermissionState = rememberPermissionState(
         android.Manifest.permission.CAMERA
@@ -58,7 +63,7 @@ private fun PermissionsAccompanistExample(
 
     when {
         cameraPermissionState.hasPermission -> {
-            Text("Camera permission Granted")
+            successContent()
         }
         cameraPermissionState.shouldShowRationale -> {
             if (doNotShowRationale) {

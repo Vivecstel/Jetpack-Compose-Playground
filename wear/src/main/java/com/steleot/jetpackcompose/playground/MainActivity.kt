@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun JetpackComposeApp() {
     val isDarkTheme = isSystemInDarkTheme()
-    var themeState by rememberSaveable {
+    val themeState by rememberSaveable {
         mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
     }
     JetpackComposePlaygroundTheme(

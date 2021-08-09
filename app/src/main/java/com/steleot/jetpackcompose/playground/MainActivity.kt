@@ -22,7 +22,8 @@ import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.SettingsScreen
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
-import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResultScreen
+import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResult1Screen
+import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResult2Screen
 import com.steleot.jetpackcompose.playground.compose.animation.*
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.*
 import com.steleot.jetpackcompose.playground.compose.customexamples.*
@@ -163,7 +164,8 @@ fun JetpackComposeApp(
                             navController
                         )
                     }
-                    composable(route = ActivityNavRoutes.LauncherForActivityResult) { LauncherForActivityResultScreen() }
+                    composable(route = ActivityNavRoutes.LauncherForActivityResult1) { LauncherForActivityResult1Screen() }
+                    composable(route = ActivityNavRoutes.LauncherForActivityResult2) { LauncherForActivityResult2Screen() }
                     /* animation */
                     composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
                     composable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }

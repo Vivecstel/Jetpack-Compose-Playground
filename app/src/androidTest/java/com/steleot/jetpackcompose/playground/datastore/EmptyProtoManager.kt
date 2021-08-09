@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.datastore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
+@Suppress("unused")
 class EmptyProtoManager : ProtoManager {
 
     override val isAnalyticsEnabled: Flow<Boolean> = flowOf(false)

@@ -8,7 +8,8 @@ import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 val routes = listOf(
     ActivityNavRoutes.BackHandler,
-    ActivityNavRoutes.LauncherForActivityResult,
+    ActivityNavRoutes.LauncherForActivityResult1,
+    ActivityNavRoutes.LauncherForActivityResult2,
 )
 
 @Composable
