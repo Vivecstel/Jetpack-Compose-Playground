@@ -12,7 +12,7 @@ import com.simonsickle.compose.barcodes.BarcodeType
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/ComposeBarcodesScreen.kt"
+private const val Url = "externallibraries/ComposeBarcodesScreen.kt"
 private const val BarcodeUrl = "https://github.com/Vivecstel/Jetpack-Compose-Playground/tree/master"
 
 @Composable

@@ -19,7 +19,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import timber.log.Timber
 
-private const val Url = "external/CoilScreen.kt"
+private const val Url = "externallibraries/CoilScreen.kt"
 
 @Composable
 fun CoilScreen() {

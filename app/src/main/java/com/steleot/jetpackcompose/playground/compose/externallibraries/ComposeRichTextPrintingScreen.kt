@@ -22,7 +22,7 @@ import com.zachklipp.richtext.ui.printing.hideWhenPrinting
 import com.zachklipp.richtext.ui.printing.rememberPrintableController
 import com.zachklipp.richtext.ui.printing.responsivePadding
 
-private const val Url = "external/ComposeRichTextPrintingScreen.kt"
+private const val Url = "externallibraries/ComposeRichTextPrintingScreen.kt"
 
 @Composable
 fun ComposeRichTextPrintingScreen() {

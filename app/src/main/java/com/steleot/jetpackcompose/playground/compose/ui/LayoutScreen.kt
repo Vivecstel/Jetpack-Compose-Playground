@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.offset
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
-private const val Url = "ui/FoundationLayoutScreen.kt"
+private const val Url = "ui/LayoutScreen.kt"
 
 @Composable
 fun LayoutScreen() {

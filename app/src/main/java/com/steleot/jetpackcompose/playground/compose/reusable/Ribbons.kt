@@ -15,6 +15,7 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = listOf(
+    /* 2.7.1 release */
     /* 2.7.0 release */
     MainNavRoutes.Activity,
     ActivityNavRoutes.LauncherForActivityResult1,
@@ -32,9 +33,4 @@ val ribbonRoutes = listOf(
     ConstraintLayoutNavRoutes.MotionLayout1,
     ConstraintLayoutNavRoutes.MotionLayout2,
     ConstraintLayoutNavRoutes.MotionLayout3,
-    /* 2.5.1 release */
-    MainNavRoutes.ExternalLibraries,
-    ExternalLibrariesNavRoutes.ComposeCharts,
-    ExternalLibrariesNavRoutes.ComposeRichTextUi,
-    ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
 )

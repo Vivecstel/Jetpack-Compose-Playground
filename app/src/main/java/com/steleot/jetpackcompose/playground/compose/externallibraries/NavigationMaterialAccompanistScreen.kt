@@ -21,7 +21,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import java.util.*
 
-private const val Url = "navigation/NavigationMaterialAccompanistScreen.kt"
+private const val Url = "externallibraries/NavigationMaterialAccompanistScreen.kt"
 
 @Composable
 fun NavigationMaterialAccompanistScreen() {

@@ -17,7 +17,7 @@ import com.zachklipp.richtext.ui.*
 import com.zachklipp.richtext.ui.material.RichText
 import com.zachklipp.richtext.ui.string.richTextString
 
-private const val Url = "external/ComposeRichTextUiMaterialScreen.kt"
+private const val Url = "externallibraries/ComposeRichTextUiMaterialScreen.kt"
 
 @Composable
 fun ComposeRichTextUiMaterialScreen() {

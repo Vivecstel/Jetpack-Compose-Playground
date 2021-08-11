@@ -22,7 +22,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "navigation/NavigationAnimationAccompanistScreen.kt"
+private const val Url = "externallibraries/NavigationAnimationAccompanistScreen.kt"
 
 @Composable
 fun NavigationAnimationAccompanistScreen() {

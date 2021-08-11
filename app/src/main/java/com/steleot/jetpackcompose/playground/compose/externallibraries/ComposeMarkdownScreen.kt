@@ -16,7 +16,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import dev.jeziellago.compose.markdowntext.MarkdownText
 
-private const val Url = "external/ComposeMarkdownScreen.kt"
+private const val Url = "externallibraries/ComposeMarkdownScreen.kt"
 
 @Composable
 fun ComposeMarkdownScreen() {

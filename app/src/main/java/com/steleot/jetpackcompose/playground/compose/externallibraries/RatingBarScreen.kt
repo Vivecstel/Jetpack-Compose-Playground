@@ -16,7 +16,7 @@ import com.gowtham.ratingbar.RatingBarStyle
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/RatingBarScreen.kt"
+private const val Url = "externallibraries/RatingBarScreen.kt"
 
 @Composable
 fun RatingBarScreen() {

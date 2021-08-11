@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import com.google.accompanist.insets.systemBarsPadding
+import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.LocalInAppReviewer
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 
@@ -89,10 +90,6 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 
 }
 
-private const val BaseUrl =
-    "https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/master/app/" +
-            "src/main/java/com/steleot/jetpackcompose/playground/compose/"
-
 @Preview
 @Composable
 fun DefaultTopAppBar(
@@ -136,7 +133,7 @@ fun GoToGithubButton(link: String) {
     val context = LocalContext.current
     IconButton(onClick = {
         context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-            data = "$BaseUrl$link".toUri()
+            data = "${BuildConfig.BASE_URL}$link".toUri()
         })
     }) {
         Icon(

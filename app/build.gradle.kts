@@ -26,6 +26,8 @@ android {
         versionCode = AndroidConfiguration.versionCode
         versionName = AndroidConfiguration.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", AndroidConfiguration.baseUrl)
     }
 
     val isReleasedEnabled = rootProject.file("signing/signing_info.properties").exists()

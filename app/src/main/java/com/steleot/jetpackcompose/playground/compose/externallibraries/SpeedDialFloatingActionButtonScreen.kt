@@ -15,7 +15,7 @@ import de.charlex.compose.SpeedDialData
 import de.charlex.compose.SpeedDialFloatingActionButton
 import timber.log.Timber
 
-private const val Url = "external/SpeedDialFloatingActionButtonScreen.kt"
+private const val Url = "externallibraries/SpeedDialFloatingActionButtonScreen.kt"
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

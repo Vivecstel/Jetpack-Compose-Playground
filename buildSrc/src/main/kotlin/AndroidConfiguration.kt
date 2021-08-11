@@ -10,4 +10,8 @@ object AndroidConfiguration {
     const val appId = "com.steleot.jetpackcompose.playground"
     const val versionCode = 32
     const val versionName = "2.7.0"
+
+    private const val branch = "develop"
+    const val baseUrl = "\"https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/$branch/" +
+            "app/src/main/java/com/steleot/jetpackcompose/playground/compose/\""
 }

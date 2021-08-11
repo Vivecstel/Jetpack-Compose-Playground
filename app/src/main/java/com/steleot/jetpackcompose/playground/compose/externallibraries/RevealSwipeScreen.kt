@@ -21,7 +21,7 @@ import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRout
 import de.charlex.compose.RevealDirection
 import de.charlex.compose.RevealSwipe
 
-private const val Url = "external/RevealSwipeScreen.kt"
+private const val Url = "externallibraries/RevealSwipeScreen.kt"
 
 private val pairs = listOf(
     Pair("item1", Color.Blue),

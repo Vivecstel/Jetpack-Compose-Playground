@@ -24,7 +24,7 @@ import androidx.constraintlayout.compose.layoutId
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
-private const val Url = "MotionLayout1Screen/MotionLayout1Screen.kt"
+private const val Url = "constraintlayout/MotionLayout1Screen.kt"
 
 @Composable
 fun MotionLayout1Screen() {
