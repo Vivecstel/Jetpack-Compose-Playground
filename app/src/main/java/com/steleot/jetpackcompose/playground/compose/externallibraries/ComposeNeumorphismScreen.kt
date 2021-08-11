@@ -7,7 +7,7 @@ import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRout
 /*import me.nikhilchaudhari.library.neumorphic
 import me.nikhilchaudhari.library.shapes.Punched*/
 
-private const val Url = "external/ComposeNeumorphismScreen.kt"
+private const val Url = "externallibraries/ComposeNeumorphismScreen.kt"
 
 @Composable
 fun ComposeNeumorphismScreen() {

@@ -16,7 +16,7 @@ import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRout
 import com.zachklipp.richtext.ui.*
 import com.zachklipp.richtext.ui.string.richTextString
 
-private const val Url = "external/ComposeRichTextUiScreen.kt"
+private const val Url = "externallibraries/ComposeRichTextUiScreen.kt"
 
 @Composable
 fun ComposeRichTextUiScreen() {

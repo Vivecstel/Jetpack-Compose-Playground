@@ -13,7 +13,7 @@ import com.zachklipp.richtext.ui.slideshow.BodySlide
 import com.zachklipp.richtext.ui.slideshow.Slideshow
 import com.zachklipp.richtext.ui.slideshow.TitleSlide
 
-private const val Url = "external/ComposeRichTextSlideshowScreen.kt"
+private const val Url = "externallibraries/ComposeRichTextSlideshowScreen.kt"
 
 @Composable
 fun ComposeRichTextSlideshowScreen() {

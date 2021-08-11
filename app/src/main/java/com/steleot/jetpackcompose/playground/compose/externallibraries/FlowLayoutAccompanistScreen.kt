@@ -14,7 +14,7 @@ import com.google.accompanist.flowlayout.FlowRow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/FlowLayoutAccompanistScreen.kt"
+private const val Url = "externallibraries/FlowLayoutAccompanistScreen.kt"
 
 @Composable
 fun FlowLayoutAccompanistScreen() {

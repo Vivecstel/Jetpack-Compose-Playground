@@ -19,7 +19,7 @@ import hu.ma.charts.pie.PieChart
 import hu.ma.charts.pie.data.PieChartData
 import hu.ma.charts.pie.data.PieChartEntry
 
-private const val Url = "external/ComposeChartsScreen.kt"
+private const val Url = "externallibraries/ComposeChartsScreen.kt"
 
 @Composable
 fun ComposeChartsScreen() {

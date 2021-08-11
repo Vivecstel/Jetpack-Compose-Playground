@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/OrchestraSpinnerScreen.kt"
+private const val Url = "externallibraries/OrchestraSpinnerScreen.kt"
 
 @Composable
 fun OrchestraSpinnerScreen() {

@@ -21,7 +21,7 @@ import com.skydoves.orchestra.colorpicker.ColorPicker
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/OrchestraColorPickerScreen.kt"
+private const val Url = "externallibraries/OrchestraColorPickerScreen.kt"
 
 @Composable
 fun OrchestraColorPickerScreen() {

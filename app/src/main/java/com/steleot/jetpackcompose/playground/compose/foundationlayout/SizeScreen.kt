@@ -11,14 +11,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
 
 private const val Url = "foundationlayout/SizeScreen.kt"
 
 @Composable
 fun SizeScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Border,
+        title = FoundationLayoutNavRoutes.Size,
         link = Url,
     ) {
         Column(

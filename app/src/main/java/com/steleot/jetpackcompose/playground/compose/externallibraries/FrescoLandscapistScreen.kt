@@ -24,7 +24,7 @@ import com.skydoves.landscapist.fresco.FrescoImage
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/FrescoLandscapistScreen.kt"
+private const val Url = "externallibraries/FrescoLandscapistScreen.kt"
 
 @Composable
 fun FrescoLandscapistScreen() {

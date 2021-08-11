@@ -24,7 +24,7 @@ import com.skydoves.landscapist.coil.CoilImage
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "external/CoilLandscapistScreen.kt"
+private const val Url = "externallibraries/CoilLandscapistScreen.kt"
 
 @Composable
 fun CoilLandscapistScreen() {

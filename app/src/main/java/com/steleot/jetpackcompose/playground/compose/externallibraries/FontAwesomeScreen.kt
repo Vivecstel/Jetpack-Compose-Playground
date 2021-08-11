@@ -13,7 +13,7 @@ import com.guru.fontawesomecomposelib.FaIcon
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
-private const val Url = "materialiconsextended/FontAwesomeScreen.kt"
+private const val Url = "externallibraries/FontAwesomeScreen.kt"
 
 @Composable
 fun FontAwesomeScreen() {

@@ -17,7 +17,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import kotlinx.coroutines.delay
 
-private const val Url = "external/SwipeRefreshAccompanistScreen.kt"
+private const val Url = "externallibraries/SwipeRefreshAccompanistScreen.kt"
 
 @Composable
 fun SwipeRefreshAccompanistScreen() {

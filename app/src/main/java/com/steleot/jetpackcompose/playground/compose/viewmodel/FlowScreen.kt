@@ -20,7 +20,7 @@ import com.steleot.jetpackcompose.playground.navigation.ViewModelNavRoutes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-private const val Url = "viewmodel/FlowLayoutAccompanistScreen.kt"
+private const val Url = "viewmodel/ViewModelFlowScreen.kt"
 
 @Composable
 fun ViewModelFlowScreen() {

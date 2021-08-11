@@ -15,7 +15,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ViewModelNavRoutes
 
-private const val Url = "viewmodel/LiveDataScreen.kt"
+private const val Url = "viewmodel/ViewModelLiveDataScreen.kt"
 
 @Composable
 fun ViewModelLiveDataScreen() {
