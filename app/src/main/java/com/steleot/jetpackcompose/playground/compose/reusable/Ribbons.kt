@@ -14,7 +14,20 @@ fun getRibbonPath(
     close()
 }
 
-val ribbonRoutes = listOf(
+val ribbonRoutes = setOf(
+    /* 2.8.0 release */
+    MainNavRoutes.Animation,
+    AnimationNavRoutes.ElevationAnimation,
+    AnimationNavRoutes.ScaleAnimation,
+    MainNavRoutes.FoundationLayout,
+    FoundationLayoutNavRoutes.MatchParentSize,
+    FoundationLayoutNavRoutes.PaddingFromBaseline,
+    FoundationLayoutNavRoutes.PaddingFrom,
+    FoundationLayoutNavRoutes.Weight,
+    MainNavRoutes.Material,
+    MaterialNavRoutes.LocalAbsoluteElevation,
+    MainNavRoutes.Ui,
+    UiNavRoutes.LayoutId,
     /* 2.7.1 release */
     /* 2.7.0 release */
     MainNavRoutes.Activity,
@@ -24,13 +37,4 @@ val ribbonRoutes = listOf(
     CustomExamplesNavRoutes.StyledText,
     MainNavRoutes.FoundationLayout,
     FoundationLayoutNavRoutes.DefaultMinSize,
-    /* 2.6.0 release */
-    MainNavRoutes.ConstraintLayout,
-    ConstraintLayoutNavRoutes.Circular,
-    ConstraintLayoutNavRoutes.CreateGuideline,
-    ConstraintLayoutNavRoutes.JsonConstraintSet,
-    ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables,
-    ConstraintLayoutNavRoutes.MotionLayout1,
-    ConstraintLayoutNavRoutes.MotionLayout2,
-    ConstraintLayoutNavRoutes.MotionLayout3,
 )

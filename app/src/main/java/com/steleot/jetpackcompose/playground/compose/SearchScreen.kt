@@ -20,6 +20,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,7 +55,7 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewMod
 @Composable
 fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
-    val search: String by viewModel.search.collectAsState()
+    val search: TextFieldValue by viewModel.search.collectAsState()
     val filteredRoutes: List<Pair<String, Boolean>> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
 
@@ -94,7 +95,7 @@ fun SearchScreen(navController: NavHostController) {
             items(filteredRoutes) { (route, shouldShowRibbon) ->
                 DefaultListItem(
                     text = getListAnnotatedString(
-                        route.capitalizeFirstLetter(), search, MaterialTheme.colors.secondary
+                        route.capitalizeFirstLetter(), search.text, MaterialTheme.colors.secondary
                     ),
                     shouldShowRibbon = shouldShowRibbon
                 ) {
@@ -107,12 +108,15 @@ fun SearchScreen(navController: NavHostController) {
 
 @Composable
 private fun SearchTextField(
-    searchText: String, onSearchTextChange: (String) -> Unit
+    searchText: TextFieldValue,
+    onSearchTextChange: (TextFieldValue) -> Unit
 ) {
     val focusRequester = FocusRequester()
     TextField(
         value = searchText,
-        onValueChange = { onSearchTextChange(it) },
+        onValueChange = {
+            onSearchTextChange(it)
+        },
         textStyle = LocalTextStyle.current.copy(
             fontSize = 16.sp
         ),
@@ -167,14 +171,14 @@ class SearchViewModel : ViewModel() {
                 externalRoutes).sorted().map { route ->
             route to (route in ribbonRoutes)
         }
-    private val _search = MutableStateFlow("")
-    val search: StateFlow<String> = _search
+    private val _search = MutableStateFlow(TextFieldValue(""))
+    val search: StateFlow<TextFieldValue> = _search
 
     private val _filteredRoutes = MutableStateFlow(routes)
     val filteredRoutes: StateFlow<List<Pair<String, Boolean>>> = _filteredRoutes
 
-    fun onSearchChange(search: String) {
+    fun onSearchChange(search: TextFieldValue) {
         _search.value = search
-        _filteredRoutes.value = routes.filter { it.first.contains(search, ignoreCase = true) }
+        _filteredRoutes.value = routes.filter { it.first.contains(search.text, ignoreCase = true) }
     }
 }

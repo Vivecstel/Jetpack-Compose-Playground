@@ -158,7 +158,14 @@ dependencies {
     implementation(Libraries.coilCompose)
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
-    implementation(Libraries.fresco)
+    implementation(Libraries.fresco) {
+        exclude("com.facebook.soloader", "soloader")
+        exclude("com.facebook.fresco", "soloader")
+        exclude("com.facebook.fresco", "nativeimagefilters")
+        exclude("com.facebook.fresco", "nativeimagetranscoder")
+        exclude("com.facebook.fresco", "memory-type-native")
+        exclude("com.facebook.fresco", "imagepipeline-native")
+    }
     implementation(Libraries.timber)
     implementation(Libraries.lottie)
     implementation(Libraries.ratingBar)
