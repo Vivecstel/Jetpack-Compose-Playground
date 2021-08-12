@@ -16,12 +16,12 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/ElevationScreen.kt"
+private const val Url = "material/LocalAbsoluteElevationScreen.kt"
 
 @Composable
-fun ElevationScreen() {
+fun LocalAbsoluteElevationScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Elevation,
+        title = MaterialNavRoutes.LocalAbsoluteElevation,
         link = Url,
     ) {
         Column(
@@ -39,10 +39,15 @@ fun ElevationScreen() {
                     modifier = Modifier,
                     elevation = 2.dp
                 ) {
-                    val elevation = LocalAbsoluteElevation.current
-                    Text(
-                        text = "$elevation",
-                    )
+                    Surface(
+                        modifier = Modifier,
+                        elevation = 4.dp
+                    ) {
+                        val elevation = LocalAbsoluteElevation.current
+                        Text(
+                            text = "Local Absolute Elevation: $elevation",
+                        )
+                    }
                 }
             }
         }

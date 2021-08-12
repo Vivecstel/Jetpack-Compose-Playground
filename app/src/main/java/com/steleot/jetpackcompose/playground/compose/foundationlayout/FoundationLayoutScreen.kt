@@ -13,11 +13,15 @@ val routes = listOf(
     FoundationLayoutNavRoutes.Column,
     FoundationLayoutNavRoutes.DefaultMinSize,
     FoundationLayoutNavRoutes.Intrinsic,
+    FoundationLayoutNavRoutes.MatchParentSize,
     FoundationLayoutNavRoutes.Offset,
+    FoundationLayoutNavRoutes.PaddingFromBaseline,
+    FoundationLayoutNavRoutes.PaddingFrom,
     FoundationLayoutNavRoutes.Padding,
     FoundationLayoutNavRoutes.Row,
     FoundationLayoutNavRoutes.Size,
     FoundationLayoutNavRoutes.Spacer,
+    FoundationLayoutNavRoutes.Weight,
 )
 
 @Composable
