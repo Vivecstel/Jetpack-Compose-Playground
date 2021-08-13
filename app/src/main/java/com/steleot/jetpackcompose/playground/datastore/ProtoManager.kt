@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.datastore
 
 import android.content.Context
 import androidx.datastore.dataStore
+import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -19,9 +20,11 @@ interface ProtoManager {
     val isAnalyticsEnabled: Flow<Boolean>
     val isCrashlyticsEnabled: Flow<Boolean>
     val reviewTimeStamp: Flow<Long>
+    val colorPalette: Flow<ColorPalette>
     suspend fun setIsAnalyticsEnabled(isEnabled: Boolean)
     suspend fun setIsCrashlyticsEnabled(isEnabled: Boolean)
     suspend fun setReviewTimeStamp(timeStamp: Long)
+    suspend fun setColorPalette(colorPalette: ColorPalette)
 }
 
 class ProtoManagerImpl @Inject constructor(
@@ -41,6 +44,11 @@ class ProtoManagerImpl @Inject constructor(
     override val reviewTimeStamp
         get() = context.internalDataStore.data.map { settings ->
             settings.reviewTimeStamp
+        }
+
+    override val colorPalette: Flow<ColorPalette>
+        get() = context.internalDataStore.data.map { settings ->
+            ColorPalette.valueOf(settings.colorPalette)
         }
 
     override suspend fun setIsAnalyticsEnabled(isEnabled: Boolean) {
@@ -63,6 +71,14 @@ class ProtoManagerImpl @Inject constructor(
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setReviewTimeStamp(timeStamp)
+                .build()
+        }
+    }
+
+    override suspend fun setColorPalette(colorPalette: ColorPalette) {
+        context.internalDataStore.updateData { settings ->
+            settings.toBuilder()
+                .setColorPalette(colorPalette.name)
                 .build()
         }
     }

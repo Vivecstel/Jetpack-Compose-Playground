@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -62,7 +63,9 @@ fun SettingsScreen(
                 viewModel.onCrashlyticsChanged(it)
             }
             Divider()
-            ChangeThemePaletteItem(theme, setTheme)
+            ChangeThemePaletteItem(theme, setTheme) {
+                viewModel.onColorPaletteChanged(it)
+            }
             Divider()
             Button(
                 modifier = Modifier
@@ -100,6 +103,7 @@ private fun SettingsListItem(
         Text(
             text,
             style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold,
         )
     }
 }
@@ -107,12 +111,14 @@ private fun SettingsListItem(
 @Composable
 private fun ChangeThemePaletteItem(
     theme: ThemeState,
-    setTheme: (ThemeState) -> Unit
+    setTheme: (ThemeState) -> Unit,
+    onColorPaletteChanged: (ColorPalette) -> Unit
 ) {
     Column {
         Text(
             text = "Change Application Theme Color",
             style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 16.dp, start = 16.dp)
         )
         Row(
@@ -121,15 +127,22 @@ private fun ChangeThemePaletteItem(
                 .padding(vertical = 16.dp)
                 .horizontalScroll(rememberScrollState())
         ) {
-            ColorPalette.values().forEach { colorPalette ->
+            val palettes = ColorPalette.values()
+            palettes.forEachIndexed { index, colorPalette ->
                 val isSelected = colorPalette == theme.colorPalette
                 Box(
                     Modifier
                         .padding(start = 16.dp)
+                        .then(
+                            if (index == palettes.size - 1) {
+                                Modifier.padding(end = 16.dp)
+                            } else Modifier
+                        )
                         .size(48.dp)
                         .clip(CircleShape)
                         .background(colorPalette.getMaterialColors(theme.isDarkTheme).primary)
                         .clickable {
+                            onColorPaletteChanged(colorPalette)
                             setTheme(theme.copy(colorPalette = colorPalette))
                         }
                         .then(
@@ -194,5 +207,11 @@ class SettingsViewModel @Inject constructor(
             protoManager.setIsCrashlyticsEnabled(isEnabled)
         }
         firebaseCrashlytics.setCrashlyticsCollectionEnabled(isEnabled)
+    }
+
+    fun onColorPaletteChanged(colorPalette: ColorPalette) {
+        viewModelScope.launch {
+            protoManager.setColorPalette(colorPalette)
+        }
     }
 }

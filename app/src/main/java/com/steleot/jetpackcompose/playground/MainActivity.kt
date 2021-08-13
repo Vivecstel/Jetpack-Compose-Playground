@@ -7,7 +7,6 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -40,12 +39,14 @@ import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
 import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
+import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -58,12 +59,15 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
 
+    @Inject
+    lateinit var protoManager: ProtoManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         MobileAds.initialize(this)
         setContent {
-            JetpackComposeApp(inAppReviewHelper, firebaseAnalytics)
+            JetpackComposeApp(inAppReviewHelper, firebaseAnalytics, protoManager)
         }
     }
 }
@@ -76,9 +80,10 @@ private const val NavigationDuration = 600
 fun JetpackComposeApp(
     inAppReviewHelper: InAppReviewHelper,
     firebaseAnalytics: FirebaseAnalytics,
+    protoManager: ProtoManager,
 ) {
     val isDarkTheme = isSystemInDarkTheme()
-    var themeState by rememberSaveable {
+    var themeState by remember {
         mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
     }
     val systemUiController = rememberSystemUiController()
@@ -89,6 +94,11 @@ fun JetpackComposeApp(
     }
     val screenWidth = with(LocalDensity.current) {
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
+    }
+    LaunchedEffect(Unit) {
+        protoManager.colorPalette.collect { colorPalette ->
+            themeState = themeState.copy(colorPalette = colorPalette)
+        }
     }
     JetpackComposePlaygroundTheme(
         colorPalette = themeState.colorPalette
