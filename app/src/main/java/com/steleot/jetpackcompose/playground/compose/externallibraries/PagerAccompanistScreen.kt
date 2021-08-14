@@ -9,6 +9,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.util.*
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
@@ -109,6 +110,7 @@ internal fun randomSampleImageUrl(
     return "https://picsum.photos/seed/$seed/$width/$height"
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun ProfilePicture(modifier: Modifier = Modifier) {
     Card(

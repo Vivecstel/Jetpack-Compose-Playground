@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.foundationlayout
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -10,12 +11,12 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
 
-private const val Url = "foundationlayout/Padding.kt"
+private const val Url = "foundationlayout/AbsolutePaddingScreen.kt"
 
 @Composable
-fun PaddingScreen() {
+fun AbsolutePaddingScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Padding,
+        title = FoundationLayoutNavRoutes.AbsolutePadding,
         link = Url,
     ) {
         Column(
@@ -23,19 +24,13 @@ fun PaddingScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize(0.8f)
-                    .background(Color.Yellow)
-                    .padding(16.dp)
-                    .background(Color.Green)
-                    .padding(16.dp)
-                    .background(Color.Red)
-                    .padding(16.dp)
-                    .background(Color.Cyan)
-                    .padding(16.dp)
-                    .background(Color.Black)
-            )
+            Box(Modifier.background(color = Color.Gray)) {
+                Box(
+                    Modifier.absolutePadding(left = 20.dp, top = 30.dp, right = 20.dp, bottom = 30.dp)
+                        .size(250.dp)
+                        .background(MaterialTheme.colors.primary)
+                )
+            }
         }
     }
 }

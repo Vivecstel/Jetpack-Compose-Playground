@@ -6,10 +6,18 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -48,6 +56,7 @@ import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 import javax.inject.Inject
@@ -101,9 +110,12 @@ fun JetpackComposeApp(
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
     }
     LaunchedEffect(Unit) {
-        protoManager.colorPalette.collect { colorPalette ->
-            themeState = themeState.copy(colorPalette = colorPalette)
-            isLoaded = true
+        if (!isLoaded) {
+            protoManager.colorPalette.collect { colorPalette ->
+                themeState = themeState.copy(colorPalette = colorPalette)
+                delay(250L)
+                isLoaded = true
+            }
         }
     }
     if (isLoaded) {
@@ -273,6 +285,15 @@ fun JetpackComposeApp(
                     }
                 }
             }
+        }
+    } else {
+        Box(modifier = Modifier.fillMaxSize()) {
+            Text(
+                modifier = Modifier.align(Alignment.Center),
+                text = stringResource(id = R.string.app_name),
+                style = MaterialTheme.typography.body1,
+                fontWeight = FontWeight.Bold,
+            )
         }
     }
 }

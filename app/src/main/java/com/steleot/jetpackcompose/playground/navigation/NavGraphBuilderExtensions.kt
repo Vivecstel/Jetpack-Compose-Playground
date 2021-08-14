@@ -88,6 +88,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
     composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
     composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
     composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
+    composable(route = FoundationNavRoutes.ProgressSemantics) { ProgressSemanticsScreen() }
     composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
     composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
     composable(route = FoundationNavRoutes.SelectableGroup) { SelectableGroupScreen() }
@@ -102,6 +103,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addFoundationLayoutRoutes() {
+    composable(route = FoundationLayoutNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
     composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
     composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
     composable(route = FoundationLayoutNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
@@ -251,6 +253,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
     composable(route = UiNavRoutes.Paint) { PaintScreen() }
     composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
+    composable(route = UiNavRoutes.PointerInput) { PointerInputScreen() }
     composable(route = UiNavRoutes.Popup) { PopupScreen() }
     composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
     composable(route = UiNavRoutes.RelocationRequester) { RelocationRequesterScreen() }
@@ -322,6 +325,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
     composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
     composable(route = ExternalLibrariesNavRoutes.PagerAccompanist) { PagerAccompanistScreen() }
+    composable(route = ExternalLibrariesNavRoutes.PaletteLandscapist) { PaletteLandscapistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }

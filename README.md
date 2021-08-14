@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 240 screens** with examples of **Jetpack Compose**.
+Offering **more than 245 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 240 screens with
+has to offer and how it improves everyday Android UI development. It offers more 245 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -110,6 +110,7 @@ Download from:
    - [OrchestraBalloon](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/OrchestraBalloonScreen.kt)
    - [OrchestraColorPicker](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/OrchestraColorPickerScreen.kt)
    - [PagerAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/PagerAccompanistScreen.kt)
+   - [PaletteLandscapist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/PaletteLandscapistScreen.kt)
    - [PermissionsAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/PermissionsAccompanistScreen.kt)
    - [PlaceholderAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/PlaceholderAccompanistScreen.kt)
    - [RatingBar](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/RatingBarScreen.kt)
@@ -132,6 +133,7 @@ Download from:
    - [LazyColumn](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyColumnScreen.kt)
    - [LazyGrid](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyGridScreen.kt)
    - [LazyRow](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyRowScreen.kt)
+   - [ProgressSemantics](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ProgressSemanticsScreen.kt)
    - [Scrollable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollableScreen.kt)
    - [Scroller](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollerScreen.kt)
    - [SelectableGroup](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectableGroupScreen.kt)
@@ -143,6 +145,7 @@ Download from:
    - [TransformGesture](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/TransformGestureScreen.kt)
    - [Transformable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/TransformableScreen.kt)
  - FoundationLayout
+   - [AbsolutePadding](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/AbsolutePaddingScreen.kt)
    - [AspectRatio](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/AspectRationScreen.kt)
    - [Box](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/BoxScreen.kt)
    - [BoxWithConstraints](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/BoxWithConstraintsScreen.kt)
@@ -273,6 +276,7 @@ Download from:
    - [OnSizeChanged](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnSizeChangedScreen.kt)
    - [Paint](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PaintScreen.kt)
    - [PathEffect](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PathEffectScreen.kt)
+   - [PointerInput](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PointerInputScreen.kt)
    - [Popup](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PopupScreen.kt)
    - [Primitive](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PrimitiveScreen.kt)
    - [RelocationRequester](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/RelocationRequesterScreen.kt)

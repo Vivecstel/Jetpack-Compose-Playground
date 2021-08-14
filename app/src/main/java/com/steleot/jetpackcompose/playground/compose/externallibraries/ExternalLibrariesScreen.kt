@@ -30,6 +30,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.OrchestraColorPicker,
 //    ExternalLibrariesNavRoutes.OrchestraSpinner,
     ExternalLibrariesNavRoutes.PagerAccompanist,
+    ExternalLibrariesNavRoutes.PaletteLandscapist,
     ExternalLibrariesNavRoutes.PermissionsAccompanist,
     ExternalLibrariesNavRoutes.PlaceholderAccompanist,
     ExternalLibrariesNavRoutes.RatingBar,

@@ -51,6 +51,7 @@ val routes = listOf(
     UiNavRoutes.OnSizeChanged,
     UiNavRoutes.Paint,
     UiNavRoutes.PathEffect,
+    UiNavRoutes.PointerInput,
     UiNavRoutes.Popup,
     UiNavRoutes.Primitive,
     UiNavRoutes.RelocationRequester,
