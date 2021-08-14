@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose
+package com.steleot.jetpackcompose.playground.compose.rest
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -81,7 +81,10 @@ fun MainScreenWithDrawer(
                     )
                 }
             ) {
-                Toast.makeText(context, "Coming soon", Toast.LENGTH_SHORT).show()
+                scope.launch {
+                    state.drawerState.close()
+                    navController.navigate(MainNavRoutes.Popular)
+                }
             }
             DrawerListItem(
                 text = "Favorite",
@@ -104,7 +107,6 @@ fun MainScreenWithDrawer(
             ) {
                 scope.launch {
                     state.drawerState.close()
-
                     navController.navigate(MainNavRoutes.Settings)
                 }
             }
@@ -136,11 +138,11 @@ fun MainScreen(
 }
 
 @Composable
-private fun MainScreenContent(
+fun MainScreenContent(
     navController: NavHostController,
     paddingValues: PaddingValues,
     list: List<String>,
-    showAd: Boolean,
+    showAd: Boolean = true,
 ) {
     val routesWithRibbons = remember {
         list.map { route ->

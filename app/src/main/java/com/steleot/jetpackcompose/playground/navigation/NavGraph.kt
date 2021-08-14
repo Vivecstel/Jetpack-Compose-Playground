@@ -19,6 +19,7 @@ object MainNavRoutes {
     const val Ui = "ui"
     const val ViewModel = "view model"
     const val Settings = "settings"
+    const val Popular = "popular"
 }
 
 object ActivityNavRoutes {
@@ -34,7 +35,7 @@ object AnimationNavRoutes {
     const val AnimatedVector = "animated vector"
     const val AnimatedVisibility = "animated visibility"
     const val AnimateEnterExit = "animated enter exit"
-    const val AnimationModifier = "animation Modifier"
+    const val AnimationModifier = "animation modifier"
     const val CrossfadeAnimation = "crossfade animation"
     const val DoubleTapToLike = "double tap to like"
     const val ElevationAnimation = "elevation animation"

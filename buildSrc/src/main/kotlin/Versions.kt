@@ -29,7 +29,7 @@ object Versions {
     const val hilt = "2.38.1"
     const val hiltCompose = "1.0.0-alpha03"
     const val startUp = "1.1.0"
-    const val coroutines = "1.5.0"
+    const val coroutines = "1.5.1"
     const val dataStore = "1.0.0"
     const val protobuf = "4.0.0-rc-2"
     const val playCore = "1.10.0"

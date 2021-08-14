@@ -22,9 +22,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
-import com.steleot.jetpackcompose.playground.compose.MainScreenWithDrawer
-import com.steleot.jetpackcompose.playground.compose.SearchScreen
-import com.steleot.jetpackcompose.playground.compose.SettingsScreen
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.animation.AnimationScreen
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.ConstraintLayoutScreen
@@ -37,6 +34,10 @@ import com.steleot.jetpackcompose.playground.compose.materialicons.MaterialIcons
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
+import com.steleot.jetpackcompose.playground.compose.rest.MainScreenWithDrawer
+import com.steleot.jetpackcompose.playground.compose.rest.PopularScreen
+import com.steleot.jetpackcompose.playground.compose.rest.SearchScreen
+import com.steleot.jetpackcompose.playground.compose.rest.SettingsScreen
 import com.steleot.jetpackcompose.playground.compose.runtime.RuntimeScreen
 import com.steleot.jetpackcompose.playground.compose.ui.UiScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
@@ -132,6 +133,7 @@ fun JetpackComposeApp(
                         startDestination = MainNavRoutes.Main,
                         enterTransition = { _, target ->
                             when (target.destination.route) {
+                                MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
                                     fadeIn(animationSpec = tween(NavigationDuration))
@@ -143,6 +145,7 @@ fun JetpackComposeApp(
                         },
                         exitTransition = { _, target ->
                             when (target.destination.route) {
+                                MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
                                     fadeOut(animationSpec = tween(NavigationDuration))
@@ -155,6 +158,7 @@ fun JetpackComposeApp(
                         },
                         popEnterTransition = { initial, _ ->
                             when (initial.destination.route) {
+                                MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
                                     fadeIn(animationSpec = tween(NavigationDuration))
@@ -167,6 +171,7 @@ fun JetpackComposeApp(
                         },
                         popExitTransition = { initial, _ ->
                             when (initial.destination.route) {
+                                MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
                                     fadeOut(animationSpec = tween(NavigationDuration))
@@ -232,6 +237,12 @@ fun JetpackComposeApp(
                             SettingsScreen(hiltViewModel(it), themeState) { newTheme ->
                                 themeState = newTheme
                             }
+                        }
+                        composable(route = MainNavRoutes.Popular) {
+                            PopularScreen(
+                                hiltViewModel(it),
+                                navController
+                            )
                         }
                         /* activity */
                         addActivityRoutes(navController)

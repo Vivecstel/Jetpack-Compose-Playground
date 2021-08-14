@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose
+package com.steleot.jetpackcompose.playground.compose.rest
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi

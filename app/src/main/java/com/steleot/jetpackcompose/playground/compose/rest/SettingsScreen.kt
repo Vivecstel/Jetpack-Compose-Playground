@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose
+package com.steleot.jetpackcompose.playground.compose.rest
 
 import android.content.Intent
 import android.net.Uri
