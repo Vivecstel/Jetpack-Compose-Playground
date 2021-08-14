@@ -7,4 +7,5 @@ message SettingsProto {
     bool analyticsEnabled = 1;
     bool crashlyticsEnabled = 2;
     int64 reviewTimeStamp = 3;
+    string colorPalette = 4;
 }

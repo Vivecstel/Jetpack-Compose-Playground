@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.materialiconsextended
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MaterialIconsExtendedNavRoutes
 
@@ -20,6 +20,5 @@ fun MaterialIconsExtendedScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.MaterialIConsExtended,
         list = routes,
-        showBackArrow = true
     )
 }

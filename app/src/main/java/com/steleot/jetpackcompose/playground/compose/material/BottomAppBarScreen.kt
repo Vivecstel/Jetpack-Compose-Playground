@@ -30,7 +30,6 @@ fun BottomAppBarScreen() {
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.BottomAppBar,
-                showBackArrow = true,
                 link = Url,
             )
         },

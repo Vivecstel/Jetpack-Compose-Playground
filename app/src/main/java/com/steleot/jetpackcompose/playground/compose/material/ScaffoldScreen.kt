@@ -31,7 +31,6 @@ fun ScaffoldScreen() {
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.Scaffold,
-                showBackArrow = true,
                 link = Url,
             )
         },

@@ -19,6 +19,7 @@ object MainNavRoutes {
     const val Ui = "ui"
     const val ViewModel = "view model"
     const val Settings = "settings"
+    const val Popular = "popular"
 }
 
 object ActivityNavRoutes {
@@ -34,7 +35,7 @@ object AnimationNavRoutes {
     const val AnimatedVector = "animated vector"
     const val AnimatedVisibility = "animated visibility"
     const val AnimateEnterExit = "animated enter exit"
-    const val AnimationModifier = "animation Modifier"
+    const val AnimationModifier = "animation modifier"
     const val CrossfadeAnimation = "crossfade animation"
     const val DoubleTapToLike = "double tap to like"
     const val ElevationAnimation = "elevation animation"
@@ -76,6 +77,7 @@ object FoundationNavRoutes {
     const val LazyColumn = "lazy column"
     const val LazyGrid = "lazy grid"
     const val LazyRow = "lazy row"
+    const val ProgressSemantics = "progress semantics"
     const val Scrollable = "scrollable"
     const val Scroller = "scroller"
     const val SelectableGroup = "selectable group"
@@ -89,6 +91,7 @@ object FoundationNavRoutes {
 }
 
 object FoundationLayoutNavRoutes {
+    const val AbsolutePadding = "absolute padding"
     const val AspectRatio = "aspect ratio"
     const val Box = "box"
     const val BoxWithConstraints = "box with constraints"
@@ -233,6 +236,7 @@ object UiNavRoutes {
     const val OnSizeChanged = "on size changed"
     const val Paint = "paint"
     const val PathEffect = "path effect"
+    const val PointerInput = "pointer input"
     const val Popup = "popup"
     const val Primitive = "primitive"
     const val RelocationRequester = "relocation requester"
@@ -298,6 +302,7 @@ object ExternalLibrariesNavRoutes {
     const val OrchestraColorPicker = "orchestra color picker"
     const val OrchestraSpinner = "orchestra spinner"
     const val PagerAccompanist = "pager accompanist"
+    const val PaletteLandscapist = "palette landscapist"
     const val PermissionsAccompanist = "permissions accompanist"
     const val PlaceholderAccompanist = "placeholder accompanist"
     const val RatingBar = "rating bar"

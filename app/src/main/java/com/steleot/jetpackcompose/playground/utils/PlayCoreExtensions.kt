@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.helpers
+package com.steleot.jetpackcompose.playground.utils
 
 import com.google.android.play.core.tasks.Task
 import kotlinx.coroutines.ExperimentalCoroutinesApi

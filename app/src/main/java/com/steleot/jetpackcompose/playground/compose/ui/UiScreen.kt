@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -51,6 +51,7 @@ val routes = listOf(
     UiNavRoutes.OnSizeChanged,
     UiNavRoutes.Paint,
     UiNavRoutes.PathEffect,
+    UiNavRoutes.PointerInput,
     UiNavRoutes.Popup,
     UiNavRoutes.Primitive,
     UiNavRoutes.RelocationRequester,
@@ -73,6 +74,5 @@ fun UiScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Ui,
         list = routes,
-        showBackArrow = true
     )
 }

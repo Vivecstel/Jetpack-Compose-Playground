@@ -64,6 +64,7 @@ object Libraries {
     const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebase}"
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+    const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
 
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
@@ -77,6 +78,8 @@ object Libraries {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val coroutinesPlayServices =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutines}"
 
     /* https://developer.android.com/topic/libraries/architecture/datastore */
     const val dataStore = "androidx.datastore:datastore:${Versions.dataStore}"

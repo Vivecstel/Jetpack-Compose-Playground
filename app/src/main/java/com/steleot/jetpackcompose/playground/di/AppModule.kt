@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.di
 import android.content.Context
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.firestore.FirebaseFirestore
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.datastore.ProtoManagerImpl
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
@@ -26,6 +27,10 @@ object AppModule {
     @Provides
     @Singleton
     fun provideFirebaseCrashlytics() = FirebaseCrashlytics.getInstance()
+
+    @Provides
+    @Singleton
+    fun provideFirebaseFirestore() = FirebaseFirestore.getInstance()
 
     @Provides
     @Singleton

@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.datastore
 import androidx.datastore.core.Serializer
 import com.google.protobuf.InvalidProtocolBufferException
 import com.steleot.jetpackcompose.playground.BuildConfig
+import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import timber.log.Timber
 import java.io.InputStream
 import java.io.OutputStream
@@ -15,6 +16,7 @@ object SettingsProtoSerializer : Serializer<SettingsProto> {
             .toBuilder()
             .setAnalyticsEnabled(!BuildConfig.DEBUG)
             .setCrashlyticsEnabled(!BuildConfig.DEBUG)
+            .setColorPalette(ColorPalette.DEEP_PURPLE.name)
             .build()
 
     override suspend fun readFrom(input: InputStream): SettingsProto {

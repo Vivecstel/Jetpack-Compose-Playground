@@ -26,7 +26,9 @@ fun MatchParentSizeScreen() {
                 .background(Color.Red)
                 .padding(32.dp)
         ) {
-            Box(modifier = Modifier.matchParentSize().background(MaterialTheme.colors.secondary))
+            Box(modifier = Modifier
+                .matchParentSize()
+                .background(MaterialTheme.colors.secondary))
         }
     }
 }

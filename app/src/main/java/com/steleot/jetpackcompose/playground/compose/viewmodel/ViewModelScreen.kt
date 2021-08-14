@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.viewmodel
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.ViewModelNavRoutes
 
@@ -18,6 +18,5 @@ fun ViewModelScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.ViewModel,
         list = routes,
-        showBackArrow = true
     )
 }
