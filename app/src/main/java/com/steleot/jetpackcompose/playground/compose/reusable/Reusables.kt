@@ -12,6 +12,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -32,19 +33,19 @@ import com.steleot.jetpackcompose.playground.LocalInAppReviewer
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 
 @Composable
-fun DefaultListItem(
+fun DefaultCardListItem(
     text: String,
     shouldShowRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
 ) {
-    DefaultListItem(
+    DefaultCardListItem(
         AnnotatedString(text.capitalizeFirstLetter()), shouldShowRibbon, cardClickAction
     )
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun DefaultListItem(
+fun DefaultCardListItem(
     text: AnnotatedString,
     shouldShowRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
@@ -58,29 +59,42 @@ fun DefaultListItem(
                 .padding(horizontal = 16.dp, vertical = 4.dp),
             elevation = 4.dp
         ) {
-            ListItem(
-                trailing = {
-                    if (shouldShowRibbon) {
-                        Canvas(
-                            modifier = Modifier
-                                .height(48.dp)
-                                .width(15.dp)
-                        ) {
-                            drawPath(
-                                getRibbonPath(size.width, size.height - offset),
-                                secondaryColor
-                            )
-                        }
+            DefaultListItem(text = text) {
+                if (shouldShowRibbon) {
+                    Canvas(
+                        modifier = Modifier
+                            .height(48.dp)
+                            .width(15.dp)
+                    ) {
+                        drawPath(
+                            getRibbonPath(size.width, size.height - offset),
+                            secondaryColor
+                        )
                     }
                 }
-            ) {
-                Text(
-                    text,
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold,
-                )
             }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun DefaultListItem(
+    text: AnnotatedString,
+    modifier: Modifier = Modifier,
+    icon: @Composable (() -> Unit)? = null,
+    trailing: @Composable (() -> Unit)? = null
+) {
+    ListItem(
+        modifier = modifier,
+        icon = icon,
+        trailing = trailing
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.body1,
+            fontWeight = FontWeight.Bold,
+        )
     }
 }
 
@@ -95,27 +109,68 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
-    showBackArrow: Boolean = false,
     navigateToSearch: (() -> Unit)? = null,
     link: String? = null
 ) {
     TopAppBar(
         title = {
-            Text(
-                text = title.capitalizeFirstLetter(),
-                style = MaterialTheme.typography.h6,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
+            TitleText(title)
         },
         modifier = modifier,
         navigationIcon = {
-            if (showBackArrow) BackArrow()
+            BackArrow()
         },
         actions = {
             link?.let {
                 GoToGithubButton(it)
             }
+            navigateToSearch?.let {
+                IconButton(onClick = it) {
+                    Icon(
+                        imageVector = Icons.Filled.Search,
+                        contentDescription = "Search",
+                    )
+                }
+            }
+        }
+    )
+}
+
+@Composable
+private fun TitleText(
+    title: String,
+) {
+    Text(
+        text = title.capitalizeFirstLetter(),
+        style = MaterialTheme.typography.h6,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis
+    )
+}
+
+@Preview
+@Composable
+fun MenuTopAppBar(
+    @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
+    modifier: Modifier = Modifier,
+    openDrawer: (() -> Unit)? = null,
+    navigateToSearch: (() -> Unit)? = null,
+) {
+    TopAppBar(
+        title = {
+            TitleText(title)
+        },
+        modifier = modifier,
+        navigationIcon = {
+            openDrawer?.let {
+                IconButton(onClick = it) {
+                    Icon(
+                        Icons.Default.Menu, contentDescription = "Open Drawer"
+                    )
+                }
+            }
+        },
+        actions = {
             navigateToSearch?.let {
                 IconButton(onClick = it) {
                     Icon(
@@ -138,7 +193,7 @@ fun GoToGithubButton(link: String) {
     }) {
         Icon(
             imageVector = Icons.Filled.ExitToApp,
-            contentDescription = "Exit to App",
+            contentDescription = "Open Github",
         )
     }
 }
@@ -183,7 +238,6 @@ fun DefaultScaffold(
         topBar = {
             DefaultTopAppBar(
                 title = title,
-                showBackArrow = true,
                 link = link,
             )
         },

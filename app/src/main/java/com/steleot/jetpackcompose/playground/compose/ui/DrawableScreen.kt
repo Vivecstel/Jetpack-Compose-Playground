@@ -35,8 +35,7 @@ fun DrawableScreen() {
         ) {
             Image(
                 painter = painterResource(
-                    id =
-                    R.drawable.ic_android_black_24dp
+                    id = R.drawable.ic_android_black_24dp
                 ),
                 contentDescription = "Vector image from painter resource",
                 modifier = Modifier.size(32.dp),

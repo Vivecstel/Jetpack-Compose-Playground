@@ -50,7 +50,6 @@ fun SettingsScreen(
         topBar = {
             DefaultTopAppBar(
                 title = MainNavRoutes.Settings,
-                showBackArrow = true
             )
         }
     ) {

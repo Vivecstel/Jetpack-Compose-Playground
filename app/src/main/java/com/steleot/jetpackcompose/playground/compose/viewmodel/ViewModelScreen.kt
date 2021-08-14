@@ -18,6 +18,5 @@ fun ViewModelScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.ViewModel,
         list = routes,
-        showBackArrow = true
     )
 }

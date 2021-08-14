@@ -30,6 +30,5 @@ fun FoundationLayoutScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.FoundationLayout,
         list = routes,
-        showBackArrow = true,
     )
 }

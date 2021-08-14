@@ -48,6 +48,5 @@ private fun TopScrollingContent(
         title = CustomExamplesNavRoutes.CollapsingToolbar,
         link = Url,
         modifier = Modifier.heightIn(min = animateDpAsState(dynamicHeight.dp).value),
-        showBackArrow = true
     )
 }

@@ -20,6 +20,5 @@ fun MaterialIconsScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.MaterialIcons,
         list = routes,
-        showBackArrow = true
     )
 }

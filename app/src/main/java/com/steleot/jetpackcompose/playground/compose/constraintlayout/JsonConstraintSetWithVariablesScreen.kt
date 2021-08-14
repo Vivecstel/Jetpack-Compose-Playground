@@ -49,12 +49,15 @@ private fun JsonConstraintSetWithVariablesExample() {
 
     ConstraintLayout(
         ConstraintSet(constraintSet),
-        modifier = Modifier.fillMaxSize()){
+        modifier = Modifier.fillMaxSize()
+    ) {
         Text(modifier = Modifier.layoutId("center"), text = "C")
 
         for (i in 0 until 12) {
-            Text(modifier = Modifier.layoutId("h${i+1}"),
-                text = "${i+1}")
+            Text(
+                modifier = Modifier.layoutId("h${i + 1}"),
+                text = "${i + 1}"
+            )
         }
     }
 }

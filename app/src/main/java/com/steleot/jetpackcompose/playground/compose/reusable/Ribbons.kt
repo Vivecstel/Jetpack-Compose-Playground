@@ -15,6 +15,7 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 2.9.0 release */
     /* 2.8.0 release */
     MainNavRoutes.Animation,
     AnimationNavRoutes.ElevationAnimation,
@@ -29,12 +30,4 @@ val ribbonRoutes = setOf(
     MainNavRoutes.Ui,
     UiNavRoutes.LayoutId,
     /* 2.7.1 release */
-    /* 2.7.0 release */
-    MainNavRoutes.Activity,
-    ActivityNavRoutes.LauncherForActivityResult1,
-    ActivityNavRoutes.LauncherForActivityResult2,
-    MainNavRoutes.CustomExamples,
-    CustomExamplesNavRoutes.StyledText,
-    MainNavRoutes.FoundationLayout,
-    FoundationLayoutNavRoutes.DefaultMinSize,
 )

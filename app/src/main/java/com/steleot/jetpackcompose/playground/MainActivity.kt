@@ -7,6 +7,7 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -21,7 +22,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
-import com.steleot.jetpackcompose.playground.compose.MainScreen
+import com.steleot.jetpackcompose.playground.compose.MainScreenWithDrawer
 import com.steleot.jetpackcompose.playground.compose.SearchScreen
 import com.steleot.jetpackcompose.playground.compose.SettingsScreen
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
@@ -83,14 +84,17 @@ fun JetpackComposeApp(
     protoManager: ProtoManager,
 ) {
     val isDarkTheme = isSystemInDarkTheme()
-    var themeState by remember {
+    var isLoaded by rememberSaveable { mutableStateOf(false) }
+    var themeState by rememberSaveable {
         mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
     }
     val systemUiController = rememberSystemUiController()
     SideEffect {
-        systemUiController.setSystemBarsColor(
-            themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
-        )
+        if (isLoaded) {
+            systemUiController.setSystemBarsColor(
+                themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
+            )
+        }
     }
     val screenWidth = with(LocalDensity.current) {
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
@@ -98,158 +102,164 @@ fun JetpackComposeApp(
     LaunchedEffect(Unit) {
         protoManager.colorPalette.collect { colorPalette ->
             themeState = themeState.copy(colorPalette = colorPalette)
+            isLoaded = true
         }
     }
-    JetpackComposePlaygroundTheme(
-        colorPalette = themeState.colorPalette
-    ) {
-        ProvideWindowInsets {
-            CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
-                val navController = rememberAnimatedNavController()
-                DisposableEffect(Unit) {
-                    val listener =
-                        NavController.OnDestinationChangedListener { _, destination, _ ->
-                            destination.route?.let { route ->
-                                Timber.d("Route : $route")
-                                firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-                                    param(FirebaseAnalytics.Param.SCREEN_NAME, route)
+    if (isLoaded) {
+        JetpackComposePlaygroundTheme(
+            colorPalette = themeState.colorPalette
+        ) {
+            ProvideWindowInsets {
+                CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
+                    val navController = rememberAnimatedNavController()
+                    DisposableEffect(Unit) {
+                        val listener =
+                            NavController.OnDestinationChangedListener { _, destination, _ ->
+                                destination.route?.let { route ->
+                                    Timber.d("Route : $route")
+                                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+                                        param(FirebaseAnalytics.Param.SCREEN_NAME, route)
+                                    }
                                 }
                             }
+                        navController.addOnDestinationChangedListener(listener)
+                        onDispose {
+                            navController.removeOnDestinationChangedListener(listener)
                         }
-                    navController.addOnDestinationChangedListener(listener)
-                    onDispose {
-                        navController.removeOnDestinationChangedListener(listener)
                     }
-                }
-                AnimatedNavHost(
-                    navController = navController,
-                    startDestination = MainNavRoutes.Main,
-                    enterTransition = { _, target ->
-                        when (target.destination.route) {
-                            MainNavRoutes.Search,
-                            MainNavRoutes.Settings ->
-                                fadeIn(animationSpec = tween(NavigationDuration))
-                            else -> slideInHorizontally(
-                                initialOffsetX = { screenWidth },
-                                animationSpec = tween(NavigationDuration)
+                    AnimatedNavHost(
+                        navController = navController,
+                        startDestination = MainNavRoutes.Main,
+                        enterTransition = { _, target ->
+                            when (target.destination.route) {
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeIn(animationSpec = tween(NavigationDuration))
+                                else -> slideInHorizontally(
+                                    initialOffsetX = { screenWidth },
+                                    animationSpec = tween(NavigationDuration)
+                                )
+                            }
+                        },
+                        exitTransition = { _, target ->
+                            when (target.destination.route) {
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeOut(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideOutHorizontally(
+                                        targetOffsetX = { -screenWidth },
+                                        animationSpec = tween(NavigationDuration)
+                                    )
+                            }
+                        },
+                        popEnterTransition = { initial, _ ->
+                            when (initial.destination.route) {
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeIn(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideInHorizontally(
+                                        initialOffsetX = { -screenWidth },
+                                        animationSpec = tween(NavigationDuration)
+                                    )
+                            }
+                        },
+                        popExitTransition = { initial, _ ->
+                            when (initial.destination.route) {
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeOut(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideOutHorizontally(
+                                        targetOffsetX = { screenWidth },
+                                        animationSpec = tween(NavigationDuration)
+                                    )
+                            }
+                        }
+                    ) {
+                        /* main */
+                        composable(route = MainNavRoutes.Main) {
+                            MainScreenWithDrawer(
+                                navController,
                             )
                         }
-                    },
-                    exitTransition = { _, target ->
-                        when (target.destination.route) {
-                            MainNavRoutes.Search,
-                            MainNavRoutes.Settings ->
-                                fadeOut(animationSpec = tween(NavigationDuration))
-                            else ->
-                                slideOutHorizontally(
-                                    targetOffsetX = { -screenWidth },
-                                    animationSpec = tween(NavigationDuration)
-                                )
+                        composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
+                        composable(route = MainNavRoutes.Activity) { ActivityScreen(navController) }
+                        composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
+                        composable(route = MainNavRoutes.ConstraintLayout) {
+                            ConstraintLayoutScreen(
+                                navController
+                            )
                         }
-                    },
-                    popEnterTransition = { initial, _ ->
-                        when (initial.destination.route) {
-                            MainNavRoutes.Search,
-                            MainNavRoutes.Settings ->
-                                fadeIn(animationSpec = tween(NavigationDuration))
-                            else ->
-                                slideInHorizontally(
-                                    initialOffsetX = { -screenWidth },
-                                    animationSpec = tween(NavigationDuration)
-                                )
+                        composable(route = MainNavRoutes.CustomExamples) {
+                            CustomExamplesScreen(
+                                navController
+                            )
                         }
-                    },
-                    popExitTransition = { initial, _ ->
-                        when (initial.destination.route) {
-                            MainNavRoutes.Search,
-                            MainNavRoutes.Settings ->
-                                fadeOut(animationSpec = tween(NavigationDuration))
-                            else ->
-                                slideOutHorizontally(
-                                    targetOffsetX = { screenWidth },
-                                    animationSpec = tween(NavigationDuration)
-                                )
+                        composable(route = MainNavRoutes.ExternalLibraries) {
+                            ExternalLibrariesScreen(
+                                navController
+                            )
                         }
-                    }
-                ) {
-                    /* main */
-                    composable(route = MainNavRoutes.Main) {
-                        MainScreen(
-                            navController,
-                            showSettings = true
-                        )
-                    }
-                    composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
-                    composable(route = MainNavRoutes.Activity) { ActivityScreen(navController) }
-                    composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
-                    composable(route = MainNavRoutes.ConstraintLayout) {
-                        ConstraintLayoutScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.CustomExamples) {
-                        CustomExamplesScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.ExternalLibraries) {
-                        ExternalLibrariesScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.Foundation) { FoundationScreen(navController) }
-                    composable(route = MainNavRoutes.FoundationLayout) {
-                        FoundationLayoutScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
-                    composable(route = MainNavRoutes.MaterialIcons) {
-                        MaterialIconsScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.MaterialIConsExtended) {
-                        MaterialIconsExtendedScreen(
-                            navController
-                        )
-                    }
-                    composable(route = MainNavRoutes.Navigation) { NavigationScreen() }
-                    composable(route = MainNavRoutes.Paging) { PagingScreen() }
-                    composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
-                    composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
-                    composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
-                    composable(route = MainNavRoutes.Settings) {
-                        SettingsScreen(hiltViewModel(it), themeState) { newTheme ->
-                            themeState = newTheme
+                        composable(route = MainNavRoutes.Foundation) {
+                            FoundationScreen(
+                                navController
+                            )
                         }
+                        composable(route = MainNavRoutes.FoundationLayout) {
+                            FoundationLayoutScreen(
+                                navController
+                            )
+                        }
+                        composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
+                        composable(route = MainNavRoutes.MaterialIcons) {
+                            MaterialIconsScreen(
+                                navController
+                            )
+                        }
+                        composable(route = MainNavRoutes.MaterialIConsExtended) {
+                            MaterialIconsExtendedScreen(
+                                navController
+                            )
+                        }
+                        composable(route = MainNavRoutes.Navigation) { NavigationScreen() }
+                        composable(route = MainNavRoutes.Paging) { PagingScreen() }
+                        composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
+                        composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
+                        composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
+                        composable(route = MainNavRoutes.Settings) {
+                            SettingsScreen(hiltViewModel(it), themeState) { newTheme ->
+                                themeState = newTheme
+                            }
+                        }
+                        /* activity */
+                        addActivityRoutes(navController)
+                        /* animation */
+                        addAnimationRoutes()
+                        /* constraint layout */
+                        addConstraintLayoutRoutes()
+                        /* foundation */
+                        addFoundationRoutes()
+                        /* foundation layout */
+                        addFoundationLayoutRoutes()
+                        /* material */
+                        addMaterialRoutes()
+                        /* material icons */
+                        addMaterialIconsRoutes()
+                        /* material icons extended */
+                        addMaterialIconsExtended()
+                        /* runtime */
+                        addRuntimeRoutes()
+                        /* ui */
+                        addUiRoutes()
+                        /* view model */
+                        addViewModelRoutes()
+                        /* custom examples */
+                        addCustomExamples()
+                        /* external */
+                        addExternalLibraries(navController, systemUiController)
                     }
-                    /* activity */
-                    addActivityRoutes(navController)
-                    /* animation */
-                    addAnimationRoutes()
-                    /* constraint layout */
-                    addConstraintLayoutRoutes()
-                    /* foundation */
-                    addFoundationRoutes()
-                    /* foundation layout */
-                    addFoundationLayoutRoutes()
-                    /* material */
-                    addMaterialRoutes()
-                    /* material icons */
-                    addMaterialIconsRoutes()
-                    /* material icons extended */
-                    addMaterialIconsExtended()
-                    /* runtime */
-                    addRuntimeRoutes()
-                    /* ui */
-                    addUiRoutes()
-                    /* view model */
-                    addViewModelRoutes()
-                    /* custom examples */
-                    addCustomExamples()
-                    /* external */
-                    addExternalLibraries(navController, systemUiController)
                 }
             }
         }

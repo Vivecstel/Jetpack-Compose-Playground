@@ -73,6 +73,5 @@ fun UiScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Ui,
         list = routes,
-        showBackArrow = true
     )
 }

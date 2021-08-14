@@ -45,6 +45,5 @@ fun ExternalLibrariesScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.ExternalLibraries,
         list = routes,
-        showBackArrow = true,
     )
 }

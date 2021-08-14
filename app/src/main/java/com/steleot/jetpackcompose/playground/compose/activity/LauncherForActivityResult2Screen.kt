@@ -54,8 +54,10 @@ private fun LauncherForActivityResultExample() {
 
     result.value?.let { uri ->
         val projection = arrayOf(ContactsContract.Contacts.DISPLAY_NAME)
-        val cursor = LocalContext.current.contentResolver.query(uri, projection,
-            null, null, null)
+        val cursor = LocalContext.current.contentResolver.query(
+            uri, projection,
+            null, null, null
+        )
         cursor?.let {
             cursor.moveToFirst()
             val nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)

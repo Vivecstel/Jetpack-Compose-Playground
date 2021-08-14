@@ -18,6 +18,5 @@ fun ActivityScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Activity,
         list = routes,
-        showBackArrow = true,
     )
 }

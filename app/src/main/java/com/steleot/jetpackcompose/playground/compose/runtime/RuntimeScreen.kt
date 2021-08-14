@@ -32,6 +32,5 @@ fun RuntimeScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Runtime,
         list = routes,
-        showBackArrow = true
     )
 }

@@ -32,6 +32,5 @@ fun AnimationScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Animation,
         list = routes,
-        showBackArrow = true,
     )
 }

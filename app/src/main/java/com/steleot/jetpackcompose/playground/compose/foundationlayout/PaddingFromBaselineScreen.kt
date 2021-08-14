@@ -37,7 +37,10 @@ private fun PaddingFromBaselineExample() {
     Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
         Text(
             text = "This line has the first baseline.\nThis line has the last baseline.",
-            modifier = Modifier.paddingFromBaseline(distanceToFirstBaseline, distanceFromLastBaseline)
+            modifier = Modifier.paddingFromBaseline(
+                distanceToFirstBaseline,
+                distanceFromLastBaseline
+            )
         )
     }
 }

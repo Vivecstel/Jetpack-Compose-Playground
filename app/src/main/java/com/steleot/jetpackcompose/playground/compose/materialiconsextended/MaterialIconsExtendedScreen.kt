@@ -20,6 +20,5 @@ fun MaterialIconsExtendedScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.MaterialIConsExtended,
         list = routes,
-        showBackArrow = true
     )
 }

@@ -58,6 +58,5 @@ fun MaterialScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.Material,
         list = routes,
-        showBackArrow = true
     )
 }

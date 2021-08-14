@@ -29,7 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
@@ -93,7 +93,7 @@ fun SearchScreen(navController: NavHostController) {
     ) {
         LazyColumn {
             items(filteredRoutes) { (route, shouldShowRibbon) ->
-                DefaultListItem(
+                DefaultCardListItem(
                     text = getListAnnotatedString(
                         route.capitalizeFirstLetter(), search.text, MaterialTheme.colors.secondary
                     ),

@@ -26,6 +26,5 @@ fun ConstraintLayoutScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.ConstraintLayout,
         list = routes,
-        showBackArrow = true,
     )
 }

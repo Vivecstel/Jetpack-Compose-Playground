@@ -32,7 +32,6 @@ fun SnackBarScreen() {
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.SnackBar,
-                showBackArrow = true,
                 link = Url,
             )
         },

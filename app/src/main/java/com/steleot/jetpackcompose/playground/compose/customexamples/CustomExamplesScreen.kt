@@ -31,6 +31,5 @@ fun CustomExamplesScreen(navController: NavHostController) {
         navController = navController,
         title = MainNavRoutes.CustomExamples,
         list = routes,
-        showBackArrow = true,
     )
 }
