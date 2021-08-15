@@ -6,6 +6,7 @@ import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import timber.log.Timber
 import javax.inject.Inject
 
 private const val FILE_NAME = "SettingsPrefFile"
@@ -48,7 +49,12 @@ class ProtoManagerImpl @Inject constructor(
 
     override val colorPalette: Flow<ColorPalette>
         get() = context.internalDataStore.data.map { settings ->
-            ColorPalette.valueOf(settings.colorPalette)
+            try {
+                ColorPalette.valueOf(settings.colorPalette)
+            } catch (e: Exception) {
+                Timber.e(e)
+                ColorPalette.DEEP_PURPLE
+            }
         }
 
     override suspend fun setIsAnalyticsEnabled(isEnabled: Boolean) {
