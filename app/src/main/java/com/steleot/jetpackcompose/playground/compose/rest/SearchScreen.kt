@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -116,6 +118,21 @@ private fun SearchTextField(
         value = searchText,
         onValueChange = {
             onSearchTextChange(it)
+        },
+        trailingIcon = {
+            if (searchText.text.isNotEmpty()) {
+                IconButton(
+                    onClick = {
+                        onSearchTextChange(searchText.copy(text = ""))
+                    }
+                ) {
+                    Icon(
+                        Icons.Filled.Close,
+                        contentDescription = "Clear text",
+                        tint = MaterialTheme.colors.onPrimary
+                    )
+                }
+            }
         },
         textStyle = LocalTextStyle.current.copy(
             fontSize = 16.sp

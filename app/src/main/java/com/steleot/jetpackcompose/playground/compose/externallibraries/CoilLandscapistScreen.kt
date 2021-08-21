@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -43,7 +44,7 @@ fun CoilLandscapistScreen() {
                 imageModel = randomSampleImageUrl(),
                 modifier = Modifier.size(150.dp),
                 contentScale = ContentScale.Crop,
-                circularRevealedEnabled = true,
+                circularReveal = CircularReveal(duration = 300),
                 placeHolder = Icons.Default.Image,
                 error = Icons.Default.Error
             )

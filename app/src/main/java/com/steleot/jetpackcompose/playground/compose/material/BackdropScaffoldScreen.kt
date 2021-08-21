@@ -57,7 +57,6 @@ fun BackdropScaffoldExample() {
                     var clickCount by remember { mutableStateOf(0) }
                     IconButton(
                         onClick = {
-                            // show snackbar as a suspend function
                             scope.launch {
                                 scaffoldState.snackbarHostState
                                     .showSnackbar("Snackbar #${++clickCount}")

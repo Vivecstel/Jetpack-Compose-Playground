@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
@@ -42,7 +43,7 @@ fun GlideLandscapistScreen() {
                 imageModel = randomSampleImageUrl(),
                 modifier = Modifier.size(150.dp),
                 contentScale = ContentScale.Crop,
-                circularRevealedEnabled = true,
+                circularReveal = CircularReveal(duration = 300),
                 placeHolder = Icons.Default.Image,
                 error = Icons.Default.Error
             )
@@ -73,7 +74,7 @@ fun GlideLandscapistScreen() {
                     .size(150.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
-                circularRevealedEnabled = true,
+                circularReveal = CircularReveal(duration = 300),
                 placeHolder = Icons.Default.Image,
                 error = Icons.Default.Error
             )
