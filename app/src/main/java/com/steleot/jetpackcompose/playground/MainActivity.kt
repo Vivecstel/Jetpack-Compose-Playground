@@ -100,6 +100,7 @@ fun JetpackComposeApp(
     }
     val systemUiController = rememberSystemUiController()
     SideEffect {
+
         if (isLoaded) {
             systemUiController.setSystemBarsColor(
                 themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
@@ -110,6 +111,9 @@ fun JetpackComposeApp(
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
     }
     LaunchedEffect(Unit) {
+        if (themeState.isDarkTheme != isDarkTheme) {
+            themeState = themeState.copy(isDarkTheme = isDarkTheme)
+        }
         if (!isLoaded) {
             protoManager.colorPalette.collect { colorPalette ->
                 themeState = themeState.copy(colorPalette = colorPalette)
@@ -288,6 +292,12 @@ fun JetpackComposeApp(
         }
     } else {
         Box(modifier = Modifier.fillMaxSize()) {
+            AnimatedVisibility(
+                true,
+                exit = fadeOut(animationSpec = tween(250))
+            ) {
+
+            }
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = stringResource(id = R.string.app_name),

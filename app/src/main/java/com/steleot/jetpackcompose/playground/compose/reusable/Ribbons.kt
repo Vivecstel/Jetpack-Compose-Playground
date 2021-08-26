@@ -15,6 +15,8 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 2.9.2 release */
+    /* 2.9.1 release */
     /* 2.9.0 release */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.PaletteLandscapist,
@@ -24,18 +26,4 @@ val ribbonRoutes = setOf(
     FoundationLayoutNavRoutes.AbsolutePadding,
     MainNavRoutes.Ui,
     UiNavRoutes.PointerInput,
-    /* 2.8.0 release */
-    MainNavRoutes.Animation,
-    AnimationNavRoutes.ElevationAnimation,
-    AnimationNavRoutes.ScaleAnimation,
-    MainNavRoutes.FoundationLayout,
-    FoundationLayoutNavRoutes.MatchParentSize,
-    FoundationLayoutNavRoutes.PaddingFromBaseline,
-    FoundationLayoutNavRoutes.PaddingFrom,
-    FoundationLayoutNavRoutes.Weight,
-    MainNavRoutes.Material,
-    MaterialNavRoutes.LocalAbsoluteElevation,
-    MainNavRoutes.Ui,
-    UiNavRoutes.LayoutId,
-    /* 2.7.1 release */
 )

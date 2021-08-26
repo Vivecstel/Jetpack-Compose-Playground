@@ -14,6 +14,7 @@ object Versions {
     const val detekt = "1.18.0"
     const val doctor = "0.7.1"
     const val protobufPlugin = "0.8.17"
+    const val playPublisher = "3.6.0"
 
     /* libraries */
     const val compose = "1.1.0-alpha02"
@@ -44,8 +45,8 @@ object Versions {
     const val fresco = "2.5.0"
     const val timber = "5.0.1"
     const val lottie = "4.1.0"
-    const val ratingBar = "1.1.0"
-    const val revealSwipe = "1.0.0-beta05"
+    const val ratingBar = "1.1.1"
+    const val revealSwipe = "1.0.0"
     const val speedDial = "1.0.0-beta03"
     const val fontAwesome = "1.0.0-beta02"
     const val composeCharts = "0.3.1"
@@ -53,5 +54,5 @@ object Versions {
     const val composeMarkdown = "0.2.5"
     const val composeBarcodes = "1.0.1"
     const val composeRichtext = "0.6.0"
-    const val adMob = "20.2.0"
+    const val adMob = "20.3.0"
 }
