@@ -36,4 +36,7 @@ object BuildPlugins {
 
     /* https://github.com/protocolbuffers/protobuf */
     const val protobuf = "com.google.protobuf"
+
+    /* https://github.com/Triple-T/gradle-play-publisher */
+    const val playPublisher = "com.github.triplet.play"
 }

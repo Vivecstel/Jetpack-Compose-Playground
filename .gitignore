@@ -55,5 +55,8 @@ freeline.py
 freeline/
 freeline_project_description.json
 
-#signing
+# Signing
 /signing
+
+# Service Account Credentials
+jetpack-compose-playground-play-publishing.json

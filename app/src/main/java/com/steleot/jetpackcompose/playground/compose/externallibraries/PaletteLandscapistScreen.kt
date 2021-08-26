@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.palette.graphics.Palette
+import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -47,7 +48,7 @@ private fun PaletteLandscapistExample() {
         imageModel = randomSampleImageUrl(1),
         modifier = Modifier.size(150.dp),
         contentScale = ContentScale.Crop,
-        circularRevealedEnabled = true,
+        circularReveal = CircularReveal(duration = 300),
         placeHolder = Icons.Default.Image,
         error = Icons.Default.Error,
         bitmapPalette = BitmapPalette {

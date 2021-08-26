@@ -13,6 +13,7 @@ plugins {
     id(BuildPlugins.crashlytics)
     id(BuildPlugins.hilt)
     id(BuildPlugins.protobuf) version Versions.protobufPlugin
+    id(BuildPlugins.playPublisher) version Versions.playPublisher
 }
 
 android {
@@ -202,4 +203,12 @@ protobuf {
             }
         }
     }
+}
+
+play {
+    releaseName.set(AndroidConfiguration.releaseName)
+    serviceAccountCredentials.set(file(AndroidConfiguration.serviceAccountCredentials))
+    artifactDir.set(file(AndroidConfiguration.artifactFile))
+    track.set(AndroidConfiguration.track)
+    updatePriority.set(AndroidConfiguration.updatePriority)
 }

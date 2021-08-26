@@ -15,6 +15,7 @@ import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarStyle
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import timber.log.Timber
 
 private const val Url = "externallibraries/RatingBarScreen.kt"
 
@@ -40,8 +41,11 @@ private fun DefaultRatingBar() {
     var value: Float by rememberSaveable { mutableStateOf(3.5f) }
     RatingBar(
         value = value,
-        onRatingChanged = {
+        onValueChange = {
             value = it
+        },
+        onRatingChanged = {
+            Timber.d("Rating change to $it")
         }
     )
 }
@@ -54,8 +58,11 @@ private fun HighlightedRatingBar() {
         size = 32.dp,
         padding = 8.dp,
         value = value,
-        onRatingChanged = {
+        onValueChange = {
             value = it
+        },
+        onRatingChanged = {
+            Timber.d("Rating change to $it")
         },
         ratingBarStyle = RatingBarStyle.HighLighted
     )
