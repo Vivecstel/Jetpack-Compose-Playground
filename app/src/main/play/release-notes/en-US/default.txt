@@ -1,1 +1,1 @@
-Updated to api level 31. Updated compose to 1.1.0 alpha02, cameraX, accompanist, landscapist and lottie. Added X on search screen to quickly delete all text. Updated ratingbar and reveal swipe libraries. Fixed issue with dark theme when switching.
+Fix crash for android 12 devices when app starts
