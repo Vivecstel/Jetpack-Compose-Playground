@@ -98,6 +98,9 @@ object Libraries {
     const val cameraxLifecycle = "androidx.camera:camera-lifecycle:${Versions.cameraX}"
     const val cameraxView = "androidx.camera:camera-view:${Versions.cameraView}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/work */
+    const val workManager = "androidx.work:work-runtime:${Versions.workManager}"
+
     /* https://github.com/chrisbanes/accompanist */
     const val accompanistInsets =
         "com.google.accompanist:accompanist-insets:${Versions.accompanist}"

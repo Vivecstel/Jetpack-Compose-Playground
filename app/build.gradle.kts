@@ -140,6 +140,7 @@ dependencies {
     implementation(Libraries.camerax2)
     implementation(Libraries.cameraxLifecycle)
     implementation(Libraries.cameraxView)
+    implementation(Libraries.workManager)
     implementation(Libraries.accompanistInsets)
     implementation(Libraries.accompanistFlow)
     implementation(Libraries.accompanistPager)
