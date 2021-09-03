@@ -188,6 +188,13 @@ object Libraries {
     const val composeRichtextSlideshow =
         "com.halilibo.compose-richtext:slideshow:${Versions.composeRichtext}"
 
+    /* https://github.com/umutsoysl/ComposeZoomableImage */
+    const val zoomableImage = "com.github.umutsoysl:ComposeZoomableImage:${Versions.zoomableImage}"
+
+    /* https://github.com/loukwn/StageStepBar */
+    const val stageStepBar =
+        "com.github.loukwn.StageStepBar:stagestepbar-compose:${Versions.stageStepBar}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }

@@ -21,6 +21,7 @@ val routes = listOf(
     FoundationNavRoutes.LazyColumn,
     FoundationNavRoutes.LazyGrid,
     FoundationNavRoutes.LazyRow,
+    FoundationNavRoutes.LocalOverScrollConfiguration,
     FoundationNavRoutes.ProgressSemantics,
     FoundationNavRoutes.Scrollable,
     FoundationNavRoutes.Scroller,

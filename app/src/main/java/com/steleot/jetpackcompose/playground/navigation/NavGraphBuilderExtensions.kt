@@ -88,6 +88,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
     composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
     composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
     composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
+    composable(route = FoundationNavRoutes.LocalOverScrollConfiguration) { LocalOverScrollConfigurationScreen() }
     composable(route = FoundationNavRoutes.ProgressSemantics) { ProgressSemanticsScreen() }
     composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
     composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
@@ -213,6 +214,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
     composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
     composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
+    composable(route = UiNavRoutes.Blur) { BlurScreen() }
     composable(route = UiNavRoutes.Brush) { BrushScreen() }
     composable(route = UiNavRoutes.Clip) { ClipScreen() }
     composable(route = UiNavRoutes.ClipToBounds) { ClipToBoundsScreen() }
@@ -312,6 +314,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeZoomableImage) { ComposeZoomableImageScreen() }
     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
@@ -331,6 +334,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
     composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }
+    composable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
         SystemUiControllerAccompanistScreen(

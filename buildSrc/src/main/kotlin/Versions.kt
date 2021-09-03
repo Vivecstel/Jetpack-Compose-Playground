@@ -51,9 +51,11 @@ object Versions {
     const val speedDial = "1.0.0-beta03"
     const val fontAwesome = "1.0.0-beta02"
     const val composeCharts = "0.3.2"
-    const val composeNeumorphism = "1.0.0-alpha"
+    const val composeNeumorphism = "1.0.0-alpha02"
     const val composeMarkdown = "0.2.6"
     const val composeBarcodes = "1.0.1"
     const val composeRichtext = "0.7.0"
+    const val zoomableImage = "0.1.0"
+    const val stageStepBar = "0.0.1"
     const val adMob = "20.3.0"
 }

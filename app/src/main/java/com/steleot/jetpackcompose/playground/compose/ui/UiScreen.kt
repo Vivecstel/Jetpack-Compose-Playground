@@ -11,6 +11,7 @@ val routes = listOf(
     UiNavRoutes.Alpha,
     UiNavRoutes.AndroidViewBinding,
     UiNavRoutes.AnnotatedString,
+    UiNavRoutes.Blur,
     UiNavRoutes.Brush,
     UiNavRoutes.Clip,
 //    UiNavRoutes.ClipToBounds,
