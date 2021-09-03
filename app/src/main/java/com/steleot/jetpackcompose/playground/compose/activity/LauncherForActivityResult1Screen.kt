@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.activity
 
 import android.Manifest
+import android.content.ActivityNotFoundException
 import android.graphics.Bitmap
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
+import timber.log.Timber
 
 private const val Url = "activity/LauncherForActivityResult1Screen.kt"
 
@@ -53,7 +55,12 @@ private fun LauncherForActivityResultExample() {
     val permissionLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
-                launcher.launch()
+                try {
+                    launcher.launch()
+                } catch (e: ActivityNotFoundException) {
+                    Timber.e(e)
+                    Toast.makeText(context, "Activity not found ", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(context, "Permission not granted", Toast.LENGTH_SHORT).show()
             }
