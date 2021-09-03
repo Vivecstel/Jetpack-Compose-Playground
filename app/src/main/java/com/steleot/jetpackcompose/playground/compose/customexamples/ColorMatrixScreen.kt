@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.steleot.jetpackcompose.playground.compose.externallibraries.randomSampleImageUrl
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -34,6 +35,7 @@ fun ColorMatrixScreen() {
     }
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun ColorMatrixExample() {
     val matrix = ColorMatrix().apply {

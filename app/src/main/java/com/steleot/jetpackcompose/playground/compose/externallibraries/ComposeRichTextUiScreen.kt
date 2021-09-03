@@ -38,7 +38,7 @@ fun ComposeRichTextUiScreen() {
 
 @Composable
 private fun BasicRichTextExample() {
-    RichTextScope.Default.BasicRichText(modifier = Modifier.padding(16.dp)) {
+    RichText(modifier = Modifier.padding(16.dp)) {
         Heading(0, "Paragraphs")
         richTextString {
         }

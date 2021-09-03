@@ -14,6 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
@@ -70,6 +71,7 @@ fun PlaceholderAccompanistScreen() {
     }
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun PlaceholderItemExample(
     text: String,

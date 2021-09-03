@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
@@ -19,6 +20,7 @@ import kotlinx.coroutines.delay
 
 private const val Url = "externallibraries/SwipeRefreshAccompanistScreen.kt"
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun SwipeRefreshAccompanistScreen() {
     DefaultScaffold(
