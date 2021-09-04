@@ -1,7 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -14,7 +12,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
@@ -43,7 +40,6 @@ fun SettingsScreen(
 ) {
     val analyticsEnabled: Boolean by viewModel.analyticsEnabled.collectAsState()
     val crashlyticsEnabled: Boolean by viewModel.crashlyticsEnabled.collectAsState()
-    val context = LocalContext.current
 
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
@@ -64,20 +60,6 @@ fun SettingsScreen(
             Divider()
             ChangeThemePaletteItem(theme, setTheme) {
                 viewModel.onColorPaletteChanged(it)
-            }
-            Divider()
-            Button(
-                modifier = Modifier
-                    .padding(vertical = 16.dp)
-                    .align(Alignment.CenterHorizontally),
-                onClick = {
-                    context.startActivity(Intent(Intent.ACTION_SENDTO).apply {
-                        data = Uri.parse("mailto:")
-                        putExtra(Intent.EXTRA_EMAIL, arrayOf("steleot@hotmail.com"))
-                        putExtra(Intent.EXTRA_SUBJECT, "Feedback on Jetpack Compose Playground")
-                    })
-                }) {
-                Text(text = "Send Feedback")
             }
         }
     }

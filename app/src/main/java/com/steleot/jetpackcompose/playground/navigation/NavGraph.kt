@@ -20,6 +20,8 @@ object MainNavRoutes {
     const val ViewModel = "view model"
     const val Settings = "settings"
     const val Popular = "popular"
+    const val Favorites = "favorites"
+    const val Articles = "articles"
 }
 
 object ActivityNavRoutes {
