@@ -65,6 +65,8 @@ object Libraries {
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
+    const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx"
+    const val firebaseInstallations = "com.google.firebase:firebase-installations-ktx"
 
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"

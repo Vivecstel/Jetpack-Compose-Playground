@@ -125,6 +125,8 @@ dependencies {
     implementation(Libraries.firebaseAnalytics)
     implementation(Libraries.firebaseCrashlytics)
     implementation(Libraries.firebaseFirestore)
+    implementation(Libraries.firebaseMessaging)
+    implementation(Libraries.firebaseInstallations)
     implementation(Libraries.hilt)
     kapt(Libraries.hiltCompiler)
     implementation(Libraries.hiltNavigation)

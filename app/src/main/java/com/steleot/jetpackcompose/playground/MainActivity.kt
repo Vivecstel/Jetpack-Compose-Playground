@@ -22,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -30,6 +31,8 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.installations.FirebaseInstallations
+import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.navigation.*
@@ -39,6 +42,7 @@ import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -52,14 +56,44 @@ class MainActivity : ComponentActivity() {
     lateinit var firebaseAnalytics: FirebaseAnalytics
 
     @Inject
+    lateinit var firebaseMessaging: FirebaseMessaging
+
+    @Inject
+    lateinit var firebaseInstallations: FirebaseInstallations
+
+    @Inject
     lateinit var protoManager: ProtoManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        handleFirebase()
         MobileAds.initialize(this)
         setContent {
             JetpackComposeApp(inAppReviewHelper, firebaseAnalytics, protoManager)
+        }
+    }
+
+    private fun handleFirebase() {
+        if (BuildConfig.DEBUG) {
+            lifecycleScope.launchWhenCreated {
+                val token = try {
+                    firebaseMessaging.token.await()
+                } catch (e: Exception) {
+                    Timber.e(e)
+                    null
+                }
+                Timber.d("Token retrieved: $token")
+            }
+            lifecycleScope.launchWhenCreated {
+                val id = try {
+                    firebaseInstallations.id.await()
+                } catch (e: Exception) {
+                    Timber.e(e)
+                    null
+                }
+                Timber.d("Id retrieved: $id")
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -39,6 +40,7 @@ fun SettingsScreen(
     setTheme: (ThemeState) -> Unit
 ) {
     val analyticsEnabled: Boolean by viewModel.analyticsEnabled.collectAsState()
+    val messagingEnabled: Boolean by viewModel.messagingEnabled.collectAsState()
     val crashlyticsEnabled: Boolean by viewModel.crashlyticsEnabled.collectAsState()
 
     Scaffold(
@@ -52,6 +54,10 @@ fun SettingsScreen(
         Column {
             SettingsListItem("Firebase analytics collection", analyticsEnabled) {
                 viewModel.onAnalyticsChanged(it)
+            }
+            Divider()
+            SettingsListItem("Firebase messaging", messagingEnabled) {
+                viewModel.onMessagingChanged(it)
             }
             Divider()
             SettingsListItem("Firebase crashlytics collection", crashlyticsEnabled) {
@@ -151,12 +157,16 @@ private fun ChangeThemePaletteItem(
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val firebaseAnalytics: FirebaseAnalytics,
+    private val firebaseMessaging: FirebaseMessaging,
     private val firebaseCrashlytics: FirebaseCrashlytics,
     private val protoManager: ProtoManager,
 ) : ViewModel() {
 
     private val _analyticsEnabled = MutableStateFlow(false)
     val analyticsEnabled: StateFlow<Boolean> = _analyticsEnabled
+
+    private val _messagingEnabled = MutableStateFlow(false)
+    val messagingEnabled: StateFlow<Boolean> = _messagingEnabled
 
     private val _crashlyticsEnabled = MutableStateFlow(false)
     val crashlyticsEnabled: StateFlow<Boolean> = _crashlyticsEnabled
@@ -165,6 +175,11 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             protoManager.isAnalyticsEnabled.collect { isEnabled ->
                 _analyticsEnabled.value = isEnabled
+            }
+        }
+        viewModelScope.launch {
+            protoManager.isMessagingEnabled.collect { isEnabled ->
+                _messagingEnabled.value = isEnabled
             }
         }
         viewModelScope.launch {
@@ -180,6 +195,14 @@ class SettingsViewModel @Inject constructor(
             protoManager.setIsAnalyticsEnabled(isEnabled)
         }
         firebaseAnalytics.setAnalyticsCollectionEnabled(isEnabled)
+    }
+
+    fun onMessagingChanged(isEnabled: Boolean) {
+        _messagingEnabled.value = isEnabled
+        viewModelScope.launch {
+            protoManager.setIsMessagingEnabled(isEnabled)
+        }
+        firebaseMessaging.isAutoInitEnabled = isEnabled
     }
 
     fun onCrashlyticsChanged(isEnabled: Boolean) {
