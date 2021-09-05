@@ -18,7 +18,7 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
-    /* 2.9.3 release */
+    /* 2.9.4 */
     MainNavRoutes.Foundation,
     FoundationNavRoutes.LocalOverScrollConfiguration,
     MainNavRoutes.Ui,
@@ -27,6 +27,6 @@ val ribbonRoutes = setOf(
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.StageStepBar,
     ExternalLibrariesNavRoutes.ComposeNeumorphism,
+    /* 2.9.3 release */
     /* 2.9.2 release */
-    /* 2.9.1 release */
 )
