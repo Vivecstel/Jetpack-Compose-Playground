@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground
 import android.app.Application
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import dagger.hilt.android.HiltAndroidApp
@@ -25,6 +26,9 @@ class JetpackComposePlaygroundApplication : Application() {
     lateinit var firebaseAnalytics: FirebaseAnalytics
 
     @Inject
+    lateinit var firebaseMessaging: FirebaseMessaging
+
+    @Inject
     lateinit var firebaseCrashlytics: FirebaseCrashlytics
 
     @Inject
@@ -37,6 +41,12 @@ class JetpackComposePlaygroundApplication : Application() {
             protoManager.isAnalyticsEnabled.collect { isEnabled ->
                 Timber.d("Analytics collection: $isEnabled")
                 firebaseAnalytics.setAnalyticsCollectionEnabled(isEnabled)
+            }
+        }
+        scope.launch {
+            protoManager.isMessagingEnabled.collect { isEnabled ->
+                Timber.d("Messaging: $isEnabled")
+                firebaseMessaging.isAutoInitEnabled = isEnabled
             }
         }
         scope.launch {

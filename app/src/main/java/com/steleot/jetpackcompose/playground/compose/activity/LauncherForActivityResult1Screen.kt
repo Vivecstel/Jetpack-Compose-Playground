@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
+import com.steleot.jetpackcompose.playground.utils.startActivitySafe
 
 private const val Url = "activity/LauncherForActivityResult1Screen.kt"
 
@@ -53,7 +54,9 @@ private fun LauncherForActivityResultExample() {
     val permissionLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
-                launcher.launch()
+                context.startActivitySafe {
+                    launcher.launch()
+                }
             } else {
                 Toast.makeText(context, "Permission not granted", Toast.LENGTH_SHORT).show()
             }

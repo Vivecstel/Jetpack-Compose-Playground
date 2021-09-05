@@ -1,7 +1,10 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
 import androidx.compose.ui.graphics.Path
-import com.steleot.jetpackcompose.playground.navigation.*
+import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
 fun getRibbonPath(
     width: Float,
@@ -15,15 +18,15 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
-    /* 2.9.2 release */
-    /* 2.9.1 release */
-    /* 2.9.0 release */
-    MainNavRoutes.ExternalLibraries,
-    ExternalLibrariesNavRoutes.PaletteLandscapist,
+    /* 2.9.4 */
     MainNavRoutes.Foundation,
-    FoundationNavRoutes.ProgressSemantics,
-    MainNavRoutes.FoundationLayout,
-    FoundationLayoutNavRoutes.AbsolutePadding,
+    FoundationNavRoutes.LocalOverScrollConfiguration,
     MainNavRoutes.Ui,
-    UiNavRoutes.PointerInput,
+    UiNavRoutes.Blur,
+    UiNavRoutes.Inspectable,
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.StageStepBar,
+    ExternalLibrariesNavRoutes.ComposeNeumorphism,
+    /* 2.9.3 release */
+    /* 2.9.2 release */
 )

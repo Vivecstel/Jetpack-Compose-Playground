@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.zachklipp.richtext.ui.*
-import com.zachklipp.richtext.ui.material.RichText
+import com.zachklipp.richtext.ui.material.MaterialRichText
 import com.zachklipp.richtext.ui.string.richTextString
 
 private const val Url = "externallibraries/ComposeRichTextUiMaterialScreen.kt"
@@ -39,7 +39,7 @@ fun ComposeRichTextUiMaterialScreen() {
 
 @Composable
 private fun BasicRichTextExample() {
-    RichText(modifier = Modifier.padding(16.dp)) {
+    MaterialRichText(modifier = Modifier.padding(16.dp)) {
         Heading(0, "Paragraphs")
         richTextString {
         }

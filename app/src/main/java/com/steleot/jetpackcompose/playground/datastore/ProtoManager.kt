@@ -19,10 +19,12 @@ private val Context.internalDataStore by dataStore(
 interface ProtoManager {
 
     val isAnalyticsEnabled: Flow<Boolean>
+    val isMessagingEnabled: Flow<Boolean>
     val isCrashlyticsEnabled: Flow<Boolean>
     val reviewTimeStamp: Flow<Long>
     val colorPalette: Flow<ColorPalette>
     suspend fun setIsAnalyticsEnabled(isEnabled: Boolean)
+    suspend fun setIsMessagingEnabled(isEnabled: Boolean)
     suspend fun setIsCrashlyticsEnabled(isEnabled: Boolean)
     suspend fun setReviewTimeStamp(timeStamp: Long)
     suspend fun setColorPalette(colorPalette: ColorPalette)
@@ -35,6 +37,11 @@ class ProtoManagerImpl @Inject constructor(
     override val isAnalyticsEnabled
         get() = context.internalDataStore.data.map { settings ->
             settings.analyticsEnabled
+        }
+
+    override val isMessagingEnabled
+        get() = context.internalDataStore.data.map { settings ->
+            settings.messagingEnabled
         }
 
     override val isCrashlyticsEnabled
@@ -61,6 +68,14 @@ class ProtoManagerImpl @Inject constructor(
         context.internalDataStore.updateData { settings ->
             settings.toBuilder()
                 .setAnalyticsEnabled(isEnabled)
+                .build()
+        }
+    }
+
+    override suspend fun setIsMessagingEnabled(isEnabled: Boolean) {
+        context.internalDataStore.updateData { settings ->
+            settings.toBuilder()
+                .setMessagingEnabled(isEnabled)
                 .build()
         }
     }

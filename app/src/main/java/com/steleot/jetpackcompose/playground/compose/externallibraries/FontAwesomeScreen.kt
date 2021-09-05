@@ -25,7 +25,7 @@ fun FontAwesomeScreen() {
     }
 }
 
-val list = listOf(
+private val list = listOf(
     FaIcons.AccessibleIcon,
     FaIcons.Accusoft,
     FaIcons.AcquisitionsIncorporated,

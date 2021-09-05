@@ -29,7 +29,7 @@ fun PagerAccompanistScreen() {
     }
 }
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalPagerApi::class, ExperimentalCoilApi::class)
 @Composable
 private fun PagerExample() {
     val pagerState = rememberPagerState(pageCount = 10, initialOffscreenLimit = 2)

@@ -20,6 +20,8 @@ object MainNavRoutes {
     const val ViewModel = "view model"
     const val Settings = "settings"
     const val Popular = "popular"
+    const val Favorites = "favorites"
+    const val Articles = "articles"
 }
 
 object ActivityNavRoutes {
@@ -77,6 +79,7 @@ object FoundationNavRoutes {
     const val LazyColumn = "lazy column"
     const val LazyGrid = "lazy grid"
     const val LazyRow = "lazy row"
+    const val LocalOverScrollConfiguration = "local overScroll configuration"
     const val ProgressSemantics = "progress semantics"
     const val Scrollable = "scrollable"
     const val Scroller = "scroller"
@@ -196,6 +199,7 @@ object UiNavRoutes {
     const val Alpha = "alpha"
     const val AndroidViewBinding = "android view binding"
     const val AnnotatedString = "annotated string"
+    const val Blur = "blur"
     const val Brush = "brush"
     const val Clip = "clip"
     const val ClipToBounds = "clip to bounds"
@@ -209,6 +213,7 @@ object UiNavRoutes {
     const val Font = "font"
     const val GraphicsLayer = "graphics layer"
     const val ImageBitmapToPixelMap = "image bitmap to pixel map"
+    const val Inspectable = "inspectable"
     const val LayoutId = "layout id"
     const val Layout = "layout"
     const val LocalAccessibilityManager = "local accessibility manager"
@@ -289,6 +294,7 @@ object ExternalLibrariesNavRoutes {
     const val ComposeRichTextSlideshow = "compose rich text slideshow"
     const val ComposeRichTextUiMaterial = "compose rich text ui material"
     const val ComposeRichTextUi = "compose rich text ui"
+    const val ComposeZoomableImage = "compose zoomable image"
     const val DrawablePainterAccompanist = "drawable painter accompanist"
     const val FlowLayoutAccompanist = "flow layout accompanist"
     const val FontAwesome = "font awesome"
@@ -308,6 +314,7 @@ object ExternalLibrariesNavRoutes {
     const val RatingBar = "rating bar"
     const val RevealSwipe = "reveal swipe"
     const val SpeedDialFloatingActionButton = "speed dial floating action button"
+    const val StageStepBar = "stage step bar"
     const val SwipeRefreshAccompanist = "swipe refresh accompanist"
     const val SystemUiControllerAccompanist = "system ui controller accompanist"
 }

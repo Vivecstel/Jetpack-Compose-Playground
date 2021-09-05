@@ -21,6 +21,7 @@ import timber.log.Timber
 
 private const val Url = "externallibraries/CoilScreen.kt"
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun CoilScreen() {
     DefaultScaffold(

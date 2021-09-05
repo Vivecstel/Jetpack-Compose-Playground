@@ -65,6 +65,8 @@ object Libraries {
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
+    const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx"
+    const val firebaseInstallations = "com.google.firebase:firebase-installations-ktx"
 
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
@@ -187,6 +189,13 @@ object Libraries {
         "com.halilibo.compose-richtext:printing:${Versions.composeRichtext}"
     const val composeRichtextSlideshow =
         "com.halilibo.compose-richtext:slideshow:${Versions.composeRichtext}"
+
+    /* https://github.com/umutsoysl/ComposeZoomableImage */
+    const val zoomableImage = "com.github.umutsoysl:ComposeZoomableImage:${Versions.zoomableImage}"
+
+    /* https://github.com/loukwn/StageStepBar */
+    const val stageStepBar =
+        "com.github.loukwn.StageStepBar:stagestepbar-compose:${Versions.stageStepBar}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

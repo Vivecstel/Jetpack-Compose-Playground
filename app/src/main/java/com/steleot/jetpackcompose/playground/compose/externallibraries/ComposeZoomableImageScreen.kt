@@ -3,24 +3,18 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import me.nikhilchaudhari.library.neumorphic
-import me.nikhilchaudhari.library.shapes.Punched
 
-private const val Url = "externallibraries/ComposeNeumorphismScreen.kt"
+private const val Url = "externallibraries/ComposeZoomableImageScreen.kt"
 
 @Composable
-fun ComposeNeumorphismScreen() {
+fun ComposeZoomableImageScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.ComposeNeumorphism,
+        title = ExternalLibrariesNavRoutes.ComposeZoomableImage,
         link = Url,
     ) {
         Column(
@@ -28,21 +22,20 @@ fun ComposeNeumorphismScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            NeumorphicExample()
+            //ComposeZoomableImageExample()
         }
     }
 }
 
+/*
+@ExperimentalCoilApi
 @Composable
-private fun NeumorphicExample() {
-    Button(
-        onClick = { },
-        modifier = Modifier
-            .padding(12.dp)
-            .neumorphic(
-                neuShape = Punched.Rounded(radius = 8.dp)
-            )
-    ) {
-        Text(text = "Press me")
-    }
-}
+private fun ComposeZoomableImageExample() {
+    val painter = rememberImagePainter(randomSampleImageUrl())
+
+    ZoomableImage(
+        painter = painter,
+        isRotation = false,
+        modifier = Modifier.fillMaxWidth().size(250.dp)
+    )
+}*/

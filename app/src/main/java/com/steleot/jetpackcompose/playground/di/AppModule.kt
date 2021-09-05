@@ -4,6 +4,8 @@ import android.content.Context
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.installations.FirebaseInstallations
+import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.datastore.ProtoManagerImpl
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
@@ -23,6 +25,14 @@ object AppModule {
     @Singleton
     fun provideFirebaseAnalytics(@ApplicationContext context: Context) =
         FirebaseAnalytics.getInstance(context)
+
+    @Provides
+    @Singleton
+    fun provideFirebaseMessaging() = FirebaseMessaging.getInstance()
+
+    @Provides
+    @Singleton
+    fun provideFirebaseInstallations() = FirebaseInstallations.getInstance()
 
     @Provides
     @Singleton

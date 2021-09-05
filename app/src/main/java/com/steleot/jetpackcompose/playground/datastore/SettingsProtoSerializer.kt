@@ -16,6 +16,7 @@ object SettingsProtoSerializer : Serializer<SettingsProto> {
             .toBuilder()
             .setAnalyticsEnabled(!BuildConfig.DEBUG)
             .setCrashlyticsEnabled(!BuildConfig.DEBUG)
+            .setMessagingEnabled(true)
             .setColorPalette(ColorPalette.DEEP_PURPLE.name)
             .build()
 

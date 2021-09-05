@@ -1,1 +1,1 @@
-Fix crash for android 12 devices when app starts
+Updated compose to 1.1.0-alpha03. Updated kotlin, navigation, core, activity, landscapist, compose charts, markdown and richtext libraries. Added compose neumporphism and stage step bar libraries. Added Local overscroll configuration and blur screens. Fix LauncherForActivityResult1ScreenKt.java crash when activity not found. Refactored MainActivity and menu drawer. Updated landscapist. Added inspectable example. Improvements in search and settings screen.

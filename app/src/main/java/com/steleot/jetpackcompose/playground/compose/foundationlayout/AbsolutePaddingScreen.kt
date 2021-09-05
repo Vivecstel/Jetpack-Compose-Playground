@@ -26,7 +26,13 @@ fun AbsolutePaddingScreen() {
         ) {
             Box(Modifier.background(color = Color.Gray)) {
                 Box(
-                    Modifier.absolutePadding(left = 20.dp, top = 30.dp, right = 20.dp, bottom = 30.dp)
+                    Modifier
+                        .absolutePadding(
+                            left = 20.dp,
+                            top = 30.dp,
+                            right = 20.dp,
+                            bottom = 30.dp
+                        )
                         .size(250.dp)
                         .background(MaterialTheme.colors.primary)
                 )
