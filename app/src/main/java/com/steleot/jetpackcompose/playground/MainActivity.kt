@@ -175,7 +175,7 @@ fun JetpackComposeApp(
                                     else -> slideInHorizontally(
                                         initialOffsetX = { screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    )
+                                    ) + fadeIn(0.5f, tween(NavigationDuration))
                                 }
                             },
                             exitTransition = { _, target ->
@@ -188,7 +188,7 @@ fun JetpackComposeApp(
                                         slideOutHorizontally(
                                             targetOffsetX = { -screenWidth },
                                             animationSpec = tween(NavigationDuration)
-                                        )
+                                        ) + fadeOut(0.5f, tween(NavigationDuration))
                                 }
                             },
                             popEnterTransition = { initial, _ ->
@@ -201,7 +201,7 @@ fun JetpackComposeApp(
                                         slideInHorizontally(
                                             initialOffsetX = { -screenWidth },
                                             animationSpec = tween(NavigationDuration)
-                                        )
+                                        ) + fadeIn(0.5f, tween(NavigationDuration))
                                 }
                             },
                             popExitTransition = { initial, _ ->
@@ -214,7 +214,7 @@ fun JetpackComposeApp(
                                         slideOutHorizontally(
                                             targetOffsetX = { screenWidth },
                                             animationSpec = tween(NavigationDuration)
-                                        )
+                                        ) + fadeOut(0.5f, tween(NavigationDuration))
                                 }
                             }
                         ) {
