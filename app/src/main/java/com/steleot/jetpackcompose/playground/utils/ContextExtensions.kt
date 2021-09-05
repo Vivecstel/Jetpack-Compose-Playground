@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import timber.log.Timber
@@ -43,3 +44,13 @@ inline fun Context.startActivitySafe(
         Toast.makeText(this, "Activity not found ", Toast.LENGTH_SHORT).show()
     }
 }
+
+val Context.installer: String?
+    get() {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            this.packageManager.getInstallSourceInfo(packageName).installingPackageName
+        } else {
+            @Suppress("DEPRECATION")
+            this.packageManager.getInstallerPackageName(packageName)
+        }
+    }

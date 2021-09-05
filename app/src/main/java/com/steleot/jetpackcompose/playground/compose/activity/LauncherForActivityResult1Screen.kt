@@ -25,6 +25,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
 import com.steleot.jetpackcompose.playground.utils.startActivitySafe
+
 private const val Url = "activity/LauncherForActivityResult1Screen.kt"
 
 @Composable

@@ -213,6 +213,7 @@ object UiNavRoutes {
     const val Font = "font"
     const val GraphicsLayer = "graphics layer"
     const val ImageBitmapToPixelMap = "image bitmap to pixel map"
+    const val Inspectable = "inspectable"
     const val LayoutId = "layout id"
     const val Layout = "layout"
     const val LocalAccessibilityManager = "local accessibility manager"

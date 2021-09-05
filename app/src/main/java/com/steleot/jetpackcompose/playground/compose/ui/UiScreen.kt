@@ -25,6 +25,7 @@ val routes = listOf(
     UiNavRoutes.Font,
     UiNavRoutes.GraphicsLayer,
     UiNavRoutes.ImageBitmapToPixelMap,
+    UiNavRoutes.Inspectable,
     UiNavRoutes.LayoutId,
     UiNavRoutes.Layout,
 //    UiNavRoutes.LocalAccessibilityManager,

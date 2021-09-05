@@ -66,21 +66,21 @@ private val drawerItems = listOf(
     ),
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
-        "privacy policy",
-        Icons.Default.PrivacyTip,
-        menuAction = MenuAction.PRIVACY_POLICY
-    ),
-    DrawerListItemData.MenuData(
-        MainNavRoutes.Settings,
-        Icons.Default.Settings
-    ),
-    DrawerListItemData.DividerData,
-    DrawerListItemData.MenuData(
         "send feedback",
         Icons.Default.Feedback,
         "Send Feedback",
         MenuAction.FEEDBACK
-    )
+    ),
+    DrawerListItemData.MenuData(
+        "privacy policy",
+        Icons.Default.PrivacyTip,
+        menuAction = MenuAction.PRIVACY_POLICY
+    ),
+    DrawerListItemData.DividerData,
+    DrawerListItemData.MenuData(
+        MainNavRoutes.Settings,
+        Icons.Default.Settings
+    ),
 )
 
 private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io/privacy.html"

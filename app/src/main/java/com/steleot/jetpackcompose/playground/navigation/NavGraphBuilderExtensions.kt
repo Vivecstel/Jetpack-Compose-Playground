@@ -304,6 +304,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.Font) { FontScreen() }
     composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
     composable(route = UiNavRoutes.ImageBitmapToPixelMap) { ImageBitmapToPixelMapScreen() }
+    composable(route = UiNavRoutes.Inspectable) { InspectableScreen() }
     composable(route = UiNavRoutes.LayoutId) { LayoutIdScreen() }
     composable(route = UiNavRoutes.Layout) { LayoutScreen() }
     composable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }

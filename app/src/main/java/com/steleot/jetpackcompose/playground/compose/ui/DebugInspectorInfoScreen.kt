@@ -27,15 +27,19 @@ fun DebugInspectorInfoScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(
-                modifier = Modifier
-                    .size(100.dp)
-                    .debugColorModifier(Color.Red)
-                    .debugModifier(50.dp, 50.dp, Color.Red)
-            )
-            Box(modifier = Modifier.debugModifier(50.dp, 50.dp, Color.Green))
+            DebugInspectorInfoExample()
         }
     }
+}
+
+@Composable
+private fun DebugInspectorInfoExample() {
+    Box(
+        modifier = Modifier
+            .size(100.dp)
+            .debugColorModifier(Color.Red)
+    )
+    Box(modifier = Modifier.debugModifier(50.dp, 50.dp, Color.Green))
 }
 
 @SuppressLint("UnnecessaryComposedModifier")

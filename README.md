@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 245 screens** with examples of **Jetpack Compose**.
+Offering **more than 250 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 245 screens with
+has to offer and how it improves everyday Android UI development. It offers more 250 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -257,6 +257,7 @@ Download from:
    - [Font](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/FontScreen.kt)
    - [GraphicsLayer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/GraphicsLayerScreen.kt)
    - [ImageBitmapToPixelMap](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/ImageBitmapToPixelMapScreen.kt)
+   - [Inspectable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/InspectableScreen.kt)
    - [LayoutId](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LayoutIdScreen.kt)
    - [Layout](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LayoutScreen.kt)
    - [LocalClipboardManager](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalClipboardManagerScreen.kt)

@@ -39,6 +39,7 @@ import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.utils.installer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
@@ -66,25 +67,16 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        handleFirebase()
+        init(savedInstanceState)
         MobileAds.initialize(this)
         setContent {
             JetpackComposeApp(inAppReviewHelper, firebaseAnalytics, protoManager)
         }
     }
 
-    private fun handleFirebase() {
-        if (BuildConfig.DEBUG) {
-            lifecycleScope.launchWhenCreated {
-                val token = try {
-                    firebaseMessaging.token.await()
-                } catch (e: Exception) {
-                    Timber.e(e)
-                    null
-                }
-                Timber.d("Token retrieved: $token")
-            }
+    private fun init(savedInstanceState: Bundle?) {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        if (savedInstanceState == null) {
             lifecycleScope.launchWhenCreated {
                 val id = try {
                     firebaseInstallations.id.await()
@@ -93,6 +85,17 @@ class MainActivity : ComponentActivity() {
                     null
                 }
                 Timber.d("Id retrieved: $id")
+                firebaseAnalytics.setUserId(id)
+                firebaseAnalytics.setUserProperty("installer", installer)
+            }
+            lifecycleScope.launchWhenCreated {
+                val token = try {
+                    firebaseMessaging.token.await()
+                } catch (e: Exception) {
+                    Timber.e(e)
+                    null
+                }
+                Timber.d("Token retrieved: $token")
             }
         }
     }
