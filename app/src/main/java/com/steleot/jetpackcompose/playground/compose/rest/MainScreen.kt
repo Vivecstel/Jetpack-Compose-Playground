@@ -52,34 +52,34 @@ private val routes = listOf(
 private val drawerItems = listOf(
     DrawerListItemData.MenuData(
         MainNavRoutes.Favorites,
-        Icons.Default.Favorite,
+        Icons.Filled.Favorite,
         menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.MenuData(
         MainNavRoutes.Popular,
-        Icons.Default.ThumbUp
+        Icons.Filled.ThumbUp
     ),
     DrawerListItemData.MenuData(
         MainNavRoutes.Articles,
-        Icons.Default.Article,
+        Icons.Filled.Article,
         menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
         "send feedback",
-        Icons.Default.Feedback,
+        Icons.Filled.Feedback,
         "Send Feedback",
         MenuAction.FEEDBACK
     ),
     DrawerListItemData.MenuData(
         "privacy policy",
-        Icons.Default.PrivacyTip,
+        Icons.Filled.PrivacyTip,
         menuAction = MenuAction.PRIVACY_POLICY
     ),
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
         MainNavRoutes.Settings,
-        Icons.Default.Settings
+        Icons.Filled.Settings
     ),
 )
 

@@ -55,7 +55,7 @@ private fun ColumnScope.AnimatedFloatingActionButton() {
     ) {
         Row(Modifier.padding(start = 12.dp, end = 12.dp)) {
             Icon(
-                Icons.Default.Favorite,
+                Icons.Filled.Favorite,
                 contentDescription = "Favorite",
                 modifier = Modifier.align(Alignment.CenterVertically)
             )

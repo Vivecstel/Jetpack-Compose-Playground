@@ -11,11 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.halilibo.richtext.ui.*
+import com.halilibo.richtext.ui.material.MaterialRichText
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import com.zachklipp.richtext.ui.*
-import com.zachklipp.richtext.ui.material.MaterialRichText
-import com.zachklipp.richtext.ui.string.richTextString
 
 private const val Url = "externallibraries/ComposeRichTextUiMaterialScreen.kt"
 
@@ -41,8 +40,6 @@ fun ComposeRichTextUiMaterialScreen() {
 private fun BasicRichTextExample() {
     MaterialRichText(modifier = Modifier.padding(16.dp)) {
         Heading(0, "Paragraphs")
-        richTextString {
-        }
         Text("Simple paragraph.")
         Text("Paragraph with\nmultiple lines.")
         Text("Paragraph with really long line that should be getting wrapped.")

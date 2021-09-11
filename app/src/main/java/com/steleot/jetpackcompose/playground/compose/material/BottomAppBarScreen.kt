@@ -46,7 +46,7 @@ fun BottomAppBarScreen() {
             if (selectedLayout.value == 5 || selectedLayout.value == 6) {
                 FloatingActionButton(onClick = {}) {
                     Icon(
-                        Icons.Default.Add,
+                        Icons.Filled.Add,
                         contentDescription = "Floating Action Button"
                     )
                 }

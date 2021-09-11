@@ -9,4 +9,5 @@ message SettingsProto {
     bool crashlyticsEnabled = 3;
     int64 reviewTimeStamp = 4;
     string colorPalette = 5;
+    string darkMode = 6;
 }

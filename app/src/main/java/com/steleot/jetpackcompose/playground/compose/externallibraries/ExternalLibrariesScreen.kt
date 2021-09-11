@@ -14,7 +14,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.ComposeMarkdown,
     ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.ComposeRichTextPrinting,
-    ExternalLibrariesNavRoutes.ComposeRichTextSlideshow,
+//    ExternalLibrariesNavRoutes.ComposeRichTextSlideshow,
     ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
     ExternalLibrariesNavRoutes.ComposeRichTextUi,
 //    ExternalLibrariesNavRoutes.ComposeZoomableImage,

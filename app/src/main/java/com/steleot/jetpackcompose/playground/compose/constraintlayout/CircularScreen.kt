@@ -45,7 +45,7 @@ private fun CircularExample() {
                 centerHorizontallyTo(parent)
             }
         ) {
-            Icon(Icons.Default.Menu, contentDescription = null)
+            Icon(Icons.Filled.Menu, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -54,7 +54,7 @@ private fun CircularExample() {
                 circular(fab1, 72.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Default.MenuOpen, contentDescription = null)
+            Icon(Icons.Filled.MenuOpen, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -63,7 +63,7 @@ private fun CircularExample() {
                 circular(fab1, 144.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Default.MenuBook, contentDescription = null)
+            Icon(Icons.Filled.MenuBook, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -72,7 +72,7 @@ private fun CircularExample() {
                 circular(fab1, 216.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Default.RestaurantMenu, contentDescription = null)
+            Icon(Icons.Filled.RestaurantMenu, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -81,7 +81,7 @@ private fun CircularExample() {
                 circular(fab1, 288.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Default.AddAlarm, contentDescription = null)
+            Icon(Icons.Filled.AddAlarm, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -90,7 +90,7 @@ private fun CircularExample() {
                 circular(fab1, 360.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Default.AddBox, contentDescription = null)
+            Icon(Icons.Filled.AddBox, contentDescription = null)
         }
     }
 }

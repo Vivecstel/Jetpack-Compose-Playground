@@ -28,7 +28,7 @@ fun DropdownMenuScreen() {
                 .wrapContentSize(Alignment.Center)
         ) {
             IconButton(onClick = { expanded = true }) {
-                Icon(Icons.Default.MoreVert, contentDescription = "Localized description")
+                Icon(Icons.Filled.MoreVert, contentDescription = "Localized description")
             }
             DropdownMenu(
                 expanded = expanded,

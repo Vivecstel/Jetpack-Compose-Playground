@@ -5,13 +5,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.ModeNight
+import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -29,6 +30,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ColorPalette
+import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -68,8 +70,12 @@ fun SettingsScreen(
                 viewModel.onCrashlyticsChanged(it)
             }
             Divider()
-            ChangeThemePaletteItem(ColorPalette.values(), theme, setTheme) {
+            ChangeColorPaletteItem(ColorPalette.values(), theme, setTheme) {
                 viewModel.onColorPaletteChanged(it)
+            }
+            Divider()
+            ChangeDarkThemeModeItem(DarkThemeMode.values(), theme, setTheme) {
+                viewModel.onDarkThemeModeChanged(it)
             }
         }
     }
@@ -100,47 +106,60 @@ private fun SettingsListItem(
 }
 
 @Composable
-private fun ChangeThemePaletteItem(
+private fun ChangeColorPaletteItem(
     palettes: Array<ColorPalette>,
     theme: ThemeState,
     setTheme: (ThemeState) -> Unit,
     onColorPaletteChanged: (ColorPalette) -> Unit
 ) {
+    val state = rememberLazyListState()
+    var isFirstTime by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(Unit) {
+        if (!isFirstTime) {
+            isFirstTime = true
+            val index = palettes.indexOfFirst { it == theme.colorPalette }
+            if (index > -1) {
+                state.scrollToItem(index)
+            }
+        }
+    }
+    SettingsScrollableRow(
+        text = "Change Application Theme Color",
+        state = state,
+    ) {
+        itemsIndexed(palettes) { index, colorPalette ->
+            ColorPaletteBox(
+                colorPalette,
+                index == palettes.size - 1,
+                theme,
+                setTheme,
+                onColorPaletteChanged
+            )
+        }
+    }
+}
+
+@Composable
+private fun SettingsScrollableRow(
+    text: String,
+    state: LazyListState = rememberLazyListState(),
+    content: LazyListScope.() -> Unit
+) {
     Column {
         Text(
-            text = "Change Application Theme Color",
+            text = text,
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 16.dp, start = 16.dp)
         )
-        val state = rememberLazyListState()
-        var isFirstTime by rememberSaveable { mutableStateOf(false) }
-        LaunchedEffect(Unit) {
-            if (!isFirstTime) {
-                isFirstTime = true
-                val index = palettes.indexOfFirst { it == theme.colorPalette }
-                if (index > -1) {
-                    state.scrollToItem(index)
-                }
-            }
-        }
         LazyRow(
             state = state,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 16.dp)
         ) {
-            itemsIndexed(ColorPalette.values()) { index, colorPalette ->
-                ColorPaletteBox(
-                    colorPalette,
-                    index == palettes.size - 1,
-                    theme,
-                    setTheme,
-                    onColorPaletteChanged
-                )
-            }
+            content()
         }
-
     }
 }
 
@@ -153,37 +172,133 @@ private fun ColorPaletteBox(
     onColorPaletteChanged: (ColorPalette) -> Unit
 ) {
     val isSelected = colorPalette == theme.colorPalette
-    Box(
-        Modifier
-            .padding(start = 16.dp)
-            .then(
-                if (isLast) {
-                    Modifier.padding(end = 16.dp)
-                } else Modifier
-            )
-            .size(48.dp)
-            .clip(CircleShape)
-            .background(colorPalette.getMaterialColors(theme.isDarkTheme).primary)
-            .clickable {
-                onColorPaletteChanged(colorPalette)
-                setTheme(theme.copy(colorPalette = colorPalette))
-            }
-            .then(
-                if (isSelected) {
-                    Modifier.border(
-                        BorderStroke(2.dp, MaterialTheme.colors.onSurface),
-                        shape = CircleShape
-                    )
-                } else Modifier
-            )
+    SettingCircleShapeBox(
+        colorPalette = colorPalette,
+        darkThemeMode = theme.darkThemeMode,
+        isSystemInDarkTheme = theme.isSystemInDarkTheme,
+        isLast = isLast,
+        isSelected = isSelected,
+        onClick = {
+            onColorPaletteChanged(colorPalette)
+            setTheme(theme.copy(colorPalette = colorPalette))
+        }
     ) {
         if (isSelected) {
             Icon(
                 Icons.Filled.Check,
-                contentDescription = "Theme Selected",
+                contentDescription = "Color Pallete Selected",
                 modifier = Modifier.align(Alignment.Center)
             )
         }
+    }
+}
+
+@Composable
+private fun SettingCircleShapeBox(
+    colorPalette: ColorPalette,
+    darkThemeMode: DarkThemeMode,
+    isSystemInDarkTheme: Boolean,
+    isLast: Boolean,
+    isSelected: Boolean,
+    text: (@Composable ColumnScope.() -> Unit)? = null,
+    onClick: () -> Unit,
+    icon: @Composable BoxScope.() -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .padding(start = 16.dp, end = if (isLast) 16.dp else 0.dp)
+            .clickable(onClick = onClick)
+    ) {
+        Box(
+            Modifier
+                .size(48.dp)
+                .clip(CircleShape)
+                .background(
+                    colorPalette.getMaterialColors(
+                        darkThemeMode,
+                        isSystemInDarkTheme
+                    ).primary
+                )
+                .then(
+                    if (isSelected) {
+                        Modifier.border(
+                            BorderStroke(2.dp, MaterialTheme.colors.onSurface),
+                            shape = CircleShape
+                        )
+                    } else Modifier
+                )
+        ) {
+            icon()
+        }
+        text?.invoke(this)
+    }
+}
+
+@Composable
+private fun ChangeDarkThemeModeItem(
+    modes: Array<DarkThemeMode>,
+    theme: ThemeState,
+    setTheme: (ThemeState) -> Unit,
+    onDarkThemeModeChanged: (DarkThemeMode) -> Unit
+) {
+    SettingsScrollableRow(
+        "Change Application Dark Theme Mode",
+    ) {
+        itemsIndexed(modes) { index, darkThemeMode ->
+            DarkThemeModeBox(
+                darkThemeMode,
+                index == modes.size - 1,
+                theme,
+                setTheme,
+                onDarkThemeModeChanged
+            )
+        }
+    }
+}
+
+@Composable
+private fun DarkThemeModeBox(
+    darkThemeMode: DarkThemeMode,
+    isLast: Boolean,
+    theme: ThemeState,
+    setTheme: (ThemeState) -> Unit,
+    onDarkThemeModeChanged: (DarkThemeMode) -> Unit
+) {
+    val isSelected = darkThemeMode == theme.darkThemeMode
+    SettingCircleShapeBox(
+        colorPalette = theme.colorPalette,
+        darkThemeMode = theme.darkThemeMode,
+        isSystemInDarkTheme = theme.isSystemInDarkTheme,
+        isLast = isLast,
+        isSelected = isSelected,
+        text = {
+            Text(
+                text = when (darkThemeMode) {
+                    DarkThemeMode.SYSTEM -> "System"
+                    DarkThemeMode.DARK -> "Dark"
+                    DarkThemeMode.LIGHT -> "Light"
+                },
+                style = MaterialTheme.typography.caption,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(vertical = 4.dp)
+            )
+        },
+        onClick = {
+            onDarkThemeModeChanged(darkThemeMode)
+            setTheme(theme.copy(darkThemeMode = darkThemeMode))
+        }
+    ) {
+        Icon(
+            imageVector = when (darkThemeMode) {
+                DarkThemeMode.SYSTEM -> Icons.Default.Android
+                DarkThemeMode.DARK -> Icons.Default.ModeNight
+                DarkThemeMode.LIGHT -> Icons.Default.WbSunny
+            },
+            contentDescription = "Dark Theme Mode Selected",
+            modifier = Modifier.align(Alignment.Center)
+        )
     }
 }
 
@@ -249,6 +364,12 @@ class SettingsViewModel @Inject constructor(
     fun onColorPaletteChanged(colorPalette: ColorPalette) {
         viewModelScope.launch {
             protoManager.setColorPalette(colorPalette)
+        }
+    }
+
+    fun onDarkThemeModeChanged(darkThemeMode: DarkThemeMode) {
+        viewModelScope.launch {
+            protoManager.setDarkThemeMode(darkThemeMode)
         }
     }
 }

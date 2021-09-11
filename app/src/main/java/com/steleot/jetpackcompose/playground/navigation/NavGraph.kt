@@ -271,6 +271,7 @@ object CustomExamplesNavRoutes {
     const val AnimatedShowList = "animated show list"
     const val AnimatedText = "animated text"
     const val BarChart = "bar chart"
+    const val BottomRoundedArcShape = "bottom rounded arc shape"
     const val CameraX = "cameraX"
     const val CollapsingToolbar = "collapsing toolbar"
     const val ColorMatrix = "color matrix"

@@ -2,21 +2,23 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.steleot.jetpackcompose.playground.LocalInAppReviewer
+import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
-import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
+import com.steleot.jetpackcompose.playground.theme.ThemeState
 import org.junit.Rule
 import org.junit.Test
 
 class ButtonScreenTest {
 
     @get:Rule
-    val composeTestRule = createComposeRule()
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     private val inAppReviewHelper = EmptyInAppReviewHelper()
 
@@ -24,7 +26,7 @@ class ButtonScreenTest {
     fun testButtonScreen() {
         composeTestRule.setContent {
             JetpackComposePlaygroundTheme(
-                colorPalette = ColorPalette.DEEP_PURPLE
+                themeState = ThemeState(),
             ) {
                 ProvideWindowInsets {
                     CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {

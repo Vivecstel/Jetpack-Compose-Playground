@@ -111,17 +111,20 @@ fun JetpackComposeApp(
     firebaseAnalytics: FirebaseAnalytics,
     protoManager: ProtoManager,
 ) {
-    val isDarkTheme = isSystemInDarkTheme()
+    val isSystemInDarkTheme = isSystemInDarkTheme()
     var isLoaded by rememberSaveable { mutableStateOf(false) }
     var themeState by rememberSaveable {
-        mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
+        mutableStateOf(ThemeState())
     }
     val systemUiController = rememberSystemUiController()
     SideEffect {
 
         if (isLoaded) {
             systemUiController.setSystemBarsColor(
-                themeState.colorPalette.getMaterialColors(themeState.isDarkTheme).primaryVariant
+                themeState.colorPalette.getMaterialColors(
+                    themeState.darkThemeMode,
+                    themeState.isSystemInDarkTheme
+                ).primaryVariant
             )
         }
     }
@@ -129,12 +132,15 @@ fun JetpackComposeApp(
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
     }
     LaunchedEffect(Unit) {
-        if (themeState.isDarkTheme != isDarkTheme) {
-            themeState = themeState.copy(isDarkTheme = isDarkTheme)
+        if (themeState.isSystemInDarkTheme != isSystemInDarkTheme) {
+            themeState = themeState.copy(isSystemInDarkTheme = isSystemInDarkTheme)
         }
         if (!isLoaded) {
-            protoManager.colorPalette.collect { colorPalette ->
-                themeState = themeState.copy(colorPalette = colorPalette)
+            protoManager.themeState.collect {
+                themeState = themeState.copy(
+                    colorPalette = it.colorPalette,
+                    darkThemeMode = it.darkThemeMode
+                )
                 delay(250L)
                 isLoaded = true
             }
@@ -142,113 +148,114 @@ fun JetpackComposeApp(
     }
     if (isLoaded) {
         JetpackComposePlaygroundTheme(
-            colorPalette = themeState.colorPalette
+            themeState = themeState,
         ) {
             ProvideWindowInsets {
-                CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
-                    CompositionLocalProvider(LocalOverScrollConfiguration provides null) {
-                        val navController = rememberAnimatedNavController()
-                        DisposableEffect(Unit) {
-                            val listener =
-                                NavController.OnDestinationChangedListener { _, destination, _ ->
-                                    destination.route?.let { route ->
-                                        Timber.d("Route : $route")
-                                        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-                                            param(FirebaseAnalytics.Param.SCREEN_NAME, route)
-                                        }
+                CompositionLocalProvider(
+                    LocalInAppReviewer provides inAppReviewHelper,
+                    LocalOverScrollConfiguration provides null,
+                ) {
+                    val navController = rememberAnimatedNavController()
+                    DisposableEffect(Unit) {
+                        val listener =
+                            NavController.OnDestinationChangedListener { _, destination, _ ->
+                                destination.route?.let { route ->
+                                    Timber.d("Route : $route")
+                                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+                                        param(FirebaseAnalytics.Param.SCREEN_NAME, route)
                                     }
                                 }
-                            navController.addOnDestinationChangedListener(listener)
-                            onDispose {
-                                navController.removeOnDestinationChangedListener(listener)
                             }
+                        navController.addOnDestinationChangedListener(listener)
+                        onDispose {
+                            navController.removeOnDestinationChangedListener(listener)
                         }
-                        AnimatedNavHost(
-                            navController = navController,
-                            startDestination = MainNavRoutes.Main,
-                            enterTransition = { _, target ->
-                                when (target.destination.route) {
-                                    MainNavRoutes.Popular,
-                                    MainNavRoutes.Search,
-                                    MainNavRoutes.Settings ->
-                                        fadeIn(animationSpec = tween(NavigationDuration))
-                                    else -> slideInHorizontally(
-                                        initialOffsetX = { screenWidth },
+                    }
+                    AnimatedNavHost(
+                        navController = navController,
+                        startDestination = MainNavRoutes.Main,
+                        enterTransition = { _, target ->
+                            when (target.destination.route) {
+                                MainNavRoutes.Popular,
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeIn(animationSpec = tween(NavigationDuration))
+                                else -> slideInHorizontally(
+                                    initialOffsetX = { screenWidth },
+                                    animationSpec = tween(NavigationDuration)
+                                ) + fadeIn(0.5f, tween(NavigationDuration))
+                            }
+                        },
+                        exitTransition = { _, target ->
+                            when (target.destination.route) {
+                                MainNavRoutes.Popular,
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeOut(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideOutHorizontally(
+                                        targetOffsetX = { -screenWidth },
+                                        animationSpec = tween(NavigationDuration)
+                                    ) + fadeOut(0.5f, tween(NavigationDuration))
+                            }
+                        },
+                        popEnterTransition = { initial, _ ->
+                            when (initial.destination.route) {
+                                MainNavRoutes.Popular,
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeIn(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideInHorizontally(
+                                        initialOffsetX = { -screenWidth },
                                         animationSpec = tween(NavigationDuration)
                                     ) + fadeIn(0.5f, tween(NavigationDuration))
-                                }
-                            },
-                            exitTransition = { _, target ->
-                                when (target.destination.route) {
-                                    MainNavRoutes.Popular,
-                                    MainNavRoutes.Search,
-                                    MainNavRoutes.Settings ->
-                                        fadeOut(animationSpec = tween(NavigationDuration))
-                                    else ->
-                                        slideOutHorizontally(
-                                            targetOffsetX = { -screenWidth },
-                                            animationSpec = tween(NavigationDuration)
-                                        ) + fadeOut(0.5f, tween(NavigationDuration))
-                                }
-                            },
-                            popEnterTransition = { initial, _ ->
-                                when (initial.destination.route) {
-                                    MainNavRoutes.Popular,
-                                    MainNavRoutes.Search,
-                                    MainNavRoutes.Settings ->
-                                        fadeIn(animationSpec = tween(NavigationDuration))
-                                    else ->
-                                        slideInHorizontally(
-                                            initialOffsetX = { -screenWidth },
-                                            animationSpec = tween(NavigationDuration)
-                                        ) + fadeIn(0.5f, tween(NavigationDuration))
-                                }
-                            },
-                            popExitTransition = { initial, _ ->
-                                when (initial.destination.route) {
-                                    MainNavRoutes.Popular,
-                                    MainNavRoutes.Search,
-                                    MainNavRoutes.Settings ->
-                                        fadeOut(animationSpec = tween(NavigationDuration))
-                                    else ->
-                                        slideOutHorizontally(
-                                            targetOffsetX = { screenWidth },
-                                            animationSpec = tween(NavigationDuration)
-                                        ) + fadeOut(0.5f, tween(NavigationDuration))
-                                }
                             }
-                        ) {
-                            /* main */
-                            addMainRoutes(navController, themeState) { newThemeState ->
-                                themeState = newThemeState
+                        },
+                        popExitTransition = { initial, _ ->
+                            when (initial.destination.route) {
+                                MainNavRoutes.Popular,
+                                MainNavRoutes.Search,
+                                MainNavRoutes.Settings ->
+                                    fadeOut(animationSpec = tween(NavigationDuration))
+                                else ->
+                                    slideOutHorizontally(
+                                        targetOffsetX = { screenWidth },
+                                        animationSpec = tween(NavigationDuration)
+                                    ) + fadeOut(0.5f, tween(NavigationDuration))
                             }
-                            /* activity */
-                            addActivityRoutes(navController)
-                            /* animation */
-                            addAnimationRoutes()
-                            /* constraint layout */
-                            addConstraintLayoutRoutes()
-                            /* foundation */
-                            addFoundationRoutes()
-                            /* foundation layout */
-                            addFoundationLayoutRoutes()
-                            /* material */
-                            addMaterialRoutes()
-                            /* material icons */
-                            addMaterialIconsRoutes()
-                            /* material icons extended */
-                            addMaterialIconsExtended()
-                            /* runtime */
-                            addRuntimeRoutes()
-                            /* ui */
-                            addUiRoutes()
-                            /* view model */
-                            addViewModelRoutes()
-                            /* custom examples */
-                            addCustomExamples()
-                            /* external */
-                            addExternalLibraries(navController, systemUiController)
                         }
+                    ) {
+                        /* main */
+                        addMainRoutes(navController, themeState) { newThemeState ->
+                            themeState = newThemeState
+                        }
+                        /* activity */
+                        addActivityRoutes(navController)
+                        /* animation */
+                        addAnimationRoutes()
+                        /* constraint layout */
+                        addConstraintLayoutRoutes()
+                        /* foundation */
+                        addFoundationRoutes()
+                        /* foundation layout */
+                        addFoundationLayoutRoutes()
+                        /* material */
+                        addMaterialRoutes()
+                        /* material icons */
+                        addMaterialIconsRoutes()
+                        /* material icons extended */
+                        addMaterialIconsExtended()
+                        /* runtime */
+                        addRuntimeRoutes()
+                        /* ui */
+                        addUiRoutes()
+                        /* view model */
+                        addViewModelRoutes()
+                        /* custom examples */
+                        addCustomExamples()
+                        /* external */
+                        addExternalLibraries(navController, systemUiController)
                     }
                 }
             }

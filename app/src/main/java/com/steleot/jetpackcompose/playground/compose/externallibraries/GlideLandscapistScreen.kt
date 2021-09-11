@@ -44,8 +44,8 @@ fun GlideLandscapistScreen() {
                 modifier = Modifier.size(150.dp),
                 contentScale = ContentScale.Crop,
                 circularReveal = CircularReveal(duration = 300),
-                placeHolder = Icons.Default.Image,
-                error = Icons.Default.Error
+                placeHolder = Icons.Filled.Image,
+                error = Icons.Filled.Error
             )
             GlideImage(
                 imageModel = randomSampleImageUrl(),
@@ -75,8 +75,8 @@ fun GlideLandscapistScreen() {
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
                 circularReveal = CircularReveal(duration = 300),
-                placeHolder = Icons.Default.Image,
-                error = Icons.Default.Error
+                placeHolder = Icons.Filled.Image,
+                error = Icons.Filled.Error
             )
         }
     }

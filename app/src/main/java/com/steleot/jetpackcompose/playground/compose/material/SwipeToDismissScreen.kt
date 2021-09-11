@@ -83,8 +83,8 @@ private fun SwipeToDismissExample() {
                         EndToStart -> Alignment.CenterEnd
                     }
                     val icon = when (direction) {
-                        StartToEnd -> Icons.Default.Done
-                        EndToStart -> Icons.Default.Delete
+                        StartToEnd -> Icons.Filled.Done
+                        EndToStart -> Icons.Filled.Delete
                     }
                     val scale by animateFloatAsState(
                         if (dismissState.targetValue == Default) 0.75f else 1f

@@ -19,5 +19,10 @@ enum class ColorPalette {
     DEEP_ORANGE,
     BROWN,
     GREY,
-    BLUE_GREY
+    BLUE_GREY;
+
+    companion object {
+        fun valueOfSafe(name: String): ColorPalette =
+            values().find { it.name == name } ?: DEEP_PURPLE
+    }
 }

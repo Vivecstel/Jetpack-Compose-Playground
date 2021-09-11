@@ -101,6 +101,17 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.group.contains("org.jetbrains.compose")) {
+            val groupName = requested.group.replace("org.jetbrains.compose", "androidx.compose")
+            useTarget(
+                mapOf("group" to groupName, "name" to requested.name, "version" to Versions.compose)
+            )
+        }
+    }
+}
+
 dependencies {
     implementation(project(":base"))
     debugImplementation(Libraries.kotlinReflect)
@@ -185,13 +196,14 @@ dependencies {
     implementation(Libraries.composeRichtextUi)
     implementation(Libraries.composeRichtextUiMaterial)
     implementation(Libraries.composeRichtextPrinting)
-    implementation(Libraries.composeRichtextSlideshow)
+//    implementation(Libraries.composeRichtextSlideshow)
 //    implementation(Libraries.zoomableImage)
     implementation(Libraries.stageStepBar)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)
     androidTestImplementation(TestLibraries.composeUiJunit)
+    androidTestImplementation(TestLibraries.testCore)
 }
 
 protobuf {
