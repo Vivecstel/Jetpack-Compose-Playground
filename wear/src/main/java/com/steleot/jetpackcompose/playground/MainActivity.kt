@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,9 +33,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun JetpackComposeApp() {
-    val isDarkTheme = isSystemInDarkTheme()
     val themeState by rememberSaveable {
-        mutableStateOf(ThemeState(isDarkTheme = isDarkTheme))
+        mutableStateOf(ThemeState())
     }
     JetpackComposePlaygroundTheme(
         colorPalette = themeState.colorPalette
