@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.google.accompanist.insets.ProvideWindowInsets

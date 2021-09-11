@@ -79,13 +79,13 @@ private val LightIndigoColorPalette = lightColors(
 private val DarkBlueColorPalette = darkColors(
     primary = blue200,
     primaryVariant = blue500,
-    secondary = teal200,
+    secondary = red200,
     surface = blue200,
 )
 private val LightBlueColorPalette = lightColors(
     primary = blue500,
     primaryVariant = blue700,
-    secondary = teal200,
+    secondary = red200,
     surface = blue500,
 )
 
@@ -93,13 +93,13 @@ private val LightBlueColorPalette = lightColors(
 private val DarkLightBlueColorPalette = darkColors(
     primary = lightBlue200,
     primaryVariant = lightBlue500,
-    secondary = teal200,
+    secondary = red200,
     surface = lightBlue200,
 )
 private val LightLightBlueColorPalette = lightColors(
     primary = lightBlue500,
     primaryVariant = lightBlue700,
-    secondary = teal200,
+    secondary = red200,
     surface = lightBlue500,
 )
 
@@ -107,13 +107,13 @@ private val LightLightBlueColorPalette = lightColors(
 private val DarkCyanColorPalette = darkColors(
     primary = cyan200,
     primaryVariant = cyan500,
-    secondary = teal200,
+    secondary = red200,
     surface = cyan200,
 )
 private val LightCyanColorPalette = lightColors(
     primary = cyan500,
     primaryVariant = cyan700,
-    secondary = teal200,
+    secondary = red200,
     surface = cyan500,
 )
 
@@ -127,7 +127,7 @@ private val DarkTealColorPalette = darkColors(
 private val LightTealColorPalette = lightColors(
     primary = teal500,
     primaryVariant = teal700,
-    secondary = teal200,
+    secondary = red200,
     surface = teal500,
 )
 
