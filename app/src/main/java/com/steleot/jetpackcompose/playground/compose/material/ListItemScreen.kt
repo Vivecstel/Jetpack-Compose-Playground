@@ -63,7 +63,7 @@ private fun IconListItem() {
     ListItem(
         icon = {
             Icon(
-                Icons.Default.Palette,
+                Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Icon",
             )
@@ -106,7 +106,7 @@ private fun TrailingListItem() {
     ListItem(
         trailing = {
             Icon(
-                Icons.Default.Palette,
+                Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Trailing",
             )
@@ -127,7 +127,7 @@ private fun FullListItem() {
             .padding(8.dp),
         icon = {
             Icon(
-                Icons.Default.Palette,
+                Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Icon",
             )
@@ -140,7 +140,7 @@ private fun FullListItem() {
         },
         trailing = {
             Icon(
-                Icons.Default.PedalBike,
+                Icons.Filled.PedalBike,
                 modifier = Modifier.size(36.dp),
                 contentDescription = "List Item Trailing",
             )

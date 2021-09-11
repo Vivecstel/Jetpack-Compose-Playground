@@ -6,5 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class ThemeState(
     var colorPalette: ColorPalette = ColorPalette.DEEP_PURPLE,
-    var isDarkTheme: Boolean = false,
+    var darkThemeMode: DarkThemeMode = DarkThemeMode.SYSTEM,
+    var isSystemInDarkTheme: Boolean = false,
 ) : Parcelable

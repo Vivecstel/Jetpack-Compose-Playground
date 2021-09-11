@@ -271,27 +271,35 @@ private val LightBlueGreyColorPalette = lightColors(
     surface = blueGrey500,
 )
 
-fun ColorPalette.getMaterialColors(darkTheme: Boolean): Colors {
+fun ColorPalette.getMaterialColors(
+    darkThemeMode: DarkThemeMode,
+    isSystemInDarkTheme: Boolean,
+): Colors {
+    val isDarkTheme = when (darkThemeMode) {
+        DarkThemeMode.SYSTEM -> isSystemInDarkTheme
+        DarkThemeMode.DARK -> true
+        DarkThemeMode.LIGHT -> false
+    }
     return when (this) {
-        ColorPalette.RED -> if (darkTheme) DarkRedColorPalette else LightRedColorPalette
-        ColorPalette.PINK -> if (darkTheme) DarkPinkColorPalette else LightPinkColorPalette
-        ColorPalette.PURPLE -> if (darkTheme) DarkPurpleColorPalette else LightPurpleColorPalette
-        ColorPalette.DEEP_PURPLE -> if (darkTheme) DarkDeepPurpleColorPalette else LightDeepPurpleColorPalette
-        ColorPalette.INDIGO -> if (darkTheme) DarkIndigoColorPalette else LightIndigoColorPalette
-        ColorPalette.BLUE -> if (darkTheme) DarkBlueColorPalette else LightBlueColorPalette
-        ColorPalette.LIGHT_BLUE -> if (darkTheme) DarkLightBlueColorPalette else LightLightBlueColorPalette
-        ColorPalette.CYAN -> if (darkTheme) DarkCyanColorPalette else LightCyanColorPalette
-        ColorPalette.TEAL -> if (darkTheme) DarkTealColorPalette else LightTealColorPalette
-        ColorPalette.GREEN -> if (darkTheme) DarkGreenColorPalette else LightGreenColorPalette
-        ColorPalette.LIGHT_GREEN -> if (darkTheme) DarkLightGreenColorPalette else LightLightGreenColorPalette
-        ColorPalette.LIME -> if (darkTheme) DarkLimeColorPalette else LightLimeColorPalette
-        ColorPalette.YELLOW -> if (darkTheme) DarkYellowColorPalette else LightYellowColorPalette
-        ColorPalette.AMBER -> if (darkTheme) DarkAmberColorPalette else LightAmberColorPalette
-        ColorPalette.ORANGE -> if (darkTheme) DarkOrangeColorPalette else LightOrangeColorPalette
-        ColorPalette.DEEP_ORANGE -> if (darkTheme) DarkDeepOrangeColorPalette else LightDeepOrangeColorPalette
-        ColorPalette.BROWN -> if (darkTheme) DarkBrownColorPalette else LightBrownColorPalette
-        ColorPalette.GREY -> if (darkTheme) DarkGreyColorPalette else LightGreyColorPalette
-        ColorPalette.BLUE_GREY -> if (darkTheme) DarkBlueGreyColorPalette else LightBlueGreyColorPalette
+        ColorPalette.RED -> if (isDarkTheme) DarkRedColorPalette else LightRedColorPalette
+        ColorPalette.PINK -> if (isDarkTheme) DarkPinkColorPalette else LightPinkColorPalette
+        ColorPalette.PURPLE -> if (isDarkTheme) DarkPurpleColorPalette else LightPurpleColorPalette
+        ColorPalette.DEEP_PURPLE -> if (isDarkTheme) DarkDeepPurpleColorPalette else LightDeepPurpleColorPalette
+        ColorPalette.INDIGO -> if (isDarkTheme) DarkIndigoColorPalette else LightIndigoColorPalette
+        ColorPalette.BLUE -> if (isDarkTheme) DarkBlueColorPalette else LightBlueColorPalette
+        ColorPalette.LIGHT_BLUE -> if (isDarkTheme) DarkLightBlueColorPalette else LightLightBlueColorPalette
+        ColorPalette.CYAN -> if (isDarkTheme) DarkCyanColorPalette else LightCyanColorPalette
+        ColorPalette.TEAL -> if (isDarkTheme) DarkTealColorPalette else LightTealColorPalette
+        ColorPalette.GREEN -> if (isDarkTheme) DarkGreenColorPalette else LightGreenColorPalette
+        ColorPalette.LIGHT_GREEN -> if (isDarkTheme) DarkLightGreenColorPalette else LightLightGreenColorPalette
+        ColorPalette.LIME -> if (isDarkTheme) DarkLimeColorPalette else LightLimeColorPalette
+        ColorPalette.YELLOW -> if (isDarkTheme) DarkYellowColorPalette else LightYellowColorPalette
+        ColorPalette.AMBER -> if (isDarkTheme) DarkAmberColorPalette else LightAmberColorPalette
+        ColorPalette.ORANGE -> if (isDarkTheme) DarkOrangeColorPalette else LightOrangeColorPalette
+        ColorPalette.DEEP_ORANGE -> if (isDarkTheme) DarkDeepOrangeColorPalette else LightDeepOrangeColorPalette
+        ColorPalette.BROWN -> if (isDarkTheme) DarkBrownColorPalette else LightBrownColorPalette
+        ColorPalette.GREY -> if (isDarkTheme) DarkGreyColorPalette else LightGreyColorPalette
+        ColorPalette.BLUE_GREY -> if (isDarkTheme) DarkBlueGreyColorPalette else LightBlueGreyColorPalette
     }
 }
 

@@ -40,7 +40,7 @@ fun IconScreen() {
 @Composable
 private fun DefaultIcon() {
     Icon(
-        Icons.Default.AccountBox,
+        Icons.Filled.AccountBox,
         contentDescription = "Default Icon Button",
     )
 }
@@ -49,7 +49,7 @@ private fun DefaultIcon() {
 @Composable
 private fun TintedIcon() {
     Icon(
-        Icons.Default.AddAlarm,
+        Icons.Filled.AddAlarm,
         contentDescription = "Tinted Icon",
         modifier = Modifier.size(48.dp),
         tint = Color.Magenta,

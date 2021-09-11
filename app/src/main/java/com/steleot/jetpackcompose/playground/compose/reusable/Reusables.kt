@@ -165,7 +165,7 @@ fun MenuTopAppBar(
             openDrawer?.let {
                 IconButton(onClick = it) {
                     Icon(
-                        Icons.Default.Menu, contentDescription = "Open Drawer"
+                        Icons.Filled.Menu, contentDescription = "Open Drawer"
                     )
                 }
             }

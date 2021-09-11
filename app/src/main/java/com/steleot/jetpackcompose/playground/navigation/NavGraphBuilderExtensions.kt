@@ -364,6 +364,7 @@ fun NavGraphBuilder.addCustomExamples() {
     composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
     composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
+    composable(route = CustomExamplesNavRoutes.BottomRoundedArcShape) { BottomRoundedArcShapeScreen() }
     composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
     composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
     composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }

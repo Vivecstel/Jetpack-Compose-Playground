@@ -4,21 +4,23 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertHeightIsEqualTo
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertWidthIsEqualTo
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.steleot.jetpackcompose.playground.LocalInAppReviewer
+import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
-import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
+import com.steleot.jetpackcompose.playground.theme.ThemeState
 import org.junit.Rule
 import org.junit.Test
 
 class TestTagScreenTest {
 
     @get:Rule
-    val composeTestRule = createComposeRule()
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     private val inAppReviewHelper = EmptyInAppReviewHelper()
 
@@ -26,7 +28,7 @@ class TestTagScreenTest {
     fun testTestTagScreen() {
         composeTestRule.setContent {
             JetpackComposePlaygroundTheme(
-                colorPalette = ColorPalette.DEEP_PURPLE
+                themeState = ThemeState()
             ) {
                 ProvideWindowInsets {
                     CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {

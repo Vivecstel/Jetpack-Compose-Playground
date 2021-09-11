@@ -23,10 +23,8 @@ buildscript {
 allprojects {
     repositories {
         google()
-        maven("https://oss.sonatype.org/content/repositories/snapshots/")
-        maven("https://kotlin.bintray.com/kotlinx")
-        maven("https://jitpack.io")
         mavenCentral()
+        maven("https://jitpack.io")
     }
 
     configurations.all {

@@ -44,7 +44,7 @@ private fun DefaultIconButton() {
 
         content = {
             Icon(
-                Icons.Default.Palette,
+                Icons.Filled.Palette,
                 modifier = Modifier.size(48.dp),
                 contentDescription = "Default Icon Button",
             )
@@ -59,7 +59,7 @@ private fun DisabledIconButton() {
         onClick = {},
         content = {
             Icon(
-                Icons.Default.Panorama,
+                Icons.Filled.Panorama,
                 contentDescription = "Disabled Icon Button"
             )
         },

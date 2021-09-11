@@ -4,6 +4,7 @@ import androidx.datastore.core.Serializer
 import com.google.protobuf.InvalidProtocolBufferException
 import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.theme.ColorPalette
+import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import timber.log.Timber
 import java.io.InputStream
 import java.io.OutputStream
@@ -18,6 +19,7 @@ object SettingsProtoSerializer : Serializer<SettingsProto> {
             .setCrashlyticsEnabled(!BuildConfig.DEBUG)
             .setMessagingEnabled(true)
             .setColorPalette(ColorPalette.DEEP_PURPLE.name)
+            .setDarkMode(DarkThemeMode.SYSTEM.name)
             .build()
 
     override suspend fun readFrom(input: InputStream): SettingsProto {

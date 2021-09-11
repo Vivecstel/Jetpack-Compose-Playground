@@ -40,7 +40,7 @@ private fun ModalBottomSheetLayoutExample() {
                         text = { Text("Item $it") },
                         icon = {
                             Icon(
-                                Icons.Default.Favorite,
+                                Icons.Filled.Favorite,
                                 contentDescription = "Localized description"
                             )
                         }
