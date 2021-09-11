@@ -28,7 +28,7 @@ Download from:
 
 ### Featured in :star:
 
-![Jetc.dev](https://img.shields.io/badge/jetc.dev-%2373-red.svg)
+[![Jetc.dev](https://img.shields.io/badge/jetc.dev-%2373-red.svg)](https://jetc.dev/issues/073.html)
 
 ### Spread Some :heart:
 

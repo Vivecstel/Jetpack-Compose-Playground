@@ -19,7 +19,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -33,6 +35,7 @@ import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -178,6 +181,27 @@ private fun ColorPaletteBox(
         isSystemInDarkTheme = theme.isSystemInDarkTheme,
         isLast = isLast,
         isSelected = isSelected,
+        text = when (colorPalette) {
+            ColorPalette.RED -> "red"
+            ColorPalette.PINK -> "pink"
+            ColorPalette.PURPLE -> "purple"
+            ColorPalette.DEEP_PURPLE -> "deep\npurple"
+            ColorPalette.INDIGO -> "indigo"
+            ColorPalette.BLUE -> "blue"
+            ColorPalette.LIGHT_BLUE -> "light\nblue"
+            ColorPalette.CYAN -> "cyan"
+            ColorPalette.TEAL -> "teal"
+            ColorPalette.GREEN -> "green"
+            ColorPalette.LIGHT_GREEN -> "light\ngreen"
+            ColorPalette.LIME -> "lime"
+            ColorPalette.YELLOW -> "yellow"
+            ColorPalette.AMBER -> "amber"
+            ColorPalette.ORANGE -> "orange"
+            ColorPalette.DEEP_ORANGE -> "deep\norange"
+            ColorPalette.BROWN -> "brown"
+            ColorPalette.GREY -> "grey"
+            ColorPalette.BLUE_GREY -> "blue\ngrey"
+        },
         onClick = {
             onColorPaletteChanged(colorPalette)
             setTheme(theme.copy(colorPalette = colorPalette))
@@ -200,7 +224,7 @@ private fun SettingCircleShapeBox(
     isSystemInDarkTheme: Boolean,
     isLast: Boolean,
     isSelected: Boolean,
-    text: (@Composable ColumnScope.() -> Unit)? = null,
+    text: String,
     onClick: () -> Unit,
     icon: @Composable BoxScope.() -> Unit
 ) {
@@ -230,7 +254,17 @@ private fun SettingCircleShapeBox(
         ) {
             icon()
         }
-        text?.invoke(this)
+        Text(
+            text = text.capitalizeFirstLetter(),
+            style = MaterialTheme.typography.caption.copy(
+                fontSize = 9.sp
+            ),
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(top = 4.dp)
+        )
     }
 }
 
@@ -271,19 +305,10 @@ private fun DarkThemeModeBox(
         isSystemInDarkTheme = theme.isSystemInDarkTheme,
         isLast = isLast,
         isSelected = isSelected,
-        text = {
-            Text(
-                text = when (darkThemeMode) {
-                    DarkThemeMode.SYSTEM -> "System"
-                    DarkThemeMode.DARK -> "Dark"
-                    DarkThemeMode.LIGHT -> "Light"
-                },
-                style = MaterialTheme.typography.caption,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .padding(vertical = 4.dp)
-            )
+        text = when (darkThemeMode) {
+            DarkThemeMode.SYSTEM -> "System"
+            DarkThemeMode.DARK -> "Dark"
+            DarkThemeMode.LIGHT -> "Light"
         },
         onClick = {
             onDarkThemeModeChanged(darkThemeMode)
