@@ -42,7 +42,7 @@ fun PermissionsAccompanistScreen() {
                     )
                 }
             ) {
-                Text("Feature not available")
+                Text("Camera permission already granted")
             }
         }
     }
