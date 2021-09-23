@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -35,6 +36,7 @@ import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
+import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
@@ -64,6 +66,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var protoManager: ProtoManager
+
+    @Inject
+    lateinit var inAppUpdateHelper: InAppUpdateHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +103,12 @@ class MainActivity : ComponentActivity() {
                 Timber.d("Token retrieved: $token")
             }
         }
+    }
+
+    @Suppress("DEPRECATION")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        inAppUpdateHelper.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
 

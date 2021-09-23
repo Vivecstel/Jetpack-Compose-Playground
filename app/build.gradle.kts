@@ -14,6 +14,7 @@ plugins {
     id(BuildPlugins.hilt)
     id(BuildPlugins.protobuf) version Versions.protobufPlugin
     id(BuildPlugins.playPublisher) version Versions.playPublisher
+    kotlin(BuildPlugins.serialization) version Versions.kotlin
 }
 
 android {
@@ -113,97 +114,12 @@ configurations.all {
 }
 
 dependencies {
-    implementation(project(":base"))
-    debugImplementation(Libraries.kotlinReflect)
-    implementation(Libraries.composeAnimation)
-    implementation(Libraries.composeAnimationGraphics)
-    implementation(Libraries.composeCompiler)
-    implementation(Libraries.composeFoundation)
-    implementation(Libraries.composeMaterial)
-    implementation(Libraries.composeMaterialIcons)
-    implementation(Libraries.composeRuntime)
-    implementation(Libraries.composeLiveData)
-    implementation(Libraries.composeUi)
-    implementation(Libraries.composeUiUtil)
-    implementation(Libraries.composeUiTooling)
-    implementation(Libraries.navigation)
-    implementation(Libraries.composeConstraint)
-    implementation(Libraries.composePaging)
-    implementation(Libraries.composeActivity)
-    implementation(Libraries.appCompat)
-    implementation(Libraries.viewModel)
-    implementation(platform(Libraries.firebaseBom))
-    implementation(Libraries.firebaseAnalytics)
-    implementation(Libraries.firebaseCrashlytics)
-    implementation(Libraries.firebaseFirestore)
-    implementation(Libraries.firebaseMessaging)
-    implementation(Libraries.firebaseInstallations)
-    implementation(Libraries.hilt)
-    kapt(Libraries.hiltCompiler)
-    implementation(Libraries.hiltNavigation)
-    implementation(Libraries.startUp)
-    implementation(Libraries.coroutines)
-    implementation(Libraries.coroutinesAndroid)
-    implementation(Libraries.coroutinesPlayServices)
-    implementation(Libraries.dataStore)
-    implementation(Libraries.protobufJavaLite)
-    implementation(Libraries.playCore)
-    implementation(Libraries.playCoreKtx)
-    implementation(Libraries.cameraxCore)
-    implementation(Libraries.camerax2)
-    implementation(Libraries.cameraxLifecycle)
-    implementation(Libraries.cameraxView)
-    implementation(Libraries.workManager)
-    implementation(Libraries.accompanistInsets)
-    implementation(Libraries.accompanistFlow)
-    implementation(Libraries.accompanistPager)
-    implementation(Libraries.accompanistPagerIndicators)
-    implementation(Libraries.accompanistSystemuicontroller)
-    implementation(Libraries.accompanistSwipeRefresh)
-    implementation(Libraries.accompanistPermissions)
-    implementation(Libraries.accompanistPlaceholderMaterial)
-    implementation(Libraries.accompanistDrawablePainter)
-    implementation(Libraries.accompanistNavigationAnimation)
-    implementation(Libraries.accompanistNavigationMaterial)
-    implementation(Libraries.landscapistCoil)
-    implementation(Libraries.landscapistGlide)
-    implementation(Libraries.landscapistFresco)
-    implementation(Libraries.orchestraBalloon)
-    implementation(Libraries.orchestraColorPicker)
-//    implementation(Libraries.orchestraSpinner)
-    implementation(Libraries.coil)
-    implementation(Libraries.coilCompose)
-    implementation(Libraries.glide)
-    kapt(Libraries.glideCompiler)
-    implementation(Libraries.fresco) {
-        exclude("com.facebook.soloader", "soloader")
-        exclude("com.facebook.fresco", "soloader")
-        exclude("com.facebook.fresco", "nativeimagefilters")
-        exclude("com.facebook.fresco", "nativeimagetranscoder")
-        exclude("com.facebook.fresco", "memory-type-native")
-        exclude("com.facebook.fresco", "imagepipeline-native")
-    }
-    implementation(Libraries.timber)
-    implementation(Libraries.lottie)
-    implementation(Libraries.ratingBar)
-    implementation(Libraries.revealSwipe)
-    implementation(Libraries.speedDial)
-    implementation(Libraries.fontAwesome)
-    implementation(Libraries.composeCharts)
-    implementation(Libraries.composeNeumorphism)
-    implementation(Libraries.composeMarkdown)
-    implementation(Libraries.composeBarcodes)
-    implementation(Libraries.composeRichtextUi)
-    implementation(Libraries.composeRichtextUiMaterial)
-    implementation(Libraries.composeRichtextPrinting)
-//    implementation(Libraries.composeRichtextSlideshow)
-//    implementation(Libraries.zoomableImage)
-    implementation(Libraries.stageStepBar)
-    implementation(Libraries.adMob)
-
-    androidTestImplementation(TestLibraries.composeUi)
-    androidTestImplementation(TestLibraries.composeUiJunit)
-    androidTestImplementation(TestLibraries.testCore)
+    AppDependencies.project.forEach { implementation(project(it)) }
+    AppDependencies.bom.forEach { implementation(platform(it)) }
+    AppDependencies.implemention.forEach { implementation(it) }
+    AppDependencies.kapt.forEach { kapt(it) }
+    AppDependencies.debug.forEach { debugImplementation(it) }
+    AppDependencies.androidTest.forEach { androidTestImplementation(it) }
 }
 
 protobuf {

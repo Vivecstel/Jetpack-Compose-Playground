@@ -15,6 +15,10 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 3.0.0 */
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.ComposeTimelineView,
+    ExternalLibrariesNavRoutes.Plot,
     /* 2.9.4 */
     MainNavRoutes.CustomExamples,
     CustomExamplesNavRoutes.BottomRoundedArcShape,
@@ -27,5 +31,4 @@ val ribbonRoutes = setOf(
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.StageStepBar,
     ExternalLibrariesNavRoutes.ComposeNeumorphism,
-    /* 2.9.3 release */
 )

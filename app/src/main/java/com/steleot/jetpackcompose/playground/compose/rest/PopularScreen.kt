@@ -37,7 +37,7 @@ fun PopularScreen(
     viewModel: PopularViewModel,
     navController: NavHostController,
 ) {
-    val state: UiState by viewModel.state.collectAsState()
+    val state: PopularUiState by viewModel.state.collectAsState()
 
     DefaultScaffold(
         topBar = {
@@ -51,10 +51,10 @@ fun PopularScreen(
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             when (state) {
-                is UiState.Loading -> {
+                is PopularUiState.Loading -> {
                     CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                 }
-                is UiState.Error -> {
+                is PopularUiState.Error -> {
                     Text(
                         text = "Failed to retrieve the popular list. Please try again later.",
                         style = MaterialTheme.typography.body1,
@@ -63,12 +63,12 @@ fun PopularScreen(
                             .align(Alignment.Center)
                     )
                 }
-                is UiState.Content -> {
-                    val uiState = state as UiState.Content
+                is PopularUiState.Content -> {
+                    val content = state as PopularUiState.Content
                     Column(modifier = Modifier.fillMaxSize()) {
-                        uiState.date?.let {
+                        content.date?.let {
                             Text(
-                                uiState.date,
+                                content.date,
                                 style = MaterialTheme.typography.body1,
                                 fontWeight = FontWeight.Bold,
                                 modifier = Modifier
@@ -76,7 +76,7 @@ fun PopularScreen(
                                     .padding(vertical = 16.dp)
                             )
                         }
-                        MainScreenContent(navController, it, uiState.data)
+                        MainScreenContent(navController, it, content.data)
                     }
                 }
             }
@@ -89,8 +89,8 @@ class PopularViewModel @Inject constructor(
     private val firebaseFirestore: FirebaseFirestore,
 ) : ViewModel() {
 
-    private val _state: MutableStateFlow<UiState> = MutableStateFlow(UiState.Loading)
-    val state: StateFlow<UiState> = _state
+    private val _state: MutableStateFlow<PopularUiState> = MutableStateFlow(PopularUiState.Loading)
+    val state: StateFlow<PopularUiState> = _state
 
     init {
         viewModelScope.launch {
@@ -101,7 +101,7 @@ class PopularViewModel @Inject constructor(
                     .get()
                     .await()
                 val data = querySnapshot.first().data
-                _state.value = UiState.Content(
+                _state.value = PopularUiState.Content(
                     data = data.filterNot { it.key == "date" }
                         .toSortedMap { o1, o2 ->
                             o1.toInt().compareTo(o2.toInt())
@@ -112,17 +112,17 @@ class PopularViewModel @Inject constructor(
                 )
             } catch (e: Exception) {
                 Timber.e(e)
-                _state.value = UiState.Error
+                _state.value = PopularUiState.Error
             }
         }
     }
 }
 
-sealed class UiState {
-    object Loading : UiState()
-    object Error : UiState()
+sealed class PopularUiState {
+    object Loading : PopularUiState()
+    object Error : PopularUiState()
     class Content(
         val data: List<String>,
         val date: String?,
-    ) : UiState()
+    ) : PopularUiState()
 }

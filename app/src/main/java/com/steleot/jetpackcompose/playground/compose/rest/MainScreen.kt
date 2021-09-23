@@ -81,6 +81,10 @@ private val drawerItems = listOf(
         MainNavRoutes.Settings,
         Icons.Filled.Settings
     ),
+    DrawerListItemData.MenuData(
+        MainNavRoutes.ReleaseNotes,
+        Icons.Filled.NewReleases
+    ),
 )
 
 private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io/privacy.html"

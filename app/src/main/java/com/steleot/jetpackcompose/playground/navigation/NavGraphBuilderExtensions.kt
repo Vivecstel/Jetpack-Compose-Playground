@@ -21,10 +21,7 @@ import com.steleot.jetpackcompose.playground.compose.materialicons.*
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
-import com.steleot.jetpackcompose.playground.compose.rest.MainScreenWithDrawer
-import com.steleot.jetpackcompose.playground.compose.rest.PopularScreen
-import com.steleot.jetpackcompose.playground.compose.rest.SearchScreen
-import com.steleot.jetpackcompose.playground.compose.rest.SettingsScreen
+import com.steleot.jetpackcompose.playground.compose.rest.*
 import com.steleot.jetpackcompose.playground.compose.runtime.*
 import com.steleot.jetpackcompose.playground.compose.ui.*
 import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
@@ -95,6 +92,11 @@ fun NavGraphBuilder.addMainRoutes(
         PopularScreen(
             hiltViewModel(it),
             navController
+        )
+    }
+    composable(route = MainNavRoutes.ReleaseNotes) {
+        ReleaseNotesScreen(
+            hiltViewModel(it),
         )
     }
 }
@@ -392,6 +394,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeZoomableImage) { ComposeZoomableImageScreen() }
     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
@@ -409,6 +412,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.PaletteLandscapist) { PaletteLandscapistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
+    composable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
     composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }

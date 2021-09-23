@@ -6,5 +6,5 @@ object TestLibraries {
     const val composeUiManifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/test */
-    const val testCore = "androidx.test:core:1.4.0"
+    const val testCore = "androidx.test:core:${Versions.test}"
 }

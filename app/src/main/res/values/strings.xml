@@ -15,4 +15,7 @@
     <string name="profile">Profile</string>
     <string name="dashboard">Dashboard</string>
     <string name="scrollable">Scrollable</string>
+    <string name="in_app_update_message">
+        In app update finished. Restart the application and enjoy the update
+    </string>
 </resources>

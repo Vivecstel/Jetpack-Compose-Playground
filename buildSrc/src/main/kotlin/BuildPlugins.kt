@@ -39,4 +39,7 @@ object BuildPlugins {
 
     /* https://github.com/Triple-T/gradle-play-publisher */
     const val playPublisher = "com.github.triplet.play"
+
+    /* https://github.com/Kotlin/kotlinx.serialization */
+    const val serialization = "plugin.serialization"
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import timber.log.Timber
 
 private const val Url = "ui/LocalUriHandlerScreen.kt"
 
@@ -38,7 +39,11 @@ fun LocalUriHandlerScreen() {
 private fun LocalUriHandlerExample() {
     val uriHandler = LocalUriHandler.current
     Button(onClick = {
-        uriHandler.openUri("https://www.google.gr/")
+        try {
+            uriHandler.openUri("https://www.google.gr/")
+        } catch (e: Exception) {
+            Timber.e(e, "Failed to open uri")
+        }
     }) {
         Text(text = "Press me to google")
     }
