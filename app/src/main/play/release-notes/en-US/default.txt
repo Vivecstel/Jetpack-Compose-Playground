@@ -1,1 +1,1 @@
-Updated accompanist and richtext libraries. Added Bottom Rounded Arc Shape example. Disabled slideshow for now until the library supports latest Kotlin version. Added the ability in settings to change dark mode (System, Light, Dark). Updated unit tests.
+Updated compose to 1.1.0-alpha04. Also, update activity and compose richtext libraries. Fixed text on permission accompanist example. Added in app updater. Added Compose Timeline view and plot libraries. Added release notes section in order to see the last 10 releases on github.
