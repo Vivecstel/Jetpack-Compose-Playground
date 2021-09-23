@@ -392,6 +392,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeZoomableImage) { ComposeZoomableImageScreen() }
     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
@@ -409,6 +410,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.PaletteLandscapist) { PaletteLandscapistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
+    composable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
     composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }

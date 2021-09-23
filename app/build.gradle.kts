@@ -199,6 +199,8 @@ dependencies {
 //    implementation(Libraries.composeRichtextSlideshow)
 //    implementation(Libraries.zoomableImage)
     implementation(Libraries.stageStepBar)
+    implementation(Libraries.plot)
+    implementation(Libraries.composeTimelineView)
     implementation(Libraries.adMob)
 
     androidTestImplementation(TestLibraries.composeUi)

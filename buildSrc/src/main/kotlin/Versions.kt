@@ -57,6 +57,8 @@ object Versions {
     const val composeRichtext = "0.8.1"
     const val zoomableImage = "0.1.0"
     const val stageStepBar = "0.0.1"
+    const val plot = "0.1.1"
+    const val composeTimelineView = "1.0.2"
     const val adMob = "20.3.0"
     const val test = "1.4.1-alpha01"
 }

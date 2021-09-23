@@ -197,6 +197,12 @@ object Libraries {
     const val stageStepBar =
         "com.github.loukwn.StageStepBar:stagestepbar-compose:${Versions.stageStepBar}"
 
+    /* https://github.com/Madrapps/plot */
+    const val plot = "com.github.madrapps:plot:${Versions.plot}"
+
+    /* https://github.com/jisungbin/ComposeTimeLineView */
+    const val composeTimelineView = "io.github.jisungbin:timelineview:${Versions.composeTimelineView}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 }
