@@ -103,6 +103,22 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/work */
     const val workManager = "androidx.work:work-runtime:${Versions.workManager}"
 
+    /* https://square.github.io/retrofit/ */
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+
+    /* https://github.com/square/okhttp */
+    const val okhttpBom = "com.squareup.okhttp3:okhttp-bom:${Versions.okhttp}"
+    const val okhttp = "com.squareup.okhttp3:okhttp"
+    const val okhttpLogging = "com.squareup.okhttp3:logging-interceptor"
+
+    /* https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter */
+    const val kotlinxSerializationConverter =
+        "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.kotlinxSerializationConverter}"
+
+    /* https://github.com/Kotlin/kotlinx.serialization */
+    const val kotlinxSerialization =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinxSerialization}"
+
     /* https://github.com/chrisbanes/accompanist */
     const val accompanistInsets =
         "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
@@ -201,7 +217,8 @@ object Libraries {
     const val plot = "com.github.madrapps:plot:${Versions.plot}"
 
     /* https://github.com/jisungbin/ComposeTimeLineView */
-    const val composeTimelineView = "io.github.jisungbin:timelineview:${Versions.composeTimelineView}"
+    const val composeTimelineView =
+        "io.github.jisungbin:timelineview:${Versions.composeTimelineView}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

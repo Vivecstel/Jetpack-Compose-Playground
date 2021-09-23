@@ -21,10 +21,7 @@ import com.steleot.jetpackcompose.playground.compose.materialicons.*
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
-import com.steleot.jetpackcompose.playground.compose.rest.MainScreenWithDrawer
-import com.steleot.jetpackcompose.playground.compose.rest.PopularScreen
-import com.steleot.jetpackcompose.playground.compose.rest.SearchScreen
-import com.steleot.jetpackcompose.playground.compose.rest.SettingsScreen
+import com.steleot.jetpackcompose.playground.compose.rest.*
 import com.steleot.jetpackcompose.playground.compose.runtime.*
 import com.steleot.jetpackcompose.playground.compose.ui.*
 import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
@@ -95,6 +92,11 @@ fun NavGraphBuilder.addMainRoutes(
         PopularScreen(
             hiltViewModel(it),
             navController
+        )
+    }
+    composable(route = MainNavRoutes.ReleaseNotes) {
+        ReleaseNotesScreen(
+            hiltViewModel(it),
         )
     }
 }

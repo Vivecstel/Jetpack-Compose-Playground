@@ -22,6 +22,7 @@ object MainNavRoutes {
     const val Popular = "popular"
     const val Favorites = "favorites"
     const val Articles = "articles"
+    const val ReleaseNotes = "release notes"
 }
 
 object ActivityNavRoutes {

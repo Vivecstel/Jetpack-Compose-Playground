@@ -14,6 +14,7 @@ plugins {
     id(BuildPlugins.hilt)
     id(BuildPlugins.protobuf) version Versions.protobufPlugin
     id(BuildPlugins.playPublisher) version Versions.playPublisher
+    kotlin(BuildPlugins.serialization) version Versions.kotlin
 }
 
 android {
@@ -154,6 +155,12 @@ dependencies {
     implementation(Libraries.cameraxLifecycle)
     implementation(Libraries.cameraxView)
     implementation(Libraries.workManager)
+    implementation(Libraries.retrofit)
+    implementation(Libraries.okhttpBom)
+    implementation(Libraries.okhttp)
+    implementation(Libraries.okhttpLogging)
+    implementation(Libraries.kotlinxSerializationConverter)
+    implementation(Libraries.kotlinxSerialization)
     implementation(Libraries.accompanistInsets)
     implementation(Libraries.accompanistFlow)
     implementation(Libraries.accompanistPager)

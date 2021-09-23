@@ -4,10 +4,17 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 val Date?.monthDate: String?
-    get() {
-        this?.let {
-            val df = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
-            return df.format(it)
-        }
-        return null
+    get() = this.toPresentableString("MMMM yyyy")
+
+val Date?.releaseString: String?
+    get() = this.toPresentableString("dd/MM/yyyy")
+
+private fun Date?.toPresentableString(
+    pattern: String
+): String? {
+    this?.let {
+        val df = SimpleDateFormat(pattern, Locale.getDefault())
+        return df.format(it)
     }
+    return null
+}
