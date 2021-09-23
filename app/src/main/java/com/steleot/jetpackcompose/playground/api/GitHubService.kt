@@ -10,6 +10,7 @@ interface GitHubService {
     suspend fun getReleases(
         @Path("owner") user: String,
         @Path("repo") repo: String,
+        @Query("page") page: Int = 1,
         @Query("per_page") perPage: Int = 10
     ): List<Release>
 }
