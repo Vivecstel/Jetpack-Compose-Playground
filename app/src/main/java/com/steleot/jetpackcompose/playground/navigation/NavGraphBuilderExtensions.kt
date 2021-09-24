@@ -6,6 +6,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResult1Screen
@@ -33,12 +35,14 @@ import com.steleot.jetpackcompose.playground.theme.ThemeState
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMainRoutes(
     navController: NavHostController,
+    firebaseAuth: FirebaseAuth,
+    googleSignInClient: GoogleSignInClient,
     theme: ThemeState,
     setTheme: (ThemeState) -> Unit,
 ) {
     composable(route = MainNavRoutes.Main) {
         MainScreenWithDrawer(
-            navController,
+            navController, firebaseAuth, googleSignInClient
         )
     }
     composable(route = MainNavRoutes.Search) { SearchScreen(navController) }

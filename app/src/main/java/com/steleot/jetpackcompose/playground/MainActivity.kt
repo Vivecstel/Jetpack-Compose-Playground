@@ -30,8 +30,10 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
@@ -53,7 +55,7 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var inAppReviewHelper: InAppReviewHelper
+    lateinit var firebaseAuth: FirebaseAuth
 
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -68,14 +70,26 @@ class MainActivity : ComponentActivity() {
     lateinit var protoManager: ProtoManager
 
     @Inject
+    lateinit var inAppReviewHelper: InAppReviewHelper
+
+    @Inject
     lateinit var inAppUpdateHelper: InAppUpdateHelper
+
+    @Inject
+    lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init(savedInstanceState)
         MobileAds.initialize(this)
         setContent {
-            JetpackComposeApp(inAppReviewHelper, firebaseAnalytics, protoManager)
+            JetpackComposeApp(
+                firebaseAuth,
+                firebaseAnalytics,
+                protoManager,
+                inAppReviewHelper,
+                googleSignInClient
+            )
         }
     }
 
@@ -118,9 +132,11 @@ private const val NavigationDuration = 600
 @OptIn(ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun JetpackComposeApp(
-    inAppReviewHelper: InAppReviewHelper,
+    firebaseAuth: FirebaseAuth,
     firebaseAnalytics: FirebaseAnalytics,
     protoManager: ProtoManager,
+    inAppReviewHelper: InAppReviewHelper,
+    googleSignInClient: GoogleSignInClient
 ) {
     val isSystemInDarkTheme = isSystemInDarkTheme()
     var isLoaded by rememberSaveable { mutableStateOf(false) }
@@ -128,8 +144,8 @@ fun JetpackComposeApp(
         mutableStateOf(ThemeState())
     }
     val systemUiController = rememberSystemUiController()
-    SideEffect {
 
+    SideEffect {
         if (isLoaded) {
             systemUiController.setSystemBarsColor(
                 themeState.colorPalette.getMaterialColors(
@@ -139,6 +155,7 @@ fun JetpackComposeApp(
             )
         }
     }
+
     val screenWidth = with(LocalDensity.current) {
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
     }
@@ -238,7 +255,12 @@ fun JetpackComposeApp(
                         }
                     ) {
                         /* main */
-                        addMainRoutes(navController, themeState) { newThemeState ->
+                        addMainRoutes(
+                            navController,
+                            firebaseAuth,
+                            googleSignInClient,
+                            themeState
+                        ) { newThemeState ->
                             themeState = newThemeState
                         }
                         /* activity */
