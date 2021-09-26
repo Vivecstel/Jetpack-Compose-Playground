@@ -2,26 +2,35 @@ package com.steleot.jetpackcompose.playground.compose.rest
 
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.ImagePainter
+import coil.compose.rememberImagePainter
+import coil.transform.CircleCropTransformation
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.*
@@ -52,6 +61,7 @@ private val routes = listOf(
 )
 
 private val drawerItems = listOf(
+    DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
         MainNavRoutes.Favorites,
         Icons.Filled.Favorite,
@@ -135,17 +145,16 @@ fun MainScreenWithDrawer(
             )
         },
         drawerContent = {
-            Box(modifier = Modifier.height(150.dp)) {
-                if (user != null) {
-                    Text(text = user!!.displayName ?: "name not found")
-                } else {
-                    Button(onClick = {
-                        launcher.launch(null)
-                    }) {
-                        Text(text = "Google Sign in")
-                    }
+            DrawerUserItem(
+                user = user,
+                signInOnClick = {
+                    launcher.launch(null)
+                },
+                signOutOnClick = {
+                    firebaseAuth.signOut()
+                    user = null
                 }
-            }
+            )
             drawerItems.forEach {
                 when (it) {
                     is DrawerListItemData.DividerData -> Divider()
@@ -175,6 +184,100 @@ fun MainScreenWithDrawer(
         }
     ) {
         MainScreenContent(navController, it, list, showAd)
+    }
+}
+
+@OptIn(ExperimentalCoilApi::class)
+@Composable
+private fun DrawerUserItem(
+    user: FirebaseUser?,
+    signInOnClick: () -> Unit,
+    signOutOnClick: () -> Unit,
+) {
+    Box(
+        modifier = Modifier
+            .height(100.dp)
+            .padding(16.dp)
+    ) {
+        if (user != null) {
+            val painter = rememberImagePainter(
+                data = user.photoUrl,
+                builder = {
+                    transformations(CircleCropTransformation())
+                }
+            )
+            Row(
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Box {
+                    Image(
+                        painter = painter,
+                        contentDescription = "Content description",
+                        modifier = Modifier
+                            .size(64.dp)
+                            .padding(end = 24.dp)
+                    )
+                    when (painter.state) {
+                        is ImagePainter.State.Loading -> {
+                            Box(Modifier.matchParentSize()) {
+                                CircularProgressIndicator(Modifier.align(Alignment.Center))
+                            }
+                        }
+                        is ImagePainter.State.Error -> {
+                            Image(
+                                imageVector = Icons.Filled.AccountCircle,
+                                contentDescription = "Vector"
+                            )
+                        }
+                        else -> {
+                            Timber.d("Else image load states")
+                        }
+                    }
+                }
+                Text(
+                    user.displayName ?: "name not found",
+                    style = MaterialTheme.typography.body1,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.align(Alignment.CenterVertically)
+                )
+                TextButton(
+                    onClick = signOutOnClick,
+                    modifier = Modifier.background(Color.Red)
+                ) {
+                    Text(
+                        text = "Sign out",
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+            }
+        } else {
+            Button(
+                onClick = signInOnClick,
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = if (LocalIsDarkTheme.current) Color(0xFF4285F4.toInt()) else Color(
+                        0xFFFFFFFF.toInt()
+                    )
+                ),
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Row {
+                    Icon(
+                        painter = painterResource(
+                            id = R.drawable.ic_google_icon
+                        ),
+                        contentDescription = "Google icon",
+                        tint = Color.Unspecified,
+                        modifier = Modifier.padding(end = 24.dp)
+                    )
+                    Text(
+                        text = "Sign in with Google",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Medium,
+                        modifier = Modifier.align(Alignment.CenterVertically)
+                    )
+                }
+            }
+        }
     }
 }
 

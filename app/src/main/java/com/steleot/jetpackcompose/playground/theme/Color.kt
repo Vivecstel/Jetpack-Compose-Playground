@@ -275,11 +275,7 @@ fun ColorPalette.getMaterialColors(
     darkThemeMode: DarkThemeMode,
     isSystemInDarkTheme: Boolean,
 ): Colors {
-    val isDarkTheme = when (darkThemeMode) {
-        DarkThemeMode.SYSTEM -> isSystemInDarkTheme
-        DarkThemeMode.DARK -> true
-        DarkThemeMode.LIGHT -> false
-    }
+    val isDarkTheme = isDarkTheme(darkThemeMode, isSystemInDarkTheme)
     return when (this) {
         ColorPalette.RED -> if (isDarkTheme) DarkRedColorPalette else LightRedColorPalette
         ColorPalette.PINK -> if (isDarkTheme) DarkPinkColorPalette else LightPinkColorPalette
@@ -300,6 +296,17 @@ fun ColorPalette.getMaterialColors(
         ColorPalette.BROWN -> if (isDarkTheme) DarkBrownColorPalette else LightBrownColorPalette
         ColorPalette.GREY -> if (isDarkTheme) DarkGreyColorPalette else LightGreyColorPalette
         ColorPalette.BLUE_GREY -> if (isDarkTheme) DarkBlueGreyColorPalette else LightBlueGreyColorPalette
+    }
+}
+
+fun isDarkTheme(
+    darkThemeMode: DarkThemeMode,
+    isSystemInDarkTheme: Boolean,
+) : Boolean {
+    return when (darkThemeMode) {
+        DarkThemeMode.SYSTEM -> isSystemInDarkTheme
+        DarkThemeMode.DARK -> true
+        DarkThemeMode.LIGHT -> false
     }
 }
 

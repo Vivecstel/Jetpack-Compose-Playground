@@ -43,6 +43,7 @@ import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.theme.isDarkTheme
 import com.steleot.jetpackcompose.playground.utils.installer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -182,6 +183,7 @@ fun JetpackComposeApp(
                 CompositionLocalProvider(
                     LocalInAppReviewer provides inAppReviewHelper,
                     LocalOverScrollConfiguration provides null,
+                    LocalIsDarkTheme provides isDarkTheme(themeState.darkThemeMode, themeState.isSystemInDarkTheme)
                 ) {
                     val navController = rememberAnimatedNavController()
                     DisposableEffect(Unit) {
@@ -307,4 +309,8 @@ fun JetpackComposeApp(
 
 val LocalInAppReviewer = staticCompositionLocalOf<InAppReviewHelper> {
     error("CompositionLocal InAppReviewHelper not present")
+}
+
+val LocalIsDarkTheme = staticCompositionLocalOf<Boolean> {
+    error("CompositionLocal IsDarkTheme not present")
 }

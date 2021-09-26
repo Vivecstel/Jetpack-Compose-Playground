@@ -50,8 +50,8 @@ fun CoilScreen() {
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
-private fun CoilImageExample(
-    painter: ImagePainter = rememberImagePainter(randomSampleImageUrl())
+fun CoilImageExample(
+    painter: ImagePainter = rememberImagePainter(randomSampleImageUrl()),
 ) {
     Box {
         Image(
