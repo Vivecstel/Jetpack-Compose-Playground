@@ -5,9 +5,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.steleot.jetpackcompose.playground.R
@@ -35,7 +37,10 @@ fun DrawablePainterAccompanistScreen() {
 @Composable
 private fun DrawablePainterExample() {
     val drawable =
-        AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_android_black_24dp)
+        AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_android_black_24dp)?.apply {
+            mutate()
+            setTint(MaterialTheme.colors.onSurface.toArgb())
+        }
 
     Image(
         painter = rememberDrawablePainter(drawable = drawable),

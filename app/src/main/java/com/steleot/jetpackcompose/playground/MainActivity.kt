@@ -183,7 +183,10 @@ fun JetpackComposeApp(
                 CompositionLocalProvider(
                     LocalInAppReviewer provides inAppReviewHelper,
                     LocalOverScrollConfiguration provides null,
-                    LocalIsDarkTheme provides isDarkTheme(themeState.darkThemeMode, themeState.isSystemInDarkTheme)
+                    LocalIsDarkTheme provides isDarkTheme(
+                        themeState.darkThemeMode,
+                        themeState.isSystemInDarkTheme
+                    )
                 ) {
                     val navController = rememberAnimatedNavController()
                     DisposableEffect(Unit) {
@@ -213,7 +216,10 @@ fun JetpackComposeApp(
                                 else -> slideInHorizontally(
                                     initialOffsetX = { screenWidth },
                                     animationSpec = tween(NavigationDuration)
-                                ) + fadeIn(0.5f, tween(NavigationDuration))
+                                ) + fadeIn(
+                                    initialAlpha = 0.5f,
+                                    animationSpec = tween(NavigationDuration)
+                                )
                             }
                         },
                         exitTransition = { _, target ->
@@ -226,7 +232,10 @@ fun JetpackComposeApp(
                                     slideOutHorizontally(
                                         targetOffsetX = { -screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeOut(0.5f, tween(NavigationDuration))
+                                    ) + fadeOut(
+                                        targetAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         },
                         popEnterTransition = { initial, _ ->
@@ -239,7 +248,10 @@ fun JetpackComposeApp(
                                     slideInHorizontally(
                                         initialOffsetX = { -screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeIn(0.5f, tween(NavigationDuration))
+                                    ) + fadeIn(
+                                        initialAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         },
                         popExitTransition = { initial, _ ->
@@ -252,7 +264,10 @@ fun JetpackComposeApp(
                                     slideOutHorizontally(
                                         targetOffsetX = { screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeOut(0.5f, tween(NavigationDuration))
+                                    ) + fadeOut(
+                                        targetAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         }
                     ) {
