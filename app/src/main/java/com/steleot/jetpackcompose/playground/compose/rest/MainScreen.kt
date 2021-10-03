@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
+import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.*
@@ -28,6 +29,7 @@ import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -107,6 +109,7 @@ private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io
 fun MainScreenWithDrawer(
     navController: NavHostController,
     firebaseAuth: FirebaseAuth,
+    firebaseAnalytics: FirebaseAnalytics,
     googleSignInClient: GoogleSignInClient,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
@@ -116,25 +119,32 @@ fun MainScreenWithDrawer(
 ) {
     val state = rememberScaffoldState()
     val scope = rememberCoroutineScope()
+    var errorDialogText by remember { mutableStateOf("")}
     var showingErrorDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
+    val user = LocalUser.current
     val launcher =
         rememberLauncherForActivityResult(GoogleSignContract(googleSignInClient)) { idToken ->
             scope.launch {
                 try {
                     val credential = GoogleAuthProvider.getCredential(idToken, null)
                     val result = firebaseAuth.signInWithCredential(credential).await()
+                    Timber.d("Successful login.")
+                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, Bundle().apply {
+                        putString(FirebaseAnalytics.Param.METHOD, "google")
+                    })
                     setUser(result.user)
                 } catch (e: Exception) {
                     Timber.e(e, "Failed to sign in with Google.")
+                    errorDialogText = "Failed to sign in with Google. Please try again later."
                     showingErrorDialog = true
                 }
             }
         }
 
     if (showingErrorDialog) {
-        ErrorAlertDialog {
+        ErrorAlertDialog(errorDialogText) {
             showingErrorDialog = false
         }
     }
@@ -176,7 +186,14 @@ fun MainScreenWithDrawer(
                             scope.launch {
                                 state.drawerState.close()
                                 when (it.menuAction) {
-                                    MenuAction.NAVIGATION -> navController.navigate(it.text)
+                                    MenuAction.NAVIGATION -> {
+                                        if (user == null && it.text == MainNavRoutes.Popular) {
+                                            errorDialogText = "You need to sign to open ${it.text}."
+                                            showingErrorDialog = true
+                                            return@launch
+                                        }
+                                        navController.navigate(it.text)
+                                    }
                                     MenuAction.TOAST -> Toast.makeText(
                                         context,
                                         "Coming soon",
@@ -198,6 +215,7 @@ fun MainScreenWithDrawer(
 
 @Composable
 private fun ErrorAlertDialog(
+    text: String,
     closeAction: () -> Unit,
 ) {
     AlertDialog(
@@ -206,7 +224,7 @@ private fun ErrorAlertDialog(
             Text(text = stringResource(id = R.string.app_name))
         },
         text = {
-            Text(text = "Failed to sign in with Google. Please try again later.")
+            Text(text = text)
         },
         buttons = {
             Row(

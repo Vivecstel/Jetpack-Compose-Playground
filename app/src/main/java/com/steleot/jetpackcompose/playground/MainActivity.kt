@@ -278,6 +278,7 @@ fun JetpackComposeApp(
                         addMainRoutes(
                             navController,
                             firebaseAuth,
+                            firebaseAnalytics,
                             googleSignInClient,
                             themeState,
                             setTheme = { newThemeState ->
