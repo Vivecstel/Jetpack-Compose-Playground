@@ -302,7 +302,7 @@ fun ColorPalette.getMaterialColors(
 fun isDarkTheme(
     darkThemeMode: DarkThemeMode,
     isSystemInDarkTheme: Boolean,
-) : Boolean {
+): Boolean {
     return when (darkThemeMode) {
         DarkThemeMode.SYSTEM -> isSystemInDarkTheme
         DarkThemeMode.DARK -> true

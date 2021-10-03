@@ -227,5 +227,6 @@ object Libraries {
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 
     /* https://firebase.google.com/docs/auth/android/google-signin */
-    const val playServicesAuth = "com.google.android.gms:play-services-auth:${Versions.playServicesAuth}"
+    const val playServicesAuth =
+        "com.google.android.gms:play-services-auth:${Versions.playServicesAuth}"
 }

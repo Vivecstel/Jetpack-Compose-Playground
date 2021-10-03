@@ -119,7 +119,7 @@ fun MainScreenWithDrawer(
 ) {
     val state = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    var errorDialogText by remember { mutableStateOf("")}
+    var errorDialogText by remember { mutableStateOf("") }
     var showingErrorDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
