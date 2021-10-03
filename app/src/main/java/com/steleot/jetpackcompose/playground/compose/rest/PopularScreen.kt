@@ -55,8 +55,9 @@ fun PopularScreen(
                     CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                 }
                 is PopularUiState.Error -> {
+                    val error = state as PopularUiState.Error
                     Text(
-                        text = "Failed to retrieve the popular list. Please try again later.",
+                        text = error.message,
                         style = MaterialTheme.typography.body1,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
@@ -112,7 +113,8 @@ class PopularViewModel @Inject constructor(
                 )
             } catch (e: Exception) {
                 Timber.e(e)
-                _state.value = PopularUiState.Error
+                _state.value =
+                    PopularUiState.Error("Failed to retrieve the popular list. Please try again later.")
             }
         }
     }
@@ -120,7 +122,10 @@ class PopularViewModel @Inject constructor(
 
 sealed class PopularUiState {
     object Loading : PopularUiState()
-    object Error : PopularUiState()
+    class Error(
+        val message: String,
+    ) : PopularUiState()
+
     class Content(
         val data: List<String>,
         val date: String?,

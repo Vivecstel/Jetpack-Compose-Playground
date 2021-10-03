@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -31,6 +32,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
+import com.steleot.jetpackcompose.playground.LocalUser
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.*
@@ -110,25 +112,32 @@ fun MainScreenWithDrawer(
     list: List<String> = routes,
     navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = true,
+    setUser: (FirebaseUser?) -> Unit
 ) {
     val state = rememberScaffoldState()
     val scope = rememberCoroutineScope()
+    var showingErrorDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
-    var user by remember { mutableStateOf(firebaseAuth.currentUser) }
     val launcher =
         rememberLauncherForActivityResult(GoogleSignContract(googleSignInClient)) { idToken ->
             scope.launch {
                 try {
                     val credential = GoogleAuthProvider.getCredential(idToken, null)
                     val result = firebaseAuth.signInWithCredential(credential).await()
-                    user = result.user
+                    setUser(result.user)
                 } catch (e: Exception) {
-                    Timber.e(e, "todo message")
-                    // todo handle
+                    Timber.e(e, "Failed to sign in with Google.")
+                    showingErrorDialog = true
                 }
             }
         }
+
+    if (showingErrorDialog) {
+        ErrorAlertDialog {
+            showingErrorDialog = false
+        }
+    }
 
     Scaffold(
         scaffoldState = state,
@@ -146,13 +155,13 @@ fun MainScreenWithDrawer(
         },
         drawerContent = {
             DrawerUserItem(
-                user = user,
+                user = LocalUser.current,
                 signInOnClick = {
                     launcher.launch(null)
                 },
                 signOutOnClick = {
                     firebaseAuth.signOut()
-                    user = null
+                    setUser(null)
                 }
             )
             drawerItems.forEach {
@@ -187,7 +196,34 @@ fun MainScreenWithDrawer(
     }
 }
 
-@OptIn(ExperimentalCoilApi::class)
+@Composable
+private fun ErrorAlertDialog(
+    closeAction: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = { },
+        title = {
+            Text(text = stringResource(id = R.string.app_name))
+        },
+        text = {
+            Text(text = "Failed to sign in with Google. Please try again later.")
+        },
+        buttons = {
+            Row(
+                horizontalArrangement = Arrangement.End,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(id = android.R.string.ok),
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .clickable(onClick = closeAction)
+                )
+            }
+        },
+    )
+}
+
 @Composable
 private fun DrawerUserItem(
     user: FirebaseUser?,
@@ -200,83 +236,122 @@ private fun DrawerUserItem(
             .padding(16.dp)
     ) {
         if (user != null) {
-            val painter = rememberImagePainter(
-                data = user.photoUrl,
-                builder = {
-                    transformations(CircleCropTransformation())
-                }
+            SignedInUser(user, signOutOnClick)
+        } else {
+            GoogleSignInButton(LocalIsDarkTheme.current, signInOnClick)
+        }
+    }
+}
+
+@OptIn(ExperimentalCoilApi::class)
+@Composable
+private fun BoxScope.SignedInUser(
+    user: FirebaseUser,
+    signOutOnClick: () -> Unit,
+) {
+    val painter = rememberImagePainter(
+        data = user.photoUrl,
+        builder = {
+            transformations(CircleCropTransformation())
+        }
+    )
+    Row(
+        modifier = Modifier.align(Alignment.Center)
+    ) {
+        Box {
+            Image(
+                painter = painter,
+                contentDescription = "User photo",
+                modifier = Modifier
+                    .size(64.dp)
+                    .padding(end = 16.dp)
             )
-            Row(
-                modifier = Modifier.align(Alignment.Center)
-            ) {
-                Box {
-                    Image(
-                        painter = painter,
-                        contentDescription = "Content description",
-                        modifier = Modifier
-                            .size(64.dp)
-                            .padding(end = 24.dp)
-                    )
-                    when (painter.state) {
-                        is ImagePainter.State.Loading -> {
-                            Box(Modifier.matchParentSize()) {
-                                CircularProgressIndicator(Modifier.align(Alignment.Center))
-                            }
-                        }
-                        is ImagePainter.State.Error -> {
-                            Image(
-                                imageVector = Icons.Filled.AccountCircle,
-                                contentDescription = "Vector"
-                            )
-                        }
-                        else -> {
-                            Timber.d("Else image load states")
-                        }
+            when (painter.state) {
+                is ImagePainter.State.Loading -> {
+                    Box(Modifier.matchParentSize()) {
+                        CircularProgressIndicator(Modifier.align(Alignment.Center))
                     }
                 }
-                Text(
-                    user.displayName ?: "name not found",
-                    style = MaterialTheme.typography.body1,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.CenterVertically)
-                )
-                TextButton(
-                    onClick = signOutOnClick,
-                    modifier = Modifier.background(Color.Red)
-                ) {
-                    Text(
-                        text = "Sign out",
-                        modifier = Modifier.padding(8.dp)
+                is ImagePainter.State.Error -> {
+                    Image(
+                        imageVector = Icons.Filled.AccountCircle,
+                        contentDescription = "Account default icon"
                     )
                 }
+                else -> {
+                    Timber.d("Else image load states")
+                }
             }
-        } else {
-            Button(
-                onClick = signInOnClick,
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = if (LocalIsDarkTheme.current) Color(0xFF4285F4.toInt()) else Color(
-                        0xFFFFFFFF.toInt()
-                    )
+        }
+        Column(
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
+                .weight(1f)
+        ) {
+            Text(
+                user.displayName ?: "Name not found",
+                style = MaterialTheme.typography.body1,
+                fontWeight = FontWeight.Bold,
+            )
+            Text(
+                user.email ?: "Email not found",
+                style = MaterialTheme.typography.body2,
+            )
+        }
+        TextButton(
+            onClick = signOutOnClick,
+            colors = ButtonDefaults.textButtonColors(
+                contentColor = MaterialTheme.colors.onSurface
+            ),
+            modifier = Modifier
+                .align(Alignment.CenterVertically),
+            border = BorderStroke(1.dp, MaterialTheme.colors.onSurface)
+        ) {
+            Text(
+                text = "Sign out",
+            )
+        }
+    }
+}
+
+@Composable
+private fun BoxScope.GoogleSignInButton(
+    isDarkTheme: Boolean = true,
+    signInOnClick: () -> Unit = { },
+) {
+    Button(
+        onClick = signInOnClick,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = if (isDarkTheme) Color(0xFF4285F4.toInt()) else Color(
+                0xFFFFFFFF.toInt()
+            )
+        ),
+        modifier = Modifier.align(Alignment.Center),
+        shape = RoundedCornerShape(1.dp),
+        contentPadding = PaddingValues(1.dp)
+    ) {
+        Row {
+            Icon(
+                painter = painterResource(
+                    id = R.drawable.ic_google_icon
                 ),
-                modifier = Modifier.align(Alignment.Center)
-            ) {
-                Row {
-                    Icon(
-                        painter = painterResource(
-                            id = R.drawable.ic_google_icon
-                        ),
-                        contentDescription = "Google icon",
-                        tint = Color.Unspecified,
-                        modifier = Modifier.padding(end = 24.dp)
+                contentDescription = "Google icon",
+                tint = Color.Unspecified,
+                modifier = Modifier
+                    .background(
+                        if (isDarkTheme) Color(0xFFFFFFFF.toInt()) else Color.Unspecified,
+                        RoundedCornerShape(1.dp)
                     )
-                    Text(
-                        text = "Sign in with Google",
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Medium,
-                        modifier = Modifier.align(Alignment.CenterVertically)
-                    )
-                }
-            }
+                    .padding(8.dp)
+            )
+            Text(
+                text = "Sign in with Google",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier
+                    .align(Alignment.CenterVertically)
+                    .padding(start = 16.dp, end = 8.dp)
+            )
         }
     }
 }

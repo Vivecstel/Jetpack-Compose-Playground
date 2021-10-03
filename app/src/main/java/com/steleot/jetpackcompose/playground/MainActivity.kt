@@ -34,6 +34,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
@@ -144,6 +145,7 @@ fun JetpackComposeApp(
     var themeState by rememberSaveable {
         mutableStateOf(ThemeState())
     }
+    var user by remember { mutableStateOf(firebaseAuth.currentUser) }
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
@@ -186,7 +188,8 @@ fun JetpackComposeApp(
                     LocalIsDarkTheme provides isDarkTheme(
                         themeState.darkThemeMode,
                         themeState.isSystemInDarkTheme
-                    )
+                    ),
+                    LocalUser provides user
                 ) {
                     val navController = rememberAnimatedNavController()
                     DisposableEffect(Unit) {
@@ -276,9 +279,12 @@ fun JetpackComposeApp(
                             navController,
                             firebaseAuth,
                             googleSignInClient,
-                            themeState
-                        ) { newThemeState ->
-                            themeState = newThemeState
+                            themeState,
+                            setTheme = { newThemeState ->
+                                themeState = newThemeState
+                            }
+                        ) { newUser ->
+                            user = newUser
                         }
                         /* activity */
                         addActivityRoutes(navController)
@@ -328,4 +334,8 @@ val LocalInAppReviewer = staticCompositionLocalOf<InAppReviewHelper> {
 
 val LocalIsDarkTheme = staticCompositionLocalOf<Boolean> {
     error("CompositionLocal IsDarkTheme not present")
+}
+
+val LocalUser = staticCompositionLocalOf<FirebaseUser?> {
+    error("CompositionLocal User not present")
 }
