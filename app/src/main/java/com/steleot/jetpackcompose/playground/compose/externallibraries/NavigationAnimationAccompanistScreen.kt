@@ -42,7 +42,16 @@ private const val Green = "Green"
 @Composable
 private fun NavigationAnimationExample() {
     val navController = rememberAnimatedNavController()
-    AnimatedNavHost(navController, startDestination = Blue) {
+    AnimatedNavHost(
+        navController,
+        startDestination = Blue,
+        enterTransition = { _, _ ->
+            fadeIn(animationSpec = tween(700))
+        },
+        exitTransition = { _, _ ->
+            fadeOut(animationSpec = tween(700))
+        }
+    ) {
         composable(
             Blue,
             enterTransition = { initial, _ ->

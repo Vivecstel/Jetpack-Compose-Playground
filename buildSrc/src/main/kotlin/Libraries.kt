@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 object Libraries {
 
     /* https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect */
@@ -67,6 +69,7 @@ object Libraries {
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
     const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx"
     const val firebaseInstallations = "com.google.firebase:firebase-installations-ktx"
+    const val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
 
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
@@ -222,4 +225,8 @@ object Libraries {
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
+
+    /* https://firebase.google.com/docs/auth/android/google-signin */
+    const val playServicesAuth =
+        "com.google.android.gms:play-services-auth:${Versions.playServicesAuth}"
 }

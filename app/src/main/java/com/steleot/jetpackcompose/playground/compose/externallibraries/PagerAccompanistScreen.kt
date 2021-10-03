@@ -32,9 +32,11 @@ fun PagerAccompanistScreen() {
 @OptIn(ExperimentalPagerApi::class, ExperimentalCoilApi::class)
 @Composable
 private fun PagerExample() {
-    val pagerState = rememberPagerState(pageCount = 10, initialOffscreenLimit = 2)
+    val pagerState = rememberPagerState()
     Column(Modifier.fillMaxSize()) {
         HorizontalPager(
+            count = 10,
+            contentPadding = PaddingValues(horizontal = 32.dp),
             state = pagerState,
             modifier = Modifier
                 .weight(1f)

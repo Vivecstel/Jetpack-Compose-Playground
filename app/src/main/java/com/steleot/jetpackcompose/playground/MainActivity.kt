@@ -30,8 +30,11 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
@@ -41,6 +44,7 @@ import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.theme.isDarkTheme
 import com.steleot.jetpackcompose.playground.utils.installer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -53,7 +57,7 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var inAppReviewHelper: InAppReviewHelper
+    lateinit var firebaseAuth: FirebaseAuth
 
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -68,14 +72,26 @@ class MainActivity : ComponentActivity() {
     lateinit var protoManager: ProtoManager
 
     @Inject
+    lateinit var inAppReviewHelper: InAppReviewHelper
+
+    @Inject
     lateinit var inAppUpdateHelper: InAppUpdateHelper
+
+    @Inject
+    lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init(savedInstanceState)
         MobileAds.initialize(this)
         setContent {
-            JetpackComposeApp(inAppReviewHelper, firebaseAnalytics, protoManager)
+            JetpackComposeApp(
+                firebaseAuth,
+                firebaseAnalytics,
+                protoManager,
+                inAppReviewHelper,
+                googleSignInClient
+            )
         }
     }
 
@@ -118,18 +134,21 @@ private const val NavigationDuration = 600
 @OptIn(ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun JetpackComposeApp(
-    inAppReviewHelper: InAppReviewHelper,
+    firebaseAuth: FirebaseAuth,
     firebaseAnalytics: FirebaseAnalytics,
     protoManager: ProtoManager,
+    inAppReviewHelper: InAppReviewHelper,
+    googleSignInClient: GoogleSignInClient
 ) {
     val isSystemInDarkTheme = isSystemInDarkTheme()
     var isLoaded by rememberSaveable { mutableStateOf(false) }
     var themeState by rememberSaveable {
         mutableStateOf(ThemeState())
     }
+    var user by remember { mutableStateOf(firebaseAuth.currentUser) }
     val systemUiController = rememberSystemUiController()
-    SideEffect {
 
+    SideEffect {
         if (isLoaded) {
             systemUiController.setSystemBarsColor(
                 themeState.colorPalette.getMaterialColors(
@@ -139,6 +158,7 @@ fun JetpackComposeApp(
             )
         }
     }
+
     val screenWidth = with(LocalDensity.current) {
         LocalConfiguration.current.screenWidthDp.dp.roundToPx()
     }
@@ -165,6 +185,11 @@ fun JetpackComposeApp(
                 CompositionLocalProvider(
                     LocalInAppReviewer provides inAppReviewHelper,
                     LocalOverScrollConfiguration provides null,
+                    LocalIsDarkTheme provides isDarkTheme(
+                        themeState.darkThemeMode,
+                        themeState.isSystemInDarkTheme
+                    ),
+                    LocalUser provides user
                 ) {
                     val navController = rememberAnimatedNavController()
                     DisposableEffect(Unit) {
@@ -194,7 +219,10 @@ fun JetpackComposeApp(
                                 else -> slideInHorizontally(
                                     initialOffsetX = { screenWidth },
                                     animationSpec = tween(NavigationDuration)
-                                ) + fadeIn(0.5f, tween(NavigationDuration))
+                                ) + fadeIn(
+                                    initialAlpha = 0.5f,
+                                    animationSpec = tween(NavigationDuration)
+                                )
                             }
                         },
                         exitTransition = { _, target ->
@@ -207,7 +235,10 @@ fun JetpackComposeApp(
                                     slideOutHorizontally(
                                         targetOffsetX = { -screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeOut(0.5f, tween(NavigationDuration))
+                                    ) + fadeOut(
+                                        targetAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         },
                         popEnterTransition = { initial, _ ->
@@ -220,7 +251,10 @@ fun JetpackComposeApp(
                                     slideInHorizontally(
                                         initialOffsetX = { -screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeIn(0.5f, tween(NavigationDuration))
+                                    ) + fadeIn(
+                                        initialAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         },
                         popExitTransition = { initial, _ ->
@@ -233,13 +267,25 @@ fun JetpackComposeApp(
                                     slideOutHorizontally(
                                         targetOffsetX = { screenWidth },
                                         animationSpec = tween(NavigationDuration)
-                                    ) + fadeOut(0.5f, tween(NavigationDuration))
+                                    ) + fadeOut(
+                                        targetAlpha = 0.5f,
+                                        animationSpec = tween(NavigationDuration)
+                                    )
                             }
                         }
                     ) {
                         /* main */
-                        addMainRoutes(navController, themeState) { newThemeState ->
-                            themeState = newThemeState
+                        addMainRoutes(
+                            navController,
+                            firebaseAuth,
+                            firebaseAnalytics,
+                            googleSignInClient,
+                            themeState,
+                            setTheme = { newThemeState ->
+                                themeState = newThemeState
+                            }
+                        ) { newUser ->
+                            user = newUser
                         }
                         /* activity */
                         addActivityRoutes(navController)
@@ -285,4 +331,12 @@ fun JetpackComposeApp(
 
 val LocalInAppReviewer = staticCompositionLocalOf<InAppReviewHelper> {
     error("CompositionLocal InAppReviewHelper not present")
+}
+
+val LocalIsDarkTheme = staticCompositionLocalOf<Boolean> {
+    error("CompositionLocal IsDarkTheme not present")
+}
+
+val LocalUser = staticCompositionLocalOf<FirebaseUser?> {
+    error("CompositionLocal User not present")
 }

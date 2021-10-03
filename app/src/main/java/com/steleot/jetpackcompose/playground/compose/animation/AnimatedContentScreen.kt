@@ -46,9 +46,11 @@ private fun AnimateIncrementDecrementExample() {
             targetState = count,
             transitionSpec = {
                 if (targetState > initialState) {
-                    slideInVertically({ it }) + fadeIn() with slideOutVertically({ -it }) + fadeOut()
+                    slideInVertically(initialOffsetY = { it }) + fadeIn() with slideOutVertically(
+                        targetOffsetY = { -it }) + fadeOut()
                 } else {
-                    slideInVertically({ -it }) + fadeIn() with slideOutVertically({ it }) + fadeOut()
+                    slideInVertically(initialOffsetY = { -it }) + fadeIn() with slideOutVertically(
+                        targetOffsetY = { it }) + fadeOut()
                 }.using(SizeTransform(clip = false))
             }
         ) { targetCount ->

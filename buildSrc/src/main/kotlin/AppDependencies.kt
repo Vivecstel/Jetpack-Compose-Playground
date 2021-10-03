@@ -32,6 +32,7 @@ object AppDependencies {
         Libraries.firebaseFirestore,
         Libraries.firebaseMessaging,
         Libraries.firebaseInstallations,
+        Libraries.firebaseAuth,
         Libraries.hilt,
         Libraries.hiltNavigation,
         Libraries.startUp,
@@ -92,6 +93,7 @@ object AppDependencies {
         Libraries.plot,
         Libraries.composeTimelineView,
         Libraries.adMob,
+        Libraries.playServicesAuth,
     )
 
     val kapt = listOf(

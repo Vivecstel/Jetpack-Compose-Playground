@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -115,12 +116,16 @@ private val list = listOf(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun FontAwesomeGrid() {
-    FaIcon(faIcon = FaIcons.ChartBarRegular)
     LazyVerticalGrid(
         GridCells.Adaptive(60.dp)
     ) {
         items(list) {
-            FaIcon(faIcon = it, modifier = Modifier.padding(8.dp), size = 36.dp)
+            FaIcon(
+                faIcon = it,
+                modifier = Modifier.padding(8.dp),
+                size = 36.dp,
+                tint = MaterialTheme.colors.onSurface
+            )
         }
     }
 }

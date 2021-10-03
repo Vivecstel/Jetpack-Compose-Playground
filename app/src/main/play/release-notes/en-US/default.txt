@@ -1,1 +1,1 @@
-Updated compose to 1.1.0-alpha04. Also, update activity and compose richtext libraries. Fixed text on permission accompanist example. Added in app updater. Added Compose Timeline view and plot libraries. Added release notes section in order to see the last 10 releases on github.
+Added Google Sign in. Updated compose to 1.1.0-alpha05, navigation, hilt, activity, camerax, accompanist, landscapist and other libraries. Fixed deprecation on compose barcodes screen.

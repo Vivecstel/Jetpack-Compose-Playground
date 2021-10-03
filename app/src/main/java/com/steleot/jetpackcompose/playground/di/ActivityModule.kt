@@ -2,8 +2,12 @@ package com.steleot.jetpackcompose.playground.di
 
 import android.app.Activity
 import androidx.activity.ComponentActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelperImpl
 import dagger.Module
@@ -34,4 +38,17 @@ object ActivityModule {
         activity: ComponentActivity,
         appUpdateManager: AppUpdateManager
     ): InAppUpdateHelper = InAppUpdateHelperImpl(activity, appUpdateManager)
+
+    @Provides
+    @ActivityScoped
+    fun provideGoogleSignInClient(
+        activity: Activity,
+    ): GoogleSignInClient {
+
+        val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(activity.getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        return GoogleSignIn.getClient(activity, options)
+    }
 }

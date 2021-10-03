@@ -5,9 +5,8 @@ import android.content.Intent
 import android.content.IntentSender.SendIntentException
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -29,7 +28,7 @@ interface InAppUpdateHelper {
 class InAppUpdateHelperImpl(
     private val activity: ComponentActivity,
     private val appUpdateManager: AppUpdateManager
-) : InAppUpdateHelper, LifecycleObserver {
+) : InAppUpdateHelper, DefaultLifecycleObserver {
 
     private lateinit var alertDialog: AlertDialog
     private val listener = InstallStateUpdatedListener { state ->
@@ -102,8 +101,7 @@ class InAppUpdateHelperImpl(
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun onResume() {
+    override fun onResume(owner: LifecycleOwner) {
         activity.lifecycleScope.launchWhenResumed {
             try {
                 val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
@@ -118,8 +116,7 @@ class InAppUpdateHelperImpl(
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun onDestroy() {
+    override fun onDestroy(owner: LifecycleOwner) {
         appUpdateManager.unregisterListener(listener)
     }
 
