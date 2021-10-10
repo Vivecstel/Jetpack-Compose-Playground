@@ -1,1 +1,1 @@
-Added Google Sign in. Updated compose to 1.1.0-alpha05, navigation, hilt, activity, camerax, accompanist, landscapist and other libraries. Fixed deprecation on compose barcodes screen.
+Updated orchestra, coil, lottie libraries. Added Modifier Local example. Moved foundation layout to foundation. Added Compose Particle System and SS Jetpack Compose Progress Button libraries.
