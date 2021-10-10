@@ -59,8 +59,8 @@ private fun DocumentScreenExample() {
                     fontWeight = Bold
                 )
                 Spacer(Modifier.size(24.dp))
-                (1..10).forEach { number ->
-                    SectionWithLoremIpsum(number)
+                for (i in 1..10) {
+                    SectionWithLoremIpsum(i)
                 }
                 Spacer(Modifier.size(16.dp))
                 OutlinedButton(

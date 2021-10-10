@@ -71,7 +71,7 @@ private fun BalloonAnchorExample() {
                 setBalloonAnimation(BalloonAnimation.FADE)
                 setLifecycleOwner(LocalLifecycleOwner.current)
             },
-            onAnchorClick = { balloon, anchor -> balloon.show(anchor) }
+            onAnchorClick = { balloon, anchor -> balloon.showAtCenter(anchor) }
         )
     }
 }

@@ -146,7 +146,9 @@ fun NavGraphBuilder.addConstraintLayoutRoutes() {
     composable(route = ConstraintLayoutNavRoutes.CreateGuideline) { CreateGuidelineScreen() }
     composable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
     composable(route = ConstraintLayoutNavRoutes.JsonConstraintSet) { JsonConstraintSetScreen() }
-    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) { JsonConstraintSetWithVariablesScreen() }
+    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) {
+        JsonConstraintSetWithVariablesScreen()
+    }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout1) { MotionLayout1Screen() }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout2) { MotionLayout2Screen() }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout3) { MotionLayout3Screen() }
@@ -362,7 +364,9 @@ fun NavGraphBuilder.addViewModelRoutes() {
 fun NavGraphBuilder.addCustomExamples() {
     composable(route = CustomExamplesNavRoutes.AdMobBanner) { AdMobBannerScreen() }
     composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
-    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) { AnimatedExtendedFloatingActionButtonScreen() }
+    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) {
+        AnimatedExtendedFloatingActionButtonScreen()
+    }
     composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
     composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
@@ -404,8 +408,12 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
     composable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
-    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) { NavigationAnimationAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) { NavigationMaterialAccompanistScreen() }
+    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
+        NavigationAnimationAccompanistScreen()
+    }
+    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) {
+        NavigationMaterialAccompanistScreen()
+    }
     composable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
     composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
     composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
@@ -416,8 +424,12 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton) { SSJetPackComposeProgressButtonScreen() }
+    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) {
+        SpeedDialFloatingActionButtonScreen()
+    }
+    composable(route = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton) {
+        SSJetPackComposeProgressButtonScreen()
+    }
     composable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
