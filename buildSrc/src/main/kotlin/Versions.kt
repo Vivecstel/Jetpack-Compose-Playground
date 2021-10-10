@@ -63,6 +63,8 @@ object Versions {
     const val stageStepBar = "0.0.1"
     const val plot = "0.1.2"
     const val composeTimelineView = "1.0.2"
+    const val composeParticleSystem = "1.0.0-alpha01"
+    const val ssJetPackComposeProgressButton = "1.0.6"
     const val adMob = "20.4.0"
     const val playServicesAuth = "19.2.0"
     const val test = "1.4.1-alpha03"

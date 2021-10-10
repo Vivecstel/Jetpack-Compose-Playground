@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 250 screens** with examples of **Jetpack Compose**.
+Offering **more than 255 screens** with examples of **Jetpack Compose**.
 
 <img src="screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 250 screens with
+has to offer and how it improves everyday Android UI development. It offers more 255 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -96,6 +96,7 @@ Download from:
    - [ComposeCharts](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeChartsScreen.kt)
    - [ComposeMarkdown](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeMarkdownScreen.kt)
    - [ComposeNeumorphism](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeNeumorphismScreen.kt)
+   - [ComposeParticleSystem](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeParticleSystemScreen.kt)
    - [ComposeRichTextPrinting](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextPrintingScreen.kt)
    - [ComposeRichTextUiMaterial](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextUiMaterialScreen.kt)
    - [ComposeRichTextUi](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ComposeRichTextUiScreen.kt)
@@ -119,53 +120,53 @@ Download from:
    - [RatingBar](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/RatingBarScreen.kt)
    - [RevealSwipe](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/RevealSwipeScreen.kt)
    - [SpeedDialFloatingActionButton](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SpeedDialFloatingActionButtonScreen.kt)
+   - [SSJetPackComposeProgressButton](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SSJetPackComposeProgressButtonScreen.kt)
    - [StageStepBar](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/StageStepBarScreen.kt)
    - [SwipeRefreshAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SwipeRefreshAccompanistScreen.kt)
    - [SystemUiControllerAccompanist](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SystemUiControllerAccompanistScreen.kt)
  - Foundation
+   - [AbsolutePadding](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/AbsolutePaddingScreen.kt)
+   - [AspectRation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/AspectRationScreen.kt)
    - [Background](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/BackgroundScreen.kt)
    - [Border](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/BorderScreen.kt)
+   - [Box](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/BoxScreen.kt)
+   - [BoxWithConstraints](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/BoxWithConstraintsScreen.kt)
    - [Canvas](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/CanvasScreen.kt)
    - [Clickable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ClickableScreen.kt)
    - [ClickableText](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ClickableTextScreen.kt)
+   - [Column](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ColumnScreen.kt)
    - [CombinedClickable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/CombinedClickableScreen.kt)
-   - [DragGestureDetector](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DragGestureDetectorScreen.kt)
+   - [DefaultMinSize](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DefaultMinSizeScreen.kt)
    - [Draggable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DraggableScreen.kt)
+   - [DragGestureDetector](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DragGestureDetectorScreen.kt)
    - [Focusable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/FocusableScreen.kt)
    - [Image](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ImageScreen.kt)
    - [InteractionSource](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/InteractionSourceScreen.kt)
+   - [Intrinsic](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/IntrinsicScreen.kt)
    - [LazyColumn](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyColumnScreen.kt)
    - [LazyGrid](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyGridScreen.kt)
    - [LazyRow](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyRowScreen.kt)
    - [LocalOverScrollConfiguration](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LocalOverScrollConfigurationScreen.kt)
+   - [MatchParentSize](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/MatchParentSizeScreen.kt)
+   - [Offset](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/OffsetScreen.kt)
+   - [PaddingFromBaseline](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/PaddingFromBaselineScreen.kt)
+   - [PaddingFrom](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/PaddingFromScreen.kt)
+   - [Padding](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/PaddingScreen.kt)
    - [ProgressSemantics](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ProgressSemanticsScreen.kt)
+   - [Row](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/RowScreen.kt)
    - [Scrollable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollableScreen.kt)
    - [Scroller](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ScrollerScreen.kt)
    - [SelectableGroup](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectableGroupScreen.kt)
    - [Selectable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectableScreen.kt)
    - [SelectionContainer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SelectionContainerScreen.kt)
    - [Shape](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ShapeScreen.kt)
+   - [Size](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SizeScreen.kt)
+   - [Spacer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/SpacerScreen.kt)
    - [StickyHeader](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/StickyHeaderScreen.kt)
    - [Toggeable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ToggeableScreen.kt)
    - [TransformGesture](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/TransformGestureScreen.kt)
    - [Transformable](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/TransformableScreen.kt)
- - FoundationLayout
-   - [AbsolutePadding](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/AbsolutePaddingScreen.kt)
-   - [AspectRatio](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/AspectRationScreen.kt)
-   - [Box](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/BoxScreen.kt)
-   - [BoxWithConstraints](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/BoxWithConstraintsScreen.kt)
-   - [Column](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/ColumnScreen.kt)
-   - [DefaultMinSize](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/DefaultMinSizeScreen.kt)
-   - [Intrinsic](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/IntrinsicScreen.kt)
-   - [MatchParentSize](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/MatchParentSizeScreen.kt)
-   - [Offset](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/OffsetScreen.kt)
-   - [PaddingFromBaseline](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/PaddingFromBaselineScreen.kt)
-   - [PaddingFrom](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/PaddingFromScreen.kt)
-   - [Padding](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/PaddingScreen.kt)
-   - [Row](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/RowScreen.kt)
-   - [Size](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/SizeScreen.kt)
-   - [Spacer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/SpacerScreen.kt)
-   - [Weight](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundationlayout/WeightScreen.kt)
+   - [Weight](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/WeightScreen.kt)
  - Material
    - [AlertDialog](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/AlertDialogScreen.kt)
    - [BackdropScaffold](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BackdropScaffoldScreen.kt)
@@ -278,6 +279,7 @@ Download from:
    - [LocalUriHandler](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalUriHandlerScreen.kt)
    - [LocalViewConfiguration](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalViewConfigurationScreen.kt)
    - [LocalWindowInfo](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalWindowInfoScreen.kt)
+   - [ModifierLocal](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/ModifierLocalScreen.kt)
    - [NestedScroll](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/NestedScrollScreen.kt)
    - [OnGloballyPositioned](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnGloballyPositionedScreen.kt)
    - [OnSizeChanged](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnSizeChangedScreen.kt)

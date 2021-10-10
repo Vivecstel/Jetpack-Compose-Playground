@@ -1,9 +1,9 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -11,49 +11,49 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/ColumnScreen.kt"
+private const val Url = "foundation/RowScreen.kt"
 
 @Composable
-fun ColumnScreen() {
+fun RowScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Column,
+        title = FoundationNavRoutes.Row,
         link = Url,
     ) {
-        DefaultColumn()
+        DefaultRow()
     }
 }
 
 @Composable
-fun DefaultColumn() {
-    Column(
+fun DefaultRow() {
+    Row(
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "First item",
+            text = "One",
             modifier = Modifier
                 .padding(16.dp)
                 .background(Color.Blue)
         )
         Text(
-            text = "Second item",
+            text = "Two",
             modifier = Modifier
                 .background(Color.Red)
                 .padding(16.dp)
         )
         Text(
-            text = "Third item",
+            text = "Three",
             modifier = Modifier
                 .padding(16.dp)
-                .fillMaxWidth()
+                .fillMaxHeight()
                 .background(Color.Green)
         )
         Text(
-            text = "Fourth item",
+            text = "Four",
             modifier = Modifier
                 .background(Color.Yellow)
-                .fillMaxWidth(0.6f)
+                .fillMaxHeight(0.6f)
                 .padding(16.dp)
         )
     }

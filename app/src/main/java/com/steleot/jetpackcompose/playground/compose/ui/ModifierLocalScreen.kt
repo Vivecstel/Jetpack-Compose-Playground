@@ -53,7 +53,9 @@ private fun ModifierLocalExample() {
                 Modifier
                     .modifierLocalConsumer { message = localMessage.current }
                     .clickable {
-                        Toast.makeText(context, "Hello $message", Toast.LENGTH_SHORT).show()
+                        Toast
+                            .makeText(context, "Hello $message", Toast.LENGTH_SHORT)
+                            .show()
                     }
             }
     )

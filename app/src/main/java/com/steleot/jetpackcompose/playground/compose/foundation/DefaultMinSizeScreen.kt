@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -8,14 +8,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/DefaultMinSizeScreen.kt"
+private const val Url = "foundation/DefaultMinSizeScreen.kt"
 
 @Composable
 fun DefaultMinSizeScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.DefaultMinSize,
+        title = FoundationNavRoutes.DefaultMinSize,
         link = Url,
     ) {
         Column(

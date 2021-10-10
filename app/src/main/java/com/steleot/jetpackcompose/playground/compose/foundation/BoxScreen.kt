@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -8,14 +8,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/BoxScreen.kt"
+private const val Url = "foundation/BoxScreen.kt"
 
 @Composable
 fun BoxScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Box,
+        title = FoundationNavRoutes.Box,
         link = Url,
     ) {
         Box(

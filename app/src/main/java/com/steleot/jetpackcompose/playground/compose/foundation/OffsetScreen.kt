@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,14 +10,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/OffsetScreen.kt"
+private const val Url = "foundation/OffsetScreen.kt"
 
 @Composable
 fun OffsetScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Box,
+        title = FoundationNavRoutes.Box,
         link = Url,
     ) {
         Column(

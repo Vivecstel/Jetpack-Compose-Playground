@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -10,14 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/BoxWithConstraintsScreen.kt"
+private const val Url = "foundation/BoxWithConstraintsScreen.kt"
 
 @Composable
 fun BoxWithConstraintsScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.BoxWithConstraints,
+        title = FoundationNavRoutes.BoxWithConstraints,
         link = Url,
     ) {
         BoxWithConstraints {

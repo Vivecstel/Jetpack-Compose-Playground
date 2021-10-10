@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
@@ -6,14 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/SpacerScreen.kt"
+private const val Url = "foundation/SpacerScreen.kt"
 
 @Composable
 fun SpacerScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Spacer,
+        title = FoundationNavRoutes.Spacer,
         link = Url,
     ) {
         Column(

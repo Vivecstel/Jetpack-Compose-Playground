@@ -53,7 +53,6 @@ private val routes = listOf(
     MainNavRoutes.CustomExamples,
     MainNavRoutes.ExternalLibraries,
     MainNavRoutes.Foundation,
-    MainNavRoutes.FoundationLayout,
     MainNavRoutes.Material,
     MainNavRoutes.MaterialIcons,
     MainNavRoutes.MaterialIConsExtended,

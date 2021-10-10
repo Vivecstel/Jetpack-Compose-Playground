@@ -223,6 +223,13 @@ object Libraries {
     const val composeTimelineView =
         "io.github.jisungbin:timelineview:${Versions.composeTimelineView}"
 
+    /* https://github.com/CuriousNikhil/compose-particle-system */
+    const val composeParticleSystem = "me.nikhilchaudhari:quarks:${Versions.composeParticleSystem}"
+
+    /* https://github.com/SimformSolutionsPvtLtd/SSJetPackComposeProgressButton */
+    const val ssJetPackComposeProgressButton =
+        "com.github.SimformSolutionsPvtLtd:SSJetPackComposeProgressButton:${Versions.ssJetPackComposeProgressButton}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 

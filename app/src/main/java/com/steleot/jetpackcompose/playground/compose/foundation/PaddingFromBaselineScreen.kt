@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -9,14 +9,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/PaddingFromBaselineScreen.kt"
+private const val Url = "foundation/PaddingFromBaselineScreen.kt"
 
 @Composable
 fun PaddingFromBaselineScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.PaddingFromBaseline,
+        title = FoundationNavRoutes.PaddingFromBaseline,
         link = Url,
     ) {
         Column(
