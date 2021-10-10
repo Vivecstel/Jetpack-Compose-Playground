@@ -92,6 +92,8 @@ object AppDependencies {
         Libraries.stageStepBar,
         Libraries.plot,
         Libraries.composeTimelineView,
+        Libraries.composeParticleSystem,
+        Libraries.ssJetPackComposeProgressButton,
         Libraries.adMob,
         Libraries.playServicesAuth,
     )

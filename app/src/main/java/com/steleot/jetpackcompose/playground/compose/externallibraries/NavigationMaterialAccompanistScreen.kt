@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -39,6 +40,7 @@ private object Destinations {
     const val Sheet = "SHEET"
 }
 
+@SuppressLint("RestrictedApi")
 @OptIn(ExperimentalMaterialNavigationApi::class)
 @Composable
 private fun NavigationMaterialExample() {

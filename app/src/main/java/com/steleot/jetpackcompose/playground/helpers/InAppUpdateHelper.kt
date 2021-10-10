@@ -121,10 +121,8 @@ class InAppUpdateHelperImpl(
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_CODE) {
-            if (resultCode != RESULT_OK) {
-                Timber.d("Failed to finish the update with result code: $resultCode")
-            }
+        if (requestCode == REQUEST_CODE && resultCode != RESULT_OK) {
+            Timber.d("Failed to finish the update with result code: $resultCode")
         }
     }
 

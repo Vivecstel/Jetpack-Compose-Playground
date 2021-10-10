@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.foundationlayout
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -6,14 +6,14 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
-private const val Url = "foundationlayout/WeightScreen.kt"
+private const val Url = "foundation/WeightScreen.kt"
 
 @Composable
 fun WeightScreen() {
     DefaultScaffold(
-        title = FoundationLayoutNavRoutes.Weight,
+        title = FoundationNavRoutes.Weight,
         link = Url,
     ) {
         Column(

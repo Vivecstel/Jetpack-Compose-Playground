@@ -295,8 +295,6 @@ fun JetpackComposeApp(
                         addConstraintLayoutRoutes()
                         /* foundation */
                         addFoundationRoutes()
-                        /* foundation layout */
-                        addFoundationLayoutRoutes()
                         /* material */
                         addMaterialRoutes()
                         /* material icons */

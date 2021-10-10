@@ -19,7 +19,6 @@ import com.steleot.jetpackcompose.playground.compose.constraintlayout.*
 import com.steleot.jetpackcompose.playground.compose.customexamples.*
 import com.steleot.jetpackcompose.playground.compose.externallibraries.*
 import com.steleot.jetpackcompose.playground.compose.foundation.*
-import com.steleot.jetpackcompose.playground.compose.foundationlayout.*
 import com.steleot.jetpackcompose.playground.compose.material.*
 import com.steleot.jetpackcompose.playground.compose.materialicons.*
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
@@ -69,11 +68,6 @@ fun NavGraphBuilder.addMainRoutes(
     }
     composable(route = MainNavRoutes.Foundation) {
         FoundationScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.FoundationLayout) {
-        FoundationLayoutScreen(
             navController
         )
     }
@@ -152,7 +146,9 @@ fun NavGraphBuilder.addConstraintLayoutRoutes() {
     composable(route = ConstraintLayoutNavRoutes.CreateGuideline) { CreateGuidelineScreen() }
     composable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
     composable(route = ConstraintLayoutNavRoutes.JsonConstraintSet) { JsonConstraintSetScreen() }
-    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) { JsonConstraintSetWithVariablesScreen() }
+    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) {
+        JsonConstraintSetWithVariablesScreen()
+    }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout1) { MotionLayout1Screen() }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout2) { MotionLayout2Screen() }
     composable(route = ConstraintLayoutNavRoutes.MotionLayout3) { MotionLayout3Screen() }
@@ -160,52 +156,48 @@ fun NavGraphBuilder.addConstraintLayoutRoutes() {
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addFoundationRoutes() {
+    composable(route = FoundationNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
+    composable(route = FoundationNavRoutes.AspectRatio) { AspectRationScreen() }
     composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
     composable(route = FoundationNavRoutes.Border) { BorderScreen() }
+    composable(route = FoundationNavRoutes.Box) { BoxScreen() }
+    composable(route = FoundationNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
     composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
     composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
     composable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
+    composable(route = FoundationNavRoutes.Column) { ColumnScreen() }
     composable(route = FoundationNavRoutes.CombinedClickable) { CombinedClickableScreen() }
+    composable(route = FoundationNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
     composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
     composable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
     composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
     composable(route = FoundationNavRoutes.Image) { ImageScreen() }
     composable(route = FoundationNavRoutes.InteractionSource) { InteractionSourceScreen() }
+    composable(route = FoundationNavRoutes.Intrinsic) { IntrinsicScreen() }
     composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
     composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
     composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
     composable(route = FoundationNavRoutes.LocalOverScrollConfiguration) { LocalOverScrollConfigurationScreen() }
+    composable(route = FoundationNavRoutes.MatchParentSize) { MatchParentSizeScreen() }
+    composable(route = FoundationNavRoutes.Offset) { OffsetScreen() }
+    composable(route = FoundationNavRoutes.PaddingFromBaseline) { PaddingFromBaselineScreen() }
+    composable(route = FoundationNavRoutes.PaddingFrom) { PaddingFromScreen() }
+    composable(route = FoundationNavRoutes.Padding) { PaddingScreen() }
     composable(route = FoundationNavRoutes.ProgressSemantics) { ProgressSemanticsScreen() }
+    composable(route = FoundationNavRoutes.Row) { RowScreen() }
     composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
     composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
     composable(route = FoundationNavRoutes.SelectableGroup) { SelectableGroupScreen() }
     composable(route = FoundationNavRoutes.Selectable) { SelectableScreen() }
     composable(route = FoundationNavRoutes.SelectionContainer) { SelectionContainerScreen() }
     composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
+    composable(route = FoundationNavRoutes.Size) { SizeScreen() }
+    composable(route = FoundationNavRoutes.Spacer) { SpacerScreen() }
     composable(route = FoundationNavRoutes.StickyHeader) { StickyHeaderScreen() }
     composable(route = FoundationNavRoutes.Toggeable) { ToggeableScreen() }
     composable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
     composable(route = FoundationNavRoutes.TransformGesture) { TransformGestureScreen() }
-}
-
-@OptIn(ExperimentalAnimationApi::class)
-fun NavGraphBuilder.addFoundationLayoutRoutes() {
-    composable(route = FoundationLayoutNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
-    composable(route = FoundationLayoutNavRoutes.AspectRatio) { AspectRationScreen() }
-    composable(route = FoundationLayoutNavRoutes.Box) { BoxScreen() }
-    composable(route = FoundationLayoutNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
-    composable(route = FoundationLayoutNavRoutes.Column) { ColumnScreen() }
-    composable(route = FoundationLayoutNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
-    composable(route = FoundationLayoutNavRoutes.Intrinsic) { IntrinsicScreen() }
-    composable(route = FoundationLayoutNavRoutes.MatchParentSize) { MatchParentSizeScreen() }
-    composable(route = FoundationLayoutNavRoutes.Offset) { OffsetScreen() }
-    composable(route = FoundationLayoutNavRoutes.PaddingFromBaseline) { PaddingFromBaselineScreen() }
-    composable(route = FoundationLayoutNavRoutes.PaddingFrom) { PaddingFromScreen() }
-    composable(route = FoundationLayoutNavRoutes.Padding) { PaddingScreen() }
-    composable(route = FoundationLayoutNavRoutes.Row) { RowScreen() }
-    composable(route = FoundationLayoutNavRoutes.Size) { SizeScreen() }
-    composable(route = FoundationLayoutNavRoutes.Spacer) { SpacerScreen() }
-    composable(route = FoundationLayoutNavRoutes.Weight) { WeightScreen() }
+    composable(route = FoundationNavRoutes.Weight) { WeightScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -224,6 +216,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
     composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
     composable(route = MaterialNavRoutes.Elevation) { ElevationScreen() }
+    composable(route = MaterialNavRoutes.ExposedDropdownMenuBox) { ExposedDropdownMenuBoxScreen() }
     composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
     composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
     composable(route = MaterialNavRoutes.Icon) { IconScreen() }
@@ -336,6 +329,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
     composable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
     composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
+    composable(route = UiNavRoutes.ModifierLocal) { ModifierLocalScreen() }
     composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
     composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
     composable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }
@@ -370,7 +364,9 @@ fun NavGraphBuilder.addViewModelRoutes() {
 fun NavGraphBuilder.addCustomExamples() {
     composable(route = CustomExamplesNavRoutes.AdMobBanner) { AdMobBannerScreen() }
     composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
-    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) { AnimatedExtendedFloatingActionButtonScreen() }
+    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) {
+        AnimatedExtendedFloatingActionButtonScreen()
+    }
     composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
     composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
     composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
@@ -398,6 +394,7 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeParticleSystem) { ComposeParticleSystemScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextPrinting) { ComposeRichTextPrintingScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
@@ -411,8 +408,12 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
     composable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
-    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) { NavigationAnimationAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) { NavigationMaterialAccompanistScreen() }
+    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
+        NavigationAnimationAccompanistScreen()
+    }
+    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) {
+        NavigationMaterialAccompanistScreen()
+    }
     composable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
     composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
     composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
@@ -423,7 +424,12 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
     composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) { SpeedDialFloatingActionButtonScreen() }
+    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) {
+        SpeedDialFloatingActionButtonScreen()
+    }
+    composable(route = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton) {
+        SSJetPackComposeProgressButtonScreen()
+    }
     composable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
