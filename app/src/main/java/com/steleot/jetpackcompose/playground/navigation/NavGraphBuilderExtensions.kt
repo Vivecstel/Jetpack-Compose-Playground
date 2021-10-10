@@ -224,6 +224,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
     composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
     composable(route = MaterialNavRoutes.Elevation) { ElevationScreen() }
+    composable(route = MaterialNavRoutes.ExposedDropdownMenuBox) { ExposedDropdownMenuBoxScreen() }
     composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
     composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
     composable(route = MaterialNavRoutes.Icon) { IconScreen() }
@@ -336,6 +337,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
     composable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
     composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
+    composable(route = UiNavRoutes.ModifierLocal) { ModifierLocalScreen() }
     composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
     composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
     composable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }

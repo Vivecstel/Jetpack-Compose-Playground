@@ -47,6 +47,7 @@ val routes = listOf(
     UiNavRoutes.LocalUriHandler,
     UiNavRoutes.LocalViewConfiguration,
     UiNavRoutes.LocalWindowInfo,
+    UiNavRoutes.ModifierLocal,
     UiNavRoutes.NestedScroll,
     UiNavRoutes.OnGloballyPositioned,
 //    UiNavRoutes.OnKeyEvent,
