@@ -181,6 +181,7 @@ Download from:
    - [Divider](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/DividerScreen.kt)
    - [DropdownMenu](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/DropdownMenuScreen.kt)
    - [Elevation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ElevationScreen.kt)
+   - [ExposedDropdownMenuBox](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ExposedDropdownMenuBoxScreen.kt)
    - [FloatingActionButton](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/FloatingActionButtonScreen.kt)
    - [ExtendedFloatingActionButton](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ExtendedFloatingActionButtonScreen.kt)
    - [IconButton](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/IconButtonScreen.kt)

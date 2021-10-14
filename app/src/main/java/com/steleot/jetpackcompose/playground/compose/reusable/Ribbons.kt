@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.reusable
 import androidx.compose.ui.graphics.Path
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
 fun getRibbonPath(
@@ -17,6 +18,9 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 3.3.0 */
+    MainNavRoutes.Material,
+    MaterialNavRoutes.ExposedDropdownMenuBox,
     /* 3.2.0 */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.ComposeParticleSystem,
@@ -24,8 +28,4 @@ val ribbonRoutes = setOf(
     MainNavRoutes.Ui,
     UiNavRoutes.ModifierLocal,
     /* 3.1.0 */
-    /* 3.0.0 */
-    MainNavRoutes.ExternalLibraries,
-    ExternalLibrariesNavRoutes.ComposeTimelineView,
-    ExternalLibrariesNavRoutes.Plot,
 )
