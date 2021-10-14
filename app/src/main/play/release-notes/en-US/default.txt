@@ -1,1 +1,1 @@
-Updated orchestra, coil, lottie libraries. Added Modifier Local example. Moved foundation layout to foundation. Added Compose Particle System and SS Jetpack Compose Progress Button libraries.
+Updated Compose to 1.1.0-alpha06. Also, updated activity, paging, cameraX, landscapist, coil, frsco, compose barcodes and compose particle system libraries. Added Exposed dropdown menu box example.
