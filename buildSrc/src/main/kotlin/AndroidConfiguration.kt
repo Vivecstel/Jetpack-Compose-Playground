@@ -8,8 +8,8 @@ object AndroidConfiguration {
     const val targetSdk = compileSdk
 
     const val appId = "com.steleot.jetpackcompose.playground"
-    const val versionCode = 46
-    const val versionName = "3.3.0"
+    const val versionCode = 47
+    const val versionName = "3.3.1"
 
     private const val branch = "master"
     const val baseUrl = "\"https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/$branch/" +
