@@ -1,1 +1,1 @@
-Updated Compose to 1.1.0-alpha06. Also, updated activity, paging, cameraX, landscapist, coil, frsco, compose barcodes and compose particle system libraries. Added Exposed dropdown menu box example.
+Updated accompanist & landscapist. Disabled Compose Markdown screen for now.
