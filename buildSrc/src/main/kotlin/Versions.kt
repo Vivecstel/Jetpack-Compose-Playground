@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.5.31"
 
     /* plugins */
-    const val androidPlugin = "7.0.2"
+    const val androidPlugin = "7.0.3"
     const val googleServices = "4.3.10"
     const val crashlytics = "2.7.1"
     const val benManes = "0.39.0"
@@ -42,8 +42,8 @@ object Versions {
     const val okhttp = "5.0.0-alpha.2"
     const val kotlinxSerializationConverter = "0.8.0"
     const val kotlinxSerialization = "1.3.0"
-    const val accompanist = "0.19.0"
-    const val landscapist = "1.3.8"
+    const val accompanist = "0.20.0"
+    const val landscapist = "1.3.9"
     const val orchestra = "1.1.1"
     const val coil = "2.0.0-alpha01"
     const val glide = "4.12.0"

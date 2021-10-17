@@ -11,7 +11,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Coil,
     ExternalLibrariesNavRoutes.ComposeBarcodes,
     ExternalLibrariesNavRoutes.ComposeCharts,
-    ExternalLibrariesNavRoutes.ComposeMarkdown,
+//    ExternalLibrariesNavRoutes.ComposeMarkdown,
     ExternalLibrariesNavRoutes.ComposeNeumorphism,
     ExternalLibrariesNavRoutes.ComposeParticleSystem,
     ExternalLibrariesNavRoutes.ComposeRichTextPrinting,
