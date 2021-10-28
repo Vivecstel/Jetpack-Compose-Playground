@@ -18,4 +18,6 @@
     <string name="in_app_update_message">
         In app update finished. Restart the application and enjoy the update
     </string>
+    <string name="hello">hello</string>
+    <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
 </resources>
