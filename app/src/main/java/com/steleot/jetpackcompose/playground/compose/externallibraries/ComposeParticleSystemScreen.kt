@@ -45,8 +45,8 @@ private fun ComposeParticleSystemExample() {
                 )
             ),
             lifeTime = LifeTime(255f, 0.2f),
-            emissionType = EmissionType.ExplodeEmission(numberOfParticles = 100),
-            durationMillis = 10_000
+            emissionType = EmissionType.ExplodeEmission(numberOfParticles = 50),
+            durationMillis = 5_000
         )
     }
 }

@@ -13,6 +13,7 @@ val routes = listOf(
     FoundationNavRoutes.Border,
     FoundationNavRoutes.Box,
     FoundationNavRoutes.BoxWithConstraints,
+    FoundationNavRoutes.BringIntoViewRequester,
     FoundationNavRoutes.Canvas,
     FoundationNavRoutes.Clickable,
     FoundationNavRoutes.ClickableText,

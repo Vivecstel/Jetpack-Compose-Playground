@@ -162,6 +162,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
     composable(route = FoundationNavRoutes.Border) { BorderScreen() }
     composable(route = FoundationNavRoutes.Box) { BoxScreen() }
     composable(route = FoundationNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
+    composable(route = FoundationNavRoutes.BringIntoViewRequester) { BringIntoViewRequesterScreen() }
     composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
     composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
     composable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
@@ -339,7 +340,6 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.PointerInput) { PointerInputScreen() }
     composable(route = UiNavRoutes.Popup) { PopupScreen() }
     composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
-    composable(route = UiNavRoutes.RelocationRequester) { RelocationRequesterScreen() }
     composable(route = UiNavRoutes.Rotate) { RotateScreen() }
     composable(route = UiNavRoutes.Scale) { ScaleScreen() }
     composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
