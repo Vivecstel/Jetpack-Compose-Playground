@@ -18,6 +18,10 @@ val ribbonRoutes = setOf(
     /* 3.4.0 */
     MainNavRoutes.Foundation,
     FoundationNavRoutes.BringIntoViewRequester,
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.Gap,
+    ExternalLibrariesNavRoutes.HtmlText,
+    ExternalLibrariesNavRoutes.Snapper,
     /* 3.3.0 */
     MainNavRoutes.Material,
     MaterialNavRoutes.ExposedDropdownMenuBox,

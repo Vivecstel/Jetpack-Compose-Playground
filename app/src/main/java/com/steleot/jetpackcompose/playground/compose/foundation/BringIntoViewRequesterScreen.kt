@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.ui
+package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -21,7 +21,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 import kotlinx.coroutines.launch
 
-private const val Url = "ui/BringIntoViewRequesterScreen.kt"
+private const val Url = "foundation/BringIntoViewRequesterScreen.kt"
 
 @Composable
 fun BringIntoViewRequesterScreen() {

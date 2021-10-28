@@ -94,6 +94,10 @@ object AppDependencies {
         Libraries.composeTimelineView,
         Libraries.composeParticleSystem,
         Libraries.ssJetPackComposeProgressButton,
+        Libraries.gap,
+//        Libraries.permissionsUi,
+        Libraries.htmlText,
+        Libraries.snapper,
         Libraries.adMob,
         Libraries.playServicesAuth,
     )

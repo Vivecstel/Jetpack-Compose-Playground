@@ -230,6 +230,18 @@ object Libraries {
     const val ssJetPackComposeProgressButton =
         "com.github.SimformSolutionsPvtLtd:SSJetPackComposeProgressButton:${Versions.ssJetPackComposeProgressButton}"
 
+    /* https://github.com/wasabeef/compose-gap */
+    const val gap = "jp.wasabeef:gap:${Versions.gap}"
+
+    /* https://github.com/warting/permissions-ui */
+    const val permissionsUi = "se.warting.permissionsui:permissionsui:${Versions.permissionsUi}"
+
+    /* https://github.com/ch4rl3x/HtmlText */
+    const val htmlText = "de.charlex.compose:html-text:${Versions.htmlText}"
+
+    /* https://github.com/chrisbanes/snapper */
+    const val snapper = "dev.chrisbanes.snapper:snapper:${Versions.snapper}"
+
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"
 
