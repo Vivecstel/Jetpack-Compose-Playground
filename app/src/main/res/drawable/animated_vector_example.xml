@@ -3,10 +3,10 @@
     xmlns:aapt="http://schemas.android.com/aapt">
     <aapt:attr name="android:drawable">
         <vector
-            android:height="64dp"
             android:width="64dp"
-            android:viewportHeight="600"
-            android:viewportWidth="600">
+            android:height="64dp"
+            android:viewportWidth="600"
+            android:viewportHeight="600">
             <group
                 android:name="rotationGroup"
                 android:pivotX="300.0"

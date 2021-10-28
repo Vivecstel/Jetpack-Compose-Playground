@@ -116,7 +116,7 @@ configurations.all {
 dependencies {
     AppDependencies.project.forEach { implementation(project(it)) }
     AppDependencies.bom.forEach { implementation(platform(it)) }
-    AppDependencies.implemention.forEach { implementation(it) }
+    AppDependencies.implementation.forEach { implementation(it) }
     AppDependencies.kapt.forEach { kapt(it) }
     AppDependencies.debug.forEach { debugImplementation(it) }
     AppDependencies.androidTest.forEach { androidTestImplementation(it) }

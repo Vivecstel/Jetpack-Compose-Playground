@@ -297,6 +297,8 @@ fun JetpackComposeApp(
                         addFoundationRoutes()
                         /* material */
                         addMaterialRoutes()
+                        /* material 3 */
+                        addMaterial3Routes()
                         /* material icons */
                         addMaterialIconsRoutes()
                         /* material icons extended */

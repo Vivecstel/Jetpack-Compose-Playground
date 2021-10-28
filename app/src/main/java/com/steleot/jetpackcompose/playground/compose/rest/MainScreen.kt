@@ -39,9 +39,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.utils.GoogleSignContract
-import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
-import com.steleot.jetpackcompose.playground.utils.sendFeedback
+import com.steleot.jetpackcompose.playground.utils.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
@@ -54,6 +52,7 @@ private val routes = listOf(
     MainNavRoutes.ExternalLibraries,
     MainNavRoutes.Foundation,
     MainNavRoutes.Material,
+    MainNavRoutes.Material3,
     MainNavRoutes.MaterialIcons,
     MainNavRoutes.MaterialIConsExtended,
     MainNavRoutes.Navigation,
@@ -413,8 +412,8 @@ fun MainScreenContent(
     ) {
         routesWithRibbons.forEach { (route, shouldShowRibbon) ->
             DefaultCardListItem(
-                text = route,
-                shouldShowRibbon = shouldShowRibbon
+                text = route.replace(SpecialCharsRegex.toRegex(), ""),
+                hasRibbon = shouldShowRibbon
             ) {
                 navController.navigate(route)
             }

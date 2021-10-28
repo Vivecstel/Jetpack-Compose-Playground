@@ -21,6 +21,9 @@ object Libraries {
     const val composeMaterialIcons =
         "androidx.compose.material:material-icons-extended:${Versions.compose}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/compose-material3 */
+    const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
+
     /* https://developer.android.com/jetpack/androidx/releases/compose-runtime */
     const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.compose}"
     const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"

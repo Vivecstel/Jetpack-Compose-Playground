@@ -35,11 +35,15 @@ import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 @Composable
 fun DefaultCardListItem(
     text: String,
-    shouldShowRibbon: Boolean = false,
+    hasRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
 ) {
     DefaultCardListItem(
-        AnnotatedString(text.capitalizeFirstLetter()), shouldShowRibbon, cardClickAction
+        text = AnnotatedString(
+            text.capitalizeFirstLetter()
+        ),
+        hasRibbon = hasRibbon,
+        cardClickAction = cardClickAction
     )
 }
 
@@ -47,7 +51,8 @@ fun DefaultCardListItem(
 @Composable
 fun DefaultCardListItem(
     text: AnnotatedString,
-    shouldShowRibbon: Boolean = false,
+    secondaryText: AnnotatedString? = null,
+    hasRibbon: Boolean = false,
     cardClickAction: () -> Unit = {},
 ) {
     with(LocalDensity.current) {
@@ -59,8 +64,11 @@ fun DefaultCardListItem(
                 .padding(horizontal = 16.dp, vertical = 4.dp),
             elevation = 4.dp
         ) {
-            DefaultListItem(text = text) {
-                if (shouldShowRibbon) {
+            DefaultListItem(
+                text = text,
+                secondaryText = secondaryText,
+            ) {
+                if (hasRibbon) {
                     Canvas(
                         modifier = Modifier
                             .height(48.dp)
@@ -82,11 +90,20 @@ fun DefaultCardListItem(
 fun DefaultListItem(
     text: AnnotatedString,
     modifier: Modifier = Modifier,
+    secondaryText: AnnotatedString? = null,
     icon: @Composable (() -> Unit)? = null,
     trailing: @Composable (() -> Unit)? = null
 ) {
     ListItem(
         modifier = modifier,
+        secondaryText = if (secondaryText != null) {
+            {
+                Text(
+                    secondaryText,
+                    style = MaterialTheme.typography.caption,
+                )
+            }
+        } else null,
         icon = icon,
         trailing = trailing
     ) {

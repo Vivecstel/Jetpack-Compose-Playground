@@ -24,6 +24,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.input.ImeAction
@@ -39,31 +40,32 @@ import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.utils.SpecialCharsRegex
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlin.collections.plus
-import kotlin.collections.sorted
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes
 import com.steleot.jetpackcompose.playground.compose.customexamples.routes as customExamplesRoutes
-import com.steleot.jetpackcompose.playground.compose.externallibraries.routes as externalRoutes
+import com.steleot.jetpackcompose.playground.compose.externallibraries.routes as externalLibrariesRoutes
 import com.steleot.jetpackcompose.playground.compose.foundation.routes as foundationRoutes
 import com.steleot.jetpackcompose.playground.compose.material.routes as materialRoutes
+import com.steleot.jetpackcompose.playground.compose.material3.routes as material3Routes
 import com.steleot.jetpackcompose.playground.compose.materialicons.routes as materialIconsRoutes
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.routes as materialIconsExtendedRoutes
 import com.steleot.jetpackcompose.playground.compose.runtime.routes as runtimeRoutes
 import com.steleot.jetpackcompose.playground.compose.ui.routes as uiRoutes
 import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewModelRoutes
 
-@OptIn(ExperimentalAnimationApi::class)
+@OptIn(ExperimentalAnimationApi::class, ExperimentalComposeUiApi::class)
 @Composable
 fun SearchScreen(navController: NavHostController) {
     val viewModel: SearchViewModel = viewModel()
     val search: TextFieldValue by viewModel.search.collectAsState()
-    val filteredRoutes: List<Pair<String, Boolean>> by viewModel.filteredRoutes.collectAsState()
+    val filteredRoutes: List<SearchData> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     LaunchedEffect(Unit) {
         visible = true
@@ -85,7 +87,7 @@ fun SearchScreen(navController: NavHostController) {
                             )
                         )
                     ) {
-                        SearchTextField(search) {
+                        SearchTextField(search, keyboardController) {
                             viewModel.onSearchChange(it)
                         }
                     }
@@ -98,14 +100,20 @@ fun SearchScreen(navController: NavHostController) {
         },
     ) {
         LazyColumn {
-            items(filteredRoutes) { (route, shouldShowRibbon) ->
+            items(filteredRoutes) { data ->
                 DefaultCardListItem(
                     text = getListAnnotatedString(
-                        route.capitalizeFirstLetter(), search.text, MaterialTheme.colors.secondary
+                        data.route.capitalizeFirstLetter().replace(SpecialCharsRegex.toRegex(), ""),
+                        search.text,
+                        MaterialTheme.colors.secondary
                     ),
-                    shouldShowRibbon = shouldShowRibbon
+                    secondaryText = AnnotatedString(
+                        data.category.capitalizeFirstLetter()
+                    ),
+                    hasRibbon = data.hasRibbon
                 ) {
-                    navController.navigate(route)
+                    keyboardController?.hide()
+                    navController.navigate(data.route)
                 }
             }
         }
@@ -116,10 +124,10 @@ fun SearchScreen(navController: NavHostController) {
 @Composable
 private fun SearchTextField(
     searchText: TextFieldValue,
+    keyboardController: SoftwareKeyboardController?,
     onSearchTextChange: (TextFieldValue) -> Unit
 ) {
     val focusRequester = FocusRequester()
-    val keyboardController = LocalSoftwareKeyboardController.current
     TextField(
         value = searchText,
         onValueChange = {
@@ -182,31 +190,48 @@ private fun getListAnnotatedString(
 
 class SearchViewModel : ViewModel() {
 
-    private val routes =
-        (activityRoutes +
-                animationRoutes +
-                constraintLayoutRoutes +
-                foundationRoutes +
-                materialRoutes +
-                materialIconsRoutes +
-                materialIconsExtendedRoutes +
-                listOf(MainNavRoutes.Navigation) +
-                listOf(MainNavRoutes.Paging) +
-                runtimeRoutes +
-                uiRoutes +
-                viewModelRoutes +
-                customExamplesRoutes +
-                externalRoutes).sorted().map { route ->
-            route to (route in ribbonRoutes)
-        }
+    private val routes: List<SearchData> = listOf(
+        MainNavRoutes.Activity to activityRoutes,
+        MainNavRoutes.Animation to animationRoutes,
+        MainNavRoutes.ConstraintLayout to constraintLayoutRoutes,
+        MainNavRoutes.CustomExamples to customExamplesRoutes,
+        MainNavRoutes.ExternalLibraries to externalLibrariesRoutes,
+        MainNavRoutes.Foundation to foundationRoutes,
+        MainNavRoutes.Material to materialRoutes,
+        MainNavRoutes.Material3 to material3Routes,
+        MainNavRoutes.MaterialIcons to materialIconsRoutes,
+        MainNavRoutes.MaterialIConsExtended to materialIconsExtendedRoutes,
+        MainNavRoutes.Navigation to listOf(MainNavRoutes.Navigation),
+        MainNavRoutes.Paging to listOf(MainNavRoutes.Paging),
+        MainNavRoutes.Runtime to runtimeRoutes,
+        MainNavRoutes.Ui to uiRoutes,
+        MainNavRoutes.ViewModel to viewModelRoutes
+    ).asSequence().flatMap { pair ->
+        pair.second.map { pair.first to it }
+    }.map {
+        SearchData(
+            route = it.second,
+            category = it.first,
+            hasRibbon = it.second in ribbonRoutes
+        )
+    }.sortedBy { it.route.replace(SpecialCharsRegex.toRegex(), "") }.toList()
+
     private val _search = MutableStateFlow(TextFieldValue(""))
     val search: StateFlow<TextFieldValue> = _search
 
     private val _filteredRoutes = MutableStateFlow(routes)
-    val filteredRoutes: StateFlow<List<Pair<String, Boolean>>> = _filteredRoutes
+    val filteredRoutes: StateFlow<List<SearchData>> = _filteredRoutes
 
     fun onSearchChange(search: TextFieldValue) {
         _search.value = search
-        _filteredRoutes.value = routes.filter { it.first.contains(search.text, ignoreCase = true) }
+        _filteredRoutes.value = routes.filter {
+            it.route.replace(SpecialCharsRegex.toRegex(), "").contains(search.text, ignoreCase = true)
+        }
     }
 }
+
+class SearchData(
+    val route: String,
+    val category: String,
+    val hasRibbon: Boolean = false
+)

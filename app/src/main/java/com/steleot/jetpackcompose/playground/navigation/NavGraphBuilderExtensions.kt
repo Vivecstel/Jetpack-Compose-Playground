@@ -20,6 +20,7 @@ import com.steleot.jetpackcompose.playground.compose.customexamples.*
 import com.steleot.jetpackcompose.playground.compose.externallibraries.*
 import com.steleot.jetpackcompose.playground.compose.foundation.*
 import com.steleot.jetpackcompose.playground.compose.material.*
+import com.steleot.jetpackcompose.playground.compose.material3.*
 import com.steleot.jetpackcompose.playground.compose.materialicons.*
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.*
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
@@ -32,6 +33,20 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScre
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.compose.material3.AlertDialogScreen as AlertDialog3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.BadgedBoxScreen as BadgedBox3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.ButtonScreen as Button3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.ExtendedFloatingActionButtonScreen as ExtendedFloatingActionButton3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.FloatingActionButtonScreen as FloatingActionButton3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.IconButtonScreen as IconButton3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.IconScreen as Icon3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.IconToggleButtonScreen as IconToggleButton3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.LocalContentColorScreen as LocalContentColor3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.MaterialThemeScreen as MaterialTheme3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.NavigationRailScreen as NavigationRail3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.ScaffoldScreen as Scaffold3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.SurfaceScreen as Surface3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.TextScreen as Text3Screen
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMainRoutes(
@@ -72,6 +87,7 @@ fun NavGraphBuilder.addMainRoutes(
         )
     }
     composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
+    composable(route = MainNavRoutes.Material3) { Material3Screen(navController) }
     composable(route = MainNavRoutes.MaterialIcons) {
         MaterialIconsScreen(
             navController
@@ -247,6 +263,40 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.Text) { TextScreen() }
     composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
     composable(route = MaterialNavRoutes.TriStateCheckbox) { TriStateCheckboxScreen() }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.addMaterial3Routes() {
+    composable(route = Material3NavRoutes.AlertDialog) { AlertDialog3Screen() }
+    composable(route = Material3NavRoutes.BadgedBox) { BadgedBox3Screen() }
+    composable(route = Material3NavRoutes.Badge) { BadgeScreen() }
+    composable(route = Material3NavRoutes.Button) { Button3Screen() }
+    composable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
+    composable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }
+    composable(route = Material3NavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButton3Screen() }
+    composable(route = Material3NavRoutes.FilledTonalButton) { FilledTonalButtonScreen() }
+    composable(route = Material3NavRoutes.FloatingActionButton) { FloatingActionButton3Screen() }
+    composable(route = Material3NavRoutes.IconButton) { IconButton3Screen() }
+    composable(route = Material3NavRoutes.Icon) { Icon3Screen() }
+    composable(route = Material3NavRoutes.IconToggleButton) { IconToggleButton3Screen() }
+    composable(route = Material3NavRoutes.LargeFloatingActionButton) { LargeFloatingActionButtonScreen() }
+    composable(route = Material3NavRoutes.LargeTopAppBar) { LargeTopAppBarScreen() }
+    composable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteElevationScreen() }
+    composable(route = Material3NavRoutes.LocalContentColor) { LocalContentColor3Screen() }
+    composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) { LocalMinimumTouchTargetEnforcementScreen() }
+    composable(route = Material3NavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
+    composable(route = Material3NavRoutes.MaterialTheme) { MaterialTheme3Screen() }
+    composable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
+    composable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
+    composable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
+    composable(route = Material3NavRoutes.NavigationRail) { NavigationRail3Screen() }
+    composable(route = Material3NavRoutes.OutlinedButton) { OutlinedButtonScreen() }
+    composable(route = Material3NavRoutes.Scaffold) { Scaffold3Screen() }
+    composable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
+    composable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
+    composable(route = Material3NavRoutes.Surface) { Surface3Screen() }
+    composable(route = Material3NavRoutes.TextButton) { TextButtonScreen() }
+    composable(route = Material3NavRoutes.Text) { Text3Screen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)

@@ -9,13 +9,14 @@ object AppDependencies {
         Libraries.okhttpBom,
     )
 
-    val implemention = listOf(
+    val implementation = listOf(
         Libraries.composeAnimation,
         Libraries.composeAnimationGraphics,
         Libraries.composeCompiler,
         Libraries.composeFoundation,
         Libraries.composeMaterial,
         Libraries.composeMaterialIcons,
+        Libraries.composeMaterial3,
         Libraries.composeRuntime,
         Libraries.composeLiveData,
         Libraries.composeUi,
