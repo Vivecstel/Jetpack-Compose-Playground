@@ -12,9 +12,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ViewModelNavRoutes
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -57,14 +59,14 @@ private fun FlowExample(viewModel: FlowViewModel = viewModel()) {
 internal fun HelloContent(name: String, onNameChange: (String) -> Unit) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
-            text = "Hello, $name",
+            text = stringResource(id = R.string.hello_with_args, name),
             modifier = Modifier.padding(bottom = 8.dp),
             style = MaterialTheme.typography.h5
         )
         OutlinedTextField(
             value = name,
             onValueChange = { onNameChange(it) },
-            label = { Text("Name") }
+            label = { Text(stringResource(id = R.string.name_hint)) }
         )
     }
 }

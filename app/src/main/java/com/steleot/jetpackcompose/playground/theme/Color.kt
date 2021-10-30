@@ -7,8 +7,10 @@ import androidx.compose.material.Colors
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
 fun ColorPalette.getMaterialColors(
@@ -250,25 +252,215 @@ private fun ColorPalette.getMaterial3ColorSchemeInternal(
     isDarkTheme: Boolean
 ): ColorScheme {
     return when (this) {
-        ColorPalette.RED -> if (isDarkTheme) RedDarkColorScheme else RedLightColorScheme
-        ColorPalette.PINK -> if (isDarkTheme) PinkDarkColorScheme else PinkLightColorScheme
-        ColorPalette.PURPLE -> if (isDarkTheme) PurpleDarkColorScheme else PurpleLightColorScheme
-        ColorPalette.DEEP_PURPLE -> if (isDarkTheme) DeepPurpleDarkColorScheme else DeepPurpleLightColorScheme
-        ColorPalette.INDIGO -> if (isDarkTheme) IndigoDarkColorScheme else IndigoLightColorScheme
-        ColorPalette.BLUE -> if (isDarkTheme) BlueDarkColorScheme else BlueLightColorScheme
-        ColorPalette.LIGHT_BLUE -> if (isDarkTheme) LightBlueDarkColorScheme else LightBlueLightColorScheme
-        ColorPalette.CYAN -> if (isDarkTheme) CyanDarkColorScheme else CyanLightColorScheme
-        ColorPalette.TEAL -> if (isDarkTheme) TealDarkColorScheme else TealLightColorScheme
-        ColorPalette.GREEN -> if (isDarkTheme) GreenDarkColorScheme else GreenLightColorScheme
-        ColorPalette.LIGHT_GREEN -> if (isDarkTheme) LightGreenDarkColorScheme else LightGreenLightColorScheme
-        ColorPalette.LIME -> if (isDarkTheme) LimeDarkColorScheme else LimeLightColorScheme
-        ColorPalette.YELLOW -> if (isDarkTheme) YellowDarkColorScheme else YellowLightColorScheme
-        ColorPalette.AMBER -> if (isDarkTheme) AmberDarkColorScheme else AmberLightColorScheme
-        ColorPalette.ORANGE -> if (isDarkTheme) OrangeDarkColorScheme else OrangeLightColorScheme
-        ColorPalette.DEEP_ORANGE -> if (isDarkTheme) DeepOrangeDarkColorScheme else DeepOrangeLightColorScheme
-        ColorPalette.BROWN -> if (isDarkTheme) BrownDarkColorScheme else BrownLightColorScheme
-        ColorPalette.GREY -> if (isDarkTheme) GreyDarkColorScheme else GreyLightColorScheme
-        ColorPalette.BLUE_GREY -> if (isDarkTheme) BlueGreyDarkColorScheme else BlueGreyLightColorScheme
+        ColorPalette.RED -> if (isDarkTheme) darkColorScheme(
+            primary = red200,
+            secondary = red500,
+            tertiary = teal200,
+            surface = red200,
+        ) else lightColorScheme(
+            primary = red500,
+            secondary = red700,
+            tertiary = teal200,
+            surface = red500,
+        )
+        ColorPalette.PINK -> if (isDarkTheme) darkColorScheme(
+            primary = pink200,
+            secondary = pink500,
+            tertiary = teal200,
+            surface = pink200,
+        ) else lightColorScheme(
+            primary = pink500,
+            secondary = pink700,
+            tertiary = teal200,
+            surface = pink500,
+        )
+        ColorPalette.PURPLE -> if (isDarkTheme) darkColorScheme(
+            primary = purple200,
+            secondary = purple500,
+            tertiary = teal200,
+            surface = purple200,
+        ) else lightColorScheme(
+            primary = purple500,
+            secondary = purple700,
+            tertiary = teal200,
+            surface = purple500,
+        )
+        ColorPalette.DEEP_PURPLE -> if (isDarkTheme) darkColorScheme(
+            primary = deepPurple200,
+            secondary = deepPurple500,
+            tertiary = teal200,
+            surface = deepPurple200,
+        ) else lightColorScheme(
+            primary = deepPurple500,
+            secondary = deepPurple700,
+            tertiary = teal200,
+            surface = deepPurple500,
+        )
+        ColorPalette.INDIGO -> if (isDarkTheme) darkColorScheme(
+            primary = indigo200,
+            secondary = indigo500,
+            tertiary = teal200,
+            surface = indigo200,
+        ) else lightColorScheme(
+            primary = indigo500,
+            secondary = indigo700,
+            tertiary = teal200,
+            surface = indigo500,
+        )
+        ColorPalette.BLUE -> if (isDarkTheme) darkColorScheme(
+            primary = blue200,
+            secondary = blue500,
+            tertiary = red200,
+            surface = blue200,
+        ) else lightColorScheme(
+            primary = blue500,
+            secondary = blue700,
+            tertiary = red200,
+            surface = blue500,
+        )
+        ColorPalette.LIGHT_BLUE -> if (isDarkTheme) darkColorScheme(
+            primary = lightBlue200,
+            secondary = lightBlue500,
+            tertiary = red200,
+            surface = lightBlue200,
+        ) else lightColorScheme(
+            primary = lightBlue500,
+            secondary = lightBlue700,
+            tertiary = red200,
+            surface = lightBlue500,
+        )
+        ColorPalette.CYAN -> if (isDarkTheme) darkColorScheme(
+            primary = cyan200,
+            secondary = cyan500,
+            tertiary = red200,
+            surface = cyan200,
+        ) else lightColorScheme(
+            primary = cyan500,
+            secondary = cyan700,
+            tertiary = red200,
+            surface = cyan500,
+        )
+        ColorPalette.TEAL -> if (isDarkTheme) darkColorScheme(
+            primary = teal200,
+            secondary = teal500,
+            tertiary = red200,
+            surface = teal200,
+        ) else lightColorScheme(
+            primary = teal500,
+            secondary = teal700,
+            tertiary = red200,
+            surface = teal500,
+        )
+        ColorPalette.GREEN -> if (isDarkTheme) darkColorScheme(
+            primary = green200,
+            secondary = green500,
+            tertiary = teal200,
+            surface = green200,
+        ) else lightColorScheme(
+            primary = green500,
+            secondary = green700,
+            tertiary = teal200,
+            surface = green500,
+        )
+        ColorPalette.LIGHT_GREEN -> if (isDarkTheme) darkColorScheme(
+            primary = lightGreen200,
+            secondary = lightGreen500,
+            tertiary = teal200,
+            surface = lightGreen200,
+        ) else lightColorScheme(
+            primary = lightGreen500,
+            secondary = lightGreen700,
+            tertiary = teal200,
+            surface = lightGreen500,
+        )
+        ColorPalette.LIME -> if (isDarkTheme) darkColorScheme(
+            primary = lime200,
+            secondary = lime500,
+            tertiary = teal200,
+            surface = lime200,
+        ) else lightColorScheme(
+            primary = lime500,
+            secondary = lime700,
+            tertiary = teal200,
+            surface = lime500,
+        )
+        ColorPalette.YELLOW -> if (isDarkTheme) darkColorScheme(
+            primary = yellow200,
+            secondary = yellow500,
+            tertiary = teal200,
+            surface = yellow200,
+        ) else lightColorScheme(
+            primary = yellow500,
+            secondary = yellow700,
+            tertiary = teal200,
+            surface = yellow500,
+        )
+        ColorPalette.AMBER -> if (isDarkTheme) darkColorScheme(
+            primary = amber200,
+            secondary = amber500,
+            tertiary = teal200,
+            surface = amber200,
+        ) else lightColorScheme(
+            primary = amber500,
+            secondary = amber700,
+            tertiary = teal200,
+            surface = amber500,
+        )
+        ColorPalette.ORANGE -> if (isDarkTheme) darkColorScheme(
+            primary = orange200,
+            secondary = orange500,
+            tertiary = teal200,
+            surface = orange200,
+        ) else lightColorScheme(
+            primary = orange500,
+            secondary = orange700,
+            tertiary = teal200,
+            surface = orange500,
+        )
+        ColorPalette.DEEP_ORANGE -> if (isDarkTheme) darkColorScheme(
+            primary = deepOrange200,
+            secondary = deepOrange500,
+            tertiary = teal200,
+            surface = deepOrange200,
+        ) else lightColorScheme(
+            primary = deepOrange500,
+            secondary = deepOrange700,
+            tertiary = teal200,
+            surface = deepOrange500,
+        )
+        ColorPalette.BROWN -> if (isDarkTheme) darkColorScheme(
+            primary = brown200,
+            secondary = brown500,
+            tertiary = teal200,
+            surface = brown200,
+        ) else lightColorScheme(
+            primary = brown500,
+            secondary = brown700,
+            tertiary = teal200,
+            surface = brown500,
+        )
+        ColorPalette.GREY -> if (isDarkTheme) darkColorScheme(
+            primary = grey200,
+            secondary = grey500,
+            tertiary = teal200,
+            surface = grey200,
+        ) else lightColorScheme(
+            primary = grey500,
+            secondary = grey700,
+            tertiary = teal200,
+            surface = grey500,
+        )
+        ColorPalette.BLUE_GREY -> if (isDarkTheme) darkColorScheme(
+            primary = blueGrey200,
+            secondary = blueGrey500,
+            tertiary = teal200,
+            surface = blueGrey200,
+        ) else lightColorScheme(
+            primary = blueGrey500,
+            secondary = blueGrey700,
+            tertiary = teal200,
+            surface = blueGrey500,
+        )
     }
 }
 

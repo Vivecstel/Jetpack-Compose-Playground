@@ -20,9 +20,34 @@
     </string>
     <string name="hello">hello</string>
     <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
-    <!-- resusables -->
+    <!-- activity -->
+    <string name="back_handler_count">Press Back count %1$d</string>
+    <string name="back_handler_msg">Press more than 5 times to exit.</string>
+    <string name="take_picture">Take a picture</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="choose_contact">Choose contact</string>
+    <string name="name_with_args">Name: %1$s</string>
+    <string name="contact_not_found">Contact not found</string>
+    <!-- animation -->
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <!-- rest -->
+    <!-- reusable -->
     <string name="open_github">Open Github</string>
     <string name="back_arrow">Back Arrow</string>
     <string name="search">Search</string>
     <string name="open_drawer">Open Drawer</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">Hello, %1$s</string>
+    <string name="name_hint">Name</string>
 </resources>

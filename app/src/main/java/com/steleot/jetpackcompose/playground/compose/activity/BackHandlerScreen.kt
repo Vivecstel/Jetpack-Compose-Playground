@@ -14,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 
@@ -49,9 +51,9 @@ private fun BackHandlerExample(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = { dispatcher.onBackPressed() }) {
-            Text("Press Back count $backPressedCount")
+            Text(stringResource(id = R.string.back_handler_count, backPressedCount))
         }
-        Text(text = "Press more than 5 times to exit.")
+        Text(text = stringResource(id = R.string.back_handler_msg))
     }
 
 }

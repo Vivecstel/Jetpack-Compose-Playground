@@ -20,7 +20,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
@@ -58,7 +60,7 @@ private fun LauncherForActivityResultExample() {
                     launcher.launch()
                 }
             } else {
-                Toast.makeText(context, "Permission not granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.permission_not_granted, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -71,7 +73,7 @@ private fun LauncherForActivityResultExample() {
             }
         }
     ) {
-        Text(text = "Take a picture")
+        Text(text = stringResource(id = R.string.take_picture))
     }
 
     result.value?.let { image ->
