@@ -12,11 +12,24 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.*
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.LocalTextStyle
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.TextField
+import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -36,11 +49,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.compose.reusable.BackArrow
+import com.steleot.jetpackcompose.playground.compose.reusable.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.utils.SpecialCharsRegex
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -93,7 +105,7 @@ fun SearchScreen(navController: NavHostController) {
                     }
                 },
                 navigationIcon = {
-                    BackArrow()
+                    BackArrowIconButton()
                 },
                 modifier = Modifier.heightIn(64.dp)
             )
@@ -103,7 +115,7 @@ fun SearchScreen(navController: NavHostController) {
             items(filteredRoutes) { data ->
                 DefaultCardListItem(
                     text = getListAnnotatedString(
-                        data.route.capitalizeFirstLetter().replace(SpecialCharsRegex.toRegex(), ""),
+                        data.route.capitalizeFirstLetter(),
                         search.text,
                         MaterialTheme.colors.secondary
                     ),
@@ -214,7 +226,7 @@ class SearchViewModel : ViewModel() {
             category = it.first,
             hasRibbon = it.second in ribbonRoutes
         )
-    }.sortedBy { it.route.replace(SpecialCharsRegex.toRegex(), "") }.toList()
+    }.sortedBy { it.route }.toList()
 
     private val _search = MutableStateFlow(TextFieldValue(""))
     val search: StateFlow<TextFieldValue> = _search
@@ -225,7 +237,7 @@ class SearchViewModel : ViewModel() {
     fun onSearchChange(search: TextFieldValue) {
         _search.value = search
         _filteredRoutes.value = routes.filter {
-            it.route.replace(SpecialCharsRegex.toRegex(), "").contains(search.text, ignoreCase = true)
+            it.route.contains(search.text, ignoreCase = true)
         }
     }
 }

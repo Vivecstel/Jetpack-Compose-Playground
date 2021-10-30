@@ -20,4 +20,9 @@
     </string>
     <string name="hello">hello</string>
     <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
+    <!-- resusables -->
+    <string name="open_github">Open Github</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="search">Search</string>
+    <string name="open_drawer">Open Drawer</string>
 </resources>

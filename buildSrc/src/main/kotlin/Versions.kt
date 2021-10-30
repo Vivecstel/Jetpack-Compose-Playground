@@ -21,7 +21,6 @@ object Versions {
     const val composeMaterial3 = "1.0.0-alpha01"
     const val composeConstraint = "1.0.0-rc01"
     const val composePaging = "1.0.0-alpha14"
-    const val composeWear = "1.0.0-alpha09"
     const val navigation = "2.4.0-beta01"
     const val core = "1.7.0-alpha02"
     const val activity = "1.4.0"

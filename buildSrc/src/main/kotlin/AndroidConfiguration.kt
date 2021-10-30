@@ -3,7 +3,6 @@
 object AndroidConfiguration {
 
     const val minSdk = 23
-    const val minWearSdk = 25
     const val compileSdk = 31
     const val targetSdk = compileSdk
 

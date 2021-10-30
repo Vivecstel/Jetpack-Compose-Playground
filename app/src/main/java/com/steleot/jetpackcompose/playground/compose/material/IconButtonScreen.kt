@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/IconButtonScreen.kt"
+private const val Url = "material/IconButton3Screen.kt"
 
 @Composable
 fun IconButtonScreen() {

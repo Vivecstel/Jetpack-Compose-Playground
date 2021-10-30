@@ -1,7 +1,12 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
@@ -10,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
@@ -19,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/AlertDialogScreen.kt"
+private const val Url = "material/AlertDialog3Screen.kt"
 
 @Composable
 fun AlertDialogScreen() {
@@ -39,7 +43,6 @@ fun AlertDialogScreen() {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun DefaultAlertDialog() {
@@ -81,7 +84,6 @@ private fun DefaultAlertDialog() {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun ContentColorAlertDialog() {
@@ -130,7 +132,6 @@ private fun ContentColorAlertDialog() {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Preview
 @Composable
 private fun BackgroundColorAlertDialog() {

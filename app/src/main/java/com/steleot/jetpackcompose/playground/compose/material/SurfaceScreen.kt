@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/SurfaceScreen.kt"
+private const val Url = "material/Surface3Screen.kt"
 
 @Composable
 fun SurfaceScreen() {

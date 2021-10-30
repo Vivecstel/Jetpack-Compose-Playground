@@ -26,7 +26,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/TextScreen.kt"
+private const val Url = "material/Text3Screen.kt"
 
 @Composable
 fun TextScreen() {

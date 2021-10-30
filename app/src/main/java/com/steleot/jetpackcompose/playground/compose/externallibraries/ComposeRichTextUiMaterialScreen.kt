@@ -11,7 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.halilibo.richtext.ui.*
+import com.halilibo.richtext.ui.BlockQuote
+import com.halilibo.richtext.ui.CodeBlock
+import com.halilibo.richtext.ui.Heading
+import com.halilibo.richtext.ui.HorizontalRule
+import com.halilibo.richtext.ui.Table
 import com.halilibo.richtext.ui.material.MaterialRichText
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes

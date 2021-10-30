@@ -412,7 +412,7 @@ fun MainScreenContent(
     ) {
         routesWithRibbons.forEach { (route, shouldShowRibbon) ->
             DefaultCardListItem(
-                text = route.replace(SpecialCharsRegex.toRegex(), ""),
+                text = route,
                 hasRibbon = shouldShowRibbon
             ) {
                 navController.navigate(route)

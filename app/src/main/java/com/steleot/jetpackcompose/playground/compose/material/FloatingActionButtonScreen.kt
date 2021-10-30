@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/FloatingActionButtonScreen.kt"
+private const val Url = "material/FloatingActionButton3Screen.kt"
 
 @Composable
 fun FloatingActionButtonScreen() {

@@ -1,7 +1,8 @@
 package com.steleot.jetpackcompose.playground.utils
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 val Date?.monthDate: String?
     get() = this.toPresentableString("MMMM yyyy")
