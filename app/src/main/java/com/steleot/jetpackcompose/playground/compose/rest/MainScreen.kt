@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.rest
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.annotation.StringRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -65,39 +66,45 @@ private val routes = listOf(
 private val drawerItems = listOf(
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
-        MainNavRoutes.Favorites,
-        Icons.Filled.Favorite,
+        route = MainNavRoutes.Favorites,
+        textRes = R.string.favorites,
+        imageVector = Icons.Filled.Favorite,
         menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.MenuData(
-        MainNavRoutes.Popular,
-        Icons.Filled.ThumbUp
+        route = MainNavRoutes.Popular,
+        textRes = R.string.popular,
+        imageVector = Icons.Filled.ThumbUp,
     ),
     DrawerListItemData.MenuData(
-        MainNavRoutes.Articles,
-        Icons.Filled.Article,
+        route = MainNavRoutes.Articles,
+        textRes = R.string.articles,
+        imageVector = Icons.Filled.Article,
         menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
-        "send feedback",
-        Icons.Filled.Feedback,
-        "Send Feedback",
+        route = null,
+        textRes = R.string.send_feedback,
+        imageVector = Icons.Filled.Feedback,
         MenuAction.FEEDBACK
     ),
     DrawerListItemData.MenuData(
-        "privacy policy",
-        Icons.Filled.PrivacyTip,
+        route = null,
+        textRes = R.string.privacy_policy,
+        imageVector = Icons.Filled.PrivacyTip,
         menuAction = MenuAction.PRIVACY_POLICY
     ),
     DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
-        MainNavRoutes.Settings,
-        Icons.Filled.Settings
+        route = MainNavRoutes.Settings,
+        textRes = R.string.settings,
+        imageVector = Icons.Filled.Settings,
     ),
     DrawerListItemData.MenuData(
-        MainNavRoutes.ReleaseNotes,
-        Icons.Filled.NewReleases
+        route = MainNavRoutes.ReleaseNotes,
+        textRes = R.string.release_notes,
+        imageVector = Icons.Filled.NewReleases,
     ),
 )
 
@@ -135,7 +142,7 @@ fun MainScreenWithDrawer(
                     setUser(result.user)
                 } catch (e: Exception) {
                     Timber.e(e, "Failed to sign in with Google.")
-                    errorDialogText = "Failed to sign in with Google. Please try again later."
+                    errorDialogText = context.getString(R.string.failed_google_sign_in)
                     showingErrorDialog = true
                 }
             }
@@ -176,25 +183,31 @@ fun MainScreenWithDrawer(
                 when (it) {
                     is DrawerListItemData.DividerData -> Divider()
                     is DrawerListItemData.MenuData -> {
-                        DrawerListItem(it.text, icon = {
+                        DrawerListItem(it.textRes, icon = {
                             Icon(
-                                it.imageVector, contentDescription = "Open ${it.text}"
+                                it.imageVector,
+                                contentDescription = null
                             )
                         }) {
                             scope.launch {
                                 state.drawerState.close()
                                 when (it.menuAction) {
                                     MenuAction.NAVIGATION -> {
-                                        if (user == null && it.text == MainNavRoutes.Popular) {
-                                            errorDialogText = "You need to sign to open ${it.text}."
+                                        if (user == null && it.route == MainNavRoutes.Popular) {
+                                            errorDialogText = context.getString(
+                                                R.string.mandatory_sign_in,
+                                                context.getString(it.textRes)
+                                            )
                                             showingErrorDialog = true
                                             return@launch
                                         }
-                                        navController.navigate(it.text)
+                                        it.route?.let { route ->
+                                            navController.navigate(route)
+                                        }
                                     }
                                     MenuAction.TOAST -> Toast.makeText(
                                         context,
-                                        "Coming soon",
+                                        R.string.coming_soon,
                                         Toast.LENGTH_LONG
                                     ).show()
                                     MenuAction.FEEDBACK -> context.sendFeedback()
@@ -277,7 +290,7 @@ private fun BoxScope.SignedInUser(
         Box {
             Image(
                 painter = painter,
-                contentDescription = "User photo",
+                contentDescription = stringResource(id = R.string.user_photo),
                 modifier = Modifier
                     .size(64.dp)
                     .padding(end = 16.dp)
@@ -291,7 +304,7 @@ private fun BoxScope.SignedInUser(
                 is ImagePainter.State.Error -> {
                     Image(
                         imageVector = Icons.Filled.AccountCircle,
-                        contentDescription = "Account default icon"
+                        contentDescription = stringResource(id = R.string.account_default_icon)
                     )
                 }
                 else -> {
@@ -305,12 +318,12 @@ private fun BoxScope.SignedInUser(
                 .weight(1f)
         ) {
             Text(
-                user.displayName ?: "Name not found",
+                user.displayName ?: stringResource(id = R.string.name_not_found),
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                user.email ?: "Email not found",
+                user.email ?: stringResource(id = R.string.email_not_found),
                 style = MaterialTheme.typography.body2,
             )
         }
@@ -324,7 +337,7 @@ private fun BoxScope.SignedInUser(
             border = BorderStroke(1.dp, MaterialTheme.colors.onSurface)
         ) {
             Text(
-                text = "Sign out",
+                text = stringResource(id = R.string.sign_out),
             )
         }
     }
@@ -351,7 +364,7 @@ private fun BoxScope.GoogleSignInButton(
                 painter = painterResource(
                     id = R.drawable.ic_google_icon
                 ),
-                contentDescription = "Google icon",
+                contentDescription = stringResource(id = R.string.google_icon),
                 tint = Color.Unspecified,
                 modifier = Modifier
                     .background(
@@ -361,7 +374,7 @@ private fun BoxScope.GoogleSignInButton(
                     .padding(8.dp)
             )
             Text(
-                text = "Sign in with Google",
+                text = stringResource(id = R.string.google_sign_in),
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier
@@ -434,9 +447,9 @@ fun MainScreenContent(
 sealed class DrawerListItemData {
 
     class MenuData(
-        val text: String,
+        val route: String?,
+        @StringRes val textRes: Int,
         val imageVector: ImageVector,
-        val contentDescription: String = "Open $text",
         val menuAction: MenuAction = MenuAction.NAVIGATION
     ) : DrawerListItemData()
 
@@ -449,12 +462,12 @@ enum class MenuAction {
 
 @Composable
 private fun DrawerListItem(
-    text: String,
+    @StringRes textRes: Int,
     icon: @Composable (() -> Unit)? = null,
     onClick: () -> Unit
 ) {
     DefaultListItem(
-        text = AnnotatedString(text.capitalizeFirstLetter()),
+        text = AnnotatedString(stringResource(id = textRes)),
         modifier = Modifier.clickable(onClick = onClick),
         icon = icon
     )

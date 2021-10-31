@@ -38,6 +38,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -47,6 +48,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
@@ -55,7 +57,6 @@ import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
-import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -81,15 +82,18 @@ fun SettingsScreen(
         }
     ) {
         Column {
-            SettingsListItem("Firebase analytics collection", analyticsEnabled) {
+            SettingsListItem(stringResource(id = R.string.firebase_analytics), analyticsEnabled) {
                 viewModel.onAnalyticsChanged(it)
             }
             Divider()
-            SettingsListItem("Firebase messaging", messagingEnabled) {
+            SettingsListItem(stringResource(id = R.string.firebase_messaging), messagingEnabled) {
                 viewModel.onMessagingChanged(it)
             }
             Divider()
-            SettingsListItem("Firebase crashlytics collection", crashlyticsEnabled) {
+            SettingsListItem(
+                stringResource(id = R.string.firebase_crashlytics),
+                crashlyticsEnabled
+            ) {
                 viewModel.onCrashlyticsChanged(it)
             }
             Divider()
@@ -147,7 +151,7 @@ private fun ChangeColorPaletteItem(
         }
     }
     SettingsScrollableRow(
-        text = "Change Application Theme Color",
+        text = stringResource(id = R.string.change_application_theme_color),
         state = state,
     ) {
         itemsIndexed(palettes) { index, colorPalette ->
@@ -201,27 +205,29 @@ private fun ColorPaletteBox(
         isSystemInDarkTheme = theme.isSystemInDarkTheme,
         isLast = isLast,
         isSelected = isSelected,
-        text = when (colorPalette) {
-            ColorPalette.RED -> "red"
-            ColorPalette.PINK -> "pink"
-            ColorPalette.PURPLE -> "purple"
-            ColorPalette.DEEP_PURPLE -> "deep\npurple"
-            ColorPalette.INDIGO -> "indigo"
-            ColorPalette.BLUE -> "blue"
-            ColorPalette.LIGHT_BLUE -> "light\nblue"
-            ColorPalette.CYAN -> "cyan"
-            ColorPalette.TEAL -> "teal"
-            ColorPalette.GREEN -> "green"
-            ColorPalette.LIGHT_GREEN -> "light\ngreen"
-            ColorPalette.LIME -> "lime"
-            ColorPalette.YELLOW -> "yellow"
-            ColorPalette.AMBER -> "amber"
-            ColorPalette.ORANGE -> "orange"
-            ColorPalette.DEEP_ORANGE -> "deep\norange"
-            ColorPalette.BROWN -> "brown"
-            ColorPalette.GREY -> "grey"
-            ColorPalette.BLUE_GREY -> "blue\ngrey"
-        },
+        text = stringResource(
+            id = when (colorPalette) {
+                ColorPalette.RED -> R.string.red
+                ColorPalette.PINK -> R.string.pink
+                ColorPalette.PURPLE -> R.string.purple
+                ColorPalette.DEEP_PURPLE -> R.string.deep_purple
+                ColorPalette.INDIGO -> R.string.indigo
+                ColorPalette.BLUE -> R.string.blue
+                ColorPalette.LIGHT_BLUE -> R.string.light_blue
+                ColorPalette.CYAN -> R.string.cyan
+                ColorPalette.TEAL -> R.string.teal
+                ColorPalette.GREEN -> R.string.green
+                ColorPalette.LIGHT_GREEN -> R.string.light_green
+                ColorPalette.LIME -> R.string.lime
+                ColorPalette.YELLOW -> R.string.yellow
+                ColorPalette.AMBER -> R.string.amber
+                ColorPalette.ORANGE -> R.string.orange
+                ColorPalette.DEEP_ORANGE -> R.string.deep_orange
+                ColorPalette.BROWN -> R.string.brown
+                ColorPalette.GREY -> R.string.grey
+                ColorPalette.BLUE_GREY -> R.string.blue_grey
+            }
+        ),
         onClick = {
             onColorPaletteChanged(colorPalette)
             setTheme(theme.copy(colorPalette = colorPalette))
@@ -230,7 +236,7 @@ private fun ColorPaletteBox(
         if (isSelected) {
             Icon(
                 Icons.Filled.Check,
-                contentDescription = "Color Pallete Selected",
+                contentDescription = stringResource(id = R.string.color_palette_selected),
                 modifier = Modifier.align(Alignment.Center)
             )
         }
@@ -275,7 +281,7 @@ private fun SettingCircleShapeBox(
             icon()
         }
         Text(
-            text = text.capitalizeFirstLetter(),
+            text = text,
             style = MaterialTheme.typography.caption.copy(
                 fontSize = 9.sp
             ),
@@ -296,7 +302,7 @@ private fun ChangeDarkThemeModeItem(
     onDarkThemeModeChanged: (DarkThemeMode) -> Unit
 ) {
     SettingsScrollableRow(
-        "Change Application Dark Theme Mode",
+        stringResource(id = R.string.change_application_theme_mode),
     ) {
         itemsIndexed(modes) { index, darkThemeMode ->
             DarkThemeModeBox(
@@ -325,11 +331,13 @@ private fun DarkThemeModeBox(
         isSystemInDarkTheme = theme.isSystemInDarkTheme,
         isLast = isLast,
         isSelected = isSelected,
-        text = when (darkThemeMode) {
-            DarkThemeMode.SYSTEM -> "System"
-            DarkThemeMode.DARK -> "Dark"
-            DarkThemeMode.LIGHT -> "Light"
-        },
+        text = stringResource(
+            id = when (darkThemeMode) {
+                DarkThemeMode.SYSTEM -> R.string.system
+                DarkThemeMode.DARK -> R.string.dark
+                DarkThemeMode.LIGHT -> R.string.light
+            }
+        ),
         onClick = {
             onDarkThemeModeChanged(darkThemeMode)
             setTheme(theme.copy(darkThemeMode = darkThemeMode))
@@ -341,7 +349,7 @@ private fun DarkThemeModeBox(
                 DarkThemeMode.DARK -> Icons.Default.ModeNight
                 DarkThemeMode.LIGHT -> Icons.Default.WbSunny
             },
-            contentDescription = "Dark Theme Mode Selected",
+            contentDescription = stringResource(id = R.string.theme_mode_selected),
             modifier = Modifier.align(Alignment.Center)
         )
     }

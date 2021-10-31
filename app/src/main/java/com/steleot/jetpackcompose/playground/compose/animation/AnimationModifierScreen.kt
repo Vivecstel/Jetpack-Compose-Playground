@@ -21,7 +21,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -45,8 +47,8 @@ fun AnimationModifierScreen() {
 
 @Composable
 private fun AnimateContent() {
-    val shortText = "Hi"
-    val longText = "Very long text\nthat spans across\nmultiple lines"
+    val shortText = stringResource(id = R.string.short_text)
+    val longText = stringResource(id = R.string.long_text)
     var short by remember { mutableStateOf(true) }
     Box(
         modifier = Modifier

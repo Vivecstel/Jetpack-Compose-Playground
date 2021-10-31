@@ -34,9 +34,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -81,9 +83,9 @@ private fun AnimateIncrementDecrementExample() {
         }
         Spacer(Modifier.size(20.dp))
         Row(horizontalArrangement = Arrangement.SpaceAround) {
-            Button(onClick = { count-- }) { Text("Minus") }
+            Button(onClick = { count-- }) { Text(stringResource(id = R.string.minus)) }
             Spacer(Modifier.size(60.dp))
-            Button(onClick = { count++ }) { Text("Plus") }
+            Button(onClick = { count++ }) { Text(stringResource(id = R.string.plus)) }
         }
     }
 }
@@ -135,6 +137,7 @@ private fun AnimatedContentTransitionSpecExample() {
 private fun ExpandedCart(
     onClick: () -> Unit
 ) {
+    val shoppingCart = stringResource(id = R.string.shopping_cart)
     Card(
         shape = CutCornerShape(12.dp),
         onClick = onClick
@@ -142,9 +145,12 @@ private fun ExpandedCart(
         Row(
             modifier = Modifier.padding(16.dp)
         ) {
-            Icon(imageVector = Icons.Filled.AddShoppingCart, contentDescription = "Shopping cart")
+            Icon(
+                imageVector = Icons.Filled.AddShoppingCart,
+                contentDescription = shoppingCart
+            )
             Text(
-                text = "Jetpack Compose Shopping Cart",
+                text = shoppingCart,
             )
         }
     }
@@ -160,7 +166,7 @@ private fun CollapsedCart(
         onClick = onClick
     ) {
         Text(
-            text = "Jetpack Compose",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(16.dp)
         )
     }

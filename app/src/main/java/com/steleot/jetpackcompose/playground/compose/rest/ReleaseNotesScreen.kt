@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -27,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.api.GitHubService
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
@@ -66,7 +68,7 @@ fun ReleaseNotesScreen(
                 }
                 is ReleaseNotesUiState.Error -> {
                     Text(
-                        text = "Failed to retrieve the releases list.\nPlease try again later.",
+                        text = stringResource(id = R.string.releases_error),
                         style = MaterialTheme.typography.body1,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier

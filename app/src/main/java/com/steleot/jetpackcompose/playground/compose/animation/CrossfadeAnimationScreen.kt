@@ -17,9 +17,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -46,7 +48,10 @@ fun CrossfadeAnimationScreen() {
 
 @Composable
 private fun CrossfadeTextAnimation() {
-    val strings = listOf("This the first text", "This is the second text")
+    val strings = listOf(
+        stringResource(id = R.string.first_text),
+        stringResource(id = R.string.second_text)
+    )
     val current = remember { mutableStateOf(strings[0]) }
 
     Column(

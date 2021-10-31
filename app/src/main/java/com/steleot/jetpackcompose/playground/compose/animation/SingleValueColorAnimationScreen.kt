@@ -17,7 +17,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -57,7 +59,7 @@ private fun SingleValueAnimationColorExample() {
                 .background(color),
         )
         Text(
-            text = "Click me to change color!",
+            text = stringResource(id = R.string.click_me_change_color),
             modifier = Modifier.align(Alignment.Center)
         )
     }

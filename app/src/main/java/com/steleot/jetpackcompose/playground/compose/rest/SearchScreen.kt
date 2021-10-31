@@ -38,6 +38,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.input.ImeAction
@@ -49,6 +50,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
@@ -154,7 +156,7 @@ private fun SearchTextField(
                 ) {
                     Icon(
                         Icons.Filled.Close,
-                        contentDescription = "Clear text",
+                        contentDescription = stringResource(id = R.string.clear_text),
                         tint = MaterialTheme.colors.onPrimary
                     )
                 }

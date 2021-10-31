@@ -36,8 +36,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -69,6 +71,7 @@ fun AnimatedVisibilityScreen() {
 @Composable
 private fun ColumnScope.AnimatedFloatingActionButton() {
     var expanded by remember { mutableStateOf(true) }
+    val favorite = stringResource(id = R.string.favorite)
     FloatingActionButton(
         onClick = { expanded = !expanded },
         modifier = Modifier.align(Alignment.CenterHorizontally)
@@ -76,14 +79,14 @@ private fun ColumnScope.AnimatedFloatingActionButton() {
         Row(Modifier.padding(start = 12.dp, end = 12.dp)) {
             Icon(
                 Icons.Filled.Favorite,
-                contentDescription = "Favorite",
+                contentDescription = favorite,
                 modifier = Modifier.align(Alignment.CenterVertically)
             )
             AnimatedVisibility(
                 expanded,
                 modifier = Modifier.align(Alignment.CenterVertically)
             ) {
-                Text(modifier = Modifier.padding(start = 12.dp), text = "Favorite")
+                Text(modifier = Modifier.padding(start = 12.dp), text = favorite)
             }
         }
     }
@@ -104,11 +107,14 @@ private fun FadeTransition() {
         )
     ) {
         Text(
-            "Content to appear/disappear",
+            stringResource(id = R.string.animated_visibility_content),
             Modifier
                 .fillMaxWidth()
                 .requiredHeight(75.dp)
-                .clickable(onClick = { visible = !visible }, onClickLabel = "Clickable Text")
+                .clickable(
+                    onClick = { visible = !visible },
+                    onClickLabel = stringResource(id = R.string.clickable_text)
+                )
         )
     }
 }
@@ -130,11 +136,14 @@ private fun ExpandShrinkVertically() {
         )
     ) {
         Text(
-            "Content to appear/disappear",
+            stringResource(id = R.string.animated_visibility_content),
             Modifier
                 .fillMaxWidth()
                 .requiredHeight(75.dp)
-                .clickable(onClick = { visible = !visible }, onClickLabel = "Clickable Text")
+                .clickable(
+                    onClick = { visible = !visible },
+                    onClickLabel = stringResource(id = R.string.clickable_text)
+                )
         )
     }
 }
@@ -158,11 +167,14 @@ private fun ExpandInShrinkOut() {
         )
     ) {
         Text(
-            "Content to appear/disappear",
+            stringResource(id = R.string.animated_visibility_content),
             Modifier
                 .fillMaxWidth()
                 .requiredHeight(75.dp)
-                .clickable(onClick = { visible = !visible }, onClickLabel = "Clickable Text")
+                .clickable(
+                    onClick = { visible = !visible },
+                    onClickLabel = stringResource(id = R.string.clickable_text)
+                )
         )
     }
 }

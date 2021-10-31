@@ -1,9 +1,9 @@
 package com.steleot.jetpackcompose.playground.theme
 
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.MaterialTheme as MaterialTheme3
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.material3.MaterialTheme as MaterialTheme3
 
 @Composable
 fun JetpackComposePlaygroundTheme(

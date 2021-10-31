@@ -26,6 +26,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -94,7 +96,6 @@ private fun DoubleTapToLike() {
         val scale by transition.animateFloat(
             transitionSpec = {
                 when {
-                    // Uses different animation specs for transitioning from/to different states
                     LikedStates.Initial isTransitioningTo LikedStates.Liked ->
                         spring(dampingRatio = Spring.DampingRatioHighBouncy)
                     LikedStates.Liked isTransitioningTo LikedStates.Disappeared ->
@@ -112,7 +113,7 @@ private fun DoubleTapToLike() {
 
         Icon(
             Icons.Filled.Favorite,
-            "Like",
+            stringResource(id = R.string.like),
             Modifier
                 .align(Alignment.Center)
                 .graphicsLayer(

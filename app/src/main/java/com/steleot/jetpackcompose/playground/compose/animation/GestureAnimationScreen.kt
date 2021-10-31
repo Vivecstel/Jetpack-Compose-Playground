@@ -26,7 +26,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -51,12 +53,8 @@ private fun GestureAnimationExample() {
     val modifier = Modifier.pointerInput(Unit) {
         detectTapGestures(onPress = {
             toState = ComponentState.Pressed
-            val success = tryAwaitRelease()
-            toState = if (success) {
-                ComponentState.Released
-            } else {
-                ComponentState.Released
-            }
+            tryAwaitRelease()
+            toState = ComponentState.Released
         })
     }
 
@@ -90,7 +88,7 @@ private fun GestureAnimationExample() {
                 .align(Alignment.CenterHorizontally),
             onClick = { useRed = !useRed }
         ) {
-            Text("Change Color")
+            Text(stringResource(id = R.string.change_color))
         }
         Box(
             modifier

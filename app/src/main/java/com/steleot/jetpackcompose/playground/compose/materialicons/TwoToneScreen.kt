@@ -135,7 +135,7 @@ private fun TwoToneGrid() {
         GridCells.Adaptive(60.dp)
     ) {
         items(list) {
-            Icon(imageVector = it, contentDescription = "", modifier = Modifier.padding(8.dp))
+            Icon(imageVector = it, contentDescription = null, modifier = Modifier.padding(8.dp))
         }
     }
 }
