@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.ui
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.viewinterop.AndroidView
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.databinding.AndroidViewBindingExampleBinding
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
@@ -43,10 +43,13 @@ fun AndroidViewBindingScreen() {
     }
 }
 
-@SuppressLint("SetTextI18n")
 @Composable
 private fun AndroidViewExample() {
-    AndroidView({ context -> TextView(context).apply { text = "This is a TextView" } })
+    AndroidView({ context ->
+        TextView(context).apply {
+            text = context.getString(R.string.android_textview)
+        }
+    })
     var size by remember { mutableStateOf(20) }
     AndroidView(::View,
         Modifier

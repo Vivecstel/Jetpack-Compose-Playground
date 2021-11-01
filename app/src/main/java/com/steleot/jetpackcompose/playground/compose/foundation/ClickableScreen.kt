@@ -9,8 +9,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -35,10 +37,11 @@ fun ClickableScreen() {
 @Preview
 @Composable
 private fun ClickableTextExample() {
+    val clickableText = stringResource(id = R.string.clickable_text)
     Text(
-        text = "Clickable Text",
+        text = clickableText,
         modifier = Modifier
-            .clickable(onClick = {}, onClickLabel = "Clickable Text")
+            .clickable(onClick = {}, onClickLabel = clickableText)
             .padding(32.dp)
 
     )

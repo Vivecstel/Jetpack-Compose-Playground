@@ -8,11 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -20,6 +22,7 @@ private const val Url = "ui/SpanStyleScreen.kt"
 
 @Composable
 fun SpanStyleScreen() {
+    val appNameSplit = stringResource(id = R.string.app_name).split("")
     DefaultScaffold(
         title = UiNavRoutes.SpanStyle,
         link = Url,
@@ -33,13 +36,15 @@ fun SpanStyleScreen() {
                 fontSize = 16.sp,
                 text = buildAnnotatedString {
                     withStyle(style = SpanStyle(color = Color.Red)) {
-                        append("Jetpack")
+                        append(appNameSplit[0])
                     }
+                    append(' ')
                     withStyle(SpanStyle(color = Color.Blue)) {
-                        append(" compose")
+                        append(appNameSplit[1])
                     }
+                    append(' ')
                     withStyle(SpanStyle(fontSize = 28.sp)) {
-                        append(" playground")
+                        append(appNameSplit[2])
                     }
                 }
             )

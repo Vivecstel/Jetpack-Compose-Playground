@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import timber.log.Timber
@@ -45,6 +47,6 @@ private fun LocalUriHandlerExample() {
             Timber.e(e, "Failed to open uri")
         }
     }) {
-        Text(text = "Press me to google")
+        Text(text = stringResource(id = R.string.press_me))
     }
 }

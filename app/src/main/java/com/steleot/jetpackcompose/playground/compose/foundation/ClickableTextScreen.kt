@@ -10,11 +10,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -41,9 +43,13 @@ fun ClickableTextScreen() {
 private fun ClickableTextExample() {
     val context = LocalContext.current
     ClickableText(
-        text = AnnotatedString("Click Me"),
+        text = AnnotatedString(stringResource(id = R.string.click_me)),
         onClick = { offset ->
-            Toast.makeText(context, "$offset -th character is clicked.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                context.getString(R.string.clicked_character, offset),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     )
 }
@@ -69,7 +75,11 @@ private fun AnnotatedClickableText() {
                 tag = "URL", start = offset,
                 end = offset
             ).firstOrNull()?.let { annotation ->
-                Toast.makeText(context, "Clicked URL : ${annotation.item}", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    context,
+                    context.getString(R.string.clicked_url, annotation.item),
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
         }

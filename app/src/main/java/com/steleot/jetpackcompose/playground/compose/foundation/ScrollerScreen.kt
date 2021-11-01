@@ -15,10 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.theme.colors
 import kotlinx.coroutines.launch
 
 private const val Url = "foundation/ScrollerScreen.kt"
@@ -33,14 +35,6 @@ fun ScrollerScreen() {
     }
 }
 
-private val colors = listOf(
-    Color(0xFFffd7d7.toInt()),
-    Color(0xFFffe9d6.toInt()),
-    Color(0xFFfffbd0.toInt()),
-    Color(0xFFe3ffd9.toInt()),
-    Color(0xFFd0fff8.toInt())
-)
-
 @Composable
 private fun ControlledScrollableRowExample() {
     val scrollState = rememberScrollState()
@@ -52,37 +46,37 @@ private fun ControlledScrollableRowExample() {
             }
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Scroll")
+            Text(stringResource(id = R.string.scroll))
             Button(
                 onClick = {
                     scope.launch { scrollState.scrollTo(scrollState.value - 1000) }
                 }
             ) {
-                Text("< -")
+                Text("<-")
             }
             Button(
                 onClick = {
                     scope.launch { scrollState.scrollBy(10000f) }
                 }
             ) {
-                Text("--- >")
+                Text("--->")
             }
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Smooth Scroll")
+            Text(stringResource(id = R.string.smooth_scroll))
             Button(
                 onClick = {
                     scope.launch { scrollState.animateScrollTo(scrollState.value - 1000) }
                 }
             ) {
-                Text("< -")
+                Text("<-")
             }
             Button(
                 onClick = {
                     scope.launch { scrollState.animateScrollBy(10000f) }
                 }
             ) {
-                Text("--- >")
+                Text("--->")
             }
         }
     }

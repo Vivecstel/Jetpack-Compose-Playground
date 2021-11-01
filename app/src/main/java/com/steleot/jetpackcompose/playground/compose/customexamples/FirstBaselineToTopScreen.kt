@@ -15,8 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
@@ -36,13 +38,13 @@ fun FirstBaselineToTopScreen() {
         ) {
             Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
                 Text(
-                    text = "Text with padding on First Baseline",
+                    text = stringResource(id = R.string.first_baseline_padding),
                     modifier = Modifier.firstBaselineToTop(paddingTop)
                 )
             }
             Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
                 Text(
-                    text = "Text with normal padding top",
+                    text = stringResource(id = R.string.normal_padding),
                     modifier = Modifier.padding(top = paddingTop)
                 )
             }

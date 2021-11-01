@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -45,6 +46,6 @@ private fun DrawablePainterExample() {
 
     Image(
         painter = rememberDrawablePainter(drawable = drawable),
-        contentDescription = "content description",
+        contentDescription = stringResource(id = R.string.android),
     )
 }

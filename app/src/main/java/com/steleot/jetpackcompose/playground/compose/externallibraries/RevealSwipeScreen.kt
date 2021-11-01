@@ -15,7 +15,9 @@ import androidx.compose.material.icons.outlined.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import de.charlex.compose.RevealDirection
@@ -63,7 +65,7 @@ private fun RevealSwipeExample(
             Icon(
                 modifier = Modifier.padding(horizontal = 25.dp),
                 imageVector = Icons.Outlined.Star,
-                contentDescription = null,
+                contentDescription = stringResource(id = R.string.star),
                 tint = Color.White
             )
         },
@@ -71,7 +73,7 @@ private fun RevealSwipeExample(
             Icon(
                 modifier = Modifier.padding(horizontal = 25.dp),
                 imageVector = Icons.Outlined.Delete,
-                contentDescription = null
+                contentDescription = stringResource(id = R.string.delete)
             )
         }
     ) {

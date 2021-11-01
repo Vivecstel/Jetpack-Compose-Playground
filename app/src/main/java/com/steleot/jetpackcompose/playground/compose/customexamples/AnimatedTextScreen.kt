@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.TextStyle
@@ -59,7 +60,8 @@ fun AnimatedTextScreen() {
 @Composable
 private fun AnimatedTextExample() {
     val text = buildAnnotatedString {
-        append("Jetpack ")
+        append(stringResource(id = R.string.jetpack))
+        append(' ')
         appendInlineContent("rotatingIconComponent", "rotating icon")
         appendInlineContent("colorChangingTextComponent", "color changing text")
         appendInlineContent("sizeChangingTextComponent", "size changing text")
@@ -148,7 +150,7 @@ private fun ColorChangingTextComponent() {
         )
     )
     Text(
-        text = "Compose",
+        text = stringResource(id = R.string.compose),
         color = color,
         style = TextStyle(
             fontFamily = FontFamily.Serif,
@@ -168,7 +170,7 @@ private fun SizeChangingTextComponent() {
         )
     )
     Text(
-        text = "Playground",
+        text = stringResource(id = R.string.playground),
         style = TextStyle(
             fontFamily = FontFamily.Serif,
             fontSize = size.sp

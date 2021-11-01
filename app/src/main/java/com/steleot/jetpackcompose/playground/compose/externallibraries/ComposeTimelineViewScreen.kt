@@ -10,8 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import me.sungbin.timelineview.TimeLine
@@ -61,14 +63,14 @@ private fun ComposeTimelineViewExample() {
         modifier = Modifier.background(Color.White),
         header = { key ->
             Text(
-                text = "This is $key index header.",
+                text = stringResource(id = R.string.index_header_args, key),
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )
         },
         content = { item ->
             Text(
-                text = "This is ${item.key} item.",
+                text = stringResource(id = R.string.index_header_args, item.key),
             )
         }
     )

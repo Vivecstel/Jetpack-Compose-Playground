@@ -12,8 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
@@ -44,13 +46,13 @@ private fun JsonConstraintSetExample() {
                 Header: { exportAs: 'json contraint set example'},
                 g1: { type: 'vGuideline', start: 80 },
                 g2: { type: 'vGuideline', end: 80 },
-                button: {
+                button1: {
                   width: 'spread',
                   top: ['title', 'bottom', 16],
                   start: ['g1', 'start'],
                   end: ['g2', 'end']
                 },
-                title: {
+                text1: {
                   width: { value: 'wrap', max: 300 },
                   centerVertically: 'parent',
                   start: ['g1', 'start'],
@@ -62,16 +64,16 @@ private fun JsonConstraintSetExample() {
         modifier = Modifier.fillMaxSize()
     ) {
         Button(
-            modifier = Modifier.layoutId("button"),
+            modifier = Modifier.layoutId("button1"),
             onClick = {},
         ) {
-            Text(text = "Jetpack Compose")
+            Text(text = stringResource(id = R.string.button_args, 1))
         }
         Text(
             modifier = Modifier
-                .layoutId("title")
+                .layoutId("text1")
                 .background(Color.Red),
-            text = "random text here :P",
+            text = stringResource(id = R.string.text_args, 1),
             style = MaterialTheme.typography.body1,
         )
     }

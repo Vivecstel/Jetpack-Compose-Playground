@@ -13,8 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -53,7 +55,7 @@ private fun BlurExample() {
         }
     } else {
         Text(
-            "Blur is only available in Android 12 for now",
+            stringResource(id = R.string.android_12_blur),
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )

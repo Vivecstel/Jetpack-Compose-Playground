@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import android.content.Context
 import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
@@ -17,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -47,11 +49,11 @@ fun CombinedClickableExample() {
         modifier = Modifier
             .combinedClickable(
                 onDoubleClick = {
-                    toast(context, "double click")
+                    toast(context, R.string.double_click)
                 }, onClick = {
-                    toast(context, "single  click")
+                    toast(context, R.string.single_click)
                 }, onLongClick = {
-                    toast(context, "long  click")
+                    toast(context, R.string.long_click)
                 })
             .border(BorderStroke(2.dp, MaterialTheme.colors.primary))
             .padding(32.dp)
@@ -61,7 +63,7 @@ fun CombinedClickableExample() {
 
 private fun toast(
     context: Context,
-    message: String,
+    @StringRes messageRes: Int,
 ) {
-    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    Toast.makeText(context, messageRes, Toast.LENGTH_SHORT).show()
 }

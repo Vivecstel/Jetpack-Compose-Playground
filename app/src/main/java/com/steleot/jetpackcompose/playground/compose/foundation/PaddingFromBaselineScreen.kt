@@ -11,7 +11,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -40,7 +42,7 @@ private fun PaddingFromBaselineExample() {
 
     Box(modifier = Modifier.border(1.dp, MaterialTheme.colors.error)) {
         Text(
-            text = "This line has the first baseline.\nThis line has the last baseline.",
+            text = stringResource(id = R.string.first_last_baseline),
             modifier = Modifier.paddingFromBaseline(
                 distanceToFirstBaseline,
                 distanceFromLastBaseline

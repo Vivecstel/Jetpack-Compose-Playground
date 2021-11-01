@@ -1,22 +1,9 @@
 <resources>
-    <string name="app_name">Jetpack Compose Playground</string>
+    <string name="app_name" translatable="false">Jetpack Compose Playground</string>
     <!-- resource -->
-    <string name="string_resource">String from strings.xml</string>
-    <string name="color_resource">Color from colors.xml</string>
-    <string name="string_with_font">String from strings.xml with font : %s</string>
-    <string name="string_with_format">This is %s</string>
-    <string-array name="string_array">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
-    </string-array>
     <string name="in_app_update_message">
         In app update finished. Restart the application and enjoy the update
     </string>
-    <string name="hello">hello</string>
-    <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
     <!-- activity -->
     <string name="back_handler_count">Press Back count %1$d</string>
     <string name="back_handler_msg">Press more than 5 times to exit.</string>
@@ -34,6 +21,9 @@
     <string name="favorite">Favorite</string>
     <string name="animated_visibility_content">Content to appear/disappear</string>
     <string name="clickable_text">Clickable Text</string>
+    <string name="click_me">Click Me</string>
+    <string name="clicked_character">%1$d-th character is clicked</string>
+    <string name="clicked_url">Clicked URL: %1$s</string>
     <string name="press_me_with_args">Press me to %1$s</string>
     <string name="hide">hide</string>
     <string name="show">show</string>
@@ -45,11 +35,83 @@
     <string name="change_color">Change color</string>
     <string name="click_me_change_color">Click me to change color!</string>
     <!-- constraint layout -->
+    <string name="button_args">Button %1$d</string>
+    <string name="text_args">Text %1$d</string>
+    <string name="motion_layout_compose">MotionLayout in Compose</string>
+    <string name="play">Play</string>
+    <string name="close">Close</string>
+    <string name="choose_style">Chose a style</string>
+    <string name="day_or_night">Pop or subtle. Day or Night.\nCustomize your interface</string>
+    <string name="swipe_up">Swipe up</string>
     <!-- custom examples -->
+    <string name="delete_route">Delete route</string>
+    <string name="pressed_count">Pressed %1$d times</string>
+    <string name="feature_not_available">Feature not available</string>
+    <string name="camera_already_granted">Camera permission already granted</string>
+    <string name="camera_rationale">The camera is important for this app. Please grant the permission.</string>
+    <string name="request_permission">Request permission</string>
+    <string name="hide_rationale">Don\'t show rationale again</string>
+    <string name="camera_permission_denied">Camera permission denied. See this FAQ with information about why we need this permission. Please, grant us access on the Settings screen.</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="jetpack" translatable="false">Jetpack</string>
+    <string name="compose" translatable="false">Compose</string>
+    <string name="playground" translatable="false">Playground</string>
+    <string name="first_baseline_padding">Text with padding on First Baseline</string>
+    <string name="normal_padding">Text with normal padding top</string>
+    <string name="incoming_message">You have an incoming message !!!</string>
+    <string name="compose_coming">Jetpack compose is coming :)</string>
     <!-- external libraries -->
+    <string name="image_request">Image request failed.</string>
+    <string name="hello">Hello</string>
+    <string name="error">Error</string>
+    <string name="teams">Teams</string>
+    <string name="locations">Locations</string>
+    <string name="devices">Devices</string>
+    <string name="people">People</string>
+    <string name="laptops">Laptops</string>
+    <string name="titles">Titles</string>
+    <string name="markdown"># Sample\n* Markdown\n* [Link](https://example.com)\n![Image](https://example.com/img.png)\n<a href="https://www.google.com/">Google</a></string>
+    <string name="press_me">Press me</string>
+    <string name="document">Document</string>
+    <string name="print">Print</string>
+    <string name="print_document">Print document</string>
+    <string name="index_header_args">This is %1$d index header.</string>
+    <string name="item_args">This is %1$d item.</string>
+    <string name="android">Android</string>
+    <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
+    <string name="system_bar_insets">System bars insets:\ntop: %1$d\nleft: %2$d\nright: %3$d\nbottom: %4$d</string>
+    <string name="navigate_horizontal">Navigate Horizontal</string>
+    <string name="navigate_expand">Navigate Expand</string>
+    <string name="navigate_vertical">Navigate Vertical</string>
+    <string name="star">Star</string>
+    <string name="delete">Delete</string>
+    <string name="change_system_bar_colors">Change System Bar Colors</string>
+    <string name="restore_system_bar_colors">Restore System Bar Colors</string>
+    <string name="change_navigation_bar_colors">Change Navigation Bar Colors</string>
+    <string name="restore_navigation_bar_colors">Restore Navigation Bar Colors</string>
     <!-- foundation -->
+    <string name="bring_circle_into_view">Bring circle into View</string>
+    <string name="double_click">Double click</string>
+    <string name="single_click">Single click</string>
+    <string name="long_click">Long click</string>
+    <string name="free_focus">Focused! tap anywhere to free the focus</string>
+    <string name="bring_focus_tap">Bring focus to me by tapping the button below!</string>
+    <string name="bring_focus_text">Bring focus to the text above</string>
+    <string name="dragged_pressed">Dragged and pressed</string>
+    <string name="dragged">Dragged</string>
+    <string name="pressed">Pressed</string>
+    <string name="interaction_source_message">Drag me horizontally, or press me!</string>
+    <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
+    <string name="max">Max</string>
+    <string name="min">Min</string>
+    <string name="taking_x_size">Taking the %1$s size here..</string>
     <!-- material -->
+    <string name="title">Title</string>
+    <string name="cancel">Cancel</string>
+    <string name="show_args">Show %1$s</string>
     <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
     <!-- navigation -->
     <string name="profile">Profile</string>
     <string name="dashboard">Dashboard</string>
@@ -57,6 +119,11 @@
     <string name="navigate_to">Navigate to %1$s</string>
     <string name="go_to_previous">Go to previous screen</string>
     <string name="item">Item: %1$d</string>
+    <string name="single_item">Single Item</string>
+    <string name="layout_offset_modifier" translatable="false">Layout offset modifier</string>
+    <string name="first_last_baseline">This line has the first baseline.\nThis line has the last baseline.</string>
+    <string name="scroll">Scroll</string>
+    <string name="smooth_scroll">Smooth scroll</string>
     <!-- paging -->
     <string name="paging_initial_load">Waiting for items to load from fake backend</string>
     <string name="paging_list_text">Index: %1$d, value: %2$s</string>
@@ -118,6 +185,37 @@
     <string name="open_drawer">Open Drawer</string>
     <!-- runtime -->
     <!-- ui -->
+    <string name="android_textview">This is a TextView</string>
+    <string name="android_12_blur">Blur is only available in Android 12 for now.</string>
+    <string name="string_resource">String from strings.xml</string>
+    <string name="color_resource">Color from colors.xml</string>
+    <string name="show_dialog">Show dialog</string>
+    <string name="vector_painter">Vector image from painter resource</string>
+    <string name="drawable_painter">Drawable image from painter resource</string>
+    <string name="string_with_font">String from strings.xml with font : %1$s</string>
+    <string name="header_text">Header text</string>
+    <string name="footer_text">Footer text</string>
+    <string name="clipboard_example">Local Clipboard manager example</string>
+    <string name="clipboard_value">Value in clipboard:</string>
+    <string name="local_cache_dir">Local Context example cache dir:\n%1$s</string>
+    <string name="local_density_msg">32 dp are %1$d pixels for this phone</string>
+    <string name="local_font_loader">Local Font Loader with reggae one font</string>
+    <string name="local_layout_direction">Local layout Direction is: %1$s</string>
+    <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>
+    <string name="example">Example</string>
+    <string name="string_with_format">This is %s</string>
+    <string-array name="string_array">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
+    <string name="line_through">Line Through text</string>
+    <string name="underline">UnderLine text</string>
+    <string name="line_through_underline">UnderLine and Line Through text</string>
+    <string name="drawn_first">Drawn first</string>
+    <string name="drawn_second">Drawn second</string>
     <!-- view model -->
     <string name="hello_with_args">Hello, %1$s</string>
     <string name="name_hint">Name</string>

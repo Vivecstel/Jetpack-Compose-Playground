@@ -15,7 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -45,11 +47,13 @@ private fun FocusableExample() {
     val interactionSource = remember { MutableInteractionSource() }
 
     val isFocused = interactionSource.collectIsFocusedAsState().value
-    val text = if (isFocused) {
-        "Focused! tap anywhere to free the focus"
-    } else {
-        "Bring focus to me by tapping the button below!"
-    }
+    val text = stringResource(
+        id = if (isFocused) {
+            R.string.free_focus
+        } else {
+            R.string.bring_focus_tap
+        }
+    )
     Column {
         Text(
             text = text,
@@ -58,7 +62,7 @@ private fun FocusableExample() {
                 .focusable(interactionSource = interactionSource)
         )
         Button(onClick = { focusRequester.requestFocus() }) {
-            Text("Bring focus to the text above")
+            Text(stringResource(id = R.string.bring_focus_text))
         }
     }
 }

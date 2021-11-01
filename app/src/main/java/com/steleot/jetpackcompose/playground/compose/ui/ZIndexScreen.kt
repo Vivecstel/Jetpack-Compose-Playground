@@ -8,7 +8,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.zIndex
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -26,8 +28,8 @@ fun ZIndexScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box {
-                Text("Drawn second", Modifier.zIndex(1f))
-                Text("Drawn first")
+                Text(stringResource(id = R.string.drawn_second), Modifier.zIndex(1f))
+                Text(stringResource(id = R.string.drawn_first))
             }
         }
     }

@@ -9,7 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -31,26 +33,26 @@ fun DefaultRow() {
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "One",
+            text = stringResource(id = R.string.item, 1),
             modifier = Modifier
                 .padding(16.dp)
                 .background(Color.Blue)
         )
         Text(
-            text = "Two",
+            text = stringResource(id = R.string.item, 2),
             modifier = Modifier
                 .background(Color.Red)
                 .padding(16.dp)
         )
         Text(
-            text = "Three",
+            text = stringResource(id = R.string.item, 3),
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxHeight()
                 .background(Color.Green)
         )
         Text(
-            text = "Four",
+            text = stringResource(id = R.string.item, 4),
             modifier = Modifier
                 .background(Color.Yellow)
                 .fillMaxHeight(0.6f)

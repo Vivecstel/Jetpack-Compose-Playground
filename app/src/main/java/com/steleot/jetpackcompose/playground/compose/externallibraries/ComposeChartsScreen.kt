@@ -9,8 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import hu.ma.charts.legend.data.LegendPosition
@@ -38,12 +40,12 @@ fun ComposeChartsScreen() {
 }
 
 private val Categories = listOf(
-    "Teams",
-    "Locations",
-    "Devices",
-    "People",
-    "Laptops",
-    "Titles",
+    R.string.teams,
+    R.string.locations,
+    R.string.devices,
+    R.string.people,
+    R.string.laptops,
+    R.string.titles,
 )
 
 private val SimpleColors = listOf(
@@ -61,7 +63,9 @@ private fun PieChartExample() {
         entries = listOf(430f, 240f, 140f, 60f, 50f).mapIndexed { idx, value ->
             PieChartEntry(
                 value = value,
-                label = AnnotatedString(Categories[idx])
+                label = AnnotatedString(
+                    stringResource(id = Categories[idx])
+                )
             )
         },
         colors = SimpleColors,

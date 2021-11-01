@@ -15,8 +15,10 @@ import androidx.compose.ui.graphics.Brush.Companion.radialGradient
 import androidx.compose.ui.graphics.Brush.Companion.sweepGradient
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -55,7 +57,7 @@ private fun Border() {
 @Composable
 private fun DefaultText() {
     Text(
-        text = "Jetpack Compose Playground",
+        text = stringResource(id = R.string.app_name),
         modifier = Modifier.padding(12.dp)
     )
 }

@@ -21,11 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.MotionLayout
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
@@ -198,14 +200,14 @@ private fun MotionLayout2Example() {
             )
 
             Text(
-                text = "Chose a style",
+                text = stringResource(id = R.string.choose_style),
                 modifier = Modifier.layoutId("title"),
                 color = motionProperties("title").value.color("color"),
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Pop or subtle. Day or Night. \n Customize your interface",
+                text = stringResource(id = R.string.day_or_night),
                 modifier = Modifier.layoutId("description"),
                 color = motionProperties("title").value.color("color"),
                 fontSize = 18.sp,
@@ -239,7 +241,7 @@ private fun MotionLayout2Example() {
             )
 
             Text(
-                text = "Light",
+                text = stringResource(id = R.string.light),
                 modifier = Modifier
                     .layoutId("light")
                     .width(150.dp),
@@ -248,7 +250,7 @@ private fun MotionLayout2Example() {
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Dark",
+                text = stringResource(id = R.string.dark),
                 modifier = Modifier
                     .layoutId("dark")
                     .width(150.dp),

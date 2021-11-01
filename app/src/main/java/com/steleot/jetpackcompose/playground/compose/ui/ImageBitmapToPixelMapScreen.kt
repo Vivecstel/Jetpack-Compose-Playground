@@ -45,7 +45,7 @@ fun ImageBitmapToPixelMapScreen() {
 private fun ImageBitmapToPixelMapExample() {
     val imageBitmap = createImageBitmap()
 
-    val pixelmap = imageBitmap.toPixelMap(
+    val pixelMap = imageBitmap.toPixelMap(
         startX = 48,
         startY = 49,
         width = 3,
@@ -53,9 +53,9 @@ private fun ImageBitmapToPixelMapExample() {
     )
 
     val histogram = HashMap<Color, Int>()
-    for (x in 0 until pixelmap.width) {
-        for (y in 0 until pixelmap.height) {
-            val color = pixelmap[x, y]
+    for (x in 0 until pixelMap.width) {
+        for (y in 0 until pixelMap.height) {
+            val color = pixelMap[x, y]
             val colorCount = histogram[color] ?: 0
             histogram[color] = (colorCount + 1)
         }

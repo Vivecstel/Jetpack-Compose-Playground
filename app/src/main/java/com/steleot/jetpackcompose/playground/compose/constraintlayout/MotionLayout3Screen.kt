@@ -25,9 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
@@ -140,7 +142,7 @@ private fun MotionLayout3Example() {
             )
             Icon(
                 Icons.Sharp.KeyboardArrowUp,
-                contentDescription = "SwipeUp",
+                contentDescription = stringResource(id = R.string.swipe_up),
                 tint = Color.White,
                 modifier = Modifier
                     .layoutId("swipeUp")

@@ -9,7 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import me.nikhilchaudhari.library.neumorphic
@@ -43,6 +45,6 @@ private fun NeumorphicExample() {
                 neuShape = Punched.Rounded(radius = 8.dp)
             )
     ) {
-        Text(text = "Press me")
+        Text(text = stringResource(id = R.string.press_me))
     }
 }

@@ -13,7 +13,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -30,14 +32,14 @@ fun SelectableGroupScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            SelectableGroupExample()
+            SelectableGroupExample(stringResource(id = R.string.app_name).split(" "))
         }
     }
 }
 
 @Composable
 private fun SelectableGroupExample(
-    items: List<String> = listOf("Jetpack", "Compose", "Playground")
+    items: List<String>
 ) {
     val state = remember { mutableStateOf("") }
     Column(

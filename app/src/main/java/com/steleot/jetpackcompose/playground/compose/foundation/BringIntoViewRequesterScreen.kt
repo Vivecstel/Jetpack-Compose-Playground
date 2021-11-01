@@ -24,7 +24,9 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 import kotlinx.coroutines.launch
@@ -76,7 +78,7 @@ private fun BringIntoViewRequesterExample() {
                     }
                 }
             ) {
-                Text("Bring circle into View")
+                Text(stringResource(id = R.string.bring_circle_into_view))
             }
         }
     }

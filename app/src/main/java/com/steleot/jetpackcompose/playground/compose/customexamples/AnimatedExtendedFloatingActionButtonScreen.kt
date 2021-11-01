@@ -19,6 +19,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
@@ -47,7 +49,12 @@ private fun AnimatedExtendedFloatingActionButtonExample() {
         rotationX = animateFloatAsState(if (count % 2 == 0) 360f else 0f, tween(800)).value,
     )
     ExtendedFloatingActionButton(
-        text = { Text(text = "Pressed $count times", modifier = animationModifier) },
+        text = {
+            Text(
+                text = stringResource(id = R.string.pressed_count, count),
+                modifier = animationModifier
+            )
+        },
         onClick = {
             count++
         },

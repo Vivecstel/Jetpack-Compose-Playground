@@ -7,7 +7,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -25,15 +27,15 @@ fun LazyGridScreen() {
 
         LazyVerticalGrid(GridCells.Adaptive(80.dp)) {
             items(itemsList) {
-                Text("Item is $it")
+                Text(stringResource(id = R.string.item, it))
             }
 
             item {
-                Text("Single item")
+                Text(stringResource(id = R.string.single_item))
             }
 
             itemsIndexed(itemsIndexedList) { index, item ->
-                Text("Item at index $index is $item")
+                Text(stringResource(id = R.string.paging_list_text, index, item))
             }
         }
     }

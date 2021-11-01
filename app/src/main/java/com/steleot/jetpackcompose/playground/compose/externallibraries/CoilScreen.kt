@@ -10,15 +10,17 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import timber.log.Timber
@@ -60,7 +62,7 @@ fun CoilImageExample(
     Box {
         Image(
             painter = painter,
-            contentDescription = "Content description",
+            contentDescription = null,
             modifier = Modifier.size(150.dp)
         )
         when (painter.state) {
@@ -71,8 +73,8 @@ fun CoilImageExample(
             }
             is ImagePainter.State.Error -> {
                 Image(
-                    imageVector = Icons.Filled.Build,
-                    contentDescription = "Vector"
+                    imageVector = Icons.Filled.Error,
+                    contentDescription = stringResource(id = R.string.error)
                 )
             }
             else -> {

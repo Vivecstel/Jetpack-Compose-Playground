@@ -51,7 +51,7 @@ private fun JsonConstraintSetWithVariablesExample() {
         ConstraintSet(constraintSet),
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(modifier = Modifier.layoutId("center"), text = "C")
+        Text(modifier = Modifier.layoutId("center"), text = "0")
 
         for (i in 0 until 12) {
             Text(

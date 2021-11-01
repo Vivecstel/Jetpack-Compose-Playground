@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.SystemUiController
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
@@ -69,7 +71,7 @@ private fun SystemUiControllerExample(
                 darkIcons = useDarkIcons
             )
         }) {
-            Text(text = "Change System Bar Colors")
+            Text(text = stringResource(id = R.string.change_system_bar_colors))
         }
         Button(onClick = {
             systemUiController.setStatusBarColor(
@@ -77,7 +79,7 @@ private fun SystemUiControllerExample(
                 darkIcons = !useDarkIcons
             )
         }) {
-            Text(text = "Restore System Bar Colors")
+            Text(text = stringResource(id = R.string.restore_system_bar_colors))
         }
         Button(onClick = {
             systemUiController.setNavigationBarColor(
@@ -85,7 +87,7 @@ private fun SystemUiControllerExample(
                 darkIcons = useDarkIcons
             )
         }) {
-            Text(text = "Change Navigation Bar Colors")
+            Text(text = stringResource(id = R.string.change_navigation_bar_colors))
         }
         Button(onClick = {
             systemUiController.setNavigationBarColor(
@@ -93,7 +95,7 @@ private fun SystemUiControllerExample(
                 darkIcons = !useDarkIcons
             )
         }) {
-            Text(text = "Restore Navigation Bar Colors")
+            Text(text = stringResource(id = R.string.restore_navigation_bar_colors))
         }
     }
 }

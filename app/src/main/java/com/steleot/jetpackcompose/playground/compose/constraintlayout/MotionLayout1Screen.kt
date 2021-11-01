@@ -22,9 +22,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.layoutId
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
@@ -174,13 +176,13 @@ private fun MotionLayout1Example() {
             ) {}
 
             Text(
-                text = "MotionLayout in Compose",
+                text = stringResource(id = R.string.motion_layout_compose),
                 modifier = Modifier.layoutId("title"),
                 color = Color.Black,
                 fontSize = motionProperties("title").value.fontSize("textSize")
             )
             Text(
-                text = "Jetpack Compose Playground",
+                text = stringResource(id = R.string.app_name),
                 modifier = Modifier.layoutId("description"),
                 color = Color.Black,
                 fontSize = motionProperties("description").value.fontSize("textSize")
@@ -192,14 +194,14 @@ private fun MotionLayout1Example() {
             )
             Icon(
                 Icons.Filled.PlayArrow,
-                contentDescription = "Play",
+                contentDescription = stringResource(id = R.string.play),
                 tint = Color.Black,
                 modifier = Modifier.layoutId("play")
             )
 
             Icon(
                 Icons.Filled.Close,
-                contentDescription = "Close",
+                contentDescription = stringResource(id = R.string.close),
                 tint = Color.Black,
                 modifier = Modifier.layoutId("close")
             )

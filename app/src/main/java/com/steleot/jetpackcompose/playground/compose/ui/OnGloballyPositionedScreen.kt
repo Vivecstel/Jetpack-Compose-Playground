@@ -24,15 +24,10 @@ fun OnGloballyPositionedScreen() {
     ) {
         Column(
             Modifier.onGloballyPositioned { coordinates ->
-                // This will be the size of the Column.
                 coordinates.size
-                // The position of the Column relative to the application window.
                 coordinates.positionInWindow()
-                // The position of the Column relative to the Compose root.
                 coordinates.positionInRoot()
-                // These will be the alignment lines provided to the layout (empty here for Column).
                 coordinates.providedAlignmentLines
-                // This will a LayoutCoordinates instance corresponding to the parent of Column.
                 coordinates.parentLayoutCoordinates
             }
         ) {

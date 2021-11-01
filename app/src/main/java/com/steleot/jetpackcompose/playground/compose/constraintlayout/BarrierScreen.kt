@@ -8,8 +8,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 import timber.log.Timber
@@ -35,7 +37,7 @@ fun BarrierScreen() {
 @Composable
 private fun BarrierExample() {
     ConstraintLayout {
-        val (button1, button2, text) = createRefs()
+        val (button1, button2, text1) = createRefs()
 
         Button(
             onClick = { Timber.d("Button 1 pressed") },
@@ -43,15 +45,15 @@ private fun BarrierExample() {
                 top.linkTo(parent.top, margin = 16.dp)
             }
         ) {
-            Text("Button 1")
+            Text(stringResource(id = R.string.button_args, 1))
         }
 
-        Text("Text", Modifier.constrainAs(text) {
+        Text(stringResource(id = R.string.text_args, 1), Modifier.constrainAs(text1) {
             top.linkTo(button1.bottom, margin = 16.dp)
             centerAround(button1.end)
         })
 
-        val barrier = createEndBarrier(button1, text)
+        val barrier = createEndBarrier(button1, text1)
         Button(
             onClick = { Timber.d("Button 2 pressed") },
             modifier = Modifier.constrainAs(button2) {
@@ -59,7 +61,7 @@ private fun BarrierExample() {
                 start.linkTo(barrier)
             }
         ) {
-            Text("Button 2")
+            Text(stringResource(id = R.string.button_args, 2))
         }
     }
 }

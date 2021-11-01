@@ -8,7 +8,9 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -26,7 +28,8 @@ fun LazyColumnScreen() {
         LazyColumn {
             items(itemsList) {
                 Text(
-                    "Item is $it", modifier = Modifier
+                    stringResource(id = R.string.item, it),
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
                 )
@@ -34,7 +37,8 @@ fun LazyColumnScreen() {
 
             item {
                 Text(
-                    "Single item", modifier = Modifier
+                    stringResource(id = R.string.single_item),
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
                 )
@@ -42,7 +46,7 @@ fun LazyColumnScreen() {
 
             itemsIndexed(itemsIndexedList) { index, item ->
                 Text(
-                    "Item at index $index is $item",
+                    stringResource(id = R.string.paging_list_text, index, item),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)

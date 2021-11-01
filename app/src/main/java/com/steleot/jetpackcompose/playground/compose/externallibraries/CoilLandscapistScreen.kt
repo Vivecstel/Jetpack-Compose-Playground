@@ -17,11 +17,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -67,7 +69,7 @@ fun CoilLandscapistScreen() {
                     }
                 },
                 failure = {
-                    Text(text = "image request failed.")
+                    Text(text = stringResource(id = R.string.image_request))
                 })
             CoilImage(
                 imageModel = randomSampleImageUrl(),
@@ -80,7 +82,7 @@ fun CoilLandscapistScreen() {
                     tilt = 20f
                 ),
                 failure = {
-                    Text(text = "image request failed.")
+                    Text(text = stringResource(id = R.string.image_request))
                 })
         }
     }

@@ -192,7 +192,6 @@ private fun FillHalfHeightBox() {
             .requiredSize(100.dp)
             .background(Color.Red), contentAlignment = Alignment.Center
     ) {
-        // The inner Box will be (30.dp x 50.dp).
         Box(
             Modifier
                 .requiredWidth(30.dp)

@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -33,6 +34,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -195,14 +197,14 @@ private fun BlueScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Horizontal",
+            stringResource(id = R.string.navigate_horizontal),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
         ) { navController.navigate(Red) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Expand",
+            stringResource(id = R.string.navigate_expand),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -222,14 +224,14 @@ private fun RedScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Horizontal",
+            stringResource(id = R.string.navigate_horizontal),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
         ) { navController.navigate(Blue) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Vertical",
+            stringResource(id = R.string.navigate_vertical),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -248,7 +250,7 @@ private fun GreenScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate to Red",
+            stringResource(id = R.string.navigate_to, stringResource(id = R.string.red)),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -283,7 +285,7 @@ private fun NavigateBackButton(navController: NavController) {
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Go to Previous screen")
+            Text(text = stringResource(id = R.string.go_to_previous))
         }
     }
 }

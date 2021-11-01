@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
@@ -32,6 +33,7 @@ import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
 import com.google.accompanist.placeholder.material.shimmer
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import kotlinx.coroutines.delay
@@ -60,11 +62,11 @@ fun PlaceholderAccompanistScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             PlaceholderItemExample(
-                "Jetpack Compose",
+                stringResource(id = R.string.app_name),
                 childModifier = Modifier.placeholder(visible = isLoading)
             )
             PlaceholderItemExample(
-                "Jetpack Compose",
+                stringResource(id = R.string.app_name),
                 childModifier = Modifier.placeholder(
                     visible = isLoading,
                     color = Color.Gray,
@@ -72,7 +74,7 @@ fun PlaceholderAccompanistScreen() {
                 )
             )
             PlaceholderItemExample(
-                "Jetpack Compose",
+                stringResource(id = R.string.app_name),
                 childModifier = Modifier.placeholder(
                     visible = isLoading,
                     color = Color.Gray,

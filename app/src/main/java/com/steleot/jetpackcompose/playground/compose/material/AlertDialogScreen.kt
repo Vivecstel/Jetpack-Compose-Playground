@@ -18,8 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -53,10 +55,10 @@ private fun DefaultAlertDialog() {
                 showingDialog.value = false
             },
             text = {
-                Text(text = "Text")
+                Text(text = stringResource(id = R.string.text_args, 1))
             },
             title = {
-                Text(text = "Title")
+                Text(text = stringResource(id = R.string.title))
             },
             buttons = {
                 Row(
@@ -64,7 +66,7 @@ private fun DefaultAlertDialog() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = "Close",
+                        text = stringResource(id = R.string.close),
                         modifier = Modifier
                             .padding(16.dp)
                             .clickable(onClick = {
@@ -79,7 +81,7 @@ private fun DefaultAlertDialog() {
         onClick = { showingDialog.value = true },
     ) {
         Text(
-            text = "Show Default dialog"
+            text = stringResource(id = R.string.show_args, "Default dialog")
         )
     }
 }
@@ -94,14 +96,14 @@ private fun ContentColorAlertDialog() {
                 showingDialog.value = false
             },
             text = {
-                Text(text = "Text")
+                Text(text = stringResource(id = R.string.text_args, 1))
             },
             title = {
-                Text(text = "Title")
+                Text(text = stringResource(id = R.string.title))
             },
             confirmButton = {
                 Text(
-                    text = "Continue",
+                    text = stringResource(id = R.string.cancel),
                     modifier = Modifier
                         .padding(16.dp)
                         .clickable(onClick = {
@@ -111,7 +113,7 @@ private fun ContentColorAlertDialog() {
             },
             dismissButton = {
                 Text(
-                    text = "Close",
+                    text = stringResource(id = R.string.close),
                     modifier = Modifier
                         .padding(16.dp)
                         .clickable(onClick = {
@@ -127,7 +129,7 @@ private fun ContentColorAlertDialog() {
         showingDialog.value = true
     }) {
         Text(
-            text = "Show Content Color Alert Dialog"
+            text = stringResource(id = R.string.show_args, "Content Color Alert Dialog")
         )
     }
 }
@@ -142,14 +144,14 @@ private fun BackgroundColorAlertDialog() {
                 showingDialog.value = false
             },
             text = {
-                Text(text = "Text")
+                Text(text = stringResource(id = R.string.text_args, 1))
             },
             title = {
-                Text(text = "Title")
+                Text(text = stringResource(id = R.string.title))
             },
             confirmButton = {
                 Text(
-                    text = "Close",
+                    text = stringResource(id = R.string.close),
                     modifier = Modifier
                         .padding(16.dp)
                         .clickable(onClick = {
@@ -165,7 +167,7 @@ private fun BackgroundColorAlertDialog() {
         showingDialog.value = true
     }) {
         Text(
-            text = "Show Background Color Alert Dialog"
+            text = stringResource(id = R.string.show_args, "Background Color Alert Dialog")
         )
     }
 }
