@@ -238,8 +238,8 @@ fun JetpackComposeApp(
                     AnimatedNavHost(
                         navController = navController,
                         startDestination = MainNavRoutes.Main,
-                        enterTransition = { _, target ->
-                            when (target.destination.route) {
+                        enterTransition = {
+                            when (targetState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -253,8 +253,8 @@ fun JetpackComposeApp(
                                 )
                             }
                         },
-                        exitTransition = { _, target ->
-                            when (target.destination.route) {
+                        exitTransition = {
+                            when (targetState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -269,8 +269,8 @@ fun JetpackComposeApp(
                                     )
                             }
                         },
-                        popEnterTransition = { initial, _ ->
-                            when (initial.destination.route) {
+                        popEnterTransition = {
+                            when (initialState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -285,8 +285,8 @@ fun JetpackComposeApp(
                                     )
                             }
                         },
-                        popExitTransition = { initial, _ ->
-                            when (initial.destination.route) {
+                        popExitTransition = {
+                            when (initialState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->

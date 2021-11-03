@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.halilibo.richtext.ui.BlockQuote
 import com.halilibo.richtext.ui.CodeBlock
@@ -17,6 +18,7 @@ import com.halilibo.richtext.ui.Heading
 import com.halilibo.richtext.ui.HorizontalRule
 import com.halilibo.richtext.ui.RichText
 import com.halilibo.richtext.ui.Table
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -43,17 +45,17 @@ fun ComposeRichTextUiScreen() {
 @Composable
 private fun BasicRichTextExample() {
     RichText(modifier = Modifier.padding(16.dp)) {
-        Heading(0, "Paragraphs")
-        Text("Simple paragraph.")
-        Text("Paragraph with\nmultiple lines.")
-        Text("Paragraph with really long line that should be getting wrapped.")
-        Heading(0, "Horizontal Line")
-        Text("Paragraph with really long line that should be getting wrapped.")
-        Text("Above line")
+        Heading(0, stringResource(id = R.string.paragraphs))
+        Text(stringResource(id = R.string.simple_paragraph))
+        Text(stringResource(id = R.string.paragraph_multiple_lines))
+        Text(stringResource(id = R.string.paragraph_long_text))
+        Heading(0, stringResource(id = R.string.horizontal_line))
+        Text(stringResource(id = R.string.paragraph_long_text))
+        Text(stringResource(id = R.string.above_line))
         HorizontalRule()
-        Text("Below line")
+        Text(stringResource(id = R.string.below_line))
 
-        Heading(0, "Code Block")
+        Heading(0, stringResource(id = R.string.code_block))
         CodeBlock(
             """
       {
@@ -61,32 +63,32 @@ private fun BasicRichTextExample() {
       }
     """.trimIndent()
         )
-        Heading(0, "Block Quote")
+        Heading(0, stringResource(id = R.string.block_quote))
         BlockQuote {
-            Text("These paragraphs are quoted.")
-            Text("More text.")
+            Text(stringResource(id = R.string.quoted_paragraphs))
+            Text(stringResource(id = R.string.more_text))
             BlockQuote {
-                Text("Nested block quote.")
+                Text(stringResource(id = R.string.nester_block_quote))
             }
         }
-        Heading(0, "Table")
+        Heading(0, stringResource(id = R.string.table))
         Table(headerRow = {
-            cell { Text("Column 1") }
-            cell { Text("Column 2") }
+            cell { Text(stringResource(id = R.string.column_args, 1)) }
+            cell { Text(stringResource(id = R.string.column_args, 2)) }
         }) {
             row {
-                cell { Text("Hello") }
+                cell { Text(stringResource(id = R.string.hello)) }
                 cell {
-                    CodeBlock("Foo bar")
+                    CodeBlock(stringResource(id = R.string.app_name))
                 }
             }
             row {
                 cell {
                     BlockQuote {
-                        Text("Stuff")
+                        Text(stringResource(id = R.string.stuff))
                     }
                 }
-                cell { Text("Hello world this is a really long line that is going to wrap hopefully") }
+                cell { Text(stringResource(id = R.string.hello_word_wrap)) }
             }
         }
     }

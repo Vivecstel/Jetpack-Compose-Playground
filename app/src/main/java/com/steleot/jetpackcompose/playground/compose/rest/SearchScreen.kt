@@ -109,7 +109,8 @@ fun SearchScreen(navController: NavHostController) {
                 navigationIcon = {
                     BackArrowIconButton()
                 },
-                modifier = Modifier.heightIn(64.dp)
+                modifier = Modifier.heightIn(64.dp),
+                backgroundColor = MaterialTheme.colors.primary
             )
         },
     ) {

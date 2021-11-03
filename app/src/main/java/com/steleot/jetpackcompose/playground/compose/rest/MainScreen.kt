@@ -168,6 +168,7 @@ fun MainScreenWithDrawer(
                 navigateToSearch = navigateToSearch
             )
         },
+        drawerBackgroundColor = MaterialTheme.colors.primary,
         drawerContent = {
             DrawerUserItem(
                 user = LocalUser.current,

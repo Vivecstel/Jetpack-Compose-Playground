@@ -61,38 +61,38 @@ private fun NavigationAnimationExample() {
     AnimatedNavHost(
         navController,
         startDestination = Blue,
-        enterTransition = { _, _ ->
+        enterTransition = {
             fadeIn(animationSpec = tween(700))
         },
-        exitTransition = { _, _ ->
+        exitTransition = {
             fadeOut(animationSpec = tween(700))
         }
     ) {
         composable(
             Blue,
-            enterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            enterTransition = {
+                when (initialState.destination.route) {
                     Red ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            exitTransition = { _, target ->
-                when (target.destination.route) {
+            exitTransition = {
+                when (targetState.destination.route) {
                     Red ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            popEnterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            popEnterTransition = {
+                when (initialState.destination.route) {
                     Red ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            popExitTransition = { _, target ->
-                when (target.destination.route) {
+            popExitTransition = {
+                when (targetState.destination.route) {
                     Red ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
@@ -101,8 +101,8 @@ private fun NavigationAnimationExample() {
         ) { BlueScreen(navController) }
         composable(
             Red,
-            enterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            enterTransition = {
+                when (initialState.destination.route) {
                     Blue ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
                     Green ->
@@ -110,8 +110,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            exitTransition = { _, target ->
-                when (target.destination.route) {
+            exitTransition = {
+                when (targetState.destination.route) {
                     Blue ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
                     Green ->
@@ -119,8 +119,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            popEnterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            popEnterTransition = {
+                when (initialState.destination.route) {
                     Blue ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
                     Green ->
@@ -128,8 +128,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            popExitTransition = { _, target ->
-                when (target.destination.route) {
+            popExitTransition = {
+                when (targetState.destination.route) {
                     Blue ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     Green ->
@@ -141,13 +141,13 @@ private fun NavigationAnimationExample() {
         navigation(
             startDestination = Green,
             route = "Inner",
-            enterTransition = { _, _ -> expandIn(animationSpec = tween(700)) },
-            exitTransition = { _, _ -> shrinkOut(animationSpec = tween(700)) }
+            enterTransition = { expandIn(animationSpec = tween(700)) },
+            exitTransition = { shrinkOut(animationSpec = tween(700)) }
         ) {
             composable(
                 Green,
-                enterTransition = { initial, _ ->
-                    when (initial.destination.route) {
+                enterTransition = {
+                    when (initialState.destination.route) {
                         Red ->
                             slideInVertically(
                                 initialOffsetY = { 1800 }, animationSpec = tween(700)
@@ -155,8 +155,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                exitTransition = { _, target ->
-                    when (target.destination.route) {
+                exitTransition = {
+                    when (targetState.destination.route) {
                         Red ->
                             slideOutVertically(
                                 targetOffsetY = { -1800 }, animationSpec = tween(700)
@@ -164,8 +164,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                popEnterTransition = { initial, _ ->
-                    when (initial.destination.route) {
+                popEnterTransition = {
+                    when (initialState.destination.route) {
                         Red ->
                             slideInVertically(
                                 initialOffsetY = { -1800 }, animationSpec = tween(700)
@@ -173,8 +173,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                popExitTransition = { _, target ->
-                    when (target.destination.route) {
+                popExitTransition = {
+                    when (targetState.destination.route) {
                         Red ->
                             slideOutVertically(
                                 targetOffsetY = { 1800 }, animationSpec = tween(700)

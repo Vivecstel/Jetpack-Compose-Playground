@@ -56,7 +56,7 @@ fun ImageScreen() {
 private fun DefaultImage() {
     Image(
         painter = painterResource(R.drawable.ic_baseline_alarm_24dp),
-        contentDescription = "Default",
+        contentDescription = null,
         colorFilter = ColorFilter.tint(Color.Blue),
     )
 }
@@ -66,7 +66,7 @@ private fun DefaultImage() {
 private fun ColorPainterImage() {
     Image(
         painter = ColorPainter(Color.Magenta),
-        contentDescription = "Color",
+        contentDescription = null,
         modifier = Modifier.size(64.dp)
     )
 }
@@ -76,7 +76,7 @@ private fun ColorPainterImage() {
 private fun BitmapImage() {
     Image(
         bitmap = ImageBitmap.imageResource(R.drawable.ic_baseline_alarm_24dp),
-        contentDescription = "Bitmap",
+        contentDescription = null,
         colorFilter = ColorFilter.tint(Color.Blue),
         modifier = Modifier.size(64.dp),
     )
@@ -87,7 +87,7 @@ private fun BitmapImage() {
 private fun VectorImage() {
     Image(
         imageVector = Icons.Filled.Build,
-        contentDescription = "Vector"
+        contentDescription = null,
     )
 }
 
@@ -107,6 +107,6 @@ private fun CustomImage() {
     }
     Image(
         painter = customPainter,
-        contentDescription = "Vector"
+        contentDescription = null,
     )
 }

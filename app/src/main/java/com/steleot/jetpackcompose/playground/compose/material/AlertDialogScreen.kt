@@ -10,13 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,7 +25,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/AlertDialog3Screen.kt"
+private const val Url = "material/AlertDialogScreen.kt"
 
 @Composable
 fun AlertDialogScreen() {
@@ -103,7 +103,7 @@ private fun ContentColorAlertDialog() {
             },
             confirmButton = {
                 Text(
-                    text = stringResource(id = R.string.cancel),
+                    text = stringResource(id = android.R.string.ok),
                     modifier = Modifier
                         .padding(16.dp)
                         .clickable(onClick = {
@@ -113,7 +113,7 @@ private fun ContentColorAlertDialog() {
             },
             dismissButton = {
                 Text(
-                    text = stringResource(id = R.string.close),
+                    text = stringResource(id = R.string.cancel),
                     modifier = Modifier
                         .padding(16.dp)
                         .clickable(onClick = {
@@ -121,7 +121,7 @@ private fun ContentColorAlertDialog() {
                         })
                 )
             },
-            contentColor = Color.White,
+            contentColor = MaterialTheme.colors.primary,
             shape = RectangleShape,
         )
     }
@@ -159,7 +159,7 @@ private fun BackgroundColorAlertDialog() {
                         })
                 )
             },
-            backgroundColor = Color.White,
+            backgroundColor = MaterialTheme.colors.primary,
             shape = CutCornerShape(12.dp),
         )
     }

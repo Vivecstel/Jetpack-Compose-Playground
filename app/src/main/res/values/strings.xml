@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">Jetpack Compose Playground</string>
-    <!-- resource -->
-    <string name="in_app_update_message">
-        In app update finished. Restart the application and enjoy the update
-    </string>
     <!-- activity -->
     <string name="back_handler_count">Press Back count %1$d</string>
     <string name="back_handler_msg">Press more than 5 times to exit.</string>
@@ -75,6 +71,22 @@
     <string name="document">Document</string>
     <string name="print">Print</string>
     <string name="print_document">Print document</string>
+    <string name="paragraphs">Paragraphs</string>
+    <string name="simple_paragraph">Simple paragraph.</string>
+    <string name="paragraph_multiple_lines">Paragraph with\nmultiple lines.</string>
+    <string name="paragraph_long_text">Paragraph with really long line that should be getting wrapped.</string>
+    <string name="horizontal_line">Horizontal Line</string>
+    <string name="above_line">Above line</string>
+    <string name="below_line">Below line</string>
+    <string name="code_block">Code Block</string>
+    <string name="block_quote">Block Quote</string>
+    <string name="quoted_paragraphs">These paragraphs are quoted.</string>
+    <string name="more_text">More text.</string>
+    <string name="nester_block_quote">Nested block quote.</string>
+    <string name="table">Table</string>
+    <string name="column_args">Column %1$d</string>
+    <string name="stuff">Stuff</string>
+    <string name="hello_word_wrap">Hello world this is a really long line that is going to wrap hopefully</string>
     <string name="index_header_args">This is %1$d index header.</string>
     <string name="item_args">This is %1$d item.</string>
     <string name="android">Android</string>
@@ -83,8 +95,16 @@
     <string name="navigate_horizontal">Navigate Horizontal</string>
     <string name="navigate_expand">Navigate Expand</string>
     <string name="navigate_vertical">Navigate Vertical</string>
+    <string name="body">Body</string>
+    <string name="show_bottom_sheet">Show bottom sheet!</string>
+    <string name="navigate_feed">Navigate Feed</string>
+    <string name="feed">Feed</string>
+    <string name="bottom_sheet_args">Sheet with arg: %1$s</string>
+    <string name="show_another_bottom_sheet">Show another bottom sheet</string>
+    <string name="missing_argument">Missing argument :(</string>
     <string name="star">Star</string>
     <string name="delete">Delete</string>
+    <string name="test_with_args">Test %1$d</string>
     <string name="change_system_bar_colors">Change System Bar Colors</string>
     <string name="restore_system_bar_colors">Restore System Bar Colors</string>
     <string name="change_navigation_bar_colors">Change Navigation Bar Colors</string>
@@ -105,6 +125,12 @@
     <string name="max">Max</string>
     <string name="min">Min</string>
     <string name="taking_x_size">Taking the %1$s size here..</string>
+    <string name="circle_shape">Circle shape</string>
+    <string name="rectangle_shape">Rectangle shape</string>
+    <string name="cut_corner_shape">Cut corner shape</string>
+    <string name="rounded_corner_shape">Rounded corner shape</string>
+    <string name="generic_shape">Generic shape</string>
+    <string name="spacer_msg">There is spacer between even in row</string>
     <!-- material -->
     <string name="title">Title</string>
     <string name="cancel">Cancel</string>
@@ -219,4 +245,8 @@
     <!-- view model -->
     <string name="hello_with_args">Hello, %1$s</string>
     <string name="name_hint">Name</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">
+        In app update finished. Restart the application and enjoy the update
+    </string>
 </resources>

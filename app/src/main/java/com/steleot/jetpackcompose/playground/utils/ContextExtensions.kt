@@ -41,7 +41,7 @@ inline fun Context.startActivitySafe(
         startActivity()
     } catch (e: ActivityNotFoundException) {
         Timber.e(e)
-        Toast.makeText(this, "Activity not found ", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Activity not found", Toast.LENGTH_SHORT).show()
     }
 }
 

@@ -17,11 +17,11 @@ object Versions {
     const val playPublisher = "3.6.0"
 
     /* libraries */
-    const val compose = "1.1.0-beta01"
+    const val compose = "1.1.0-beta02"
     const val composeMaterial3 = "1.0.0-alpha01"
     const val composeConstraint = "1.0.0-rc01"
     const val composePaging = "1.0.0-alpha14"
-    const val navigation = "2.4.0-beta01"
+    const val navigation = "2.4.0-beta02"
     const val core = "1.7.0-alpha02"
     const val activity = "1.4.0"
     const val appCompat = "1.4.0-rc01"
@@ -42,7 +42,7 @@ object Versions {
     const val okhttp = "5.0.0-alpha.2"
     const val kotlinxSerializationConverter = "0.8.0"
     const val kotlinxSerialization = "1.3.0"
-    const val accompanist = "0.21.0-beta"
+    const val accompanist = "0.21.1-beta"
     const val landscapist = "1.4.1"
     const val orchestra = "1.1.1"
     const val coil = "2.0.0-alpha02"
