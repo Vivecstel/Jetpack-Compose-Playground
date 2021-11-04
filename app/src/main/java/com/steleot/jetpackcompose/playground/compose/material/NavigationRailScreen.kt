@@ -15,6 +15,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -34,7 +36,11 @@ fun NavigationRailScreen() {
 @Composable
 private fun NavigationRailExample() {
     var selectedItem by remember { mutableStateOf(0) }
-    val items = listOf("Home", "Search", "Settings")
+    val items = listOf(
+        "Home",
+        stringResource(id = R.string.search),
+        stringResource(id = R.string.settings),
+    )
     val icons = listOf(Icons.Filled.Home, Icons.Filled.Search, Icons.Filled.Settings)
     NavigationRail {
         items.forEachIndexed { index, item ->

@@ -25,7 +25,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import kotlinx.coroutines.launch
@@ -59,11 +61,11 @@ fun BackdropScaffoldExample() {
                 navigationIcon = {
                     if (scaffoldState.isConcealed) {
                         IconButton(onClick = { scope.launch { scaffoldState.reveal() } }) {
-                            Icon(Icons.Filled.Menu, contentDescription = "Localized description")
+                            Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.menu))
                         }
                     } else {
                         IconButton(onClick = { scope.launch { scaffoldState.conceal() } }) {
-                            Icon(Icons.Filled.Close, contentDescription = "Localized description")
+                            Icon(Icons.Filled.Close, contentDescription = stringResource(id = R.string.close))
                         }
                     }
                 },
@@ -77,7 +79,7 @@ fun BackdropScaffoldExample() {
                             }
                         }
                     ) {
-                        Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
+                        Icon(Icons.Filled.Favorite, contentDescription = stringResource(id = R.string.favorite))
                     }
                 },
                 elevation = 0.dp,
@@ -92,7 +94,7 @@ fun BackdropScaffoldExample() {
                             selection.value = it
                             scope.launch { scaffoldState.conceal() }
                         },
-                        text = { Text("Select $it") }
+                        text = { Text(stringResource(id = R.string.select_args, it)) }
                     )
                 }
             }
@@ -101,17 +103,17 @@ fun BackdropScaffoldExample() {
             LazyColumn {
                 item {
                     Text(
-                        "Selection: ${selection.value}",
+                        stringResource(id = R.string.selection_args, selection.value),
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                     )
                 }
                 items(50) {
                     ListItem(
-                        text = { Text("Item $it") },
+                        text = { Text(stringResource(id = R.string.item, it)) },
                         icon = {
                             Icon(
                                 Icons.Filled.Favorite,
-                                contentDescription = "Localized description"
+                                contentDescription = stringResource(id = R.string.favorite)
                             )
                         }
                     )

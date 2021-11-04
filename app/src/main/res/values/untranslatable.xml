@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Jetpack Compose Playground</string>
+    <string name="jetpack" translatable="false">Jetpack</string>
+    <string name="compose" translatable="false">Compose</string>
+    <string name="playground" translatable="false">Playground</string>
+    <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
+    <string name="link_jetpack_compose" translatable="false">link: Jetpack Compose</string>
+    <string name="layout_offset_modifier" translatable="false">Layout offset modifier</string>
+    <string name="firebase_analytics" translatable="false">Firebase Analytics</string>
+    <string name="firebase_messaging" translatable="false">Firebase Messaging</string>
+    <string name="firebase_crashlytics" translatable="false">Firebase Crashlytics</string>
+</resources>

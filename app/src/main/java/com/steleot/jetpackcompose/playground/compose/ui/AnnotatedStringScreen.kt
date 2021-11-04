@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ParagraphStyle
 import androidx.compose.ui.text.SpanStyle
@@ -20,6 +21,7 @@ import androidx.compose.ui.text.style.TextIndent
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -39,21 +41,33 @@ fun AnnotatedStringScreen() {
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Text(text = annotatedStringConstructorExample())
-            Text(text = annotatedStringBuilderExample())
-            Text(text = annotatedStringBuilderPushExample())
-            Text(text = annotatedStringBuilderPushParagraphStyleExample())
-            Text(text = annotatedStringBuilderPushStringAnnotationExample())
-            Text(text = annotatedStringBuilderWithStyleExample())
-            Text(text = annotatedStringBuilderLambdaExample())
-            Text(text = annotatedStringAddStringAnnotationExample())
+            Text(text = annotatedStringConstructorExample(stringResource(id = R.string.hello_world)))
+            Text(text = annotatedStringBuilderExample(stringResource(id = R.string.hello_world)))
+            Text(text = annotatedStringBuilderPushExample(stringResource(id = R.string.hello_world)))
+            Text(
+                text = annotatedStringBuilderPushParagraphStyleExample(
+                    stringResource(id = R.string.paragraph_args, stringResource(id = R.string.one)),
+                    stringResource(id = R.string.paragraph_args, stringResource(id = R.string.two)),
+                )
+            )
+            Text(
+                text = annotatedStringBuilderPushStringAnnotationExample(
+                    stringResource(id = R.string.paragraph_args, stringResource(id = R.string.one)),
+                    stringResource(id = R.string.paragraph_args, stringResource(id = R.string.two)),
+                )
+            )
+            Text(text = annotatedStringBuilderWithStyleExample(stringResource(id = R.string.hello_world)))
+            Text(text = annotatedStringBuilderLambdaExample(stringResource(id = R.string.hello_world)))
+            Text(text = annotatedStringAddStringAnnotationExample(stringResource(id = R.string.link_jetpack_compose)))
         }
     }
 }
 
-private fun annotatedStringConstructorExample(): AnnotatedString {
+private fun annotatedStringConstructorExample(
+    text: String,
+): AnnotatedString {
     return AnnotatedString(
-        text = "Hello World",
+        text = text,
         spanStyles = listOf(
             AnnotatedString.Range(SpanStyle(fontStyle = FontStyle.Italic), 0, 5)
         ),
@@ -64,71 +78,93 @@ private fun annotatedStringConstructorExample(): AnnotatedString {
     )
 }
 
-private fun annotatedStringBuilderExample(): AnnotatedString {
-    return with(AnnotatedString.Builder("Hello")) {
+private fun annotatedStringBuilderExample(
+    text: String
+): AnnotatedString {
+    val textSplit = text.split(' ')
+    return with(AnnotatedString.Builder(textSplit[0])) {
         pushStyle(SpanStyle(color = Color.Green))
-        append(" World")
+        append(' ')
+        append(textSplit[1])
         pop()
         append("!")
-        addStyle(SpanStyle(color = Color.Red), "Hello World".length, this.length)
+        addStyle(SpanStyle(color = Color.Red), text.length, this.length)
         toAnnotatedString()
     }
 }
 
-private fun annotatedStringBuilderPushExample(): AnnotatedString {
+private fun annotatedStringBuilderPushExample(
+    text: String
+): AnnotatedString {
+    val textSplit = text.split(' ')
     return with(AnnotatedString.Builder()) {
         pushStyle(SpanStyle(color = Color.Green))
-        append("Hello")
+        append(textSplit[0])
         pop()
-        append(" World")
+        append(' ')
+        append(textSplit[1])
         toAnnotatedString()
     }
 }
 
-private fun annotatedStringBuilderPushParagraphStyleExample(): AnnotatedString {
+private fun annotatedStringBuilderPushParagraphStyleExample(
+    paragraphOne: String,
+    paragraphTwo: String,
+): AnnotatedString {
     return with(AnnotatedString.Builder()) {
         pushStyle(ParagraphStyle(lineHeight = 18.sp))
-        append("Paragraph One\n")
+        append("$paragraphOne\n")
         pop()
-        append("Paragraph Two\n")
+        append("$paragraphTwo\n")
         toAnnotatedString()
     }
 }
 
-private fun annotatedStringBuilderPushStringAnnotationExample(): AnnotatedString {
+private fun annotatedStringBuilderPushStringAnnotationExample(
+    paragraphOne: String,
+    paragraphTwo: String,
+): AnnotatedString {
     return with(AnnotatedString.Builder()) {
-        pushStringAnnotation("ParagrapLabel", "paragraph1")
-        append("Paragraph One\n")
+        pushStringAnnotation("ParagraphLabel", "paragraph1")
+        append("$paragraphOne\n")
         pop()
-        append("Paragraph Two\n")
+        append("$paragraphTwo\n")
         toAnnotatedString()
     }
 }
 
-private fun annotatedStringBuilderWithStyleExample(): AnnotatedString {
+private fun annotatedStringBuilderWithStyleExample(
+    text: String
+): AnnotatedString {
+    val textSplit = text.split(' ')
     return with(AnnotatedString.Builder()) {
         withStyle(SpanStyle(color = Color.Green)) {
-            append("Hello")
+            append(textSplit[0])
         }
         toAnnotatedString()
     }
 }
 
-private fun annotatedStringBuilderLambdaExample(): AnnotatedString {
+private fun annotatedStringBuilderLambdaExample(
+    text: String
+): AnnotatedString {
+    val textSplit = text.split(' ')
     return buildAnnotatedString {
         withStyle(SpanStyle(color = Color.Red)) {
-            append("Hello")
+            append(textSplit[0])
         }
-        append(" ")
+        append(' ')
         withStyle(SpanStyle(color = Color.Blue)) {
-            append("World!")
+            append(textSplit[1])
         }
     }
 }
 
-private fun annotatedStringAddStringAnnotationExample(): AnnotatedString {
+private fun annotatedStringAddStringAnnotationExample(
+    text: String
+): AnnotatedString {
     return with(AnnotatedString.Builder()) {
-        append("link: Jetpack Compose")
+        append(text)
         addStringAnnotation(
             tag = "URL",
             annotation = "https://developer.android.com/jetpack/compose",

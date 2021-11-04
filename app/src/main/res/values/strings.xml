@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">Jetpack Compose Playground</string>
     <!-- activity -->
     <string name="back_handler_count">Press Back count %1$d</string>
     <string name="back_handler_msg">Press more than 5 times to exit.</string>
@@ -49,9 +48,6 @@
     <string name="hide_rationale">Don\'t show rationale again</string>
     <string name="camera_permission_denied">Camera permission denied. See this FAQ with information about why we need this permission. Please, grant us access on the Settings screen.</string>
     <string name="open_settings">Open Settings</string>
-    <string name="jetpack" translatable="false">Jetpack</string>
-    <string name="compose" translatable="false">Compose</string>
-    <string name="playground" translatable="false">Playground</string>
     <string name="first_baseline_padding">Text with padding on First Baseline</string>
     <string name="normal_padding">Text with normal padding top</string>
     <string name="incoming_message">You have an incoming message !!!</string>
@@ -121,10 +117,17 @@
     <string name="dragged">Dragged</string>
     <string name="pressed">Pressed</string>
     <string name="interaction_source_message">Drag me horizontally, or press me!</string>
-    <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
     <string name="max">Max</string>
     <string name="min">Min</string>
     <string name="taking_x_size">Taking the %1$s size here..</string>
+    <string name="selected_color">Selected: %1$s color</string>
+    <string name="selectable_text">This text is selectable</string>
+    <string name="selectable_too">This one too</string>
+    <string name="selectable_as_well">This one as well</string>
+    <string name="not_selectable_text">But not this one</string>
+    <string name="neither_selectable_text">Neither this one</string>
+    <string name="selectable_again">But again, you can select this one</string>
+    <string name="selectable_this_too">And this one too</string>
     <string name="circle_shape">Circle shape</string>
     <string name="rectangle_shape">Rectangle shape</string>
     <string name="cut_corner_shape">Cut corner shape</string>
@@ -135,6 +138,11 @@
     <string name="title">Title</string>
     <string name="cancel">Cancel</string>
     <string name="show_args">Show %1$s</string>
+    <string name="menu">Menu</string>
+    <string name="select_args">Select %1$d</string>
+    <string name="selection_args">Selection %1$d</string>
+    <string name="add">Add</string>
+    <string name="switch_args">Switch %1$s</string>
     <!-- material 3 -->
     <!-- material icons -->
     <!-- material icons extended -->
@@ -146,7 +154,6 @@
     <string name="go_to_previous">Go to previous screen</string>
     <string name="item">Item: %1$d</string>
     <string name="single_item">Single Item</string>
-    <string name="layout_offset_modifier" translatable="false">Layout offset modifier</string>
     <string name="first_last_baseline">This line has the first baseline.\nThis line has the last baseline.</string>
     <string name="scroll">Scroll</string>
     <string name="smooth_scroll">Smooth scroll</string>
@@ -175,9 +182,6 @@
     <string name="popular_error">Failed to retrieve the popular list.\nPlease try again later.</string>
     <string name="releases_error">Failed to retrieve the releases list.\nPlease try again later.</string>
     <string name="clear_text">Clear text</string>
-    <string name="firebase_analytics" translatable="false">Firebase Analytics</string>
-    <string name="firebase_messaging" translatable="false">Firebase Messaging</string>
-    <string name="firebase_crashlytics" translatable="false">Firebase Crashlytics</string>
     <string name="change_application_theme_color">Change application theme color</string>
     <string name="red">Red</string>
     <string name="pink">Pink</string>
@@ -212,6 +216,8 @@
     <!-- runtime -->
     <!-- ui -->
     <string name="android_textview">This is a TextView</string>
+    <string name="hello_world">Hello world</string>
+    <string name="paragraph_args">Paragraph %1$s</string>
     <string name="android_12_blur">Blur is only available in Android 12 for now.</string>
     <string name="string_resource">String from strings.xml</string>
     <string name="color_resource">Color from colors.xml</string>
@@ -230,13 +236,11 @@
     <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>
     <string name="example">Example</string>
     <string name="string_with_format">This is %s</string>
-    <string-array name="string_array">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
-    </string-array>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
     <string name="line_through">Line Through text</string>
     <string name="underline">UnderLine text</string>
     <string name="line_through_underline">UnderLine and Line Through text</string>

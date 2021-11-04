@@ -7,6 +7,9 @@ object TestLibraries {
     const val composeUiJunit = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
     const val composeUiManifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
 
+    /* https://developer.android.com/jetpack/compose/navigation */
+    const val navigation = "androidx.navigation:navigation-testing:${Versions.navigation}"
+
     /* https://developer.android.com/jetpack/androidx/releases/test */
     const val testCore = "androidx.test:core:${Versions.test}"
 }

@@ -115,6 +115,7 @@ object AppDependencies {
     val androidTest = listOf(
         TestLibraries.composeUi,
         TestLibraries.composeUiJunit,
+        TestLibraries.navigation,
         TestLibraries.testCore,
     )
 }

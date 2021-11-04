@@ -20,7 +20,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import kotlinx.coroutines.launch
@@ -48,11 +50,13 @@ private fun ModalBottomSheetLayoutExample() {
             LazyColumn {
                 items(50) {
                     ListItem(
-                        text = { Text("Item $it") },
+                        text = {
+                            Text(stringResource(id = R.string.item, it))
+                               },
                         icon = {
                             Icon(
                                 Icons.Filled.Favorite,
-                                contentDescription = "Localized description"
+                                contentDescription = stringResource(id = R.string.favorite)
                             )
                         }
                     )

@@ -13,6 +13,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -35,7 +37,7 @@ fun BadgedBoxScreen() {
                         BadgedBox(badge = { Text("8") }) {
                             Icon(
                                 Icons.Filled.Favorite,
-                                contentDescription = "Favorite"
+                                contentDescription = stringResource(id = R.string.favorite)
                             )
                         }
                     },

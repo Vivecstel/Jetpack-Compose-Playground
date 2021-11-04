@@ -177,7 +177,7 @@ object MaterialNavRoutes {
     const val RadioButton = "radio button"
     const val RangeSlider = "range slider"
     const val Scaffold = "scaffold"
-    const val ScrollableTabRow = "scrollable Tab row"
+    const val ScrollableTabRow = "scrollable tab row"
     const val Slider = "slider"
     const val SnackBar = "snackBar"
     const val Surface = "surface"

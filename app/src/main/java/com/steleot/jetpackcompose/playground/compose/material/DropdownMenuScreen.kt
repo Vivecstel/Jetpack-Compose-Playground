@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import timber.log.Timber
 
 private const val Url = "material/DropdownMenuScreen.kt"
 
@@ -37,20 +38,26 @@ fun DropdownMenuScreen() {
                 .wrapContentSize(Alignment.Center)
         ) {
             IconButton(onClick = { expanded = true }) {
-                Icon(Icons.Filled.MoreVert, contentDescription = "Localized description")
+                Icon(Icons.Filled.MoreVert, contentDescription = null)
             }
             DropdownMenu(
                 expanded = expanded,
                 onDismissRequest = { expanded = false }
             ) {
-                DropdownMenuItem(onClick = { /* Handle refresh! */ }) {
+                DropdownMenuItem(onClick = {
+                    Timber.d("Refresh clicked")
+                }) {
                     Text("Refresh")
                 }
-                DropdownMenuItem(onClick = { /* Handle settings! */ }) {
+                DropdownMenuItem(onClick = {
+                    Timber.d("Settings clicked")
+                }) {
                     Text("Settings")
                 }
                 Divider()
-                DropdownMenuItem(onClick = { /* Handle send feedback! */ }) {
+                DropdownMenuItem(onClick = {
+                    Timber.d("Send Feedback")
+                }) {
                     Text("Send Feedback")
                 }
             }

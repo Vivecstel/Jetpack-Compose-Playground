@@ -27,7 +27,7 @@ fun LocalContentColorScreen() {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Defaul local content color is black")
+            Text("Default local content color is black")
 
             CompositionLocalProvider(LocalContentColor provides Color.Red) {
                 Text("Local content color is red")
