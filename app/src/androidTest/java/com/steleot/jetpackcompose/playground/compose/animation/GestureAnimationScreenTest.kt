@@ -12,7 +12,7 @@ class GestureAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testGestureAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 GestureAnimationScreen()

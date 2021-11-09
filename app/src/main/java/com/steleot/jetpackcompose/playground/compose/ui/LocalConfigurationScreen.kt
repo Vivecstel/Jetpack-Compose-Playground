@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -39,18 +41,15 @@ fun LocalConfigurationScreen() {
 private fun LocalConfigurationExample() {
     val configuration = LocalConfiguration.current
     Text(
-        text = """
-        Local configuration values:
-        densityDpi: ${configuration.densityDpi}
-        fontScale: ${configuration.fontScale}
-        locale: ${configuration.locale}
-        orientation: ${
-            when (configuration.orientation) {
-                Configuration.ORIENTATION_PORTRAIT -> "Portrait"
-                else -> "Landscape"
-            }
-        }
-        etc.
-    """.trimIndent()
+        text = stringResource(
+            id = R.string.local_configuration_value,
+            configuration.densityDpi,
+            configuration.fontScale,
+            configuration.locale,
+            stringResource(
+                id = if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT)
+                    R.string.portrait else R.string.landscape
+            )
+        )
     )
 }

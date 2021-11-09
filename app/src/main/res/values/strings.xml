@@ -5,7 +5,7 @@
     <string name="take_picture">Take a picture</string>
     <string name="permission_not_granted">Permission not granted</string>
     <string name="choose_contact">Choose contact</string>
-    <string name="name_with_args">Name: %1$s</string>
+    <string name="name_args">Name: %1$s</string>
     <string name="contact_not_found">Contact not found</string>
     <!-- animation -->
     <string name="tap_anywhere">Tap anywhere</string>
@@ -214,6 +214,21 @@
     <string name="search">Search</string>
     <string name="open_drawer">Open Drawer</string>
     <!-- runtime -->
+    <string name="user_name">User name is : %1$s</string>
+    <string name="count_args">Count : %1$d</string>
+    <string name="phone_args">Phone : %1$s</string>
+    <string name="id_args">Id : %1$s</string>
+    <string name="text_with_delay">%1$s with %2$d ms delay.</string>
+    <string name="try_orientation">Try orientation here.</string>
+    <string name="decrement">Decrement</string>
+    <string name="increment">Increment</string>
+    <string name="go_to_screen">Go to screen %1$d</string>
+    <string name="counter_screen_1">Counter = %1$d on Screen 1</string>
+    <string name="screen_2">Screen 2</string>
+    <string name="clicked_count">You clicked %1$d times</string>
+    <string name="click_to_close">Click to close drawer</string>
+    <string name="click_to_open">Click to open drawer</string>
+    <string name="ahoy">Ahoy</string>
     <!-- ui -->
     <string name="android_textview">This is a TextView</string>
     <string name="hello_world">Hello world</string>
@@ -229,8 +244,19 @@
     <string name="footer_text">Footer text</string>
     <string name="clipboard_example">Local Clipboard manager example</string>
     <string name="clipboard_value">Value in clipboard:</string>
+    <string name="local_configuration_value">Local configuration values:\ndensityDpi: %1$s\nfontScale: %2$s\nlocale: %3$s\norientation: %4$s\netc.</string>
+    <string name="portrait">Portrait</string>
+    <string name="landscape">Landscape</string>
     <string name="local_cache_dir">Local Context example cache dir:\n%1$s</string>
     <string name="local_density_msg">32 dp are %1$d pixels for this phone</string>
+    <string name="value_args">Value %1$d</string>
+    <string name="tap_clear_focus">Tap to clear focus</string>
+    <string name="close_keyboard_with_ime">Close keyboard on done ime action ✔</string>
+    <string name="show_keyboard">Show software keyboard.</string>
+    <string name="close_keyboard">Close software keyboard.</string>
+    <string name="unknown">Unknown</string>
+    <string name="toolbar_offset">Toolbar offset: %1$d</string>
+    <string name="pointer_input">Current offset is : %1$d, %2$d.\nTap to change.</string>
     <string name="local_font_loader">Local Font Loader with reggae one font</string>
     <string name="local_layout_direction">Local layout Direction is: %1$s</string>
     <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>
@@ -246,6 +272,7 @@
     <string name="line_through_underline">UnderLine and Line Through text</string>
     <string name="drawn_first">Drawn first</string>
     <string name="drawn_second">Drawn second</string>
+    <string name="password">Password</string>
     <!-- view model -->
     <string name="hello_with_args">Hello, %1$s</string>
     <string name="name_hint">Name</string>

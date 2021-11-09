@@ -9,6 +9,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import kotlinx.coroutines.flow.Flow
@@ -30,13 +32,14 @@ fun CollectAsStateScreen() {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            val text = stringResource(id = R.string.app_name)
             CollectAsStateFlowExample(
                 flow {
-                    emit("Jetpack compose")
+                    emit(text)
                 }
             )
             CollectAsStateStateFlowExample(
-                MutableStateFlow("Compose").asStateFlow()
+                MutableStateFlow(text).asStateFlow()
             )
         }
     }
@@ -44,12 +47,12 @@ fun CollectAsStateScreen() {
 
 @Composable
 private fun CollectAsStateFlowExample(flow: Flow<String>) {
-    val value: String by flow.collectAsState("initial")
-    Text("Value is $value")
+    val value: String by flow.collectAsState("")
+    Text(value)
 }
 
 @Composable
 private fun CollectAsStateStateFlowExample(stateFlow: StateFlow<String>) {
     val value: String by stateFlow.collectAsState()
-    Text("Value is $value")
+    Text(value)
 }

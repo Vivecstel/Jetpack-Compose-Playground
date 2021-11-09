@@ -9,6 +9,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import timber.log.Timber
@@ -43,16 +45,16 @@ private fun CurrentUserSuccess() {
 @Composable
 private fun CurrentUserFailure() {
     val user = ActiveUser.current
-    Text(text = "Active user name is : ${user.name}")
+    Text(text = stringResource(id = R.string.user_name, user.name))
 }
 
 @Suppress("CompositionLocalNaming")
 private val ActiveUser = compositionLocalOf {
     Timber.e("No active user found. Better to throw an exception here instead of timber.")
-    User(name = "Default User")
+    User(name = "John Doe")
 }
 
 internal class User(
     val id: Int = 0,
-    val name: String = "Jetpack compose",
+    val name: String = "Jetpack Compose Playground",
 )

@@ -23,7 +23,7 @@ fun SpacerScreen() {
     val msgSplit = stringResource(id = R.string.spacer_msg).split(' ')
     val toIndex = if (msgSplit.size % 2 == 0) msgSplit.size / 2 else (msgSplit.size + 1) / 2
     val columnList = msgSplit.subList(0, toIndex)
-    val rowList =msgSplit.subList(toIndex, msgSplit.size)
+    val rowList = msgSplit.subList(toIndex, msgSplit.size)
 
     DefaultScaffold(
         title = FoundationNavRoutes.Spacer,

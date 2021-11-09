@@ -2,7 +2,6 @@ package com.steleot.jetpackcompose.playground.compose.reusable
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TopAppBar
-import androidx.compose.material3.MaterialTheme as MaterialTheme3
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -10,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.material3.MaterialTheme as MaterialTheme3
 
 object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
     override val values: Sequence<String>

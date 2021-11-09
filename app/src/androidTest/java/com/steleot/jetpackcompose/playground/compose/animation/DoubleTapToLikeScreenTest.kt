@@ -12,7 +12,7 @@ class DoubleTapToLikeScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testDoubleTapToLikeScreen() {
         composeTestRule.setContent {
             TestTheme {
                 DoubleTapToLikeScreen()

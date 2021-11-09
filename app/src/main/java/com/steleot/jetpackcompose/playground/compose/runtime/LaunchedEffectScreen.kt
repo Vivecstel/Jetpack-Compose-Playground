@@ -12,6 +12,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -37,7 +39,7 @@ fun LaunchedEffectScreen() {
 private fun LaunchedEffectExample() {
     val animatedAlpha = remember { Animatable(0f) }
     Text(
-        "Hello Jetpack Compose Playground",
+        stringResource(id = R.string.hello_world),
         Modifier.graphicsLayer {
             alpha = animatedAlpha.value
             clip = true

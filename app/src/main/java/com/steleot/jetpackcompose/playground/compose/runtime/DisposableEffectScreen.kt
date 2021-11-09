@@ -10,6 +10,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import timber.log.Timber
@@ -28,7 +30,8 @@ fun DisposableEffectScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             val userValue = disposableEffectExample()
-            Text("User name is: ${userValue?.name ?: "empty"}")
+            Text(
+                stringResource(id = R.string.user_name, userValue?.name ?: "null"))
         }
     }
 }

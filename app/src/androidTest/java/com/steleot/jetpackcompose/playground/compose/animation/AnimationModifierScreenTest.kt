@@ -12,7 +12,7 @@ class AnimationModifierScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testAnimationModifierScreen() {
         composeTestRule.setContent {
             TestTheme {
                 AnimationModifierScreen()

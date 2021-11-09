@@ -52,7 +52,7 @@ private fun ModalBottomSheetLayoutExample() {
                     ListItem(
                         text = {
                             Text(stringResource(id = R.string.item, it))
-                               },
+                        },
                         icon = {
                             Icon(
                                 Icons.Filled.Favorite,

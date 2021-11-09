@@ -12,7 +12,7 @@ class InfiniteTransitionScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testInfiniteTransitionScreen() {
         composeTestRule.setContent {
             TestTheme {
                 InfiniteTransitionScreen()

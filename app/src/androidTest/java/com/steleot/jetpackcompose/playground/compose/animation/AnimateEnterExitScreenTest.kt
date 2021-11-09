@@ -12,7 +12,7 @@ class AnimateEnterExitScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testAnimateEnterExitScreen() {
         composeTestRule.setContent {
             TestTheme {
                 AnimateEnterExitScreen()

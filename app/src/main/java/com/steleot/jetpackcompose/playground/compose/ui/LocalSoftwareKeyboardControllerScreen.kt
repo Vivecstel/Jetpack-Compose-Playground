@@ -17,9 +17,11 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -39,10 +41,11 @@ fun LocalSoftwareKeyboardControllerScreen() {
 @Composable
 private fun LocalSoftwareKeyboardControllerExample() {
     val keyboardController = LocalSoftwareKeyboardController.current
+    val context = LocalContext.current
 
     val focusRequester = FocusRequester()
     val (text, setText) = remember {
-        mutableStateOf("Close keyboard on done ime action (blue ✔️)")
+        mutableStateOf(context.getString(R.string.close_keyboard_with_ime))
     }
     Column(Modifier.padding(16.dp)) {
         TextField(
@@ -64,7 +67,7 @@ private fun LocalSoftwareKeyboardControllerExample() {
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Show software keyboard.")
+            Text(context.getString(R.string.show_keyboard))
         }
     }
 }

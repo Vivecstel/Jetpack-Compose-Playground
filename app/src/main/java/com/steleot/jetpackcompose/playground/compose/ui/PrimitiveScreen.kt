@@ -44,13 +44,14 @@ fun PrimitiveScreen() {
             }
 
             Text(
-                text = "Boolean resource: ${booleanResource(id = R.bool.boolean_resource)}",
+                text = "${booleanResource(id = R.bool.boolean_resource)}",
                 modifier = Modifier.padding(16.dp)
             )
 
+            val padding = dimensionResource(id = R.dimen.dimen_resource)
             Text(
-                text = "Padding from dimension resource",
-                modifier = Modifier.padding(dimensionResource(id = R.dimen.dimen_resource))
+                text = "Padding : $padding",
+                modifier = Modifier.padding(padding)
             )
         }
     }

@@ -12,7 +12,7 @@ class SingleValueColorAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testSingleValueColorAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 SingleValueColorAnimationScreen()

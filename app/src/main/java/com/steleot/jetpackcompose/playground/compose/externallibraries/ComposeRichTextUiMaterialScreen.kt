@@ -57,7 +57,7 @@ private fun BasicRichTextExample() {
 
         Heading(0, stringResource(id = R.string.code_block))
         CodeBlock(
-    """
+            """
       {
         "Hello": "world!"
       }

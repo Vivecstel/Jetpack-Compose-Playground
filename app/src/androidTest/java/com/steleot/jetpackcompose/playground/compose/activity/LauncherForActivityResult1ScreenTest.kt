@@ -12,7 +12,7 @@ class LauncherForActivityResult1ScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testLauncherForActivityResult1Screen() {
         composeTestRule.setContent {
             TestTheme {
                 LauncherForActivityResult1Screen()

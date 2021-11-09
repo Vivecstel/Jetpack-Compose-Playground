@@ -12,7 +12,7 @@ class AnimatedContentScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testAnimatedContentScreen() {
         composeTestRule.setContent {
             TestTheme {
                 AnimatedContentScreen()

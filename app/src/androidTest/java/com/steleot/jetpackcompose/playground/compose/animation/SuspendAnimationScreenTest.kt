@@ -12,7 +12,7 @@ class SuspendAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testSuspendAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 SuspendAnimationScreen()

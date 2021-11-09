@@ -12,7 +12,7 @@ class CrossfadeAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testCrossfadeAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 CrossfadeAnimationScreen()

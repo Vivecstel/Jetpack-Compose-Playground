@@ -69,7 +69,8 @@ private fun NavigationMaterialExample() {
                 }
             }
             bottomSheet(Destinations.Sheet + "?arg={arg}") { backstackEntry ->
-                val arg = backstackEntry.arguments?.getString("arg") ?: stringResource(id = R.string.missing_argument)
+                val arg = backstackEntry.arguments?.getString("arg")
+                    ?: stringResource(id = R.string.missing_argument)
                 BottomSheet(
                     showFeed = { navController.navigate(Destinations.Feed) },
                     showAnotherSheet = {

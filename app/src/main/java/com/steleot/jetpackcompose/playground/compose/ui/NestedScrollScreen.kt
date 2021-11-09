@@ -22,8 +22,10 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import kotlin.math.roundToInt
@@ -69,7 +71,8 @@ private fun NestedScrollConnectionExample() {
         LazyColumn(contentPadding = PaddingValues(top = toolbarHeight)) {
             items(100) { index ->
                 Text(
-                    "I'm item $index", modifier = Modifier
+                    stringResource(id = R.string.item, index),
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
                 )
@@ -79,7 +82,11 @@ private fun NestedScrollConnectionExample() {
             modifier = Modifier
                 .height(toolbarHeight)
                 .offset { IntOffset(x = 0, y = toolbarOffsetHeightPx.value.roundToInt()) },
-            title = { Text("toolbar offset is ${toolbarOffsetHeightPx.value}") }
+            title = {
+                Text(
+                    stringResource(id = R.string.toolbar_offset, toolbarOffsetHeightPx.value)
+                )
+            }
         )
     }
 }

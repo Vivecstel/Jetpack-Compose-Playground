@@ -23,6 +23,7 @@ import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.modifier.modifierLocalProvider
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -48,12 +49,12 @@ fun ModifierLocalScreen() {
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun ModifierLocalExample() {
-    val localMessage = modifierLocalOf { "Unknown" }
     val context = LocalContext.current
+    val localMessage = modifierLocalOf { context.getString(R.string.unknown) }
 
     Box(
         Modifier
-            .modifierLocalProvider(localMessage) { "Jetpack Compose" }
+            .modifierLocalProvider(localMessage) { context.getString(R.string.app_name) }
             .size(150.dp)
             .background(MaterialTheme.colors.primary)
             .composed {
@@ -62,7 +63,11 @@ private fun ModifierLocalExample() {
                     .modifierLocalConsumer { message = localMessage.current }
                     .clickable {
                         Toast
-                            .makeText(context, "Hello $message", Toast.LENGTH_SHORT)
+                            .makeText(
+                                context,
+                                context.getString(R.string.hello_with_args, message),
+                                Toast.LENGTH_SHORT
+                            )
                             .show()
                     }
             }

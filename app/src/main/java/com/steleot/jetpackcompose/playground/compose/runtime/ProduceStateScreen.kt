@@ -13,7 +13,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import kotlinx.coroutines.delay
@@ -90,7 +92,10 @@ private fun ProduceStateExample(viewModel: ProduceStateViewModel) {
         is UiState.Loading -> CircularProgressIndicator()
         is UiState.Data -> Column {
             for (person in state.data) {
-                Text("Hello, ${person.name}", modifier = Modifier.padding(8.dp))
+                Text(
+                    stringResource(id = R.string.hello_with_args, person.name),
+                    modifier = Modifier.padding(8.dp)
+                )
             }
         }
     }
@@ -110,6 +115,6 @@ private fun ProduceStateAwaitDisposeExample(viewModel: ProduceStateViewModel) {
     }
     when (val person = currentPerson) {
         null -> CircularProgressIndicator()
-        else -> Text("Hello, ${person.name}")
+        else -> Text(stringResource(id = R.string.hello_with_args, person.name))
     }
 }

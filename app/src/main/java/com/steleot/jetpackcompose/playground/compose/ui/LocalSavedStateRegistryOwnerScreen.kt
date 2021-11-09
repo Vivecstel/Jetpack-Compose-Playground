@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSavedStateRegistryOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -37,7 +39,9 @@ fun LocalSavedStateRegistryOwnerScreen() {
 private fun LocalSavedStateRegistryOwnerExample() {
     val savedStateRegistryOwner = LocalSavedStateRegistryOwner.current
     Text(
-        text = "Local Saved State Registry Owner:\n" +
-                "isRestored: ${savedStateRegistryOwner.savedStateRegistry.isRestored}"
+        text = stringResource(
+            id = R.string.local_saved_state_registry_msg,
+            savedStateRegistryOwner.savedStateRegistry.isRestored
+        )
     )
 }

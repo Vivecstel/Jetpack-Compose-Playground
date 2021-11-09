@@ -12,7 +12,7 @@ class RotateAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testRotateAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 RotateAnimationScreen()

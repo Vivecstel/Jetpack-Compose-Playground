@@ -13,7 +13,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -48,5 +50,5 @@ fun DerivedStateExample() {
 
 @Composable
 private fun CountDisplay(count: State<Int>) {
-    Text("Count: ${count.value}")
+    Text(stringResource(id = R.string.count_args, count.value))
 }

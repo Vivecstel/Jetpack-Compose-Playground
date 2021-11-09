@@ -8,7 +8,6 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
-import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
 import org.junit.Rule
 import org.junit.Test
 

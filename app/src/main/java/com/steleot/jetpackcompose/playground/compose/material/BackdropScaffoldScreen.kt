@@ -61,11 +61,17 @@ fun BackdropScaffoldExample() {
                 navigationIcon = {
                     if (scaffoldState.isConcealed) {
                         IconButton(onClick = { scope.launch { scaffoldState.reveal() } }) {
-                            Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.menu))
+                            Icon(
+                                Icons.Filled.Menu,
+                                contentDescription = stringResource(id = R.string.menu)
+                            )
                         }
                     } else {
                         IconButton(onClick = { scope.launch { scaffoldState.conceal() } }) {
-                            Icon(Icons.Filled.Close, contentDescription = stringResource(id = R.string.close))
+                            Icon(
+                                Icons.Filled.Close,
+                                contentDescription = stringResource(id = R.string.close)
+                            )
                         }
                     }
                 },
@@ -79,7 +85,10 @@ fun BackdropScaffoldExample() {
                             }
                         }
                     ) {
-                        Icon(Icons.Filled.Favorite, contentDescription = stringResource(id = R.string.favorite))
+                        Icon(
+                            Icons.Filled.Favorite,
+                            contentDescription = stringResource(id = R.string.favorite)
+                        )
                     }
                 },
                 elevation = 0.dp,

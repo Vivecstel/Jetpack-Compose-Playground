@@ -64,7 +64,7 @@ private fun LauncherForActivityResultExample() {
             cursor.moveToFirst()
             val nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
             val name = cursor.getString(nameIndex)
-            Text(text = stringResource(id = R.string.name_with_args, name))
+            Text(text = stringResource(id = R.string.name_args, name))
             it.close()
         } ?: run {
             Text(text = stringResource(id = R.string.contact_not_found))

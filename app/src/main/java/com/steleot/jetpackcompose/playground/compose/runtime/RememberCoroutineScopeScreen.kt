@@ -14,8 +14,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 import kotlinx.coroutines.delay
@@ -38,9 +40,12 @@ fun RememberCoroutineScopeScreen() {
     }
 }
 
+private const val Delay = 500L
+
 @Composable
 private fun RememberCoroutineScopeExample() {
     val scope = rememberCoroutineScope()
+    val context = LocalContext.current
     val state = remember { mutableStateOf(TextFieldValue(text = "Jetpack")) }
     val delayedState = remember { mutableStateOf("") }
 
@@ -53,8 +58,8 @@ private fun RememberCoroutineScopeExample() {
             onValueChange = {
                 state.value = it
                 scope.launch {
-                    delay(500L)
-                    delayedState.value = "${it.text} with 500 ms delay"
+                    delay(Delay)
+                    delayedState.value = context.getString(R.string.text_with_delay, it.text, Delay)
                 }
             },
             textStyle = MaterialTheme.typography.body1,

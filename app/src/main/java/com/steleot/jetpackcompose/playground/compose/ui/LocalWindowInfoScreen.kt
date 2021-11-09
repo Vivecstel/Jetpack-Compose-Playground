@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalWindowInfo
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -36,5 +38,5 @@ fun LocalWindowInfoScreen() {
 @Composable
 private fun LocalWindowInfoExample() {
     val windowInfo = LocalWindowInfo.current
-    Text(text = "Local Window Info:\nisWindowFocused: ${windowInfo.isWindowFocused}")
+    Text(text = stringResource(id = R.string.local_window_info, windowInfo.isWindowFocused))
 }

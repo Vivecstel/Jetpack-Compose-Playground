@@ -13,6 +13,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -41,7 +43,10 @@ fun RememberScreen() {
 private fun RememberExample() {
     val count = remember { mutableStateOf(0) }
     CustomButton(onClick = { count.value++ }) {
-        Text("You clicked ${count.value} times", color = MaterialTheme.colors.onPrimary)
+        Text(
+            stringResource(id = R.string.clicked_count, count.value),
+            color = MaterialTheme.colors.onPrimary
+        )
     }
 }
 
@@ -49,7 +54,10 @@ private fun RememberExample() {
 private fun DestructuredRememberExample() {
     val (count, setCount) = remember { mutableStateOf(0) }
     CustomButton(onClick = { setCount(count + 1) }) {
-        Text("You clicked $count times", color = MaterialTheme.colors.onPrimary)
+        Text(
+            stringResource(id = R.string.clicked_count, count),
+            color = MaterialTheme.colors.onPrimary
+        )
     }
 }
 
@@ -57,7 +65,10 @@ private fun DestructuredRememberExample() {
 private fun DelegatedRememberExample() {
     var count by remember { mutableStateOf(0) }
     CustomButton(onClick = { count += 1 }) {
-        Text("You clicked $count times", color = MaterialTheme.colors.onPrimary)
+        Text(
+            stringResource(id = R.string.clicked_count, count),
+            color = MaterialTheme.colors.onPrimary
+        )
     }
 }
 
@@ -66,10 +77,10 @@ private fun ReadOnlyRememberExample() {
 
     @Composable
     fun observeData(): State<String> = object : State<String> {
-        override val value: String = "Current value"
+        override val value: String = "Jetpack"
     }
 
     val currentValue by observeData()
 
-    Text("Data: $currentValue")
+    Text(currentValue)
 }

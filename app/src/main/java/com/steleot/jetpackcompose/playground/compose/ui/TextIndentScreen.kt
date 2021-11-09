@@ -7,10 +7,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextIndent
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -40,9 +42,7 @@ private fun TextIndentExample() {
         textIndent = TextIndent(firstLine = 14.sp, restLine = 3.sp)
     )
     Text(
-        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                "incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis " +
-                "nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        text = stringResource(id = R.string.lorem_ipsum),
         style = textStyle
     )
 }

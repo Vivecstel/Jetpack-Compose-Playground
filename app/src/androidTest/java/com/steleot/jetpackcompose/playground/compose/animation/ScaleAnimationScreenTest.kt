@@ -12,7 +12,7 @@ class ScaleAnimationScreenTest {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testBackHandlerScreen() {
+    fun testScaleAnimationScreen() {
         composeTestRule.setContent {
             TestTheme {
                 ScaleAnimationScreen()
