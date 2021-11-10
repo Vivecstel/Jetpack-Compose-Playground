@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
-import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
@@ -30,7 +29,6 @@ import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -114,7 +112,6 @@ private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io
 fun MainScreenWithDrawer(
     navController: NavHostController,
     firebaseAuth: FirebaseAuth,
-    firebaseAnalytics: FirebaseAnalytics,
     googleSignInClient: GoogleSignInClient,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
@@ -136,9 +133,6 @@ fun MainScreenWithDrawer(
                     val credential = GoogleAuthProvider.getCredential(idToken, null)
                     val result = firebaseAuth.signInWithCredential(credential).await()
                     Timber.d("Successful login.")
-                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, Bundle().apply {
-                        putString(FirebaseAnalytics.Param.METHOD, "google")
-                    })
                     setUser(result.user)
                 } catch (e: Exception) {
                     Timber.e(e, "Failed to sign in with Google.")

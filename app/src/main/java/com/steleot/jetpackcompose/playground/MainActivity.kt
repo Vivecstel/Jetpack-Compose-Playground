@@ -306,13 +306,20 @@ fun JetpackComposeApp(
                         addMainRoutes(
                             navController,
                             firebaseAuth,
-                            firebaseAnalytics,
                             googleSignInClient,
                             themeState,
                             setTheme = { newThemeState ->
                                 themeState = newThemeState
                             }
                         ) { newUser ->
+                            firebaseAnalytics.logEvent(
+                                if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
+                                Bundle().apply {
+                                    if (user != null) putString(
+                                        FirebaseAnalytics.Param.METHOD,
+                                        "google"
+                                    )
+                                })
                             user = newUser
                         }
                         /* activity */

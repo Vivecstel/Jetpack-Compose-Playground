@@ -13,11 +13,13 @@ class ComposeParticleSystemScreenTest {
 
     @Test
     fun testComposeParticleSystemScreen() {
+        composeTestRule.mainClock.autoAdvance = false
         composeTestRule.setContent {
             TestTheme {
-                //ComposeParticleSystemScreen()
+                ComposeParticleSystemScreen()
             }
         }
+        composeTestRule.mainClock.advanceTimeBy(5_000L)
         // todo
     }
 }

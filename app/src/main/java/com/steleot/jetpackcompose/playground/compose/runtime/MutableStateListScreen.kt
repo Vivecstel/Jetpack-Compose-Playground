@@ -18,7 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -36,7 +38,8 @@ fun MutableStateListScreen() {
 
 @Composable
 private fun MutableStateListExample() {
-    var name by remember { mutableStateOf("item") }
+    val context = LocalContext.current
+    var name by remember { mutableStateOf(context.getString(R.string.single_item)) }
     val names = remember { mutableStateListOf<String>() }
     val scrollState = rememberScrollState()
 
@@ -58,10 +61,13 @@ private fun MutableStateListExample() {
                     .weight(1f)
                     .padding(horizontal = 8.dp)
             ) {
-                Text("Add")
+                Text(context.getString(R.string.add))
             }
         }
-        Text("Added items:", modifier = Modifier.padding(vertical = 16.dp))
+        Text(
+            context.getString(R.string.added_items),
+            modifier = Modifier.padding(vertical = 16.dp)
+        )
         Column(
             modifier = Modifier.verticalScroll(scrollState)
         ) {

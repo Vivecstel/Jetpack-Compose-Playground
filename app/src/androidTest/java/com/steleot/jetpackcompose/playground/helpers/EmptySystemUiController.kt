@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.helpers
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.SystemUiController
 
-class EmptySystemUiController: SystemUiController {
+class EmptySystemUiController : SystemUiController {
 
     override var isNavigationBarContrastEnforced: Boolean = false
     override var isNavigationBarVisible: Boolean = false

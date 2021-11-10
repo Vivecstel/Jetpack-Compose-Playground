@@ -31,7 +31,8 @@ fun DisposableEffectScreen() {
         ) {
             val userValue = disposableEffectExample()
             Text(
-                stringResource(id = R.string.user_name, userValue?.name ?: "null"))
+                stringResource(id = R.string.user_name, userValue?.name ?: "null")
+            )
         }
     }
 }
