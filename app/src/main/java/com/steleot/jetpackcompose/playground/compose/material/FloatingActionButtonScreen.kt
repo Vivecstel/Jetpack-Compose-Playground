@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/FloatingActionButton3Screen.kt"
+private const val Url = "material/FloatingActionButtonScreen.kt"
 
 @Composable
 fun FloatingActionButtonScreen() {
@@ -47,7 +47,7 @@ private fun IconFloatingActionButton() {
     FloatingActionButton(onClick = {}) {
         Icon(
             imageVector = Icons.Outlined.Star,
-            contentDescription = "Icon Floating Action Button"
+            contentDescription = null
         )
     }
 }
@@ -62,7 +62,7 @@ private fun ColoredFloatingActionButton() {
     ) {
         Icon(
             imageVector = Icons.Filled.Star,
-            contentDescription = "Colored Floating Action Button"
+            contentDescription = null
         )
     }
 }
@@ -77,7 +77,7 @@ private fun ElevatedFloatingActionButton() {
     ) {
         Icon(
             imageVector = Icons.Filled.Star,
-            contentDescription = "Elevated Floating Action Button"
+            contentDescription = null
         )
     }
 }
@@ -91,7 +91,7 @@ private fun RectangleShapeFloatingActionButton() {
     ) {
         Icon(
             imageVector = Icons.Filled.Star,
-            contentDescription = "Rectangle Shape Floating Action Button"
+            contentDescription = null
         )
     }
 }

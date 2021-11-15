@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/IconToggleButton3Screen.kt"
+private const val Url = "material/IconToggleButtonScreen.kt"
 
 @Composable
 fun IconToggleButtonScreen() {
@@ -55,7 +55,7 @@ fun DefaultIconToggleButton() {
         )
         Icon(
             Icons.Filled.Favorite,
-            contentDescription = "Default Icon Toggle Button",
+            contentDescription = null,
             tint = tint,
             modifier = Modifier.size(32.dp)
         )

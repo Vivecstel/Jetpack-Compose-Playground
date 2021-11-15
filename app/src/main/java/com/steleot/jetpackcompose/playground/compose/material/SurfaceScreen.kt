@@ -9,7 +9,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/Surface3Screen.kt"
+private const val Url = "material/SurfaceScreen.kt"
 
 @Composable
 fun SurfaceScreen() {

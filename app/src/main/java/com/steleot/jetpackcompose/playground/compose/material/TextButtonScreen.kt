@@ -9,11 +9,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults.buttonColors
-import androidx.compose.material.ButtonDefaults.elevation
-import androidx.compose.material.OutlinedButton
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,12 +23,12 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/ButtonScreen.kt"
+private const val Url = "material/TextButtonScreen.kt"
 
 @Composable
-fun ButtonScreen() {
+fun TextButtonScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Button,
+        title = MaterialNavRoutes.TextButton,
         link = Url,
     ) {
         val scrollState = rememberScrollState()
@@ -40,25 +38,24 @@ fun ButtonScreen() {
                 .verticalScroll(scrollState),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            DefaultButton()
-            CutCornerShapeButton()
-            RoundedCornerShapeButton()
-            BackgroundColorButton()
-            ContentColorButton()
-            DisabledBackgroundColorButton()
-            DisabledContentColorButton()
-            ContentPaddingButton()
-            ElevationPaddingButton()
-            BorderButton()
-            DisabledButton()
+            DefaultTextButton()
+            CutCornerShapeTextButton()
+            RoundedCornerShapeTextButton()
+            BackgroundColorTextButton()
+            ContentColorTextButton()
+            DisabledContentColorTextButton()
+            ContentPaddingTextButton()
+            ElevationPaddingTextButton()
+            BorderTextButton()
+            DisabledTextButton()
         }
     }
 }
 
 @Preview
 @Composable
-private fun DefaultButton() {
-    Button(
+private fun DefaultTextButton() {
+    TextButton(
         onClick = {},
         modifier = Modifier.padding(vertical = 4.dp)
     ) {
@@ -71,8 +68,8 @@ private fun DefaultButton() {
 
 @Preview
 @Composable
-private fun CutCornerShapeButton() {
-    Button(
+private fun CutCornerShapeTextButton() {
+    TextButton(
         onClick = {},
         shape = CutCornerShape(12.dp),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -86,8 +83,8 @@ private fun CutCornerShapeButton() {
 
 @Preview
 @Composable
-private fun RoundedCornerShapeButton() {
-    Button(
+private fun RoundedCornerShapeTextButton() {
+    TextButton(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -101,10 +98,10 @@ private fun RoundedCornerShapeButton() {
 
 @Preview
 @Composable
-private fun BackgroundColorButton() {
-    Button(
+private fun BackgroundColorTextButton() {
+    TextButton(
         onClick = {},
-        colors = buttonColors(
+        colors = ButtonDefaults.textButtonColors(
             backgroundColor = Color.Red
         ),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -118,11 +115,11 @@ private fun BackgroundColorButton() {
 
 @Preview
 @Composable
-private fun ContentColorButton() {
-    Button(
+private fun ContentColorTextButton() {
+    TextButton(
         onClick = {},
-        colors = buttonColors(
-            contentColor = Color.White
+        colors = ButtonDefaults.textButtonColors(
+            contentColor = Color.Cyan
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -135,12 +132,12 @@ private fun ContentColorButton() {
 
 @Preview
 @Composable
-private fun DisabledBackgroundColorButton() {
-    Button(
+private fun DisabledContentColorTextButton() {
+    TextButton(
         enabled = false,
         onClick = {},
-        colors = buttonColors(
-            disabledBackgroundColor = Color.Gray
+        colors = ButtonDefaults.textButtonColors(
+            disabledContentColor = Color.Magenta,
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -153,27 +150,8 @@ private fun DisabledBackgroundColorButton() {
 
 @Preview
 @Composable
-private fun DisabledContentColorButton() {
-    Button(
-        enabled = false,
-        onClick = {},
-        colors = buttonColors(
-            disabledBackgroundColor = Color.Gray,
-            disabledContentColor = Color.Black,
-        ),
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun ContentPaddingButton() {
-    Button(
+private fun ContentPaddingTextButton() {
+    TextButton(
         onClick = {},
         contentPadding = PaddingValues(32.dp),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -187,13 +165,16 @@ private fun ContentPaddingButton() {
 
 @Preview
 @Composable
-private fun ElevationPaddingButton() {
-    Button(
+private fun ElevationPaddingTextButton() {
+    TextButton(
         onClick = {},
-        elevation = elevation(
-            defaultElevation = 12.dp,
-            pressedElevation = 12.dp,
-            disabledElevation = 2.dp,
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 4.dp,
+            pressedElevation = 4.dp,
+            disabledElevation = 4.dp,
+        ),
+        colors = ButtonDefaults.textButtonColors(
+            backgroundColor = Color.Red,
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -206,8 +187,8 @@ private fun ElevationPaddingButton() {
 
 @Preview
 @Composable
-private fun BorderButton() {
-    Button(
+private fun BorderTextButton() {
+    TextButton(
         onClick = {},
         border = BorderStroke(2.dp, Color.Red),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -221,8 +202,8 @@ private fun BorderButton() {
 
 @Preview
 @Composable
-private fun DisabledButton() {
-    Button(
+private fun DisabledTextButton() {
+    TextButton(
         onClick = {},
         enabled = true,
         modifier = Modifier.padding(vertical = 4.dp),
@@ -230,21 +211,6 @@ private fun DisabledButton() {
         Text(
             text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun OutlinedDefaultButton() {
-    OutlinedButton(
-        onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp),
-            color = Color.White
         )
     }
 }

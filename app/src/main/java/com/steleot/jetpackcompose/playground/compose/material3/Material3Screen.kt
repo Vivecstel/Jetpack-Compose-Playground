@@ -30,12 +30,12 @@ val routes = listOf(
     Material3NavRoutes.NavigationBar,
     Material3NavRoutes.NavigationDrawer,
     Material3NavRoutes.NavigationRail3,
-    Material3NavRoutes.OutlinedButton,
+    Material3NavRoutes.OutlinedButton3,
     Material3NavRoutes.Scaffold3,
     Material3NavRoutes.SmallFloatingActionButton,
     Material3NavRoutes.SmallTopAppBar,
     Material3NavRoutes.Surface3,
-    Material3NavRoutes.TextButton,
+    Material3NavRoutes.TextButton3,
     Material3NavRoutes.Text3,
 )
 

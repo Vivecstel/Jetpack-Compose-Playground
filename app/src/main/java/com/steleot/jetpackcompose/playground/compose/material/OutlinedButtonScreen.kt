@@ -9,11 +9,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults.buttonColors
-import androidx.compose.material.ButtonDefaults.elevation
-import androidx.compose.material.OutlinedButton
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.OutlinedButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,12 +24,12 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/ButtonScreen.kt"
+private const val Url = "material/OutlinedButtonScreen.kt"
 
 @Composable
-fun ButtonScreen() {
+fun OutlinedButtonScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Button,
+        title = MaterialNavRoutes.OutlinedButton,
         link = Url,
     ) {
         val scrollState = rememberScrollState()
@@ -40,25 +39,24 @@ fun ButtonScreen() {
                 .verticalScroll(scrollState),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            DefaultButton()
-            CutCornerShapeButton()
-            RoundedCornerShapeButton()
-            BackgroundColorButton()
-            ContentColorButton()
-            DisabledBackgroundColorButton()
-            DisabledContentColorButton()
-            ContentPaddingButton()
-            ElevationPaddingButton()
-            BorderButton()
-            DisabledButton()
+            DefaultOutlinedButton()
+            CutCornerShapeOutlinedButton()
+            RoundedCornerShapeOutlinedButton()
+            BackgroundColorOutlinedButton()
+            ContentColorOutlinedButton()
+            DisabledContentColorOutlinedButton()
+            ContentPaddingOutlinedButton()
+            ElevationPaddingOutlinedButton()
+            BorderOutlinedButton()
+            DisabledOutlinedButton()
         }
     }
 }
 
 @Preview
 @Composable
-private fun DefaultButton() {
-    Button(
+private fun DefaultOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         modifier = Modifier.padding(vertical = 4.dp)
     ) {
@@ -71,10 +69,11 @@ private fun DefaultButton() {
 
 @Preview
 @Composable
-private fun CutCornerShapeButton() {
-    Button(
+private fun CutCornerShapeOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         shape = CutCornerShape(12.dp),
+        border = BorderStroke(2.dp, MaterialTheme.colors.primary),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
@@ -86,8 +85,8 @@ private fun CutCornerShapeButton() {
 
 @Preview
 @Composable
-private fun RoundedCornerShapeButton() {
-    Button(
+private fun RoundedCornerShapeOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -101,10 +100,10 @@ private fun RoundedCornerShapeButton() {
 
 @Preview
 @Composable
-private fun BackgroundColorButton() {
-    Button(
+private fun BackgroundColorOutlinedButton() {
+    OutlinedButton(
         onClick = {},
-        colors = buttonColors(
+        colors = ButtonDefaults.outlinedButtonColors(
             backgroundColor = Color.Red
         ),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -118,11 +117,11 @@ private fun BackgroundColorButton() {
 
 @Preview
 @Composable
-private fun ContentColorButton() {
-    Button(
+private fun ContentColorOutlinedButton() {
+    OutlinedButton(
         onClick = {},
-        colors = buttonColors(
-            contentColor = Color.White
+        colors = ButtonDefaults.outlinedButtonColors(
+            contentColor = Color.Cyan
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -135,12 +134,12 @@ private fun ContentColorButton() {
 
 @Preview
 @Composable
-private fun DisabledBackgroundColorButton() {
-    Button(
+private fun DisabledContentColorOutlinedButton() {
+    OutlinedButton(
         enabled = false,
         onClick = {},
-        colors = buttonColors(
-            disabledBackgroundColor = Color.Gray
+        colors = ButtonDefaults.outlinedButtonColors(
+            disabledContentColor = Color.Magenta,
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -153,27 +152,8 @@ private fun DisabledBackgroundColorButton() {
 
 @Preview
 @Composable
-private fun DisabledContentColorButton() {
-    Button(
-        enabled = false,
-        onClick = {},
-        colors = buttonColors(
-            disabledBackgroundColor = Color.Gray,
-            disabledContentColor = Color.Black,
-        ),
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun ContentPaddingButton() {
-    Button(
+private fun ContentPaddingOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         contentPadding = PaddingValues(32.dp),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -187,13 +167,13 @@ private fun ContentPaddingButton() {
 
 @Preview
 @Composable
-private fun ElevationPaddingButton() {
-    Button(
+private fun ElevationPaddingOutlinedButton() {
+    OutlinedButton(
         onClick = {},
-        elevation = elevation(
-            defaultElevation = 12.dp,
-            pressedElevation = 12.dp,
-            disabledElevation = 2.dp,
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 4.dp,
+            pressedElevation = 4.dp,
+            disabledElevation = 4.dp,
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
@@ -206,8 +186,8 @@ private fun ElevationPaddingButton() {
 
 @Preview
 @Composable
-private fun BorderButton() {
-    Button(
+private fun BorderOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         border = BorderStroke(2.dp, Color.Red),
         modifier = Modifier.padding(vertical = 4.dp),
@@ -221,8 +201,8 @@ private fun BorderButton() {
 
 @Preview
 @Composable
-private fun DisabledButton() {
-    Button(
+private fun DisabledOutlinedButton() {
+    OutlinedButton(
         onClick = {},
         enabled = true,
         modifier = Modifier.padding(vertical = 4.dp),
@@ -230,21 +210,6 @@ private fun DisabledButton() {
         Text(
             text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun OutlinedDefaultButton() {
-    OutlinedButton(
-        onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp),
-            color = Color.White
         )
     }
 }

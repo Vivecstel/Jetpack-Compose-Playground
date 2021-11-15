@@ -27,6 +27,9 @@ val ribbonRoutes = setOf(
     ExternalLibrariesNavRoutes.Gap,
     ExternalLibrariesNavRoutes.HtmlText,
     ExternalLibrariesNavRoutes.Snapper,
+    MainNavRoutes.Material,
+    MaterialNavRoutes.OutlinedButton,
+    MaterialNavRoutes.TextButton,
     MainNavRoutes.Material3,
     Material3NavRoutes.AlertDialog3,
     /* 3.3.0 */

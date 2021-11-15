@@ -146,6 +146,12 @@
     <string name="click_to_expand">Click to expand drawer</string>
     <string name="person">Person</string>
     <string name="table_chart">Table Chart</string>
+    <string name="checkbox_msg">Checkbox label: %1$s</string>
+    <string name="is_checked">is checked</string>
+    <string name="is_not_checked">is not checked</string>
+    <string name="refresh">Refresh</string>
+    <string name="label">Label</string>
+    <string name="option_args">Option %1$d</string>
     <string name="show_snackbar">Show Snackbar</string>
     <string name="surface_msg">Background color is from material theme background and text color is from error</string>
     <string name="swipe_left_right">Swipe me left or right!</string>

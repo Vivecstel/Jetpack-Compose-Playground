@@ -174,6 +174,7 @@ import com.steleot.jetpackcompose.playground.compose.material.MaterialThemeScree
 import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalDrawerScreen
 import com.steleot.jetpackcompose.playground.compose.material.NavigationRailScreen
+import com.steleot.jetpackcompose.playground.compose.material.OutlinedButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.OutlinedTextFieldScreen
 import com.steleot.jetpackcompose.playground.compose.material.ProgressScreen
 import com.steleot.jetpackcompose.playground.compose.material.RadioButtonScreen
@@ -187,6 +188,7 @@ import com.steleot.jetpackcompose.playground.compose.material.SwipeToDismissScre
 import com.steleot.jetpackcompose.playground.compose.material.SwipeableScreen
 import com.steleot.jetpackcompose.playground.compose.material.SwitchScreen
 import com.steleot.jetpackcompose.playground.compose.material.TabRowScreen
+import com.steleot.jetpackcompose.playground.compose.material.TextButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material.TextFieldScreen
 import com.steleot.jetpackcompose.playground.compose.material.TextScreen
 import com.steleot.jetpackcompose.playground.compose.material.TopAppBarScreen
@@ -214,13 +216,13 @@ import com.steleot.jetpackcompose.playground.compose.material3.MediumTopAppBarSc
 import com.steleot.jetpackcompose.playground.compose.material3.NavigationBarScreen
 import com.steleot.jetpackcompose.playground.compose.material3.NavigationDrawerScreen
 import com.steleot.jetpackcompose.playground.compose.material3.NavigationRail3Screen
-import com.steleot.jetpackcompose.playground.compose.material3.OutlinedButtonScreen
+import com.steleot.jetpackcompose.playground.compose.material3.OutlinedButton3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Scaffold3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.SmallFloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material3.SmallTopAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material3.Surface3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Text3Screen
-import com.steleot.jetpackcompose.playground.compose.material3.TextButtonScreen
+import com.steleot.jetpackcompose.playground.compose.material3.TextButton3Screen
 import com.steleot.jetpackcompose.playground.compose.materialicons.FilledScreen
 import com.steleot.jetpackcompose.playground.compose.materialicons.MaterialIconsScreen
 import com.steleot.jetpackcompose.playground.compose.materialicons.OutlinedScreen
@@ -523,6 +525,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
     composable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
     composable(route = MaterialNavRoutes.NavigationRail) { NavigationRailScreen() }
+    composable(route = MaterialNavRoutes.OutlinedButton) { OutlinedButtonScreen() }
     composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
     composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
     composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
@@ -536,6 +539,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.SwipeToDismiss) { SwipeToDismissScreen() }
     composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
     composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
+    composable(route = MaterialNavRoutes.TextButton) { TextButtonScreen() }
     composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
     composable(route = MaterialNavRoutes.Text) { TextScreen() }
     composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
@@ -569,12 +573,12 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
     composable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
     composable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
-    composable(route = Material3NavRoutes.OutlinedButton) { OutlinedButtonScreen() }
+    composable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
     composable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
     composable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
     composable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
     composable(route = Material3NavRoutes.Surface3) { Surface3Screen() }
-    composable(route = Material3NavRoutes.TextButton) { TextButtonScreen() }
+    composable(route = Material3NavRoutes.TextButton3) { TextButton3Screen() }
     composable(route = Material3NavRoutes.Text3) { Text3Screen() }
 }
 

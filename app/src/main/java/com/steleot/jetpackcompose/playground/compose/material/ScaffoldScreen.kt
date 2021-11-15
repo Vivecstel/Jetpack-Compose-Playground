@@ -25,7 +25,7 @@ import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import kotlinx.coroutines.launch
 
-private const val Url = "material/Scaffold3Screen.kt"
+private const val Url = "material/ScaffoldScreen.kt"
 
 @Composable
 fun ScaffoldScreen() {

@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/Icon3Screen.kt"
+private const val Url = "material/IconScreen.kt"
 
 @Composable
 fun IconScreen() {
@@ -41,7 +41,7 @@ fun IconScreen() {
 private fun DefaultIcon() {
     Icon(
         Icons.Filled.AccountBox,
-        contentDescription = "Default Icon Button",
+        contentDescription = null,
     )
 }
 
@@ -50,7 +50,7 @@ private fun DefaultIcon() {
 private fun TintedIcon() {
     Icon(
         Icons.Filled.AddAlarm,
-        contentDescription = "Tinted Icon",
+        contentDescription = null,
         modifier = Modifier.size(48.dp),
         tint = Color.Magenta,
     )

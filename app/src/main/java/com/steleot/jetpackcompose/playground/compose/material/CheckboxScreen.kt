@@ -15,8 +15,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -161,7 +163,10 @@ private fun LabeledCheckbox() {
             }
         )
         Text(
-            text = "Checkbox label: ${if (isChecked.value) "is checked" else "is not checked"}",
+            text = stringResource(
+                id = R.string.checkbox_msg,
+                stringResource(id = if (isChecked.value) R.string.is_checked else R.string.is_not_checked)
+            ),
             modifier = Modifier.padding(start = 8.dp)
         )
     }

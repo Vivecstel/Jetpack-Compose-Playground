@@ -20,7 +20,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/NavigationRail3Screen.kt"
+private const val Url = "material/NavigationRailScreen.kt"
 
 @Composable
 fun NavigationRailScreen() {
