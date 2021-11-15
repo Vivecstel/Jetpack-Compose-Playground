@@ -23,8 +23,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -88,19 +90,15 @@ private fun HelperView(
     }
 }
 
-private const val Person = "Person"
-private const val TableChart = "Table Chart"
-private const val Settings = "Settings"
-
 @Preview
 @Composable
 private fun RowScope.HelperNavigationItems(
     selectedItem: MutableState<Int> = mutableStateOf(0),
     selectedNavigationItem: Int = 0,
     items: List<Pair<String, ImageVector>> = listOf(
-        Pair(Person, Icons.Filled.Person),
-        Pair(TableChart, Icons.Filled.TableChart),
-        Pair(Settings, Icons.Filled.Settings)
+        Pair(stringResource(id = R.string.person), Icons.Filled.Person),
+        Pair(stringResource(id = R.string.table_chart), Icons.Filled.TableChart),
+        Pair(stringResource(id = R.string.settings), Icons.Filled.Settings)
     ),
 ) {
     items.forEachIndexed { index, item ->
@@ -150,44 +148,41 @@ private fun ElevationBottomNavigation(
     }
 }
 
-@Preview
 @Composable
 private fun RowScope.DefaultBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.LabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         label = { Text(text = pair.first) },
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.AlwaysShowLabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         label = { Text(text = pair.first) },
         alwaysShowLabel = false,
         selected = selected,
@@ -195,30 +190,28 @@ private fun RowScope.AlwaysShowLabelBottomNavigationItem(
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.SelectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         selectedContentColor = Color.Red,
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.UnselectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         unselectedContentColor = Color.LightGray,
         selected = selected,
         onClick = onClick,

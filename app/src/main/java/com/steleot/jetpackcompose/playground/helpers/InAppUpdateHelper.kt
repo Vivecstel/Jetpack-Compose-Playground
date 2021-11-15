@@ -107,7 +107,9 @@ class InAppUpdateHelperImpl(
                 val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
                 if (InstallStatus.DOWNLOADED == appUpdateInfo.installStatus()) {
                     showFlexibleAlertDialog()
-                } else if (UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS == appUpdateInfo.updateAvailability()) {
+                } else if (
+                    UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS == appUpdateInfo.updateAvailability()
+                ) {
                     startUpdate(appUpdateInfo, AppUpdateType.IMMEDIATE)
                 }
             } catch (e: Exception) {

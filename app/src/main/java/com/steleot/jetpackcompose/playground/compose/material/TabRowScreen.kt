@@ -22,8 +22,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -40,20 +41,22 @@ fun TabRowScreen() {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            DefaultTabRow()
-            BackgroundColorTabRow()
-            ContentColorTabRow()
-            DividerTabRow()
-            IndicatorTabRow()
+            val tabs = listOf(
+                stringResource(id = R.string.one),
+                stringResource(id = R.string.two),
+                stringResource(id = R.string.three),
+            )
+            DefaultTabRow(tabs)
+            BackgroundColorTabRow(tabs)
+            ContentColorTabRow(tabs)
+            DividerTabRow(tabs)
+            IndicatorTabRow(tabs)
         }
     }
 }
 
-private val tabs = listOf("One", "Two", "Three")
-
-@Preview
 @Composable
-private fun DefaultTabRow() {
+private fun DefaultTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value
@@ -73,9 +76,8 @@ private fun DefaultTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun BackgroundColorTabRow() {
+private fun BackgroundColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value,
@@ -96,9 +98,8 @@ private fun BackgroundColorTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun ContentColorTabRow() {
+private fun ContentColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value,
@@ -119,9 +120,8 @@ private fun ContentColorTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun DividerTabRow() {
+private fun DividerTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value,
@@ -150,9 +150,8 @@ private fun DividerTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun IndicatorTabRow() {
+private fun IndicatorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value,

@@ -143,6 +143,12 @@
     <string name="selection_args">Selection %1$d</string>
     <string name="add">Add</string>
     <string name="switch_args">Switch %1$s</string>
+    <string name="click_to_expand">Click to expand drawer</string>
+    <string name="person">Person</string>
+    <string name="table_chart">Table Chart</string>
+    <string name="show_snackbar">Show Snackbar</string>
+    <string name="surface_msg">Background color is from material theme background and text color is from error</string>
+    <string name="swipe_left_right">Swipe me left or right!</string>
     <!-- material 3 -->
     <!-- material icons -->
     <!-- material icons extended -->
@@ -272,6 +278,9 @@
     <string name="three">Three</string>
     <string name="four">Four</string>
     <string name="five">Five</string>
+    <string name="six">Six</string>
+    <string name="seven">Seven</string>
+    <string name="eight">Eight</string>
     <string name="line_through">Line Through text</string>
     <string name="underline">UnderLine text</string>
     <string name="line_through_underline">UnderLine and Line Through text</string>

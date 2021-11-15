@@ -24,8 +24,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -33,6 +34,17 @@ private const val Url = "material/ScrollableTabRowScreen.kt"
 
 @Composable
 fun ScrollableTabRowScreen() {
+    val context = LocalContext.current
+    val tabs = listOf(
+        context.getString(R.string.one),
+        context.getString(R.string.two),
+        context.getString(R.string.three),
+        context.getString(R.string.four),
+        context.getString(R.string.five),
+        context.getString(R.string.six),
+        context.getString(R.string.seven),
+        context.getString(R.string.eight),
+    )
     DefaultScaffold(
         title = MaterialNavRoutes.ScrollableTabRow,
         link = Url,
@@ -44,21 +56,20 @@ fun ScrollableTabRowScreen() {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            ScrollableTabRowExample()
-            EdgePaddingTabRowExample()
-            BackgroundColorScrollableTabRow()
-            ContentColorScrollableTabRow()
-            DividerScrollableTabRow()
-            IndicatorScrollableTabRow()
+            ScrollableTabRowExample(tabs)
+            EdgePaddingTabRowExample(tabs)
+            BackgroundColorScrollableTabRow(tabs)
+            ContentColorScrollableTabRow(tabs)
+            DividerScrollableTabRow(tabs)
+            IndicatorScrollableTabRow(tabs)
         }
     }
 }
 
-private val tabs = listOf("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight")
-
-@Preview
 @Composable
-private fun ScrollableTabRowExample() {
+private fun ScrollableTabRowExample(
+    tabs: List<String>
+) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value
@@ -78,9 +89,8 @@ private fun ScrollableTabRowExample() {
     }
 }
 
-@Preview
 @Composable
-private fun EdgePaddingTabRowExample() {
+private fun EdgePaddingTabRowExample(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value,
@@ -101,9 +111,8 @@ private fun EdgePaddingTabRowExample() {
     }
 }
 
-@Preview
 @Composable
-private fun BackgroundColorScrollableTabRow() {
+private fun BackgroundColorScrollableTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value,
@@ -124,9 +133,8 @@ private fun BackgroundColorScrollableTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun ContentColorScrollableTabRow() {
+private fun ContentColorScrollableTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value,
@@ -147,9 +155,8 @@ private fun ContentColorScrollableTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun DividerScrollableTabRow() {
+private fun DividerScrollableTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value,
@@ -178,9 +185,8 @@ private fun DividerScrollableTabRow() {
     }
 }
 
-@Preview
 @Composable
-private fun IndicatorScrollableTabRow() {
+private fun IndicatorScrollableTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     ScrollableTabRow(
         selectedTabIndex = selectedTab.value,

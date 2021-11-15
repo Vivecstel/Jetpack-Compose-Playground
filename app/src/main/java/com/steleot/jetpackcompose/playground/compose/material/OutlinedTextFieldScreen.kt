@@ -24,6 +24,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -33,6 +34,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -66,7 +68,7 @@ private fun DefaultOutlinedTextField() {
     OutlinedTextField(
         value = state.value,
         onValueChange = { state.value = it },
-        label = { Text("Jetpack") },
+        label = { Text(stringResource(id = R.string.jetpack)) },
         textStyle = TextStyle(color = Color.Black),
         modifier = Modifier
             .padding(16.dp)
@@ -83,7 +85,7 @@ private fun StyledOutlinedTextField() {
         onValueChange = { value ->
             state.value = value
         },
-        label = { Text("Jetpack") },
+        label = { Text(stringResource(id = R.string.jetpack)) },
         textStyle = TextStyle(color = Color.Magenta, fontSize = 20.sp),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             textColor = Color.Blue
@@ -103,7 +105,7 @@ private fun ImeActionOutlinedTextField() {
         onValueChange = { value ->
             state.value = value
         },
-        label = { Text("Jetpack") },
+        label = { Text(stringResource(id = R.string.jetpack)) },
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(),
@@ -122,7 +124,7 @@ private fun PasswordKeyboardTypeOutlinedTextField() {
         onValueChange = { value ->
             state.value = value
         },
-        label = { Text("Jetpack") },
+        label = { Text(stringResource(id = R.string.jetpack)) },
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(),

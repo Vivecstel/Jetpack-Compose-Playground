@@ -16,8 +16,10 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
@@ -29,6 +31,7 @@ private const val Url = "material/Scaffold3Screen.kt"
 fun ScaffoldScreen() {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
+    val text = stringResource(id = R.string.app_name)
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         scaffoldState = scaffoldState,
@@ -42,16 +45,16 @@ fun ScaffoldScreen() {
         floatingActionButtonPosition = FabPosition.End,
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                text = { Text("Show Snackbar") },
+                text = { Text(stringResource(id = R.string.show_snackbar)) },
                 icon = {
                     Icon(
                         imageVector = Icons.Filled.Expand,
-                        contentDescription = "Expand content description"
+                        contentDescription = null
                     )
                 },
                 onClick = {
                     scope.launch {
-                        scaffoldState.snackbarHostState.showSnackbar("Snackbar example")
+                        scaffoldState.snackbarHostState.showSnackbar(text)
                     }
                 }
             )

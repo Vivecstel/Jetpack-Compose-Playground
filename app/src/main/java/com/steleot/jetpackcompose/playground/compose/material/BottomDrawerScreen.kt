@@ -16,7 +16,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import kotlinx.coroutines.launch
@@ -53,7 +55,7 @@ private fun BottomDrawerExample() {
                         backgroundColor = Color.Red
                     )
                 ) {
-                    Text("Click to close drawer")
+                    Text(stringResource(id = R.string.click_to_close))
                 }
                 Button(
                     onClick = { scope.launch { drawerState.expand() } },
@@ -61,7 +63,7 @@ private fun BottomDrawerExample() {
                         backgroundColor = Color.Green
                     )
                 ) {
-                    Text("Click to expand drawer")
+                    Text(stringResource(id = R.string.click_to_expand))
                 }
             }
         },
@@ -73,7 +75,7 @@ private fun BottomDrawerExample() {
             verticalArrangement = Arrangement.Center,
         ) {
             Button(onClick = { scope.launch { drawerState.open() } }) {
-                Text("Click to open drawer")
+                Text(stringResource(id = R.string.click_to_open))
             }
         }
     }

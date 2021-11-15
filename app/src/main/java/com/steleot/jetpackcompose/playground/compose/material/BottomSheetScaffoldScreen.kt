@@ -85,7 +85,7 @@ fun BottomSheetScaffoldExample() {
                 title = { Text("Bottom sheet scaffold") },
                 navigationIcon = {
                     IconButton(onClick = { scope.launch { scaffoldState.drawerState.open() } }) {
-                        Icon(Icons.Filled.Menu, contentDescription = "Localized description")
+                        Icon(Icons.Filled.Menu, contentDescription = null)
                     }
                 }
             )
@@ -94,13 +94,12 @@ fun BottomSheetScaffoldExample() {
             var clickCount by remember { mutableStateOf(0) }
             FloatingActionButton(
                 onClick = {
-                    // show snackbar as a suspend function
                     scope.launch {
                         scaffoldState.snackbarHostState.showSnackbar("Snackbar #${++clickCount}")
                     }
                 }
             ) {
-                Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
+                Icon(Icons.Filled.Favorite, contentDescription = null)
             }
         },
         floatingActionButtonPosition = FabPosition.End,

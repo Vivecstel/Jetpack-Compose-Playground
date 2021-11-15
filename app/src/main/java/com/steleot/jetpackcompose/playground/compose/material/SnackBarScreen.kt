@@ -17,11 +17,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import kotlinx.coroutines.launch
@@ -32,6 +34,7 @@ private const val Url = "material/SnackBarScreen.kt"
 fun SnackBarScreen() {
     val state = rememberScaffoldState()
     val scope = rememberCoroutineScope()
+
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
@@ -52,14 +55,15 @@ fun SnackBarScreen() {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            val helloWorld = stringResource(id = R.string.hello_world)
             Button(
                 onClick = {
                     scope.launch {
-                        state.snackbarHostState.showSnackbar("Hello Jetpack Compose")
+                        state.snackbarHostState.showSnackbar(helloWorld)
                     }
                 }
             ) {
-                Text(text = "Show Snackbar")
+                Text(text = stringResource(id = R.string.show_snackbar))
             }
             DefaultSnackbar()
             ShapeSnackbar()
@@ -71,12 +75,10 @@ fun SnackBarScreen() {
     }
 }
 
-private const val ConstantText = "Jetpack Compose Playground Snackbar"
-
 @Preview
 @Composable
 private fun DefaultSnackbar(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     Snackbar(
         content = { Text(text = text, color = Color.White) }
@@ -87,7 +89,7 @@ private fun DefaultSnackbar(
 @Composable
 private fun ShapeSnackbar() {
     Snackbar(
-        content = { Text(text = ConstantText, color = Color.White) },
+        content = { Text(text = stringResource(id = R.string.app_name), color = Color.White) },
         shape = RoundedCornerShape(8.dp)
     )
 }
@@ -96,7 +98,7 @@ private fun ShapeSnackbar() {
 @Composable
 private fun BackgroundColorSnackbar() {
     Snackbar(
-        content = { Text(text = ConstantText, color = Color.White) },
+        content = { Text(text = stringResource(id = R.string.app_name), color = Color.White) },
         backgroundColor = Color.Red,
     )
 }
@@ -105,7 +107,7 @@ private fun BackgroundColorSnackbar() {
 @Composable
 private fun ElevationSnackbar() {
     Snackbar(
-        content = { Text(text = ConstantText, color = Color.White) },
+        content = { Text(text = stringResource(id = R.string.app_name), color = Color.White) },
         elevation = 8.dp
     )
 }
@@ -114,7 +116,7 @@ private fun ElevationSnackbar() {
 @Composable
 private fun ActionSnackbar() {
     Snackbar(
-        content = { Text(text = ConstantText, color = Color.White) },
+        content = { Text(text = stringResource(id = R.string.app_name), color = Color.White) },
         action = {
             Text(
                 text = "Undo",
@@ -136,7 +138,7 @@ private fun ActionOnNewLineSnackbar() {
     Snackbar(
         content = {
             Text(
-                text = "$ConstantText $ConstantText",
+                text = stringResource(id = R.string.app_name).repeat(3),
                 color = Color.White
             )
         },

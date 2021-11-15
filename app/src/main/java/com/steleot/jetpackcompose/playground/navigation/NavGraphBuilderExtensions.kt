@@ -560,7 +560,9 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.LargeTopAppBar) { LargeTopAppBarScreen() }
     composable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteElevationScreen() }
     composable(route = Material3NavRoutes.LocalContentColor3) { LocalContentColor3Screen() }
-    composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) { LocalMinimumTouchTargetEnforcementScreen() }
+    composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
+        LocalMinimumTouchTargetEnforcementScreen()
+    }
     composable(route = Material3NavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
     composable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
     composable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
