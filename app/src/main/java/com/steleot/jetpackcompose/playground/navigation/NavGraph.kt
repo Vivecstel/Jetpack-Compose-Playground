@@ -115,7 +115,7 @@ object FoundationNavRoutes {
 object Material3NavRoutes {
     const val AlertDialog3 = "alert dialog 3"
     const val BadgedBox3 = "badged box 3"
-    const val Badge = "badge"
+    const val Badge3 = "badge 3"
     const val Button3 = "button 3"
     const val CenterAlignedTopAppBar = "center aligned top app bar"
     const val ElevatedButton = "elevated button"
@@ -149,6 +149,7 @@ object MaterialNavRoutes {
     const val AlertDialog = "alert dialog"
     const val BackdropScaffold = "backdrop scaffold"
     const val BadgedBox = "badged box"
+    const val Badge = "badge"
     const val BottomAppBar = "bottom app bar"
     const val BottomDrawer = "bottom drawer layout"
     const val BottomNavigation = "bottom navigation"

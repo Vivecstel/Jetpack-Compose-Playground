@@ -12,7 +12,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.ButtonDefaults.elevation
-import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,11 +33,10 @@ fun ButtonScreen() {
         title = MaterialNavRoutes.Button,
         link = Url,
     ) {
-        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(scrollState),
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultButton()
@@ -239,21 +237,6 @@ private fun DisabledButton() {
         Text(
             text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun OutlinedDefaultButton() {
-    OutlinedButton(
-        onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp),
-            color = Color.White
         )
     }
 }

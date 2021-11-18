@@ -10,6 +10,7 @@ val routes = listOf(
     MaterialNavRoutes.AlertDialog,
     MaterialNavRoutes.BackdropScaffold,
     MaterialNavRoutes.BadgedBox,
+    MaterialNavRoutes.Badge,
     MaterialNavRoutes.BottomAppBar,
     MaterialNavRoutes.BottomDrawer,
     MaterialNavRoutes.BottomNavigation,

@@ -8,8 +8,8 @@ import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 
 val routes = listOf(
     Material3NavRoutes.AlertDialog3,
+    Material3NavRoutes.Badge3,
     Material3NavRoutes.BadgedBox3,
-    Material3NavRoutes.Badge,
     Material3NavRoutes.Button3,
     Material3NavRoutes.CenterAlignedTopAppBar,
     Material3NavRoutes.ElevatedButton,

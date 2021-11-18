@@ -149,6 +149,7 @@ import com.steleot.jetpackcompose.playground.compose.foundation.TransformableScr
 import com.steleot.jetpackcompose.playground.compose.foundation.WeightScreen
 import com.steleot.jetpackcompose.playground.compose.material.AlertDialogScreen
 import com.steleot.jetpackcompose.playground.compose.material.BackdropScaffoldScreen
+import com.steleot.jetpackcompose.playground.compose.material.BadgeScreen
 import com.steleot.jetpackcompose.playground.compose.material.BadgedBoxScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.BottomDrawerScreen
@@ -195,7 +196,7 @@ import com.steleot.jetpackcompose.playground.compose.material.TextScreen
 import com.steleot.jetpackcompose.playground.compose.material.TopAppBarScreen
 import com.steleot.jetpackcompose.playground.compose.material.TriStateCheckboxScreen
 import com.steleot.jetpackcompose.playground.compose.material3.AlertDialog3Screen
-import com.steleot.jetpackcompose.playground.compose.material3.BadgeScreen
+import com.steleot.jetpackcompose.playground.compose.material3.Badge3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.BadgedBox3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Button3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.CenterAlignedTopAppBarScreen
@@ -505,6 +506,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
     composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
     composable(route = MaterialNavRoutes.BadgedBox) { BadgedBoxScreen() }
+    composable(route = MaterialNavRoutes.Badge) { BadgeScreen() }
     composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
     composable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
     composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
@@ -554,7 +556,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
 fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.AlertDialog3) { AlertDialog3Screen() }
     composable(route = Material3NavRoutes.BadgedBox3) { BadgedBox3Screen() }
-    composable(route = Material3NavRoutes.Badge) { BadgeScreen() }
+    composable(route = Material3NavRoutes.Badge3) { Badge3Screen() }
     composable(route = Material3NavRoutes.Button3) { Button3Screen() }
     composable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
     composable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }

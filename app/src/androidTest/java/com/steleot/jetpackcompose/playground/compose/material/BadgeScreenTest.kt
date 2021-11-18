@@ -1,8 +1,8 @@
-package com.steleot.jetpackcompose.playground.compose.material3
+package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.steleot.jetpackcompose.playground.MainActivity
-import com.steleot.jetpackcompose.playground.compose.theme.TestTheme3
+import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
@@ -14,8 +14,8 @@ class BadgeScreenTest {
     @Test
     fun testBadgeScreen() {
         composeTestRule.setContent {
-            TestTheme3 {
-                Badge3Screen()
+            TestTheme {
+                BadgeScreen()
             }
         }
         // todo
