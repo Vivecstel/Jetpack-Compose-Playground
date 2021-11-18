@@ -70,10 +70,10 @@ private fun ModalBottomSheetLayoutExample() {
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Rest of the UI")
+            Text(stringResource(id = R.string.content))
             Spacer(Modifier.height(20.dp))
             Button(onClick = { scope.launch { state.show() } }) {
-                Text("Click to show sheet")
+                Text(stringResource(id = R.string.click_show_sheet))
             }
         }
     }

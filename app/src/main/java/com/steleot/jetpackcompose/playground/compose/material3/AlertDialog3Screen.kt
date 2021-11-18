@@ -13,7 +13,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 
@@ -44,10 +46,10 @@ private fun DefaultAlertDialog3() {
                 showingDialog.value = false
             },
             text = {
-                Text(text = "Text")
+                Text(text = stringResource(id = R.string.text_args, 1))
             },
             title = {
-                Text(text = "Title")
+                Text(text = stringResource(id = R.string.title))
             },
             confirmButton = {
                 TextButton(
@@ -57,7 +59,7 @@ private fun DefaultAlertDialog3() {
                     modifier = Modifier
                         .padding(16.dp)
                 ) {
-                    Text("Close")
+                    Text(stringResource(id = R.string.close))
                 }
             },
         )
@@ -66,7 +68,7 @@ private fun DefaultAlertDialog3() {
         onClick = { showingDialog.value = true },
     ) {
         Text(
-            text = "Show Default dialog"
+            text = stringResource(id = R.string.show_args, "Default dialog")
         )
     }
 }

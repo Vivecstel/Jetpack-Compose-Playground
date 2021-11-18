@@ -110,7 +110,8 @@ internal fun CardExample(
     Card(
         shape = RoundedCornerShape(4.dp),
         modifier = modifier
-            .padding(vertical = 8.dp)
+            .padding(vertical = 8.dp),
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         ListItem(
             icon = {

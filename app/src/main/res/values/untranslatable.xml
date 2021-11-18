@@ -5,6 +5,11 @@
     <string name="compose" translatable="false">Compose</string>
     <string name="playground" translatable="false">Playground</string>
     <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
+    <string name="backdrop_scaffold" translatable="false">Backdrop scaffold</string>
+    <string name="bottom_sheet_scaffold" translatable="false">Bottom sheet scaffold</string>
+    <string name="bottom_navigation" translatable="false">Bottom navigation</string>
+    <string name="bottom_navigation_item" translatable="false">Bottom navigation item</string>
+    <string name="snackbar_count" translatable="false">Snackbar #%1$d</string>
     <string name="local_absolute_elevation" translatable="false">Local Absolute Elevation: %1$s</string>
     <string name="link_jetpack_compose" translatable="false">link: Jetpack Compose</string>
     <string name="layout_offset_modifier" translatable="false">Layout offset modifier</string>

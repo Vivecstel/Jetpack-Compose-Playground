@@ -90,7 +90,8 @@ fun ReleaseNotesScreen(
                                 },
                                 modifier = Modifier
                                     .padding(horizontal = 16.dp, vertical = 4.dp),
-                                elevation = 4.dp
+                                elevation = 4.dp,
+                                backgroundColor = MaterialTheme.colors.primary
                             ) {
                                 Column(
                                     modifier = Modifier

@@ -29,7 +29,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
@@ -50,6 +52,7 @@ fun BottomSheetScaffoldScreen() {
 @Composable
 @OptIn(ExperimentalMaterialApi::class)
 fun BottomSheetScaffoldExample() {
+    val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberBottomSheetScaffoldState()
     BottomSheetScaffold(
@@ -60,7 +63,7 @@ fun BottomSheetScaffoldExample() {
                     .height(128.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Swipe up to expand sheet")
+                Text(context.getString(R.string.swipe_up_to_expand))
             }
             Column(
                 Modifier
@@ -68,21 +71,21 @@ fun BottomSheetScaffoldExample() {
                     .padding(64.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("Sheet content")
+                Text(context.getString(R.string.content))
                 Spacer(Modifier.height(20.dp))
                 Button(
                     onClick = {
                         scope.launch { scaffoldState.bottomSheetState.collapse() }
                     }
                 ) {
-                    Text("Click to collapse sheet")
+                    Text(context.getString(R.string.click_to_collapse))
                 }
             }
         },
         scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
-                title = { Text("Bottom sheet scaffold") },
+                title = { Text(context.getString(R.string.bottom_sheet_scaffold)) },
                 navigationIcon = {
                     IconButton(onClick = { scope.launch { scaffoldState.drawerState.open() } }) {
                         Icon(Icons.Filled.Menu, contentDescription = null)
@@ -95,7 +98,12 @@ fun BottomSheetScaffoldExample() {
             FloatingActionButton(
                 onClick = {
                     scope.launch {
-                        scaffoldState.snackbarHostState.showSnackbar("Snackbar #${++clickCount}")
+                        scaffoldState.snackbarHostState.showSnackbar(
+                            context.getString(
+                                R.string.snackbar_count,
+                                ++clickCount
+                            )
+                        )
                     }
                 }
             ) {
@@ -111,10 +119,10 @@ fun BottomSheetScaffoldExample() {
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("Drawer content")
+                Text(context.getString(R.string.app_name))
                 Spacer(Modifier.height(20.dp))
                 Button(onClick = { scope.launch { scaffoldState.drawerState.close() } }) {
-                    Text("Click to close drawer")
+                    Text(context.getString(R.string.click_to_close))
                 }
             }
         }

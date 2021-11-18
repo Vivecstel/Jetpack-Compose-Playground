@@ -29,21 +29,15 @@ fun CompositionLocalScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CompositionLocalProvider(ActiveUser provides User()) {
-                CurrentUserSuccess()
+                CurrentUser()
             }
-            CurrentUserFailure()
+            CurrentUser()
         }
     }
 }
 
 @Composable
-private fun CurrentUserSuccess() {
-    val user = ActiveUser.current
-    Text(text = "Active user name is : ${user.name}")
-}
-
-@Composable
-private fun CurrentUserFailure() {
+private fun CurrentUser() {
     val user = ActiveUser.current
     Text(text = stringResource(id = R.string.user_name, user.name))
 }

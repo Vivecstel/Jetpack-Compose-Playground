@@ -51,7 +51,12 @@ fun BottomNavigationScreen() {
                         if (selectedNavigationView.value == 2) 0 else selectedNavigationView.value + 1
                 }
             ) {
-                Text(text = "Switch to bottom navigation")
+                Text(
+                    text = stringResource(
+                        id = R.string.switch_args,
+                        stringResource(id = R.string.bottom_navigation)
+                    )
+                )
             }
             Spacer(modifier = Modifier.height(32.dp))
             Button(
@@ -60,7 +65,12 @@ fun BottomNavigationScreen() {
                         if (selectedNavigationItem.value == 4) 0 else selectedNavigationItem.value + 1
                 }
             ) {
-                Text(text = "Switch to bottom navigation item")
+                Text(
+                    text = stringResource(
+                        id = R.string.switch_args,
+                        stringResource(id = R.string.bottom_navigation_item)
+                    )
+                )
             }
             Spacer(modifier = Modifier.height(32.dp))
             HelperView(selectedNavigationView.value, selectedNavigationItem.value)

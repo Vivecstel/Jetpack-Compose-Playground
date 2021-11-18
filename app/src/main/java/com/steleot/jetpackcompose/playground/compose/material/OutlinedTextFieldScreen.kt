@@ -134,9 +134,10 @@ private fun PasswordKeyboardTypeOutlinedTextField() {
         visualTransformation = if (passwordHidden) PasswordVisualTransformation() else VisualTransformation.None,
         trailingIcon = {
             IconButton(onClick = { passwordHidden = !passwordHidden }) {
-                val visibilityIcon =
-                    if (passwordHidden) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
-                val description = if (passwordHidden) "Show password" else "Hide password"
+                val (visibilityIcon, description) = if (passwordHidden)
+                    Icons.Filled.Visibility to stringResource(id = R.string.show_password)
+                else
+                    Icons.Filled.VisibilityOff to stringResource(id = R.string.hide_password)
                 Icon(imageVector = visibilityIcon, contentDescription = description)
             }
         }

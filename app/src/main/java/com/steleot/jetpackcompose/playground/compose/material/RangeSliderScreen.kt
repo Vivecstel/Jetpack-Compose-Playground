@@ -16,8 +16,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -52,7 +54,8 @@ private fun DefaultRangeSlider() {
         values = state.value,
         onValueChange = {
             state.value = it
-        }
+        },
+        modifier = Modifier.padding(horizontal = 16.dp),
     )
 }
 
@@ -114,7 +117,7 @@ private fun EndListenerSlider() {
     val state = remember { mutableStateOf(0f..5f) }
     var endState by remember { mutableStateOf(0f..0f) }
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(text = "start: ${endState.start}, end: ${endState.start}")
+        Text(text = stringResource(id = R.string.range_slider_value, endState.start))
         RangeSlider(
             values = state.value,
             onValueChange = {

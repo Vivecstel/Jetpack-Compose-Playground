@@ -14,9 +14,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -64,9 +66,10 @@ fun MaterialThemeExample() {
     )
 
     MaterialTheme(colors = colors, typography = typography) {
-        val currentTheme = if (MaterialTheme.colors.isLight) "light" else "dark"
+        val theme =
+            stringResource(id = if (MaterialTheme.colors.isLight) R.string.light else R.string.dark)
         ExtendedFloatingActionButton(
-            text = { Text("FAB with text style and color from $currentTheme theme") },
+            text = { Text(stringResource(id = R.string.material_theme_msg, theme)) },
             onClick = {}
         )
     }

@@ -10,7 +10,10 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -24,17 +27,32 @@ fun LocalContentColorScreen() {
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Default local content color is black")
+            Text(
+                stringResource(
+                    id = R.string.local_content_color,
+                    stringResource(if (LocalIsDarkTheme.current) R.string.white else R.string.black)
+                )
+            )
 
             CompositionLocalProvider(LocalContentColor provides Color.Red) {
-                Text("Local content color is red")
+                Text(
+                    stringResource(
+                        id = R.string.local_content_color,
+                        stringResource(id = R.string.red)
+                    )
+                )
             }
 
             CompositionLocalProvider(LocalContentColor provides Color.Magenta) {
-                Text("Local content color is magenta")
+                Text(
+                    stringResource(
+                        id = R.string.local_content_color,
+                        stringResource(id = R.string.magenta)
+                    )
+                )
             }
         }
     }

@@ -37,7 +37,7 @@ fun NavigationRailScreen() {
 private fun NavigationRailExample() {
     var selectedItem by remember { mutableStateOf(0) }
     val items = listOf(
-        "Home",
+        stringResource(id = R.string.home),
         stringResource(id = R.string.search),
         stringResource(id = R.string.settings),
     )

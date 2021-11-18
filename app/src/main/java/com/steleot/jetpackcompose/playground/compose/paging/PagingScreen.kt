@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -68,7 +69,10 @@ private fun PagingExample() {
         }
 
         itemsIndexed(lazyPagingItems) { index, item ->
-            Card(Modifier.padding(8.dp)) {
+            Card(
+                Modifier.padding(8.dp),
+                backgroundColor = MaterialTheme.colors.primary
+            ) {
                 Text(
                     stringResource(id = R.string.paging_list_text, index, item.toString()),
                     modifier = Modifier

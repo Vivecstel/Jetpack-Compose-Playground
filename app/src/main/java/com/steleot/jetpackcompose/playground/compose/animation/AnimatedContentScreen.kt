@@ -24,6 +24,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddShoppingCart
@@ -140,7 +141,8 @@ private fun ExpandedCart(
     val shoppingCart = stringResource(id = R.string.shopping_cart)
     Card(
         shape = CutCornerShape(12.dp),
-        onClick = onClick
+        onClick = onClick,
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         Row(
             modifier = Modifier.padding(16.dp)
@@ -163,7 +165,8 @@ private fun CollapsedCart(
 ) {
     Card(
         shape = CutCornerShape(12.dp),
-        onClick = onClick
+        onClick = onClick,
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         Text(
             text = stringResource(id = R.string.app_name),

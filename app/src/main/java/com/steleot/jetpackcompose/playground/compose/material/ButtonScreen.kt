@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -60,7 +61,9 @@ fun ButtonScreen() {
 private fun DefaultButton() {
     Button(
         onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp)
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Default Button")
     ) {
         Text(
             text = stringResource(id = R.string.app_name),
@@ -75,7 +78,9 @@ private fun CutCornerShapeButton() {
     Button(
         onClick = {},
         shape = CutCornerShape(12.dp),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Cut Corner Shape Button"),
     ) {
         Text(
             text = stringResource(id = R.string.app_name),
@@ -90,7 +95,9 @@ private fun RoundedCornerShapeButton() {
     Button(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Rounded Corner Shape Button"),
     ) {
         Text(
             text = stringResource(id = R.string.app_name),
@@ -107,7 +114,9 @@ private fun BackgroundColorButton() {
         colors = buttonColors(
             backgroundColor = Color.Red
         ),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Background Color Button"),
     ) {
         Text(
             text = stringResource(id = R.string.app_name),

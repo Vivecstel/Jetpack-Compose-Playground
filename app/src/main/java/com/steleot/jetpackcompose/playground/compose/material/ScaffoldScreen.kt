@@ -35,7 +35,7 @@ fun ScaffoldScreen() {
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         scaffoldState = scaffoldState,
-        drawerContent = { Text("Drawer content") },
+        drawerContent = { Text(stringResource(id = R.string.content)) },
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.Scaffold,

@@ -71,7 +71,7 @@ private fun IconListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Icon",
+                contentDescription = null,
             )
         }
     ) {
@@ -85,7 +85,7 @@ private fun IconListItem() {
 private fun SecondaryTextListItem() {
     ListItem(
         secondaryText = {
-            Text(text = "Jetpack Compose Playground Secondary text")
+            DefaultText()
         }
     ) {
         DefaultText()
@@ -98,7 +98,7 @@ private fun SecondaryTextListItem() {
 private fun OverlineTextListItem() {
     ListItem(
         overlineText = {
-            Text(text = "Jetpack Compose Playground Overline text")
+            DefaultText()
         }
     ) {
         DefaultText()
@@ -114,7 +114,7 @@ private fun TrailingListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Trailing",
+                contentDescription = null,
             )
         }
     ) {
@@ -135,20 +135,20 @@ private fun FullListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Icon",
+                contentDescription = null,
             )
         },
         secondaryText = {
-            Text(text = "Jetpack Compose Playground Secondary text")
+            DefaultText()
         },
         overlineText = {
-            Text(text = "Jetpack Compose Playground Overline text")
+            DefaultText()
         },
         trailing = {
             Icon(
                 Icons.Filled.PedalBike,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Trailing",
+                contentDescription = null,
             )
         }
     ) {

@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -27,21 +29,36 @@ fun LocalContentAlphaScreen() {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                "No content alpha applied - uses the default content alpha set by MaterialTheme - " +
-                        "87% alpha"
-            )
+            Text(stringResource(id = R.string.no_content_alpha))
             CompositionLocalProvider(LocalContentAlpha provides 1.00f) {
-                Text("1.00f alpha applied - 100% alpha")
+                Text(stringResource(id = R.string.content_alpha, "1.00f", 100))
             }
             CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.high) {
-                Text("High content alpha applied - 87% alpha")
+                Text(
+                    stringResource(
+                        id = R.string.content_alpha,
+                        stringResource(id = R.string.high_content),
+                        87
+                    )
+                )
             }
             CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
-                Text("Medium content alpha applied - 60% alpha")
+                Text(
+                    stringResource(
+                        id = R.string.content_alpha,
+                        stringResource(id = R.string.medium_content),
+                        60
+                    )
+                )
             }
             CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.disabled) {
-                Text("Disabled content alpha applied - 38% alpha")
+                Text(
+                    stringResource(
+                        id = R.string.content_alpha,
+                        stringResource(id = R.string.disabled_content),
+                        38
+                    )
+                )
             }
         }
     }
