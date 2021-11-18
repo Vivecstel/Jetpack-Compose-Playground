@@ -37,6 +37,17 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.Badge3,
     Material3NavRoutes.BadgedBox3,
     Material3NavRoutes.Button3,
+    Material3NavRoutes.CenterAlignedTopAppBar,
+    // todo elevated button
+    Material3NavRoutes.ExtendedFloatingActionButton3,
+    // todo final tonal button
+    Material3NavRoutes.FloatingActionButton3,
+    Material3NavRoutes.Icon3,
+    Material3NavRoutes.IconButton3,
+    Material3NavRoutes.IconToggleButton3,
+    Material3NavRoutes.LargeFloatingActionButton,
+    // todo rest material 3
+    Material3NavRoutes.SmallFloatingActionButton,
     MainNavRoutes.Ui,
     UiNavRoutes.OnPlaced,
     /* 3.3.0 */

@@ -41,7 +41,6 @@ fun IconButtonScreen() {
 private fun DefaultIconButton() {
     IconButton(
         onClick = {},
-
         content = {
             Icon(
                 Icons.Filled.Palette,
