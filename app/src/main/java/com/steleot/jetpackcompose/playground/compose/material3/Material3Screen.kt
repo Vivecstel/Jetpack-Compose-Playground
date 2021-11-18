@@ -18,7 +18,7 @@ val routes = listOf(
     Material3NavRoutes.FloatingActionButton3,
     Material3NavRoutes.IconButton3,
     Material3NavRoutes.Icon3,
-    Material3NavRoutes.IconToggleButton,
+    Material3NavRoutes.IconToggleButton3,
     Material3NavRoutes.LargeFloatingActionButton,
     Material3NavRoutes.LargeTopAppBar,
     Material3NavRoutes.LocalAbsoluteTonalElevation,

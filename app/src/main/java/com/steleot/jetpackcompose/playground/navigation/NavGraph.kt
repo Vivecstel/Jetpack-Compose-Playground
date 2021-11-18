@@ -67,6 +67,7 @@ object ConstraintLayoutNavRoutes {
 
 object FoundationNavRoutes {
     const val AbsolutePadding = "absolute padding"
+    const val AnimateItemPlacement = "animate item placement"
     const val AspectRatio = "aspect ratio"
     const val Background = "background"
     const val Border = "border"
@@ -123,7 +124,7 @@ object Material3NavRoutes {
     const val FloatingActionButton3 = "floating action button 3"
     const val IconButton3 = "icon button 3"
     const val Icon3 = "icon 3"
-    const val IconToggleButton = "icon toggle button"
+    const val IconToggleButton3 = "icon toggle button 3"
     const val LargeFloatingActionButton = "large floating action button"
     const val LargeTopAppBar = "large top app bar"
     const val LocalAbsoluteTonalElevation = "local absolute tonal elevation"
@@ -274,6 +275,7 @@ object UiNavRoutes {
     const val NestedScroll = "nested scroll"
     const val OnGloballyPositioned = "on globally positioned"
     const val OnKeyEvent = "on key event"
+    const val OnPlaced = "on placed"
     const val OnSizeChanged = "on size changed"
     const val Paint = "paint"
     const val PathEffect = "path effect"

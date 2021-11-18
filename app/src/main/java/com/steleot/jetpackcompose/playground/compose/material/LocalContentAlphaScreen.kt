@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.Text
@@ -25,20 +26,26 @@ fun LocalContentAlphaScreen() {
         link = Url,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(stringResource(id = R.string.no_content_alpha))
             CompositionLocalProvider(LocalContentAlpha provides 1.00f) {
-                Text(stringResource(id = R.string.content_alpha, "1.00f", 100))
+                Text(
+                    stringResource(
+                        id = R.string.content_alpha,
+                        "Maximum",
+                        LocalContentAlpha.current
+                    )
+                )
             }
             CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.high) {
                 Text(
                     stringResource(
                         id = R.string.content_alpha,
                         stringResource(id = R.string.high_content),
-                        87
+                        LocalContentAlpha.current
                     )
                 )
             }
@@ -47,7 +54,7 @@ fun LocalContentAlphaScreen() {
                     stringResource(
                         id = R.string.content_alpha,
                         stringResource(id = R.string.medium_content),
-                        60
+                        LocalContentAlpha.current
                     )
                 )
             }
@@ -56,7 +63,7 @@ fun LocalContentAlphaScreen() {
                     stringResource(
                         id = R.string.content_alpha,
                         stringResource(id = R.string.disabled_content),
-                        38
+                        LocalContentAlpha.current
                     )
                 )
             }

@@ -22,6 +22,7 @@ fun getRibbonPath(
 val ribbonRoutes = setOf(
     /* 4.0.0 */
     MainNavRoutes.Foundation,
+    FoundationNavRoutes.AnimateItemPlacement,
     FoundationNavRoutes.BringIntoViewRequester,
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.Gap,
@@ -32,6 +33,8 @@ val ribbonRoutes = setOf(
     MaterialNavRoutes.TextButton,
     MainNavRoutes.Material3,
     Material3NavRoutes.AlertDialog3,
+    MainNavRoutes.Ui,
+    UiNavRoutes.OnPlaced,
     /* 3.3.0 */
     MainNavRoutes.Material,
     MaterialNavRoutes.ExposedDropdownMenuBox,

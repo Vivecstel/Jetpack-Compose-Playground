@@ -103,6 +103,7 @@ import com.steleot.jetpackcompose.playground.compose.externallibraries.StageStep
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SwipeRefreshAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SystemUiControllerAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AbsolutePaddingScreen
+import com.steleot.jetpackcompose.playground.compose.foundation.AnimateItemPlacementScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AspectRationScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BackgroundScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.BorderScreen
@@ -207,6 +208,7 @@ import com.steleot.jetpackcompose.playground.compose.material3.IconButton3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.IconToggleButton3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.LargeFloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material3.LargeTopAppBarScreen
+import com.steleot.jetpackcompose.playground.compose.material3.LocalAbsoluteTonalElevationScreen
 import com.steleot.jetpackcompose.playground.compose.material3.LocalContentColor3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.LocalMinimumTouchTargetEnforcementScreen
 import com.steleot.jetpackcompose.playground.compose.material3.LocalTextStyleScreen
@@ -304,6 +306,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.ModifierLocalScreen
 import com.steleot.jetpackcompose.playground.compose.ui.NestedScrollScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnGloballyPositionedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnKeyEventScreen
+import com.steleot.jetpackcompose.playground.compose.ui.OnPlacedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.OnSizeChangedScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PaintScreen
 import com.steleot.jetpackcompose.playground.compose.ui.PathEffectScreen
@@ -452,6 +455,7 @@ fun NavGraphBuilder.addConstraintLayoutRoutes() {
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addFoundationRoutes() {
     composable(route = FoundationNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
+    composable(route = FoundationNavRoutes.AnimateItemPlacement) { AnimateItemPlacementScreen() }
     composable(route = FoundationNavRoutes.AspectRatio) { AspectRationScreen() }
     composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
     composable(route = FoundationNavRoutes.Border) { BorderScreen() }
@@ -559,10 +563,10 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.FloatingActionButton3) { FloatingActionButton3Screen() }
     composable(route = Material3NavRoutes.IconButton3) { IconButton3Screen() }
     composable(route = Material3NavRoutes.Icon3) { Icon3Screen() }
-    composable(route = Material3NavRoutes.IconToggleButton) { IconToggleButton3Screen() }
+    composable(route = Material3NavRoutes.IconToggleButton3) { IconToggleButton3Screen() }
     composable(route = Material3NavRoutes.LargeFloatingActionButton) { LargeFloatingActionButtonScreen() }
     composable(route = Material3NavRoutes.LargeTopAppBar) { LargeTopAppBarScreen() }
-    composable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteElevationScreen() }
+    composable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteTonalElevationScreen() }
     composable(route = Material3NavRoutes.LocalContentColor3) { LocalContentColor3Screen() }
     composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
         LocalMinimumTouchTargetEnforcementScreen()
@@ -667,6 +671,7 @@ fun NavGraphBuilder.addUiRoutes() {
     composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
     composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
     composable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }
+    composable(route = UiNavRoutes.OnPlaced) { OnPlacedScreen() }
     composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
     composable(route = UiNavRoutes.Paint) { PaintScreen() }
     composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }

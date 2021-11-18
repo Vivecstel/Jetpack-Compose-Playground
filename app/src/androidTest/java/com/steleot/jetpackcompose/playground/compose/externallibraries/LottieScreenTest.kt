@@ -13,11 +13,13 @@ class LottieScreenTest {
 
     @Test
     fun testLottieScreen() {
+        composeTestRule.mainClock.autoAdvance = false
         composeTestRule.setContent {
             TestTheme {
                 LottieScreen()
             }
         }
+        composeTestRule.mainClock.advanceTimeBy(5_000L)
         // todo
     }
 }

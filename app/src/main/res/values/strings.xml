@@ -106,6 +106,7 @@
     <string name="change_navigation_bar_colors">Change Navigation Bar Colors</string>
     <string name="restore_navigation_bar_colors">Restore Navigation Bar Colors</string>
     <!-- foundation -->
+    <string name="shuffle">Shuffle</string>
     <string name="bring_circle_into_view">Bring circle into View</string>
     <string name="double_click">Double click</string>
     <string name="single_click">Single click</string>
@@ -156,7 +157,8 @@
     <string name="label">Label</string>
     <string name="option_args">Option %1$d</string>
     <string name="no_content_alpha">No content alpha applied - uses the default content alpha set by MaterialTheme - 87% alpha</string>
-    <string name="content_alpha">%1$s alpha applied - %1$d % alpha</string>
+    <string name="content_alpha">%1$s alpha applied - %2$f alpha</string>
+    <string name="maximum">Maximum</string>
     <string name="high_content">High Content</string>
     <string name="medium_content">Medium Content</string>
     <string name="disabled_content">Disabled Content</string>

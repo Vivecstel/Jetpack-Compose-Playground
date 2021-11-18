@@ -51,6 +51,7 @@ val routes = listOf(
     UiNavRoutes.NestedScroll,
     UiNavRoutes.OnGloballyPositioned,
 //    UiNavRoutes.OnKeyEvent,
+    UiNavRoutes.OnPlaced,
     UiNavRoutes.OnSizeChanged,
     UiNavRoutes.Paint,
     UiNavRoutes.PathEffect,

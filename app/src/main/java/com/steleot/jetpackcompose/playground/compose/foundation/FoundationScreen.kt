@@ -8,6 +8,7 @@ import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
 val routes = listOf(
     FoundationNavRoutes.AbsolutePadding,
+    FoundationNavRoutes.AnimateItemPlacement,
     FoundationNavRoutes.AspectRatio,
     FoundationNavRoutes.Background,
     FoundationNavRoutes.Border,
