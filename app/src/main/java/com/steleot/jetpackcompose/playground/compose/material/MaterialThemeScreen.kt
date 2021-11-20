@@ -41,7 +41,8 @@ fun MaterialThemeScreen() {
 }
 
 @Composable
-fun MaterialThemeExample() {
+private fun MaterialThemeExample() {
+    val inSystemDarkTheme = isSystemInDarkTheme()
     val lightColors = lightColors(
         secondary = Color.Red,
         onSecondary = Color.White,
@@ -52,7 +53,7 @@ fun MaterialThemeExample() {
         onSecondary = Color.White,
     )
 
-    val colors = if (isSystemInDarkTheme()) darkColors else lightColors
+    val colors = if (inSystemDarkTheme) darkColors else lightColors
 
     val typography = Typography(
         h1 = TextStyle(
@@ -66,8 +67,7 @@ fun MaterialThemeExample() {
     )
 
     MaterialTheme(colors = colors, typography = typography) {
-        val theme =
-            stringResource(id = if (MaterialTheme.colors.isLight) R.string.light else R.string.dark)
+        val theme = stringResource(id = if (inSystemDarkTheme) R.string.dark else R.string.light)
         ExtendedFloatingActionButton(
             text = { Text(stringResource(id = R.string.material_theme_msg, theme)) },
             onClick = {}

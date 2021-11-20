@@ -183,7 +183,7 @@ private fun ContentPaddingButton() {
 private fun ElevationPaddingButton() {
     Button(
         onClick = {},
-        elevation = ButtonDefaults.elevatedButtonElevation(
+        elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 12.dp,
             pressedElevation = 12.dp,
             disabledElevation = 2.dp,

@@ -38,16 +38,31 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.BadgedBox3,
     Material3NavRoutes.Button3,
     Material3NavRoutes.CenterAlignedTopAppBar,
-    // todo elevated button
+    Material3NavRoutes.ElevatedButton,
     Material3NavRoutes.ExtendedFloatingActionButton3,
-    // todo final tonal button
+    Material3NavRoutes.FilledTonalButton,
     Material3NavRoutes.FloatingActionButton3,
     Material3NavRoutes.Icon3,
     Material3NavRoutes.IconButton3,
     Material3NavRoutes.IconToggleButton3,
     Material3NavRoutes.LargeFloatingActionButton,
-    // todo rest material 3
+    Material3NavRoutes.LargeTopAppBar,
+    // todo local absolute tonal elevation
+    Material3NavRoutes.LocalContentColor3,
+    // todo local mimimum touch target enforcement
+    // todo local text style
+    Material3NavRoutes.MaterialTheme3,
+    Material3NavRoutes.MediumTopAppBar,
+    // todo navigation bar
+    // todo navigation drawer
+    Material3NavRoutes.NavigationRail3,
+    Material3NavRoutes.OutlinedButton3,
+    Material3NavRoutes.Scaffold3,
     Material3NavRoutes.SmallFloatingActionButton,
+    Material3NavRoutes.SmallTopAppBar,
+    Material3NavRoutes.Surface3,
+    Material3NavRoutes.Text3,
+    Material3NavRoutes.TextButton3,
     MainNavRoutes.Ui,
     UiNavRoutes.OnPlaced,
     /* 3.3.0 */

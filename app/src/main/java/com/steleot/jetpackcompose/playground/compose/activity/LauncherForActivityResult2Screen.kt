@@ -12,7 +12,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -41,7 +41,7 @@ fun LauncherForActivityResult2Screen() {
 
 @Composable
 private fun LauncherForActivityResultExample() {
-    val result = remember { mutableStateOf<Uri?>(null) }
+    val result = rememberSaveable { mutableStateOf<Uri?>(null) }
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.PickContact()) {
         result.value = it
     }

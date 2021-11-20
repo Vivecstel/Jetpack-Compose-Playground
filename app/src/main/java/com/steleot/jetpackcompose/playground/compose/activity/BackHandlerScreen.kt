@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,11 +32,13 @@ fun BackHandlerScreen(navController: NavHostController) {
     }
 }
 
+private const val MaxPressed = 4
+
 @Composable
 private fun BackHandlerExample(navController: NavHostController) {
-    var backPressedCount by remember { mutableStateOf(0) }
+    var backPressedCount by rememberSaveable { mutableStateOf(0) }
     BackHandler {
-        if (backPressedCount >= 5) {
+        if (backPressedCount >= MaxPressed) {
             navController.popBackStack()
         } else {
             backPressedCount++
@@ -53,7 +55,7 @@ private fun BackHandlerExample(navController: NavHostController) {
         Button(onClick = { dispatcher.onBackPressed() }) {
             Text(stringResource(id = R.string.back_handler_count, backPressedCount))
         }
-        Text(text = stringResource(id = R.string.back_handler_msg))
+        Text(text = stringResource(id = R.string.back_handler_msg, MaxPressed))
     }
 
 }

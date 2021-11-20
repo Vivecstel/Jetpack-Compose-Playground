@@ -32,11 +32,10 @@ fun OutlinedButtonScreen() {
         title = MaterialNavRoutes.OutlinedButton,
         link = Url,
     ) {
-        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(scrollState),
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultOutlinedButton()

@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.NavigationRail
@@ -32,7 +31,6 @@ fun NavigationRailScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun NavigationRailExample() {
     var selectedItem by remember { mutableStateOf(0) }

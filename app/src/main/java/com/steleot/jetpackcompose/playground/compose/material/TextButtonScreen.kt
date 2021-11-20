@@ -31,11 +31,10 @@ fun TextButtonScreen() {
         title = MaterialNavRoutes.TextButton,
         link = Url,
     ) {
-        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(scrollState),
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultTextButton()

@@ -124,7 +124,7 @@ private fun TextOverflowText() {
 private fun StyledText() {
     Text(
         text = stringResource(id = R.string.app_name),
-        style = MaterialTheme.typography.h1.copy(
+        style = MaterialTheme.typography.h3.copy(
             color = Color.Red,
             shadow = Shadow(Color.Green)
         )

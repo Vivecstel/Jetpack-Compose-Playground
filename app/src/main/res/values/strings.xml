@@ -1,7 +1,7 @@
 <resources>
     <!-- activity -->
     <string name="back_handler_count">Press Back count %1$d</string>
-    <string name="back_handler_msg">Press more than 5 times to exit.</string>
+    <string name="back_handler_msg">Press more than %1$d times to exit.</string>
     <string name="take_picture">Take a picture</string>
     <string name="permission_not_granted">Permission not granted</string>
     <string name="choose_contact">Choose contact</string>
@@ -166,7 +166,7 @@
     <string name="magenta">Magenta</string>
     <string name="white">White</string>
     <string name="black">Black</string>
-    <string name="material_theme_msg">FAB with text style and color from %1$s theme</string>
+    <string name="material_theme_msg">EFAB with text style and color from %1$s theme</string>
     <string name="click_show_sheet">Click to show sheet</string>
     <string name="home">Home</string>
     <string name="show_password">Show password</string>
