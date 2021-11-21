@@ -31,6 +31,7 @@ val routes = listOf(
     MaterialNavRoutes.LocalAbsoluteElevation,
     MaterialNavRoutes.LocalContentAlpha,
     MaterialNavRoutes.LocalContentColor,
+    MaterialNavRoutes.LocalTextStyle,
     MaterialNavRoutes.MaterialTheme,
     MaterialNavRoutes.ModalBottomSheetLayout,
     MaterialNavRoutes.ModalDrawer,

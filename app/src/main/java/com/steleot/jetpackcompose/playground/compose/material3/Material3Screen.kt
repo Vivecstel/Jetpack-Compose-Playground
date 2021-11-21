@@ -24,7 +24,7 @@ val routes = listOf(
     Material3NavRoutes.LocalAbsoluteTonalElevation,
     Material3NavRoutes.LocalContentColor3,
     Material3NavRoutes.LocalMinimumTouchTargetEnforcement,
-    Material3NavRoutes.LocalTextStyle,
+    Material3NavRoutes.LocalTextStyle3,
     Material3NavRoutes.MaterialTheme3,
     Material3NavRoutes.MediumTopAppBar,
     Material3NavRoutes.NavigationBar,

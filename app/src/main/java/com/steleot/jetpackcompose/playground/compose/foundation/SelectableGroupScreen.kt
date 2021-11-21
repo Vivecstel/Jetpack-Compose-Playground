@@ -55,7 +55,9 @@ private fun SelectableGroupExample(
                 )
                 Text(
                     text = item,
-                    modifier = Modifier.padding(start = 16.dp)
+                    modifier = Modifier
+                        .padding(start = 16.dp)
+                        .align(Alignment.CenterVertically)
                 )
             }
         }

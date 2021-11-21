@@ -199,6 +199,31 @@ import androidx.compose.material.icons.filled.BurstMode
 import androidx.compose.material.icons.filled.BusAlert
 import androidx.compose.material.icons.filled.Business
 import androidx.compose.material.icons.filled.BusinessCenter
+import androidx.compose.material.icons.filled.Cabin
+import androidx.compose.material.icons.filled.Cable
+import androidx.compose.material.icons.filled.Cached
+import androidx.compose.material.icons.filled.Cake
+import androidx.compose.material.icons.filled.Calculate
+import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.CalendarViewDay
+import androidx.compose.material.icons.filled.CalendarViewMonth
+import androidx.compose.material.icons.filled.CalendarViewWeek
+import androidx.compose.material.icons.filled.CallEnd
+import androidx.compose.material.icons.filled.CallMade
+import androidx.compose.material.icons.filled.CallMerge
+import androidx.compose.material.icons.filled.CallMissed
+import androidx.compose.material.icons.filled.CallMissedOutgoing
+import androidx.compose.material.icons.filled.CallReceived
+import androidx.compose.material.icons.filled.CallSplit
+import androidx.compose.material.icons.filled.CallToAction
+import androidx.compose.material.icons.filled.Camera
+import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.CameraEnhance
+import androidx.compose.material.icons.filled.CameraFront
+import androidx.compose.material.icons.filled.CameraIndoor
+import androidx.compose.material.icons.filled.CameraOutdoor
+import androidx.compose.material.icons.filled.CameraRear
+import androidx.compose.material.icons.filled.CameraRoll
 import androidx.compose.material.icons.filled._360
 import androidx.compose.material.icons.filled._3dRotation
 import androidx.compose.material.icons.filled._4k
@@ -421,6 +446,31 @@ private val list = listOf(
     Icons.Filled.BusAlert,
     Icons.Filled.BusinessCenter,
     Icons.Filled.Business,
+    Icons.Filled.Cabin,
+    Icons.Filled.Cable,
+    Icons.Filled.Cached,
+    Icons.Filled.Cake,
+    Icons.Filled.Calculate,
+    Icons.Filled.CalendarToday,
+    Icons.Filled.CalendarViewDay,
+    Icons.Filled.CalendarViewMonth,
+    Icons.Filled.CalendarViewWeek,
+    Icons.Filled.CallEnd,
+    Icons.Filled.CallMade,
+    Icons.Filled.CallMerge,
+    Icons.Filled.CallMissed,
+    Icons.Filled.CallMissedOutgoing,
+    Icons.Filled.CallReceived,
+    Icons.Filled.CallSplit,
+    Icons.Filled.CallToAction,
+    Icons.Filled.CameraAlt,
+    Icons.Filled.CameraEnhance,
+    Icons.Filled.CameraFront,
+    Icons.Filled.CameraIndoor,
+    Icons.Filled.Camera,
+    Icons.Filled.CameraOutdoor,
+    Icons.Filled.CameraRear,
+    Icons.Filled.CameraRoll,
 )
 
 @Preview

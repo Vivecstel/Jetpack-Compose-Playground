@@ -34,8 +34,8 @@ private const val Url = "material/BottomNavigationScreen.kt"
 
 @Composable
 fun BottomNavigationScreen() {
-    val selectedNavigationView = remember { mutableStateOf(0) }
-    val selectedNavigationItem = remember { mutableStateOf(0) }
+    val selectedBottomNavigationView = remember { mutableStateOf(0) }
+    val selectedBottomNavigationItem = remember { mutableStateOf(0) }
     DefaultScaffold(
         title = MaterialNavRoutes.BottomNavigation,
         link = Url,
@@ -47,8 +47,8 @@ fun BottomNavigationScreen() {
         ) {
             Button(
                 onClick = {
-                    selectedNavigationView.value =
-                        if (selectedNavigationView.value == 2) 0 else selectedNavigationView.value + 1
+                    selectedBottomNavigationView.value =
+                        if (selectedBottomNavigationView.value == 2) 0 else selectedBottomNavigationView.value + 1
                 }
             ) {
                 Text(
@@ -61,8 +61,8 @@ fun BottomNavigationScreen() {
             Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = {
-                    selectedNavigationItem.value =
-                        if (selectedNavigationItem.value == 4) 0 else selectedNavigationItem.value + 1
+                    selectedBottomNavigationItem.value =
+                        if (selectedBottomNavigationItem.value == 4) 0 else selectedBottomNavigationItem.value + 1
                 }
             ) {
                 Text(
@@ -73,7 +73,7 @@ fun BottomNavigationScreen() {
                 )
             }
             Spacer(modifier = Modifier.height(32.dp))
-            HelperView(selectedNavigationView.value, selectedNavigationItem.value)
+            HelperView(selectedBottomNavigationView.value, selectedBottomNavigationItem.value)
         }
     }
 }
@@ -81,20 +81,20 @@ fun BottomNavigationScreen() {
 @Preview
 @Composable
 private fun HelperView(
-    selectedNavigationView: Int = 0,
-    selectedNavigationItem: Int = 0,
+    selectedBottomNavigationView: Int = 0,
+    selectedBottomNavigationItem: Int = 0,
 ) {
     val selectedItem = remember { mutableStateOf(0) }
     Column {
-        when (selectedNavigationView) {
+        when (selectedBottomNavigationView) {
             0 -> StandardBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
             1 -> BackgroundColorBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
             2 -> ElevationBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
         }
     }

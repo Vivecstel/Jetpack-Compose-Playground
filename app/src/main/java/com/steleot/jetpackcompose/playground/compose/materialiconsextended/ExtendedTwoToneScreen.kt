@@ -199,6 +199,31 @@ import androidx.compose.material.icons.twotone.BurstMode
 import androidx.compose.material.icons.twotone.BusAlert
 import androidx.compose.material.icons.twotone.Business
 import androidx.compose.material.icons.twotone.BusinessCenter
+import androidx.compose.material.icons.twotone.Cabin
+import androidx.compose.material.icons.twotone.Cable
+import androidx.compose.material.icons.twotone.Cached
+import androidx.compose.material.icons.twotone.Cake
+import androidx.compose.material.icons.twotone.Calculate
+import androidx.compose.material.icons.twotone.CalendarToday
+import androidx.compose.material.icons.twotone.CalendarViewDay
+import androidx.compose.material.icons.twotone.CalendarViewMonth
+import androidx.compose.material.icons.twotone.CalendarViewWeek
+import androidx.compose.material.icons.twotone.CallEnd
+import androidx.compose.material.icons.twotone.CallMade
+import androidx.compose.material.icons.twotone.CallMerge
+import androidx.compose.material.icons.twotone.CallMissed
+import androidx.compose.material.icons.twotone.CallMissedOutgoing
+import androidx.compose.material.icons.twotone.CallReceived
+import androidx.compose.material.icons.twotone.CallSplit
+import androidx.compose.material.icons.twotone.CallToAction
+import androidx.compose.material.icons.twotone.Camera
+import androidx.compose.material.icons.twotone.CameraAlt
+import androidx.compose.material.icons.twotone.CameraEnhance
+import androidx.compose.material.icons.twotone.CameraFront
+import androidx.compose.material.icons.twotone.CameraIndoor
+import androidx.compose.material.icons.twotone.CameraOutdoor
+import androidx.compose.material.icons.twotone.CameraRear
+import androidx.compose.material.icons.twotone.CameraRoll
 import androidx.compose.material.icons.twotone._360
 import androidx.compose.material.icons.twotone._3dRotation
 import androidx.compose.material.icons.twotone._4k
@@ -421,6 +446,31 @@ private val list = listOf(
     Icons.TwoTone.BusAlert,
     Icons.TwoTone.BusinessCenter,
     Icons.TwoTone.Business,
+    Icons.TwoTone.Cabin,
+    Icons.TwoTone.Cable,
+    Icons.TwoTone.Cached,
+    Icons.TwoTone.Cake,
+    Icons.TwoTone.Calculate,
+    Icons.TwoTone.CalendarToday,
+    Icons.TwoTone.CalendarViewDay,
+    Icons.TwoTone.CalendarViewMonth,
+    Icons.TwoTone.CalendarViewWeek,
+    Icons.TwoTone.CallEnd,
+    Icons.TwoTone.CallMade,
+    Icons.TwoTone.CallMerge,
+    Icons.TwoTone.CallMissed,
+    Icons.TwoTone.CallMissedOutgoing,
+    Icons.TwoTone.CallReceived,
+    Icons.TwoTone.CallSplit,
+    Icons.TwoTone.CallToAction,
+    Icons.TwoTone.CameraAlt,
+    Icons.TwoTone.CameraEnhance,
+    Icons.TwoTone.CameraFront,
+    Icons.TwoTone.CameraIndoor,
+    Icons.TwoTone.Camera,
+    Icons.TwoTone.CameraOutdoor,
+    Icons.TwoTone.CameraRear,
+    Icons.TwoTone.CameraRoll,
 )
 
 @Preview

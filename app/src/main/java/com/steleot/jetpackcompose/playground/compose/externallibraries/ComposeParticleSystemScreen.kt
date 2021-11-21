@@ -44,7 +44,7 @@ private fun ComposeParticleSystemExample() {
             particleSize = ParticleSize.RandomSizes(25..100),
             particleColor = ParticleColor.RandomColors(
                 listOf(
-                    Color.White,
+                    Color.Magenta,
                     Color.Yellow,
                     Color.Red,
                     Color.Blue

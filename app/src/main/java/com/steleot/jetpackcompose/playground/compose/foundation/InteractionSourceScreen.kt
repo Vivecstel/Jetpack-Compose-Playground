@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.LocalTextStyle
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -66,7 +67,7 @@ private fun SimpleInteractionSourceExample() {
         isDragged && isPressed -> stringResource(id = R.string.dragged_pressed) to Color.Red
         isDragged -> stringResource(id = R.string.dragged) to Color.Green
         isPressed -> stringResource(id = R.string.pressed) to Color.Blue
-        else -> stringResource(id = R.string.interaction_source_message) to Color.Black
+        else -> stringResource(id = R.string.interaction_source_message) to MaterialTheme.colors.primary
     }
 
     Box(

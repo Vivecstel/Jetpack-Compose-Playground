@@ -43,7 +43,7 @@ fun CanvasScreen() {
                 Offset(200f, 200f), strokeWidth = 5f
             )
             drawArc(
-                Color.Black,
+                Color.Green,
                 0f,
                 60f,
                 useCenter = true,

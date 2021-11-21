@@ -28,7 +28,7 @@ class GoogleSignContract(
         intent.takeIf { resultCode == Activity.RESULT_OK }?.apply {
             val task = GoogleSignIn.getSignedInAccountFromIntent(this)
             try {
-                val account = task.getResult(ApiException::class.java)!!
+                val account = task.getResult(ApiException::class.java)
                 Timber.d("Firebase auth with google: ${account.id}")
                 return account.idToken
             } catch (e: ApiException) {

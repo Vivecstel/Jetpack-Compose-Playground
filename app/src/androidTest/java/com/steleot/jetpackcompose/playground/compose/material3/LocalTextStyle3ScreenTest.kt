@@ -6,16 +6,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme3
 import org.junit.Rule
 import org.junit.Test
 
-class LocalTextStyleScreenTest {
+class LocalTextStyle3ScreenTest {
 
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testLocalTextStyleScreen() {
+    fun testLocalTextStyle3Screen() {
         composeTestRule.setContent {
             TestTheme3 {
-                LocalTextStyleScreen()
+                LocalTextStyle3Screen()
             }
         }
         // todo

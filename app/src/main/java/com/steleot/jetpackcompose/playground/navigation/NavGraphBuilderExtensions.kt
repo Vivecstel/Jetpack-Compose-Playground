@@ -171,6 +171,7 @@ import com.steleot.jetpackcompose.playground.compose.material.ListItemScreen
 import com.steleot.jetpackcompose.playground.compose.material.LocalAbsoluteElevationScreen
 import com.steleot.jetpackcompose.playground.compose.material.LocalContentAlphaScreen
 import com.steleot.jetpackcompose.playground.compose.material.LocalContentColorScreen
+import com.steleot.jetpackcompose.playground.compose.material.LocalTextStyleScreen
 import com.steleot.jetpackcompose.playground.compose.material.MaterialScreen
 import com.steleot.jetpackcompose.playground.compose.material.MaterialThemeScreen
 import com.steleot.jetpackcompose.playground.compose.material.ModalBottomSheetLayoutScreen
@@ -212,7 +213,7 @@ import com.steleot.jetpackcompose.playground.compose.material3.LargeTopAppBarScr
 import com.steleot.jetpackcompose.playground.compose.material3.LocalAbsoluteTonalElevationScreen
 import com.steleot.jetpackcompose.playground.compose.material3.LocalContentColor3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.LocalMinimumTouchTargetEnforcementScreen
-import com.steleot.jetpackcompose.playground.compose.material3.LocalTextStyleScreen
+import com.steleot.jetpackcompose.playground.compose.material3.LocalTextStyle3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Material3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.MaterialTheme3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.MediumTopAppBarScreen
@@ -527,6 +528,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     composable(route = MaterialNavRoutes.LocalAbsoluteElevation) { LocalAbsoluteElevationScreen() }
     composable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
     composable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
+    composable(route = MaterialNavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
     composable(route = MaterialNavRoutes.MaterialTheme) { MaterialThemeScreen() }
     composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
     composable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
@@ -573,7 +575,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
         LocalMinimumTouchTargetEnforcementScreen()
     }
-    composable(route = Material3NavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
+    composable(route = Material3NavRoutes.LocalTextStyle3) { LocalTextStyle3Screen() }
     composable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
     composable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
     composable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }

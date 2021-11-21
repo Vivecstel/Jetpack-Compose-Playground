@@ -196,6 +196,7 @@ Download from:
    - [LocalAbsoluteElevation](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalAbsoluteElevationScreen.kt)
    - [LocalContentAlpha](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalContentAlphaScreen.kt)
    - [LocalContentColor](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalContentColorScreen.kt)
+   - [LocalTextStyle](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalTextStyleScreen.kt)
    - [MaterialTheme](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/MaterialThemeScreen.kt)
    - [ModalBottomSheetLayout](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ModalBottomSheetLayoutScreen.kt)
    - [ModalDrawer](https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/develop/app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ModalDrawerScreen.kt)

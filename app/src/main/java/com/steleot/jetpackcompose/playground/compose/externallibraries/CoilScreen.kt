@@ -41,7 +41,7 @@ fun CoilScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            CoilImageExample()
+            CoilImageExample(rememberImagePainter(randomSampleImageUrl()))
             CoilImageExample(
                 rememberImagePainter(
                     data = randomSampleImageUrl(),
@@ -49,15 +49,15 @@ fun CoilScreen() {
                         transformations(CircleCropTransformation())
                     })
             )
-            CoilImageExample()
+            CoilImageExample(rememberImagePainter(randomSampleImageUrl()))
         }
     }
 }
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
-fun CoilImageExample(
-    painter: ImagePainter = rememberImagePainter(randomSampleImageUrl()),
+private fun CoilImageExample(
+    painter: ImagePainter,
 ) {
     Box {
         Image(

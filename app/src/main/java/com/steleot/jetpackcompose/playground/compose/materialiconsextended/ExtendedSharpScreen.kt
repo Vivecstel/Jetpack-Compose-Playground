@@ -199,6 +199,31 @@ import androidx.compose.material.icons.sharp.BurstMode
 import androidx.compose.material.icons.sharp.BusAlert
 import androidx.compose.material.icons.sharp.Business
 import androidx.compose.material.icons.sharp.BusinessCenter
+import androidx.compose.material.icons.sharp.Cabin
+import androidx.compose.material.icons.sharp.Cable
+import androidx.compose.material.icons.sharp.Cached
+import androidx.compose.material.icons.sharp.Cake
+import androidx.compose.material.icons.sharp.Calculate
+import androidx.compose.material.icons.sharp.CalendarToday
+import androidx.compose.material.icons.sharp.CalendarViewDay
+import androidx.compose.material.icons.sharp.CalendarViewMonth
+import androidx.compose.material.icons.sharp.CalendarViewWeek
+import androidx.compose.material.icons.sharp.CallEnd
+import androidx.compose.material.icons.sharp.CallMade
+import androidx.compose.material.icons.sharp.CallMerge
+import androidx.compose.material.icons.sharp.CallMissed
+import androidx.compose.material.icons.sharp.CallMissedOutgoing
+import androidx.compose.material.icons.sharp.CallReceived
+import androidx.compose.material.icons.sharp.CallSplit
+import androidx.compose.material.icons.sharp.CallToAction
+import androidx.compose.material.icons.sharp.Camera
+import androidx.compose.material.icons.sharp.CameraAlt
+import androidx.compose.material.icons.sharp.CameraEnhance
+import androidx.compose.material.icons.sharp.CameraFront
+import androidx.compose.material.icons.sharp.CameraIndoor
+import androidx.compose.material.icons.sharp.CameraOutdoor
+import androidx.compose.material.icons.sharp.CameraRear
+import androidx.compose.material.icons.sharp.CameraRoll
 import androidx.compose.material.icons.sharp._360
 import androidx.compose.material.icons.sharp._3dRotation
 import androidx.compose.material.icons.sharp._4k
@@ -421,6 +446,31 @@ private val list = listOf(
     Icons.Sharp.BusAlert,
     Icons.Sharp.BusinessCenter,
     Icons.Sharp.Business,
+    Icons.Sharp.Cabin,
+    Icons.Sharp.Cable,
+    Icons.Sharp.Cached,
+    Icons.Sharp.Cake,
+    Icons.Sharp.Calculate,
+    Icons.Sharp.CalendarToday,
+    Icons.Sharp.CalendarViewDay,
+    Icons.Sharp.CalendarViewMonth,
+    Icons.Sharp.CalendarViewWeek,
+    Icons.Sharp.CallEnd,
+    Icons.Sharp.CallMade,
+    Icons.Sharp.CallMerge,
+    Icons.Sharp.CallMissed,
+    Icons.Sharp.CallMissedOutgoing,
+    Icons.Sharp.CallReceived,
+    Icons.Sharp.CallSplit,
+    Icons.Sharp.CallToAction,
+    Icons.Sharp.CameraAlt,
+    Icons.Sharp.CameraEnhance,
+    Icons.Sharp.CameraFront,
+    Icons.Sharp.CameraIndoor,
+    Icons.Sharp.Camera,
+    Icons.Sharp.CameraOutdoor,
+    Icons.Sharp.CameraRear,
+    Icons.Sharp.CameraRoll,
 )
 
 @Preview

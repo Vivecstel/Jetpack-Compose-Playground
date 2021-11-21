@@ -96,7 +96,7 @@ private fun LazyItem(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
                     .padding(16.dp)
-                    .background(MaterialTheme.colors.surface, CircleShape)
+                    .background(MaterialTheme.colors.primary, CircleShape)
                     .sizeIn(minWidth = 40.dp, minHeight = 40.dp)
                     .padding(8.dp)
                     .wrapContentSize(Alignment.Center)
