@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity -->
+    <string name="back_handler_count">Presiona Atrás recuento %1$d</string>
+    <string name="back_handler_msg">Presione más de% 1 $ d veces para salir.</string>
+    <string name="take_picture">Toma una foto</string>
+    <string name="permission_not_granted">Permiso no concedido</string>
+    <string name="choose_contact">Elige contacto</string>
+    <string name="name_args">Nombre: %1$s</string>
+    <string name="contact_not_found">Contacto no encontrado</string>
+    <!-- animation -->
+    <string name="tap_anywhere">Toca en cualquier lugar</string>
+    <string name="minus">Menos</string>
+    <string name="plus">Más</string>
+    <string name="shopping_cart">Carrito de compras</string>
+    <string name="animated_vector">Vector animado</string>
+    <string name="favorite">Favorito</string>
+    <string name="animated_visibility_content">Contenido para aparecer / desaparecer</string>
+    <string name="clickable_text">Texto en el que se puede hacer clic</string>
+    <string name="click_me">Haz click en mi</string>
+    <string name="clicked_character">Se hizo clic en %1$d carácter</string>
+    <string name="clicked_url">URL en la que se hizo clic: %1$s</string>
+    <string name="press_me_with_args">Presióname hasta %1$s</string>
+    <string name="hide">esconder</string>
+    <string name="show">show</string>
+    <string name="short_text">Hola</string>
+    <string name="long_text">Texto muy largo\nque se extiende por\nmúltiples líneas</string>
+    <string name="first_text">Este es el primer texto</string>
+    <string name="second_text">Este es el segundo texto</string>
+    <string name="like">Igual que</string>
+    <string name="change_color">Cambiar el color</string>
+    <string name="click_me_change_color">¡Haz clic en mí para cambiar de color!</string>
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <string name="paging_initial_load">Esperando que los elementos se carguen desde un backend falso</string>
+    <string name="paging_list_text">Índice: %1$d, valor: %2$s</string>
+    <!-- rest -->
+    <!-- reusable -->
+    <string name="open_github">Abrir Github</string>
+    <string name="back_arrow">Flecha hacia atrás</string>
+    <string name="search">Buscar</string>
+    <string name="open_drawer">Cajón abierto</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">Hola, %1$s</string>
+    <string name="name_hint">Nombre</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">En la actualización de la aplicación finalizada. Reinicia la aplicación y disfruta de la actualización</string>
+</resources>

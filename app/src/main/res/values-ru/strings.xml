@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity -->
+    <string name="back_handler_count">Нажмите Обратный отсчет %1$d</string>
+    <string name="back_handler_msg">Для выхода нажмите более %1$d раз.</string>
+    <string name="take_picture">Сделать фото</string>
+    <string name="permission_not_granted">Разрешение не предоставлено</string>
+    <string name="choose_contact">Выберите контакт</string>
+    <string name="name_args">Имя: %1$s</string>
+    <string name="contact_not_found">Контакт не найден</string>
+    <!-- animation -->
+    <string name="tap_anywhere">Нажмите где угодно</string>
+    <string name="minus">Минус</string>
+    <string name="plus">Плюс</string>
+    <string name="shopping_cart">Корзина покупателя</string>
+    <string name="animated_vector">Анимированный вектор</string>
+    <string name="favorite">Любимый</string>
+    <string name="animated_visibility_content">Контент появится/исчезнет</string>
+    <string name="clickable_text">Интерактивный текст</string>
+    <string name="click_me">Нажми на меня</string>
+    <string name="clicked_character">Нажат %1$d-й символ</string>
+    <string name="clicked_url">URL, на который нажали: %1$s</string>
+    <string name="press_me_with_args">Нажмите меня на %1$s</string>
+    <string name="hide">Спрятать</string>
+    <string name="show">Показать</string>
+    <string name="short_text">Привет</string>
+    <string name="long_text">Очень длинный текст,\n который занимает\nмножество строк.</string>
+    <string name="first_text">Это первый текст</string>
+    <string name="second_text">Это второй текст</string>
+    <string name="like">Нравиться</string>
+    <string name="change_color">Сменить цвет</string>
+    <string name="click_me_change_color">Щелкните меня, чтобы изменить цвет!</string>
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <string name="paging_initial_load">Ожидание загрузки элементов из поддельного бэкэнда</string>
+    <string name="paging_list_text">Индекс: %1$d, значение: %2$s</string>
+    <!-- rest -->
+    <!-- reusable -->
+    <string name="open_github">Открыть Github</string>
+    <string name="back_arrow">Стрелка назад</string>
+    <string name="search">Поиск</string>
+    <string name="open_drawer">Открыть ящик</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">Привет, %1$s</string>
+    <string name="name_hint">Имя</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">В приложении обновление завершено. Перезагрузите приложение и наслаждайтесь обновлением</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity -->
+    <string name="back_handler_count">Drücken Sie Zurück zählen %1$d</string>
+    <string name="back_handler_msg">Drücken Sie zum Beenden mehr als %1$d Mal.</string>
+    <string name="take_picture">Machen Sie ein Foto</string>
+    <string name="permission_not_granted">Erlaubnis nicht erteilt</string>
+    <string name="choose_contact">Kontakt auswählen</string>
+    <string name="name_args">Name: %1$s</string>
+    <string name="contact_not_found">Kontakt nicht gefunden</string>
+    <!-- animation -->
+    <string name="tap_anywhere">Tippen Sie auf eine beliebige Stelle</string>
+    <string name="minus">Minus</string>
+    <string name="plus">Plus</string>
+    <string name="shopping_cart">Einkaufswagen</string>
+    <string name="animated_vector">Animierter Vektor</string>
+    <string name="favorite">Favorit</string>
+    <string name="animated_visibility_content">Ein-/ausblendender Inhalt</string>
+    <string name="clickable_text">Anklickbarer Text</string>
+    <string name="click_me">Klick mich</string>
+    <string name="clicked_character">%1$d-tes Zeichen wurde angeklickt</string>
+    <string name="clicked_url">Angeklickte URL: %1$s</string>
+    <string name="press_me_with_args">Dränge mich zu %1$s</string>
+    <string name="hide">verstecken</string>
+    <string name="show">zeigen</string>
+    <string name="short_text">Hi</string>
+    <string name="long_text">Sehr langer Text,\nder sich über\nmehrere Zeilen erstreckt</string>
+    <string name="first_text">Dies ist der erste Text</string>
+    <string name="second_text">Dies ist der zweite Text</string>
+    <string name="like">Mögen</string>
+    <string name="change_color">Farbe ändern</string>
+    <string name="click_me_change_color">Klicken Sie auf mich, um die Farbe zu ändern!</string>
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <string name="paging_initial_load">Warten auf das Laden von Elementen aus dem gefälschten Backend</string>
+    <string name="paging_list_text">Index: %1$d, Wert: %2$s</string>
+    <!-- rest -->
+    <!-- reusable -->
+    <string name="open_github">Github öffnen</string>
+    <string name="back_arrow">Zurück-Pfeil</string>
+    <string name="search">Suche</string>
+    <string name="open_drawer">Offene Schublade</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">Hallo, %1$s</string>
+    <string name="name_hint">Name</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">In App-Update abgeschlossen. Starten Sie die Anwendung neu und genießen Sie das Update</string>
+</resources>

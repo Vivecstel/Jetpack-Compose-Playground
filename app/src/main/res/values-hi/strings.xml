@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity -->
+    <string name="back_handler_count">बैक काउंट %1$d दबाएं</string>
+    <string name="back_handler_msg">बाहर निकलने के लिए %1$d से अधिक बार दबाएं।</string>
+    <string name="take_picture">एक तस्वीर ले लो</string>
+    <string name="permission_not_granted">अनुमति नहीं दी गई</string>
+    <string name="choose_contact">संपर्क चुनें</string>
+    <string name="name_args">नाम: %1$s</string>
+    <string name="contact_not_found">संपर्क नहीं मिला</string>
+    <!-- animation -->
+    <string name="tap_anywhere">कहीं भी टैप करें</string>
+    <string name="minus">ऋण</string>
+    <string name="plus">प्लस</string>
+    <string name="shopping_cart">शॉपिंग कार्ट</string>
+    <string name="animated_vector">एनिमेटेड वेक्टर</string>
+    <string name="favorite">पसंदीदा</string>
+    <string name="animated_visibility_content">प्रकट/गायब होने वाली सामग्री</string>
+    <string name="clickable_text">क्लिक करने योग्य पाठ</string>
+    <string name="click_me">मुझे क्लिक करो</string>
+    <string name="clicked_character">%1$d-वें वर्ण पर क्लिक किया गया</string>
+    <string name="clicked_url">क्लिक किया गया यूआरएल: %1$s</string>
+    <string name="press_me_with_args">मुझे %1$s पर दबाएं</string>
+    <string name="hide">छिपाना</string>
+    <string name="show">प्रदर्शन</string>
+    <string name="short_text">नमस्ते</string>
+    <string name="long_text">बहुत लंबा लेख\nजो कि\nअनेक पंक्तियों में फैला हुआ है</string>
+    <string name="first_text">यह पहला पाठ है</string>
+    <string name="second_text">यह दूसरा पाठ है</string>
+    <string name="like">रंग बदलना</string>
+    <string name="change_color">रंग बदलना</string>
+    <string name="click_me_change_color">रंग बदलने के लिए मुझे क्लिक करें!</string>
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <string name="paging_initial_load">नकली बैकएंड से आइटम लोड होने की प्रतीक्षा कर रहा है</string>
+    <string name="paging_list_text">इंडेक्स: %1$d, मान: %2$s</string>
+    <!-- rest -->
+    <!-- reusable -->
+    <string name="open_github">गीथूब खोलें</string>
+    <string name="back_arrow">पिछला तीर</string>
+    <string name="search">खोज</string>
+    <string name="open_drawer">दराज खोलें</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">नमस्ते, %1$s</string>
+    <string name="name_hint">नाम</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">ऐप अपडेट में समाप्त। एप्लिकेशन को पुनरारंभ करें और अपडेट का आनंद लें</string>
+</resources>

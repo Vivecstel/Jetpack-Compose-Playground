@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity -->
+    <string name="back_handler_count">Appuyez sur Retour compte %1$d</string>
+    <string name="back_handler_msg">Appuyez plus de %1$d fois pour quitter.</string>
+    <string name="take_picture">Prendre une photo</string>
+    <string name="permission_not_granted">Autorisation non accordée</string>
+    <string name="choose_contact">Choisir le contact</string>
+    <string name="name_args">Nom: %1$s</string>
+    <string name="contact_not_found">Contact non trouvé</string>
+    <!-- animation -->
+    <string name="tap_anywhere">Appuyez n'importe où</string>
+    <string name="minus">Moins</string>
+    <string name="plus">Plus</string>
+    <string name="shopping_cart">Panier</string>
+    <string name="animated_vector">Vecteur animé</string>
+    <string name="favorite">Favori</string>
+    <string name="animated_visibility_content">Contenu à apparaître/disparaître</string>
+    <string name="clickable_text">Texte cliquable</string>
+    <string name="click_me">Cliquez sur moi</string>
+    <string name="clicked_character">%1$d-ième caractère est cliqué</string>
+    <string name="clicked_url">URL cliquée: %1$s</string>
+    <string name="press_me_with_args">Appuyez-moi sur %1$s</string>
+    <string name="hide">cacher</string>
+    <string name="show">spectacle</string>
+    <string name="short_text">salut</string>
+    <string name="long_text">Texte très long\nqui s\'étend sur\nplusieurs lignes</string>
+    <string name="first_text">Ceci est le premier texte</string>
+    <string name="second_text">Ceci est le deuxième texte</string>
+    <string name="like">Comme</string>
+    <string name="change_color">Changer de couleur</string>
+    <string name="click_me_change_color">Cliquez sur moi pour changer de couleur !</string>
+    <!-- constraint layout -->
+    <!-- custom examples -->
+    <!-- external libraries -->
+    <!-- foundation -->
+    <!-- material -->
+    <!-- material 3 -->
+    <!-- material icons -->
+    <!-- material icons extended -->
+    <!-- navigation -->
+    <!-- paging -->
+    <string name="paging_initial_load">En attente du chargement des éléments à partir d\'un faux backend</string>
+    <string name="paging_list_text">Indice: %1$d, valeur: %2$s</string>
+    <!-- rest -->
+    <!-- reusable -->
+    <string name="open_github">Ouvrir Github</string>
+    <string name="back_arrow">Flèche arrière</string>
+    <string name="search">Chercher</string>
+    <string name="open_drawer">Tiroir ouvert</string>
+    <!-- runtime -->
+    <!-- ui -->
+    <!-- view model -->
+    <string name="hello_with_args">Bonjour, %1$s</string>
+    <string name="name_hint">Nom</string>
+    <!-- helpers -->
+    <string name="in_app_update_message">Dans la mise à jour de l\'application terminée. Redémarrez l\'application et profitez de la mise à jour</string>
+</resources>
