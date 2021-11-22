@@ -31,14 +31,48 @@
     <string name="change_color">Farbe ändern</string>
     <string name="click_me_change_color">Klicken Sie auf mich, um die Farbe zu ändern!</string>
     <!-- constraint layout -->
+    <string name="button_args">Schaltfläche %1$d</string>
+    <string name="text_args">Text %1$d</string>
+    <string name="play">Spiel</string>
+    <string name="close">Nah dran</string>
+    <string name="choose_style">Wählen Sie einen Stil</string>
+    <string name="day_or_night">Pop oder dezent. Tag oder Nacht.\nPassen Sie Ihre Benutzeroberfläche an</string>
+    <string name="swipe_up">Wische nach oben</string>
     <!-- custom examples -->
+    <string name="delete_route">Route löschen</string>
+    <string name="pressed_count">%1$d mal gedrückt</string>
+    <string name="feature_not_available">Funktion nicht verfügbar</string>
+    <string name="camera_already_granted">Kameraberechtigung bereits erteilt</string>
+    <string name="camera_rationale">Die Kamera ist für diese App wichtig. Bitte erteilen Sie die Erlaubnis.</string>
+    <string name="request_permission">Um Erlaubnis bitten</string>
+    <string name="hide_rationale">Keine Begründung mehr anzeigen</string>
+    <string name="camera_permission_denied">Kameraberechtigung verweigert. Lesen Sie diese FAQ mit Informationen darüber, warum wir diese Berechtigung benötigen. Bitte gewähren Sie uns Zugriff auf den Einstellungsbildschirm.</string>
+    <string name="open_settings">Einstellungen öffnen</string>
+    <string name="first_baseline_padding">Text mit Auffüllung auf der ersten Grundlinie</string>
+    <string name="normal_padding">Text mit normaler Polsterung oben</string>
+    <string name="incoming_message">Sie haben eine eingehende Nachricht !!!</string>
+    <string name="compose_coming">Jetpack Compose kommt :)</string>
     <!-- external libraries -->
     <!-- foundation -->
     <!-- material -->
     <!-- material 3 -->
+    <string name="no_enforced_minimum">Nicht erzwungenes Mindestberührungsziel auf der Oberfläche</string>
+    <string name="enforced_minimum">Erzwungenes minimales Berührungsziel auf der Oberfläche (standardmäßig)</string>
+    <string name="default_local_text_style">Verwenden des standardmäßigen lokalen Textstils</string>
+    <string name="custom_local_text_style">Verwenden eines benutzerdefinierten lokalen Textstils</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->
+    <string name="profile">Profil</string>
+    <string name="dashboard">Armaturenbrett</string>
+    <string name="scrollable">Scrollbar</string>
+    <string name="navigate_to">Navigieren Sie zu %1$s</string>
+    <string name="go_to_previous">Zum vorherigen Bildschirm gehen</string>
+    <string name="item">Artikel: %1$d</string>
+    <string name="single_item">Einzelnes Objekt</string>
+    <string name="first_last_baseline">Diese Linie hat die erste Grundlinie.\nDiese Linie hat die letzte Grundlinie.</string>
+    <string name="scroll">Scrollen</string>
+    <string name="smooth_scroll">Glattes Scrollen</string>
     <!-- paging -->
     <string name="paging_initial_load">Warten auf das Laden von Elementen aus dem gefälschten Backend</string>
     <string name="paging_list_text">Index: %1$d, Wert: %2$s</string>
@@ -49,6 +83,26 @@
     <string name="search">Suche</string>
     <string name="open_drawer">Offene Schublade</string>
     <!-- runtime -->
+    <string name="user_name">Benutzername ist: %1$s</string>
+    <string name="count_args">Anzahl: %1$d</string>
+    <string name="phone_args">Telefon: %1$s</string>
+    <string name="id_args">ID: %1$s</string>
+    <string name="added_items">Hinzugefügte Artikel:</string>
+    <string name="remove">Entfernen</string>
+    <string name="sayings">Sprüche:</string>
+    <string name="says">%1$s mit \'%2$s\'</string>
+    <string name="saying">Sprichwort</string>
+    <string name="text_with_delay">%1$s mit %2$d ms Verzögerung.</string>
+    <string name="try_orientation">Versuchen Sie sich hier zu orientieren.</string>
+    <string name="decrement">Verminderung</string>
+    <string name="increment">Zuwachs</string>
+    <string name="go_to_screen">Gehe zu Bildschirm %1$d</string>
+    <string name="counter_screen_1">Zähler = %1$d auf Bildschirm 1</string>
+    <string name="screen_2">Bildschirm 2</string>
+    <string name="clicked_count">Du hast %1$d Mal geklickt</string>
+    <string name="click_to_close">Klicken Sie, um die Schublade zu schließen</string>
+    <string name="click_to_open">Klicken Sie hier, um die Schublade zu öffnen</string>
+    <string name="ahoy">Ahoi</string>
     <!-- ui -->
     <!-- view model -->
     <string name="hello_with_args">Hallo, %1$s</string>

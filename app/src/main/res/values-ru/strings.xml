@@ -31,14 +31,48 @@
     <string name="change_color">Сменить цвет</string>
     <string name="click_me_change_color">Щелкните меня, чтобы изменить цвет!</string>
     <!-- constraint layout -->
+    <string name="button_args">Кнопка %1$d</string>
+    <string name="text_args">Текст %1$d</string>
+    <string name="play">Играть</string>
+    <string name="close">Закрывать</string>
+    <string name="choose_style">Выбери стиль</string>
+    <string name="day_or_night">Поп или тонкий. День или ночь.\nНастройте интерфейс</string>
+    <string name="swipe_up">Проведите вверх</string>
     <!-- custom examples -->
+    <string name="delete_route">Удалить маршрут</string>
+    <string name="pressed_count">Нажат %1$d раз</string>
+    <string name="feature_not_available">Функция недоступна</string>
+    <string name="camera_already_granted">Разрешение камеры уже предоставлено</string>
+    <string name="camera_rationale">Камера важна для этого приложения. Пожалуйста, дайте разрешение.</string>
+    <string name="request_permission">Просить разрешения</string>
+    <string name="hide_rationale">Не показывать логику снова</string>
+    <string name="camera_permission_denied">Разрешение камеры отклонено. См. Этот FAQ с информацией о том, зачем нам это разрешение. Пожалуйста, предоставьте нам доступ на экране настроек.</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="first_baseline_padding">Текст с отступом на первой базовой линии</string>
+    <string name="normal_padding">Текст с нормальным заполнением сверху</string>
+    <string name="incoming_message">У вас входящее сообщение !!!</string>
+    <string name="compose_coming">Скоро Jetpack compose :)</string>
     <!-- external libraries -->
     <!-- foundation -->
     <!-- material -->
     <!-- material 3 -->
+    <string name="no_enforced_minimum">Не обеспечивается минимальное касание цели на поверхности</string>
+    <string name="enforced_minimum">Принудительная минимальная цель касания на поверхности (по умолчанию)</string>
+    <string name="default_local_text_style">Использование стиля локального текста по умолчанию</string>
+    <string name="custom_local_text_style">Использование собственного стиля локального текста</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->
+    <string name="profile">Профиль</string>
+    <string name="dashboard">Щиток приборов</string>
+    <string name="scrollable">Прокручиваемый</string>
+    <string name="navigate_to">Перейти к %1$s</string>
+    <string name="go_to_previous">Перейти к предыдущему экрану</string>
+    <string name="item">Предмет: %1$d</string>
+    <string name="single_item">Отдельный элемент</string>
+    <string name="first_last_baseline">Эта линия имеет первую базовую линию. \ NЭта линия имеет последнюю базовую линию.</string>
+    <string name="scroll">Прокрутка</string>
+    <string name="smooth_scroll">Плавная прокрутка</string>
     <!-- paging -->
     <string name="paging_initial_load">Ожидание загрузки элементов из поддельного бэкэнда</string>
     <string name="paging_list_text">Индекс: %1$d, значение: %2$s</string>
@@ -49,6 +83,26 @@
     <string name="search">Поиск</string>
     <string name="open_drawer">Открыть ящик</string>
     <!-- runtime -->
+    <string name="user_name">Имя пользователя: %1$s</string>
+    <string name="count_args">Количество: %1$d</string>
+    <string name="phone_args">Телефон: %1$s</string>
+    <string name="id_args">Id: %1$s</string>
+    <string name="added_items">Добавленные предметы:</string>
+    <string name="remove">Удалять</string>
+    <string name="sayings">Поговорки:</string>
+    <string name="says">%1$s с \'%2$s\'</string>
+    <string name="saying">Говоря</string>
+    <string name="text_with_delay">%1$s с задержкой %2$d мс.</string>
+    <string name="try_orientation">Попробуйте ориентироваться здесь.</string>
+    <string name="decrement">Декремент</string>
+    <string name="increment">Инкремент</string>
+    <string name="go_to_screen">Перейти на экран %1$d</string>
+    <string name="counter_screen_1">Счетчик =% 1 $ d на экране 1</string>
+    <string name="screen_2">Экран 2</string>
+    <string name="clicked_count">Вы нажали% 1 $ d раз</string>
+    <string name="click_to_close">Нажмите, чтобы закрыть ящик</string>
+    <string name="click_to_open">Нажмите, чтобы открыть ящик</string>
+    <string name="ahoy">Ахой</string>
     <!-- ui -->
     <!-- view model -->
     <string name="hello_with_args">Привет, %1$s</string>

@@ -31,14 +31,48 @@
     <string name="change_color">Cambiar el color</string>
     <string name="click_me_change_color">¡Haz clic en mí para cambiar de color!</string>
     <!-- constraint layout -->
+    <string name="button_args">Botón %1$d</string>
+    <string name="text_args">Texto %1$d</string>
+    <string name="play">Jugar</string>
+    <string name="close">Cerrar</string>
+    <string name="choose_style">Elige un estilo</string>
+    <string name="day_or_night">Pop o sutil. De día o de noche.\nPersonaliza tu interfaz</string>
+    <string name="swipe_up">Muévase hacia arriba</string>
     <!-- custom examples -->
+    <string name="delete_route">Eliminar ruta</string>
+    <string name="pressed_count">Presionado %1$d veces</string>
+    <string name="feature_not_available">Característica no disponible</string>
+    <string name="camera_already_granted">Permiso de cámara ya concedido</string>
+    <string name="camera_rationale">La cámara es importante para esta aplicación. Por favor conceda el permiso.</string>
+    <string name="request_permission">Solicitar permiso</string>
+    <string name="hide_rationale">No vuelvas a mostrar la razón</string>
+    <string name="camera_permission_denied">Permiso de cámara denegado. Consulte estas preguntas frecuentes con información sobre por qué necesitamos este permiso. Por favor, concédenos acceso en la pantalla de Configuración.</string>
+    <string name="open_settings">Configuración abierta</string>
+    <string name="first_baseline_padding">Texto con relleno en First Baseline</string>
+    <string name="normal_padding">Texto con parte superior acolchada normal</string>
+    <string name="incoming_message">Tienes un mensaje entrante !!!</string>
+    <string name="compose_coming">Se acerca Jetpack compose :)</string>
     <!-- external libraries -->
     <!-- foundation -->
     <!-- material -->
     <!-- material 3 -->
+    <string name="no_enforced_minimum">Objetivo mínimo de toque no aplicado en la superficie</string>
+    <string name="enforced_minimum">Objetivo de toque mínimo obligatorio en la superficie (por defecto)</string>
+    <string name="default_local_text_style">Uso del estilo de texto local predeterminado</string>
+    <string name="custom_local_text_style">Uso de estilo de texto local personalizado</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->
+    <string name="profile">Perfil</string>
+    <string name="dashboard">Tablero</string>
+    <string name="scrollable">Desplazable</string>
+    <string name="navigate_to">Ir a %1$s</string>
+    <string name="go_to_previous">Ir a la pantalla anterior</string>
+    <string name="item">Elemento: %1$d</string>
+    <string name="single_item">Objeto único</string>
+    <string name="first_last_baseline">Esta línea tiene la primera línea de base.\nEsta línea tiene la última línea de base.</string>
+    <string name="scroll">Desplazarse</string>
+    <string name="smooth_scroll">Desplazamiento suave</string>
     <!-- paging -->
     <string name="paging_initial_load">Esperando que los elementos se carguen desde un backend falso</string>
     <string name="paging_list_text">Índice: %1$d, valor: %2$s</string>
@@ -49,6 +83,26 @@
     <string name="search">Buscar</string>
     <string name="open_drawer">Cajón abierto</string>
     <!-- runtime -->
+    <string name="user_name">El nombre de usuario es: %1$s</string>
+    <string name="count_args">Recuento: %1$d</string>
+    <string name="phone_args">Teléfono: %1$s</string>
+    <string name="id_args">ID: %1$s</string>
+    <string name="added_items">Elementos agregados:</string>
+    <string name="remove">Eliminar</string>
+    <string name="sayings">Refranes:</string>
+    <string name="says">%1$s con \'%2$s\'</string>
+    <string name="saying">Diciendo</string>
+    <string name="text_with_delay">%1$s con un retraso de %2$d ms.</string>
+    <string name="try_orientation">Prueba la orientación aquí.</string>
+    <string name="decrement">Decremento</string>
+    <string name="increment">Incremento</string>
+    <string name="go_to_screen">Ir a la pantalla %1$d</string>
+    <string name="counter_screen_1">Contador = %1$d en la pantalla 1</string>
+    <string name="screen_2">Pantalla 2</string>
+    <string name="clicked_count">Hiciste clic %1$d veces</string>
+    <string name="click_to_close">Haga clic para cerrar el cajón</string>
+    <string name="click_to_open">Haga clic para abrir el cajón</string>
+    <string name="ahoy">Ahoy</string>
     <!-- ui -->
     <!-- view model -->
     <string name="hello_with_args">Hola, %1$s</string>

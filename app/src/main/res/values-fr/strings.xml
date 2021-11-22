@@ -9,7 +9,7 @@
     <string name="name_args">Nom: %1$s</string>
     <string name="contact_not_found">Contact non trouvé</string>
     <!-- animation -->
-    <string name="tap_anywhere">Appuyez n'importe où</string>
+    <string name="tap_anywhere">Appuyez n\'importe où</string>
     <string name="minus">Moins</string>
     <string name="plus">Plus</string>
     <string name="shopping_cart">Panier</string>
@@ -31,14 +31,48 @@
     <string name="change_color">Changer de couleur</string>
     <string name="click_me_change_color">Cliquez sur moi pour changer de couleur !</string>
     <!-- constraint layout -->
+    <string name="button_args">Bouton %1$d</string>
+    <string name="text_args">Texte %1$d</string>
+    <string name="play">Jouer</string>
+    <string name="close">proche</string>
+    <string name="choose_style">Choisissez un style</string>
+    <string name="day_or_night">Pop ou subtil. De jour comme de nuit.\nPersonnalisez votre interface</string>
+    <string name="swipe_up">Balayez vers le haut</string>
     <!-- custom examples -->
+    <string name="delete_route">Supprimer l\'itinéraire</string>
+    <string name="pressed_count">Appuyé %1$d fois</string>
+    <string name="feature_not_available">Fonctionnalité non disponible</string>
+    <string name="camera_already_granted">Autorisation de la caméra déjà accordée</string>
+    <string name="camera_rationale">La caméra est importante pour cette application. Veuillez accorder l\'autorisation.</string>
+    <string name="request_permission">Demander la permission</string>
+    <string name="hide_rationale">Ne plus montrer de justification</string>
+    <string name="camera_permission_denied">Autorisation de la caméra refusée. Consultez cette FAQ avec des informations sur les raisons pour lesquelles nous avons besoin de cette autorisation. S\'il vous plaît, accordez-nous l\'accès sur l\'écran Paramètres.</string>
+    <string name="open_settings">Ouvrir les paramètres</string>
+    <string name="first_baseline_padding">Texte avec remplissage sur la première ligne de base</string>
+    <string name="normal_padding">Texte avec rembourrage normal en haut</string>
+    <string name="incoming_message">Vous avez un message entrant !!!</string>
+    <string name="compose_coming">Jetpack compose arrive :)</string>
     <!-- external libraries -->
     <!-- foundation -->
     <!-- material -->
     <!-- material 3 -->
+    <string name="no_enforced_minimum">Cible tactile minimale non appliquée sur la surface</string>
+    <string name="enforced_minimum">Cible tactile minimale appliquée sur la surface (par défaut)</string>
+    <string name="default_local_text_style">Utilisation du style de texte local par défaut</string>
+    <string name="custom_local_text_style">Utilisation du style de texte local personnalisé</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->
+    <string name="profile">Profil</string>
+    <string name="dashboard">Tableau de bord</string>
+    <string name="scrollable">Défilement</string>
+    <string name="navigate_to">Accédez à %1$s</string>
+    <string name="go_to_previous">Aller à l\'écran précédent</string>
+    <string name="item">Objet: %1$d</string>
+    <string name="single_item">Un seul article</string>
+    <string name="first_last_baseline">Cette ligne a la première ligne de base.\nCette ligne a la dernière ligne de base.</string>
+    <string name="scroll">Faire défiler</string>
+    <string name="smooth_scroll">Défilement fluide</string>
     <!-- paging -->
     <string name="paging_initial_load">En attente du chargement des éléments à partir d\'un faux backend</string>
     <string name="paging_list_text">Indice: %1$d, valeur: %2$s</string>
@@ -49,6 +83,26 @@
     <string name="search">Chercher</string>
     <string name="open_drawer">Tiroir ouvert</string>
     <!-- runtime -->
+    <string name="user_name">Le nom d\'utilisateur est: %1$s</string>
+    <string name="count_args">Nombre: %1$d</string>
+    <string name="phone_args">Téléphone: %1$s</string>
+    <string name="id_args">Identifiant: %1$s</string>
+    <string name="added_items">Éléments ajoutés:</string>
+    <string name="remove">Supprimer</string>
+    <string name="sayings">Énonciations :</string>
+    <string name="says">%1$s avec \'%2$s\'</string>
+    <string name="saying">En disant</string>
+    <string name="text_with_delay">%1$s avec %2$d ms de retard.</string>
+    <string name="try_orientation">Essayez l\'orientation ici.</string>
+    <string name="decrement">Décrémenter</string>
+    <string name="increment">Incrément</string>
+    <string name="go_to_screen">Aller à l\'écran %1$d</string>
+    <string name="counter_screen_1">Compteur = %1$d sur l\'écran 1</string>
+    <string name="screen_2">Écran 2</string>
+    <string name="clicked_count">Vous avez cliqué %1$d fois</string>
+    <string name="click_to_close">Cliquez pour fermer le tiroir</string>
+    <string name="click_to_open">Cliquez pour ouvrir le tiroir</string>
+    <string name="ahoy">Ohé</string>
     <!-- ui -->
     <!-- view model -->
     <string name="hello_with_args">Bonjour, %1$s</string>

@@ -32,7 +32,6 @@
     <!-- constraint layout -->
     <string name="button_args">Button %1$d</string>
     <string name="text_args">Text %1$d</string>
-    <string name="motion_layout_compose">MotionLayout in Compose</string>
     <string name="play">Play</string>
     <string name="close">Close</string>
     <string name="choose_style">Chose a style</string>
@@ -97,7 +96,7 @@
     <string name="feed">Feed</string>
     <string name="bottom_sheet_args">Sheet with arg: %1$s</string>
     <string name="show_another_bottom_sheet">Show another bottom sheet</string>
-    <string name="missing_argument">Missing argument :(</string>
+    <string name="missing_argument">Missing argument:(</string>
     <string name="star">Star</string>
     <string name="delete">Delete</string>
     <string name="test_with_args">Test %1$d</string>
@@ -250,10 +249,10 @@
     <string name="search">Search</string>
     <string name="open_drawer">Open Drawer</string>
     <!-- runtime -->
-    <string name="user_name">User name is : %1$s</string>
-    <string name="count_args">Count : %1$d</string>
-    <string name="phone_args">Phone : %1$s</string>
-    <string name="id_args">Id : %1$s</string>
+    <string name="user_name">User name is: %1$s</string>
+    <string name="count_args">Count: %1$d</string>
+    <string name="phone_args">Phone: %1$s</string>
+    <string name="id_args">Id: %1$s</string>
     <string name="added_items">Added items:</string>
     <string name="remove">Remove</string>
     <string name="sayings">Sayings:</string>
@@ -280,7 +279,7 @@
     <string name="show_dialog">Show dialog</string>
     <string name="vector_painter">Vector image from painter resource</string>
     <string name="drawable_painter">Drawable image from painter resource</string>
-    <string name="string_with_font">String from strings.xml with font : %1$s</string>
+    <string name="string_with_font">String from strings.xml with font: %1$s</string>
     <string name="header_text">Header text</string>
     <string name="footer_text">Footer text</string>
     <string name="clipboard_example">Local Clipboard manager example</string>
@@ -297,7 +296,7 @@
     <string name="close_keyboard">Close software keyboard.</string>
     <string name="unknown">Unknown</string>
     <string name="toolbar_offset">Toolbar offset: %1$f</string>
-    <string name="pointer_input">Current offset is : %1$f, %2$f.\nTap to change.</string>
+    <string name="pointer_input">Current offset is: %1$f, %2$f.\nTap to change.</string>
     <string name="local_font_loader">Local Font Loader with reggae one font</string>
     <string name="local_layout_direction">Local layout Direction is: %1$s</string>
     <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>

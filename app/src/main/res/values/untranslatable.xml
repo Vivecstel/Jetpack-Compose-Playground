@@ -4,6 +4,7 @@
     <string name="jetpack" translatable="false">Jetpack</string>
     <string name="compose" translatable="false">Compose</string>
     <string name="playground" translatable="false">Playground</string>
+    <string name="motion_layout_compose" translatable="false">MotionLayout Jetpack Compose</string>
     <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
     <string name="backdrop_scaffold" translatable="false">Backdrop scaffold</string>
     <string name="bottom_sheet_scaffold" translatable="false">Bottom sheet scaffold</string>

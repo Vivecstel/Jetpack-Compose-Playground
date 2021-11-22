@@ -31,14 +31,48 @@
     <string name="change_color">रंग बदलना</string>
     <string name="click_me_change_color">रंग बदलने के लिए मुझे क्लिक करें!</string>
     <!-- constraint layout -->
+    <string name="button_args">बटन %1$d</string>
+    <string name="text_args">टेक्स्ट %1$d</string>
+    <string name="play">खेल</string>
+    <string name="close">बंद करे</string>
+    <string name="choose_style">एक शैली चुनें</string>
+    <string name="day_or_night">पॉप या सूक्ष्म। दिन हो या रात.\nअपना इंटरफ़ेस कस्टमाइज़ करें</string>
+    <string name="swipe_up">स्वाइप करना</string>
     <!-- custom examples -->
+    <string name="delete_route">मार्ग हटाएं</string>
+    <string name="pressed_count">%1$d बार दबाया गया</string>
+    <string name="feature_not_available">सुविधा उपलब्ध नहीं है</string>
+    <string name="camera_already_granted">कैमरा अनुमति पहले ही दी जा चुकी है</string>
+    <string name="camera_rationale">इस ऐप के लिए कैमरा महत्वपूर्ण है। कृपया अनुमति प्रदान करें।</string>
+    <string name="request_permission">अनुमति का अनुरोध करें</string>
+    <string name="hide_rationale">फिर से तर्क न दिखाएं</string>
+    <string name="camera_permission_denied">कैमरा अनुमति अस्वीकृत। हमें इस अनुमति की आवश्यकता क्यों है, इस बारे में जानकारी के साथ यह अक्सर पूछे जाने वाले प्रश्न देखें। कृपया, हमें सेटिंग स्क्रीन पर पहुंच प्रदान करें।</string>
+    <string name="open_settings">सेटिंग्स खोलें</string>
+    <string name="first_baseline_padding">प्रथम आधार रेखा पर पैडिंग के साथ पाठ</string>
+    <string name="normal_padding">सामान्य पैडिंग टॉप के साथ टेक्स्ट</string>
+    <string name="incoming_message">आपके पास एक आने वाला संदेश है !!!</string>
+    <string name="compose_coming">जेटपैक कंपोज़ आ रहा है :)</string>
     <!-- external libraries -->
     <!-- foundation -->
     <!-- material -->
     <!-- material 3 -->
+    <string name="no_enforced_minimum">सतह पर न्यूनतम स्पर्श लक्ष्य लागू नहीं किया गया</string>
+    <string name="enforced_minimum">सतह पर लागू न्यूनतम स्पर्श लक्ष्य (डिफ़ॉल्ट रूप से)</string>
+    <string name="default_local_text_style">डिफ़ॉल्ट स्थानीय पाठ शैली का उपयोग करना</string>
+    <string name="custom_local_text_style">कस्टम स्थानीय पाठ शैली का उपयोग करना</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="dashboard">डैशबोर्ड</string>
+    <string name="scrollable">स्क्रॉल</string>
+    <string name="navigate_to">%1$s पर नेविगेट करें</string>
+    <string name="go_to_previous">पिछली स्क्रीन पर जाएं</string>
+    <string name="item">आइटम: %1$d</string>
+    <string name="single_item">एकल आइटम</string>
+    <string name="first_last_baseline">इस लाइन की पहली बेसलाइन है।\nइस लाइन की आखिरी बेसलाइन है।</string>
+    <string name="scroll">स्क्रॉल</string>
+    <string name="smooth_scroll">चिकना स्क्रॉल</string>
     <!-- paging -->
     <string name="paging_initial_load">नकली बैकएंड से आइटम लोड होने की प्रतीक्षा कर रहा है</string>
     <string name="paging_list_text">इंडेक्स: %1$d, मान: %2$s</string>
@@ -49,6 +83,26 @@
     <string name="search">खोज</string>
     <string name="open_drawer">दराज खोलें</string>
     <!-- runtime -->
+    <string name="user_name">उपयोगकर्ता नाम है: %1$s</string>
+    <string name="count_args">गणना: %1$d</string>
+    <string name="phone_args">फ़ोन: %1$s</string>
+    <string name="id_args">आईडी: %1$s</string>
+    <string name="added_items">जोड़े गए आइटम:</string>
+    <string name="remove">हटाना</string>
+    <string name="sayings">कहावतें:</string>
+    <string name="says">%1$s \'%2$s\' के साथ</string>
+    <string name="saying">कह रही है</string>
+    <string name="text_with_delay">%1$s %2$d एमएस विलंब के साथ।</string>
+    <string name="try_orientation">यहां अभिविन्यास का प्रयास करें।</string>
+    <string name="decrement">घटती</string>
+    <string name="increment">वेतन वृद्धि</string>
+    <string name="go_to_screen">स्क्रीन %1$d पर जाएं</string>
+    <string name="counter_screen_1">काउंटर = %1$d स्क्रीन पर 1</string>
+    <string name="screen_2">स्क्रीन 2</string>
+    <string name="clicked_count">आपने %1$d बार क्लिक किया</string>
+    <string name="click_to_close">दराज बंद करने के लिए क्लिक करें</string>
+    <string name="click_to_open">दराज खोलने के लिए क्लिक करें</string>
+    <string name="ahoy">एहोय</string>
     <!-- ui -->
     <!-- view model -->
     <string name="hello_with_args">नमस्ते, %1$s</string>
