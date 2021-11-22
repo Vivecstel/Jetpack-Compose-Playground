@@ -205,7 +205,7 @@
     <string name="release_notes">Release notes</string>
     <string name="open">Open %1$s</string>
     <string name="failed_google_sign_in">Failed to sign in with Google. Please try again later.</string>
-    <string name="mandatory_sign_in">You need to sign to open %1$s</string>
+    <string name="mandatory_sign_in">You need to sign in to open %1$s</string>
     <string name="coming_soon">Coming soon</string>
     <string name="user_photo">User photo</string>
     <string name="account_default_icon">Account default icon</string>
