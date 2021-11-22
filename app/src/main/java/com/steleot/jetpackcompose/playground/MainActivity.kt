@@ -48,6 +48,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
@@ -90,6 +91,9 @@ class MainActivity : ComponentActivity() {
     lateinit var firebaseAnalytics: FirebaseAnalytics
 
     @Inject
+    lateinit var firebaseCrashlytics: FirebaseCrashlytics
+
+    @Inject
     lateinit var firebaseMessaging: FirebaseMessaging
 
     @Inject
@@ -122,9 +126,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun init(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         if (savedInstanceState == null) {
+            firebaseCrashlytics.log("Locale: ${resources.configuration.locale}")
             lifecycleScope.launchWhenCreated {
                 val id = try {
                     firebaseInstallations.id.await()

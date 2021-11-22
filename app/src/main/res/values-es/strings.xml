@@ -2,7 +2,7 @@
 <resources>
     <!-- activity -->
     <string name="back_handler_count">Presiona Atrás recuento %1$d</string>
-    <string name="back_handler_msg">Presione más de% 1 $ d veces para salir.</string>
+    <string name="back_handler_msg">Presione más de %1$d veces para salir.</string>
     <string name="take_picture">Toma una foto</string>
     <string name="permission_not_granted">Permiso no concedido</string>
     <string name="choose_contact">Elige contacto</string>
@@ -104,6 +104,52 @@
     <string name="click_to_open">Haga clic para abrir el cajón</string>
     <string name="ahoy">Ahoy</string>
     <!-- ui -->
+    <string name="android_textview">Esto es un TextView</string>
+    <string name="hello_world">Hola Mundo</string>
+    <string name="paragraph_args">Párrafo %1$s</string>
+    <string name="android_12_blur">Blur solo está disponible en Android 12 por ahora.</string>
+    <string name="string_resource">Cadena de strings.xml</string>
+    <string name="color_resource">Color de colors.xml</string>
+    <string name="show_dialog">Mostrar diálogo</string>
+    <string name="vector_painter">Imagen vectorial del recurso pintor</string>
+    <string name="drawable_painter">Imagen dibujable del recurso del pintor</string>
+    <string name="string_with_font">Cadena de strings.xml con fuente: %1$s</string>
+    <string name="header_text">Texto de cabecera</string>
+    <string name="footer_text">Texto de pie de página</string>
+    <string name="clipboard_example">Ejemplo de administrador de portapapeles local</string>
+    <string name="clipboard_value">Valor en el portapapeles:</string>
+    <string name="local_configuration_value">Valores de configuración local: \n densidad dpi: %1$s \n escala de fuente: %2$s \n configuración regional: %3$s \n orientación: %4$s \n etc.</string>
+    <string name="portrait">Retrato</string>
+    <string name="landscape">Paisaje</string>
+    <string name="local_cache_dir">Directorio de caché de ejemplo de contexto local:\n%1$s</string>
+    <string name="local_density_msg">%1$s dp son %2$f píxeles para este teléfono</string>
+    <string name="value_args">Valor %1$d</string>
+    <string name="tap_clear_focus">Toque para despejar el enfoque</string>
+    <string name="close_keyboard_with_ime">Cerrar el teclado en la acción ime finalizada ✔</string>
+    <string name="show_keyboard">Mostrar teclado de software.</string>
+    <string name="close_keyboard">Cierre el teclado del software.</string>
+    <string name="unknown">Desconocido</string>
+    <string name="toolbar_offset">Desplazamiento de la barra de herramientas: %1$f</string>
+    <string name="pointer_input">La compensación actual es: %1$f, %2$f.\nToca para cambiar.</string>
+    <string name="local_font_loader">Cargador de fuentes local con fuente reggae one</string>
+    <string name="local_layout_direction">La dirección del diseño local es: %1$s</string>
+    <string name="local_lifecycle_current_state">Propietario del ciclo de vida local: \nEstado actual: %1$s</string>
+    <string name="example">Ejemplo</string>
+    <string name="string_with_format">Este es %1$s</string>
+    <string name="one">Uno</string>
+    <string name="two">Dos</string>
+    <string name="three">Tres</string>
+    <string name="four">Cuatro</string>
+    <string name="five">Cinco</string>
+    <string name="six">Seis</string>
+    <string name="seven">Siete</string>
+    <string name="eight">Ocho</string>
+    <string name="line_through">Línea a través del texto</string>
+    <string name="underline">Texto de subrayado</string>
+    <string name="line_through_underline">Texto de subrayado y línea continua</string>
+    <string name="drawn_first">Dibujado primero</string>
+    <string name="drawn_second">Segundo dibujado</string>
+    <string name="password">Contraseña</string>
     <!-- view model -->
     <string name="hello_with_args">Hola, %1$s</string>
     <string name="name_hint">Nombre</string>

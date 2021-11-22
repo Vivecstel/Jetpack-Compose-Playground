@@ -284,11 +284,11 @@
     <string name="footer_text">Footer text</string>
     <string name="clipboard_example">Local Clipboard manager example</string>
     <string name="clipboard_value">Value in clipboard:</string>
-    <string name="local_configuration_value">Local configuration values:\ndensityDpi: %1$s\nfontScale: %2$s\nlocale: %3$s\norientation: %4$s\netc.</string>
+    <string name="local_configuration_value">Local configuration values:\n density ppi: %1$s\n font scale: %2$s\n locale: %3$s\n orientation: %4$s\n etc.</string>
     <string name="portrait">Portrait</string>
     <string name="landscape">Landscape</string>
     <string name="local_cache_dir">Local Context example cache dir:\n%1$s</string>
-    <string name="local_density_msg">32 dp are %1$s pixels for this phone</string>
+    <string name="local_density_msg">%1$s dp are %2$f pixels for this phone</string>
     <string name="value_args">Value %1$d</string>
     <string name="tap_clear_focus">Tap to clear focus</string>
     <string name="close_keyboard_with_ime">Close keyboard on done ime action ✔</string>

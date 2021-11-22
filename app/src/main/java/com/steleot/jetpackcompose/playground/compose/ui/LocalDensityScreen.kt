@@ -18,7 +18,8 @@ private const val Url = "ui/LocalDensityScreen.kt"
 
 @Composable
 fun LocalDensityScreen() {
-    val sizeInPx = with(LocalDensity.current) { 32.dp.toPx() }
+    val sizeInDp = 32.dp
+    val sizeInPx = with(LocalDensity.current) { sizeInDp.toPx() }
     DefaultScaffold(
         title = UiNavRoutes.LocalDensity,
         link = Url,
@@ -29,7 +30,7 @@ fun LocalDensityScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.local_density_msg, sizeInPx)
+                text = stringResource(id = R.string.local_density_msg, sizeInDp, sizeInPx)
             )
         }
     }
