@@ -58,7 +58,7 @@ object Versions {
     const val composeNeumorphism = "1.0.0-alpha02"
     const val composeMarkdown = "0.2.6"
     const val composeBarcodes = "1.0.3"
-    const val composeRichtext = "0.8.1"
+    const val composeRichtext = "0.9.0"
     const val zoomableImage = "0.1.0"
     const val stageStepBar = "0.0.1"
     const val plot = "0.1.2"

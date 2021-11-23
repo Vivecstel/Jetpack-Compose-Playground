@@ -83,12 +83,12 @@ private fun DocumentScreenExample() {
                         Icons.Outlined.Print,
                         contentDescription = stringResource(id = R.string.print),
                         modifier = Modifier.size(16.dp),
-                        tint = MaterialTheme.colors.onPrimary
+                        tint = MaterialTheme.colors.primary
                     )
                     Text(
                         text = stringResource(id = R.string.print_document),
                         modifier = Modifier.padding(8.dp),
-                        color = MaterialTheme.colors.onPrimary
+                        color = MaterialTheme.colors.primary
                     )
                 }
             }
