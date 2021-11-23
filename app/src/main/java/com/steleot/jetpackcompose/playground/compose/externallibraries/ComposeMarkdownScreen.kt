@@ -9,9 +9,11 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import dev.jeziellago.compose.markdowntext.MarkdownText
@@ -36,16 +38,9 @@ fun ComposeMarkdownScreen() {
 
 @Composable
 private fun ComposeMarkdownExample() {
-    val markdown = """  
-	# Sample  
-	* Markdown  
-	* [Link](https://example.com)  
-	![Image](https://example.com/img.png)  
-	<a href="https://www.google.com/">Google</a>  
-""".trimIndent()
     MarkdownText(
         modifier = Modifier.padding(8.dp),
-        markdown = markdown,
+        markdown = stringResource(id = R.string.markdown),
         textAlign = TextAlign.Center,
         fontSize = 12.sp,
         color = LocalContentColor.current,

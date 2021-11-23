@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalTextToolbar
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -36,5 +38,5 @@ fun LocalTextToolbarScreen() {
 @Composable
 private fun LocalTextToolbarExample() {
     val textToolbar = LocalTextToolbar.current
-    Text(text = "Local Text Toolbar:\nstatus:${textToolbar.status}")
+    Text(text = stringResource(id = R.string.local_text_toolbar, textToolbar.status))
 }

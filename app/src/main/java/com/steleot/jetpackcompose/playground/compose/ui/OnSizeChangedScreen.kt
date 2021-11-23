@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import timber.log.Timber
@@ -25,8 +27,8 @@ fun OnSizeChangedScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            OnSizeChangedExample(name = "Jetpack Compose")
-            OnSizeChangedExample(name = "Example")
+            OnSizeChangedExample(name = stringResource(id = R.string.app_name))
+            OnSizeChangedExample(name = stringResource(id = R.string.example))
         }
     }
 }
@@ -36,7 +38,7 @@ private fun OnSizeChangedExample(
     name: String
 ) {
     Text(
-        "Hello $name",
+        stringResource(id = R.string.hello_with_args, name),
         Modifier.onSizeChanged { size ->
             Timber.d("The size of the Text in pixels is $size")
         }

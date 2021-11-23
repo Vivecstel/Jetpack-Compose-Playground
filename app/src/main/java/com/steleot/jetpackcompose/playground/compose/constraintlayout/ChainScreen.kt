@@ -9,8 +9,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 import timber.log.Timber
@@ -44,7 +46,7 @@ private fun ChainExample() {
             modifier = Modifier.constrainAs(button1) {
             }
         ) {
-            Text("Button 1")
+            Text(stringResource(id = R.string.button_args, 1))
         }
 
         Button(
@@ -52,7 +54,7 @@ private fun ChainExample() {
             modifier = Modifier.constrainAs(button2) {
             }
         ) {
-            Text("Button 2")
+            Text(stringResource(id = R.string.button_args, 2))
         }
 
         Button(
@@ -61,7 +63,7 @@ private fun ChainExample() {
 
             }
         ) {
-            Text("Button 3")
+            Text(stringResource(id = R.string.button_args, 3))
         }
 
     }

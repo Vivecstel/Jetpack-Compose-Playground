@@ -12,7 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -47,62 +49,81 @@ fun GraphicsLayerScreen() {
     }
 }
 
-private const val ConstantText = "Hello Jetpack compose"
-
 @Composable
 private fun GraphicsLayerScaleXExample() {
-    Text(ConstantText, Modifier.graphicsLayer(scaleX = 0.5f, clip = true))
+    Text(stringResource(id = R.string.app_name), Modifier.graphicsLayer(scaleX = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerScaleYExample() {
-    Text(ConstantText, Modifier.graphicsLayer(scaleY = 0.5f, clip = true))
+    Text(stringResource(id = R.string.app_name), Modifier.graphicsLayer(scaleY = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerAlphaExample() {
-    Text(ConstantText, Modifier.graphicsLayer(alpha = 0.5f, clip = true))
+    Text(stringResource(id = R.string.app_name), Modifier.graphicsLayer(alpha = 0.5f, clip = true))
 }
 
 @Composable
 private fun GraphicsLayerTranslationXExample() {
-    Text(ConstantText, Modifier.graphicsLayer(translationX = 0.5f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(translationX = 0.5f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerTranslationYExample() {
-    Text(ConstantText, Modifier.graphicsLayer(translationY = 0.5f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(translationY = 0.5f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerShadowElevationExample() {
-    Text(ConstantText, Modifier.graphicsLayer(shadowElevation = 1.5f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(shadowElevation = 1.5f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerRotationXExample() {
-    Text(ConstantText, Modifier.graphicsLayer(rotationX = 180f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(rotationX = 180f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerRotationYExample() {
-    Text(ConstantText, Modifier.graphicsLayer(rotationY = 180f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(rotationY = 180f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerRotationZExample() {
-    Text(ConstantText, Modifier.graphicsLayer(rotationZ = 180f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(rotationZ = 180f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerCameraDistanceExample() {
-    Text(ConstantText, Modifier.graphicsLayer(cameraDistance = 16f, clip = true))
+    Text(
+        stringResource(id = R.string.app_name),
+        Modifier.graphicsLayer(cameraDistance = 16f, clip = true)
+    )
 }
 
 @Composable
 private fun GraphicsLayerTransformOriginExample() {
     Text(
-        ConstantText,
+        stringResource(id = R.string.app_name),
         Modifier.graphicsLayer(transformOrigin = TransformOrigin(2f, 2f), clip = true)
     )
 }

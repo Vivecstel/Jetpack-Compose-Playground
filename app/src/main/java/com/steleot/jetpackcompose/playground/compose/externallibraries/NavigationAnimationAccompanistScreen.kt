@@ -1,9 +1,23 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.animation.*
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandIn
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
@@ -12,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -19,6 +34,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -45,38 +61,38 @@ private fun NavigationAnimationExample() {
     AnimatedNavHost(
         navController,
         startDestination = Blue,
-        enterTransition = { _, _ ->
+        enterTransition = {
             fadeIn(animationSpec = tween(700))
         },
-        exitTransition = { _, _ ->
+        exitTransition = {
             fadeOut(animationSpec = tween(700))
         }
     ) {
         composable(
             Blue,
-            enterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            enterTransition = {
+                when (initialState.destination.route) {
                     Red ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            exitTransition = { _, target ->
-                when (target.destination.route) {
+            exitTransition = {
+                when (targetState.destination.route) {
                     Red ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            popEnterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            popEnterTransition = {
+                when (initialState.destination.route) {
                     Red ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
                     else -> null
                 }
             },
-            popExitTransition = { _, target ->
-                when (target.destination.route) {
+            popExitTransition = {
+                when (targetState.destination.route) {
                     Red ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     else -> null
@@ -85,8 +101,8 @@ private fun NavigationAnimationExample() {
         ) { BlueScreen(navController) }
         composable(
             Red,
-            enterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            enterTransition = {
+                when (initialState.destination.route) {
                     Blue ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
                     Green ->
@@ -94,8 +110,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            exitTransition = { _, target ->
-                when (target.destination.route) {
+            exitTransition = {
+                when (targetState.destination.route) {
                     Blue ->
                         slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
                     Green ->
@@ -103,8 +119,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            popEnterTransition = { initial, _ ->
-                when (initial.destination.route) {
+            popEnterTransition = {
+                when (initialState.destination.route) {
                     Blue ->
                         slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
                     Green ->
@@ -112,8 +128,8 @@ private fun NavigationAnimationExample() {
                     else -> null
                 }
             },
-            popExitTransition = { _, target ->
-                when (target.destination.route) {
+            popExitTransition = {
+                when (targetState.destination.route) {
                     Blue ->
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     Green ->
@@ -125,13 +141,13 @@ private fun NavigationAnimationExample() {
         navigation(
             startDestination = Green,
             route = "Inner",
-            enterTransition = { _, _ -> expandIn(animationSpec = tween(700)) },
-            exitTransition = { _, _ -> shrinkOut(animationSpec = tween(700)) }
+            enterTransition = { expandIn(animationSpec = tween(700)) },
+            exitTransition = { shrinkOut(animationSpec = tween(700)) }
         ) {
             composable(
                 Green,
-                enterTransition = { initial, _ ->
-                    when (initial.destination.route) {
+                enterTransition = {
+                    when (initialState.destination.route) {
                         Red ->
                             slideInVertically(
                                 initialOffsetY = { 1800 }, animationSpec = tween(700)
@@ -139,8 +155,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                exitTransition = { _, target ->
-                    when (target.destination.route) {
+                exitTransition = {
+                    when (targetState.destination.route) {
                         Red ->
                             slideOutVertically(
                                 targetOffsetY = { -1800 }, animationSpec = tween(700)
@@ -148,8 +164,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                popEnterTransition = { initial, _ ->
-                    when (initial.destination.route) {
+                popEnterTransition = {
+                    when (initialState.destination.route) {
                         Red ->
                             slideInVertically(
                                 initialOffsetY = { -1800 }, animationSpec = tween(700)
@@ -157,8 +173,8 @@ private fun NavigationAnimationExample() {
                         else -> null
                     }
                 },
-                popExitTransition = { _, target ->
-                    when (target.destination.route) {
+                popExitTransition = {
+                    when (targetState.destination.route) {
                         Red ->
                             slideOutVertically(
                                 targetOffsetY = { 1800 }, animationSpec = tween(700)
@@ -181,14 +197,14 @@ private fun BlueScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Horizontal",
+            stringResource(id = R.string.navigate_horizontal),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
         ) { navController.navigate(Red) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Expand",
+            stringResource(id = R.string.navigate_expand),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -208,14 +224,14 @@ private fun RedScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Horizontal",
+            stringResource(id = R.string.navigate_horizontal),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
         ) { navController.navigate(Blue) }
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate Vertical",
+            stringResource(id = R.string.navigate_vertical),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -234,7 +250,7 @@ private fun GreenScreen(navController: NavHostController) {
     ) {
         Spacer(Modifier.height(25.dp))
         NavigateButton(
-            "Navigate to Red",
+            stringResource(id = R.string.navigate_to, stringResource(id = R.string.red)),
             Modifier
                 .wrapContentWidth()
                 .align(Alignment.CenterHorizontally)
@@ -269,7 +285,7 @@ private fun NavigateBackButton(navController: NavController) {
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Go to Previous screen")
+            Text(text = stringResource(id = R.string.go_to_previous))
         }
     }
 }

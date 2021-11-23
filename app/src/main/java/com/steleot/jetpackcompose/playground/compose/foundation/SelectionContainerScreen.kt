@@ -9,6 +9,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -34,7 +36,7 @@ fun SelectionContainerScreen() {
 @Composable
 private fun SelectionContainerExample() {
     SelectionContainer {
-        Text("This text is selectable")
+        Text(stringResource(id = R.string.selectable_text))
     }
 }
 
@@ -42,15 +44,15 @@ private fun SelectionContainerExample() {
 private fun PartiallySelectableText() {
     SelectionContainer {
         Column {
-            Text("This text is selectable")
-            Text("This one too")
-            Text("This one as well")
+            Text(stringResource(id = R.string.selectable_text))
+            Text(stringResource(id = R.string.selectable_too))
+            Text(stringResource(id = R.string.selectable_as_well))
             DisableSelection {
-                Text("But not this one")
-                Text("Neither this one")
+                Text(stringResource(id = R.string.not_selectable_text))
+                Text(stringResource(id = R.string.neither_selectable_text))
             }
-            Text("But again, you can select this one")
-            Text("And this one too")
+            Text(stringResource(id = R.string.selectable_again))
+            Text(stringResource(id = R.string.selectable_this_too))
         }
     }
 }

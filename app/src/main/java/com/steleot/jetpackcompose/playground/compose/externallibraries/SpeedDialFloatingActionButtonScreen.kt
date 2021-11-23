@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
@@ -37,23 +38,22 @@ fun SpeedDialFloatingActionButtonScreen() {
                 },
                 speedDialData = listOf(
                     SpeedDialData(
-                        name = "test1",
-                        label = "Test 1",
+                        name = stringResource(id = R.string.test_with_args, 1),
                         painter = painterResource(R.drawable.ic_baseline_alarm_24dp)
                     ),
                     SpeedDialData(
-                        name = "Test 2",
+                        name = stringResource(id = R.string.test_with_args, 2),
                         painter = painterResource(
                             id =
                             R.drawable.ic_android_black_24dp
                         )
                     ),
                     SpeedDialData(
-                        name = "Test 3",
+                        name = stringResource(id = R.string.test_with_args, 3),
                         painterResource = R.drawable.ic_baseline_alarm_24dp
                     ),
                     SpeedDialData(
-                        name = "Test 4",
+                        name = stringResource(id = R.string.test_with_args, 4),
                         painterResource = R.drawable.ic_android_black_24dp
                     )
                 )

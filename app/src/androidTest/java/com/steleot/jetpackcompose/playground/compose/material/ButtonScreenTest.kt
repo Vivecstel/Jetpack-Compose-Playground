@@ -1,16 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
-import com.google.accompanist.insets.ProvideWindowInsets
-import com.steleot.jetpackcompose.playground.LocalInAppReviewer
 import com.steleot.jetpackcompose.playground.MainActivity
-import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
-import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
@@ -19,44 +14,36 @@ class ButtonScreenTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
-    private val inAppReviewHelper = EmptyInAppReviewHelper()
-
     @Test
     fun testButtonScreen() {
         composeTestRule.setContent {
-            JetpackComposePlaygroundTheme(
-                themeState = ThemeState(),
-            ) {
-                ProvideWindowInsets {
-                    CompositionLocalProvider(LocalInAppReviewer provides inAppReviewHelper) {
-                        ButtonScreen()
-                    }
-                }
+            TestTheme {
+                ButtonScreen()
             }
         }
 
         composeTestRule
-            .onNodeWithText("Default Button")
+            .onNodeWithTag("Default Button")
             .assertIsDisplayed()
             .performClick()
 
         composeTestRule
-            .onNodeWithText("Cut Corner Shape Button")
+            .onNodeWithTag("Cut Corner Shape Button")
             .assertIsDisplayed()
             .performClick()
 
         composeTestRule
-            .onNodeWithText("Rounded Corner Shape Button")
+            .onNodeWithTag("Rounded Corner Shape Button")
             .assertIsDisplayed()
             .performClick()
 
         composeTestRule
-            .onNodeWithText("Background Color Button")
+            .onNodeWithTag("Background Color Button")
             .assertIsDisplayed()
             .performClick()
 
         composeTestRule
-            .onNodeWithText("Fake Button")
+            .onNodeWithTag("Fake Button")
             .assertDoesNotExist()
     }
 }

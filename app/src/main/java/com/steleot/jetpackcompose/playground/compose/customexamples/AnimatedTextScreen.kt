@@ -1,7 +1,12 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.animation.animateColor
-import androidx.compose.animation.core.*
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.keyframes
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,6 +26,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.TextStyle
@@ -54,7 +60,8 @@ fun AnimatedTextScreen() {
 @Composable
 private fun AnimatedTextExample() {
     val text = buildAnnotatedString {
-        append("Jetpack ")
+        append(stringResource(id = R.string.jetpack))
+        append(' ')
         appendInlineContent("rotatingIconComponent", "rotating icon")
         appendInlineContent("colorChangingTextComponent", "color changing text")
         appendInlineContent("sizeChangingTextComponent", "size changing text")
@@ -143,7 +150,7 @@ private fun ColorChangingTextComponent() {
         )
     )
     Text(
-        text = "Compose",
+        text = stringResource(id = R.string.compose),
         color = color,
         style = TextStyle(
             fontFamily = FontFamily.Serif,
@@ -163,7 +170,7 @@ private fun SizeChangingTextComponent() {
         )
     )
     Text(
-        text = "Playground",
+        text = stringResource(id = R.string.playground),
         style = TextStyle(
             fontFamily = FontFamily.Serif,
             fontSize = size.sp

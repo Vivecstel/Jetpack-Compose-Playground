@@ -9,8 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -38,7 +40,7 @@ fun LocalContextScreen() {
 private fun LocalContextExample() {
     val context = LocalContext.current
     Text(
-        text = "Local Context example cache dir:\n${context.cacheDir}",
+        text = stringResource(id = R.string.local_cache_dir, context.cacheDir),
         textAlign = TextAlign.Center
     )
 }

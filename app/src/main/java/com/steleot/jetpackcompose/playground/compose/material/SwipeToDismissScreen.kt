@@ -14,9 +14,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.unit.*
 import com.steleot.jetpackcompose.playground.*
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import java.util.*
@@ -99,7 +101,7 @@ private fun SwipeToDismissExample() {
                     ) {
                         Icon(
                             icon,
-                            contentDescription = "Localized description",
+                            contentDescription = null,
                             modifier = Modifier.scale(scale)
                         )
                     }
@@ -114,7 +116,7 @@ private fun SwipeToDismissExample() {
                             text = {
                                 Text(item, fontWeight = if (unread) FontWeight.Bold else null)
                             },
-                            secondaryText = { Text("Swipe me left or right!") }
+                            secondaryText = { Text(stringResource(id = R.string.swipe_left_right)) }
                         )
                     }
                 }

@@ -1,6 +1,14 @@
 package com.steleot.jetpackcompose.playground.compose.ui
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -14,8 +22,10 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 import kotlin.math.roundToInt
@@ -61,7 +71,8 @@ private fun NestedScrollConnectionExample() {
         LazyColumn(contentPadding = PaddingValues(top = toolbarHeight)) {
             items(100) { index ->
                 Text(
-                    "I'm item $index", modifier = Modifier
+                    stringResource(id = R.string.item, index),
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
                 )
@@ -71,7 +82,11 @@ private fun NestedScrollConnectionExample() {
             modifier = Modifier
                 .height(toolbarHeight)
                 .offset { IntOffset(x = 0, y = toolbarOffsetHeightPx.value.roundToInt()) },
-            title = { Text("toolbar offset is ${toolbarOffsetHeightPx.value}") }
+            title = {
+                Text(
+                    stringResource(id = R.string.toolbar_offset, toolbarOffsetHeightPx.value)
+                )
+            }
         )
     }
 }

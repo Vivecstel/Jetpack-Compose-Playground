@@ -3,12 +3,19 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.DrawerValue
+import androidx.compose.material.ModalDrawer
+import androidx.compose.material.Text
+import androidx.compose.material.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import kotlinx.coroutines.launch
@@ -42,7 +49,7 @@ private fun ModalDrawerExample() {
                         backgroundColor = Color.Red
                     )
                 ) {
-                    Text("Click to close drawer")
+                    Text(stringResource(id = R.string.click_to_close))
                 }
             }
         },
@@ -54,7 +61,7 @@ private fun ModalDrawerExample() {
             verticalArrangement = Arrangement.Center,
         ) {
             Button(onClick = { scope.launch { drawerState.open() } }) {
-                Text("Click to open drawer")
+                Text(stringResource(id = R.string.click_to_open))
             }
         }
     }

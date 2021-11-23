@@ -1,10 +1,18 @@
 package com.steleot.jetpackcompose.playground.compose.navigation
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -93,8 +101,12 @@ fun Scrollable(navController: NavController) {
             navController.navigate(Screen.Dashboard.route)
         }
         LazyColumn(modifier = Modifier.weight(1f)) {
-            items(phrases) { phrase ->
-                Text(phrase, fontSize = 20.sp)
+            items((1..100).toList()) { item ->
+                Text(
+                    stringResource(id = R.string.item, item),
+                    fontSize = 20.sp,
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
         NavigateBackButton(navController)
@@ -110,7 +122,7 @@ private fun NavigateButton(
         onClick = listener,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Text(text = "Navigate to $text")
+        Text(text = stringResource(id = R.string.navigate_to, text))
     }
 }
 
@@ -121,40 +133,7 @@ private fun NavigateBackButton(navController: NavController) {
             onClick = { navController.popBackStack() },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Go to Previous screen")
+            Text(text = stringResource(id = R.string.go_to_previous))
         }
     }
 }
-
-private val phrases = listOf(
-    "Easy As Pie",
-    "Wouldn't Harm a Fly",
-    "No-Brainer",
-    "Keep On Truckin'",
-    "An Arm and a Leg",
-    "Down To Earth",
-    "Under the Weather",
-    "Up In Arms",
-    "Cup Of Joe",
-    "Not the Sharpest Tool in the Shed",
-    "Ring Any Bells?",
-    "Son of a Gun",
-    "Hard Pill to Swallow",
-    "Close But No Cigar",
-    "Beating a Dead Horse",
-    "If You Can't Stand the Heat, Get Out of the Kitchen",
-    "Cut To The Chase",
-    "Heads Up",
-    "Goody Two-Shoes",
-    "Fish Out Of Water",
-    "Cry Over Spilt Milk",
-    "Elephant in the Room",
-    "There's No I in Team",
-    "Poke Fun At",
-    "Talk the Talk",
-    "Know the Ropes",
-    "Fool's Gold",
-    "It's Not Brain Surgery",
-    "Fight Fire With Fire",
-    "Go For Broke"
-)

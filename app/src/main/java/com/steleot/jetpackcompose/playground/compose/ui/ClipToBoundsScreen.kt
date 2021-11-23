@@ -22,7 +22,7 @@ fun ClipToBoundsScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
+            // todo
         }
     }
 }

@@ -15,8 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
@@ -41,6 +43,7 @@ fun CurvedTextScreen() {
 @Composable
 private fun CurvedTextExample() {
     val colorPrimary = MaterialTheme.colors.primary
+    val appName = stringResource(id = R.string.app_name)
     Canvas(
         modifier = Modifier
             .size(250.dp)
@@ -53,7 +56,7 @@ private fun CurvedTextExample() {
                 addArc(0f, topPadding, arcSize, arcSize, 180f, 180f)
             }
             it.nativeCanvas.drawTextOnPath(
-                "Jetpack Compose Playground",
+                appName,
                 path,
                 0f,
                 0f,

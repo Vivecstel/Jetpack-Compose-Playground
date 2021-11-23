@@ -1,0 +1,1 @@
+Jetpack Compose auf 1.1.0 Beta 02 aktualisieren. Material 3, gap, html text und snapper Beispiele hinzugefügt. Restbibliotheken aktualisiert. Übersetzungen für verschiedene Sprachen hinzugefügt.

@@ -1,19 +1,35 @@
 package com.steleot.jetpackcompose.playground.compose.animation
 
-import androidx.compose.animation.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -38,7 +54,8 @@ fun AnimateEnterExitScreen() {
                     visible = !visible
                 },
             ) {
-                Text(text = "Press me to ${if (visible) "hide" else "show"}")
+                val value = stringResource(if (visible) R.string.hide else R.string.show)
+                Text(text = stringResource(id = R.string.press_me_with_args, value))
             }
             AnimateEnterExit(visible)
         }
@@ -78,7 +95,7 @@ private fun AnimateEnterExit(
                     .background(MaterialTheme.colors.secondary)
             ) {
                 Text(
-                    text = "Jetpack Compose Playground",
+                    text = stringResource(id = R.string.app_name),
                     color = MaterialTheme.colors.onSecondary,
                     modifier = Modifier
                         .align(Alignment.Center)

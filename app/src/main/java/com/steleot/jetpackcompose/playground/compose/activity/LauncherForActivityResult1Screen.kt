@@ -15,12 +15,14 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
@@ -47,7 +49,7 @@ fun LauncherForActivityResult1Screen() {
 @Composable
 private fun LauncherForActivityResultExample() {
     val context = LocalContext.current
-    val result = remember { mutableStateOf<Bitmap?>(null) }
+    val result = rememberSaveable { mutableStateOf<Bitmap?>(null) }
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.TakePicturePreview()) {
         result.value = it
     }
@@ -58,7 +60,7 @@ private fun LauncherForActivityResultExample() {
                     launcher.launch()
                 }
             } else {
-                Toast.makeText(context, "Permission not granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.permission_not_granted, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -71,7 +73,7 @@ private fun LauncherForActivityResultExample() {
             }
         }
     ) {
-        Text(text = "Take a picture")
+        Text(text = stringResource(id = R.string.take_picture))
     }
 
     result.value?.let { image ->

@@ -4,20 +4,30 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.MotionLayout
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 
@@ -190,14 +200,14 @@ private fun MotionLayout2Example() {
             )
 
             Text(
-                text = "Chose a style",
+                text = stringResource(id = R.string.choose_style),
                 modifier = Modifier.layoutId("title"),
                 color = motionProperties("title").value.color("color"),
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Pop or subtle. Day or Night. \n Customize your interface",
+                text = stringResource(id = R.string.day_or_night),
                 modifier = Modifier.layoutId("description"),
                 color = motionProperties("title").value.color("color"),
                 fontSize = 18.sp,
@@ -231,7 +241,7 @@ private fun MotionLayout2Example() {
             )
 
             Text(
-                text = "Light",
+                text = stringResource(id = R.string.light),
                 modifier = Modifier
                     .layoutId("light")
                     .width(150.dp),
@@ -240,7 +250,7 @@ private fun MotionLayout2Example() {
                 textAlign = TextAlign.Center
             )
             Text(
-                text = "Dark",
+                text = stringResource(id = R.string.dark),
                 modifier = Modifier
                     .layoutId("dark")
                     .width(150.dp),

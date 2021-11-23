@@ -1,6 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.runtime
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
@@ -8,7 +13,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -58,16 +65,19 @@ private fun UserPreview(user: User) {
             .fillMaxWidth()
             .padding(8.dp)
     ) {
-        Text(text = "Id: ${user.id}", modifier = Modifier.weight(1f))
-        Text(text = "Name: ${user.name}", modifier = Modifier.weight(1f))
+        Text(text = stringResource(id = R.string.id_args, user.id), modifier = Modifier.weight(1f))
+        Text(
+            text = stringResource(id = R.string.name_args, user.name),
+            modifier = Modifier.weight(1f)
+        )
     }
 }
 
 private val relationships = mapOf(
     User(1, "Jetpack") to User(2, "Playground"),
     User(2, "Jetpack") to User(2, "Playground 2"),
-    User(1, "Jetpack2") to User(2, "Playground 3"),
-    User(3, "Jetpack3") to User(2, "Playground 4"),
+    User(1, "Jetpack 2") to User(2, "Playground 3"),
+    User(3, "Jetpack 3") to User(2, "Playground 4"),
 )
 
 @Composable

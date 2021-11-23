@@ -9,13 +9,14 @@ object AppDependencies {
         Libraries.okhttpBom,
     )
 
-    val implemention = listOf(
+    val implementation = listOf(
         Libraries.composeAnimation,
         Libraries.composeAnimationGraphics,
         Libraries.composeCompiler,
         Libraries.composeFoundation,
         Libraries.composeMaterial,
         Libraries.composeMaterialIcons,
+        Libraries.composeMaterial3,
         Libraries.composeRuntime,
         Libraries.composeLiveData,
         Libraries.composeUi,
@@ -94,6 +95,10 @@ object AppDependencies {
         Libraries.composeTimelineView,
         Libraries.composeParticleSystem,
         Libraries.ssJetPackComposeProgressButton,
+        Libraries.gap,
+//        Libraries.permissionsUi,
+        Libraries.htmlText,
+        Libraries.snapper,
         Libraries.adMob,
         Libraries.playServicesAuth,
     )
@@ -110,6 +115,7 @@ object AppDependencies {
     val androidTest = listOf(
         TestLibraries.composeUi,
         TestLibraries.composeUiJunit,
+        TestLibraries.navigation,
         TestLibraries.testCore,
     )
 }

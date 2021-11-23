@@ -1,7 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
@@ -15,8 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
 
@@ -56,7 +62,7 @@ private fun CircleShapeBox() {
         modifier = Modifier.background(Color.Magenta, shape = CircleShape)
     ) {
         Text(
-            text = "Circle shape",
+            text = stringResource(id = R.string.circle_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -70,7 +76,7 @@ fun RectangleShapeBox() {
         modifier = Modifier.background(Color.Blue, shape = RectangleShape)
     ) {
         Text(
-            text = "Rectangle shape",
+            text = stringResource(id = R.string.rectangle_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -84,7 +90,7 @@ private fun CutCornerShapeComponent() {
         modifier = Modifier.background(Color.Red, shape = CutCornerShape(15.dp))
     ) {
         Text(
-            text = "Cut corner shape",
+            text = stringResource(id = R.string.cut_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -101,7 +107,7 @@ private fun AlternateCutCornerShapeBox() {
         )
     ) {
         Text(
-            text = "Cut corner shape",
+            text = stringResource(id = R.string.cut_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -115,7 +121,7 @@ private fun FloatCutCornerShapeBox() {
         modifier = Modifier.background(Color.Cyan, shape = CutCornerShape(15f, 6f, 15f, 12f))
     ) {
         Text(
-            text = "Cut corner shape",
+            text = stringResource(id = R.string.cut_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -129,7 +135,7 @@ private fun PercentCutCornerShapeBox() {
         modifier = Modifier.background(Color.DarkGray, shape = CutCornerShape(40, 20, 50, 10))
     ) {
         Text(
-            text = "Cut corner shape",
+            text = stringResource(id = R.string.cut_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -143,7 +149,7 @@ private fun RoundedCornerShapeBox() {
         modifier = Modifier.background(Color.LightGray, shape = RoundedCornerShape(10.dp))
     ) {
         Text(
-            text = "Rounded corner shape",
+            text = stringResource(id = R.string.rounded_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -160,7 +166,7 @@ private fun AlternateRoundedCornerShapeBox() {
         )
     ) {
         Text(
-            text = "Rounded corner shape",
+            text = stringResource(id = R.string.rounded_corner_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )
@@ -183,7 +189,7 @@ private fun GenericShapeBox() {
         }))
     ) {
         Text(
-            text = "Generic shape",
+            text = stringResource(id = R.string.generic_shape),
             modifier = Modifier.padding(16.dp),
             color = Color.White
         )

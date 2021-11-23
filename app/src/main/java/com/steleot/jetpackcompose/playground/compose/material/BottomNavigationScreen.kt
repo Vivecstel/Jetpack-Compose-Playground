@@ -1,7 +1,16 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
@@ -14,8 +23,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -23,8 +34,8 @@ private const val Url = "material/BottomNavigationScreen.kt"
 
 @Composable
 fun BottomNavigationScreen() {
-    val selectedNavigationView = remember { mutableStateOf(0) }
-    val selectedNavigationItem = remember { mutableStateOf(0) }
+    val selectedBottomNavigationView = remember { mutableStateOf(0) }
+    val selectedBottomNavigationItem = remember { mutableStateOf(0) }
     DefaultScaffold(
         title = MaterialNavRoutes.BottomNavigation,
         link = Url,
@@ -36,23 +47,33 @@ fun BottomNavigationScreen() {
         ) {
             Button(
                 onClick = {
-                    selectedNavigationView.value =
-                        if (selectedNavigationView.value == 2) 0 else selectedNavigationView.value + 1
+                    selectedBottomNavigationView.value =
+                        if (selectedBottomNavigationView.value == 2) 0 else selectedBottomNavigationView.value + 1
                 }
             ) {
-                Text(text = "Switch to bottom navigation")
+                Text(
+                    text = stringResource(
+                        id = R.string.switch_args,
+                        stringResource(id = R.string.bottom_navigation)
+                    )
+                )
             }
             Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = {
-                    selectedNavigationItem.value =
-                        if (selectedNavigationItem.value == 4) 0 else selectedNavigationItem.value + 1
+                    selectedBottomNavigationItem.value =
+                        if (selectedBottomNavigationItem.value == 4) 0 else selectedBottomNavigationItem.value + 1
                 }
             ) {
-                Text(text = "Switch to bottom navigation item")
+                Text(
+                    text = stringResource(
+                        id = R.string.switch_args,
+                        stringResource(id = R.string.bottom_navigation_item)
+                    )
+                )
             }
             Spacer(modifier = Modifier.height(32.dp))
-            HelperView(selectedNavigationView.value, selectedNavigationItem.value)
+            HelperView(selectedBottomNavigationView.value, selectedBottomNavigationItem.value)
         }
     }
 }
@@ -60,28 +81,24 @@ fun BottomNavigationScreen() {
 @Preview
 @Composable
 private fun HelperView(
-    selectedNavigationView: Int = 0,
-    selectedNavigationItem: Int = 0,
+    selectedBottomNavigationView: Int = 0,
+    selectedBottomNavigationItem: Int = 0,
 ) {
     val selectedItem = remember { mutableStateOf(0) }
     Column {
-        when (selectedNavigationView) {
+        when (selectedBottomNavigationView) {
             0 -> StandardBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
             1 -> BackgroundColorBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
             2 -> ElevationBottomNavigation {
-                HelperNavigationItems(selectedItem, selectedNavigationItem)
+                HelperNavigationItems(selectedItem, selectedBottomNavigationItem)
             }
         }
     }
 }
-
-private const val Person = "Person"
-private const val TableChart = "Table Chart"
-private const val Settings = "Settings"
 
 @Preview
 @Composable
@@ -89,9 +106,9 @@ private fun RowScope.HelperNavigationItems(
     selectedItem: MutableState<Int> = mutableStateOf(0),
     selectedNavigationItem: Int = 0,
     items: List<Pair<String, ImageVector>> = listOf(
-        Pair(Person, Icons.Filled.Person),
-        Pair(TableChart, Icons.Filled.TableChart),
-        Pair(Settings, Icons.Filled.Settings)
+        Pair(stringResource(id = R.string.person), Icons.Filled.Person),
+        Pair(stringResource(id = R.string.table_chart), Icons.Filled.TableChart),
+        Pair(stringResource(id = R.string.settings), Icons.Filled.Settings)
     ),
 ) {
     items.forEachIndexed { index, item ->
@@ -141,44 +158,41 @@ private fun ElevationBottomNavigation(
     }
 }
 
-@Preview
 @Composable
 private fun RowScope.DefaultBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.LabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         label = { Text(text = pair.first) },
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.AlwaysShowLabelBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         label = { Text(text = pair.first) },
         alwaysShowLabel = false,
         selected = selected,
@@ -186,30 +200,28 @@ private fun RowScope.AlwaysShowLabelBottomNavigationItem(
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.SelectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         selectedContentColor = Color.Red,
         selected = selected,
         onClick = onClick,
     )
 }
 
-@Preview
 @Composable
 private fun RowScope.UnselectedColorBottomNavigationItem(
-    pair: Pair<String, ImageVector> = Pair(Person, Icons.Filled.Person),
+    pair: Pair<String, ImageVector>,
     selected: Boolean = false,
     onClick: () -> Unit = {},
 ) {
     BottomNavigationItem(
-        icon = { Icon(imageVector = pair.second, contentDescription = "") },
+        icon = { Icon(imageVector = pair.second, contentDescription = null) },
         unselectedContentColor = Color.LightGray,
         selected = selected,
         onClick = onClick,

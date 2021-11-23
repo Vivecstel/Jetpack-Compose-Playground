@@ -21,6 +21,9 @@ object Libraries {
     const val composeMaterialIcons =
         "androidx.compose.material:material-icons-extended:${Versions.compose}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/compose-material3 */
+    const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
+
     /* https://developer.android.com/jetpack/androidx/releases/compose-runtime */
     const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.compose}"
     const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
@@ -38,11 +41,6 @@ object Libraries {
 
     /* https://developer.android.com/jetpack/androidx/releases/paging */
     const val composePaging = "androidx.paging:paging-compose:${Versions.composePaging}"
-
-    /* https://developer.android.com/jetpack/androidx/releases/wear-compose */
-    const val composeWearFoundation =
-        "androidx.wear.compose:compose-foundation:${Versions.composeWear}"
-    const val composeWearMaterial = "androidx.wear.compose:compose-material:${Versions.composeWear}"
 
     /* https://developer.android.com/jetpack/compose/navigation */
     const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
@@ -229,6 +227,18 @@ object Libraries {
     /* https://github.com/SimformSolutionsPvtLtd/SSJetPackComposeProgressButton */
     const val ssJetPackComposeProgressButton =
         "com.github.SimformSolutionsPvtLtd:SSJetPackComposeProgressButton:${Versions.ssJetPackComposeProgressButton}"
+
+    /* https://github.com/wasabeef/compose-gap */
+    const val gap = "jp.wasabeef:gap:${Versions.gap}"
+
+    /* https://github.com/warting/permissions-ui */
+    const val permissionsUi = "se.warting.permissionsui:permissionsui:${Versions.permissionsUi}"
+
+    /* https://github.com/ch4rl3x/HtmlText */
+    const val htmlText = "de.charlex.compose:html-text:${Versions.htmlText}"
+
+    /* https://github.com/chrisbanes/snapper */
+    const val snapper = "dev.chrisbanes.snapper:snapper:${Versions.snapper}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

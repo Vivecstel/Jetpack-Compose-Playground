@@ -9,10 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import timber.log.Timber
 
 private const val Url = "constraintlayout/CreateRefsScreen.kt"
 
@@ -39,28 +42,28 @@ private fun CreateRefsExample() {
     ) {
         val (button1, text1, text2, button2) = createRefs()
         Button(
-            onClick = { },
+            onClick = { Timber.d("Button 1 pressed") },
             modifier = Modifier.constrainAs(button1) {
                 top.linkTo(parent.top, margin = 32.dp)
             }
         ) {
-            Text("Button 1")
+            Text(stringResource(id = R.string.button_args, 1))
         }
-        Text("Jetpack text1", Modifier.constrainAs(text1) {
+        Text(stringResource(id = R.string.text_args, 1), Modifier.constrainAs(text1) {
             top.linkTo(button1.bottom, margin = 16.dp)
         })
-        Text("Jetpack text2", Modifier.constrainAs(text2) {
+        Text(stringResource(id = R.string.text_args, 2), Modifier.constrainAs(text2) {
             start.linkTo(text1.end, margin = 32.dp)
             top.linkTo(button1.bottom, margin = 16.dp)
         })
         Button(
-            onClick = { },
+            onClick = { Timber.d("Button 2 pressed") },
             modifier = Modifier.constrainAs(button2) {
                 start.linkTo(text1.end, margin = 32.dp)
                 top.linkTo(text2.top, margin = 32.dp)
             }
         ) {
-            Text("Button 2")
+            Text(stringResource(id = R.string.button_args, 2))
         }
     }
 }

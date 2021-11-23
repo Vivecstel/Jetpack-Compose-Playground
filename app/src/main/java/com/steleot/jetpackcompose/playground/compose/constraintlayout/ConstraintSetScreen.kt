@@ -10,12 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import timber.log.Timber
 
 private const val Url = "constraintlayout/ConstraintSetScreen.kt"
 
@@ -46,21 +49,21 @@ private fun ConstraintSetExample() {
 
         ConstraintLayout(constraints) {
             Button(
-                onClick = { /* Do something */ },
-                modifier = Modifier.layoutId("button")
+                onClick = { Timber.d("Button 1 pressed") },
+                modifier = Modifier.layoutId("button1")
             ) {
-                Text("Button")
+                Text(stringResource(id = R.string.button_args, 1))
             }
 
-            Text("Text", Modifier.layoutId("text"))
+            Text(stringResource(id = R.string.text_args, 1), Modifier.layoutId("text1"))
         }
     }
 }
 
 private fun decoupledConstraints(margin: Dp): ConstraintSet {
     return ConstraintSet {
-        val button = createRefFor("button")
-        val text = createRefFor("text")
+        val button = createRefFor("button1")
+        val text = createRefFor("text1")
 
         constrain(button) {
             top.linkTo(parent.top, margin = margin)

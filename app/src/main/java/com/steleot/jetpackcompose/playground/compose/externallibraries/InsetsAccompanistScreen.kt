@@ -7,7 +7,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.google.accompanist.insets.LocalWindowInsets
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -34,12 +36,12 @@ private fun InsetsExample() {
     val windowInsets = LocalWindowInsets.current
     val systemBarsInsets = windowInsets.systemBars.layoutInsets
     Text(
-        text = """
-        System bars insets:
-        top: ${systemBarsInsets.top}
-        left: ${systemBarsInsets.left}
-        right: ${systemBarsInsets.right}
-        bottom: ${systemBarsInsets.bottom}
-        """.trimIndent()
+        text = stringResource(
+            id = R.string.system_bar_insets,
+            systemBarsInsets.top,
+            systemBarsInsets.left,
+            systemBarsInsets.right,
+            systemBarsInsets.bottom
+        )
     )
 }

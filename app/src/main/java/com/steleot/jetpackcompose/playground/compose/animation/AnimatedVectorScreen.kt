@@ -8,9 +8,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -41,7 +46,7 @@ private fun AnimatorVectorExample() {
     var atEnd by remember { mutableStateOf(false) }
     Image(
         painter = image.painterFor(atEnd),
-        contentDescription = "Jetpack compose playground",
+        contentDescription = stringResource(id = R.string.animated_vector),
         modifier = Modifier
             .size(64.dp)
             .clickable {

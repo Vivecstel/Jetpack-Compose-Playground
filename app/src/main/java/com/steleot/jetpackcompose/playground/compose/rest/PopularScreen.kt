@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
@@ -20,6 +22,7 @@ import androidx.navigation.NavHostController
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -57,7 +60,7 @@ fun PopularScreen(
                 is PopularUiState.Error -> {
                     val error = state as PopularUiState.Error
                     Text(
-                        text = error.message,
+                        text = stringResource(id = error.messageRes),
                         style = MaterialTheme.typography.body1,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
@@ -114,7 +117,7 @@ class PopularViewModel @Inject constructor(
             } catch (e: Exception) {
                 Timber.e(e)
                 _state.value =
-                    PopularUiState.Error("Failed to retrieve the popular list. Please try again later.")
+                    PopularUiState.Error(R.string.popular_error)
             }
         }
     }
@@ -123,7 +126,7 @@ class PopularViewModel @Inject constructor(
 sealed class PopularUiState {
     object Loading : PopularUiState()
     class Error(
-        val message: String,
+        @StringRes val messageRes: Int,
     ) : PopularUiState()
 
     class Content(

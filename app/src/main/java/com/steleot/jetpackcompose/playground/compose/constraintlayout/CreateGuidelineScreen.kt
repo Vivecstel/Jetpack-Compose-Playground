@@ -12,6 +12,7 @@ import androidx.constraintlayout.compose.Dimension
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import timber.log.Timber
 
 private const val Url = "constraintlayout/CreateGuidelineScreen.kt"
 
@@ -41,7 +42,7 @@ private fun CreateGuidelineExample() {
                 end.linkTo(g4)
                 height = Dimension.fillToConstraints
             },
-            onClick = {},
+            onClick = { Timber.d("Button pressed") },
         ) {
             Text(text = stringResource(id = R.string.app_name))
         }

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFontLoader
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -42,7 +43,7 @@ private fun LocalFontLoaderExample() {
     val fontLoader = LocalFontLoader.current
     val typeface = fontLoader.load(Font(R.font.reggae_one_font)) as Typeface
     Text(
-        text = "Local Font Loader with reggae one font",
+        text = stringResource(id = R.string.local_font_loader),
         fontFamily = FontFamily(typeface)
     )
 }

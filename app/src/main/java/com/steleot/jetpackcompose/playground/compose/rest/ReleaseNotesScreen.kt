@@ -1,15 +1,24 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -19,13 +28,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.api.GitHubService
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.releaseString
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -52,7 +68,7 @@ fun ReleaseNotesScreen(
                 }
                 is ReleaseNotesUiState.Error -> {
                     Text(
-                        text = "Failed to retrieve the releases list.\nPlease try again later.",
+                        text = stringResource(id = R.string.releases_error),
                         style = MaterialTheme.typography.body1,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
@@ -74,7 +90,8 @@ fun ReleaseNotesScreen(
                                 },
                                 modifier = Modifier
                                     .padding(horizontal = 16.dp, vertical = 4.dp),
-                                elevation = 4.dp
+                                elevation = 4.dp,
+                                backgroundColor = MaterialTheme.colors.primary
                             ) {
                                 Column(
                                     modifier = Modifier

@@ -1,6 +1,10 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -21,6 +26,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -49,12 +55,12 @@ fun TextFieldScreen() {
     }
 }
 
-private const val DefaultText = "Jetpack"
-
 @Preview
 @Composable
-private fun DefaultTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun DefaultTextField(
+    text: String = stringResource(id = R.string.jetpack)
+) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },
@@ -67,8 +73,8 @@ private fun DefaultTextField() {
 
 @Preview
 @Composable
-private fun BackgroundColorTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun BackgroundColorTextField(text: String = stringResource(id = R.string.jetpack)) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },
@@ -84,8 +90,8 @@ private fun BackgroundColorTextField() {
 
 @Preview
 @Composable
-private fun StyledTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -103,8 +109,8 @@ private fun StyledTextField() {
 
 @Preview
 @Composable
-private fun ImeActionTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpack)) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -119,9 +125,10 @@ private fun ImeActionTextField() {
     )
 }
 
+@Preview
 @Composable
-private fun PasswordKeyboardTypeTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.string.jetpack)) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { value ->
@@ -137,9 +144,10 @@ private fun PasswordKeyboardTypeTextField() {
     )
 }
 
+@Preview
 @Composable
-private fun ShapedTextField() {
-    val state = remember { mutableStateOf(TextFieldValue(text = DefaultText)) }
+private fun ShapedTextField(text: String = stringResource(id = R.string.jetpack)) {
+    val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
         onValueChange = { state.value = it },

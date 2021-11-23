@@ -7,10 +7,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 
@@ -26,11 +32,13 @@ fun BackHandlerScreen(navController: NavHostController) {
     }
 }
 
+private const val MaxPressed = 4
+
 @Composable
 private fun BackHandlerExample(navController: NavHostController) {
-    var backPressedCount by remember { mutableStateOf(0) }
+    var backPressedCount by rememberSaveable { mutableStateOf(0) }
     BackHandler {
-        if (backPressedCount >= 5) {
+        if (backPressedCount >= MaxPressed) {
             navController.popBackStack()
         } else {
             backPressedCount++
@@ -45,9 +53,9 @@ private fun BackHandlerExample(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = { dispatcher.onBackPressed() }) {
-            Text("Press Back count $backPressedCount")
+            Text(stringResource(id = R.string.back_handler_count, backPressedCount))
         }
-        Text(text = "Press more than 5 times to exit.")
+        Text(text = stringResource(id = R.string.back_handler_msg, MaxPressed))
     }
 
 }

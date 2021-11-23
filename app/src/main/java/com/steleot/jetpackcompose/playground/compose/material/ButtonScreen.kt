@@ -12,15 +12,16 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.ButtonDefaults.elevation
-import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
-import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -32,11 +33,10 @@ fun ButtonScreen() {
         title = MaterialNavRoutes.Button,
         link = Url,
     ) {
-        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(scrollState),
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultButton()
@@ -50,8 +50,6 @@ fun ButtonScreen() {
             ElevationPaddingButton()
             BorderButton()
             DisabledButton()
-            OutlinedDefaultButton()
-            TextDefaultButton()
         }
     }
 }
@@ -61,10 +59,12 @@ fun ButtonScreen() {
 private fun DefaultButton() {
     Button(
         onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp)
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Default Button")
     ) {
         Text(
-            text = "Default Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -76,10 +76,12 @@ private fun CutCornerShapeButton() {
     Button(
         onClick = {},
         shape = CutCornerShape(12.dp),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Cut Corner Shape Button"),
     ) {
         Text(
-            text = "Cut Corner Shape Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -91,10 +93,12 @@ private fun RoundedCornerShapeButton() {
     Button(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Rounded Corner Shape Button"),
     ) {
         Text(
-            text = "Rounded Corner Shape Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -108,10 +112,12 @@ private fun BackgroundColorButton() {
         colors = buttonColors(
             backgroundColor = Color.Red
         ),
-        modifier = Modifier.padding(vertical = 4.dp),
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .testTag("Background Color Button"),
     ) {
         Text(
-            text = "Background Color Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -128,7 +134,7 @@ private fun ContentColorButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Content Color Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -146,7 +152,7 @@ private fun DisabledBackgroundColorButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Disabled Background Color Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -165,7 +171,7 @@ private fun DisabledContentColorButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Disabled Content Color Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -180,7 +186,7 @@ private fun ContentPaddingButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Content Padding Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -199,7 +205,7 @@ private fun ElevationPaddingButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Elevation Padding Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -214,7 +220,7 @@ private fun BorderButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Border Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }
@@ -229,36 +235,7 @@ private fun DisabledButton() {
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
         Text(
-            text = "Disabled Button",
-            modifier = Modifier.padding(8.dp)
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun OutlinedDefaultButton() {
-    OutlinedButton(
-        onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = "Outlined Button",
-            modifier = Modifier.padding(8.dp),
-            color = Color.White
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun TextDefaultButton() {
-    TextButton(
-        onClick = {},
-        modifier = Modifier.padding(vertical = 4.dp),
-    ) {
-        Text(
-            text = "Text Button",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(8.dp)
         )
     }

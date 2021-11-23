@@ -1,7 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -9,6 +13,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -18,9 +23,10 @@ import com.google.accompanist.navigation.material.ExperimentalMaterialNavigation
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.bottomSheet
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import java.util.*
+import java.util.UUID
 
 private const val Url = "externallibraries/NavigationMaterialAccompanistScreen.kt"
 
@@ -63,7 +69,8 @@ private fun NavigationMaterialExample() {
                 }
             }
             bottomSheet(Destinations.Sheet + "?arg={arg}") { backstackEntry ->
-                val arg = backstackEntry.arguments?.getString("arg") ?: "Missing argument :("
+                val arg = backstackEntry.arguments?.getString("arg")
+                    ?: stringResource(id = R.string.missing_argument)
                 BottomSheet(
                     showFeed = { navController.navigate(Destinations.Feed) },
                     showAnotherSheet = {
@@ -85,12 +92,12 @@ private fun HomeScreen(showSheet: () -> Unit, showFeed: () -> Unit) {
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Body")
+        Text(stringResource(id = R.string.body))
         Button(onClick = showSheet) {
-            Text("Show sheet!")
+            Text(stringResource(id = R.string.show_bottom_sheet))
         }
         Button(onClick = showFeed) {
-            Text("Navigate to Feed")
+            Text(stringResource(id = R.string.navigate_feed))
         }
     }
 }
@@ -106,15 +113,19 @@ private fun FeedScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Feed!")
+        Text(stringResource(id = R.string.feed))
         Button(onClick = goBack) {
-            Text("Go Back")
+            Text(stringResource(id = R.string.go_to_previous))
         }
     }
 }
 
 @Composable
-private fun BottomSheet(showFeed: () -> Unit, showAnotherSheet: () -> Unit, arg: String) {
+private fun BottomSheet(
+    showFeed: () -> Unit,
+    showAnotherSheet: () -> Unit,
+    arg: String
+) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -122,18 +133,18 @@ private fun BottomSheet(showFeed: () -> Unit, showAnotherSheet: () -> Unit, arg:
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Sheet with arg: $arg")
+        Text(stringResource(id = R.string.bottom_sheet_args, arg))
         Button(
             onClick = showFeed,
             colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
         ) {
-            Text("Navigate to feed")
+            Text(stringResource(id = R.string.navigate_feed))
         }
         Button(
             onClick = showAnotherSheet,
             colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
         ) {
-            Text("Show another sheet!")
+            Text(stringResource(id = R.string.show_another_bottom_sheet))
         }
     }
 }

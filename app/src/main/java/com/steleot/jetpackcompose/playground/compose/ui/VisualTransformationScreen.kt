@@ -9,11 +9,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -21,7 +23,8 @@ private const val Url = "ui/VisualTransformationScreen.kt"
 
 @Composable
 fun VisualTransformationScreen() {
-    val password = remember { mutableStateOf(TextFieldValue(text = "password")) }
+    val text = stringResource(id = R.string.password)
+    val password = remember { mutableStateOf(TextFieldValue(text = text)) }
     val creditCard = remember { mutableStateOf(TextFieldValue(text = "1234567890123456")) }
     DefaultScaffold(
         title = UiNavRoutes.VisualTransformation,

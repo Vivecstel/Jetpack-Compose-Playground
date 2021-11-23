@@ -4,6 +4,7 @@ import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.compose.material3.Typography as Typography3
 
 val typography = Typography(
     h1 = TextStyle(
@@ -35,5 +36,13 @@ val typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 15.sp,
         letterSpacing = 0.6.sp
+    )
+)
+
+val typography3 = Typography3(
+    titleLarge = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 18.sp,
+        letterSpacing = 0.sp
     )
 )

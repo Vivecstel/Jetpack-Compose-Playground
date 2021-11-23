@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -36,5 +38,10 @@ fun LocalLifecycleOwnerScreen() {
 @Composable
 private fun LocalLifecycleOwnerExample() {
     val lifecycleOwner = LocalLifecycleOwner.current
-    Text(text = "Local lifecycle owner:\nCurrent state: ${lifecycleOwner.lifecycle.currentState}")
+    Text(
+        text = stringResource(
+            id = R.string.local_lifecycle_current_state,
+            lifecycleOwner.lifecycle.currentState
+        )
+    )
 }

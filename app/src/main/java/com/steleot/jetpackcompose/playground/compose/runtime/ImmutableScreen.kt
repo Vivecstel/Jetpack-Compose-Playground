@@ -2,13 +2,14 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -48,14 +49,8 @@ private fun PeopleView(people: List<Person>) {
 @Composable
 private fun PersonView(person: Person) {
     Column {
-        Row {
-            Text("Name: ")
-            Text(person.name)
-        }
-        Row {
-            Text("Phone: ")
-            Text(person.phoneNumber)
-        }
+        Text(stringResource(id = R.string.name_args, person.name))
+        Text(stringResource(id = R.string.phone_args, person.phoneNumber))
     }
 }
 

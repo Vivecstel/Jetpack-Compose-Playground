@@ -11,12 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.createBalloon
 import com.skydoves.orchestra.tooltips.BalloonAnchor
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -51,7 +53,7 @@ private fun BalloonAnchorExample() {
                 .background(MaterialTheme.colors.primary)
         )
         Text(
-            "Jetpack Compose Playground",
+            stringResource(id = R.string.app_name),
             modifier = Modifier
                 .constrainAs(text) {
                     top.linkTo(background.bottom)
@@ -64,7 +66,7 @@ private fun BalloonAnchorExample() {
         BalloonAnchor(
             reference = background,
             balloon = createBalloon(LocalContext.current) {
-                setText("Jetpack")
+                setText(stringResource(id = R.string.jetpack))
                 setArrowPosition(0.7f)
                 setCornerRadius(4f)
                 setPadding(8)

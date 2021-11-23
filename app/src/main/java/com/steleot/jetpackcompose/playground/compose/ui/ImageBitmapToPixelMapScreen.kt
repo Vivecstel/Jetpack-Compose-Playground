@@ -1,13 +1,22 @@
 package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Rect
-import androidx.compose.ui.graphics.*
+import androidx.compose.ui.graphics.Canvas
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.Paint
+import androidx.compose.ui.graphics.toPixelMap
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
@@ -36,7 +45,7 @@ fun ImageBitmapToPixelMapScreen() {
 private fun ImageBitmapToPixelMapExample() {
     val imageBitmap = createImageBitmap()
 
-    val pixelmap = imageBitmap.toPixelMap(
+    val pixelMap = imageBitmap.toPixelMap(
         startX = 48,
         startY = 49,
         width = 3,
@@ -44,9 +53,9 @@ private fun ImageBitmapToPixelMapExample() {
     )
 
     val histogram = HashMap<Color, Int>()
-    for (x in 0 until pixelmap.width) {
-        for (y in 0 until pixelmap.height) {
-            val color = pixelmap[x, y]
+    for (x in 0 until pixelMap.width) {
+        for (y in 0 until pixelMap.height) {
+            val color = pixelMap[x, y]
             val colorCount = histogram[color] ?: 0
             histogram[color] = (colorCount + 1)
         }

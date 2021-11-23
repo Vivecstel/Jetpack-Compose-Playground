@@ -7,9 +7,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
@@ -27,8 +34,9 @@ fun MutableStateMapScreen() {
 
 @Composable
 private fun MutableStateMapExample() {
-    var name by remember { mutableStateOf("name") }
-    var saying by remember { mutableStateOf("saying") }
+    val context = LocalContext.current
+    var name by remember { mutableStateOf(context.getString(R.string.name_hint)) }
+    var saying by remember { mutableStateOf(context.getString(R.string.saying)) }
     val sayings = remember {
         mutableStateMapOf(
             "Caesar" to "Et tu, Brute?",
@@ -52,15 +60,15 @@ private fun MutableStateMapExample() {
             onValueChange = { saying = it }
         )
         Button(onClick = { sayings[name] = saying }) {
-            Text("Add")
+            Text(context.getString(R.string.add))
         }
         Button(onClick = { sayings.remove(name) }) {
-            Text("Remove")
+            Text(context.getString(R.string.remove))
         }
-        Text("Sayings:")
+        Text(context.getString(R.string.sayings))
         Column {
-            for (entry in sayings) {
-                Text("${entry.key} says '${entry.value}'")
+            for ((key, value) in sayings) {
+                Text(context.getString(R.string.says, key, value))
             }
         }
     }

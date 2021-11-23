@@ -12,11 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextGeometricTransform
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 
@@ -41,7 +43,7 @@ fun StyledTextScreen() {
 @Composable
 private fun StyledTextExample() {
     Text(
-        text = "Jetpack Compose Playground",
+        text = stringResource(id = R.string.app_name),
         style = TextStyle(
             color = MaterialTheme.colors.primary,
             fontSize = 24.sp,

@@ -7,8 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -26,15 +28,15 @@ fun TextDecorationScreen() {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(
-                text = "Line Through text",
+                text = stringResource(id = R.string.line_through),
                 textDecoration = TextDecoration.LineThrough
             )
             Text(
-                text = "UnderLine text",
+                text = stringResource(id = R.string.underline),
                 textDecoration = TextDecoration.Underline
             )
             Text(
-                text = "UnderLine + Line Through text",
+                text = stringResource(id = R.string.line_through_underline),
                 textDecoration = TextDecoration.Underline + TextDecoration.LineThrough
             )
         }

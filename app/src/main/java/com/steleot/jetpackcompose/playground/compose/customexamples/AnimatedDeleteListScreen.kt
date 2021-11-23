@@ -14,7 +14,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.ListItem
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
@@ -23,11 +29,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
@@ -82,7 +90,7 @@ private fun AnimatedDeleteListExample(routes: List<String>) {
                     ) {
                         Icon(
                             Icons.Filled.Delete,
-                            contentDescription = "Delete route",
+                            contentDescription = stringResource(id = R.string.delete_route),
                         )
                     }
                 }
@@ -102,7 +110,8 @@ internal fun CardExample(
     Card(
         shape = RoundedCornerShape(4.dp),
         modifier = modifier
-            .padding(vertical = 8.dp)
+            .padding(vertical = 8.dp),
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         ListItem(
             icon = {

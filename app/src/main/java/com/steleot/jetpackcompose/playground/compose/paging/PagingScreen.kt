@@ -6,18 +6,26 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.paging.*
+import androidx.paging.LoadState
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import kotlinx.coroutines.delay
+import java.util.UUID
 import kotlin.math.ceil
 
 private const val Url = "paging/PagingScreen.kt"
@@ -34,7 +42,7 @@ fun PagingScreen() {
 
 @Composable
 private fun PagingExample() {
-    val myBackend = remember { MyBackend() }
+    val myBackend = remember { FakeBackend() }
 
     val pager = remember {
         Pager(
@@ -52,7 +60,7 @@ private fun PagingExample() {
         if (lazyPagingItems.loadState.refresh == LoadState.Loading) {
             item {
                 Text(
-                    text = "Waiting for items to load from the backend",
+                    text = stringResource(id = R.string.paging_initial_load),
                     modifier = Modifier
                         .fillMaxWidth()
                         .wrapContentWidth(Alignment.CenterHorizontally)
@@ -61,9 +69,12 @@ private fun PagingExample() {
         }
 
         itemsIndexed(lazyPagingItems) { index, item ->
-            Card(Modifier.padding(8.dp)) {
+            Card(
+                Modifier.padding(8.dp),
+                backgroundColor = MaterialTheme.colors.primary
+            ) {
                 Text(
-                    "Index=$index: $item",
+                    stringResource(id = R.string.paging_list_text, index, item.toString()),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
@@ -84,9 +95,9 @@ private fun PagingExample() {
     }
 }
 
-class MyBackend {
+class FakeBackend {
 
-    private val backendDataList = (0..60).toList().map { "[Item $it is from backend]" }
+    private val backendDataList = (0..60).toList().map { UUID.randomUUID().toString() }
     val dataBatchSize = 10
 
     class DesiredLoadResultPageResponse(

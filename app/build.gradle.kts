@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -76,7 +76,8 @@ android {
             jvmTarget = JavaVersion.VERSION_11.toString()
             kotlinOptions.freeCompilerArgs = listOf(
                 "-Xskip-prerelease-check",
-                "-Xopt-in=kotlin.RequiresOptIn"
+                "-Xopt-in=kotlin.RequiresOptIn",
+                "-Xjvm-default=all"
             )
         }
     }
@@ -97,6 +98,8 @@ android {
     }
 
     packagingOptions {
+        resources.excludes.add("**/attach_hotspot_windows.dll")
+        resources.excludes.add("META-INF/licenses/**")
         resources.excludes.add("META-INF/AL2.0")
         resources.excludes.add("META-INF/LGPL2.1")
     }
@@ -116,7 +119,7 @@ configurations.all {
 dependencies {
     AppDependencies.project.forEach { implementation(project(it)) }
     AppDependencies.bom.forEach { implementation(platform(it)) }
-    AppDependencies.implemention.forEach { implementation(it) }
+    AppDependencies.implementation.forEach { implementation(it) }
     AppDependencies.kapt.forEach { kapt(it) }
     AppDependencies.debug.forEach { debugImplementation(it) }
     AppDependencies.androidTest.forEach { androidTestImplementation(it) }

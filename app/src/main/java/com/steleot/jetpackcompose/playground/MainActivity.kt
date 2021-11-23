@@ -4,8 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.*
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.LocalOverScrollConfiguration
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -13,8 +17,17 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -35,12 +48,27 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
-import com.steleot.jetpackcompose.playground.navigation.*
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.addActivityRoutes
+import com.steleot.jetpackcompose.playground.navigation.addAnimationRoutes
+import com.steleot.jetpackcompose.playground.navigation.addConstraintLayoutRoutes
+import com.steleot.jetpackcompose.playground.navigation.addCustomExamples
+import com.steleot.jetpackcompose.playground.navigation.addExternalLibraries
+import com.steleot.jetpackcompose.playground.navigation.addFoundationRoutes
+import com.steleot.jetpackcompose.playground.navigation.addMainRoutes
+import com.steleot.jetpackcompose.playground.navigation.addMaterial3Routes
+import com.steleot.jetpackcompose.playground.navigation.addMaterialIconsExtended
+import com.steleot.jetpackcompose.playground.navigation.addMaterialIconsRoutes
+import com.steleot.jetpackcompose.playground.navigation.addMaterialRoutes
+import com.steleot.jetpackcompose.playground.navigation.addRuntimeRoutes
+import com.steleot.jetpackcompose.playground.navigation.addUiRoutes
+import com.steleot.jetpackcompose.playground.navigation.addViewModelRoutes
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
@@ -61,6 +89,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var firebaseAnalytics: FirebaseAnalytics
+
+    @Inject
+    lateinit var firebaseCrashlytics: FirebaseCrashlytics
 
     @Inject
     lateinit var firebaseMessaging: FirebaseMessaging
@@ -95,9 +126,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun init(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         if (savedInstanceState == null) {
+            firebaseCrashlytics.log("Locale: ${resources.configuration.locale}")
             lifecycleScope.launchWhenCreated {
                 val id = try {
                     firebaseInstallations.id.await()
@@ -185,6 +218,7 @@ fun JetpackComposeApp(
                 CompositionLocalProvider(
                     LocalInAppReviewer provides inAppReviewHelper,
                     LocalOverScrollConfiguration provides null,
+                    LocalThemeState provides themeState,
                     LocalIsDarkTheme provides isDarkTheme(
                         themeState.darkThemeMode,
                         themeState.isSystemInDarkTheme
@@ -210,8 +244,8 @@ fun JetpackComposeApp(
                     AnimatedNavHost(
                         navController = navController,
                         startDestination = MainNavRoutes.Main,
-                        enterTransition = { _, target ->
-                            when (target.destination.route) {
+                        enterTransition = {
+                            when (targetState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -225,8 +259,8 @@ fun JetpackComposeApp(
                                 )
                             }
                         },
-                        exitTransition = { _, target ->
-                            when (target.destination.route) {
+                        exitTransition = {
+                            when (targetState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -241,8 +275,8 @@ fun JetpackComposeApp(
                                     )
                             }
                         },
-                        popEnterTransition = { initial, _ ->
-                            when (initial.destination.route) {
+                        popEnterTransition = {
+                            when (initialState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -257,8 +291,8 @@ fun JetpackComposeApp(
                                     )
                             }
                         },
-                        popExitTransition = { initial, _ ->
-                            when (initial.destination.route) {
+                        popExitTransition = {
+                            when (initialState.destination.route) {
                                 MainNavRoutes.Popular,
                                 MainNavRoutes.Search,
                                 MainNavRoutes.Settings ->
@@ -278,13 +312,20 @@ fun JetpackComposeApp(
                         addMainRoutes(
                             navController,
                             firebaseAuth,
-                            firebaseAnalytics,
                             googleSignInClient,
                             themeState,
                             setTheme = { newThemeState ->
                                 themeState = newThemeState
                             }
                         ) { newUser ->
+                            firebaseAnalytics.logEvent(
+                                if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
+                                Bundle().apply {
+                                    if (user != null) putString(
+                                        FirebaseAnalytics.Param.METHOD,
+                                        "google"
+                                    )
+                                })
                             user = newUser
                         }
                         /* activity */
@@ -297,6 +338,8 @@ fun JetpackComposeApp(
                         addFoundationRoutes()
                         /* material */
                         addMaterialRoutes()
+                        /* material 3 */
+                        addMaterial3Routes()
                         /* material icons */
                         addMaterialIconsRoutes()
                         /* material icons extended */
@@ -329,6 +372,10 @@ fun JetpackComposeApp(
 
 val LocalInAppReviewer = staticCompositionLocalOf<InAppReviewHelper> {
     error("CompositionLocal InAppReviewHelper not present")
+}
+
+val LocalThemeState = staticCompositionLocalOf<ThemeState> {
+    error("CompositionLocal LocalThemeState not present")
 }
 
 val LocalIsDarkTheme = staticCompositionLocalOf<Boolean> {

@@ -1,19 +1,45 @@
 package com.steleot.jetpackcompose.playground.compose.animation
 
-import androidx.compose.animation.*
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentScope
+import androidx.compose.animation.ContentTransform
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.layout.*
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.with
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CutCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddShoppingCart
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
 
@@ -58,9 +84,9 @@ private fun AnimateIncrementDecrementExample() {
         }
         Spacer(Modifier.size(20.dp))
         Row(horizontalArrangement = Arrangement.SpaceAround) {
-            Button(onClick = { count-- }) { Text("Minus") }
+            Button(onClick = { count-- }) { Text(stringResource(id = R.string.minus)) }
             Spacer(Modifier.size(60.dp))
-            Button(onClick = { count++ }) { Text("Plus") }
+            Button(onClick = { count++ }) { Text(stringResource(id = R.string.plus)) }
         }
     }
 }
@@ -112,16 +138,21 @@ private fun AnimatedContentTransitionSpecExample() {
 private fun ExpandedCart(
     onClick: () -> Unit
 ) {
+    val shoppingCart = stringResource(id = R.string.shopping_cart)
     Card(
         shape = CutCornerShape(12.dp),
-        onClick = onClick
+        onClick = onClick,
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         Row(
             modifier = Modifier.padding(16.dp)
         ) {
-            Icon(imageVector = Icons.Filled.AddShoppingCart, contentDescription = "Shopping cart")
+            Icon(
+                imageVector = Icons.Filled.AddShoppingCart,
+                contentDescription = shoppingCart
+            )
             Text(
-                text = "Jetpack Compose Shopping Cart",
+                text = shoppingCart,
             )
         }
     }
@@ -134,10 +165,11 @@ private fun CollapsedCart(
 ) {
     Card(
         shape = CutCornerShape(12.dp),
-        onClick = onClick
+        onClick = onClick,
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         Text(
-            text = "Jetpack Compose",
+            text = stringResource(id = R.string.app_name),
             modifier = Modifier.padding(16.dp)
         )
     }

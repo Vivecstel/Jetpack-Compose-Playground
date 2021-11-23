@@ -1,6 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
@@ -12,9 +17,11 @@ import androidx.compose.material.icons.outlined.Print
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.zachklipp.richtext.ui.printing.Printable
@@ -43,6 +50,7 @@ fun ComposeRichTextPrintingScreen() {
 @Composable
 private fun DocumentScreenExample() {
     val printableController = rememberPrintableController()
+    val document = stringResource(id = R.string.document)
     Column(Modifier.verticalScroll(rememberScrollState())) {
         Printable(
             printableController,
@@ -54,7 +62,7 @@ private fun DocumentScreenExample() {
         ) {
             Column {
                 Text(
-                    "Jetpack Compose Playground",
+                    stringResource(id = R.string.app_name),
                     style = MaterialTheme.typography.h3,
                     fontWeight = Bold
                 )
@@ -65,9 +73,7 @@ private fun DocumentScreenExample() {
                 Spacer(Modifier.size(16.dp))
                 OutlinedButton(
                     onClick = {
-                        printableController.print(
-                            "Jetpack Compose Playground document"
-                        )
+                        printableController.print(document)
                     },
                     modifier = Modifier
                         .padding(vertical = 8.dp)
@@ -75,14 +81,14 @@ private fun DocumentScreenExample() {
                 ) {
                     Icon(
                         Icons.Outlined.Print,
-                        contentDescription = "Print",
+                        contentDescription = stringResource(id = R.string.print),
                         modifier = Modifier.size(16.dp),
-                        tint = MaterialTheme.colors.onPrimary
+                        tint = MaterialTheme.colors.primary
                     )
                     Text(
-                        text = "Print document",
+                        text = stringResource(id = R.string.print_document),
                         modifier = Modifier.padding(8.dp),
-                        color = MaterialTheme.colors.onPrimary
+                        color = MaterialTheme.colors.primary
                     )
                 }
             }

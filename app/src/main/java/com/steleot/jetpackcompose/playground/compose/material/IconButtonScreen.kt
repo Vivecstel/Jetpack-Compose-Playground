@@ -41,12 +41,11 @@ fun IconButtonScreen() {
 private fun DefaultIconButton() {
     IconButton(
         onClick = {},
-
         content = {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(48.dp),
-                contentDescription = "Default Icon Button",
+                contentDescription = null,
             )
         }
     )
@@ -60,7 +59,7 @@ private fun DisabledIconButton() {
         content = {
             Icon(
                 Icons.Filled.Panorama,
-                contentDescription = "Disabled Icon Button"
+                contentDescription = null
             )
         },
         enabled = false

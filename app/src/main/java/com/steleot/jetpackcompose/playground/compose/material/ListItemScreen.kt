@@ -1,7 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
@@ -14,8 +18,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -53,7 +59,7 @@ private fun DefaultListItem() {
 
 @Composable
 private fun DefaultText() {
-    Text(text = "Jetpack Compose Playground")
+    Text(text = stringResource(id = R.string.app_name))
 }
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -65,7 +71,7 @@ private fun IconListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Icon",
+                contentDescription = null,
             )
         }
     ) {
@@ -79,7 +85,7 @@ private fun IconListItem() {
 private fun SecondaryTextListItem() {
     ListItem(
         secondaryText = {
-            Text(text = "Jetpack Compose Playground Secondary text")
+            DefaultText()
         }
     ) {
         DefaultText()
@@ -92,7 +98,7 @@ private fun SecondaryTextListItem() {
 private fun OverlineTextListItem() {
     ListItem(
         overlineText = {
-            Text(text = "Jetpack Compose Playground Overline text")
+            DefaultText()
         }
     ) {
         DefaultText()
@@ -108,7 +114,7 @@ private fun TrailingListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Trailing",
+                contentDescription = null,
             )
         }
     ) {
@@ -129,20 +135,20 @@ private fun FullListItem() {
             Icon(
                 Icons.Filled.Palette,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Icon",
+                contentDescription = null,
             )
         },
         secondaryText = {
-            Text(text = "Jetpack Compose Playground Secondary text")
+            DefaultText()
         },
         overlineText = {
-            Text(text = "Jetpack Compose Playground Overline text")
+            DefaultText()
         },
         trailing = {
             Icon(
                 Icons.Filled.PedalBike,
                 modifier = Modifier.size(36.dp),
-                contentDescription = "List Item Trailing",
+                contentDescription = null,
             )
         }
     ) {

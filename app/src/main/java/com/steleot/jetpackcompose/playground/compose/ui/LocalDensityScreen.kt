@@ -8,7 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -16,7 +18,8 @@ private const val Url = "ui/LocalDensityScreen.kt"
 
 @Composable
 fun LocalDensityScreen() {
-    val sizeInPx = with(LocalDensity.current) { 32.dp.toPx() }
+    val sizeInDp = 32.dp
+    val sizeInPx = with(LocalDensity.current) { sizeInDp.toPx() }
     DefaultScaffold(
         title = UiNavRoutes.LocalDensity,
         link = Url,
@@ -27,7 +30,7 @@ fun LocalDensityScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "32 dp are $sizeInPx pixels for this phone"
+                text = stringResource(id = R.string.local_density_msg, sizeInDp, sizeInPx)
             )
         }
     }

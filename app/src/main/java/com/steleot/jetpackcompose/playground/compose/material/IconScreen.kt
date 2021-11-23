@@ -41,7 +41,7 @@ fun IconScreen() {
 private fun DefaultIcon() {
     Icon(
         Icons.Filled.AccountBox,
-        contentDescription = "Default Icon Button",
+        contentDescription = null,
     )
 }
 
@@ -50,7 +50,7 @@ private fun DefaultIcon() {
 private fun TintedIcon() {
     Icon(
         Icons.Filled.AddAlarm,
-        contentDescription = "Tinted Icon",
+        contentDescription = null,
         modifier = Modifier.size(48.dp),
         tint = Color.Magenta,
     )

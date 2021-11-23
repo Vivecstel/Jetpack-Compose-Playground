@@ -12,10 +12,12 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 
@@ -39,7 +41,7 @@ fun LauncherForActivityResult2Screen() {
 
 @Composable
 private fun LauncherForActivityResultExample() {
-    val result = remember { mutableStateOf<Uri?>(null) }
+    val result = rememberSaveable { mutableStateOf<Uri?>(null) }
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.PickContact()) {
         result.value = it
     }
@@ -49,7 +51,7 @@ private fun LauncherForActivityResultExample() {
             launcher.launch()
         }
     ) {
-        Text(text = "Choose contact")
+        Text(text = stringResource(id = R.string.choose_contact))
     }
 
     result.value?.let { uri ->
@@ -62,10 +64,10 @@ private fun LauncherForActivityResultExample() {
             cursor.moveToFirst()
             val nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
             val name = cursor.getString(nameIndex)
-            Text(text = "name : $name")
+            Text(text = stringResource(id = R.string.name_args, name))
             it.close()
         } ?: run {
-            Text(text = "Contact not found")
+            Text(text = stringResource(id = R.string.contact_not_found))
         }
     }
 }

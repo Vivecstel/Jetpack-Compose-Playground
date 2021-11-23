@@ -4,14 +4,21 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.ExtendedFloatingActionButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.material.Typography
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -34,7 +41,8 @@ fun MaterialThemeScreen() {
 }
 
 @Composable
-fun MaterialThemeExample() {
+private fun MaterialThemeExample() {
+    val inSystemDarkTheme = isSystemInDarkTheme()
     val lightColors = lightColors(
         secondary = Color.Red,
         onSecondary = Color.White,
@@ -45,7 +53,7 @@ fun MaterialThemeExample() {
         onSecondary = Color.White,
     )
 
-    val colors = if (isSystemInDarkTheme()) darkColors else lightColors
+    val colors = if (inSystemDarkTheme) darkColors else lightColors
 
     val typography = Typography(
         h1 = TextStyle(
@@ -59,9 +67,9 @@ fun MaterialThemeExample() {
     )
 
     MaterialTheme(colors = colors, typography = typography) {
-        val currentTheme = if (MaterialTheme.colors.isLight) "light" else "dark"
+        val theme = stringResource(id = if (inSystemDarkTheme) R.string.dark else R.string.light)
         ExtendedFloatingActionButton(
-            text = { Text("FAB with text style and color from $currentTheme theme") },
+            text = { Text(stringResource(id = R.string.material_theme_msg, theme)) },
             onClick = {}
         )
     }

@@ -1,6 +1,10 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.RadioButton
 import androidx.compose.material.RadioButtonDefaults.colors
 import androidx.compose.material.Text
@@ -10,8 +14,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -39,12 +45,10 @@ fun RadioButtonScreen() {
     }
 }
 
-private const val ConstantText = "Jetpack Compose Playground"
-
 @Preview
 @Composable
 private fun DefaultRadioButton(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -58,7 +62,7 @@ private fun DefaultRadioButton(
 @Preview
 @Composable
 private fun DisabledRadioButton(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -73,7 +77,7 @@ private fun DisabledRadioButton(
 @Preview
 @Composable
 private fun SelectedColoredRadioButton(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -90,7 +94,7 @@ private fun SelectedColoredRadioButton(
 @Preview
 @Composable
 private fun UnselectedColoredRadioButton(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -107,7 +111,7 @@ private fun UnselectedColoredRadioButton(
 @Preview
 @Composable
 private fun DisabledColoredRadioButton(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     RadioButton(
@@ -123,7 +127,7 @@ private fun DisabledColoredRadioButton(
 
 @Composable
 private fun RadioButtonWithLabel(
-    text: String = ConstantText
+    text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
     Row(modifier = Modifier.padding(10.dp)) {
@@ -143,7 +147,7 @@ private fun RadioButtonWithLabel(
 @Preview
 @Composable
 private fun RadioButtonGroup(
-    items: List<String> = listOf("Jetpack", "Compose", "Playground")
+    items: List<String> = stringResource(id = R.string.app_name).split(' ')
 ) {
     val state = remember { mutableStateOf("") }
     Column {

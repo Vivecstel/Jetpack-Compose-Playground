@@ -11,7 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
@@ -39,7 +41,7 @@ fun LocalHapticFeedbackScreen() {
 private fun LocalHapticFeedbackExample() {
     val hapticFeedback = LocalHapticFeedback.current
     Text(
-        text = "press me",
+        text = stringResource(id = R.string.press_me),
         modifier = Modifier
             .clickable {
                 hapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove)

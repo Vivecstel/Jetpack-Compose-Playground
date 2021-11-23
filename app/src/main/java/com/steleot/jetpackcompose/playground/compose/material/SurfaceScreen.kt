@@ -4,6 +4,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
@@ -20,7 +22,7 @@ fun SurfaceScreen() {
             contentColor = MaterialTheme.colors.error
         ) {
             Text(
-                "Background color is from material theme background and text color is from error"
+                stringResource(id = R.string.surface_msg)
             )
         }
     }
