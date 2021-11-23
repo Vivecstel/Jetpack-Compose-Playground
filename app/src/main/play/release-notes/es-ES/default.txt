@@ -1,0 +1,1 @@
+Actualice jetpack compose a 1.1.0 beta 02. Se agregó material 3, gap, html text y snapper ejemplos. Bibliotecas de descanso actualizadas. Añadidas traducciones para varios idiomas.

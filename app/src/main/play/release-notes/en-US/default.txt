@@ -1,1 +1,1 @@
-Updated accompanist & landscapist. Disabled Compose Markdown screen for now.
+Update compose to 1.1.0 beta02. Added material 3, gap, html text and snapper examples. Updated rest libraries. Added translations for various languages.
