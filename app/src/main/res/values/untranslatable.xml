@@ -5,6 +5,8 @@
     <string name="compose" translatable="false">Compose</string>
     <string name="playground" translatable="false">Playground</string>
     <string name="motion_layout_compose" translatable="false">MotionLayout Jetpack Compose</string>
+    <string name="markdown" translatable="false"># Sample\n* Markdown\n* [Link](https://example.com)\n![Image](https://example.com/img.png)\n<a href="https://www.google.com/">Google</a></string>
+    <string name="android" translatable="false">Android</string>
     <string name="intrinsic_size" translatable="false">Intrinsic Size %1$s</string>
     <string name="backdrop_scaffold" translatable="false">Backdrop scaffold</string>
     <string name="bottom_sheet_scaffold" translatable="false">Bottom sheet scaffold</string>

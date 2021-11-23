@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- activity -->
     <string name="back_handler_count">Press Back count %1$d</string>
-    <string name="back_handler_msg">Press more than %1$d times to exit.</string>
+    <string name="back_handler_msg" tools:ignore="PluralsCandidate">Press more than %1$d times to exit.</string>
     <string name="take_picture">Take a picture</string>
     <string name="permission_not_granted">Permission not granted</string>
     <string name="choose_contact">Choose contact</string>
@@ -39,7 +39,7 @@
     <string name="swipe_up">Swipe up</string>
     <!-- custom examples -->
     <string name="delete_route">Delete route</string>
-    <string name="pressed_count">Pressed %1$d times</string>
+    <string name="pressed_count" tools:ignore="PluralsCandidate">Pressed %1$d times</string>
     <string name="feature_not_available">Feature not available</string>
     <string name="camera_already_granted">Camera permission already granted</string>
     <string name="camera_rationale">The camera is important for this app. Please grant the permission.</string>
@@ -61,7 +61,6 @@
     <string name="people">People</string>
     <string name="laptops">Laptops</string>
     <string name="titles">Titles</string>
-    <string name="markdown"># Sample\n* Markdown\n* [Link](https://example.com)\n![Image](https://example.com/img.png)\n<a href="https://www.google.com/">Google</a></string>
     <string name="press_me">Press me</string>
     <string name="document">Document</string>
     <string name="print">Print</string>
@@ -82,9 +81,8 @@
     <string name="column_args">Column %1$d</string>
     <string name="stuff">Stuff</string>
     <string name="hello_word_wrap">Hello world this is a really long line that is going to wrap hopefully</string>
-    <string name="index_header_args">This is %1$d index header.</string>
-    <string name="item_args">This is %1$d item.</string>
-    <string name="android">Android</string>
+    <string name="index_header_args" tools:ignore="PluralsCandidate">This is %1$d index header.</string>
+    <string name="item_args" tools:ignore="PluralsCandidate">This is %1$d item.</string>
     <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
     <string name="system_bar_insets">System bars insets:\ntop: %1$d\nleft: %2$d\nright: %3$d\nbottom: %4$d</string>
     <string name="navigate_horizontal">Navigate Horizontal</string>
@@ -155,7 +153,7 @@
     <string name="refresh">Refresh</string>
     <string name="label">Label</string>
     <string name="option_args">Option %1$d</string>
-    <string name="no_content_alpha">No content alpha applied - uses the default content alpha set by MaterialTheme - 87% alpha</string>
+    <string name="no_content_alpha">No content alpha applied - uses the default content alpha set by MaterialTheme - %1$f alpha</string>
     <string name="content_alpha">%1$s alpha applied - %2$f alpha</string>
     <string name="maximum">Maximum</string>
     <string name="high_content">High Content</string>
@@ -203,7 +201,6 @@
     <string name="privacy_policy">Privacy policy</string>
     <string name="settings">Settings</string>
     <string name="release_notes">Release notes</string>
-    <string name="open">Open %1$s</string>
     <string name="failed_google_sign_in">Failed to sign in with Google. Please try again later.</string>
     <string name="mandatory_sign_in">You need to sign in to open %1$s</string>
     <string name="coming_soon">Coming soon</string>
@@ -265,7 +262,7 @@
     <string name="go_to_screen">Go to screen %1$d</string>
     <string name="counter_screen_1">Counter = %1$d on Screen 1</string>
     <string name="screen_2">Screen 2</string>
-    <string name="clicked_count">You clicked %1$d times</string>
+    <string name="clicked_count" tools:ignore="PluralsCandidate">You clicked %1$d times</string>
     <string name="click_to_close">Click to close drawer</string>
     <string name="click_to_open">Click to open drawer</string>
     <string name="ahoy">Ahoy</string>
@@ -301,7 +298,7 @@
     <string name="local_layout_direction">Local layout Direction is: %1$s</string>
     <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>
     <string name="example">Example</string>
-    <string name="string_with_format">This is %s</string>
+    <string name="string_with_format">This is %1$s</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>

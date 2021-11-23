@@ -1,3 +1,5 @@
+@file:Suppress("TestFunctionName")
+
 package com.steleot.jetpackcompose.playground.compose.theme
 
 import androidx.compose.runtime.Composable

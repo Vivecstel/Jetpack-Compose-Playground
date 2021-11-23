@@ -32,12 +32,12 @@ fun LocalContentAlphaScreen() {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(stringResource(id = R.string.no_content_alpha))
+            Text(stringResource(id = R.string.no_content_alpha, LocalContentAlpha.current))
             CompositionLocalProvider(LocalContentAlpha provides 1.00f) {
                 Text(
                     stringResource(
                         id = R.string.content_alpha,
-                        "Maximum",
+                        stringResource(id = R.string.maximum),
                         LocalContentAlpha.current
                     )
                 )

@@ -53,6 +53,56 @@
     <string name="incoming_message">У вас входящее сообщение !!!</string>
     <string name="compose_coming">Скоро Jetpack compose :)</string>
     <!-- external libraries -->
+    <string name="image_request">Ошибка запроса изображения.</string>
+    <string name="hello">Привет</string>
+    <string name="error">Ошибка</string>
+    <string name="teams">Команды</string>
+    <string name="locations">Локации</string>
+    <string name="devices">Устройства</string>
+    <string name="people">Люди</string>
+    <string name="laptops">Ноутбуки</string>
+    <string name="titles">Титулы</string>
+    <string name="press_me">Нажми меня</string>
+    <string name="document">Документ</string>
+    <string name="print">Распечатать</string>
+    <string name="print_document">Распечатать документ</string>
+    <string name="paragraphs">Абзацы</string>
+    <string name="simple_paragraph">Простой абзац.</string>
+    <string name="paragraph_multiple_lines">Абзац, состоящий из\n нескольких строк.</string>
+    <string name="paragraph_long_text">Абзац с очень длинной строкой, которую следует перенести.</string>
+    <string name="horizontal_line">Горизонтальная линия</string>
+    <string name="above_line">Над строкой</string>
+    <string name="below_line">Ниже линии</string>
+    <string name="code_block">Блок кода</string>
+    <string name="block_quote">Заблокировать цитату</string>
+    <string name="quoted_paragraphs">Эти абзацы цитируются.</string>
+    <string name="more_text">Больше текста.</string>
+    <string name="nester_block_quote">Цитата вложенного блока.</string>
+    <string name="table">Стол</string>
+    <string name="column_args">Столбец %1$d</string>
+    <string name="stuff">Вещи</string>
+    <string name="hello_word_wrap">Привет, мир, это действительно длинная строка, которая, надеюсь, завершится</string>
+    <string name="index_header_args">Это заголовок индекса %1$d.</string>
+    <string name="item_args">Это %1$d предмет.</string>
+    <string name="html_text">Здравствуйте, <b> площадка для создания Jetpack </b>. Это <i> <strike> текст </strike> предложение </i> имеет форму <b> att <u> ed </u> </b> в простом HTML. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground"> Ссылка </a></string>
+    <string name="system_bar_insets">Вставки системных полос:\nверху: %1$d\nслева: %2$d\nсправа: %3$d\nснизу: %4$d</string>
+    <string name="navigate_horizontal">Навигация по горизонтали</string>
+    <string name="navigate_expand">Навигация Развернуть</string>
+    <string name="navigate_vertical">Вертикальная навигация</string>
+    <string name="body">Тело</string>
+    <string name="show_bottom_sheet">Покажи нижний лист!</string>
+    <string name="navigate_feed">Навигация по ленте</string>
+    <string name="feed">Кормить</string>
+    <string name="bottom_sheet_args">Лист с аргументом: %1$s</string>
+    <string name="show_another_bottom_sheet">Показать другой нижний лист</string>
+    <string name="missing_argument">Отсутствует аргумент :(</string>
+    <string name="star">Звезда</string>
+    <string name="delete">Удалить</string>
+    <string name="test_with_args">Тест %1$d</string>
+    <string name="change_system_bar_colors">Изменить цвета системной панели</string>
+    <string name="restore_system_bar_colors">Восстановить цвета системной панели</string>
+    <string name="change_navigation_bar_colors">Изменить цвета панели навигации</string>
+    <string name="restore_navigation_bar_colors">Восстановить цвета панели навигации</string>
     <!-- foundation -->
     <string name="shuffle">Перемешать</string>
     <string name="bring_circle_into_view">Сделать круг в представлении</string>
@@ -104,7 +154,7 @@
     <string name="refresh">Обновить</string>
     <string name="label">Этикетка</string>
     <string name="option_args">Вариант %1$d</string>
-    <string name="no_content_alpha">Альфа содержимого не применяется - используется альфа-канал содержимого по умолчанию, установленный в MaterialTheme - 87% альфа.</string>
+    <string name="no_content_alpha">Альфа содержимого не применяется - используется альфа-канал содержимого по умолчанию, установленный в MaterialTheme - %1$f альфа.</string>
     <string name="content_alpha">Применена альфа %1$s - альфа %2$f</string>
     <string name="maximum">Максимум</string>
     <string name="high_content">Высокое содержание</string>
@@ -152,7 +202,6 @@
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="settings">Настройки</string>
     <string name="release_notes">Примечания к выпуску</string>
-    <string name="open">Открыть %1$s</string>
     <string name="failed_google_sign_in">Не удалось войти в систему с помощью Google. Пожалуйста, попробуйте позже.</string>
     <string name="mandatory_sign_in">Вам необходимо войти, чтобы открыть %1$s</string>
     <string name="coming_soon">Скоро будет</string>
@@ -214,7 +263,7 @@
     <string name="go_to_screen">Перейти на экран %1$d</string>
     <string name="counter_screen_1">Счетчик = %1$d на экране 1</string>
     <string name="screen_2">Экран 2</string>
-    <string name="clicked_count">Вы нажали% 1$d раз</string>
+    <string name="clicked_count">Вы нажали %1$d раз</string>
     <string name="click_to_close">Нажмите, чтобы закрыть ящик</string>
     <string name="click_to_open">Нажмите, чтобы открыть ящик</string>
     <string name="ahoy">Ахой</string>

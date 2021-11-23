@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_screen_banner_id">ca-app-pub-2432815627427713/8003098978</string>
-    <string name="ad_mob_banner_id">ca-app-pub-2432815627427713/4389169869</string>
+    <string name="main_screen_banner_id" translatable="false">ca-app-pub-2432815627427713/8003098978</string>
+    <string name="ad_mob_banner_id" translatable="false">ca-app-pub-2432815627427713/4389169869</string>
 </resources>
