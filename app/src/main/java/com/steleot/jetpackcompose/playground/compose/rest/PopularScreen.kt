@@ -99,12 +99,12 @@ class PopularViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             try {
-                val querySnapshot = firebaseFirestore
+                val snapshot = firebaseFirestore
                     .collection("popular")
                     .orderBy("date", Query.Direction.DESCENDING)
                     .get()
                     .await()
-                val data = querySnapshot.first().data
+                val data = snapshot.first().data
                 _state.value = PopularUiState.Content(
                     data = data.filterNot { it.key == "date" }
                         .toSortedMap { o1, o2 ->

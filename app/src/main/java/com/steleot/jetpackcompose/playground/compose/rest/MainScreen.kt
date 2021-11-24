@@ -5,6 +5,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -12,6 +13,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
@@ -24,14 +26,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.ImagePainter
-import coil.compose.rememberImagePainter
-import coil.transform.CircleCropTransformation
+import coil.compose.AsyncImage
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.steleot.jetpackcompose.playground.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.LocalUser
 import com.steleot.jetpackcompose.playground.R
@@ -126,6 +127,7 @@ fun MainScreenWithDrawer(
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
     val user = LocalUser.current
+    val favoriteHelper = LocalFavoriteHelper.current
     val launcher =
         rememberLauncherForActivityResult(GoogleSignContract(googleSignInClient)) { idToken ->
             scope.launch {
@@ -171,6 +173,14 @@ fun MainScreenWithDrawer(
                 },
                 signOutOnClick = {
                     firebaseAuth.signOut()
+                    scope.launch {
+                        try {
+                            googleSignInClient.signOut().await()
+                        } catch (e: Exception) {
+                            Timber.e(e, "Failed to google sign out.")
+                        }
+                    }
+                    favoriteHelper.clearAll()
                     setUser(null)
                 }
             )
@@ -273,42 +283,22 @@ private fun BoxScope.SignedInUser(
     user: FirebaseUser,
     signOutOnClick: () -> Unit,
 ) {
-    val painter = rememberImagePainter(
-        data = user.photoUrl,
-        builder = {
-            transformations(CircleCropTransformation())
-        }
-    )
     Row(
         modifier = Modifier.align(Alignment.Center)
     ) {
-        Box {
-            Image(
-                painter = painter,
-                contentDescription = stringResource(id = R.string.user_photo),
-                modifier = Modifier
-                    .size(64.dp)
-                    .padding(end = 16.dp)
-            )
-            when (painter.state) {
-                is ImagePainter.State.Loading -> {
-                    Box(Modifier.matchParentSize()) {
-                        CircularProgressIndicator(Modifier.align(Alignment.Center))
-                    }
-                }
-                is ImagePainter.State.Error -> {
-                    Image(
-                        imageVector = Icons.Filled.AccountCircle,
-                        contentDescription = stringResource(id = R.string.account_default_icon)
-                    )
-                }
-                else -> {
-                    Timber.d("Else image load states")
-                }
-            }
-        }
+        AsyncImage(
+            model = user.photoUrl,
+            contentDescription = stringResource(id = R.string.user_photo),
+            loading = {
+                CircularProgressIndicator()
+            },
+            modifier = Modifier
+                .size(48.dp)
+                .clip(CircleShape)
+        )
         Column(
             modifier = Modifier
+                .padding(start = 16.dp)
                 .align(Alignment.CenterVertically)
                 .weight(1f)
         ) {

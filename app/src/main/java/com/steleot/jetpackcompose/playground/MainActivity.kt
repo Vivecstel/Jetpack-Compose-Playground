@@ -52,6 +52,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
+import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -106,6 +107,9 @@ class MainActivity : ComponentActivity() {
     lateinit var inAppReviewHelper: InAppReviewHelper
 
     @Inject
+    lateinit var favoriteHelper: FavoriteHelper
+
+    @Inject
     lateinit var inAppUpdateHelper: InAppUpdateHelper
 
     @Inject
@@ -121,6 +125,7 @@ class MainActivity : ComponentActivity() {
                 firebaseAnalytics,
                 protoManager,
                 inAppReviewHelper,
+                favoriteHelper,
                 googleSignInClient
             )
         }
@@ -171,6 +176,7 @@ fun JetpackComposeApp(
     firebaseAnalytics: FirebaseAnalytics,
     protoManager: ProtoManager,
     inAppReviewHelper: InAppReviewHelper,
+    favoriteHelper: FavoriteHelper,
     googleSignInClient: GoogleSignInClient
 ) {
     val isSystemInDarkTheme = isSystemInDarkTheme()
@@ -217,6 +223,7 @@ fun JetpackComposeApp(
             ProvideWindowInsets {
                 CompositionLocalProvider(
                     LocalInAppReviewer provides inAppReviewHelper,
+                    LocalFavoriteHelper provides favoriteHelper,
                     LocalOverScrollConfiguration provides null,
                     LocalThemeState provides themeState,
                     LocalIsDarkTheme provides isDarkTheme(
@@ -372,6 +379,10 @@ fun JetpackComposeApp(
 
 val LocalInAppReviewer = staticCompositionLocalOf<InAppReviewHelper> {
     error("CompositionLocal InAppReviewHelper not present")
+}
+
+val LocalFavoriteHelper = staticCompositionLocalOf<FavoriteHelper> {
+    error("CompositionLocal LocalFavorite not present")
 }
 
 val LocalThemeState = staticCompositionLocalOf<ThemeState> {

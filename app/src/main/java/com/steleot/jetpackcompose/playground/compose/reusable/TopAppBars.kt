@@ -36,6 +36,7 @@ fun DefaultTopAppBar(
         actions = {
             link?.let {
                 GoToGithubIconButton(it)
+                DefaultDropdownMenu(title)
             }
             navigateToSearch?.let {
                 SearchIconButton(it)

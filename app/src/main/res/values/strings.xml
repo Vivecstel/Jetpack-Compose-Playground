@@ -240,6 +240,7 @@
     <string name="dark">Dark</string>
     <string name="light">Light</string>
     <string name="theme_mode_selected">Theme Mode Selected</string>
+    <string name="unfavorite">Unfavorite</string>
     <!-- reusable -->
     <string name="open_github">Open Github</string>
     <string name="back_arrow">Back Arrow</string>
