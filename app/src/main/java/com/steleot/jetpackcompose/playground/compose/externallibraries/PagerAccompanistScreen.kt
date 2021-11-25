@@ -7,10 +7,12 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.util.*
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
@@ -65,13 +67,11 @@ private fun PagerExample() {
 
             ) {
                 Box {
-                    Image(
-                        painter = rememberImagePainter(
-                            data = randomSampleImageUrl(width = 600),
-                            builder = {
-                                crossfade(true)
-                            }
-                        ),
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(randomSampleImageUrl(width = 600))
+                            .crossfade(true)
+                            .build(),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth(0.8f)
@@ -120,10 +120,11 @@ private fun ProfilePicture(modifier: Modifier = Modifier) {
         shape = CircleShape,
         border = BorderStroke(4.dp, MaterialTheme.colors.surface)
     ) {
-        Image(
-            painter = rememberImagePainter(
-                data = randomSampleImageUrl(),
-                builder = { crossfade(true) }),
+        AsyncImage(
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(randomSampleImageUrl())
+                .crossfade(true)
+                .build(),
             contentDescription = null,
             modifier = Modifier.size(72.dp)
         )

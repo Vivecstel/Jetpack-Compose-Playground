@@ -17,6 +17,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 
@@ -24,9 +25,9 @@ private const val Url = "externallibraries/SystemUiControllerAccompanistScreen.k
 
 @Composable
 fun SystemUiControllerAccompanistScreen(
-    navController: NavHostController,
     systemUiController: SystemUiController,
 ) {
+    val navController = LocalNavController.current
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
         link = Url,

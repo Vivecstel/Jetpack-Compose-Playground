@@ -11,9 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
+import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 
 private const val Url = "material3/LocalContentColor3Screen.kt"

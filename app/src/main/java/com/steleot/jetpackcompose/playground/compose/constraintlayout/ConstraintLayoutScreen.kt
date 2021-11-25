@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.constraintlayout
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -21,9 +20,8 @@ val routes = listOf(
 )
 
 @Composable
-fun ConstraintLayoutScreen(navController: NavHostController) {
+fun ConstraintLayoutScreen() {
     MainScreen(
-        navController = navController,
         title = MainNavRoutes.ConstraintLayout,
         list = routes,
     )

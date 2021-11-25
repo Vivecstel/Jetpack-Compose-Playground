@@ -24,7 +24,6 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.AsyncImage
 import com.google.accompanist.insets.systemBarsPadding
@@ -32,12 +31,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.steleot.jetpackcompose.playground.LocalFavoriteHelper
-import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
-import com.steleot.jetpackcompose.playground.LocalUser
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.*
+import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
+import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.localproviders.LocalUser
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.*
 import kotlinx.coroutines.launch
@@ -68,7 +68,6 @@ private val drawerItems = listOf(
         route = MainNavRoutes.Favorites,
         textRes = R.string.favorites,
         imageVector = Icons.Filled.Favorite,
-        menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.MenuData(
         route = MainNavRoutes.Popular,
@@ -111,12 +110,10 @@ private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io
 
 @Composable
 fun MainScreenWithDrawer(
-    navController: NavHostController,
     firebaseAuth: FirebaseAuth,
     googleSignInClient: GoogleSignInClient,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
-    navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = true,
     setUser: (FirebaseUser?) -> Unit
 ) {
@@ -128,6 +125,7 @@ fun MainScreenWithDrawer(
     val uriHandler = LocalUriHandler.current
     val user = LocalUser.current
     val favoriteHelper = LocalFavoriteHelper.current
+    val navController = LocalNavController.current
     val launcher =
         rememberLauncherForActivityResult(GoogleSignContract(googleSignInClient)) { idToken ->
             scope.launch {
@@ -161,7 +159,6 @@ fun MainScreenWithDrawer(
                         state.drawerState.open()
                     }
                 },
-                navigateToSearch = navigateToSearch
             )
         },
         drawerBackgroundColor = MaterialTheme.colors.primary,
@@ -198,7 +195,12 @@ fun MainScreenWithDrawer(
                                 state.drawerState.close()
                                 when (it.menuAction) {
                                     MenuAction.NAVIGATION -> {
-                                        if (user == null && it.route == MainNavRoutes.Popular) {
+                                        if (user == null
+                                            && it.route in listOf(
+                                                MainNavRoutes.Popular,
+                                                MainNavRoutes.Favorites
+                                            )
+                                        ) {
                                             errorDialogText = context.getString(
                                                 R.string.mandatory_sign_in,
                                                 context.getString(it.textRes)
@@ -207,7 +209,7 @@ fun MainScreenWithDrawer(
                                             return@launch
                                         }
                                         it.route?.let { route ->
-                                            navController.navigate(route)
+                                            navController.navigate(if (route == MainNavRoutes.Favorites) "$route/${user!!.uid}" else route)
                                         }
                                     }
                                     MenuAction.TOAST -> Toast.makeText(
@@ -225,7 +227,7 @@ fun MainScreenWithDrawer(
             }
         }
     ) {
-        MainScreenContent(navController, it, list, showAd)
+        MainScreenContent(it, list, showAd)
     }
 }
 
@@ -372,32 +374,27 @@ private fun BoxScope.GoogleSignInButton(
 
 @Composable
 fun MainScreen(
-    navController: NavHostController,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
-    navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = true,
 ) {
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
-            DefaultTopAppBar(
-                title = title,
-                navigateToSearch = navigateToSearch
-            )
+            DefaultTopAppBar(title = title)
         },
     ) {
-        MainScreenContent(navController, it, list, showAd)
+        MainScreenContent(it, list, showAd)
     }
 }
 
 @Composable
 fun MainScreenContent(
-    navController: NavHostController,
     paddingValues: PaddingValues,
     list: List<String>,
     showAd: Boolean = true,
 ) {
+    val navController = LocalNavController.current
     val routesWithRibbons = remember {
         list.map { route ->
             route to (route in ribbonRoutes)

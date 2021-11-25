@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.steleot.jetpackcompose.playground.compose.externallibraries.randomSampleImageUrl
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
@@ -43,7 +43,7 @@ private fun ColorMatrixExample() {
     }
 
     Image(
-        painter = rememberImagePainter(data = randomSampleImageUrl()),
+        painter = rememberAsyncImagePainter(randomSampleImageUrl()),
         contentDescription = null,
         modifier = Modifier.size(200.dp),
         colorFilter = ColorFilter.colorMatrix(matrix)

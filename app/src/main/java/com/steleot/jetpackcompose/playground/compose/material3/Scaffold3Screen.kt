@@ -19,9 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.LocalThemeState
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultSmallTopAppBar
+import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import com.steleot.jetpackcompose.playground.theme.colors

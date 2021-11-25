@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import timber.log.Timber
 
@@ -54,3 +55,15 @@ val Context.installer: String?
             this.packageManager.getInstallerPackageName(packageName)
         }
     }
+
+fun Context.shortToast(
+    @StringRes resId: Int
+) {
+    Toast.makeText(this, resId, Toast.LENGTH_SHORT).show()
+}
+
+fun Context.shortToast(
+    message: String
+) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}

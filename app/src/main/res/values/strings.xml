@@ -241,6 +241,11 @@
     <string name="light">Light</string>
     <string name="theme_mode_selected">Theme Mode Selected</string>
     <string name="unfavorite">Unfavorite</string>
+    <string name="failed_favorites">Failed to update favorite status</string>
+    <string name="added_favorites">Added to favorites</string>
+    <string name="removed_favorites">Removed to favorites</string>
+    <string name="favorites_error">Failed to retrieve the favorites list.\nPlease try again later.</string>
+    <string name="favorites_empty">You need to add favorites to see them here.</string>
     <!-- reusable -->
     <string name="open_github">Open Github</string>
     <string name="back_arrow">Back Arrow</string>

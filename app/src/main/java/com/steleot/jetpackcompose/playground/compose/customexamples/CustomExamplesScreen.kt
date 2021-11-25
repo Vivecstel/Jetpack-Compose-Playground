@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -27,9 +26,8 @@ val routes = listOf(
 )
 
 @Composable
-fun CustomExamplesScreen(navController: NavHostController) {
+fun CustomExamplesScreen() {
     MainScreen(
-        navController = navController,
         title = MainNavRoutes.CustomExamples,
         list = routes,
     )

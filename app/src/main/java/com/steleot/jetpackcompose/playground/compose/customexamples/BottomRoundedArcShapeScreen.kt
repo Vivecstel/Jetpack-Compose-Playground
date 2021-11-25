@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.steleot.jetpackcompose.playground.compose.externallibraries.randomSampleImageUrl
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -46,7 +47,7 @@ fun BottomRoundedArcShapeScreen() {
 @Composable
 private fun BottomRoundedArcShapeExample() {
     Image(
-        painter = rememberImagePainter(data = randomSampleImageUrl()),
+        painter = rememberAsyncImagePainter(randomSampleImageUrl()),
         contentDescription = null,
         modifier = Modifier
             .size(250.dp)

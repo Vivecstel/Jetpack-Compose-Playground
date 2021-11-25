@@ -11,6 +11,11 @@ interface FavoriteHelper {
         route: String
     ): Boolean
 
+    suspend fun getFavoriteSet(
+        userId: String,
+        shouldThrowException: Boolean = false
+    ): Set<String>
+
     suspend fun addRemoveFavorite(
         userId: String,
         route: String,
@@ -35,7 +40,10 @@ class FavoriteHelperImpl(
     }
 
     @Suppress("UNCHECKED_CAST")
-    private suspend fun getFavoriteSet(userId: String): Set<String> {
+    override suspend fun getFavoriteSet(
+        userId: String,
+        shouldThrowException: Boolean
+    ): Set<String> {
         if (hasCommunicatedWithServer) {
             cachedFavorites.toSet()
         } else {
@@ -47,6 +55,7 @@ class FavoriteHelperImpl(
                 hasCommunicatedWithServer = true
             } catch (e: Exception) {
                 Timber.e(e)
+                if (shouldThrowException) throw e
             }
         }
         return cachedFavorites
@@ -56,7 +65,7 @@ class FavoriteHelperImpl(
         userId: String,
         route: String
     ): Boolean {
-        val returnValue = if (cachedFavorites.contains(route)) {
+        var returnValue = if (cachedFavorites.contains(route)) {
             cachedFavorites.remove(route)
             false
         } else {
@@ -68,6 +77,7 @@ class FavoriteHelperImpl(
                 .set(mapOf(Favorites to cachedFavorites.toList())).await()
         } catch (e: Exception) {
             Timber.e(e)
+            returnValue = !returnValue
         }
 
         return returnValue

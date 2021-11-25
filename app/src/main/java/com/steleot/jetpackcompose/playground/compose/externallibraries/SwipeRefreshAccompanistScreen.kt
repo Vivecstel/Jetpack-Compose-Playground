@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
@@ -66,7 +67,7 @@ fun SwipeRefreshAccompanistScreen() {
                 items(30) { index ->
                     Row(Modifier.padding(16.dp)) {
                         Image(
-                            painter = rememberImagePainter(randomSampleImageUrl(index)),
+                            painter = rememberAsyncImagePainter(randomSampleImageUrl(index)),
                             contentDescription = null,
                             modifier = Modifier.size(64.dp),
                         )

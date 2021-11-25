@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
@@ -90,7 +91,7 @@ fun PlaceholderAccompanistScreen() {
 private fun PlaceholderItemExample(
     text: String,
     modifier: Modifier = Modifier,
-    painter: Painter = rememberImagePainter(randomSampleImageUrl()),
+    painter: Painter = rememberAsyncImagePainter(randomSampleImageUrl()),
     childModifier: Modifier = Modifier,
 ) {
     Row(modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {

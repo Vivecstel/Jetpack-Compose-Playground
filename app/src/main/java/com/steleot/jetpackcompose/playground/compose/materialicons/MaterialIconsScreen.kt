@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.materialicons
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MaterialIconsNavRoutes
@@ -15,9 +14,8 @@ val routes = listOf(
 )
 
 @Composable
-fun MaterialIconsScreen(navController: NavHostController) {
+fun MaterialIconsScreen() {
     MainScreen(
-        navController = navController,
         title = MainNavRoutes.MaterialIcons,
         list = routes,
     )

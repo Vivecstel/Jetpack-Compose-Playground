@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,14 +9,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
@@ -30,8 +29,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.api.GitHubService
+import com.steleot.jetpackcompose.playground.compose.reusable.CenteredCircularProgressIndicator
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.compose.reusable.ErrorText
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.releaseString
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -64,17 +65,11 @@ fun ReleaseNotesScreen(
         Box(modifier = Modifier.fillMaxSize()) {
             when (state) {
                 is ReleaseNotesUiState.Loading -> {
-                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                    CenteredCircularProgressIndicator()
                 }
                 is ReleaseNotesUiState.Error -> {
-                    Text(
-                        text = stringResource(id = R.string.releases_error),
-                        style = MaterialTheme.typography.body1,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .align(Alignment.Center)
-                            .padding(horizontal = 16.dp)
-                    )
+                    val error = state as ReleaseNotesUiState.Error
+                    ErrorText(stringResource(id = error.messageRes), Modifier.padding(16.dp))
                 }
                 is ReleaseNotesUiState.Content -> {
                     val content = state as ReleaseNotesUiState.Content
@@ -144,7 +139,7 @@ class ReleaseNotesViewModel @Inject constructor(
         viewModelScope.launch {
             repository.getReleases().collect { result ->
                 if (result.throwable != null) {
-                    _state.value = ReleaseNotesUiState.Error
+                    _state.value = ReleaseNotesUiState.Error(R.string.releases_error)
                 } else {
                     _state.value = ReleaseNotesUiState.Content(
                         result.data
@@ -157,7 +152,10 @@ class ReleaseNotesViewModel @Inject constructor(
 
 sealed class ReleaseNotesUiState {
     object Loading : ReleaseNotesUiState()
-    object Error : ReleaseNotesUiState()
+    class Error(
+        @StringRes val messageRes: Int,
+    ) : ReleaseNotesUiState()
+
     class Content(
         val data: List<ReleaseDomain>,
     ) : ReleaseNotesUiState()
