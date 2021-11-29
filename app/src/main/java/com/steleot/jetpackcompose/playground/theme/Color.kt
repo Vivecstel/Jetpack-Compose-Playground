@@ -131,11 +131,12 @@ fun ColorPalette.getMaterialColors(
         )
         ColorPalette.YELLOW -> if (isDarkTheme) darkColors(
             primary = yellow200,
+            primaryVariant = yellow500,
+            secondary = teal200,
         ) else lightColors(
             primary = yellow500,
             primaryVariant = yellow700,
             secondary = teal200,
-            surface = yellow500,
         )
         ColorPalette.AMBER -> if (isDarkTheme) darkColors(
             primary = amber200,
@@ -352,7 +353,6 @@ private fun ColorPalette.getMaterial3ColorSchemeInternal(
             primary = deepOrange200,
             secondary = deepOrange500,
             tertiary = teal200,
-            surface = deepOrange200,
         ) else lightColorScheme(
             primary = deepOrange500,
             secondary = deepOrange700,

@@ -37,7 +37,9 @@ fun DefaultTopAppBar(
             val navController = LocalNavController.current
             if (link != null) {
                 GoToGithubIconButton(link)
-                DefaultDropdownMenu(title)
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton(it)
+                }
             } else {
                 SearchIconButton {
                     navController.navigate(MainNavRoutes.Search)
@@ -93,7 +95,9 @@ fun DefaultSmallTopAppBar(
         actions = {
             if (link != null) {
                 GoToGithubButton3(link)
-                DefaultDropdownMenu(title)
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton3(it)
+                }
             } else {
                 val navController = LocalNavController.current
                 SearchIconButton3 {

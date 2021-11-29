@@ -14,7 +14,7 @@ object Versions {
     const val detekt = "1.19.0-RC2"
     const val doctor = "0.7.3"
     const val protobufPlugin = "0.8.18"
-    const val playPublisher = "3.6.0"
+    const val playPublisher = "3.7.0"
 
     /* libraries */
     const val compose = "1.1.0-beta03"
@@ -45,11 +45,11 @@ object Versions {
     const val accompanist = "0.21.3-beta"
     const val landscapist = "1.4.3"
     const val orchestra = "1.1.1"
-    const val coil = "2.0.0-alpha04"
+    const val coil = "2.0.0-alpha05"
     const val glide = "4.12.0"
     const val fresco = "2.6.0"
     const val timber = "5.0.1"
-    const val lottie = "4.2.1"
+    const val lottie = "4.2.2"
     const val ratingBar = "1.1.2"
     const val revealSwipe = "1.0.0"
     const val speedDial = "1.0.0-beta03"

@@ -1,5 +1,7 @@
 package com.steleot.jetpackcompose.playground.helpers
 
+import android.os.Bundle
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
@@ -25,7 +27,8 @@ interface FavoriteHelper {
 }
 
 class FavoriteHelperImpl(
-    private val firebaseFirestore: FirebaseFirestore
+    private val firebaseFirestore: FirebaseFirestore,
+    private val firebaseAnalytics: FirebaseAnalytics,
 ) : FavoriteHelper {
 
     private val cachedFavorites = mutableSetOf<String>()
@@ -75,6 +78,10 @@ class FavoriteHelperImpl(
         try {
             firebaseFirestore.collection(Favorites).document(userId)
                 .set(mapOf(Favorites to cachedFavorites.toList())).await()
+            firebaseAnalytics.logEvent("favorite", Bundle().apply {
+                putString("route", route)
+                putString("action", if (returnValue) "added" else "removed")
+            })
         } catch (e: Exception) {
             Timber.e(e)
             returnValue = !returnValue

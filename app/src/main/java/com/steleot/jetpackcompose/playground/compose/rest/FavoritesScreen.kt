@@ -4,10 +4,12 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -16,6 +18,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.CenteredCircularProgressIndicator
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.compose.reusable.ErrorText
@@ -26,8 +29,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
+
+const val ShouldReload = "ShouldReload"
 
 @Composable
 fun FavoritesScreen(
@@ -35,10 +39,11 @@ fun FavoritesScreen(
 ) {
     val navController = LocalNavController.current
     val state: FavoritesUiState by viewModel.state.collectAsState()
-    val shouldReload =
-        navController.currentBackStackEntry?.savedStateHandle?.getLiveData<Boolean>("STELIOS")
-            ?.observeAsState()
-    Timber.tag("STELIOS").d("shouldReload: $shouldReload")
+    navController.currentBackStackEntry?.savedStateHandle?.let { savedStateHandle ->
+        val shouldReload = savedStateHandle.get<Boolean?>(ShouldReload)
+        savedStateHandle.remove<Boolean?>(ShouldReload)
+        viewModel.updateFavoritesIfNeeded(shouldReload)
+    }
 
     DefaultScaffold(
         topBar = {
@@ -62,8 +67,17 @@ fun FavoritesScreen(
                 }
                 is FavoritesUiState.Content -> {
                     val content = state as FavoritesUiState.Content
-                    Timber.tag("STELIOS").d("${content.data}")
-                    MainScreenContent(it, content.data)
+                    LazyColumn {
+                        items(content.data) { route ->
+                            key(route) {
+                                DefaultCardListItem(
+                                    text = route,
+                                ) {
+                                    navController.navigate(route)
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -83,20 +97,35 @@ class FavoritesViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            try {
-                val favorites = favoriteHelper.getFavoriteSet(userId).sorted().toList()
-                updateState(favorites)
-            } catch (e: Exception) {
-                _state.value =
-                    FavoritesUiState.Error(R.string.popular_error)
-            }
+            initFavorites()
         }
     }
 
-    private fun updateState(favorites: List<String>) {
-        _state.value =
-            if (favorites.isEmpty()) FavoritesUiState.Empty(R.string.favorites_empty)
-            else FavoritesUiState.Content(favorites)
+    private suspend fun initFavorites(
+        initialSize: Int = -1
+    ) {
+        try {
+            val favorites = favoriteHelper.getFavoriteSet(userId).sorted().toList()
+            if (favorites.size != initialSize) {
+                _state.value =
+                    if (favorites.isEmpty()) FavoritesUiState.Empty(R.string.favorites_empty)
+                    else FavoritesUiState.Content(favorites)
+            }
+        } catch (e: Exception) {
+            _state.value =
+                FavoritesUiState.Error(R.string.popular_error)
+        }
+    }
+
+    fun updateFavoritesIfNeeded(
+        shouldReload: Boolean?
+    ) {
+        if (shouldReload == true) {
+            viewModelScope.launch {
+                val initialSize = (_state.value as? FavoritesUiState.Content)?.data?.size ?: 0
+                initFavorites(initialSize)
+            }
+        }
     }
 
     companion object {
@@ -106,6 +135,7 @@ class FavoritesViewModel @Inject constructor(
 
 sealed class FavoritesUiState {
     object Loading : FavoritesUiState()
+
     class Error(
         @StringRes val messageRes: Int,
     ) : FavoritesUiState()

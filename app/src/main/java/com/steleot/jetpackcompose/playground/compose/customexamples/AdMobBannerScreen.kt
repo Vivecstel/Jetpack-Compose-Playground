@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdSize
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.google.android.gms.ads.AdView
 
 private const val Url = "customexamples/AdMobBannerScreen.kt"
 
@@ -42,7 +43,7 @@ fun AdViewExample(
     val lifecycleOwner = LocalLifecycleOwner.current
     AndroidView(
         factory = { context ->
-            com.google.android.gms.ads.AdView(context).apply {
+            AdView(context).apply {
                 adSize = AdSize.BANNER
                 adUnitId = context.getString(adStringRes)
             }

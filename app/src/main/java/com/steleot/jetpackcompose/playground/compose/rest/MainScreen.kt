@@ -5,6 +5,8 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -400,27 +402,30 @@ fun MainScreenContent(
             route to (route in ribbonRoutes)
         }
     }
-    Column(
+    LazyColumn(
         modifier = Modifier
-            .padding(paddingValues)
-            .verticalScroll(rememberScrollState())
+        .padding(paddingValues)
     ) {
-        routesWithRibbons.forEach { (route, shouldShowRibbon) ->
-            DefaultCardListItem(
-                text = route,
-                hasRibbon = shouldShowRibbon
-            ) {
-                navController.navigate(route)
+        items(routesWithRibbons) { (route, shouldShowRibbon) ->
+            key(route) {
+                DefaultCardListItem(
+                    text = route,
+                    hasRibbon = shouldShowRibbon
+                ) {
+                    navController.navigate(route)
+                }
             }
         }
-        if (showAd) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .requiredHeight(55.dp),
-                horizontalArrangement = Arrangement.Center,
-            ) {
-                AdViewExample(R.string.main_screen_banner_id)
+        item("adMob") {
+            if (showAd) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .requiredHeight(55.dp),
+                    horizontalArrangement = Arrangement.Center,
+                ) {
+                    AdViewExample(R.string.main_screen_banner_id)
+                }
             }
         }
     }

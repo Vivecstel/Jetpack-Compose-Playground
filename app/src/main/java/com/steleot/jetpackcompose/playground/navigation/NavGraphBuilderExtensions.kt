@@ -333,6 +333,8 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveData
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 
+const val FavoritesRoute = "${MainNavRoutes.Favorites}/{userId}"
+
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMainRoutes(
     firebaseAuth: FirebaseAuth,
@@ -361,17 +363,11 @@ fun NavGraphBuilder.addMainRoutes(
     composable(route = MainNavRoutes.Ui) { UiScreen() }
     composable(route = MainNavRoutes.ViewModel) { ViewModelScreen() }
     composable(route = MainNavRoutes.Settings) {
-        SettingsScreen(
-            hiltViewModel(it),
-            theme,
-            setTheme
-        )
+        SettingsScreen(hiltViewModel(it), theme, setTheme)
     }
     composable(route = MainNavRoutes.Popular) { PopularScreen(hiltViewModel(it)) }
     composable(route = MainNavRoutes.ReleaseNotes) { ReleaseNotesScreen(hiltViewModel(it)) }
-    composable(route = "${MainNavRoutes.Favorites}/{userId}") {
-        FavoritesScreen(hiltViewModel())
-    }
+    composable(route = FavoritesRoute) { FavoritesScreen(hiltViewModel()) }
 }
 
 @OptIn(ExperimentalAnimationApi::class)

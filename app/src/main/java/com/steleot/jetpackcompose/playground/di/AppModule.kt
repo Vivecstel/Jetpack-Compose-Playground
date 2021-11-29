@@ -64,6 +64,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideFavoriteHelper(
-        firebaseFirestore: FirebaseFirestore
-    ): FavoriteHelper = FavoriteHelperImpl(firebaseFirestore)
+        firebaseFirestore: FirebaseFirestore,
+        firebaseAnalytics: FirebaseAnalytics,
+    ): FavoriteHelper = FavoriteHelperImpl(firebaseFirestore, firebaseAnalytics)
 }
