@@ -89,7 +89,6 @@ object AppDependencies {
         Libraries.composeRichtextUiMaterial,
         Libraries.composeRichtextPrinting,
 //        Libraries.composeRichtextSlideshow,
-//        Libraries.zoomableImage,
         Libraries.stageStepBar,
         Libraries.plot,
         Libraries.composeTimelineView,
@@ -99,6 +98,9 @@ object AppDependencies {
 //        Libraries.permissionsUi,
         Libraries.htmlText,
         Libraries.snapper,
+        Libraries.composeShimmer,
+        Libraries.zoomableComposeImage,
+        Libraries.composeTreeMap,
         Libraries.adMob,
         Libraries.playServicesAuth,
     )

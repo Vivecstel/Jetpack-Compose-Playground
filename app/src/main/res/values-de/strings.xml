@@ -197,6 +197,8 @@
     <!-- rest -->
     <string name="favorites">Favoriten</string>
     <string name="popular">Beliebt</string>
+    <string name="discover">Entdecken</string>
+    <string name="new_screen">Neu</string>
     <string name="articles">Artikel</string>
     <string name="send_feedback">Feedback abschicken</string>
     <string name="privacy_policy">Datenschutz-Bestimmungen</string>
@@ -241,6 +243,13 @@
     <string name="dark">Dunkel</string>
     <string name="light">Hell</string>
     <string name="theme_mode_selected">Themenmodus ausgewählt</string>
+    <string name="unfavorite">Unfavorit</string>
+    <string name="failed_favorites">Fehler beim Aktualisieren des Favoritenstatus</string>
+    <string name="added_favorites">Zu Favoriten hinzugefügt</string>
+    <string name="removed_favorites">Zu Favoriten entfernt</string>
+    <string name="favorites_error">Die Favoritenliste konnte nicht abgerufen werden.\nBitte versuchen Sie es später erneut.</string>
+    <string name="favorites_empty">Sie müssen Favoriten hinzufügen, um sie hier zu sehen.</string>
+    <string name="new_empty">Es wurden keine neuen Bildschirme hinzugefügt.</string>
     <!-- reusable -->
     <string name="open_github">Github öffnen</string>
     <string name="back_arrow">Zurück-Pfeil</string>

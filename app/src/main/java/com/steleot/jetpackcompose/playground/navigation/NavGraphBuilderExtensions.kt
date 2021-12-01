@@ -71,8 +71,9 @@ import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRi
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextSlideshowScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextUiMaterialScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextUiScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeShimmerScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeTimelineViewScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeZoomableImageScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeTreeMapScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.DrawablePainterAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ExternalLibrariesScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.FlowLayoutAccompanistScreen
@@ -101,6 +102,7 @@ import com.steleot.jetpackcompose.playground.compose.externallibraries.SpeedDial
 import com.steleot.jetpackcompose.playground.compose.externallibraries.StageStepBarScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SwipeRefreshAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SystemUiControllerAccompanistScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ZoomableComposeImageScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AbsolutePaddingScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AnimateItemPlacementScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AspectRationScreen
@@ -240,8 +242,10 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
+import com.steleot.jetpackcompose.playground.compose.rest.DiscoverScreen
 import com.steleot.jetpackcompose.playground.compose.rest.FavoritesScreen
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreenWithDrawer
+import com.steleot.jetpackcompose.playground.compose.rest.NewScreen
 import com.steleot.jetpackcompose.playground.compose.rest.PopularScreen
 import com.steleot.jetpackcompose.playground.compose.rest.ReleaseNotesScreen
 import com.steleot.jetpackcompose.playground.compose.rest.SearchScreen
@@ -368,6 +372,8 @@ fun NavGraphBuilder.addMainRoutes(
     composable(route = MainNavRoutes.Popular) { PopularScreen(hiltViewModel(it)) }
     composable(route = MainNavRoutes.ReleaseNotes) { ReleaseNotesScreen(hiltViewModel(it)) }
     composable(route = FavoritesRoute) { FavoritesScreen(hiltViewModel()) }
+    composable(route = MainNavRoutes.Discover) { DiscoverScreen() }
+    composable(route = MainNavRoutes.New) { NewScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -701,8 +707,9 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeShimmer) { ComposeShimmerScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeZoomableImage) { ComposeZoomableImageScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeTreeMap) { ComposeTreeMapScreen() }
     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
@@ -739,5 +746,8 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
         SystemUiControllerAccompanistScreen(systemUiController)
+    }
+    composable(route = ExternalLibrariesNavRoutes.ZoomableComposeImage) {
+        ZoomableComposeImageScreen()
     }
 }

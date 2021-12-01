@@ -23,7 +23,8 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
-    link: String? = null
+    link: String? = null,
+    shouldAllowSearch: Boolean? = null
 ) {
     TopAppBar(
         title = {
@@ -40,7 +41,7 @@ fun DefaultTopAppBar(
                 DefaultDropdownMenu(title) {
                     DropdownIconButton(it)
                 }
-            } else {
+            } else if (shouldAllowSearch == true) {
                 SearchIconButton {
                     navController.navigate(MainNavRoutes.Search)
                 }
@@ -82,7 +83,8 @@ fun MenuTopAppBar(
 fun DefaultSmallTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
-    link: String? = null
+    link: String? = null,
+    shouldAllowSearch: Boolean? = null
 ) {
     SmallTopAppBar(
         title = {
@@ -98,7 +100,7 @@ fun DefaultSmallTopAppBar(
                 DefaultDropdownMenu(title) {
                     DropdownIconButton3(it)
                 }
-            } else {
+            } else if (shouldAllowSearch == true) {
                 val navController = LocalNavController.current
                 SearchIconButton3 {
                     navController.navigate(MainNavRoutes.Search)

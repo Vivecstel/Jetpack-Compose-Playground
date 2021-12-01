@@ -3,11 +3,7 @@
 package com.steleot.jetpackcompose.playground.compose.theme
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import com.steleot.jetpackcompose.playground.LocalInAppReviewer
-import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
-import com.steleot.jetpackcompose.playground.LocalThemeState
-import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
+import com.steleot.jetpackcompose.playground.providers.TestProviders
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import com.steleot.jetpackcompose.playground.theme.ThemeState
@@ -20,12 +16,7 @@ fun TestTheme(
     JetpackComposePlaygroundTheme(
         themeState
     ) {
-        CompositionLocalProvider(
-            LocalInAppReviewer provides EmptyInAppReviewHelper(),
-            LocalIsDarkTheme provides false,
-        ) {
-            content()
-        }
+        TestProviders(themeState, content)
     }
 }
 
@@ -37,12 +28,6 @@ fun TestTheme3(
     JetpackComposePlaygroundTheme3(
         themeState
     ) {
-        CompositionLocalProvider(
-            LocalThemeState provides themeState,
-            LocalInAppReviewer provides EmptyInAppReviewHelper(),
-            LocalIsDarkTheme provides false,
-        ) {
-            content()
-        }
+        TestProviders(themeState, content)
     }
 }

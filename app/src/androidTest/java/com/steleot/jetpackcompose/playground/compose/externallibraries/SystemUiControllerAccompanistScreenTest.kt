@@ -1,8 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.navigation.testing.TestNavHostController
-import androidx.test.core.app.ApplicationProvider
 import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import com.steleot.jetpackcompose.playground.helpers.EmptySystemUiController
@@ -16,11 +14,10 @@ class SystemUiControllerAccompanistScreenTest {
 
     @Test
     fun testSystemUiControllerAccompanistScreen() {
-        val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
         val systemUiController = EmptySystemUiController()
         composeTestRule.setContent {
             TestTheme {
-                SystemUiControllerAccompanistScreen(navController, systemUiController)
+                SystemUiControllerAccompanistScreen(systemUiController)
             }
         }
         // todo

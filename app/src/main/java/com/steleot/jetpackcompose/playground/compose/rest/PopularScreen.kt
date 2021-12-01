@@ -90,6 +90,7 @@ class PopularViewModel @Inject constructor(
                 val snapshot = firebaseFirestore
                     .collection(Popular)
                     .orderBy(Date, Query.Direction.DESCENDING)
+                    .limit(1L)
                     .get()
                     .await()
                 val data = snapshot.first().data

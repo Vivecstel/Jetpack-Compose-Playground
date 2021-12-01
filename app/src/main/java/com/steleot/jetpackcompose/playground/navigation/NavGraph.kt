@@ -21,6 +21,8 @@ object MainNavRoutes {
     const val Settings = "settings"
     const val Popular = "popular"
     const val Favorites = "favorites"
+    const val Discover = "discover"
+    const val New = "new"
     const val Articles = "articles"
     const val ReleaseNotes = "release notes"
 }
@@ -335,8 +337,9 @@ object ExternalLibrariesNavRoutes {
     const val ComposeRichTextSlideshow = "compose rich text slideshow"
     const val ComposeRichTextUiMaterial = "compose rich text ui material"
     const val ComposeRichTextUi = "compose rich text ui"
+    const val ComposeShimmer = "compose shimmer"
     const val ComposeTimelineView = "compose timeline view"
-    const val ComposeZoomableImage = "compose zoomable image"
+    const val ComposeTreeMap = "compose tree map"
     const val DrawablePainterAccompanist = "drawable painter accompanist"
     const val FlowLayoutAccompanist = "flow layout accompanist"
     const val FontAwesome = "font awesome"
@@ -364,4 +367,5 @@ object ExternalLibrariesNavRoutes {
     const val StageStepBar = "stage step bar"
     const val SwipeRefreshAccompanist = "swipe refresh accompanist"
     const val SystemUiControllerAccompanist = "system ui controller accompanist"
+    const val ZoomableComposeImage = "zoomable compose image"
 }

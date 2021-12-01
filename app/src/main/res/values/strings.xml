@@ -196,6 +196,8 @@
     <!-- rest -->
     <string name="favorites">Favorites</string>
     <string name="popular">Popular</string>
+    <string name="discover">Discover</string>
+    <string name="new_screen">New</string>
     <string name="articles">Articles</string>
     <string name="send_feedback">Send feedback</string>
     <string name="privacy_policy">Privacy policy</string>
@@ -246,6 +248,7 @@
     <string name="removed_favorites">Removed to favorites</string>
     <string name="favorites_error">Failed to retrieve the favorites list.\nPlease try again later.</string>
     <string name="favorites_empty">You need to add favorites to see them here.</string>
+    <string name="new_empty">No new screens were added.</string>
     <!-- reusable -->
     <string name="open_github">Open Github</string>
     <string name="back_arrow">Back Arrow</string>

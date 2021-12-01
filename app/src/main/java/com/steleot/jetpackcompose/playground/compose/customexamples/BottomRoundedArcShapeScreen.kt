@@ -20,10 +20,9 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
-import com.steleot.jetpackcompose.playground.compose.externallibraries.randomSampleImageUrl
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
 private const val Url = "customexamples/BottomRoundedArcShapeScreen.kt"
 

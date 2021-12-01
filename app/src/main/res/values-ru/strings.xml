@@ -197,6 +197,8 @@
     <!-- rest -->
     <string name="favorites">Избранное</string>
     <string name="popular">Популярный</string>
+    <string name="discover">Обнаружить</string>
+    <string name="new_screen">Новый</string>
     <string name="articles">Статьи</string>
     <string name="send_feedback">Отправить отзыв</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
@@ -241,6 +243,13 @@
     <string name="dark">Темный</string>
     <string name="light">Свет</string>
     <string name="theme_mode_selected">Выбран режим темы</string>
+    <string name="unfavorite">Удалить из избранного</string>
+    <string name="failed_favorites">Не удалось обновить статус избранного</string>
+    <string name="added_favorites">Добавлено в избранное</string>
+    <string name="removed_favorites">Удалено в избранное</string>
+    <string name="favorites_error">Не удалось получить список избранного.\nПовторите попытку позже.</string>
+    <string name="favorites_empty">Вам нужно добавить в избранное, чтобы увидеть их здесь.</string>
+    <string name="new_empty">Никаких новых экранов не добавлялось.</string>
     <!-- reusable -->
     <string name="open_github">Открыть Github</string>
     <string name="back_arrow">Стрелка назад</string>

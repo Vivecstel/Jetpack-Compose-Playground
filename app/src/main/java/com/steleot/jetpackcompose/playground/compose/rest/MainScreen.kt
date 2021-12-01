@@ -46,6 +46,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
+// todo refactor file
 private val routes = listOf(
     MainNavRoutes.Activity,
     MainNavRoutes.Animation,
@@ -76,6 +77,18 @@ private val drawerItems = listOf(
         textRes = R.string.popular,
         imageVector = Icons.Filled.ThumbUp,
     ),
+    DrawerListItemData.DividerData,
+    DrawerListItemData.MenuData(
+        route = MainNavRoutes.Discover,
+        textRes = R.string.discover,
+        imageVector = Icons.Filled.Extension,
+    ),
+    DrawerListItemData.MenuData(
+        route = MainNavRoutes.New,
+        textRes = R.string.new_screen,
+        imageVector = Icons.Filled.Lightbulb,
+    ),
+    DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
         route = MainNavRoutes.Articles,
         textRes = R.string.articles,
@@ -211,7 +224,10 @@ fun MainScreenWithDrawer(
                                             return@launch
                                         }
                                         it.route?.let { route ->
-                                            navController.navigate(if (route == MainNavRoutes.Favorites) "$route/${user!!.uid}" else route)
+                                            navController.navigate(
+                                                if (route == MainNavRoutes.Favorites) "$route/${user!!.uid}"
+                                                else route
+                                            )
                                         }
                                     }
                                     MenuAction.TOAST -> Toast.makeText(
@@ -383,7 +399,7 @@ fun MainScreen(
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
-            DefaultTopAppBar(title = title)
+            DefaultTopAppBar(title = title, shouldAllowSearch = true)
         },
     ) {
         MainScreenContent(it, list, showAd)
@@ -404,7 +420,7 @@ fun MainScreenContent(
     }
     LazyColumn(
         modifier = Modifier
-        .padding(paddingValues)
+            .padding(paddingValues)
     ) {
         items(routesWithRibbons) { (route, shouldShowRibbon) ->
             key(route) {

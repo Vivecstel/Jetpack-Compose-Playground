@@ -4,14 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -54,7 +47,6 @@ import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalProviders
-import com.steleot.jetpackcompose.playground.navigation.FavoritesRoute
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.addActivityRoutes
 import com.steleot.jetpackcompose.playground.navigation.addAnimationRoutes
@@ -70,6 +62,8 @@ import com.steleot.jetpackcompose.playground.navigation.addMaterialRoutes
 import com.steleot.jetpackcompose.playground.navigation.addRuntimeRoutes
 import com.steleot.jetpackcompose.playground.navigation.addUiRoutes
 import com.steleot.jetpackcompose.playground.navigation.addViewModelRoutes
+import com.steleot.jetpackcompose.playground.navigation.getEnterTransition
+import com.steleot.jetpackcompose.playground.navigation.getExitTransition
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
@@ -165,8 +159,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-private const val NavigationDuration = 600
-
 @Suppress("ControlFlowWithEmptyBody")
 @OptIn(ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
 @Composable
@@ -242,18 +234,10 @@ fun JetpackComposeApp(
                     AnimatedNavHost(
                         navController = navController,
                         startDestination = MainNavRoutes.Main,
-                        enterTransition = {
-                            getEnterAnimation(targetState.destination.route, screenWidth)
-                        },
-                        exitTransition = {
-                            getExitAnimation(targetState.destination.route, -screenWidth)
-                        },
-                        popEnterTransition = {
-                            getEnterAnimation(initialState.destination.route, -screenWidth)
-                        },
-                        popExitTransition = {
-                            getExitAnimation(initialState.destination.route, screenWidth)
-                        }
+                        enterTransition = { getEnterTransition(screenWidth) },
+                        exitTransition = { getExitTransition(-screenWidth) },
+                        popEnterTransition = { getEnterTransition(-screenWidth, true) },
+                        popExitTransition = { getExitTransition(screenWidth, true) }
                     ) {
                         /* main */
                         addMainRoutes(
@@ -313,46 +297,5 @@ fun JetpackComposeApp(
                 fontWeight = FontWeight.Bold,
             )
         }
-    }
-}
-
-private fun getEnterAnimation(
-    route: String?,
-    screenWidth: Int,
-): EnterTransition {
-    return when (route) {
-        MainNavRoutes.Popular,
-        MainNavRoutes.Search,
-        MainNavRoutes.Settings,
-        FavoritesRoute ->
-            fadeIn(animationSpec = tween(NavigationDuration))
-        else -> slideInHorizontally(
-            initialOffsetX = { screenWidth },
-            animationSpec = tween(NavigationDuration)
-        ) + fadeIn(
-            initialAlpha = 0.5f,
-            animationSpec = tween(NavigationDuration)
-        )
-    }
-}
-
-private fun getExitAnimation(
-    route: String?,
-    screenWidth: Int,
-): ExitTransition {
-    return when (route) {
-        MainNavRoutes.Popular,
-        MainNavRoutes.Search,
-        MainNavRoutes.Settings,
-        FavoritesRoute ->
-            fadeOut(animationSpec = tween(NavigationDuration))
-        else ->
-            slideOutHorizontally(
-                targetOffsetX = { screenWidth },
-                animationSpec = tween(NavigationDuration)
-            ) + fadeOut(
-                targetAlpha = 0.5f,
-                animationSpec = tween(NavigationDuration)
-            )
     }
 }

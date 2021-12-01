@@ -6,16 +6,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
-class ComposeZoomableImageScreenTest {
+class ComposeTreeMapScreenTest {
 
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun testComposeZoomableImageScreen() {
+    fun testComposeTreeMapScreen() {
         composeTestRule.setContent {
             TestTheme {
-                ComposeZoomableImageScreen()
+                ComposeTreeMapScreen()
             }
         }
         // todo

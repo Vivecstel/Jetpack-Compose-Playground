@@ -17,6 +17,7 @@ import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import kotlin.math.*
 
 private const val Url = "externallibraries/PagerAccompanistScreen.kt"
@@ -102,14 +103,6 @@ private fun PagerExample() {
             indicatorShape = RoundedCornerShape(0.dp)
         )
     }
-}
-
-internal fun randomSampleImageUrl(
-    seed: Int = (0..100000).random(),
-    width: Int = 300,
-    height: Int = width,
-): String {
-    return "https://picsum.photos/seed/$seed/$width/$height"
 }
 
 @OptIn(ExperimentalCoilApi::class)

@@ -6,15 +6,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import coil.compose.rememberAsyncImagePainter
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
+import me.rerere.zoomableimage.ZoomableImage
 
-private const val Url = "externallibraries/ComposeZoomableImageScreen.kt"
+private const val Url = "externallibraries/ZoomableComposeImageScreen.kt"
 
 @Composable
-fun ComposeZoomableImageScreen() {
+fun ZoomableComposeImageScreen() {
     DefaultScaffold(
-        title = ExternalLibrariesNavRoutes.ComposeZoomableImage,
+        title = ExternalLibrariesNavRoutes.ZoomableComposeImage,
         link = Url,
     ) {
         Column(
@@ -22,20 +25,15 @@ fun ComposeZoomableImageScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            //ComposeZoomableImageExample()
+            ZoomableComposeImageExample()
         }
     }
 }
 
-/*
-@ExperimentalCoilApi
 @Composable
-private fun ComposeZoomableImageExample() {
-    val painter = rememberImagePainter(randomSampleImageUrl())
-
+private fun ZoomableComposeImageExample() {
     ZoomableImage(
-        painter = painter,
-        isRotation = false,
-        modifier = Modifier.fillMaxWidth().size(250.dp)
+        modifier = Modifier.fillMaxSize(0.8f),
+        painter = rememberAsyncImagePainter(randomSampleImageUrl())
     )
-}*/
+}
