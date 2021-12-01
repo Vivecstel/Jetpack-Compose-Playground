@@ -1,1 +1,1 @@
-Jetpack Compose auf 1.1.0 Beta 02 aktualisieren. Material 3, gap, html text und snapper Beispiele hinzugefügt. Restbibliotheken aktualisiert. Übersetzungen für verschiedene Sprachen hinzugefügt.
+Favoriten hinzugefügt (Sie können jetzt jeden Bildschirm als Favoriten auswählen, um ihn später schnell wiederzufinden). Discover hinzugefügt (um einen zufälligen Bildschirm zum Erstellen zu öffnen). Neu hinzugefügt (um nur die neuen Bildschirme zu finden, falls verfügbar). Beispiele für Compose Shimmer, TreeMap und Zoomable Image hinzugefügt. Mehrere Bibliotheken aktualisiert.

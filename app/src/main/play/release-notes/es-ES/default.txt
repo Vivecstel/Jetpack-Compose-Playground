@@ -1,1 +1,1 @@
-Actualice jetpack compose a 1.1.0 beta 02. Se agregó material 3, gap, html text y snapper ejemplos. Bibliotecas de descanso actualizadas. Añadidas traducciones para varios idiomas.
+Favoritos agregados (ahora puede marcar como favorito cualquier pantalla para encontrarla rápidamente más tarde). Se agregó Discover (para abrir una pantalla de redacción aleatoria). Nuevo agregado (para encontrar solo las nuevas pantallas si están disponibles). Se agregaron ejemplos de Compose Shimmer, TreeMap y Zoomable Image. Actualizadas varias bibliotecas.
