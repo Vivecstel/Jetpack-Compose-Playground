@@ -207,9 +207,6 @@ object Libraries {
     const val composeRichtextSlideshow =
         "com.halilibo.compose-richtext:slideshow:${Versions.composeRichtext}"
 
-    /* https://github.com/umutsoysl/ComposeZoomableImage */
-    const val zoomableImage = "com.github.umutsoysl:ComposeZoomableImage:${Versions.zoomableImage}"
-
     /* https://github.com/loukwn/StageStepBar */
     const val stageStepBar =
         "com.github.loukwn.StageStepBar:stagestepbar-compose:${Versions.stageStepBar}"
@@ -239,6 +236,16 @@ object Libraries {
 
     /* https://github.com/chrisbanes/snapper */
     const val snapper = "dev.chrisbanes.snapper:snapper:${Versions.snapper}"
+
+    /* https://github.com/valentinilk/compose-shimmer */
+    const val composeShimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.composeShimmer}"
+
+    /* https://github.com/re-ovo/ZoomableComposeImage */
+    const val zoomableComposeImage =
+        "com.github.re-ovo:ZoomableComposeImage:${Versions.zoomableComposeImage}"
+
+    /* https://github.com/overpas/compose-treemap-chart */
+    const val composeTreeMap = "io.github.overpas:treemap-compose-android:0.0.2"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

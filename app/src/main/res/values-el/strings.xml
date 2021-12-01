@@ -197,6 +197,8 @@
     <!-- rest -->
     <string name="favorites">Αγαπημένα</string>
     <string name="popular">Δημοφιλή</string>
+    <string name="discover">Ανακαλύψτε</string>
+    <string name="new_screen">Νέο</string>
     <string name="articles">Άρθρα</string>
     <string name="send_feedback">Στείλετε τα σχόλιά σας</string>
     <string name="privacy_policy">Πολιτική απορρήτου</string>
@@ -241,6 +243,13 @@
     <string name="dark">Σκοτεινό</string>
     <string name="light">Φωτεινό</string>
     <string name="theme_mode_selected">Επιλέχθηκε η λειτουργία θέματος</string>
+    <string name="unfavorite">Μη αγαπημένο</string>
+    <string name="failed_favorites">Αποτυχία ενημέρωσης της κατάστασης αγαπημένου</string>
+    <string name="added_favorites">Προστέθηκε στα αγαπημένα</string>
+    <string name="removed_favorites">Καταργήθηκε από αγαπημένα</string>
+    <string name="favorites_error">Η ανάκτηση της λίστας αγαπημένων απέτυχε.\nΔοκιμάστε ξανά αργότερα.</string>
+    <string name="favorites_empty">Πρέπει να προσθέσετε αγαπημένα για να τα δείτε εδώ.</string>
+    <string name="new_empty">Δεν προστέθηκαν νέες οθόνες.</string>
     <!-- reusable -->
     <string name="open_github">Ανοίξτε το Github</string>
     <string name="back_arrow">Πίσω βέλος</string>

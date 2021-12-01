@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground.navigation
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -72,8 +71,9 @@ import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRi
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextSlideshowScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextUiMaterialScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeRichTextUiScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeShimmerScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeTimelineViewScreen
-import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeZoomableImageScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ComposeTreeMapScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.DrawablePainterAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.ExternalLibrariesScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.FlowLayoutAccompanistScreen
@@ -102,6 +102,7 @@ import com.steleot.jetpackcompose.playground.compose.externallibraries.SpeedDial
 import com.steleot.jetpackcompose.playground.compose.externallibraries.StageStepBarScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SwipeRefreshAccompanistScreen
 import com.steleot.jetpackcompose.playground.compose.externallibraries.SystemUiControllerAccompanistScreen
+import com.steleot.jetpackcompose.playground.compose.externallibraries.ZoomableComposeImageScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AbsolutePaddingScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AnimateItemPlacementScreen
 import com.steleot.jetpackcompose.playground.compose.foundation.AspectRationScreen
@@ -241,7 +242,10 @@ import com.steleot.jetpackcompose.playground.compose.materialiconsextended.Exten
 import com.steleot.jetpackcompose.playground.compose.materialiconsextended.MaterialIconsExtendedScreen
 import com.steleot.jetpackcompose.playground.compose.navigation.NavigationScreen
 import com.steleot.jetpackcompose.playground.compose.paging.PagingScreen
+import com.steleot.jetpackcompose.playground.compose.rest.DiscoverScreen
+import com.steleot.jetpackcompose.playground.compose.rest.FavoritesScreen
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreenWithDrawer
+import com.steleot.jetpackcompose.playground.compose.rest.NewScreen
 import com.steleot.jetpackcompose.playground.compose.rest.PopularScreen
 import com.steleot.jetpackcompose.playground.compose.rest.ReleaseNotesScreen
 import com.steleot.jetpackcompose.playground.compose.rest.SearchScreen
@@ -333,9 +337,10 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveData
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 
+const val FavoritesRoute = "${MainNavRoutes.Favorites}/{userId}"
+
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMainRoutes(
-    navController: NavHostController,
     firebaseAuth: FirebaseAuth,
     googleSignInClient: GoogleSignInClient,
     theme: ThemeState,
@@ -343,75 +348,37 @@ fun NavGraphBuilder.addMainRoutes(
     setUser: (FirebaseUser?) -> Unit,
 ) {
     composable(route = MainNavRoutes.Main) {
-        MainScreenWithDrawer(
-            navController, firebaseAuth, googleSignInClient, setUser = setUser
-        )
+        MainScreenWithDrawer(firebaseAuth, googleSignInClient, setUser = setUser)
     }
-    composable(route = MainNavRoutes.Search) { SearchScreen(navController) }
-    composable(route = MainNavRoutes.Activity) { ActivityScreen(navController) }
-    composable(route = MainNavRoutes.Animation) { AnimationScreen(navController) }
-    composable(route = MainNavRoutes.ConstraintLayout) {
-        ConstraintLayoutScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.CustomExamples) {
-        CustomExamplesScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.ExternalLibraries) {
-        ExternalLibrariesScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.Foundation) {
-        FoundationScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.Material) { MaterialScreen(navController) }
-    composable(route = MainNavRoutes.Material3) { Material3Screen(navController) }
-    composable(route = MainNavRoutes.MaterialIcons) {
-        MaterialIconsScreen(
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.MaterialIConsExtended) {
-        MaterialIconsExtendedScreen(
-            navController
-        )
-    }
+    composable(route = MainNavRoutes.Search) { SearchScreen() }
+    composable(route = MainNavRoutes.Activity) { ActivityScreen() }
+    composable(route = MainNavRoutes.Animation) { AnimationScreen() }
+    composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
+    composable(route = MainNavRoutes.CustomExamples) { CustomExamplesScreen() }
+    composable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen() }
+    composable(route = MainNavRoutes.Foundation) { FoundationScreen() }
+    composable(route = MainNavRoutes.Material) { MaterialScreen() }
+    composable(route = MainNavRoutes.Material3) { Material3Screen() }
+    composable(route = MainNavRoutes.MaterialIcons) { MaterialIconsScreen() }
+    composable(route = MainNavRoutes.MaterialIConsExtended) { MaterialIconsExtendedScreen() }
     composable(route = MainNavRoutes.Navigation) { NavigationScreen() }
     composable(route = MainNavRoutes.Paging) { PagingScreen() }
-    composable(route = MainNavRoutes.Runtime) { RuntimeScreen(navController) }
-    composable(route = MainNavRoutes.Ui) { UiScreen(navController) }
-    composable(route = MainNavRoutes.ViewModel) { ViewModelScreen(navController) }
+    composable(route = MainNavRoutes.Runtime) { RuntimeScreen() }
+    composable(route = MainNavRoutes.Ui) { UiScreen() }
+    composable(route = MainNavRoutes.ViewModel) { ViewModelScreen() }
     composable(route = MainNavRoutes.Settings) {
         SettingsScreen(hiltViewModel(it), theme, setTheme)
     }
-    composable(route = MainNavRoutes.Popular) {
-        PopularScreen(
-            hiltViewModel(it),
-            navController
-        )
-    }
-    composable(route = MainNavRoutes.ReleaseNotes) {
-        ReleaseNotesScreen(
-            hiltViewModel(it),
-        )
-    }
+    composable(route = MainNavRoutes.Popular) { PopularScreen(hiltViewModel(it)) }
+    composable(route = MainNavRoutes.ReleaseNotes) { ReleaseNotesScreen(hiltViewModel(it)) }
+    composable(route = FavoritesRoute) { FavoritesScreen(hiltViewModel()) }
+    composable(route = MainNavRoutes.Discover) { DiscoverScreen() }
+    composable(route = MainNavRoutes.New) { NewScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
-fun NavGraphBuilder.addActivityRoutes(
-    navController: NavHostController,
-) {
-    composable(route = ActivityNavRoutes.BackHandler) {
-        BackHandlerScreen(
-            navController
-        )
-    }
+fun NavGraphBuilder.addActivityRoutes() {
+    composable(route = ActivityNavRoutes.BackHandler) { BackHandlerScreen() }
     composable(route = ActivityNavRoutes.LauncherForActivityResult1) { LauncherForActivityResult1Screen() }
     composable(route = ActivityNavRoutes.LauncherForActivityResult2) { LauncherForActivityResult2Screen() }
 }
@@ -727,7 +694,6 @@ fun NavGraphBuilder.addCustomExamples() {
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addExternalLibraries(
-    navController: NavHostController,
     systemUiController: SystemUiController,
 ) {
     composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
@@ -741,8 +707,9 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeShimmer) { ComposeShimmerScreen() }
     composable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeZoomableImage) { ComposeZoomableImageScreen() }
+    composable(route = ExternalLibrariesNavRoutes.ComposeTreeMap) { ComposeTreeMapScreen() }
     composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
@@ -778,9 +745,9 @@ fun NavGraphBuilder.addExternalLibraries(
     composable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
     composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
     composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
-        SystemUiControllerAccompanistScreen(
-            navController,
-            systemUiController
-        )
+        SystemUiControllerAccompanistScreen(systemUiController)
+    }
+    composable(route = ExternalLibrariesNavRoutes.ZoomableComposeImage) {
+        ZoomableComposeImageScreen()
     }
 }

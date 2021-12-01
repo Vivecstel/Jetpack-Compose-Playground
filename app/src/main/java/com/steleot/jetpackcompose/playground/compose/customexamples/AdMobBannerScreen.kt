@@ -13,6 +13,7 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
@@ -42,7 +43,7 @@ fun AdViewExample(
     val lifecycleOwner = LocalLifecycleOwner.current
     AndroidView(
         factory = { context ->
-            com.google.android.gms.ads.AdView(context).apply {
+            AdView(context).apply {
                 adSize = AdSize.BANNER
                 adUnitId = context.getString(adStringRes)
             }

@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,10 +21,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 
@@ -81,14 +83,14 @@ private fun LazyItem(
 ) {
     Surface(modifier) {
         Box {
-            Image(
-                painter = rememberImagePainter(
-                    data = randomSampleImageUrl(width = 400),
-                    builder = { crossfade(true) },
-                ),
-                contentScale = ContentScale.Crop,
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(randomSampleImageUrl(width = 400))
+                    .crossfade(true)
+                    .build(),
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
             )
 
             Text(

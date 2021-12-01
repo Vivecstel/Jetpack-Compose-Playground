@@ -9,6 +9,8 @@ import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.datastore.ProtoManagerImpl
+import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
+import com.steleot.jetpackcompose.playground.helpers.FavoriteHelperImpl
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelperImpl
 import dagger.Module
@@ -58,4 +60,11 @@ object AppModule {
         @ApplicationContext context: Context,
         protoManager: ProtoManager
     ): InAppReviewHelper = InAppReviewHelperImpl(context, protoManager)
+
+    @Provides
+    @Singleton
+    fun provideFavoriteHelper(
+        firebaseFirestore: FirebaseFirestore,
+        firebaseAnalytics: FirebaseAnalytics,
+    ): FavoriteHelper = FavoriteHelperImpl(firebaseFirestore, firebaseAnalytics)
 }

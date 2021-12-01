@@ -48,12 +48,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -74,12 +74,13 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewMod
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalComposeUiApi::class)
 @Composable
-fun SearchScreen(navController: NavHostController) {
+fun SearchScreen() {
     val viewModel: SearchViewModel = viewModel()
     val search: TextFieldValue by viewModel.search.collectAsState()
     val filteredRoutes: List<SearchData> by viewModel.filteredRoutes.collectAsState()
     var visible by rememberSaveable { mutableStateOf(false) }
     val keyboardController = LocalSoftwareKeyboardController.current
+    val navController = LocalNavController.current
 
     LaunchedEffect(Unit) {
         visible = true

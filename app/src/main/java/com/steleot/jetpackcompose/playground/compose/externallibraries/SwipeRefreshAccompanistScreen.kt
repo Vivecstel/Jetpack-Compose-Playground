@@ -20,13 +20,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import kotlinx.coroutines.delay
 
 private const val Url = "externallibraries/SwipeRefreshAccompanistScreen.kt"
@@ -66,7 +67,7 @@ fun SwipeRefreshAccompanistScreen() {
                 items(30) { index ->
                     Row(Modifier.padding(16.dp)) {
                         Image(
-                            painter = rememberImagePainter(randomSampleImageUrl(index)),
+                            painter = rememberAsyncImagePainter(randomSampleImageUrl(index)),
                             contentDescription = null,
                             modifier = Modifier.size(64.dp),
                         )

@@ -9,8 +9,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.insets.systemBarsPadding
-import com.steleot.jetpackcompose.playground.LocalInAppReviewer
-import com.steleot.jetpackcompose.playground.LocalThemeState
+import com.steleot.jetpackcompose.playground.localproviders.LocalInAppReviewer
+import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import androidx.compose.material3.Scaffold as Scaffold3
 

@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 290 screens** with examples of **Jetpack Compose**.
+Offering **more than 295 screens** with examples of **Jetpack Compose**.
 
 <img src="documentation/screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 290 screens with
+has to offer and how it improves everyday Android UI development. It offers more 295 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -42,7 +42,7 @@ Download from:
  - [Animation](documentation/animation.md) (16 screens)
  - [Constraint Layout](documentation/constraintLayout.md) (10 screens)
  - [Custom Examples](documentation/customExamples.md) (16 screens)
- - [External Libraries](documentation/externalLibraries.md) (35 screens)
+ - [External Libraries](documentation/externalLibraries.md) (38 screens)
  - [Foundation](documentation/foundation.md) (43 screens)
  - [Material](documentation/material.md) (46 screens)
  - [Material 3 - Material you](documentation/material3.md) (29 screens)

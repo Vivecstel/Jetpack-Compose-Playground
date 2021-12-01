@@ -197,6 +197,8 @@
     <!-- rest -->
     <string name="favorites">पसंदीदा</string>
     <string name="popular">लोकप्रिय</string>
+    <string name="discover">डिस्कवर</string>
+    <string name="new_screen">डिस्कवर</string>
     <string name="articles">सामग्री</string>
     <string name="send_feedback">प्रतिक्रिया भेजें</string>
     <string name="privacy_policy">गोपनीयता नीति</string>
@@ -241,6 +243,13 @@
     <string name="dark">अंधेरा</string>
     <string name="light">रोशनी</string>
     <string name="theme_mode_selected">थीम मोड चयनित</string>
+    <string name="unfavorite">नापसंद करें</string>
+    <string name="failed_favorites">पसंदीदा स्थिति अपडेट करने में विफल</string>
+    <string name="added_favorites">पसंदीदा में जोड़ा गया</string>
+    <string name="removed_favorites">पसंदीदा में हटा दिया गया</string>
+    <string name="favorites_error">पसंदीदा सूची पुनर्प्राप्त करने में विफल.\nकृपया बाद में पुन: प्रयास करें.</string>
+    <string name="favorites_empty">उन्हें यहां देखने के लिए आपको पसंदीदा जोड़ने की जरूरत है।</string>
+    <string name="new_empty">कोई नई स्क्रीन नहीं जोड़ी गई।</string>
     <!-- reusable -->
     <string name="open_github">गीथूब खोलें</string>
     <string name="back_arrow">पिछला तीर</string>

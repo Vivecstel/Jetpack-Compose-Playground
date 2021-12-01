@@ -8,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -70,6 +71,18 @@ fun OpenDrawerIconButton(
 }
 
 @Composable
+fun DropdownIconButton(
+    onClick: () -> Unit
+) {
+    IconButton(onClick = onClick) {
+        Icon(
+            Icons.Filled.MoreVert,
+            contentDescription = null
+        )
+    }
+}
+
+@Composable
 fun GoToGithubButton3(link: String) {
     val context = LocalContext.current
     IconButton3(onClick = {
@@ -105,6 +118,18 @@ fun SearchIconButton3(
         Icon3(
             imageVector = Icons.Filled.Search,
             contentDescription = stringResource(id = R.string.search),
+        )
+    }
+}
+
+@Composable
+fun DropdownIconButton3(
+    onClick: () -> Unit
+) {
+    IconButton3(onClick = onClick) {
+        Icon3(
+            Icons.Filled.MoreVert,
+            contentDescription = null
         )
     }
 }

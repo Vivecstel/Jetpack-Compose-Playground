@@ -1,1 +1,1 @@
-Update compose to 1.1.0 beta02. Added material 3, gap, html text and snapper examples. Updated rest libraries. Added translations for various languages.
+Added Favorites (you can now favorite any screen to quick find it later). Added Discover (to open a random compose screen). Added New (to find only the new screens if available). Added Compose Shimmer, TreeMap and Zoomable Image examples. Updated several libraries.

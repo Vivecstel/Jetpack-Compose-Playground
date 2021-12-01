@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
@@ -18,8 +17,9 @@ val routes = listOf(
 //    ExternalLibrariesNavRoutes.ComposeRichTextSlideshow,
     ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
     ExternalLibrariesNavRoutes.ComposeRichTextUi,
+    ExternalLibrariesNavRoutes.ComposeShimmer,
     ExternalLibrariesNavRoutes.ComposeTimelineView,
-//    ExternalLibrariesNavRoutes.ComposeZoomableImage,
+    ExternalLibrariesNavRoutes.ComposeTreeMap,
     ExternalLibrariesNavRoutes.DrawablePainterAccompanist,
     ExternalLibrariesNavRoutes.FlowLayoutAccompanist,
     ExternalLibrariesNavRoutes.FontAwesome,
@@ -47,12 +47,12 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.StageStepBar,
     ExternalLibrariesNavRoutes.SwipeRefreshAccompanist,
     ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
+    ExternalLibrariesNavRoutes.ZoomableComposeImage,
 )
 
 @Composable
-fun ExternalLibrariesScreen(navController: NavHostController) {
+fun ExternalLibrariesScreen() {
     MainScreen(
-        navController = navController,
         title = MainNavRoutes.ExternalLibraries,
         list = routes,
     )

@@ -18,12 +18,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
 
 private const val Url = "activity/BackHandlerScreen.kt"
 
 @Composable
-fun BackHandlerScreen(navController: NavHostController) {
+fun BackHandlerScreen() {
+    val navController = LocalNavController.current
     DefaultScaffold(
         title = ActivityNavRoutes.BackHandler,
         link = Url,

@@ -197,6 +197,8 @@
     <!-- rest -->
     <string name="favorites">Favoris</string>
     <string name="popular">Populaire</string>
+    <string name="discover">Découvrir</string>
+    <string name="new_screen">Nouveau</string>
     <string name="articles">Des articles</string>
     <string name="send_feedback">Envoyer des commentaires</string>
     <string name="privacy_policy">Politique de confidentialité</string>
@@ -241,6 +243,13 @@
     <string name="dark">Sombre</string>
     <string name="light">Léger</string>
     <string name="theme_mode_selected">Mode thème sélectionné</string>
+    <string name="unfavorite">Défavorisé</string>
+    <string name="failed_favorites">Échec de la mise à jour du statut de favori</string>
+    <string name="added_favorites">Ajouté aux favoris</string>
+    <string name="removed_favorites">Retiré des favoris</string>
+    <string name="favorites_error">Échec de la récupération de la liste des favoris.\nVeuillez réessayer plus tard.</string>
+    <string name="favorites_empty">Vous devez ajouter des favoris pour les voir ici.</string>
+    <string name="new_empty">Aucun nouvel écran n\'a été ajouté.</string>
     <!-- reusable -->
     <string name="open_github">Ouvrir Github</string>
     <string name="back_arrow">Flèche arrière</string>
@@ -253,7 +262,7 @@
     <string name="id_args">Identifiant: %1$s</string>
     <string name="added_items">Éléments ajoutés:</string>
     <string name="remove">Supprimer</string>
-    <string name="sayings">Énonciations :</string>
+    <string name="sayings">Énonciations:</string>
     <string name="says">%1$s avec \'%2$s\'</string>
     <string name="saying">En disant</string>
     <string name="text_with_delay">%1$s avec %2$d ms de retard.</string>

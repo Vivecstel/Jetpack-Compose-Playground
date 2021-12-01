@@ -20,6 +20,11 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 4.1.0 */
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.ComposeShimmer,
+    ExternalLibrariesNavRoutes.ComposeTreeMap,
+    ExternalLibrariesNavRoutes.ZoomableComposeImage,
     /* 4.0.0 */
     MainNavRoutes.Foundation,
     FoundationNavRoutes.AnimateItemPlacement,
@@ -68,10 +73,4 @@ val ribbonRoutes = setOf(
     /* 3.3.0 */
     MainNavRoutes.Material,
     MaterialNavRoutes.ExposedDropdownMenuBox,
-    /* 3.2.0 */
-    MainNavRoutes.ExternalLibraries,
-    ExternalLibrariesNavRoutes.ComposeParticleSystem,
-    ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton,
-    MainNavRoutes.Ui,
-    UiNavRoutes.ModifierLocal,
 )

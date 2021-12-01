@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
@@ -36,6 +36,7 @@ import com.google.accompanist.placeholder.material.shimmer
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import kotlinx.coroutines.delay
 
 private const val Url = "externallibraries/PlaceholderAccompanistScreen.kt"
@@ -90,7 +91,7 @@ fun PlaceholderAccompanistScreen() {
 private fun PlaceholderItemExample(
     text: String,
     modifier: Modifier = Modifier,
-    painter: Painter = rememberImagePainter(randomSampleImageUrl()),
+    painter: Painter = rememberAsyncImagePainter(randomSampleImageUrl()),
     childModifier: Modifier = Modifier,
 ) {
     Row(modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {

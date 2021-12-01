@@ -5,6 +5,9 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -12,6 +15,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
@@ -22,27 +26,27 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.ImagePainter
-import coil.compose.rememberImagePainter
-import coil.transform.CircleCropTransformation
+import coil.compose.AsyncImage
 import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.steleot.jetpackcompose.playground.LocalIsDarkTheme
-import com.steleot.jetpackcompose.playground.LocalUser
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.compose.reusable.*
+import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
+import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.localproviders.LocalUser
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
+// todo refactor file
 private val routes = listOf(
     MainNavRoutes.Activity,
     MainNavRoutes.Animation,
@@ -67,13 +71,24 @@ private val drawerItems = listOf(
         route = MainNavRoutes.Favorites,
         textRes = R.string.favorites,
         imageVector = Icons.Filled.Favorite,
-        menuAction = MenuAction.TOAST
     ),
     DrawerListItemData.MenuData(
         route = MainNavRoutes.Popular,
         textRes = R.string.popular,
         imageVector = Icons.Filled.ThumbUp,
     ),
+    DrawerListItemData.DividerData,
+    DrawerListItemData.MenuData(
+        route = MainNavRoutes.Discover,
+        textRes = R.string.discover,
+        imageVector = Icons.Filled.Extension,
+    ),
+    DrawerListItemData.MenuData(
+        route = MainNavRoutes.New,
+        textRes = R.string.new_screen,
+        imageVector = Icons.Filled.Lightbulb,
+    ),
+    DrawerListItemData.DividerData,
     DrawerListItemData.MenuData(
         route = MainNavRoutes.Articles,
         textRes = R.string.articles,
@@ -110,12 +125,10 @@ private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io
 
 @Composable
 fun MainScreenWithDrawer(
-    navController: NavHostController,
     firebaseAuth: FirebaseAuth,
     googleSignInClient: GoogleSignInClient,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
-    navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = true,
     setUser: (FirebaseUser?) -> Unit
 ) {
@@ -126,6 +139,8 @@ fun MainScreenWithDrawer(
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
     val user = LocalUser.current
+    val favoriteHelper = LocalFavoriteHelper.current
+    val navController = LocalNavController.current
     val launcher =
         rememberLauncherForActivityResult(GoogleSignContract(googleSignInClient)) { idToken ->
             scope.launch {
@@ -159,7 +174,6 @@ fun MainScreenWithDrawer(
                         state.drawerState.open()
                     }
                 },
-                navigateToSearch = navigateToSearch
             )
         },
         drawerBackgroundColor = MaterialTheme.colors.primary,
@@ -171,6 +185,14 @@ fun MainScreenWithDrawer(
                 },
                 signOutOnClick = {
                     firebaseAuth.signOut()
+                    scope.launch {
+                        try {
+                            googleSignInClient.signOut().await()
+                        } catch (e: Exception) {
+                            Timber.e(e, "Failed to google sign out.")
+                        }
+                    }
+                    favoriteHelper.clearAll()
                     setUser(null)
                 }
             )
@@ -188,7 +210,12 @@ fun MainScreenWithDrawer(
                                 state.drawerState.close()
                                 when (it.menuAction) {
                                     MenuAction.NAVIGATION -> {
-                                        if (user == null && it.route == MainNavRoutes.Popular) {
+                                        if (user == null
+                                            && it.route in listOf(
+                                                MainNavRoutes.Popular,
+                                                MainNavRoutes.Favorites
+                                            )
+                                        ) {
                                             errorDialogText = context.getString(
                                                 R.string.mandatory_sign_in,
                                                 context.getString(it.textRes)
@@ -197,7 +224,10 @@ fun MainScreenWithDrawer(
                                             return@launch
                                         }
                                         it.route?.let { route ->
-                                            navController.navigate(route)
+                                            navController.navigate(
+                                                if (route == MainNavRoutes.Favorites) "$route/${user!!.uid}"
+                                                else route
+                                            )
                                         }
                                     }
                                     MenuAction.TOAST -> Toast.makeText(
@@ -215,7 +245,7 @@ fun MainScreenWithDrawer(
             }
         }
     ) {
-        MainScreenContent(navController, it, list, showAd)
+        MainScreenContent(it, list, showAd)
     }
 }
 
@@ -273,42 +303,22 @@ private fun BoxScope.SignedInUser(
     user: FirebaseUser,
     signOutOnClick: () -> Unit,
 ) {
-    val painter = rememberImagePainter(
-        data = user.photoUrl,
-        builder = {
-            transformations(CircleCropTransformation())
-        }
-    )
     Row(
         modifier = Modifier.align(Alignment.Center)
     ) {
-        Box {
-            Image(
-                painter = painter,
-                contentDescription = stringResource(id = R.string.user_photo),
-                modifier = Modifier
-                    .size(64.dp)
-                    .padding(end = 16.dp)
-            )
-            when (painter.state) {
-                is ImagePainter.State.Loading -> {
-                    Box(Modifier.matchParentSize()) {
-                        CircularProgressIndicator(Modifier.align(Alignment.Center))
-                    }
-                }
-                is ImagePainter.State.Error -> {
-                    Image(
-                        imageVector = Icons.Filled.AccountCircle,
-                        contentDescription = stringResource(id = R.string.account_default_icon)
-                    )
-                }
-                else -> {
-                    Timber.d("Else image load states")
-                }
-            }
-        }
+        AsyncImage(
+            model = user.photoUrl,
+            contentDescription = stringResource(id = R.string.user_photo),
+            loading = {
+                CircularProgressIndicator()
+            },
+            modifier = Modifier
+                .size(48.dp)
+                .clip(CircleShape)
+        )
         Column(
             modifier = Modifier
+                .padding(start = 16.dp)
                 .align(Alignment.CenterVertically)
                 .weight(1f)
         ) {
@@ -382,58 +392,56 @@ private fun BoxScope.GoogleSignInButton(
 
 @Composable
 fun MainScreen(
-    navController: NavHostController,
     title: String = stringResource(id = R.string.app_name),
     list: List<String> = routes,
-    navigateToSearch: (() -> Unit)? = { navController.navigate(MainNavRoutes.Search) },
     showAd: Boolean = true,
 ) {
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
-            DefaultTopAppBar(
-                title = title,
-                navigateToSearch = navigateToSearch
-            )
+            DefaultTopAppBar(title = title, shouldAllowSearch = true)
         },
     ) {
-        MainScreenContent(navController, it, list, showAd)
+        MainScreenContent(it, list, showAd)
     }
 }
 
 @Composable
 fun MainScreenContent(
-    navController: NavHostController,
     paddingValues: PaddingValues,
     list: List<String>,
     showAd: Boolean = true,
 ) {
+    val navController = LocalNavController.current
     val routesWithRibbons = remember {
         list.map { route ->
             route to (route in ribbonRoutes)
         }
     }
-    Column(
+    LazyColumn(
         modifier = Modifier
             .padding(paddingValues)
-            .verticalScroll(rememberScrollState())
     ) {
-        routesWithRibbons.forEach { (route, shouldShowRibbon) ->
-            DefaultCardListItem(
-                text = route,
-                hasRibbon = shouldShowRibbon
-            ) {
-                navController.navigate(route)
+        items(routesWithRibbons) { (route, shouldShowRibbon) ->
+            key(route) {
+                DefaultCardListItem(
+                    text = route,
+                    hasRibbon = shouldShowRibbon
+                ) {
+                    navController.navigate(route)
+                }
             }
         }
-        if (showAd) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .requiredHeight(55.dp),
-                horizontalArrangement = Arrangement.Center,
-            ) {
-                AdViewExample(R.string.main_screen_banner_id)
+        item("adMob") {
+            if (showAd) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .requiredHeight(55.dp),
+                    horizontalArrangement = Arrangement.Center,
+                ) {
+                    AdViewExample(R.string.main_screen_banner_id)
+                }
             }
         }
     }

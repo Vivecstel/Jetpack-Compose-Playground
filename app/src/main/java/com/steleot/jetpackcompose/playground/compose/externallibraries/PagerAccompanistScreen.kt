@@ -7,14 +7,17 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.util.*
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.google.accompanist.pager.*
 import com.steleot.jetpackcompose.playground.*
 import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import kotlin.math.*
 
 private const val Url = "externallibraries/PagerAccompanistScreen.kt"
@@ -65,13 +68,11 @@ private fun PagerExample() {
 
             ) {
                 Box {
-                    Image(
-                        painter = rememberImagePainter(
-                            data = randomSampleImageUrl(width = 600),
-                            builder = {
-                                crossfade(true)
-                            }
-                        ),
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(randomSampleImageUrl(width = 600))
+                            .crossfade(true)
+                            .build(),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth(0.8f)
@@ -104,14 +105,6 @@ private fun PagerExample() {
     }
 }
 
-internal fun randomSampleImageUrl(
-    seed: Int = (0..100000).random(),
-    width: Int = 300,
-    height: Int = width,
-): String {
-    return "https://picsum.photos/seed/$seed/$width/$height"
-}
-
 @OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun ProfilePicture(modifier: Modifier = Modifier) {
@@ -120,10 +113,11 @@ private fun ProfilePicture(modifier: Modifier = Modifier) {
         shape = CircleShape,
         border = BorderStroke(4.dp, MaterialTheme.colors.surface)
     ) {
-        Image(
-            painter = rememberImagePainter(
-                data = randomSampleImageUrl(),
-                builder = { crossfade(true) }),
+        AsyncImage(
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(randomSampleImageUrl())
+                .crossfade(true)
+                .build(),
             contentDescription = null,
             modifier = Modifier.size(72.dp)
         )

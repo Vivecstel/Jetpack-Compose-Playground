@@ -9,12 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import androidx.compose.material3.MaterialTheme as MaterialTheme3
 
 object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
     override val values: Sequence<String>
         get() = sequenceOf("Jetpack Compose Playground")
-
 }
 
 @Preview
@@ -22,8 +23,8 @@ object DefaultListItemPreviewParameter : PreviewParameterProvider<String> {
 fun DefaultTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
-    navigateToSearch: (() -> Unit)? = null,
-    link: String? = null
+    link: String? = null,
+    shouldAllowSearch: Boolean? = null
 ) {
     TopAppBar(
         title = {
@@ -34,11 +35,16 @@ fun DefaultTopAppBar(
             BackArrowIconButton()
         },
         actions = {
-            link?.let {
-                GoToGithubIconButton(it)
-            }
-            navigateToSearch?.let {
-                SearchIconButton(it)
+            val navController = LocalNavController.current
+            if (link != null) {
+                GoToGithubIconButton(link)
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton(it)
+                }
+            } else if (shouldAllowSearch == true) {
+                SearchIconButton {
+                    navController.navigate(MainNavRoutes.Search)
+                }
             }
         },
         backgroundColor = MaterialTheme.colors.primary
@@ -51,7 +57,6 @@ fun MenuTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
     openDrawer: (() -> Unit)? = null,
-    navigateToSearch: (() -> Unit)? = null,
 ) {
     TopAppBar(
         title = {
@@ -64,8 +69,9 @@ fun MenuTopAppBar(
             }
         },
         actions = {
-            navigateToSearch?.let {
-                SearchIconButton(it)
+            val navController = LocalNavController.current
+            SearchIconButton {
+                navController.navigate(MainNavRoutes.Search)
             }
         },
         backgroundColor = MaterialTheme.colors.primary
@@ -77,8 +83,8 @@ fun MenuTopAppBar(
 fun DefaultSmallTopAppBar(
     @PreviewParameter(DefaultListItemPreviewParameter::class) title: String,
     modifier: Modifier = Modifier,
-    navigateToSearch: (() -> Unit)? = null,
-    link: String? = null
+    link: String? = null,
+    shouldAllowSearch: Boolean? = null
 ) {
     SmallTopAppBar(
         title = {
@@ -89,11 +95,16 @@ fun DefaultSmallTopAppBar(
             BackArrow3()
         },
         actions = {
-            link?.let {
-                GoToGithubButton3(it)
-            }
-            navigateToSearch?.let {
-                SearchIconButton3(it)
+            if (link != null) {
+                GoToGithubButton3(link)
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton3(it)
+                }
+            } else if (shouldAllowSearch == true) {
+                val navController = LocalNavController.current
+                SearchIconButton3 {
+                    navController.navigate(MainNavRoutes.Search)
+                }
             }
         },
         colors = TopAppBarDefaults.smallTopAppBarColors(
