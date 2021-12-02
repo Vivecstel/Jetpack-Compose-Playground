@@ -2,32 +2,19 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Print
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import com.zachklipp.richtext.ui.printing.Printable
-import com.zachklipp.richtext.ui.printing.hideWhenPrinting
-import com.zachklipp.richtext.ui.printing.rememberPrintableController
-import com.zachklipp.richtext.ui.printing.responsivePadding
 
 private const val Url = "externallibraries/ComposeRichTextPrintingScreen.kt"
 
@@ -49,7 +36,7 @@ fun ComposeRichTextPrintingScreen() {
 
 @Composable
 private fun DocumentScreenExample() {
-    val printableController = rememberPrintableController()
+    /*val printableController = rememberPrintableController()
     val document = stringResource(id = R.string.document)
     Column(Modifier.verticalScroll(rememberScrollState())) {
         Printable(
@@ -93,7 +80,7 @@ private fun DocumentScreenExample() {
                 }
             }
         }
-    }
+    }*/
 }
 
 @Composable
@@ -107,16 +94,7 @@ private fun SectionWithLoremIpsum(
         modifier = Modifier.padding(horizontal = 16.dp)
     )
     Text(
-        loremIpsum,
+        stringResource(id = R.string.lorem_ipsum),
         style = MaterialTheme.typography.body2,
     )
 }
-
-private const val loremIpsum = """
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-    voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-    mollit anim id est laborum.
-"""

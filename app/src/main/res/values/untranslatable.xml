@@ -21,7 +21,7 @@
     <string name="local_text_toolbar" translatable="false">Local Text Toolbar:\nstatus: %1$s</string>
     <string name="local_view_configuration" translatable="false">Local view configuration values:\ndoubleTapMinTimeMillis: %1$s\ndoubleTapTimeoutMillis: %2$s\nlongPressTimeoutMillis: %3$s\ntouchSlop: %4$s</string>
     <string name="local_window_info" translatable="false">Local Window Info:\nisWindowFocused: %1$s</string>
-    <string name="lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="firebase_analytics" translatable="false">Firebase Analytics</string>
     <string name="firebase_messaging" translatable="false">Firebase Messaging</string>
     <string name="firebase_crashlytics" translatable="false">Firebase Crashlytics</string>
