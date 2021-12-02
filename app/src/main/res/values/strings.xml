@@ -54,7 +54,6 @@
     <!-- external libraries -->
     <string name="image_request">Image request failed.</string>
     <string name="hello">Hello</string>
-    <string name="error">Error</string>
     <string name="teams">Teams</string>
     <string name="locations">Locations</string>
     <string name="devices">Devices</string>
@@ -207,7 +206,6 @@
     <string name="mandatory_sign_in">You need to sign in to open %1$s</string>
     <string name="coming_soon">Coming soon</string>
     <string name="user_photo">User photo</string>
-    <string name="account_default_icon">Account default icon</string>
     <string name="name_not_found">Name not found</string>
     <string name="email_not_found">Email not found</string>
     <string name="sign_out">Sign out</string>

@@ -55,7 +55,6 @@
     <!-- external libraries -->
     <string name="image_request">Ошибка запроса изображения.</string>
     <string name="hello">Привет</string>
-    <string name="error">Ошибка</string>
     <string name="teams">Команды</string>
     <string name="locations">Локации</string>
     <string name="devices">Устройства</string>
@@ -208,7 +207,6 @@
     <string name="mandatory_sign_in">Вам необходимо войти, чтобы открыть %1$s</string>
     <string name="coming_soon">Скоро будет</string>
     <string name="user_photo">Фото пользователя</string>
-    <string name="account_default_icon">Значок учетной записи по умолчанию</string>
     <string name="name_not_found">Имя не найдено</string>
     <string name="email_not_found">Электронная почта не найдена</string>
     <string name="sign_out">выход</string>

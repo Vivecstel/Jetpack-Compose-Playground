@@ -13,7 +13,6 @@ import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -22,7 +21,7 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultSmallTopAppBar
 import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import com.steleot.jetpackcompose.playground.theme.colors
 
@@ -35,14 +34,11 @@ fun Scaffold3Screen() {
     JetpackComposePlaygroundTheme3(
         themeState = themeState
     ) {
-        val scaffoldState = rememberScaffoldState()
         Scaffold(
             modifier = Modifier.systemBarsPadding(),
-            scaffoldState = scaffoldState,
-            drawerContent = { Text(stringResource(id = R.string.content)) },
             topBar = {
                 DefaultSmallTopAppBar(
-                    title = MaterialNavRoutes.Scaffold,
+                    title = Material3NavRoutes.Scaffold3,
                     link = Url,
                 )
             },

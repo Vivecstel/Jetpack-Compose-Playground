@@ -55,7 +55,6 @@
     <!-- external libraries -->
     <string name="image_request">छवि अनुरोध विफल रहा।</string>
     <string name="hello">नमस्ते</string>
-    <string name="error">त्रुटि</string>
     <string name="teams">टीमों</string>
     <string name="locations">स्थानों</string>
     <string name="devices">उपकरण</string>
@@ -208,7 +207,6 @@
     <string name="mandatory_sign_in">%1$s . खोलने के लिए आपको साइन इन करना होगा</string>
     <string name="coming_soon">जल्द आ रहा है</string>
     <string name="user_photo">उपयोगकर्ता फोटो</string>
-    <string name="account_default_icon">खाता डिफ़ॉल्ट आइकन</string>
     <string name="name_not_found">नाम नहीं मिला</string>
     <string name="email_not_found">ईमेल नहीं मिला</string>
     <string name="sign_out">साइन आउट</string>

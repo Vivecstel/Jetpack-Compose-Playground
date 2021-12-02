@@ -55,7 +55,6 @@
     <!-- external libraries -->
     <string name="image_request">Error en la solicitud de imagen.</string>
     <string name="hello">Hola</string>
-    <string name="error">Error</string>
     <string name="teams">Equipos</string>
     <string name="locations">Ubicaciones</string>
     <string name="devices">Dispositivos</string>
@@ -208,7 +207,6 @@
     <string name="mandatory_sign_in">Debes iniciar sesión para abrir %1$s</string>
     <string name="coming_soon">Próximamente, en breve, pronto</string>
     <string name="user_photo">Foto de usuario</string>
-    <string name="account_default_icon">Icono predeterminado de la cuenta</string>
     <string name="name_not_found">Nombre no encontrado</string>
     <string name="email_not_found">El correo electrónico no encontrado</string>
     <string name="sign_out">Desconectar</string>

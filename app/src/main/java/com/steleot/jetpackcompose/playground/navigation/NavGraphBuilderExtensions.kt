@@ -202,6 +202,7 @@ import com.steleot.jetpackcompose.playground.compose.material3.Badge3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.BadgedBox3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Button3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.CenterAlignedTopAppBarScreen
+import com.steleot.jetpackcompose.playground.compose.material3.Checkbox3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.ElevatedButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material3.ExtendedFloatingActionButton3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.FilledTonalButtonScreen
@@ -222,6 +223,7 @@ import com.steleot.jetpackcompose.playground.compose.material3.NavigationBarScre
 import com.steleot.jetpackcompose.playground.compose.material3.NavigationDrawerScreen
 import com.steleot.jetpackcompose.playground.compose.material3.NavigationRail3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.OutlinedButton3Screen
+import com.steleot.jetpackcompose.playground.compose.material3.RadioButton3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.Scaffold3Screen
 import com.steleot.jetpackcompose.playground.compose.material3.SmallFloatingActionButtonScreen
 import com.steleot.jetpackcompose.playground.compose.material3.SmallTopAppBarScreen
@@ -528,6 +530,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.Badge3) { Badge3Screen() }
     composable(route = Material3NavRoutes.Button3) { Button3Screen() }
     composable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
+    composable(route = Material3NavRoutes.Checkbox3) { Checkbox3Screen() }
     composable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }
     composable(route = Material3NavRoutes.ExtendedFloatingActionButton3) { ExtendedFloatingActionButton3Screen() }
     composable(route = Material3NavRoutes.FilledTonalButton) { FilledTonalButtonScreen() }
@@ -549,6 +552,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     composable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
     composable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
     composable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
+    composable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
     composable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
     composable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
     composable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
