@@ -1,1 +1,1 @@
-Favoris ajoutés (vous pouvez maintenant mettre en favori n'importe quel écran pour le retrouver rapidement plus tard). Ajout de Discover (pour ouvrir un écran de composition aléatoire). Ajout de Nouveau (pour ne trouver que les nouveaux écrans s'ils sont disponibles). Ajout d'exemples Compose Shimmer, TreeMap et Zoomable Image. Mise à jour de plusieurs bibliothèques.
+Jetpack mis à jour compose vers les bibliothèques 1.1.0-beta04, material 3 et kotlin. Ajout d'exemples de cases à cocher et de boutons radio pour le matériel 3.

@@ -1,1 +1,1 @@
-Favoritos agregados (ahora puede marcar como favorito cualquier pantalla para encontrarla rápidamente más tarde). Se agregó Discover (para abrir una pantalla de redacción aleatoria). Nuevo agregado (para encontrar solo las nuevas pantallas si están disponibles). Se agregaron ejemplos de Compose Shimmer, TreeMap y Zoomable Image. Actualizadas varias bibliotecas.
+Jetpack actualizado componer a 1.1.0-beta04, material 3 y bibliotecas kotlin. Se agregaron ejemplos de Checkbox y RadioButton para el material 3.

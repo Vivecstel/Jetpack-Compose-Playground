@@ -1,1 +1,1 @@
-Added Favorites (you can now favorite any screen to quick find it later). Added Discover (to open a random compose screen). Added New (to find only the new screens if available). Added Compose Shimmer, TreeMap and Zoomable Image examples. Updated several libraries.
+Updated compose to 1.1.0-beta04,material 3 and kotlin libraries. Added Checkbox and RadioButton examples for material 3.
