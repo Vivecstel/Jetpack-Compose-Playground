@@ -55,7 +55,6 @@
     <!-- external libraries -->
     <string name="image_request">Bildanfrage fehlgeschlagen.</string>
     <string name="hello">Hallo</string>
-    <string name="error">Fehler</string>
     <string name="teams">Mannschaften</string>
     <string name="locations">Standorte</string>
     <string name="devices">Geräte</string>
@@ -208,7 +207,6 @@
     <string name="mandatory_sign_in">Sie müssen sich anmelden, um %1$s zu öffnen</string>
     <string name="coming_soon">Kommt bald</string>
     <string name="user_photo">Benutzerfoto</string>
-    <string name="account_default_icon">KontostandardsymbolAccount default icon</string>
     <string name="name_not_found">Name nicht gefunden</string>
     <string name="email_not_found">Email wurde nicht gefunden</string>
     <string name="sign_out">Ausloggen</string>

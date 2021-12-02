@@ -20,6 +20,10 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 4.2.0 */
+    MainNavRoutes.Material3,
+    Material3NavRoutes.Checkbox3,
+    Material3NavRoutes.RadioButton3,
     /* 4.1.0 */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.ComposeShimmer,
@@ -70,7 +74,4 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.TextButton3,
     MainNavRoutes.Ui,
     UiNavRoutes.OnPlaced,
-    /* 3.3.0 */
-    MainNavRoutes.Material,
-    MaterialNavRoutes.ExposedDropdownMenuBox,
 )

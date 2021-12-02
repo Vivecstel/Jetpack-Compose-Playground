@@ -55,7 +55,6 @@
     <!-- external libraries -->
     <string name="image_request">Το αίτημα εικόνας απέτυχε.</string>
     <string name="hello">Γεια σας</string>
-    <string name="error">Λάθος</string>
     <string name="teams">Ομάδες</string>
     <string name="locations">Τοποθεσίες</string>
     <string name="devices">Συσκευές</string>
@@ -208,7 +207,6 @@
     <string name="mandatory_sign_in">Πρέπει να συνδεθείτε για να ανοίξετε το %1$s</string>
     <string name="coming_soon">Έρχετε συντομα</string>
     <string name="user_photo">Φωτογραφία χρήστη</string>
-    <string name="account_default_icon">Προεπιλεγμένο εικονίδιο λογαριασμού</string>
     <string name="name_not_found">Το όνομα δεν βρέθηκε</string>
     <string name="email_not_found">Το email δεν βρέθηκε</string>
     <string name="sign_out">Αποσύνδεση</string>

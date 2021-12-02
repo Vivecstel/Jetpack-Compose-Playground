@@ -1,13 +1,15 @@
-package com.steleot.jetpackcompose.playground.compose.material
+package com.steleot.jetpackcompose.playground.compose.material3
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.RadioButton
-import androidx.compose.material.RadioButtonDefaults.colors
-import androidx.compose.material.Text
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -18,27 +20,30 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
+import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 
-private const val Url = "material/RadioButtonScreen.kt"
+private const val Url = "material3/RadioButton3Screen.kt"
 
 @Composable
-fun RadioButtonScreen() {
-    DefaultScaffold(
-        title = MaterialNavRoutes.RadioButton,
+fun RadioButton3Screen() {
+    DefaultScaffold3(
+        title = Material3NavRoutes.RadioButton3,
         link = Url,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceAround,
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultRadioButton()
             DisabledRadioButton()
             SelectedColorRadioButton()
             UnselectedColorRadioButton()
-            DisabledColorRadioButton()
+            DisabledSelectedColorRadioButton()
+            DisabledUnselectedColorRadioButton()
             RadioButtonWithLabel()
             RadioButtonGroup()
         }
@@ -85,7 +90,7 @@ private fun SelectedColorRadioButton(
         onClick = {
             state.value = text
         },
-        colors = colors(
+        colors = RadioButtonDefaults.colors(
             selectedColor = Color.Cyan
         )
     )
@@ -102,7 +107,7 @@ private fun UnselectedColorRadioButton(
         onClick = {
             state.value = text
         },
-        colors = colors(
+        colors = RadioButtonDefaults.colors(
             unselectedColor = Color.Red
         )
     )
@@ -110,7 +115,7 @@ private fun UnselectedColorRadioButton(
 
 @Preview
 @Composable
-private fun DisabledColorRadioButton(
+private fun DisabledSelectedColorRadioButton(
     text: String = stringResource(id = R.string.app_name)
 ) {
     val state = remember { mutableStateOf("") }
@@ -119,8 +124,25 @@ private fun DisabledColorRadioButton(
         onClick = {
             state.value = text
         },
-        colors = colors(
-            disabledColor = Color.Magenta,
+        colors = RadioButtonDefaults.colors(
+            disabledSelectedColor = Color.Magenta,
+        )
+    )
+}
+
+@Preview
+@Composable
+private fun DisabledUnselectedColorRadioButton(
+    text: String = stringResource(id = R.string.app_name)
+) {
+    val state = remember { mutableStateOf("") }
+    RadioButton(
+        selected = state.value == text,
+        onClick = {
+            state.value = text
+        },
+        colors = RadioButtonDefaults.colors(
+            disabledUnselectedColor = Color.Magenta,
         )
     )
 }

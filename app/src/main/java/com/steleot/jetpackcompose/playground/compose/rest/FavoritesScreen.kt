@@ -113,7 +113,7 @@ class FavoritesViewModel @Inject constructor(
             }
         } catch (e: Exception) {
             _state.value =
-                FavoritesUiState.Error(R.string.popular_error)
+                FavoritesUiState.Error(R.string.favorites_error)
         }
     }
 

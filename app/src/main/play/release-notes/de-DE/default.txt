@@ -1,1 +1,1 @@
-Favoriten hinzugefügt (Sie können jetzt jeden Bildschirm als Favoriten auswählen, um ihn später schnell wiederzufinden). Discover hinzugefügt (um einen zufälligen Bildschirm zum Erstellen zu öffnen). Neu hinzugefügt (um nur die neuen Bildschirme zu finden, falls verfügbar). Beispiele für Compose Shimmer, TreeMap und Zoomable Image hinzugefügt. Mehrere Bibliotheken aktualisiert.
+Jetpack Compose aktualisiert auf 1.1.0-beta04, Material 3 und Kotlin-Bibliotheken. Checkbox- und RadioButton-Beispiele für Material 3 hinzugefügt.

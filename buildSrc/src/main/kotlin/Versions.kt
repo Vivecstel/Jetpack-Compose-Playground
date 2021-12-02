@@ -4,12 +4,12 @@ object Versions {
     const val buildTools = "31.0.0"
 
     /* kotlin */
-    const val kotlin = "1.5.31"
+    const val kotlin = "1.6.0"
 
     /* plugins */
     const val androidPlugin = "7.0.3"
     const val googleServices = "4.3.10"
-    const val crashlytics = "2.8.0"
+    const val crashlytics = "2.8.1"
     const val benManes = "0.39.0"
     const val detekt = "1.19.0"
     const val doctor = "0.7.3"
@@ -17,8 +17,8 @@ object Versions {
     const val playPublisher = "3.7.0"
 
     /* libraries */
-    const val compose = "1.1.0-beta03"
-    const val composeMaterial3 = "1.0.0-alpha01"
+    const val compose = "1.1.0-beta04"
+    const val composeMaterial3 = "1.0.0-alpha02"
     const val composeConstraint = "1.0.0-rc02"
     const val composePaging = "1.0.0-alpha14"
     const val navigation = "2.4.0-beta02"
@@ -26,11 +26,11 @@ object Versions {
     const val activity = "1.4.0"
     const val appCompat = "1.4.0"
     const val lifecycle = "2.4.0-alpha03"
-    const val firebase = "29.0.0"
+    const val firebase = "29.0.1"
     const val hilt = "2.40.3"
     const val hiltCompose = "1.0.0-beta01"
     const val startUp = "1.1.0"
-    const val coroutines = "1.5.2"
+    const val coroutines = "1.6.0-RC"
     const val dataStore = "1.0.0"
     const val protobuf = "4.0.0-rc-2"
     const val playCore = "1.10.2"

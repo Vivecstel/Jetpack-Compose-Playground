@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.steleot.jetpackcompose.playground.utils
 
 import android.Manifest
