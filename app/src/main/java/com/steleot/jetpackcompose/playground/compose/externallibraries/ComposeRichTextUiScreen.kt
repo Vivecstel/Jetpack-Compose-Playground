@@ -3,22 +3,11 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
-import com.halilibo.richtext.ui.BlockQuote
-import com.halilibo.richtext.ui.CodeBlock
-import com.halilibo.richtext.ui.Heading
-import com.halilibo.richtext.ui.HorizontalRule
-import com.halilibo.richtext.ui.RichText
-import com.halilibo.richtext.ui.Table
-import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 
@@ -44,7 +33,7 @@ fun ComposeRichTextUiScreen() {
 
 @Composable
 private fun BasicRichTextExample() {
-    RichText(modifier = Modifier.padding(16.dp)) {
+    /*RichText(modifier = Modifier.padding(16.dp)) {
         Heading(0, stringResource(id = R.string.paragraphs))
         Text(stringResource(id = R.string.simple_paragraph))
         Text(stringResource(id = R.string.paragraph_multiple_lines))
@@ -91,5 +80,5 @@ private fun BasicRichTextExample() {
                 cell { Text(stringResource(id = R.string.hello_word_wrap)) }
             }
         }
-    }
+    }*/
 }
