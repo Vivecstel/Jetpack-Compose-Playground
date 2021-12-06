@@ -111,17 +111,6 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy.eachDependency {
-        if (requested.group.contains("org.jetbrains.compose")) {
-            val groupName = requested.group.replace("org.jetbrains.compose", "androidx.compose")
-            useTarget(
-                mapOf("group" to groupName, "name" to requested.name, "version" to Versions.compose)
-            )
-        }
-    }
-}
-
 dependencies {
     AppDependencies.project.forEach { implementation(project(it)) }
     AppDependencies.bom.forEach { implementation(platform(it)) }
