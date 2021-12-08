@@ -1,1 +1,1 @@
-Jetpack Compose aktualisiert auf 1.1.0-beta04, Material 3 und Kotlin-Bibliotheken. Checkbox- und RadioButton-Beispiele für Material 3 hinzugefügt.
+Aktualisiert accompanist, landscapist, compose charts und richtext Bibliotheken.

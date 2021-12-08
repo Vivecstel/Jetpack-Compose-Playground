@@ -1,1 +1,1 @@
-Jetpack mis à jour compose vers les bibliothèques 1.1.0-beta04, material 3 et kotlin. Ajout d'exemples de cases à cocher et de boutons radio pour le matériel 3.
+Mis à jour accompanist, landscapist, compose charts et richtext पbibliothèques.

@@ -1,1 +1,1 @@
-Jetpack actualizado componer a 1.1.0-beta04, material 3 y bibliotecas kotlin. Se agregaron ejemplos de Checkbox y RadioButton para el material 3.
+Actualizado accompanist, landscapist, compose charts y richtext Bibliotecas.
