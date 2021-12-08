@@ -1,1 +1,1 @@
-Updated compose to 1.1.0-beta04,material 3 and kotlin libraries. Added Checkbox and RadioButton examples for material 3.
+Updated accompanist, landscapist, compose charts and richtext libraries.

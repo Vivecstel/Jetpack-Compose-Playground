@@ -1,1 +1,1 @@
-Ενημερώθηκε το jetpack compose σε βιβλιοθήκες 1.1.0-beta04, material 3 και kotlin. Προστέθηκαν παραδείγματα Checkbox και RadioButton για material 3.
+Ενημερώθηκαν accompanist, landscapist, compose charts και richtext βιβλιοθήκες.
