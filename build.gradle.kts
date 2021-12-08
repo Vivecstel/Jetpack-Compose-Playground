@@ -51,11 +51,11 @@ val detektAll by tasks.registering(Detekt::class) {
     exclude("**/resources/**", "**/build/**")
     baseline.set(project.rootDir.resolve("config/detekt-baseline.xml"))
     reports {
-        xml.enabled = false
+        xml.required.set(false)
         html {
-            enabled = true
-            destination = file("${rootProject.buildDir}/reports/detekt-report.html")
+            required.set(true)
+            outputLocation.set(file("${rootProject.buildDir}/reports/detekt-report.html"))
         }
-        txt.enabled = false
+        txt.required.set(false)
     }
 }
