@@ -245,7 +245,7 @@ object Libraries {
         "com.github.re-ovo:ZoomableComposeImage:${Versions.zoomableComposeImage}"
 
     /* https://github.com/overpas/compose-treemap-chart */
-    const val composeTreeMap = "io.github.overpas:treemap-compose-android:0.0.2"
+    const val composeTreeMap = "io.github.overpas:treemap-compose-android:${Versions.composeTreeMap}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

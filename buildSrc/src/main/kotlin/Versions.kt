@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.6.0"
 
     /* plugins */
-    const val androidPlugin = "7.0.3"
+    const val androidPlugin = "7.0.4"
     const val googleServices = "4.3.10"
     const val crashlytics = "2.8.1"
     const val benManes = "0.39.0"
@@ -26,8 +26,8 @@ object Versions {
     const val activity = "1.4.0"
     const val appCompat = "1.4.0"
     const val lifecycle = "2.4.0-alpha03"
-    const val firebase = "29.0.1"
-    const val hilt = "2.40.4"
+    const val firebase = "29.0.2"
+    const val hilt = "2.40.5"
     const val hiltCompose = "1.0.0-beta01"
     const val startUp = "1.1.0"
     const val coroutines = "1.6.0-RC"
@@ -70,8 +70,8 @@ object Versions {
     const val snapper = " 0.1.0"
     const val composeShimmer = "1.0.2"
     const val zoomableComposeImage = "1.0.2"
-    const val composeTreeMap = " 0.0.2"
+    const val composeTreeMap = "0.0.2"
     const val adMob = "20.5.0"
-    const val playServicesAuth = "19.2.0"
+    const val playServicesAuth = "20.0.0"
     const val test = "1.4.1-alpha03"
 }
