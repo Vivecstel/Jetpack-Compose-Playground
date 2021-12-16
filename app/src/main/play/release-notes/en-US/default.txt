@@ -1,1 +1,1 @@
-Updated accompanist, landscapist, compose charts and richtext libraries.
+Updated compose to 1.1.0-rc01. Updated navigation, camera and font awesome libraries. Added Notification functionality. Updated android plugin and hilt libraries. Updated admob example.
