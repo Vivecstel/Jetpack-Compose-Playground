@@ -326,4 +326,9 @@
     <string name="name_hint">Nom</string>
     <!-- helpers -->
     <string name="in_app_update_message">Dans la mise à jour de l\'application terminée. Redémarrez l\'application et profitez de la mise à jour</string>
+    <!-- notifications -->
+    <string name="new_version">Nouvelle version</string>
+    <string name="new_version_description">Une nouvelle version est disponible</string>
+    <string name="showcase">Vitrine</string>
+    <string name="showcase_description">Présentez le nouvel écran de composition du jetpack</string>
 </resources>

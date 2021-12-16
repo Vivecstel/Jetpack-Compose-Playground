@@ -5,18 +5,22 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import timber.log.Timber
 
 private const val Url = "customexamples/AdMobBannerScreen.kt"
 
@@ -40,30 +44,40 @@ fun AdMobBannerScreen() {
 fun AdViewExample(
     @StringRes adStringRes: Int
 ) {
-    val lifecycleOwner = LocalLifecycleOwner.current
-    AndroidView(
-        factory = { context ->
-            AdView(context).apply {
-                adSize = AdSize.BANNER
-                adUnitId = context.getString(adStringRes)
-            }
-        },
-        update = { view ->
-            view.loadAd(AdRequest.Builder().build())
-            lifecycleOwner.lifecycle.addObserver(object :
-                DefaultLifecycleObserver {
-                override fun onPause(owner: LifecycleOwner) {
-                    view.pause()
-                }
-
-                override fun onResume(owner: LifecycleOwner) {
-                    view.resume()
-                }
-
-                override fun onDestroy(owner: LifecycleOwner) {
-                    view.destroy()
-                }
-            })
-        }
-    )
+    val adView = rememberAdMobWithLifecycle(adStringRes)
+    AndroidView({ adView })
 }
+
+@Composable
+private fun rememberAdMobWithLifecycle(
+    @StringRes adStringRes: Int
+): AdView {
+    val context = LocalContext.current
+    val adView = remember {
+        AdView(context).apply {
+            adSize = AdSize.BANNER
+            adUnitId = context.getString(adStringRes)
+        }
+    }
+    adView.loadAd(AdRequest.Builder().build())
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    DisposableEffect(key1 = lifecycle, key2 = adView) {
+        val lifecycleObserver = getAdLifecycleObserver(adView)
+        lifecycle.addObserver(lifecycleObserver)
+        onDispose {
+            lifecycle.removeObserver(lifecycleObserver)
+        }
+    }
+
+    return adView
+}
+
+private fun getAdLifecycleObserver(adView: AdView): LifecycleEventObserver =
+    LifecycleEventObserver { _, event ->
+        when (event) {
+            Lifecycle.Event.ON_RESUME -> adView.resume()
+            Lifecycle.Event.ON_PAUSE -> adView.pause()
+            Lifecycle.Event.ON_DESTROY -> adView.destroy()
+            else -> Timber.d("Ignored rest lifecycle events for adview")
+        }
+    }

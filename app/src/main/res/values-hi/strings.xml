@@ -326,4 +326,9 @@
     <string name="name_hint">नाम</string>
     <!-- helpers -->
     <string name="in_app_update_message">ऐप अपडेट में समाप्त। एप्लिकेशन को पुनरारंभ करें और अपडेट का आनंद लें</string>
+    <!-- notifications -->
+    <string name="new_version">नया संस्करण</string>
+    <string name="new_version_description">नया संस्करण उपलब्ध है</string>
+    <string name="showcase">प्रदर्शन</string>
+    <string name="showcase_description">नया जेटपैक कंपोज़ स्क्रीन प्रदर्शित करें</string>
 </resources>

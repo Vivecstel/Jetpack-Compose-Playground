@@ -2,7 +2,7 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.Properties
+import java.util.*
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -29,7 +29,16 @@ android {
         versionName = AndroidConfiguration.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        manifestPlaceholders.apply {
+            put("appHost", AndroidConfiguration.appHost)
+            put("appScheme", AndroidConfiguration.appId)
+        }
         buildConfigField("String", "BASE_URL", AndroidConfiguration.baseUrl)
+        buildConfigField(
+            "String",
+            "DEEP_LINK_URI",
+            "\"${AndroidConfiguration.appHost}://${AndroidConfiguration.appId}\""
+        )
     }
 
     val isReleasedEnabled = rootProject.file("signing/signing_info.properties").exists()

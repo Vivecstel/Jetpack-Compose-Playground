@@ -1,3 +1,5 @@
+@file:Suppress("RedundantWith")
+
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.Canvas
