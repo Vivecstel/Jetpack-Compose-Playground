@@ -326,4 +326,9 @@
     <string name="name_hint">Ονομα</string>
     <!-- helpers -->
     <string name="in_app_update_message">Η ενημέρωση της εφαρμογής ολοκληρώθηκε. Επανεκκινήστε την εφαρμογή και απολαύστε την ενημέρωση</string>
+    <!-- notifications -->
+    <string name="new_version">Νέα έκδοση</string>
+    <string name="new_version_description">Η νέα έκδοση είναι διαθέσιμη</string>
+    <string name="showcase">Παροσίαση</string>
+    <string name="showcase_description">Παροσίαση νέας jetpack compose οθόνης</string>
 </resources>

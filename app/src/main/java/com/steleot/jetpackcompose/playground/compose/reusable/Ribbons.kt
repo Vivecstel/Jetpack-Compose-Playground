@@ -17,7 +17,7 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
-    /* 4.2.1 */
+    /* 4.3.0 */
     /* 4.2.0 */
     MainNavRoutes.Material3,
     Material3NavRoutes.Checkbox3,

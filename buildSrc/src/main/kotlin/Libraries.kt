@@ -8,7 +8,7 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/compose-animation */
     const val composeAnimation = "androidx.compose.animation:animation:${Versions.compose}"
     const val composeAnimationGraphics =
-        "androidx.compose.animation:animation-graphics:${Versions.compose}"
+        "androidx.compose.animation:animation-graphics:1.1.0-beta04"
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-compiler */
     const val composeCompiler = "androidx.compose.compiler:compiler:${Versions.compose}"

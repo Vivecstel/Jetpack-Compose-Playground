@@ -1,13 +1,15 @@
 package com.steleot.jetpackcompose.playground.navigation
 
-import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.*
+import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavGraphBuilder
+import androidx.navigation.*
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.compose.activity.ActivityScreen
 import com.steleot.jetpackcompose.playground.compose.activity.BackHandlerScreen
 import com.steleot.jetpackcompose.playground.compose.activity.LauncherForActivityResult1Screen
@@ -349,409 +351,421 @@ fun NavGraphBuilder.addMainRoutes(
     setTheme: (ThemeState) -> Unit,
     setUser: (FirebaseUser?) -> Unit,
 ) {
-    composable(route = MainNavRoutes.Main) {
+    deepLinkComposable(route = MainNavRoutes.Main) {
         MainScreenWithDrawer(firebaseAuth, googleSignInClient, setUser = setUser)
     }
-    composable(route = MainNavRoutes.Search) { SearchScreen() }
-    composable(route = MainNavRoutes.Activity) { ActivityScreen() }
-    composable(route = MainNavRoutes.Animation) { AnimationScreen() }
-    composable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
-    composable(route = MainNavRoutes.CustomExamples) { CustomExamplesScreen() }
-    composable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen() }
-    composable(route = MainNavRoutes.Foundation) { FoundationScreen() }
-    composable(route = MainNavRoutes.Material) { MaterialScreen() }
-    composable(route = MainNavRoutes.Material3) { Material3Screen() }
-    composable(route = MainNavRoutes.MaterialIcons) { MaterialIconsScreen() }
-    composable(route = MainNavRoutes.MaterialIConsExtended) { MaterialIconsExtendedScreen() }
-    composable(route = MainNavRoutes.Navigation) { NavigationScreen() }
-    composable(route = MainNavRoutes.Paging) { PagingScreen() }
-    composable(route = MainNavRoutes.Runtime) { RuntimeScreen() }
-    composable(route = MainNavRoutes.Ui) { UiScreen() }
-    composable(route = MainNavRoutes.ViewModel) { ViewModelScreen() }
-    composable(route = MainNavRoutes.Settings) {
+    deepLinkComposable(route = MainNavRoutes.Search) { SearchScreen() }
+    deepLinkComposable(route = MainNavRoutes.Activity) { ActivityScreen() }
+    deepLinkComposable(route = MainNavRoutes.Animation) { AnimationScreen() }
+    deepLinkComposable(route = MainNavRoutes.ConstraintLayout) { ConstraintLayoutScreen() }
+    deepLinkComposable(route = MainNavRoutes.CustomExamples) { CustomExamplesScreen() }
+    deepLinkComposable(route = MainNavRoutes.ExternalLibraries) { ExternalLibrariesScreen() }
+    deepLinkComposable(route = MainNavRoutes.Foundation) { FoundationScreen() }
+    deepLinkComposable(route = MainNavRoutes.Material) { MaterialScreen() }
+    deepLinkComposable(route = MainNavRoutes.Material3) { Material3Screen() }
+    deepLinkComposable(route = MainNavRoutes.MaterialIcons) { MaterialIconsScreen() }
+    deepLinkComposable(route = MainNavRoutes.MaterialIConsExtended) { MaterialIconsExtendedScreen() }
+    deepLinkComposable(route = MainNavRoutes.Navigation) { NavigationScreen() }
+    deepLinkComposable(route = MainNavRoutes.Paging) { PagingScreen() }
+    deepLinkComposable(route = MainNavRoutes.Runtime) { RuntimeScreen() }
+    deepLinkComposable(route = MainNavRoutes.Ui) { UiScreen() }
+    deepLinkComposable(route = MainNavRoutes.ViewModel) { ViewModelScreen() }
+    deepLinkComposable(route = MainNavRoutes.Settings) {
         SettingsScreen(hiltViewModel(it), theme, setTheme)
     }
-    composable(route = MainNavRoutes.Popular) { PopularScreen(hiltViewModel(it)) }
-    composable(route = MainNavRoutes.ReleaseNotes) { ReleaseNotesScreen(hiltViewModel(it)) }
-    composable(route = FavoritesRoute) { FavoritesScreen(hiltViewModel()) }
-    composable(route = MainNavRoutes.Discover) { DiscoverScreen() }
-    composable(route = MainNavRoutes.New) { NewScreen() }
+    deepLinkComposable(route = MainNavRoutes.Popular) { PopularScreen(hiltViewModel(it)) }
+    deepLinkComposable(route = MainNavRoutes.ReleaseNotes) { ReleaseNotesScreen(hiltViewModel(it)) }
+    deepLinkComposable(route = FavoritesRoute) { FavoritesScreen(hiltViewModel()) }
+    deepLinkComposable(route = MainNavRoutes.Discover) { DiscoverScreen() }
+    deepLinkComposable(route = MainNavRoutes.New) { NewScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addActivityRoutes() {
-    composable(route = ActivityNavRoutes.BackHandler) { BackHandlerScreen() }
-    composable(route = ActivityNavRoutes.LauncherForActivityResult1) { LauncherForActivityResult1Screen() }
-    composable(route = ActivityNavRoutes.LauncherForActivityResult2) { LauncherForActivityResult2Screen() }
+    deepLinkComposable(route = ActivityNavRoutes.BackHandler) { BackHandlerScreen() }
+    deepLinkComposable(route = ActivityNavRoutes.LauncherForActivityResult1) { LauncherForActivityResult1Screen() }
+    deepLinkComposable(route = ActivityNavRoutes.LauncherForActivityResult2) { LauncherForActivityResult2Screen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addAnimationRoutes() {
-    composable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
-    composable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }
-    composable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
-    composable(route = AnimationNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
-    composable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
-    composable(route = AnimationNavRoutes.AnimateEnterExit) { AnimateEnterExitScreen() }
-    composable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
-    composable(route = AnimationNavRoutes.CrossfadeAnimation) { CrossfadeAnimationScreen() }
-    composable(route = AnimationNavRoutes.DoubleTapToLike) { DoubleTapToLikeScreen() }
-    composable(route = AnimationNavRoutes.ElevationAnimation) { ElevationAnimationScreen() }
-    composable(route = AnimationNavRoutes.GestureAnimation) { GestureAnimationScreen() }
-    composable(route = AnimationNavRoutes.InfiniteTransition) { InfiniteTransitionScreen() }
-    composable(route = AnimationNavRoutes.RotateAnimation) { RotateAnimationScreen() }
-    composable(route = AnimationNavRoutes.ScaleAnimation) { ScaleAnimationScreen() }
-    composable(route = AnimationNavRoutes.SingleValueColorAnimation) { SingleValueColorAnimationScreen() }
-    composable(route = AnimationNavRoutes.SingleValueFloatAnimation) { SingleValueFloatAnimationScreen() }
-    composable(route = AnimationNavRoutes.SuspendAnimation) { SuspendAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.Animatable) { AnimatableScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimatedContent) { AnimatedContentScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimatedValues) { AnimatedValuesScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimatedVector) { AnimatedVectorScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimatedVisibility) { AnimatedVisibilityScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimateEnterExit) { AnimateEnterExitScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.AnimationModifier) { AnimationModifierScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.CrossfadeAnimation) { CrossfadeAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.DoubleTapToLike) { DoubleTapToLikeScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.ElevationAnimation) { ElevationAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.GestureAnimation) { GestureAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.InfiniteTransition) { InfiniteTransitionScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.RotateAnimation) { RotateAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.ScaleAnimation) { ScaleAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.SingleValueColorAnimation) { SingleValueColorAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.SingleValueFloatAnimation) { SingleValueFloatAnimationScreen() }
+    deepLinkComposable(route = AnimationNavRoutes.SuspendAnimation) { SuspendAnimationScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addConstraintLayoutRoutes() {
-    composable(route = ConstraintLayoutNavRoutes.Barrier) { BarrierScreen() }
-    composable(route = ConstraintLayoutNavRoutes.Chain) { ChainScreen() }
-    composable(route = ConstraintLayoutNavRoutes.Circular) { CircularScreen() }
-    composable(route = ConstraintLayoutNavRoutes.ConstraintSet) { ConstraintSetScreen() }
-    composable(route = ConstraintLayoutNavRoutes.CreateGuideline) { CreateGuidelineScreen() }
-    composable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
-    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSet) { JsonConstraintSetScreen() }
-    composable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) {
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.Barrier) { BarrierScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.Chain) { ChainScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.Circular) { CircularScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.ConstraintSet) { ConstraintSetScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.CreateGuideline) { CreateGuidelineScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.CreateRefs) { CreateRefsScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.JsonConstraintSet) { JsonConstraintSetScreen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables) {
         JsonConstraintSetWithVariablesScreen()
     }
-    composable(route = ConstraintLayoutNavRoutes.MotionLayout1) { MotionLayout1Screen() }
-    composable(route = ConstraintLayoutNavRoutes.MotionLayout2) { MotionLayout2Screen() }
-    composable(route = ConstraintLayoutNavRoutes.MotionLayout3) { MotionLayout3Screen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.MotionLayout1) { MotionLayout1Screen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.MotionLayout2) { MotionLayout2Screen() }
+    deepLinkComposable(route = ConstraintLayoutNavRoutes.MotionLayout3) { MotionLayout3Screen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addFoundationRoutes() {
-    composable(route = FoundationNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
-    composable(route = FoundationNavRoutes.AnimateItemPlacement) { AnimateItemPlacementScreen() }
-    composable(route = FoundationNavRoutes.AspectRatio) { AspectRationScreen() }
-    composable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
-    composable(route = FoundationNavRoutes.Border) { BorderScreen() }
-    composable(route = FoundationNavRoutes.Box) { BoxScreen() }
-    composable(route = FoundationNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
-    composable(route = FoundationNavRoutes.BringIntoViewRequester) { BringIntoViewRequesterScreen() }
-    composable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
-    composable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
-    composable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
-    composable(route = FoundationNavRoutes.Column) { ColumnScreen() }
-    composable(route = FoundationNavRoutes.CombinedClickable) { CombinedClickableScreen() }
-    composable(route = FoundationNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
-    composable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
-    composable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
-    composable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
-    composable(route = FoundationNavRoutes.Image) { ImageScreen() }
-    composable(route = FoundationNavRoutes.InteractionSource) { InteractionSourceScreen() }
-    composable(route = FoundationNavRoutes.Intrinsic) { IntrinsicScreen() }
-    composable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
-    composable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
-    composable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
-    composable(route = FoundationNavRoutes.LocalOverScrollConfiguration) { LocalOverScrollConfigurationScreen() }
-    composable(route = FoundationNavRoutes.MatchParentSize) { MatchParentSizeScreen() }
-    composable(route = FoundationNavRoutes.Offset) { OffsetScreen() }
-    composable(route = FoundationNavRoutes.PaddingFromBaseline) { PaddingFromBaselineScreen() }
-    composable(route = FoundationNavRoutes.PaddingFrom) { PaddingFromScreen() }
-    composable(route = FoundationNavRoutes.Padding) { PaddingScreen() }
-    composable(route = FoundationNavRoutes.ProgressSemantics) { ProgressSemanticsScreen() }
-    composable(route = FoundationNavRoutes.Row) { RowScreen() }
-    composable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
-    composable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
-    composable(route = FoundationNavRoutes.SelectableGroup) { SelectableGroupScreen() }
-    composable(route = FoundationNavRoutes.Selectable) { SelectableScreen() }
-    composable(route = FoundationNavRoutes.SelectionContainer) { SelectionContainerScreen() }
-    composable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
-    composable(route = FoundationNavRoutes.Size) { SizeScreen() }
-    composable(route = FoundationNavRoutes.Spacer) { SpacerScreen() }
-    composable(route = FoundationNavRoutes.StickyHeader) { StickyHeaderScreen() }
-    composable(route = FoundationNavRoutes.Toggeable) { ToggeableScreen() }
-    composable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
-    composable(route = FoundationNavRoutes.TransformGesture) { TransformGestureScreen() }
-    composable(route = FoundationNavRoutes.Weight) { WeightScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.AbsolutePadding) { AbsolutePaddingScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.AnimateItemPlacement) { AnimateItemPlacementScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.AspectRatio) { AspectRationScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Background) { BackgroundScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Border) { BorderScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Box) { BoxScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.BoxWithConstraints) { BoxWithConstraintsScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.BringIntoViewRequester) { BringIntoViewRequesterScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Canvas) { CanvasScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Clickable) { ClickableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.ClickableText) { ClickableTextScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Column) { ColumnScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.CombinedClickable) { CombinedClickableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Image) { ImageScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.InteractionSource) { InteractionSourceScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Intrinsic) { IntrinsicScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.LazyGrid) { LazyGridScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.LocalOverScrollConfiguration) { LocalOverScrollConfigurationScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.MatchParentSize) { MatchParentSizeScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Offset) { OffsetScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.PaddingFromBaseline) { PaddingFromBaselineScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.PaddingFrom) { PaddingFromScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Padding) { PaddingScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.ProgressSemantics) { ProgressSemanticsScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Row) { RowScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Scrollable) { ScrollableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Scroller) { ScrollerScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.SelectableGroup) { SelectableGroupScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Selectable) { SelectableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.SelectionContainer) { SelectionContainerScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Shape) { ShapeScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Size) { SizeScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Spacer) { SpacerScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.StickyHeader) { StickyHeaderScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Toggeable) { ToggeableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Transformable) { TransformableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.TransformGesture) { TransformGestureScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Weight) { WeightScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMaterialRoutes() {
-    composable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
-    composable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
-    composable(route = MaterialNavRoutes.BadgedBox) { BadgedBoxScreen() }
-    composable(route = MaterialNavRoutes.Badge) { BadgeScreen() }
-    composable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
-    composable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
-    composable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
-    composable(route = MaterialNavRoutes.BottomSheetScaffold) { BottomSheetScaffoldScreen() }
-    composable(route = MaterialNavRoutes.Button) { ButtonScreen() }
-    composable(route = MaterialNavRoutes.Card) { CardScreen() }
-    composable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
-    composable(route = MaterialNavRoutes.Divider) { DividerScreen() }
-    composable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
-    composable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
-    composable(route = MaterialNavRoutes.Elevation) { ElevationScreen() }
-    composable(route = MaterialNavRoutes.ExposedDropdownMenuBox) { ExposedDropdownMenuBoxScreen() }
-    composable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
-    composable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
-    composable(route = MaterialNavRoutes.Icon) { IconScreen() }
-    composable(route = MaterialNavRoutes.IconToggleButton) { IconToggleButtonScreen() }
-    composable(route = MaterialNavRoutes.ListItem) { ListItemScreen() }
-    composable(route = MaterialNavRoutes.LocalAbsoluteElevation) { LocalAbsoluteElevationScreen() }
-    composable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
-    composable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
-    composable(route = MaterialNavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
-    composable(route = MaterialNavRoutes.MaterialTheme) { MaterialThemeScreen() }
-    composable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
-    composable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
-    composable(route = MaterialNavRoutes.NavigationRail) { NavigationRailScreen() }
-    composable(route = MaterialNavRoutes.OutlinedButton) { OutlinedButtonScreen() }
-    composable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
-    composable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
-    composable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
-    composable(route = MaterialNavRoutes.RangeSlider) { RangeSliderScreen() }
-    composable(route = MaterialNavRoutes.Scaffold) { ScaffoldScreen() }
-    composable(route = MaterialNavRoutes.ScrollableTabRow) { ScrollableTabRowScreen() }
-    composable(route = MaterialNavRoutes.Slider) { SliderScreen() }
-    composable(route = MaterialNavRoutes.SnackBar) { SnackBarScreen() }
-    composable(route = MaterialNavRoutes.Surface) { SurfaceScreen() }
-    composable(route = MaterialNavRoutes.Swipeable) { SwipeableScreen() }
-    composable(route = MaterialNavRoutes.SwipeToDismiss) { SwipeToDismissScreen() }
-    composable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
-    composable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
-    composable(route = MaterialNavRoutes.TextButton) { TextButtonScreen() }
-    composable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
-    composable(route = MaterialNavRoutes.Text) { TextScreen() }
-    composable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
-    composable(route = MaterialNavRoutes.TriStateCheckbox) { TriStateCheckboxScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.AlertDialog) { AlertDialogScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BackdropScaffold) { BackdropScaffoldScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BadgedBox) { BadgedBoxScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Badge) { BadgeScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.BottomSheetScaffold) { BottomSheetScaffoldScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Button) { ButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Card) { CardScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Divider) { DividerScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.DropdownMenu) { DropdownMenuScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ExtendedFloatingActionButton) { ExtendedFloatingActionButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Elevation) { ElevationScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ExposedDropdownMenuBox) { ExposedDropdownMenuBoxScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.FloatingActionButton) { FloatingActionButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.IconButton) { IconButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Icon) { IconScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.IconToggleButton) { IconToggleButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ListItem) { ListItemScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.LocalAbsoluteElevation) { LocalAbsoluteElevationScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.MaterialTheme) { MaterialThemeScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ModalDrawer) { ModalDrawerScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.NavigationRail) { NavigationRailScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.OutlinedButton) { OutlinedButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.OutlinedTextField) { OutlinedTextFieldScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Progress) { ProgressScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.RadioButton) { RadioButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.RangeSlider) { RangeSliderScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Scaffold) { ScaffoldScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.ScrollableTabRow) { ScrollableTabRowScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Slider) { SliderScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.SnackBar) { SnackBarScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Surface) { SurfaceScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Swipeable) { SwipeableScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.SwipeToDismiss) { SwipeToDismissScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Switch) { SwitchScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.TabRow) { TabRowScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.TextButton) { TextButtonScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.TextField) { TextFieldScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.Text) { TextScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.TopAppBar) { TopAppBarScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.TriStateCheckbox) { TriStateCheckboxScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMaterial3Routes() {
-    composable(route = Material3NavRoutes.AlertDialog3) { AlertDialog3Screen() }
-    composable(route = Material3NavRoutes.BadgedBox3) { BadgedBox3Screen() }
-    composable(route = Material3NavRoutes.Badge3) { Badge3Screen() }
-    composable(route = Material3NavRoutes.Button3) { Button3Screen() }
-    composable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
-    composable(route = Material3NavRoutes.Checkbox3) { Checkbox3Screen() }
-    composable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }
-    composable(route = Material3NavRoutes.ExtendedFloatingActionButton3) { ExtendedFloatingActionButton3Screen() }
-    composable(route = Material3NavRoutes.FilledTonalButton) { FilledTonalButtonScreen() }
-    composable(route = Material3NavRoutes.FloatingActionButton3) { FloatingActionButton3Screen() }
-    composable(route = Material3NavRoutes.IconButton3) { IconButton3Screen() }
-    composable(route = Material3NavRoutes.Icon3) { Icon3Screen() }
-    composable(route = Material3NavRoutes.IconToggleButton3) { IconToggleButton3Screen() }
-    composable(route = Material3NavRoutes.LargeFloatingActionButton) { LargeFloatingActionButtonScreen() }
-    composable(route = Material3NavRoutes.LargeTopAppBar) { LargeTopAppBarScreen() }
-    composable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteTonalElevationScreen() }
-    composable(route = Material3NavRoutes.LocalContentColor3) { LocalContentColor3Screen() }
-    composable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
+    deepLinkComposable(route = Material3NavRoutes.AlertDialog3) { AlertDialog3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.BadgedBox3) { BadgedBox3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Badge3) { Badge3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Button3) { Button3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.Checkbox3) { Checkbox3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }
+    deepLinkComposable(route = Material3NavRoutes.ExtendedFloatingActionButton3) { ExtendedFloatingActionButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.FilledTonalButton) { FilledTonalButtonScreen() }
+    deepLinkComposable(route = Material3NavRoutes.FloatingActionButton3) { FloatingActionButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.IconButton3) { IconButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Icon3) { Icon3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.IconToggleButton3) { IconToggleButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.LargeFloatingActionButton) { LargeFloatingActionButtonScreen() }
+    deepLinkComposable(route = Material3NavRoutes.LargeTopAppBar) { LargeTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteTonalElevationScreen() }
+    deepLinkComposable(route = Material3NavRoutes.LocalContentColor3) { LocalContentColor3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
         LocalMinimumTouchTargetEnforcementScreen()
     }
-    composable(route = Material3NavRoutes.LocalTextStyle3) { LocalTextStyle3Screen() }
-    composable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
-    composable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
-    composable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
-    composable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
-    composable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
-    composable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
-    composable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
-    composable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
-    composable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
-    composable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
-    composable(route = Material3NavRoutes.Surface3) { Surface3Screen() }
-    composable(route = Material3NavRoutes.TextButton3) { TextButton3Screen() }
-    composable(route = Material3NavRoutes.Text3) { Text3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.LocalTextStyle3) { LocalTextStyle3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
+    deepLinkComposable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
+    deepLinkComposable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.Surface3) { Surface3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.TextButton3) { TextButton3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Text3) { Text3Screen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMaterialIconsRoutes() {
-    composable(route = MaterialIconsNavRoutes.Filled) { FilledScreen() }
-    composable(route = MaterialIconsNavRoutes.Outlined) { OutlinedScreen() }
-    composable(route = MaterialIconsNavRoutes.Rounded) { RoundedScreen() }
-    composable(route = MaterialIconsNavRoutes.Sharp) { SharpScreen() }
-    composable(route = MaterialIconsNavRoutes.TwoTone) { TwoToneScreen() }
+    deepLinkComposable(route = MaterialIconsNavRoutes.Filled) { FilledScreen() }
+    deepLinkComposable(route = MaterialIconsNavRoutes.Outlined) { OutlinedScreen() }
+    deepLinkComposable(route = MaterialIconsNavRoutes.Rounded) { RoundedScreen() }
+    deepLinkComposable(route = MaterialIconsNavRoutes.Sharp) { SharpScreen() }
+    deepLinkComposable(route = MaterialIconsNavRoutes.TwoTone) { TwoToneScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addMaterialIconsExtended() {
-    composable(route = MaterialIconsExtendedNavRoutes.ExtendedFilled) { ExtendedFilledScreen() }
-    composable(route = MaterialIconsExtendedNavRoutes.ExtendedOutlined) { ExtendedOutlinedScreen() }
-    composable(route = MaterialIconsExtendedNavRoutes.ExtendedRounded) { ExtendedRoundedScreen() }
-    composable(route = MaterialIconsExtendedNavRoutes.ExtendedSharp) { ExtendedSharpScreen() }
-    composable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
+    deepLinkComposable(route = MaterialIconsExtendedNavRoutes.ExtendedFilled) { ExtendedFilledScreen() }
+    deepLinkComposable(route = MaterialIconsExtendedNavRoutes.ExtendedOutlined) { ExtendedOutlinedScreen() }
+    deepLinkComposable(route = MaterialIconsExtendedNavRoutes.ExtendedRounded) { ExtendedRoundedScreen() }
+    deepLinkComposable(route = MaterialIconsExtendedNavRoutes.ExtendedSharp) { ExtendedSharpScreen() }
+    deepLinkComposable(route = MaterialIconsExtendedNavRoutes.ExtendedTwoTone) { ExtendedTwoToneScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addRuntimeRoutes() {
-    composable(route = RuntimeNavRoutes.CollectAsState) { CollectAsStateScreen() }
-    composable(route = RuntimeNavRoutes.CompositionLocal) { CompositionLocalScreen() }
-    composable(route = RuntimeNavRoutes.DerivedState) { DerivedStateScreen() }
-    composable(route = RuntimeNavRoutes.DisposableEffect) { DisposableEffectScreen() }
-    composable(route = RuntimeNavRoutes.Immutable) { ImmutableScreen() }
-    composable(route = RuntimeNavRoutes.Key) { KeyScreen() }
-    composable(route = RuntimeNavRoutes.LaunchedEffect) { LaunchedEffectScreen() }
-    composable(route = RuntimeNavRoutes.MutableStateList) { MutableStateListScreen() }
-    composable(route = RuntimeNavRoutes.MutableStateMap) { MutableStateMapScreen() }
-    composable(route = RuntimeNavRoutes.ProduceState) { ProduceStateScreen() }
-    composable(route = RuntimeNavRoutes.RememberCoroutineScope) { RememberCoroutineScopeScreen() }
-    composable(route = RuntimeNavRoutes.RememberSaveable) { RememberSaveableScreen() }
-    composable(route = RuntimeNavRoutes.RememberSaveableStateHolder) { RememberSaveableStateHolderScreen() }
-    composable(route = RuntimeNavRoutes.Remember) { RememberScreen() }
-    composable(route = RuntimeNavRoutes.Saver) { SaverScreen() }
-    composable(route = RuntimeNavRoutes.SideEffect) { SideEffectScreen() }
-    composable(route = RuntimeNavRoutes.SnapshotFlow) { SnapshotFlowScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.CollectAsState) { CollectAsStateScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.CompositionLocal) { CompositionLocalScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.DerivedState) { DerivedStateScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.DisposableEffect) { DisposableEffectScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.Immutable) { ImmutableScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.Key) { KeyScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.LaunchedEffect) { LaunchedEffectScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.MutableStateList) { MutableStateListScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.MutableStateMap) { MutableStateMapScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.ProduceState) { ProduceStateScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.RememberCoroutineScope) { RememberCoroutineScopeScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.RememberSaveable) { RememberSaveableScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.RememberSaveableStateHolder) { RememberSaveableStateHolderScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.Remember) { RememberScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.Saver) { SaverScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.SideEffect) { SideEffectScreen() }
+    deepLinkComposable(route = RuntimeNavRoutes.SnapshotFlow) { SnapshotFlowScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addUiRoutes() {
-    composable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
-    composable(route = UiNavRoutes.Alpha) { AlphaScreen() }
-    composable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
-    composable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
-    composable(route = UiNavRoutes.Blur) { BlurScreen() }
-    composable(route = UiNavRoutes.Brush) { BrushScreen() }
-    composable(route = UiNavRoutes.Clip) { ClipScreen() }
-    composable(route = UiNavRoutes.ClipToBounds) { ClipToBoundsScreen() }
-    composable(route = UiNavRoutes.Color) { ColorScreen() }
-    composable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
-    composable(route = UiNavRoutes.Dialog) { DialogScreen() }
-    composable(route = UiNavRoutes.Drawable) { DrawableScreen() }
-    composable(route = UiNavRoutes.DrawBehind) { DrawBehindScreen() }
-    composable(route = UiNavRoutes.DrawWithCache) { DrawWithCacheScreen() }
-    composable(route = UiNavRoutes.DrawWithContent) { DrawWithContentScreen() }
-    composable(route = UiNavRoutes.Font) { FontScreen() }
-    composable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
-    composable(route = UiNavRoutes.ImageBitmapToPixelMap) { ImageBitmapToPixelMapScreen() }
-    composable(route = UiNavRoutes.Inspectable) { InspectableScreen() }
-    composable(route = UiNavRoutes.LayoutId) { LayoutIdScreen() }
-    composable(route = UiNavRoutes.Layout) { LayoutScreen() }
-    composable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }
-    composable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
-    composable(route = UiNavRoutes.LocalAutofillTree) { LocalAutofillTreeScreen() }
-    composable(route = UiNavRoutes.LocalClipboardManager) { LocalClipboardManagerScreen() }
-    composable(route = UiNavRoutes.LocalConfiguration) { LocalConfigurationScreen() }
-    composable(route = UiNavRoutes.LocalContext) { LocalContextScreen() }
-    composable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
-    composable(route = UiNavRoutes.LocalFocusManager) { LocalFocusManagerScreen() }
-    composable(route = UiNavRoutes.LocalFontLoader) { LocalFontLoaderScreen() }
-    composable(route = UiNavRoutes.LocalHapticFeedback) { LocalHapticFeedbackScreen() }
-    composable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
-    composable(route = UiNavRoutes.LocalLifecycleOwner) { LocalLifecycleOwnerScreen() }
-    composable(route = UiNavRoutes.LocalSavedStateRegistryOwner) { LocalSavedStateRegistryOwnerScreen() }
-    composable(route = UiNavRoutes.LocalSoftwareKeyboardController) { LocalSoftwareKeyboardControllerScreen() }
-    composable(route = UiNavRoutes.LocalTextInputService) { LocalTextInputServiceScreen() }
-    composable(route = UiNavRoutes.LocalTextToolbar) { LocalTextToolbarScreen() }
-    composable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
-    composable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
-    composable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
-    composable(route = UiNavRoutes.ModifierLocal) { ModifierLocalScreen() }
-    composable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
-    composable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
-    composable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }
-    composable(route = UiNavRoutes.OnPlaced) { OnPlacedScreen() }
-    composable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
-    composable(route = UiNavRoutes.Paint) { PaintScreen() }
-    composable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
-    composable(route = UiNavRoutes.PointerInput) { PointerInputScreen() }
-    composable(route = UiNavRoutes.Popup) { PopupScreen() }
-    composable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
-    composable(route = UiNavRoutes.Rotate) { RotateScreen() }
-    composable(route = UiNavRoutes.Scale) { ScaleScreen() }
-    composable(route = UiNavRoutes.Shadow) { ShadowScreen() }
-    composable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
-    composable(route = UiNavRoutes.String) { StringScreen() }
-    composable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
-    composable(route = UiNavRoutes.TestTag) { TestTagScreen() }
-    composable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
-    composable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
-    composable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
-    composable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
+    deepLinkComposable(route = UiNavRoutes.AlignmentLine) { AlignmentLineScreen() }
+    deepLinkComposable(route = UiNavRoutes.Alpha) { AlphaScreen() }
+    deepLinkComposable(route = UiNavRoutes.AndroidViewBinding) { AndroidViewBindingScreen() }
+    deepLinkComposable(route = UiNavRoutes.AnnotatedString) { AnnotatedStringScreen() }
+    deepLinkComposable(route = UiNavRoutes.Blur) { BlurScreen() }
+    deepLinkComposable(route = UiNavRoutes.Brush) { BrushScreen() }
+    deepLinkComposable(route = UiNavRoutes.Clip) { ClipScreen() }
+    deepLinkComposable(route = UiNavRoutes.ClipToBounds) { ClipToBoundsScreen() }
+    deepLinkComposable(route = UiNavRoutes.Color) { ColorScreen() }
+    deepLinkComposable(route = UiNavRoutes.DebugInspectorInfo) { DebugInspectorInfoScreen() }
+    deepLinkComposable(route = UiNavRoutes.Dialog) { DialogScreen() }
+    deepLinkComposable(route = UiNavRoutes.Drawable) { DrawableScreen() }
+    deepLinkComposable(route = UiNavRoutes.DrawBehind) { DrawBehindScreen() }
+    deepLinkComposable(route = UiNavRoutes.DrawWithCache) { DrawWithCacheScreen() }
+    deepLinkComposable(route = UiNavRoutes.DrawWithContent) { DrawWithContentScreen() }
+    deepLinkComposable(route = UiNavRoutes.Font) { FontScreen() }
+    deepLinkComposable(route = UiNavRoutes.GraphicsLayer) { GraphicsLayerScreen() }
+    deepLinkComposable(route = UiNavRoutes.ImageBitmapToPixelMap) { ImageBitmapToPixelMapScreen() }
+    deepLinkComposable(route = UiNavRoutes.Inspectable) { InspectableScreen() }
+    deepLinkComposable(route = UiNavRoutes.LayoutId) { LayoutIdScreen() }
+    deepLinkComposable(route = UiNavRoutes.Layout) { LayoutScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalAccessibilityManager) { LocalAccessibilityManagerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalAutofill) { LocalAutofillScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalAutofillTree) { LocalAutofillTreeScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalClipboardManager) { LocalClipboardManagerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalConfiguration) { LocalConfigurationScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalContext) { LocalContextScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalFocusManager) { LocalFocusManagerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalFontLoader) { LocalFontLoaderScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalHapticFeedback) { LocalHapticFeedbackScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalLifecycleOwner) { LocalLifecycleOwnerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalSavedStateRegistryOwner) { LocalSavedStateRegistryOwnerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalSoftwareKeyboardController) { LocalSoftwareKeyboardControllerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalTextInputService) { LocalTextInputServiceScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalTextToolbar) { LocalTextToolbarScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalUriHandler) { LocalUriHandlerScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalViewConfiguration) { LocalViewConfigurationScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalWindowInfo) { LocalWindowInfoScreen() }
+    deepLinkComposable(route = UiNavRoutes.ModifierLocal) { ModifierLocalScreen() }
+    deepLinkComposable(route = UiNavRoutes.NestedScroll) { NestedScrollScreen() }
+    deepLinkComposable(route = UiNavRoutes.OnGloballyPositioned) { OnGloballyPositionedScreen() }
+    deepLinkComposable(route = UiNavRoutes.OnKeyEvent) { OnKeyEventScreen() }
+    deepLinkComposable(route = UiNavRoutes.OnPlaced) { OnPlacedScreen() }
+    deepLinkComposable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
+    deepLinkComposable(route = UiNavRoutes.Paint) { PaintScreen() }
+    deepLinkComposable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
+    deepLinkComposable(route = UiNavRoutes.PointerInput) { PointerInputScreen() }
+    deepLinkComposable(route = UiNavRoutes.Popup) { PopupScreen() }
+    deepLinkComposable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
+    deepLinkComposable(route = UiNavRoutes.Rotate) { RotateScreen() }
+    deepLinkComposable(route = UiNavRoutes.Scale) { ScaleScreen() }
+    deepLinkComposable(route = UiNavRoutes.Shadow) { ShadowScreen() }
+    deepLinkComposable(route = UiNavRoutes.SpanStyle) { SpanStyleScreen() }
+    deepLinkComposable(route = UiNavRoutes.String) { StringScreen() }
+    deepLinkComposable(route = UiNavRoutes.SubComposeLayout) { SubComposeLayoutScreen() }
+    deepLinkComposable(route = UiNavRoutes.TestTag) { TestTagScreen() }
+    deepLinkComposable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
+    deepLinkComposable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
+    deepLinkComposable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
+    deepLinkComposable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addViewModelRoutes() {
-    composable(route = ViewModelNavRoutes.Flow) { ViewModelFlowScreen() }
-    composable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
-    composable(route = ViewModelNavRoutes.State) { StateScreen() }
+    deepLinkComposable(route = ViewModelNavRoutes.Flow) { ViewModelFlowScreen() }
+    deepLinkComposable(route = ViewModelNavRoutes.LiveData) { ViewModelLiveDataScreen() }
+    deepLinkComposable(route = ViewModelNavRoutes.State) { StateScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addCustomExamples() {
-    composable(route = CustomExamplesNavRoutes.AdMobBanner) { AdMobBannerScreen() }
-    composable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
-    composable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) {
+    deepLinkComposable(route = CustomExamplesNavRoutes.AdMobBanner) { AdMobBannerScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.AnimatedDeleteList) { AnimatedDeleteListScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.AnimatedExtendedFloatingActionButton) {
         AnimatedExtendedFloatingActionButtonScreen()
     }
-    composable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
-    composable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
-    composable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
-    composable(route = CustomExamplesNavRoutes.BottomRoundedArcShape) { BottomRoundedArcShapeScreen() }
-    composable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
-    composable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
-    composable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
-    composable(route = CustomExamplesNavRoutes.CurvedScrollView) { CurvedScrollViewScreen() }
-    composable(route = CustomExamplesNavRoutes.CurvedText) { CurvedTextScreen() }
-    composable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
-    composable(route = CustomExamplesNavRoutes.MessageBubble) { MessageBubbleScreen() }
-    composable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
-    composable(route = CustomExamplesNavRoutes.StyledText) { StyledTextScreen() }
-    composable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.AnimatedShowList) { AnimatedShowListScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.AnimatedText) { AnimatedTextScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.BarChart) { BarChartScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.BottomRoundedArcShape) { BottomRoundedArcShapeScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.CameraX) { CameraXScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.CollapsingToolbar) { CollapsingToolbarScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.ColorMatrix) { ColorMatrixScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.CurvedScrollView) { CurvedScrollViewScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.CurvedText) { CurvedTextScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.FirstBaselineToTop) { FirstBaselineToTopScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.MessageBubble) { MessageBubbleScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.StaggeredGridList) { StaggeredGridListScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.StyledText) { StyledTextScreen() }
+    deepLinkComposable(route = CustomExamplesNavRoutes.TearDrop) { TearDropScreen() }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.addExternalLibraries(
     systemUiController: SystemUiController,
 ) {
-    composable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
-    composable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeBarcodes) { ComposeBarcodesScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeParticleSystem) { ComposeParticleSystemScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeRichTextPrinting) { ComposeRichTextPrintingScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeShimmer) { ComposeShimmerScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
-    composable(route = ExternalLibrariesNavRoutes.ComposeTreeMap) { ComposeTreeMapScreen() }
-    composable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
-    composable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.Gap) { GapScreen() }
-    composable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.HtmlText) { HtmlTextScreen() }
-    composable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
-    composable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Coil) { CoilScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.CoilLandscapist) { CoilLandscapistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeBarcodes) { ComposeBarcodesScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeCharts) { ComposeChartsScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeMarkdown) { ComposeMarkdownScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeNeumorphism) { ComposeNeumorphismScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeParticleSystem) { ComposeParticleSystemScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeRichTextPrinting) { ComposeRichTextPrintingScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow) { ComposeRichTextSlideshowScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial) { ComposeRichTextUiMaterialScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeRichTextUi) { ComposeRichTextUiScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeShimmer) { ComposeShimmerScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeTimelineView) { ComposeTimelineViewScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ComposeTreeMap) { ComposeTreeMapScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.DrawablePainterAccompanist) { DrawablePainterAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.FlowLayoutAccompanist) { FlowLayoutAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.FontAwesome) { FontAwesomeScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.FrescoLandscapist) { FrescoLandscapistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Gap) { GapScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.HtmlText) { HtmlTextScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
         NavigationAnimationAccompanistScreen()
     }
-    composable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) {
         NavigationMaterialAccompanistScreen()
     }
-    composable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
-    composable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
-    composable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
-    composable(route = ExternalLibrariesNavRoutes.PagerAccompanist) { PagerAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.PaletteLandscapist) { PaletteLandscapistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
-    composable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
-    composable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
-    composable(route = ExternalLibrariesNavRoutes.Snapper) { SnapperScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.PagerAccompanist) { PagerAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.PaletteLandscapist) { PaletteLandscapistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.PermissionsAccompanist) { PermissionsAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.PlaceholderAccompanist) { PlaceholderAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Snapper) { SnapperScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) {
         SpeedDialFloatingActionButtonScreen()
     }
-    composable(route = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton) {
         SSJetPackComposeProgressButtonScreen()
     }
-    composable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
-    composable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.StageStepBar) { StageStepBarScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.SwipeRefreshAccompanist) { SwipeRefreshAccompanistScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist) {
         SystemUiControllerAccompanistScreen(systemUiController)
     }
-    composable(route = ExternalLibrariesNavRoutes.ZoomableComposeImage) {
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.ZoomableComposeImage) {
         ZoomableComposeImageScreen()
     }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+private fun NavGraphBuilder.deepLinkComposable(
+    route: String,
+    arguments: List<NamedNavArgument> = emptyList(),
+    deepLinks: List<NavDeepLink> = listOf(navDeepLink { uriPattern = "${BuildConfig.DEEP_LINK_URI}/$route"}),
+    content: @Composable AnimatedVisibilityScope.(NavBackStackEntry) -> Unit
+) {
+    composable(
+        route, arguments, deepLinks, content = content
+    )
 }

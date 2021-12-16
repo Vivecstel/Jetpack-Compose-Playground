@@ -326,4 +326,9 @@
     <string name="name_hint">Name</string>
     <!-- helpers -->
     <string name="in_app_update_message">In App-Update abgeschlossen. Starten Sie die Anwendung neu und genießen Sie das Update</string>
+    <!-- notifications -->
+    <string name="new_version">Neue Version</string>
+    <string name="new_version_description">Neue Version ist verfügbar</string>
+    <string name="showcase">Vitrine</string>
+    <string name="showcase_description">Präsentiere den neuen Jetpack-Bildschirm zum Verfassen</string>
 </resources>

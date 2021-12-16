@@ -326,4 +326,9 @@
     <string name="name_hint">Имя</string>
     <!-- helpers -->
     <string name="in_app_update_message">В приложении обновление завершено. Перезагрузите приложение и наслаждайтесь обновлением</string>
+    <!-- notifications -->
+    <string name="new_version">Новая версия</string>
+    <string name="new_version_description">Доступна новая версия</string>
+    <string name="showcase">Витрина</string>
+    <string name="showcase_description">Демонстрация экрана создания нового реактивного ранца</string>
 </resources>
