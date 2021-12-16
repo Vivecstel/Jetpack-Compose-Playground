@@ -33,7 +33,7 @@ class JetpackComposePlaygroundFirebaseMessagingService : FirebaseMessagingServic
         if (model.hasMissingData || model.isDataNotValid) return
 
         val builder = NotificationCompat.Builder(this, model.channelId)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // todo new icon
+            .setSmallIcon(R.drawable.ic_notification) // todo stelios
             .setContentTitle(model.title)
             .setContentText(model.text)
             .setPriority(model.priority)
