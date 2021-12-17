@@ -331,4 +331,7 @@
     <string name="new_version_description">Доступна новая версия</string>
     <string name="showcase">Витрина</string>
     <string name="showcase_description">Демонстрация экрана создания нового реактивного ранца</string>
+    <!-- widgets -->
+    <string name="widget_description">Проверьте новые экраны Jetpack Compose Playground</string>
+    <string name="widget_loading">Загрузка…</string>
 </resources>

@@ -45,6 +45,9 @@ object Libraries {
     /* https://developer.android.com/jetpack/compose/navigation */
     const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/glance */
+    const val glance = "androidx.glance:glance-appwidget:${Versions.glance}"
+
     /* https://developer.android.com/jetpack/androidx/releases/core */
     const val core = "androidx.core:core:${Versions.core}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.core}"

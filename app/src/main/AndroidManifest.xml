@@ -9,7 +9,7 @@
     <uses-sdk tools:overrideLibrary="me.sungbin.timelineview" />
 
     <application
-        android:name=".JetpackComposePlaygroundApplication"
+        android:name=".PlaygroundApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -48,12 +48,25 @@
                 android:value="androidx.startup" />
         </provider>
 
+        <receiver
+            android:name=".appwidget.PlaygroundGlanceAppWidgetReceiver"
+            android:enabled="@bool/glance_appwidget_available"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/glance_widget" />
+        </receiver>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-2432815627427713~8877745684" />
 
         <service
-            android:name=".service.JetpackComposePlaygroundFirebaseMessagingService"
+            android:name=".service.PlaygroundFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

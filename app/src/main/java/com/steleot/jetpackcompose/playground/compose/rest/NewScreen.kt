@@ -12,7 +12,7 @@ import com.steleot.jetpackcompose.playground.compose.reusable.ErrorText
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 
-private val newRoutes = ribbonRoutes.filter {
+val newRoutes = ribbonRoutes.filter {
     it !in routes
 }.sorted().toList()
 

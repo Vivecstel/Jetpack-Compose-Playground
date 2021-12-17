@@ -331,4 +331,7 @@
     <string name="new_version_description">नया संस्करण उपलब्ध है</string>
     <string name="showcase">प्रदर्शन</string>
     <string name="showcase_description">नया जेटपैक कंपोज़ स्क्रीन प्रदर्शित करें</string>
+    <!-- widgets -->
+    <string name="widget_description">जेटपैक कंपोज़ प्लेग्राउंड की नई स्क्रीन देखें</string>
+    <string name="widget_loading">लोड हो रहा है…</string>
 </resources>

@@ -15,7 +15,7 @@ import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import timber.log.Timber
 import kotlin.math.pow
 
-class JetpackComposePlaygroundFirebaseMessagingService : FirebaseMessagingService() {
+class PlaygroundFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(message: RemoteMessage) {
         Timber.d("Message received with data: ${message.data}")

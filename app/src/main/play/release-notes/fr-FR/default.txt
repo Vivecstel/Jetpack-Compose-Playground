@@ -1,1 +1,1 @@
-Corrections de bugs.
+Ajout de l'exemple de widget Glance.
