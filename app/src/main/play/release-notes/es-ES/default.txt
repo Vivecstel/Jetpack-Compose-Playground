@@ -1,1 +1,1 @@
-Se actualizó componer a 1.1.0-rc01. Navegación actualizada, cámara y fantásticas bibliotecas de fuentes. Funcionalidad de notificación agregada. Complemento de Android actualizado y bibliotecas de empuñadura. Ejemplo de admob actualizado.
+Corrección de errores.
