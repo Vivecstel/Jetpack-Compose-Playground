@@ -57,6 +57,7 @@ import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.utils.handleEnableSubscription
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -403,7 +404,7 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             protoManager.setIsMessagingEnabled(isEnabled)
         }
-        firebaseMessaging.isAutoInitEnabled = isEnabled
+        firebaseMessaging.handleEnableSubscription(isEnabled)
     }
 
     fun onCrashlyticsChanged(isEnabled: Boolean) {

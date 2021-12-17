@@ -17,7 +17,7 @@ import com.steleot.jetpackcompose.playground.compose.runtime.routes as runtimeRo
 import com.steleot.jetpackcompose.playground.compose.ui.routes as uiRoutes
 import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewModelRoutes
 
-private val routes =
+private val discoverRoutes =
     activityRoutes +
             animationRoutes +
             constraintLayoutRoutes +
@@ -36,7 +36,7 @@ private val routes =
 
 @Composable
 fun DiscoverScreen() {
-    LocalNavController.current.navigate(routes.random()) {
+    LocalNavController.current.navigate(discoverRoutes.random()) {
         popUpTo(MainNavRoutes.Discover) {
             inclusive = true
         }

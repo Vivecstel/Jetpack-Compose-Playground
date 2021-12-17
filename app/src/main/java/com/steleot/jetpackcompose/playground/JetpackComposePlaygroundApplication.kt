@@ -6,6 +6,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
+import com.steleot.jetpackcompose.playground.utils.handleEnableSubscription
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,7 +47,7 @@ class JetpackComposePlaygroundApplication : Application() {
         scope.launch {
             protoManager.isMessagingEnabled.collect { isEnabled ->
                 Timber.d("Messaging: $isEnabled")
-                firebaseMessaging.isAutoInitEnabled = isEnabled
+                firebaseMessaging.handleEnableSubscription(isEnabled)
             }
         }
         scope.launch {

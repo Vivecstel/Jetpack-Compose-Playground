@@ -7,9 +7,9 @@ object AndroidConfiguration {
     const val targetSdk = compileSdk
 
     const val appId = "com.steleot.jetpackcompose.playground"
-    const val versionCode = 53
-    const val versionName = "4.3.0"
-    
+    const val versionCode = 54
+    const val versionName = "4.3.1"
+
     private const val branch = "master"
     const val appHost = "app"
     const val baseUrl = "\"https://github.com/Vivecstel/Jetpack-Compose-Playground/blob/$branch/" +
@@ -19,5 +19,5 @@ object AndroidConfiguration {
     const val serviceAccountCredentials = "jetpack-compose-playground-play-publishing.json"
     const val artifactFile = "build/outputs/bundle/release/app-release.aab"
     const val track = "production"
-    const val updatePriority = 4
+    const val updatePriority = 5
 }

@@ -1,1 +1,1 @@
-Compose auf 1.1.0-rc01 aktualisiert. Aktualisierte Bibliotheken für Navigation, Kamera und Schriftarten. Benachrichtigungsfunktion hinzugefügt. Aktualisierte Android-Plugin- und Hilt-Bibliotheken. Aktualisiertes Admob-Beispiel.
+Fehlerbehebung.

@@ -47,7 +47,7 @@ import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
 // todo refactor file
-private val routes = listOf(
+val routes = listOf(
     MainNavRoutes.Activity,
     MainNavRoutes.Animation,
     MainNavRoutes.ConstraintLayout,

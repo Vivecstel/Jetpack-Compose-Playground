@@ -1,1 +1,1 @@
-Mise à jour de la composition vers la 1.1.0-rc01. Bibliothèques impressionnantes de navigation, d'appareil photo et de polices mises à jour. Ajout de la fonctionnalité de notification. Mise à jour des bibliothèques de plugins et de poignées Android. Exemple d'admob mis à jour.
+Corrections de bugs.
