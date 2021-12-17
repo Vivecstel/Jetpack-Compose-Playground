@@ -1,1 +1,1 @@
-Corrección de errores.
+Se agregó un ejemplo de Glance Widget.
