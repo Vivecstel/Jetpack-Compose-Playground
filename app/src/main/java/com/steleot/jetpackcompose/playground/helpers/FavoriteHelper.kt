@@ -68,12 +68,9 @@ class FavoriteHelperImpl(
         userId: String,
         route: String
     ): Boolean {
-        var returnValue = if (cachedFavorites.contains(route)) {
+        var returnValue = cachedFavorites.add(route)
+        if (!returnValue) {
             cachedFavorites.remove(route)
-            false
-        } else {
-            cachedFavorites.add(route)
-            true
         }
         try {
             firebaseFirestore.collection(Favorites).document(userId)
@@ -84,6 +81,7 @@ class FavoriteHelperImpl(
             })
         } catch (e: Exception) {
             Timber.e(e)
+            if (returnValue) cachedFavorites.remove(route) else cachedFavorites.add(route)
             returnValue = !returnValue
         }
 
