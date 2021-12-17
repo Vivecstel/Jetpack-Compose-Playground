@@ -22,6 +22,7 @@ object Versions {
     const val composeConstraint = "1.0.0-rc02"
     const val composePaging = "1.0.0-alpha14"
     const val navigation = "2.4.0-rc01"
+    const val glance = "1.0.0-alpha01"
     const val core = "1.7.0-alpha02"
     const val activity = "1.4.0"
     const val appCompat = "1.4.0"

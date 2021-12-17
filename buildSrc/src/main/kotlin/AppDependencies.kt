@@ -23,6 +23,7 @@ object AppDependencies {
         Libraries.composeUiUtil,
         Libraries.composeUiTooling,
         Libraries.navigation,
+        Libraries.glance,
         Libraries.composeConstraint,
         Libraries.composePaging,
         Libraries.composeActivity,

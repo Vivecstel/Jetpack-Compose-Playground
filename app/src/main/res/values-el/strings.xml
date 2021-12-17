@@ -331,4 +331,7 @@
     <string name="new_version_description">Η νέα έκδοση είναι διαθέσιμη</string>
     <string name="showcase">Παροσίαση</string>
     <string name="showcase_description">Παροσίαση νέας jetpack compose οθόνης</string>
+    <!-- widgets -->
+    <string name="widget_description">Ελέγξτε τις νέες οθόνες του Jetpack Compose Playground</string>
+    <string name="widget_loading">Φόρτωση…</string>
 </resources>

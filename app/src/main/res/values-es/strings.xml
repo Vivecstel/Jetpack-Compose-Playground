@@ -331,4 +331,7 @@
     <string name="new_version_description">Nueva versión disponible</string>
     <string name="showcase">Escaparate</string>
     <string name="showcase_description">Muestre la nueva pantalla de composición jetpack</string>
+    <!-- widgets -->
+    <string name="widget_description">Compruebe las nuevas pantallas de Jetpack Compose Playground</string>
+    <string name="widget_loading">Cargando…</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground
 
 import android.app.Application
+import android.appwidget.AppWidgetManager
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
@@ -14,9 +15,13 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
+import android.content.Intent
+
+import android.content.ComponentName
+import com.steleot.jetpackcompose.playground.appwidget.PlaygroundGlanceAppWidgetReceiver
 
 @HiltAndroidApp
-class JetpackComposePlaygroundApplication : Application() {
+class PlaygroundApplication : Application() {
 
     private val scope = CoroutineScope(Dispatchers.Main)
 
@@ -56,5 +61,13 @@ class JetpackComposePlaygroundApplication : Application() {
                 firebaseCrashlytics.setCrashlyticsCollectionEnabled(isEnabled)
             }
         }
+    }
+
+    private fun updateWidgets() {
+        val intent = Intent(this, PlaygroundGlanceAppWidgetReceiver::class.java)
+        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+        val ids: IntArray = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, PlaygroundGlanceAppWidgetReceiver::class.java))
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        sendBroadcast(intent)
     }
 }

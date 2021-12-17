@@ -331,4 +331,7 @@
     <string name="new_version_description">Une nouvelle version est disponible</string>
     <string name="showcase">Vitrine</string>
     <string name="showcase_description">Présentez le nouvel écran de composition du jetpack</string>
+    <!-- widgets -->
+    <string name="widget_description">Vérifiez les nouveaux écrans de Jetpack Compose Playground</string>
+    <string name="widget_loading">Chargement…</string>
 </resources>
