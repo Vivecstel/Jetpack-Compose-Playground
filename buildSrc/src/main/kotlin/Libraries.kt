@@ -11,7 +11,7 @@ object Libraries {
         "androidx.compose.animation:animation-graphics:1.1.0-beta04"
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-compiler */
-    const val composeCompiler = "androidx.compose.compiler:compiler:${Versions.compose}"
+    const val composeCompiler = "androidx.compose.compiler:compiler:${Versions.composeCompiler}"
 
     /* https://developer.android.com/jetpack/androidx/releases/compose-foundation */
     const val composeFoundation = "androidx.compose.foundation:foundation:${Versions.compose}"
