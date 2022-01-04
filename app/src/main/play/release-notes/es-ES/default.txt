@@ -1,1 +1,1 @@
-Se agregó un ejemplo de Glance Widget.
+Bibliotecas actualizadas.
