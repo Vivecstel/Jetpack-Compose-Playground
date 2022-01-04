@@ -1,8 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
 import androidx.compose.ui.graphics.Path
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 
 fun getRibbonPath(
     width: Float,
@@ -15,13 +13,9 @@ fun getRibbonPath(
     close()
 }
 
-val ribbonRoutes = setOf(
+val ribbonRoutes = setOf<String>(
+    /* 4.4.1 */
     /* 4.4.0 */
     /* 4.3.1 */
     /* 4.3.0 */
-    /* 4.2.1 */
-    /* 4.2.0 */
-    MainNavRoutes.Material3,
-    Material3NavRoutes.Checkbox3,
-    Material3NavRoutes.RadioButton3,
 )
