@@ -77,7 +77,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.composeCompiler
+        kotlinCompilerExtensionVersion = Versions.compose
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
@@ -103,7 +103,7 @@ android {
     }
 
     lint {
-        isAbortOnError = true
+        abortOnError = true
     }
 
     packagingOptions {
