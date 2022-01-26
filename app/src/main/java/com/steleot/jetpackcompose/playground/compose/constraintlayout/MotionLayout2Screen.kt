@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintSet
+import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
@@ -43,6 +44,7 @@ fun MotionLayout2Screen() {
     }
 }
 
+@OptIn(ExperimentalMotionApi::class)
 @Composable
 private fun MotionLayout2Example() {
     var animateToEnd by remember { mutableStateOf(false) }

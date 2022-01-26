@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gowtham.ratingbar.RatingBar
+import com.gowtham.ratingbar.RatingBarConfig
 import com.gowtham.ratingbar.RatingBarStyle
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
@@ -54,9 +55,13 @@ private fun DefaultRatingBar() {
 private fun HighlightedRatingBar() {
     var value: Float by rememberSaveable { mutableStateOf(3f) }
     RatingBar(
-        numStars = 6,
-        size = 32.dp,
-        padding = 8.dp,
+
+        config = RatingBarConfig().apply {
+            numStars(6)
+            size(32.dp)
+            padding(8.dp)
+            style(RatingBarStyle.HighLighted)
+        },
         value = value,
         onValueChange = {
             value = it
@@ -64,6 +69,5 @@ private fun HighlightedRatingBar() {
         onRatingChanged = {
             Timber.d("Rating change to $it")
         },
-        ratingBarStyle = RatingBarStyle.HighLighted
     )
 }

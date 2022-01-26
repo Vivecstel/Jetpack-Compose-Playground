@@ -2,6 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.animation
 
 import androidx.compose.animation.graphics.ExperimentalAnimationGraphicsApi
 import androidx.compose.animation.graphics.res.animatedVectorResource
+import androidx.compose.animation.graphics.res.rememberAnimatedVectorPainter
+import androidx.compose.animation.graphics.vector.AnimatedImageVector
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -42,10 +44,13 @@ fun AnimatedVectorScreen() {
 @OptIn(ExperimentalAnimationGraphicsApi::class)
 @Composable
 private fun AnimatorVectorExample() {
-    val image = animatedVectorResource(R.drawable.animated_vector_example)
     var atEnd by remember { mutableStateOf(false) }
+    val painter = rememberAnimatedVectorPainter(
+        AnimatedImageVector.animatedVectorResource(id = R.drawable.animated_vector_example),
+        atEnd
+    )
     Image(
-        painter = image.painterFor(atEnd),
+        painter = painter,
         contentDescription = stringResource(id = R.string.animated_vector),
         modifier = Modifier
             .size(64.dp)

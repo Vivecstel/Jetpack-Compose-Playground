@@ -10,7 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -40,6 +39,7 @@ private fun BalloonAnchorExample() {
         Modifier.fillMaxSize()
     ) {
         val (background, text) = createRefs()
+        val context = LocalContext.current
 
         Box(
             Modifier
@@ -65,15 +65,14 @@ private fun BalloonAnchorExample() {
 
         BalloonAnchor(
             reference = background,
-            balloon = createBalloon(LocalContext.current) {
-                setText(stringResource(id = R.string.jetpack))
+            balloon = createBalloon(context) {
+                setTextResource(R.string.jetpack)
                 setArrowPosition(0.7f)
                 setCornerRadius(4f)
                 setPadding(8)
                 setBalloonAnimation(BalloonAnimation.FADE)
-                setLifecycleOwner(LocalLifecycleOwner.current)
             },
-            onAnchorClick = { balloon, anchor -> balloon.showAtCenter(anchor) }
+            onAnchorClick = { balloon, anchor -> balloon.showAtCenter(anchor) },
         )
     }
 }

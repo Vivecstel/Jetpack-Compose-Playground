@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
 import com.steleot.jetpackcompose.playground.R
@@ -45,6 +46,7 @@ fun MotionLayout3Screen() {
     }
 }
 
+@OptIn(ExperimentalMotionApi::class)
 @Composable
 private fun MotionLayout3Example() {
     var animateToEnd by remember { mutableStateOf(false) }
