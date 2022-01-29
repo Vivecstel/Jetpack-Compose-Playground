@@ -3,7 +3,9 @@ package com.steleot.jetpackcompose.playground.compose.rest
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
-import androidx.compose.foundation.*
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -41,7 +43,8 @@ import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.localproviders.LocalUser
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.utils.*
+import com.steleot.jetpackcompose.playground.utils.GoogleSignContract
+import com.steleot.jetpackcompose.playground.utils.sendFeedback
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber

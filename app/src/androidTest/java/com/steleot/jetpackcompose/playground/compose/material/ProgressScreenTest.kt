@@ -15,7 +15,7 @@ class ProgressScreenTest {
     fun testProgressScreen() {
         composeTestRule.setContent {
             TestTheme {
-                ProgressScreen()
+                ProgressIndicatorScreen()
             }
         }
         // todo

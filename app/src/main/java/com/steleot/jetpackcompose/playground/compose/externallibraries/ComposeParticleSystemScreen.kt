@@ -8,13 +8,7 @@ import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
 import me.nikhilchaudhari.quarks.CreateParticles
-import me.nikhilchaudhari.quarks.particle.Acceleration
-import me.nikhilchaudhari.quarks.particle.EmissionType
-import me.nikhilchaudhari.quarks.particle.Force
-import me.nikhilchaudhari.quarks.particle.LifeTime
-import me.nikhilchaudhari.quarks.particle.ParticleColor
-import me.nikhilchaudhari.quarks.particle.ParticleSize
-import me.nikhilchaudhari.quarks.particle.Velocity
+import me.nikhilchaudhari.quarks.particle.*
 
 private const val Url = "externallibraries/ComposeParticleSystemScreen.kt"
 

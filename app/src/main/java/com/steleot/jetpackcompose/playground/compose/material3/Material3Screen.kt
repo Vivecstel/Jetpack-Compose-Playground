@@ -12,6 +12,7 @@ val routes = listOf(
     Material3NavRoutes.Button3,
     Material3NavRoutes.CenterAlignedTopAppBar,
     Material3NavRoutes.Checkbox3,
+    Material3NavRoutes.Divider3,
     Material3NavRoutes.ElevatedButton,
     Material3NavRoutes.ExtendedFloatingActionButton3,
     Material3NavRoutes.FilledTonalButton,
@@ -31,14 +32,14 @@ val routes = listOf(
     Material3NavRoutes.NavigationDrawer,
     Material3NavRoutes.NavigationRail3,
     Material3NavRoutes.OutlinedButton3,
+    Material3NavRoutes.ProgressIndicator3,
     Material3NavRoutes.RadioButton3,
     Material3NavRoutes.Scaffold3,
     Material3NavRoutes.SmallFloatingActionButton,
     Material3NavRoutes.SmallTopAppBar,
     Material3NavRoutes.Surface3,
-    Material3NavRoutes.Surface3,
-    Material3NavRoutes.TextButton3,
     Material3NavRoutes.Text3,
+    Material3NavRoutes.TextButton3,
 )
 
 @Composable

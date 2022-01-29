@@ -19,6 +19,7 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
+import androidx.glance.unit.ColorProvider
 import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.R
@@ -42,14 +43,16 @@ class PlaygroundGlanceWidget : GlanceAppWidget() {
                     items(newRoutes) {
                         ItemText(
                             text = it,
-                            modifier = GlanceModifier.clickable(actionStartActivity(
-                                Intent(
-                                    Intent.ACTION_VIEW,
-                                    "${BuildConfig.DEEP_LINK_URI}/$it".toUri(),
-                                    context,
-                                    MainActivity::class.java
+                            modifier = GlanceModifier.clickable(
+                                actionStartActivity(
+                                    Intent(
+                                        Intent.ACTION_VIEW,
+                                        "${BuildConfig.DEEP_LINK_URI}/$it".toUri(),
+                                        context,
+                                        MainActivity::class.java
+                                    )
                                 )
-                            )),
+                            ),
                             textAlign = TextAlign.Start,
                         )
                     }
@@ -71,7 +74,8 @@ class PlaygroundGlanceWidget : GlanceAppWidget() {
             style = TextStyle(
                 fontWeight = FontWeight.Bold,
                 fontSize = 14.sp,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = ColorProvider(Color.White)
             ),
         )
     }

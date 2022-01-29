@@ -2,23 +2,21 @@ package com.steleot.jetpackcompose.playground
 
 import android.app.Application
 import android.appwidget.AppWidgetManager
+import android.content.ComponentName
+import android.content.Intent
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
+import com.steleot.jetpackcompose.playground.appwidget.PlaygroundGlanceAppWidgetReceiver
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.utils.handleEnableSubscription
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
-import android.content.Intent
-
-import android.content.ComponentName
-import com.steleot.jetpackcompose.playground.appwidget.PlaygroundGlanceAppWidgetReceiver
 
 @HiltAndroidApp
 class PlaygroundApplication : Application() {
@@ -66,7 +64,8 @@ class PlaygroundApplication : Application() {
     private fun updateWidgets() {
         val intent = Intent(this, PlaygroundGlanceAppWidgetReceiver::class.java)
         intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-        val ids: IntArray = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, PlaygroundGlanceAppWidgetReceiver::class.java))
+        val ids: IntArray = AppWidgetManager.getInstance(this)
+            .getAppWidgetIds(ComponentName(this, PlaygroundGlanceAppWidgetReceiver::class.java))
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
         sendBroadcast(intent)
     }

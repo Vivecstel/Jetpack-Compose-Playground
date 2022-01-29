@@ -47,6 +47,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.StageStepBar,
     ExternalLibrariesNavRoutes.SwipeRefreshAccompanist,
     ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
+    ExternalLibrariesNavRoutes.WebViewAccompanist,
     ExternalLibrariesNavRoutes.ZoomableComposeImage,
 )
 
