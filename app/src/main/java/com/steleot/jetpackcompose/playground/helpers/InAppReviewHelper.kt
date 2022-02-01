@@ -6,7 +6,6 @@ import com.google.android.play.core.review.ReviewManagerFactory
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.utils.await
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 
 interface InAppReviewHelper {

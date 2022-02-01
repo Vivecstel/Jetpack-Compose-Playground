@@ -6,11 +6,7 @@ import android.os.Build
 import androidx.compose.material.Colors
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
-import androidx.compose.material3.ColorScheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
 
 fun ColorPalette.getMaterialColors(
@@ -203,9 +199,9 @@ fun ColorPalette.getMaterial3ColorScheme(
 ): ColorScheme {
     val isDarkTheme = isDarkTheme(darkThemeMode, isSystemInDarkTheme)
     val hasDynamicColor = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-    return when {
-        hasDynamicColor && isDarkTheme -> dynamicDarkColorScheme(context)
-        hasDynamicColor && !isDarkTheme -> dynamicLightColorScheme(context)
+    return when { // todo stelios handle status bar when android 12
+//        hasDynamicColor && isDarkTheme -> dynamicDarkColorScheme(context)
+//        hasDynamicColor && !isDarkTheme -> dynamicLightColorScheme(context)
         else -> getMaterial3ColorSchemeInternal(isDarkTheme)
     }
 }

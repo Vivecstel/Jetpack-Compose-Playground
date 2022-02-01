@@ -66,6 +66,7 @@ object AppDependencies {
         Libraries.accompanistDrawablePainter,
         Libraries.accompanistNavigationAnimation,
         Libraries.accompanistNavigationMaterial,
+        Libraries.accompanistWebView,
         Libraries.landscapistCoil,
         Libraries.landscapistGlide,
         Libraries.landscapistFresco,

@@ -63,11 +63,16 @@ private fun DefaultButton() {
             .padding(vertical = 4.dp)
             .testTag("Default Button")
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
+}
+
+@Composable
+private fun DefaultText() {
+    Text(
+        text = stringResource(id = R.string.app_name),
+        modifier = Modifier.padding(8.dp)
+    )
 }
 
 @Preview
@@ -80,10 +85,7 @@ private fun CutCornerShapeButton() {
             .padding(vertical = 4.dp)
             .testTag("Cut Corner Shape Button"),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -97,10 +99,7 @@ private fun RoundedCornerShapeButton() {
             .padding(vertical = 4.dp)
             .testTag("Rounded Corner Shape Button"),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -116,10 +115,7 @@ private fun BackgroundColorButton() {
             .padding(vertical = 4.dp)
             .testTag("Background Color Button"),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -133,10 +129,7 @@ private fun ContentColorButton() {
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -151,10 +144,7 @@ private fun DisabledBackgroundColorButton() {
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -170,10 +160,7 @@ private fun DisabledContentColorButton() {
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -185,10 +172,7 @@ private fun ContentPaddingButton() {
         contentPadding = PaddingValues(32.dp),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -204,10 +188,7 @@ private fun ElevationPaddingButton() {
         ),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -219,10 +200,7 @@ private fun BorderButton() {
         border = BorderStroke(2.dp, Color.Red),
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }
 
@@ -234,9 +212,6 @@ private fun DisabledButton() {
         enabled = true,
         modifier = Modifier.padding(vertical = 4.dp),
     ) {
-        Text(
-            text = stringResource(id = R.string.app_name),
-            modifier = Modifier.padding(8.dp)
-        )
+        DefaultText()
     }
 }

@@ -18,7 +18,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
     ExternalLibrariesNavRoutes.ComposeRichTextUi,
     ExternalLibrariesNavRoutes.ComposeShimmer,
-    ExternalLibrariesNavRoutes.ComposeTimelineView,
+//    ExternalLibrariesNavRoutes.ComposeTimelineView,
     ExternalLibrariesNavRoutes.ComposeTreeMap,
     ExternalLibrariesNavRoutes.DrawablePainterAccompanist,
     ExternalLibrariesNavRoutes.FlowLayoutAccompanist,
@@ -47,6 +47,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.StageStepBar,
     ExternalLibrariesNavRoutes.SwipeRefreshAccompanist,
     ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
+    ExternalLibrariesNavRoutes.WebViewAccompanist,
     ExternalLibrariesNavRoutes.ZoomableComposeImage,
 )
 

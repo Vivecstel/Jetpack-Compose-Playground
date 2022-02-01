@@ -146,6 +146,8 @@ object Libraries {
         "com.google.accompanist:accompanist-navigation-animation:${Versions.accompanist}"
     const val accompanistNavigationMaterial =
         "com.google.accompanist:accompanist-navigation-material:${Versions.accompanist}"
+    const val accompanistWebView =
+        "com.google.accompanist:accompanist-webview:${Versions.accompanist}"
 
     /* https://github.com/skydoves/Landscapist */
     const val landscapistCoil = "com.github.skydoves:landscapist-coil:${Versions.landscapist}"
@@ -248,7 +250,8 @@ object Libraries {
         "com.github.re-ovo:ZoomableComposeImage:${Versions.zoomableComposeImage}"
 
     /* https://github.com/overpas/compose-treemap-chart */
-    const val composeTreeMap = "io.github.overpas:treemap-compose-android:${Versions.composeTreeMap}"
+    const val composeTreeMap =
+        "io.github.overpas:treemap-compose-android:${Versions.composeTreeMap}"
 
     /* https://firebase.google.com/docs/admob/android/quick-start */
     const val adMob = "com.google.android.gms:play-services-ads:${Versions.adMob}"

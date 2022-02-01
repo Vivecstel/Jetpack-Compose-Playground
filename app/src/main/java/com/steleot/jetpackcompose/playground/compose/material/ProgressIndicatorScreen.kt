@@ -14,12 +14,12 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
 
-private const val Url = "material/ProgressScreen.kt"
+private const val Url = "material/ProgressIndicatorScreen.kt"
 
 @Composable
-fun ProgressScreen() {
+fun ProgressIndicatorScreen() {
     DefaultScaffold(
-        title = MaterialNavRoutes.Progress,
+        title = MaterialNavRoutes.ProgressIndicator,
         link = Url,
     ) {
         Column(

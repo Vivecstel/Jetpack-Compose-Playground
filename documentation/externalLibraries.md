@@ -38,4 +38,5 @@
 - [StageStepBar](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/StageStepBarScreen.kt)
 - [SwipeRefreshAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SwipeRefreshAccompanistScreen.kt)
 - [SystemUiControllerAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/SystemUiControllerAccompanistScreen.kt)
+- [WebViewAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/WebViewAccompanistScreen.kt)
 - [ZoomableComposeImage](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/ZoomableComposeImageScreen.kt)
