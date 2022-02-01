@@ -1,1 +1,1 @@
-Bibliotecas actualizadas.
+Redactar actualizado a 1.2.0-alpha02. Se actualizaron otras bibliotecas. Se agregaron ejemplos de pantalla Chip, acompañante Webview, divisor3 y ProgressIndicator3.

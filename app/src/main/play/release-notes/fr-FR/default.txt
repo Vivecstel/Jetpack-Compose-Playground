@@ -1,1 +1,1 @@
-Bibliothèques mises à jour.
+Compose mis à jour vers 1.2.0-alpha02. Mise à jour d'autres bibliothèques. Ajout d'exemples d'écran Chip, Webview accompanist, diviseur3 et ProgressIndicator3.
