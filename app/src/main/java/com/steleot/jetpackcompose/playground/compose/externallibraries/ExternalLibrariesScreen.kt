@@ -18,7 +18,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.ComposeRichTextUiMaterial,
     ExternalLibrariesNavRoutes.ComposeRichTextUi,
     ExternalLibrariesNavRoutes.ComposeShimmer,
-    ExternalLibrariesNavRoutes.ComposeTimelineView,
+//    ExternalLibrariesNavRoutes.ComposeTimelineView,
     ExternalLibrariesNavRoutes.ComposeTreeMap,
     ExternalLibrariesNavRoutes.DrawablePainterAccompanist,
     ExternalLibrariesNavRoutes.FlowLayoutAccompanist,

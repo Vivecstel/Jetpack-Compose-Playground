@@ -15,7 +15,7 @@ class StateScreenTest {
     fun testStateScreen() {
         composeTestRule.setContent {
             TestTheme {
-                StateScreen()
+//                StateScreen()
             }
         }
         // todo

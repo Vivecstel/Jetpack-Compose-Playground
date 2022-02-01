@@ -312,9 +312,6 @@ private fun BoxScope.SignedInUser(
         AsyncImage(
             model = user.photoUrl,
             contentDescription = stringResource(id = R.string.user_photo),
-            loading = {
-                CircularProgressIndicator()
-            },
             modifier = Modifier
                 .size(48.dp)
                 .clip(CircleShape)
