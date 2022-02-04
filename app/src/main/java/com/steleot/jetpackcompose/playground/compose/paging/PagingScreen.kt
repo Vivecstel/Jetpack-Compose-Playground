@@ -14,14 +14,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.paging.*
+import androidx.paging.LoadState
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import kotlinx.coroutines.delay
-import java.util.*
+import java.util.UUID
 import kotlin.math.ceil
 
 private const val Url = "paging/PagingScreen.kt"

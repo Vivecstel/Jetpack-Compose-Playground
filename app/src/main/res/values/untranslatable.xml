@@ -25,4 +25,6 @@
     <string name="firebase_analytics" translatable="false">Firebase Analytics</string>
     <string name="firebase_messaging" translatable="false">Firebase Messaging</string>
     <string name="firebase_crashlytics" translatable="false">Firebase Crashlytics</string>
+    <string name="main_screen_banner_id" translatable="false" />
+    <string name="ad_mob_banner_id" translatable="false" />
 </resources>
