@@ -59,6 +59,10 @@ android {
     }
 
     buildTypes {
+        create("benchmark") {
+            signingConfig = signingConfigs.getByName("debug")
+            isDebuggable = false
+        }
         if (isReleasedEnabled) {
             getByName("release") {
                 signingConfig = signingConfigs.getByName("release")
@@ -127,6 +131,7 @@ dependencies {
     AppDependencies.kapt.forEach { kapt(it) }
     AppDependencies.debug.forEach { debugImplementation(it) }
     AppDependencies.androidTest.forEach { androidTestImplementation(it) }
+    implementation("androidx.profileinstaller:profileinstaller:1.2.0-alpha02")
 }
 
 protobuf {

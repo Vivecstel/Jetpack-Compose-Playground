@@ -73,6 +73,10 @@
             </intent-filter>
         </service>
 
+        <profileable
+            android:shell="true"
+            tools:targetApi="q" />
+
     </application>
 
 </manifest>
