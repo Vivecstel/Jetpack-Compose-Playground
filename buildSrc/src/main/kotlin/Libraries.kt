@@ -35,6 +35,9 @@ object Libraries {
     /* https://developer.android.com/jetpack/androidx/releases/ui */
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
 
+    /* https://developer.android.com/jetpack/androidx/releases/profileinstaller */
+    const val profileInstaller = "androidx.profileinstaller:profileinstaller:${Versions.compose}"
+
     /* https://developer.android.com/jetpack/compose/layout */
     const val composeConstraint =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
@@ -106,6 +109,11 @@ object Libraries {
 
     /* https://developer.android.com/jetpack/androidx/releases/work */
     const val workManager = "androidx.work:work-runtime:${Versions.workManager}"
+
+    /* https://github.com/googlemaps/android-maps-compose */
+    const val mapsCompose = "com.google.maps.android:maps-compose:${Versions.mapsCompose}"
+    const val playServicesMaps =
+        "com.google.android.gms:play-services-maps:${Versions.playServicesMaps}"
 
     /* https://square.github.io/retrofit/ */
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"

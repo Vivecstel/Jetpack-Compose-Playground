@@ -2,11 +2,11 @@ import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     id(BuildPlugins.androidApplication)
-    id(BuildPlugins.kotlinAndroid)
+    kotlin(BuildPlugins.kotlinAndroid)
     kotlin(BuildPlugins.kapt)
     id(BuildPlugins.parcelize)
     id(BuildPlugins.googleServices)
@@ -15,6 +15,7 @@ plugins {
     id(BuildPlugins.protobuf) version Versions.protobufPlugin
     id(BuildPlugins.playPublisher) version Versions.playPublisher
     kotlin(BuildPlugins.serialization) version Versions.kotlin
+    id(BuildPlugins.secrets)
 }
 
 android {
@@ -59,13 +60,17 @@ android {
     }
 
     buildTypes {
+        create("benchmark") {
+            signingConfig = signingConfigs.getByName("debug")
+            isDebuggable = false
+        }
         if (isReleasedEnabled) {
             getByName("release") {
                 signingConfig = signingConfigs.getByName("release")
                 isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                    "../config/proguard-rules.pro"
                 )
             }
         }

@@ -1,1 +1,1 @@
-Обновлен Compose до версии 1.2.0-alpha02. Обновлены другие библиотеки. Добавлены примеры экранов Chip, Webview accompanist, divider3 и ProgressIndicator3.
+Обновлены библиотеки. Добавлен пример Google Maps Compose.

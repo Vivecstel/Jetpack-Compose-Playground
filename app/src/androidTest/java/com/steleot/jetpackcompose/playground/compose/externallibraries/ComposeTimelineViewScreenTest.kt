@@ -15,7 +15,7 @@ class ComposeTimelineViewScreenTest {
     fun testComposeTimelineViewScreen() {
         composeTestRule.setContent {
             TestTheme {
-                ComposeTimelineViewScreen()
+//                ComposeTimelineViewScreen()
             }
         }
         // todo

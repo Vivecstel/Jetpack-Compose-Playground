@@ -6,7 +6,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.AddAlarm
+import androidx.compose.material.icons.filled.AddBox
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.MenuOpen
+import androidx.compose.material.icons.filled.RestaurantMenu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier

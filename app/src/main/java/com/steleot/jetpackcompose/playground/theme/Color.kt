@@ -191,6 +191,7 @@ fun ColorPalette.getMaterialColors(
     }
 }
 
+@Suppress("UNUSED_VARIABLE", "UNUSED_PARAMETER")
 @SuppressLint("NewApi")
 fun ColorPalette.getMaterial3ColorScheme(
     context: Context,

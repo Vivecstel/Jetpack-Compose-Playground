@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.api.data
 import com.steleot.jetpackcompose.playground.api.serializers.DateSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.util.*
+import java.util.Date
 
 @Serializable
 data class Release(

@@ -1,6 +1,6 @@
 plugins {
     id(BuildPlugins.androidLibrary)
-    id(BuildPlugins.kotlinAndroid)
+    kotlin(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.parcelize)
 }
 
@@ -16,6 +16,11 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildTypes {
+        create("benchmark") {
+
+        }
     }
 }
 
