@@ -1,1 +1,1 @@
-Updated Compose to 1.2.0-alpha02. Updated other libraries. Added Chip, Webview accompanist, divider3 and ProgressIndicator3 screen examples.
+Updated libraries. Added Google Maps compose example.

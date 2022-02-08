@@ -1,1 +1,1 @@
-Compose auf 1.2.0-alpha02 aktualisiert. Andere Bibliotheken aktualisiert. Chip-, Webview-Begleiter-, Teiler3- und ProgressIndicator3-Bildschirmbeispiele hinzugefügt.
+Aktualisierte Bibliotheken. Google Maps Compose-Beispiel hinzugefügt.
