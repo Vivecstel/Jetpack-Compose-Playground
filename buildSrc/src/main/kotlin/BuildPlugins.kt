@@ -12,9 +12,10 @@ object BuildPlugins {
     /* https://developer.android.com/studio/build */
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
+    const val androidTest = "com.android.test"
 
     /* https://developer.android.com/kotlin/add-kotlin */
-    const val kotlinAndroid = "kotlin-android"
+    const val kotlinAndroid = "android"
 
     /* https://plugins.gradle.org/plugin/org.jetbrains.kotlin.kapt */
     const val kapt = "kapt"
@@ -42,4 +43,7 @@ object BuildPlugins {
 
     /* https://github.com/Kotlin/kotlinx.serialization */
     const val serialization = "plugin.serialization"
+
+    /* https://github.com/google/secrets-gradle-plugin */
+    const val secrets = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
 }

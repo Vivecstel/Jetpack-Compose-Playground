@@ -12,4 +12,8 @@ object GradleLibraries {
     /* https://firebase.google.com/docs/crashlytics/get-started?platform=android */
     const val crashlytics =
         "com.google.firebase:firebase-crashlytics-gradle:${Versions.crashlytics}"
+
+    /* https://github.com/google/secrets-gradle-plugin */
+    const val secrets =
+        "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:${Versions.secrets}"
 }

@@ -73,6 +73,8 @@
             </intent-filter>
         </service>
 
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="${mapsApiKey}"/>
+
         <profileable
             android:shell="true"
             tools:targetApi="q" />

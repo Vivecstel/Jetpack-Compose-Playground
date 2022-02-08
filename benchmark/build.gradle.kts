@@ -1,33 +1,35 @@
 plugins {
-    id("com.android.test")
-    id("org.jetbrains.kotlin.android")
+    kotlin(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.androidTest)
 }
 
 android {
-    compileSdk = 32
+    compileSdk = AndroidConfiguration.compileSdk
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     defaultConfig {
-        minSdk = 23
-        targetSdk = 32
+        minSdk = AndroidConfiguration.minSdk
+        targetSdk = AndroidConfiguration.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        // This benchmark buildType is used for benchmarking, and should function like your
-        // release build (for example, with minification on). It"s signed with a debug key
-        // for easy local/CI testing.
         create("benchmark") {
             isDebuggable = true
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "../config/proguard-rules.pro"
+            )
             signingConfig = getByName("debug").signingConfig
         }
     }
@@ -37,14 +39,14 @@ android {
 }
 
 dependencies {
-    implementation("androidx.test.ext:junit:1.1.3")
-    implementation("androidx.test.espresso:espresso-core:3.4.0")
-    implementation("androidx.test.uiautomator:uiautomator:2.2.0")
-    implementation("androidx.benchmark:benchmark-macro-junit4:1.1.0-beta02")
+    implementation(TestLibraries.junit)
+    implementation(TestLibraries.espressoCore)
+    implementation(TestLibraries.uiAutomator)
+    implementation(TestLibraries.benchmark)
 }
 
 androidComponents {
     beforeVariants(selector().all()) {
-        it.enabled = it.buildType == "benchmark"
+        it.enable = it.buildType == "benchmark"
     }
 }

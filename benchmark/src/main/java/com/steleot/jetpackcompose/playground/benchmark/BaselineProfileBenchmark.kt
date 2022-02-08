@@ -31,7 +31,7 @@ class BaselineProfileBenchmark {
         benchmarkRule.measureRepeated(
             packageName = "com.steleot.jetpackcompose.playground",
             metrics = listOf(StartupTimingMetric()),
-            iterations = 20,
+            iterations = 25,
             startupMode = StartupMode.COLD,
             compilationMode = compilationMode
         ) {

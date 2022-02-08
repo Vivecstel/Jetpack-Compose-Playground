@@ -351,6 +351,7 @@ object ExternalLibrariesNavRoutes {
     const val FrescoLandscapist = "fresco landscapist"
     const val Gap = "gap"
     const val GlideLandscapist = "glide landscapist"
+    const val GoogleMaps = "google maps"
     const val HtmlText = "html text"
     const val InsetsAccompanist = "insets accompanist"
     const val Lottie = "lottie"

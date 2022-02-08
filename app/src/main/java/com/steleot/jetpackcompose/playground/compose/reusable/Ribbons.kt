@@ -18,6 +18,9 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 4.7.0 */
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.GoogleMaps,
     /* 4.6.0 */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.WebViewAccompanist,

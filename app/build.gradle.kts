@@ -6,7 +6,7 @@ import java.util.Properties
 
 plugins {
     id(BuildPlugins.androidApplication)
-    id(BuildPlugins.kotlinAndroid)
+    kotlin(BuildPlugins.kotlinAndroid)
     kotlin(BuildPlugins.kapt)
     id(BuildPlugins.parcelize)
     id(BuildPlugins.googleServices)
@@ -15,6 +15,7 @@ plugins {
     id(BuildPlugins.protobuf) version Versions.protobufPlugin
     id(BuildPlugins.playPublisher) version Versions.playPublisher
     kotlin(BuildPlugins.serialization) version Versions.kotlin
+    id(BuildPlugins.secrets)
 }
 
 android {
@@ -69,7 +70,7 @@ android {
                 isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                    "../config/proguard-rules.pro"
                 )
             }
         }
@@ -131,7 +132,6 @@ dependencies {
     AppDependencies.kapt.forEach { kapt(it) }
     AppDependencies.debug.forEach { debugImplementation(it) }
     AppDependencies.androidTest.forEach { androidTestImplementation(it) }
-    implementation("androidx.profileinstaller:profileinstaller:1.2.0-alpha02")
 }
 
 protobuf {

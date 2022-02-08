@@ -17,6 +17,7 @@ buildscript {
         classpath(GradleLibraries.googleServices)
         classpath(GradleLibraries.crashlytics)
         classpath(GradleLibraries.hiltPlugin)
+        classpath(GradleLibraries.secrets)
     }
 }
 
