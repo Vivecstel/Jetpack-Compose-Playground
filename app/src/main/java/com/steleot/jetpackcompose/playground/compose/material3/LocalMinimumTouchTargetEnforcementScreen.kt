@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.material3
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,22 +41,22 @@ fun LocalMinimumTouchTargetEnforcementScreen() {
             CompositionLocalProvider(LocalMinimumTouchTargetEnforcement provides false) {
                 Text(text = stringResource(id = R.string.no_enforced_minimum))
                 Surface(
-                    onClick = {
-                        Timber.d("Not enforced Surface clicked")
-                    },
                     modifier = Modifier
-                        .size(35.dp),
+                        .size(35.dp)
+                        .clickable {
+                            Timber.d("Not enforced Surface clicked")
+                        },
                     color = MaterialTheme.colorScheme.primary
                 ) { }
             }
 
             Text(text = stringResource(id = R.string.enforced_minimum))
             Surface(
-                onClick = {
-                    Timber.d("Enforced Surface clicked")
-                },
                 modifier = Modifier
-                    .size(35.dp),
+                    .size(35.dp)
+                    .clickable {
+                        Timber.d("Enforced Surface clicked")
+                    },
                 color = MaterialTheme.colorScheme.primary
             ) { }
         }

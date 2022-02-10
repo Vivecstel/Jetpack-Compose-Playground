@@ -1,0 +1,74 @@
+package com.steleot.jetpackcompose.playground.compose.material3
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material3.Divider
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
+import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import timber.log.Timber
+
+private const val Url = "material3/DropdownMenu3Screen.kt"
+
+@Composable
+fun DropdownMenu3Screen() {
+    DefaultScaffold3(
+        title = Material3NavRoutes.DropdownMenu3,
+        link = Url,
+    ) {
+        var expanded by remember { mutableStateOf(false) }
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+        ) {
+            IconButton(onClick = { expanded = true }) {
+                Icon(Icons.Filled.MoreVert, contentDescription = null)
+            }
+            DropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false }
+            ) {
+                DropdownMenuItem(
+                    text = {
+                        Text(stringResource(id = R.string.refresh))
+                    },
+                    onClick = {
+                        Timber.d("Refresh clicked")
+                    })
+                DropdownMenuItem(
+                    text = {
+                        Text(stringResource(id = R.string.settings))
+                    },
+                    onClick = {
+                        Timber.d("Settings clicked")
+                    })
+                Divider()
+                DropdownMenuItem(
+                    text = {
+                        Text(stringResource(id = R.string.send_feedback))
+                    },
+                    onClick = {
+                        Timber.d("Send Feedback")
+                    })
+            }
+        }
+    }
+}

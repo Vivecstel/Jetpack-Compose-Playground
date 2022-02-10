@@ -6,7 +6,12 @@ import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
 import com.steleot.jetpackcompose.playground.helpers.EmptyFavoriteHelperImpl
 import com.steleot.jetpackcompose.playground.helpers.EmptyInAppReviewHelper
-import com.steleot.jetpackcompose.playground.localproviders.*
+import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
+import com.steleot.jetpackcompose.playground.localproviders.LocalInAppReviewer
+import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
+import com.steleot.jetpackcompose.playground.localproviders.LocalUser
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 
 @Composable

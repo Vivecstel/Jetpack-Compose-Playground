@@ -20,6 +20,7 @@ import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
 private const val Url = "ui/LocalFontLoaderScreen.kt"
 
+// todo stelios remove
 @Composable
 fun LocalFontLoaderScreen() {
     DefaultScaffold(

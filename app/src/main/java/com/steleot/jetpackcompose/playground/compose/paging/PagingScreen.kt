@@ -25,7 +25,7 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import kotlinx.coroutines.delay
-import java.util.UUID
+import java.util.*
 import kotlin.math.ceil
 
 private const val Url = "paging/PagingScreen.kt"

@@ -7,6 +7,7 @@
 - [Immutable](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/ImmutableScreen.kt)
 - [Key](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/KeyScreen.kt)
 - [LaunchedEffect](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/LaunchedEffectScreen.kt)
+- [MovableContentOf](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/MovableContentOfScreen.kt)
 - [MutableStateList](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/MutableStateListScreen.kt)
 - [MutableStateMap](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/MutableStateMapScreen.kt)
 - [ProduceState](app/src/main/java/com/steleot/jetpackcompose/playground/compose/runtime/ProduceStateScreen.kt)

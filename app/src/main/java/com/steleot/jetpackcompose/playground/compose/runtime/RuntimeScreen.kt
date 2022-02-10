@@ -13,6 +13,7 @@ val routes = listOf(
     RuntimeNavRoutes.Immutable,
     RuntimeNavRoutes.Key,
     RuntimeNavRoutes.LaunchedEffect,
+    RuntimeNavRoutes.MovableContentOf,
     RuntimeNavRoutes.MutableStateList,
     RuntimeNavRoutes.MutableStateMap,
     RuntimeNavRoutes.ProduceState,
