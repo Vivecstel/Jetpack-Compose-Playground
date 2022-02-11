@@ -71,6 +71,10 @@ google-services.json to the project under app/src folder.
 
 <img src="documentation/screenshots/google_services.png" width="450" />
 
+* Add a google maps key in local properties file (valid one in order to see google maps example).
+
+<img src="documentation/screenshots/local_properties.png" width="450" />
+
 ## Screenshots
 
  - [Mobile Screenshots](documentation/mobileScreenshots.md)

@@ -1,1 +1,1 @@
-Aktualisierte Bibliotheken. Google Maps Compose-Beispiel hinzugefügt.
+Compose auf 1.2.0-alpha03 aktualisiert. Aktualisierte Bibliotheken. Verknüpfungen hinzugefügt. Aktualisiertes Google Maps-Beispiel. Weitere Beispiele hinzugefügt.
