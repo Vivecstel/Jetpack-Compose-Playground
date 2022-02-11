@@ -5,6 +5,7 @@ import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRout
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
 
 fun getRibbonPath(
     width: Float,
@@ -18,6 +19,14 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 4.8.0 */
+    MainNavRoutes.Material3,
+    Material3NavRoutes.Card3,
+    Material3NavRoutes.DropdownMenu3,
+    Material3NavRoutes.ElevatedCard,
+    Material3NavRoutes.OutlinedCard,
+    MainNavRoutes.Runtime,
+    RuntimeNavRoutes.MovableContentOf,
     /* 4.7.0 */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.GoogleMaps,
@@ -29,7 +38,4 @@ val ribbonRoutes = setOf(
     MainNavRoutes.Material3,
     Material3NavRoutes.Divider3,
     Material3NavRoutes.ProgressIndicator3,
-    /* 4.5.0 */
-    /* 4.4.1 */
-    /* 4.4.0 */
 )

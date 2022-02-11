@@ -1,1 +1,1 @@
-Updated libraries. Added Google Maps compose example.
+Updated compose to 1.2.0-alpha03. Updated libraries. Added shortcuts. Updated google maps example. Added more examples.

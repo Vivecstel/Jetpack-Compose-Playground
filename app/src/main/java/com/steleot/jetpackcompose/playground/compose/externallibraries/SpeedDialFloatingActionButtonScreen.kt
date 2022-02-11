@@ -45,7 +45,7 @@ fun SpeedDialFloatingActionButtonScreen() {
                         name = stringResource(id = R.string.test_with_args, 2),
                         painter = painterResource(
                             id =
-                            R.drawable.ic_android_black_24dp
+                            R.drawable.ic_android
                         )
                     ),
                     SpeedDialData(
@@ -54,7 +54,7 @@ fun SpeedDialFloatingActionButtonScreen() {
                     ),
                     SpeedDialData(
                         name = stringResource(id = R.string.test_with_args, 4),
-                        painterResource = R.drawable.ic_android_black_24dp
+                        painterResource = R.drawable.ic_android
                     )
                 )
             )

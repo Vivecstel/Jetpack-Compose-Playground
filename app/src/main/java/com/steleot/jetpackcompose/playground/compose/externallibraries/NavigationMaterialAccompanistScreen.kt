@@ -26,7 +26,7 @@ import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import java.util.UUID
+import java.util.*
 
 private const val Url = "externallibraries/NavigationMaterialAccompanistScreen.kt"
 

@@ -3,6 +3,7 @@
 - [AlertDialog](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/AlertDialogScreen.kt)
 - [BackdropScaffold](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BackdropScaffoldScreen.kt)
 - [BadgedBox](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BadgedBoxScreen.kt)
+- [Badge](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BadgeScreen.kt)
 - [BottomAppBar](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomAppBarScreen.kt)
 - [BottomDrawer](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomDrawerScreen.kt)
 - [BottomNavigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomNavigationScreen.kt)

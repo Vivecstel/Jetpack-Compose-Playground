@@ -36,7 +36,8 @@ object Libraries {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
 
     /* https://developer.android.com/jetpack/androidx/releases/profileinstaller */
-    const val profileInstaller = "androidx.profileinstaller:profileinstaller:${Versions.compose}"
+    const val profileInstaller =
+        "androidx.profileinstaller:profileinstaller:${Versions.profileInstaller}"
 
     /* https://developer.android.com/jetpack/compose/layout */
     const val composeConstraint =

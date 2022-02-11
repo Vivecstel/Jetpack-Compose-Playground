@@ -3,7 +3,7 @@
     <fields>;
 }
 
-#kotlin x serialization
+# kotlin x serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.AnnotationsKt
 -keepclassmembers class kotlinx.serialization.json.** {
@@ -19,6 +19,13 @@
 -keepclasseswithmembers class com.steleot.jetpackcompose.playground.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
+
+# Remove compose tracing
+-assumenosideeffects public class androidx.compose.runtime.ComposerKt {
+      boolean isTraceInProgress();
+      void traceEventStart(int,java.lang.String);
+      void traceEventEnd();
+  }
 # Remove log class
 -assumenosideeffects class android.util.Log {
   public static *** v(...);

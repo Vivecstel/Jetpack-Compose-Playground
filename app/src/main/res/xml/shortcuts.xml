@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="n_mr1">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_lightbulb"
+        android:shortcutId="new"
+        android:shortcutShortLabel="@string/new_screen">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="app://com.steleot.jetpackcompose.playground/new"
+            android:targetClass="com.steleot.jetpackcompose.playground.MainActivity"
+            android:targetPackage="${applicationId}" />
+        />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:shortcutId="search"
+        android:shortcutShortLabel="@string/search">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="app://com.steleot.jetpackcompose.playground/search"
+            android:targetClass="com.steleot.jetpackcompose.playground.MainActivity"
+            android:targetPackage="${applicationId}" />
+        />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_extension"
+        android:shortcutId="discover"
+        android:shortcutShortLabel="@string/discover">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="app://com.steleot.jetpackcompose.playground/discover"
+            android:targetClass="com.steleot.jetpackcompose.playground.MainActivity"
+            android:targetPackage="${applicationId}" />
+        />
+    </shortcut>
+</shortcuts>

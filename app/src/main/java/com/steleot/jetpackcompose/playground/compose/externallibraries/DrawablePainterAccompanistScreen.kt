@@ -38,7 +38,7 @@ fun DrawablePainterAccompanistScreen() {
 @Composable
 private fun DrawablePainterExample() {
     val drawable =
-        AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_android_black_24dp)
+        AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_android)
             ?.apply {
                 mutate()
                 setTint(MaterialTheme.colors.onSurface.toArgb())

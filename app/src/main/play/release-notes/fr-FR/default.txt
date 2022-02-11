@@ -1,1 +1,1 @@
-Bibliothèques mises à jour. Ajout de l'exemple Google Maps Compose.
+Composition mise à jour vers 1.2.0-alpha03. Bibliothèques mises à jour. Raccourcis ajoutés. Mise à jour de l'exemple de Google Maps. Ajout d'autres exemples.

@@ -22,9 +22,11 @@ class BaselineProfileBenchmark {
 
     @Test
     fun startupBaselineProfile() {
-        startup(CompilationMode.Partial(
-            baselineProfileMode = BaselineProfileMode.Require
-        ))
+        startup(
+            CompilationMode.Partial(
+                baselineProfileMode = BaselineProfileMode.Require
+            )
+        )
     }
 
     private fun startup(compilationMode: CompilationMode) {
