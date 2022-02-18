@@ -1,11 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
 import androidx.compose.ui.graphics.Path
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.*
 
 fun getRibbonPath(
     width: Float,

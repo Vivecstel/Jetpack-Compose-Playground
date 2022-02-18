@@ -17,11 +17,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.CenteredCircularProgressIndicator
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import com.steleot.jetpackcompose.playground.compose.reusable.ErrorText
+import com.steleot.jetpackcompose.playground.compose.reusable.*
 import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes

@@ -1,11 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -49,7 +44,7 @@ fun PermissionsAccompanistExample(
         android.Manifest.permission.CAMERA
     )
 
-    when (cameraPermissionState.status){
+    when (cameraPermissionState.status) {
         PermissionStatus.Granted -> {
             successContent()
         }
@@ -59,11 +54,13 @@ fun PermissionsAccompanistExample(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                val textToShow = stringResource(id = if (deniedStatus.shouldShowRationale) {
-                    R.string.camera_rationale
-                } else {
-                    R.string.camera_permission_msg
-                })
+                val textToShow = stringResource(
+                    id = if (deniedStatus.shouldShowRationale) {
+                        R.string.camera_rationale
+                    } else {
+                        R.string.camera_permission_msg
+                    }
+                )
                 Text(textToShow)
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = { cameraPermissionState.launchPermissionRequest() }) {
