@@ -191,6 +191,8 @@
     <string name="paging_initial_load">Ожидание загрузки элементов из поддельного бэкэнда</string>
     <string name="paging_list_text">Индекс: %1$d, значение: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">Отзыв о %1$s</string>
+    <string name="activity_not_found">Activity не найден</string>
     <string name="favorites">Избранное</string>
     <string name="popular">Популярный</string>
     <string name="discover">Обнаружить</string>

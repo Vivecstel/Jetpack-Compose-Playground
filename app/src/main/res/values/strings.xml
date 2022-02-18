@@ -190,6 +190,8 @@
     <string name="paging_initial_load">Waiting for items to load from fake backend</string>
     <string name="paging_list_text">Index: %1$d, value: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">Feedback on %1$s</string>
+    <string name="activity_not_found">Activity not found</string>
     <string name="favorites">Favorites</string>
     <string name="popular">Popular</string>
     <string name="discover">Discover</string>

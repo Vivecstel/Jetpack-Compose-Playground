@@ -191,6 +191,8 @@
     <string name="paging_initial_load">Αναμονή για φόρτωση στοιχείων από ψεύτικο backend</string>
     <string name="paging_list_text">Ευρετήριο: %1$d, τιμή: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">Σχόλια για %1$s</string>
+    <string name="activity_not_found">Activity δεν βρέθηκε</string>
     <string name="favorites">Αγαπημένα</string>
     <string name="popular">Δημοφιλή</string>
     <string name="discover">Ανακαλύψτε</string>

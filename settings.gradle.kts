@@ -1,5 +1,9 @@
 include(
     "app",
-    ":theme",
+    ":theme:base",
+    ":theme:material",
+    ":theme:material3",
+    ":utils:extensions",
+    ":utils:androidextensions",
     ":benchmark"
 )

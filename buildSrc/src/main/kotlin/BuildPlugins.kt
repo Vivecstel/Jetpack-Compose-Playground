@@ -17,6 +17,9 @@ object BuildPlugins {
     /* https://developer.android.com/kotlin/add-kotlin */
     const val kotlinAndroid = "android"
 
+    /* https://docs.gradle.org/current/userguide/java_library_plugin.html */
+    const val javaLibrary = "java-library"
+
     /* https://plugins.gradle.org/plugin/org.jetbrains.kotlin.kapt */
     const val kapt = "kapt"
 

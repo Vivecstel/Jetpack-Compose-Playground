@@ -1,7 +1,9 @@
 object AppDependencies {
 
     val project = listOf(
-        ":theme"
+        ":theme:base",
+        ":utils:androidextensions",
+        ":utils:extensions",
     )
 
     val bom = listOf(
@@ -113,10 +115,6 @@ object AppDependencies {
     val kapt = listOf(
         Libraries.hiltCompiler,
         Libraries.glideCompiler,
-    )
-
-    val debug = listOf(
-        Libraries.kotlinReflect
     )
 
     val androidTest = listOf(

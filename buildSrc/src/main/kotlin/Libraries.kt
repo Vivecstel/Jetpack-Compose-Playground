@@ -2,9 +2,6 @@
 
 object Libraries {
 
-    /* https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect */
-    const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}"
-
     /* https://developer.android.com/jetpack/androidx/releases/compose-animation */
     const val composeAnimation = "androidx.compose.animation:animation:${Versions.compose}"
     const val composeAnimationGraphics =

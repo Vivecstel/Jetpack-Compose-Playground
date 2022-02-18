@@ -130,7 +130,6 @@ dependencies {
     AppDependencies.bom.forEach { implementation(platform(it)) }
     AppDependencies.implementation.forEach { implementation(it) }
     AppDependencies.kapt.forEach { kapt(it) }
-    AppDependencies.debug.forEach { debugImplementation(it) }
     AppDependencies.androidTest.forEach { androidTestImplementation(it) }
 }
 

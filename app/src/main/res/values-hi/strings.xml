@@ -191,6 +191,8 @@
     <string name="paging_initial_load">नकली बैकएंड से आइटम लोड होने की प्रतीक्षा कर रहा है</string>
     <string name="paging_list_text">इंडेक्स: %1$d, मान: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">पर प्रतिक्रिया %1$s</string>
+    <string name="activity_not_found">Activity पता नहीं चला</string>
     <string name="favorites">पसंदीदा</string>
     <string name="popular">लोकप्रिय</string>
     <string name="discover">डिस्कवर</string>

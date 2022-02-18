@@ -15,6 +15,9 @@ fun getRibbonPath(
 }
 
 val ribbonRoutes = setOf(
+    /* 4.9.0 */
+    MainNavRoutes.Ui,
+    UiNavRoutes.LocalFontFamilyResolver,
     /* 4.8.0 */
     MainNavRoutes.Material3,
     Material3NavRoutes.Card3,
@@ -26,12 +29,4 @@ val ribbonRoutes = setOf(
     /* 4.7.0 */
     MainNavRoutes.ExternalLibraries,
     ExternalLibrariesNavRoutes.GoogleMaps,
-    /* 4.6.0 */
-    MainNavRoutes.ExternalLibraries,
-    ExternalLibrariesNavRoutes.WebViewAccompanist,
-    MainNavRoutes.Material,
-    MaterialNavRoutes.Chip,
-    MainNavRoutes.Material3,
-    Material3NavRoutes.Divider3,
-    Material3NavRoutes.ProgressIndicator3,
 )

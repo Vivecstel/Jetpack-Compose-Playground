@@ -191,6 +191,8 @@
     <string name="paging_initial_load">En attente du chargement des éléments à partir d\'un faux backend</string>
     <string name="paging_list_text">Indice: %1$d, valeur: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">Retour d\'expérience %1$s</string>
+    <string name="activity_not_found">Activity pas trouvé</string>
     <string name="favorites">Favoris</string>
     <string name="popular">Populaire</string>
     <string name="discover">Découvrir</string>

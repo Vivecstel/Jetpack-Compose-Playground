@@ -1,6 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
@@ -45,6 +44,7 @@ import com.steleot.jetpackcompose.playground.localproviders.LocalUser
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.utils.GoogleSignContract
 import com.steleot.jetpackcompose.playground.utils.sendFeedback
+import com.steleot.jetpackcompose.playground.utils.shortToast
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
@@ -233,12 +233,17 @@ fun MainScreenWithDrawer(
                                             )
                                         }
                                     }
-                                    MenuAction.TOAST -> Toast.makeText(
-                                        context,
-                                        R.string.coming_soon,
-                                        Toast.LENGTH_LONG
-                                    ).show()
-                                    MenuAction.FEEDBACK -> context.sendFeedback()
+                                    MenuAction.TOAST -> context.shortToast(R.string.coming_soon)
+                                    MenuAction.FEEDBACK -> context.sendFeedback(
+                                        arrayOf("steleot@hotmail.com"),
+                                        context.getString(
+                                            R.string.feedback_on,
+                                            context.getString(R.string.app_name)
+                                        ),
+                                    ) { e ->
+                                        Timber.e(e)
+                                        context.shortToast(R.string.activity_not_found)
+                                    }
                                     MenuAction.PRIVACY_POLICY -> uriHandler.openUri(PrivacyPolicyUrl)
                                 }
                             }

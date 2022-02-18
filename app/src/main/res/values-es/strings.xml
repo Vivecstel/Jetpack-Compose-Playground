@@ -191,6 +191,8 @@
     <string name="paging_initial_load">Esperando que los elementos se carguen desde un backend falso</string>
     <string name="paging_list_text">Índice: %1$d, valor: %2$s</string>
     <!-- rest -->
+    <string name="feedback_on">Comentarios sobre %1$s</string>
+    <string name="activity_not_found">Activity extraviado</string>
     <string name="favorites">Favoritos</string>
     <string name="popular">Popular</string>
     <string name="discover">Descubrir</string>

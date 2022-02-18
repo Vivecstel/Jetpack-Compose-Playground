@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package com.steleot.jetpackcompose.playground.utils
 
 import android.Manifest
@@ -12,7 +10,6 @@ import android.os.Build
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
-import timber.log.Timber
 
 val Context.isCameraPermissionGranted
     get() =
@@ -21,30 +18,31 @@ val Context.isCameraPermissionGranted
             Manifest.permission.CAMERA
         ) == PackageManager.PERMISSION_GRANTED
 
-fun Context.sendFeedback() {
-    startActivitySafe {
-        this.startActivity(Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:")
-            putExtra(
-                Intent.EXTRA_EMAIL,
-                arrayOf("steleot@hotmail.com")
-            )
-            putExtra(
-                Intent.EXTRA_SUBJECT,
-                "Feedback on Jetpack Compose Playground"
-            )
-        })
-    }
+fun Context.sendFeedback(
+    emails: Array<String>,
+    subject: String,
+    activityNotFoundAction: (ActivityNotFoundException) -> Unit,
+) {
+    startActivitySafe(
+        startActivity = {
+            this.startActivity(Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:")
+                putExtra(Intent.EXTRA_EMAIL, emails)
+                putExtra(Intent.EXTRA_SUBJECT, subject)
+            })
+        },
+        activityNotFoundAction = activityNotFoundAction
+    )
 }
 
-inline fun Context.startActivitySafe(
-    startActivity: () -> Unit
+inline fun startActivitySafe(
+    startActivity: () -> Unit,
+    activityNotFoundAction: (ActivityNotFoundException) -> Unit,
 ) {
     try {
         startActivity()
     } catch (e: ActivityNotFoundException) {
-        Timber.e(e)
-        Toast.makeText(this, "Activity not found", Toast.LENGTH_SHORT).show()
+        activityNotFoundAction(e)
     }
 }
 
