@@ -274,7 +274,7 @@ object UiNavRoutes {
     const val LocalContext = "local context"
     const val LocalDensity = "local density"
     const val LocalFocusManager = "local focus manager"
-    const val LocalFontLoader = "local font loader"
+    const val LocalFontFamilyResolver = "local font family resolver"
     const val LocalHapticFeedback = "local haptic feedback"
     const val LocalLayoutDirection = "local layout direction"
     const val LocalLifecycleOwner = "local lifecycle owner"

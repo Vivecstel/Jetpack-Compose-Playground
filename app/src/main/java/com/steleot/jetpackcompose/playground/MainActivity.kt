@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -107,6 +108,7 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var googleSignInClient: GoogleSignInClient
 
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init(savedInstanceState)

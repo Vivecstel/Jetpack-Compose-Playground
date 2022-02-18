@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
+import android.annotation.SuppressLint
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -48,6 +49,7 @@ fun AdViewExample(
     AndroidView({ adView })
 }
 
+@SuppressLint("MissingPermission")
 @Composable
 private fun rememberAdMobWithLifecycle(
     @StringRes adStringRes: Int

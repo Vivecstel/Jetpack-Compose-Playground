@@ -51,7 +51,7 @@ Download from:
  - [Navigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/navigation/NavigationScreen.kt) (1 screen)
  - [Paging](app/src/main/java/com/steleot/jetpackcompose/playground/compose/paging/PagingScreen.kt) (1 screen)
  - [Runtime](documentation/runtime.md) (18 screens)
- - [Ui](documentation/ui.md) (56 screens)
+ - [Ui](documentation/ui.md) (55 screens)
  - [ViewModel](documentation/viewModel.md) (3 screens)
 
 ## Instructions

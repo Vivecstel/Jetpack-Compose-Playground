@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">Удалить маршрут</string>
     <string name="pressed_count">Нажат %1$d раз</string>
-    <string name="feature_not_available">Функция недоступна</string>
     <string name="camera_already_granted">Разрешение камеры уже предоставлено</string>
+    <string name="camera_permission_msg">Для использования этой функции требуется разрешение камеры. Пожалуйста, дайте разрешение.</string>
     <string name="camera_rationale">Камера важна для этого приложения. Пожалуйста, дайте разрешение.</string>
     <string name="request_permission">Просить разрешения</string>
-    <string name="hide_rationale">Не показывать логику снова</string>
-    <string name="camera_permission_denied">Разрешение камеры отклонено. См. Этот FAQ с информацией о том, зачем нам это разрешение. Пожалуйста, предоставьте нам доступ на экране настроек.</string>
-    <string name="open_settings">Открыть настройки</string>
     <string name="first_baseline_padding">Текст с отступом на первой базовой линии</string>
     <string name="normal_padding">Текст с нормальным заполнением сверху</string>
     <string name="incoming_message">У вас входящее сообщение !!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">Неизвестный</string>
     <string name="toolbar_offset">Смещение панели инструментов: %1$f</string>
     <string name="pointer_input">Текущее смещение: %1$f, %2$f.\nНажмите, чтобы изменить.</string>
-    <string name="local_font_loader">Локальный загрузчик шрифтов с одним шрифтом reggae</string>
+    <string name="local_font_family_resolver">Локальный преобразователь семейства шрифтов с одним шрифтом в стиле регги</string>
     <string name="local_layout_direction">Направление местного макета: %1$s</string>
     <string name="local_lifecycle_current_state">Владелец локального жизненного цикла:\nТекущее состояние: %1$s</string>
     <string name="example">Пример</string>

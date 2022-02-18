@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">मार्ग हटाएं</string>
     <string name="pressed_count">%1$d बार दबाया गया</string>
-    <string name="feature_not_available">सुविधा उपलब्ध नहीं है</string>
     <string name="camera_already_granted">कैमरा अनुमति पहले ही दी जा चुकी है</string>
+    <string name="camera_permission_msg">इस सुविधा के उपलब्ध होने के लिए कैमरा अनुमति आवश्यक है। कृपया अनुमति प्रदान करें।</string>
     <string name="camera_rationale">इस ऐप के लिए कैमरा महत्वपूर्ण है। कृपया अनुमति प्रदान करें।</string>
     <string name="request_permission">अनुमति का अनुरोध करें</string>
-    <string name="hide_rationale">फिर से तर्क न दिखाएं</string>
-    <string name="camera_permission_denied">कैमरा अनुमति अस्वीकृत। हमें इस अनुमति की आवश्यकता क्यों है, इस बारे में जानकारी के साथ यह अक्सर पूछे जाने वाले प्रश्न देखें। कृपया, हमें सेटिंग स्क्रीन पर पहुंच प्रदान करें।</string>
-    <string name="open_settings">सेटिंग्स खोलें</string>
     <string name="first_baseline_padding">प्रथम आधार रेखा पर पैडिंग के साथ पाठ</string>
     <string name="normal_padding">सामान्य पैडिंग टॉप के साथ टेक्स्ट</string>
     <string name="incoming_message">आपके पास एक आने वाला संदेश है !!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">अनजान</string>
     <string name="toolbar_offset">टूलबार ऑफ़सेट: %1$f</string>
     <string name="pointer_input">वर्तमान ऑफ़सेट है : %1$f, %2$f.\nबदलने के लिए टैप करें।</string>
-    <string name="local_font_loader">रेग वन फॉन्ट के साथ स्थानीय फॉन्ट लोडर</string>
+    <string name="local_font_family_resolver">रेग वन फॉन्ट के साथ स्थानीय फॉन्ट फैमिली रिज़ॉल्वर</string>
     <string name="local_layout_direction">स्थानीय लेआउट दिशा है: %1$s</string>
     <string name="local_lifecycle_current_state">स्थानीय जीवनचक्र स्वामी:\nवर्तमान स्थिति: %1$s</string>
     <string name="example">उदाहरण</string>

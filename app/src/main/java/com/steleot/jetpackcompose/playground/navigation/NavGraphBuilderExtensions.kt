@@ -316,7 +316,7 @@ import com.steleot.jetpackcompose.playground.compose.ui.LocalConfigurationScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalContextScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalDensityScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalFocusManagerScreen
-import com.steleot.jetpackcompose.playground.compose.ui.LocalFontLoaderScreen
+import com.steleot.jetpackcompose.playground.compose.ui.LocalFontFamilyResolverScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalHapticFeedbackScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalLayoutDirectionScreen
 import com.steleot.jetpackcompose.playground.compose.ui.LocalLifecycleOwnerScreen
@@ -656,7 +656,7 @@ fun NavGraphBuilder.addUiRoutes() {
     deepLinkComposable(route = UiNavRoutes.LocalContext) { LocalContextScreen() }
     deepLinkComposable(route = UiNavRoutes.LocalDensity) { LocalDensityScreen() }
     deepLinkComposable(route = UiNavRoutes.LocalFocusManager) { LocalFocusManagerScreen() }
-    deepLinkComposable(route = UiNavRoutes.LocalFontLoader) { LocalFontLoaderScreen() }
+    deepLinkComposable(route = UiNavRoutes.LocalFontFamilyResolver) { LocalFontFamilyResolverScreen() }
     deepLinkComposable(route = UiNavRoutes.LocalHapticFeedback) { LocalHapticFeedbackScreen() }
     deepLinkComposable(route = UiNavRoutes.LocalLayoutDirection) { LocalLayoutDirectionScreen() }
     deepLinkComposable(route = UiNavRoutes.LocalLifecycleOwner) { LocalLifecycleOwnerScreen() }

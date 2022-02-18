@@ -59,6 +59,7 @@ class PlaygroundApplication : Application() {
                 firebaseCrashlytics.setCrashlyticsCollectionEnabled(isEnabled)
             }
         }
+        updateWidgets()
     }
 
     private fun updateWidgets() {

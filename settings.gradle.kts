@@ -1,5 +1,5 @@
 include(
     "app",
-    ":base",
+    ":theme",
     ":benchmark"
 )

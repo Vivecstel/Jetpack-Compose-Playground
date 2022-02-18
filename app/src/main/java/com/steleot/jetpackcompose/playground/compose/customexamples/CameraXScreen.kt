@@ -1,8 +1,5 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
-import android.content.Intent
-import android.net.Uri
-import android.provider.Settings
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.camera.core.CameraSelector
@@ -18,7 +15,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.compose.externallibraries.PermissionsAccompanistExample
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
@@ -43,17 +39,7 @@ private fun CameraPreview(
     cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA,
     scaleType: PreviewView.ScaleType = PreviewView.ScaleType.FILL_CENTER,
 ) {
-    val context = LocalContext.current
-    PermissionsAccompanistExample(
-        navigateToSettingsScreen = {
-            context.startActivity(
-                Intent(
-                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                    Uri.fromParts("package", BuildConfig.APPLICATION_ID, null)
-                )
-            )
-        }
-    ) {
+    PermissionsAccompanistExample {
         AndroidCameraPreview(modifier, cameraSelector, scaleType)
     }
 }

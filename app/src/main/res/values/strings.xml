@@ -40,13 +40,10 @@
     <!-- custom examples -->
     <string name="delete_route">Delete route</string>
     <string name="pressed_count" tools:ignore="PluralsCandidate">Pressed %1$d times</string>
-    <string name="feature_not_available">Feature not available</string>
     <string name="camera_already_granted">Camera permission already granted</string>
+    <string name="camera_permission_msg">Camera permission required for this feature to be available. Please grant the permission.</string>
     <string name="camera_rationale">The camera is important for this app. Please grant the permission.</string>
     <string name="request_permission">Request permission</string>
-    <string name="hide_rationale">Don\'t show rationale again</string>
-    <string name="camera_permission_denied">Camera permission denied. See this FAQ with information about why we need this permission. Please, grant us access on the Settings screen.</string>
-    <string name="open_settings">Open Settings</string>
     <string name="first_baseline_padding">Text with padding on First Baseline</string>
     <string name="normal_padding">Text with normal padding top</string>
     <string name="incoming_message">You have an incoming message !!!</string>
@@ -301,7 +298,7 @@
     <string name="unknown">Unknown</string>
     <string name="toolbar_offset">Toolbar offset: %1$f</string>
     <string name="pointer_input">Current offset is: %1$f, %2$f.\nTap to change.</string>
-    <string name="local_font_loader">Local Font Loader with reggae one font</string>
+    <string name="local_font_family_resolver">Local Font Family resolver with reggae one font</string>
     <string name="local_layout_direction">Local layout Direction is: %1$s</string>
     <string name="local_lifecycle_current_state">Local lifecycle owner:\nCurrent state: %1$s</string>
     <string name="example">Example</string>

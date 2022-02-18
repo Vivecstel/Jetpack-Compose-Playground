@@ -35,7 +35,7 @@ val routes = listOf(
     UiNavRoutes.LocalContext,
     UiNavRoutes.LocalDensity,
     UiNavRoutes.LocalFocusManager,
-    UiNavRoutes.LocalFontLoader,
+    UiNavRoutes.LocalFontFamilyResolver,
     UiNavRoutes.LocalHapticFeedback,
     UiNavRoutes.LocalLayoutDirection,
     UiNavRoutes.LocalLifecycleOwner,

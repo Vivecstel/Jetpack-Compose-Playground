@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">Route löschen</string>
     <string name="pressed_count">%1$d mal gedrückt</string>
-    <string name="feature_not_available">Funktion nicht verfügbar</string>
     <string name="camera_already_granted">Kameraberechtigung bereits erteilt</string>
+    <string name="camera_permission_msg">Kameraberechtigung erforderlich, damit diese Funktion verfügbar ist. Bitte erteilen Sie die Erlaubnis.</string>
     <string name="camera_rationale">Die Kamera ist für diese App wichtig. Bitte erteilen Sie die Erlaubnis.</string>
     <string name="request_permission">Um Erlaubnis bitten</string>
-    <string name="hide_rationale">Keine Begründung mehr anzeigen</string>
-    <string name="camera_permission_denied">Kameraberechtigung verweigert. Lesen Sie diese FAQ mit Informationen darüber, warum wir diese Berechtigung benötigen. Bitte gewähren Sie uns Zugriff auf den Einstellungsbildschirm.</string>
-    <string name="open_settings">Einstellungen öffnen</string>
     <string name="first_baseline_padding">Text mit Auffüllung auf der ersten Grundlinie</string>
     <string name="normal_padding">Text mit normaler Polsterung oben</string>
     <string name="incoming_message">Sie haben eine eingehende Nachricht !!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">Unbekannt</string>
     <string name="toolbar_offset">Werkzeugleistenversatz: %1$f</string>
     <string name="pointer_input">Aktueller Offset ist: %1$f, %2$f.\nZum Ändern antippen.</string>
-    <string name="local_font_loader">Local Font Loader mit Reggae One-Font</string>
+    <string name="local_font_family_resolver">Local Font Family Resolver mit Reggae One Font</string>
     <string name="local_layout_direction">Lokale Layoutrichtung ist: %1$s</string>
     <string name="local_lifecycle_current_state">Lokaler Lebenszyklusinhaber:\nAktueller Status: %1$s</string>
     <string name="example">Beispiel</string>

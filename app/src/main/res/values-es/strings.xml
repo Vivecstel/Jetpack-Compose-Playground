@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">Eliminar ruta</string>
     <string name="pressed_count">Presionado %1$d veces</string>
-    <string name="feature_not_available">Característica no disponible</string>
     <string name="camera_already_granted">Permiso de cámara ya concedido</string>
+    <string name="camera_permission_msg">Se requiere permiso de la cámara para que esta función esté disponible. Por favor, conceda el permiso.</string>
     <string name="camera_rationale">La cámara es importante para esta aplicación. Por favor conceda el permiso.</string>
     <string name="request_permission">Solicitar permiso</string>
-    <string name="hide_rationale">No vuelvas a mostrar la razón</string>
-    <string name="camera_permission_denied">Permiso de cámara denegado. Consulte estas preguntas frecuentes con información sobre por qué necesitamos este permiso. Por favor, concédenos acceso en la pantalla de Configuración.</string>
-    <string name="open_settings">Configuración abierta</string>
     <string name="first_baseline_padding">Texto con relleno en First Baseline</string>
     <string name="normal_padding">Texto con parte superior acolchada normal</string>
     <string name="incoming_message">Tienes un mensaje entrante !!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">Desconocido</string>
     <string name="toolbar_offset">Desplazamiento de la barra de herramientas: %1$f</string>
     <string name="pointer_input">La compensación actual es: %1$f, %2$f.\nToca para cambiar.</string>
-    <string name="local_font_loader">Cargador de fuentes local con fuente reggae one</string>
+    <string name="local_font_family_resolver">Resolución de familia de fuentes local con fuente reggae one</string>
     <string name="local_layout_direction">La dirección del diseño local es: %1$s</string>
     <string name="local_lifecycle_current_state">Propietario del ciclo de vida local: \nEstado actual: %1$s</string>
     <string name="example">Ejemplo</string>

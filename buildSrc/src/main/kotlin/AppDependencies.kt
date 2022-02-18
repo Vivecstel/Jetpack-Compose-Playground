@@ -1,7 +1,7 @@
 object AppDependencies {
 
     val project = listOf(
-        ":base"
+        ":theme"
     )
 
     val bom = listOf(

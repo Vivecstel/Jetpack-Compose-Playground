@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">Supprimer l\'itinéraire</string>
     <string name="pressed_count">Appuyé %1$d fois</string>
-    <string name="feature_not_available">Fonctionnalité non disponible</string>
     <string name="camera_already_granted">Autorisation de la caméra déjà accordée</string>
+    <string name="camera_permission_msg">Autorisation de la caméra requise pour que cette fonctionnalité soit disponible. Veuillez accorder la permission.</string>
     <string name="camera_rationale">La caméra est importante pour cette application. Veuillez accorder l\'autorisation.</string>
     <string name="request_permission">Demander la permission</string>
-    <string name="hide_rationale">Ne plus montrer de justification</string>
-    <string name="camera_permission_denied">Autorisation de la caméra refusée. Consultez cette FAQ avec des informations sur les raisons pour lesquelles nous avons besoin de cette autorisation. S\'il vous plaît, accordez-nous l\'accès sur l\'écran Paramètres.</string>
-    <string name="open_settings">Ouvrir les paramètres</string>
     <string name="first_baseline_padding">Texte avec remplissage sur la première ligne de base</string>
     <string name="normal_padding">Texte avec rembourrage normal en haut</string>
     <string name="incoming_message">Vous avez un message entrant !!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">Inconnu</string>
     <string name="toolbar_offset">Décalage de la barre d\'outils:%1$f</string>
     <string name="pointer_input">Le décalage actuel est:%1$f, %2$f.\nAppuyez pour modifier.</string>
-    <string name="local_font_loader">Chargeur de polices local avec police reggae one</string>
+    <string name="local_font_family_resolver">Résolveur de famille de polices locales avec une police reggae</string>
     <string name="local_layout_direction">La direction de la disposition locale est:%1$s</string>
     <string name="local_lifecycle_current_state">Propriétaire du cycle de vie local:\nÉtat actuel:%1$s</string>
     <string name="example">Exemple</string>

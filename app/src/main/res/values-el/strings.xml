@@ -41,13 +41,10 @@
     <!-- custom examples -->
     <string name="delete_route">Διαγραφή διαδρομής</string>
     <string name="pressed_count">Πατήθηκε %1$d φορές</string>
-    <string name="feature_not_available">Μη Διαθέσιμο Χαρακτηριστικό</string>
     <string name="camera_already_granted">Η άδεια κάμερας έχει ήδη χορηγηθεί</string>
+    <string name="camera_permission_msg">Απαιτείται άδεια κάμερας για να είναι διαθέσιμη αυτή η δυνατότητα. Παρακαλώ δώστε την άδεια.</string>
     <string name="camera_rationale">Η κάμερα είναι σημαντική για αυτήν την εφαρμογή. Παρακαλώ δώστε την άδεια.</string>
     <string name="request_permission">Ζητήστε άδεια</string>
-    <string name="hide_rationale">Μην δείξετε ξανά το σκεπτικό</string>
-    <string name="camera_permission_denied">Απορρίφθηκε η άδεια της κάμερας. Δείτε αυτές τις Συνήθεις Ερωτήσεις με πληροφορίες σχετικά με το γιατί χρειαζόμαστε αυτήν την άδεια. Παρακαλούμε, παραχωρήστε μας πρόσβαση στην οθόνη Ρυθμίσεις.</string>
-    <string name="open_settings">Ανοίξτε τις Ρυθμίσεις</string>
     <string name="first_baseline_padding">Κείμενο με κενό στην Πρώτη γραμμή βάσης</string>
     <string name="normal_padding">Κείμενο με κανονικό κενό πάνω</string>
     <string name="incoming_message">Έχετε εισερχόμενο μήνυμα!!!</string>
@@ -302,7 +299,7 @@
     <string name="unknown">Αγνωστος</string>
     <string name="toolbar_offset">Μετατόπιση γραμμής εργαλείων: %1$f</string>
     <string name="pointer_input">Η τρέχουσα μετατόπιση είναι: %1$f, %2$f.\nΠατήστε για αλλαγή.</string>
-    <string name="local_font_loader">Local Font Loader με reggae one font</string>
+    <string name="local_font_family_resolver">Local Font Family resolver με reggae one font</string>
     <string name="local_layout_direction">Η κατεύθυνση τοπικής διάταξης είναι: %1$s</string>
     <string name="local_lifecycle_current_state">Κάτοχος τοπικού κύκλου ζωής:\nΤρέχουσα κατάσταση: %1$s</string>
     <string name="example">Παράδειγμα</string>

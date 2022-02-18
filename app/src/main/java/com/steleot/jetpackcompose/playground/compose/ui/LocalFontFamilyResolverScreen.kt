@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalFontLoader
+import androidx.compose.ui.platform.LocalFontFamilyResolver
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -18,13 +18,12 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
 
-private const val Url = "ui/LocalFontLoaderScreen.kt"
+private const val Url = "ui/LocalFontFamilyResolverScreen.kt"
 
-// todo stelios remove
 @Composable
-fun LocalFontLoaderScreen() {
+fun LocalFontFamilyResolverScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalFontLoader,
+        title = UiNavRoutes.LocalFontFamilyResolver,
         link = Url,
     ) {
         Column(
@@ -34,17 +33,17 @@ fun LocalFontLoaderScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            LocalFontLoaderExample()
+            LocalFontFamilyResolverExample()
         }
     }
 }
 
 @Composable
-private fun LocalFontLoaderExample() {
-    val fontLoader = LocalFontLoader.current
-    val typeface = fontLoader.load(Font(R.font.reggae_one_font)) as Typeface
+private fun LocalFontFamilyResolverExample() {
+    val resolver = LocalFontFamilyResolver.current
+    val typeface = resolver.resolve(FontFamily(Font(R.font.reggae_one_font))).value as Typeface
     Text(
-        text = stringResource(id = R.string.local_font_loader),
+        text = stringResource(id = R.string.local_font_family_resolver),
         fontFamily = FontFamily(typeface)
     )
 }
