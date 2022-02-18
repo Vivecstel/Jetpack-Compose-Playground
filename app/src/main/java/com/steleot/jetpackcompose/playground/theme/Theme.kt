@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.theme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors
 import androidx.compose.material3.MaterialTheme as MaterialTheme3
 
 @Composable

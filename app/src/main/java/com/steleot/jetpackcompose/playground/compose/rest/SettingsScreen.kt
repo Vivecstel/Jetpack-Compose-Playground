@@ -36,7 +36,7 @@ import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
-import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors
 import com.steleot.jetpackcompose.playground.utils.handleEnableSubscription
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

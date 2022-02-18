@@ -1,9 +1,10 @@
 object AppDependencies {
 
     val project = listOf(
-        ":theme:base",
-        ":utils:androidextensions",
-        ":utils:extensions",
+        Modules.ThemeBase,
+        Modules.ThemeMaterial,
+        Modules.UtilsAndroidExtensions,
+        Modules.UtilsExtensions,
     )
 
     val bom = listOf(
