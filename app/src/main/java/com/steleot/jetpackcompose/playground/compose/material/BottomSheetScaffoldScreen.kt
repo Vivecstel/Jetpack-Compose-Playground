@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
@@ -114,7 +115,7 @@ fun BottomSheetScaffoldExample() {
                     Modifier
                         .fillMaxWidth()
                         .height(50.dp)
-                        .background(colors[it % colors.size])
+                        .background(Color(colors[it % colors.size]))
                 )
             }
         }

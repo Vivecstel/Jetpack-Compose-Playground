@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.SystemUiController
@@ -68,7 +69,7 @@ private fun SystemUiControllerExample(
     ) {
         Button(onClick = {
             systemUiController.setStatusBarColor(
-                color = colors.random(),
+                color = Color(colors.random()),
                 darkIcons = useDarkIcons
             )
         }) {
@@ -84,7 +85,7 @@ private fun SystemUiControllerExample(
         }
         Button(onClick = {
             systemUiController.setNavigationBarColor(
-                color = colors.random(),
+                color = Color(colors.random()),
                 darkIcons = useDarkIcons
             )
         }) {

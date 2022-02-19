@@ -21,7 +21,3 @@ android {
         create("benchmark")
     }
 }
-
-dependencies {
-    implementation(Libraries.composeUi)
-}

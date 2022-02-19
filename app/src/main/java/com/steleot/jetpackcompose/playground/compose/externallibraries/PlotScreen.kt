@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.unit.dp
 import com.madrapps.plot.line.DataPoint
@@ -67,15 +68,15 @@ private fun PlotExample(
             listOf(
                 LinePlot.Line(
                     list,
-                    LinePlot.Connection(colors[0], 2.dp),
-                    LinePlot.Intersection(colors[1], 5.dp),
-                    LinePlot.Highlight(colors[2], 5.dp),
-                    LinePlot.AreaUnderLine(colors[3], 0.3f)
+                    LinePlot.Connection(Color(colors[0]), 2.dp),
+                    LinePlot.Intersection(Color(colors[1]), 5.dp),
+                    LinePlot.Highlight(Color(colors[2]), 5.dp),
+                    LinePlot.AreaUnderLine(Color(colors[3]), 0.3f)
                 ),
             ),
             selection = LinePlot.Selection(
                 highlight = LinePlot.Connection(
-                    colors[4],
+                    Color(colors[4]),
                     strokeWidth = 2.dp,
                     pathEffect = PathEffect.dashPathEffect(floatArrayOf(40f, 20f))
                 )

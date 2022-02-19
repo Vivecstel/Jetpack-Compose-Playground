@@ -11,8 +11,8 @@ import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.localproviders.LocalInAppReviewer
 import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import androidx.compose.material3.Scaffold as Scaffold3
+import com.steleot.jetpackcompose.playground.theme.material3.JetpackComposePlaygroundTheme as Theme3
 
 @Composable
 fun DefaultScaffold(
@@ -58,7 +58,7 @@ fun DefaultScaffold3(
     val themeState = LocalThemeState.current
     val context = LocalContext.current
     val inAppReviewer = LocalInAppReviewer.current
-    JetpackComposePlaygroundTheme3(
+    Theme3(
         themeState = themeState
     ) {
         Scaffold3(

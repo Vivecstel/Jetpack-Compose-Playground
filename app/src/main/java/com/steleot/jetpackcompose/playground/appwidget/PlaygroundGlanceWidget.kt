@@ -69,7 +69,7 @@ class PlaygroundGlanceWidget : GlanceAppWidget() {
             text = text,
             modifier = GlanceModifier
                 .fillMaxWidth()
-                .background(color = deepPurple500)
+                .background(color = Color(deepPurple500))
                 .padding(12.dp),
             style = TextStyle(
                 fontWeight = FontWeight.Bold,

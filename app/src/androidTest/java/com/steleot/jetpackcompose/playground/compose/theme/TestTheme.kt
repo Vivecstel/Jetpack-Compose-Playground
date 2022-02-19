@@ -4,16 +4,16 @@ package com.steleot.jetpackcompose.playground.compose.theme
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.providers.TestProviders
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import com.steleot.jetpackcompose.playground.theme.ThemeState
+import com.steleot.jetpackcompose.playground.theme.material.JetpackComposePlaygroundTheme as Theme
+import com.steleot.jetpackcompose.playground.theme.material3.JetpackComposePlaygroundTheme as Theme3
 
 @Composable
 fun TestTheme(
     themeState: ThemeState = ThemeState(),
     content: @Composable () -> Unit
 ) {
-    JetpackComposePlaygroundTheme(
+    Theme(
         themeState
     ) {
         TestProviders(themeState, content)
@@ -25,7 +25,7 @@ fun TestTheme3(
     themeState: ThemeState = ThemeState(),
     content: @Composable () -> Unit
 ) {
-    JetpackComposePlaygroundTheme3(
+    Theme3(
         themeState
     ) {
         TestProviders(themeState, content)

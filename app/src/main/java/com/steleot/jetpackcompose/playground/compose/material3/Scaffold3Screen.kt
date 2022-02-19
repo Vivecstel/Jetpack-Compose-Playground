@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Expand
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
@@ -17,8 +18,8 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.DefaultSmallTopAppBar
 import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme3
 import com.steleot.jetpackcompose.playground.theme.colors
+import com.steleot.jetpackcompose.playground.theme.material3.JetpackComposePlaygroundTheme as Theme3
 
 private const val Url = "material3/Scaffold3Screen.kt"
 
@@ -26,7 +27,7 @@ private const val Url = "material3/Scaffold3Screen.kt"
 @Composable
 fun Scaffold3Screen() {
     val themeState = LocalThemeState.current
-    JetpackComposePlaygroundTheme3(
+    Theme3(
         themeState = themeState
     ) {
         Scaffold(
@@ -57,7 +58,7 @@ fun Scaffold3Screen() {
                             Modifier
                                 .fillMaxWidth()
                                 .height(50.dp)
-                                .background(colors[it % colors.size])
+                                .background(Color(colors[it % colors.size]))
                         )
                     }
                 }

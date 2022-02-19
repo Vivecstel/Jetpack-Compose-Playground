@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.Expand
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
@@ -61,7 +62,7 @@ fun ScaffoldScreen() {
                         Modifier
                             .fillMaxWidth()
                             .height(50.dp)
-                            .background(colors[it % colors.size])
+                            .background(Color(colors[it % colors.size]))
                     )
                 }
             }

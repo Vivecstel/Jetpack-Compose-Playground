@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.theme
+package com.steleot.jetpackcompose.playground.theme.material
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

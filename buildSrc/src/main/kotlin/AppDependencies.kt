@@ -3,6 +3,7 @@ object AppDependencies {
     val project = listOf(
         Modules.ThemeBase,
         Modules.ThemeMaterial,
+        Modules.ThemeMaterial3,
         Modules.UtilsAndroidExtensions,
         Modules.UtilsExtensions,
     )

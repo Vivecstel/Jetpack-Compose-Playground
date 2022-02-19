@@ -7,6 +7,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
@@ -108,7 +109,7 @@ private fun StaggeredCard(index: Int, route: String) {
                         else -> 128
                     }.dp
                 )
-                .background(colors[index % colors.size])
+                .background(Color(colors[index % colors.size]))
         )
         Text(
             text = route.capitalizeFirstLetter(),

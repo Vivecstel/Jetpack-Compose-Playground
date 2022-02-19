@@ -23,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -113,7 +114,7 @@ internal fun CardExample(
                     modifier = Modifier
                         .size(36.dp)
                         .clip(CircleShape)
-                        .background(colors[index % colors.size])
+                        .background(Color(colors[index % colors.size]))
                 ) {
                     Text(
                         text = route.first().uppercaseChar().toString(),

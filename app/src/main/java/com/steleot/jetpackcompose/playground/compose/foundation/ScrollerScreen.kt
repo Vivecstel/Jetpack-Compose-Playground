@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
@@ -87,7 +88,7 @@ private fun Square(index: Int) {
     Box(
         Modifier
             .size(75.dp, 200.dp)
-            .background(colors[index % colors.size]),
+            .background(Color(colors[index % colors.size])),
         contentAlignment = Alignment.Center
     ) {
         Text(index.toString())
