@@ -13,6 +13,7 @@ buildscript {
         google()
     }
     dependencies {
+        classpath(kotlin("gradle-plugin", version = Versions.kotlin))
         classpath(GradleLibraries.androidPlugin)
         classpath(GradleLibraries.googleServices)
         classpath(GradleLibraries.crashlytics)
