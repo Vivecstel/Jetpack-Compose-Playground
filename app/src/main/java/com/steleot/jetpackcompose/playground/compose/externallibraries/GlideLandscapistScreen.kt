@@ -23,8 +23,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
 private const val Url = "externallibraries/GlideLandscapistScreen.kt"

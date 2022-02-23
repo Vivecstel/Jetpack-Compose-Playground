@@ -29,14 +29,14 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.utils.handleEnableSubscription
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

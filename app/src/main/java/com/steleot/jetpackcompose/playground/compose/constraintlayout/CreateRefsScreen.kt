@@ -13,8 +13,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
 private const val Url = "constraintlayout/CreateRefsScreen.kt"

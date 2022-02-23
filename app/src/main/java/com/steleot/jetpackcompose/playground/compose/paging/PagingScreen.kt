@@ -18,8 +18,8 @@ import androidx.paging.*
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
 import java.util.*
 import kotlin.math.ceil

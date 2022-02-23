@@ -1,6 +1,7 @@
-package com.steleot.jetpackcompose.playground.compose.reusable
+package com.steleot.jetpackcompose.playground.ui.base.material
 
 import android.content.Intent
+import android.net.Uri
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -9,18 +10,14 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.core.net.toUri
-import com.steleot.jetpackcompose.playground.BuildConfig
-import com.steleot.jetpackcompose.playground.R
-import androidx.compose.material3.Icon as Icon3
-import androidx.compose.material3.IconButton as IconButton3
 
 @Composable
 fun GoToGithubIconButton(link: String) {
     val context = LocalContext.current
     IconButton(onClick = {
         context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-            data = "${BuildConfig.BASE_URL}$link".toUri()
+            // todo stelios
+            data = Uri.parse(link)
         })
     }) {
         Icon(
@@ -72,58 +69,6 @@ fun DropdownIconButton(
 ) {
     IconButton(onClick = onClick) {
         Icon(
-            Icons.Filled.MoreVert,
-            contentDescription = null
-        )
-    }
-}
-
-@Composable
-fun GoToGithubButton3(link: String) {
-    val context = LocalContext.current
-    IconButton3(onClick = {
-        context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-            data = "${BuildConfig.BASE_URL}$link".toUri()
-        })
-    }) {
-        Icon3(
-            imageVector = Icons.Filled.ExitToApp,
-            contentDescription = stringResource(id = R.string.open_github),
-        )
-    }
-}
-
-@Composable
-fun BackArrow3() {
-    val backDispatcher = LocalOnBackPressedDispatcherOwner.current
-    IconButton3(onClick = {
-        backDispatcher?.onBackPressedDispatcher?.onBackPressed()
-    }) {
-        Icon3(
-            imageVector = Icons.Filled.ArrowBack,
-            contentDescription = stringResource(id = R.string.back_arrow),
-        )
-    }
-}
-
-@Composable
-fun SearchIconButton3(
-    onClick: () -> Unit
-) {
-    IconButton3(onClick = onClick) {
-        Icon3(
-            imageVector = Icons.Filled.Search,
-            contentDescription = stringResource(id = R.string.search),
-        )
-    }
-}
-
-@Composable
-fun DropdownIconButton3(
-    onClick: () -> Unit
-) {
-    IconButton3(onClick = onClick) {
-        Icon3(
             Icons.Filled.MoreVert,
             contentDescription = null
         )

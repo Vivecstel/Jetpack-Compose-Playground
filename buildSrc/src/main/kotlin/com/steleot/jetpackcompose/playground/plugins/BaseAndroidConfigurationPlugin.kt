@@ -1,12 +1,7 @@
 package com.steleot.jetpackcompose.playground.plugins
 
 import AndroidConfiguration
-import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.LibraryExtension
-import com.android.build.api.dsl.ApplicationDefaultConfig
-import com.android.build.api.dsl.LibraryDefaultConfig
-import com.android.build.api.dsl.TestExtension
-import com.android.build.api.dsl.TestDefaultConfig
+import com.android.build.api.dsl.*
 import com.android.build.api.variant.AndroidComponentsExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -28,7 +23,7 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                         when (extension) {
                             is ApplicationExtension -> {
-                                with (this@defaultConfig as ApplicationDefaultConfig) {
+                                with(this@defaultConfig as ApplicationDefaultConfig) {
                                     applicationId = AndroidConfiguration.appId
                                     targetSdk = AndroidConfiguration.targetSdk
                                     versionCode = AndroidConfiguration.versionCode
@@ -36,12 +31,12 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                                 }
                             }
                             is LibraryExtension -> {
-                                with (this@defaultConfig as LibraryDefaultConfig) {
+                                with(this@defaultConfig as LibraryDefaultConfig) {
                                     targetSdk = AndroidConfiguration.targetSdk
                                 }
                             }
                             is TestExtension -> {
-                                with (this@defaultConfig as TestDefaultConfig) {
+                                with(this@defaultConfig as TestDefaultConfig) {
                                     targetSdk = AndroidConfiguration.targetSdk
                                 }
                             }

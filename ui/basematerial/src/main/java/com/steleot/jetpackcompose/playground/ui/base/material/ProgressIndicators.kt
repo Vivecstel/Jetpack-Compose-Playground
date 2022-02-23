@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.reusable
+package com.steleot.jetpackcompose.playground.ui.base.material
 
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.material.CircularProgressIndicator

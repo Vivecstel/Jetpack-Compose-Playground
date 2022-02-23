@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import timber.log.Timber
 
 private const val Url = "material3/LocalMinimumTouchTargetEnforcementScreen.kt"
@@ -23,7 +23,7 @@ private const val Url = "material3/LocalMinimumTouchTargetEnforcementScreen.kt"
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun LocalMinimumTouchTargetEnforcementScreen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.LocalMinimumTouchTargetEnforcement,
         link = Url,
     ) {

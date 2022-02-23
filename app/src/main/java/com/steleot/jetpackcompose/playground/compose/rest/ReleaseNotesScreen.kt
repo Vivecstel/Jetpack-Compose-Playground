@@ -25,11 +25,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.api.GitHubService
-import com.steleot.jetpackcompose.playground.compose.reusable.CenteredCircularProgressIndicator
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import com.steleot.jetpackcompose.playground.compose.reusable.ErrorText
 import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.CenteredCircularProgressIndicator
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.ui.base.material.ErrorText
 import com.steleot.jetpackcompose.playground.utils.releaseString
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*

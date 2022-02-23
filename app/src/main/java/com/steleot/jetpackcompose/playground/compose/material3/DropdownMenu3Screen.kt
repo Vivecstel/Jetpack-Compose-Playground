@@ -11,15 +11,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import timber.log.Timber
 
 private const val Url = "material3/DropdownMenu3Screen.kt"
 
 @Composable
 fun DropdownMenu3Screen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.DropdownMenu3,
         link = Url,
     ) {

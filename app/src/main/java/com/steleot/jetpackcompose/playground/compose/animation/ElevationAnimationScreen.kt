@@ -11,8 +11,8 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.AnimationNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "animation/ElevationAnimationScreen.kt"
 

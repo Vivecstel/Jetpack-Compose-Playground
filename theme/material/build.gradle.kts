@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.ThemeBase))
+    api(project(Modules.ThemeBase))
     implementation(androidx.composeUi)
     implementation(androidx.composeMaterial)
 }

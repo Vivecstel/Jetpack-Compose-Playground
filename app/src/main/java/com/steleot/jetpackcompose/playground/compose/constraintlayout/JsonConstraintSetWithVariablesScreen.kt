@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import org.intellij.lang.annotations.Language
 
 private const val Url = "constraintlayout/JsonConstraintSetWithVariablesScreen.kt"

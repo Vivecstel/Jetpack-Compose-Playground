@@ -16,8 +16,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.steleot.jetpackcompose.playground.compose.externallibraries.PermissionsAccompanistExample
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
 private const val Url = "customexamples/CameraXScreen.kt"

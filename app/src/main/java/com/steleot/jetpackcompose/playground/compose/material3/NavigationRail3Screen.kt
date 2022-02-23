@@ -8,14 +8,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/NavigationRail3Screen.kt"
 
 @Composable
 fun NavigationRail3Screen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.NavigationRail3,
         link = Url,
     ) {

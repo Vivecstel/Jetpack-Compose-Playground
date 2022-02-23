@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import com.gowtham.ratingbar.RatingBar
 import com.gowtham.ratingbar.RatingBarConfig
 import com.gowtham.ratingbar.RatingBarStyle
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
 private const val Url = "externallibraries/RatingBarScreen.kt"

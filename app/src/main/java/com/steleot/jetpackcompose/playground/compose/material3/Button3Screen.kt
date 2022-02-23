@@ -16,14 +16,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/Button3Screen.kt"
 
 @Composable
 fun Button3Screen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.Button3,
         link = Url,
     ) {

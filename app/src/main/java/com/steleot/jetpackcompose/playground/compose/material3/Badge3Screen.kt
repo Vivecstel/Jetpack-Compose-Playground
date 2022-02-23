@@ -10,14 +10,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/Badge3Screen.kt"
 
 @Composable
 fun Badge3Screen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.Badge3,
         link = Url,
     ) {

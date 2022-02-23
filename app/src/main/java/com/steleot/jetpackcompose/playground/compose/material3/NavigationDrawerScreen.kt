@@ -11,15 +11,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import kotlinx.coroutines.launch
 
 private const val Url = "material3/NavigationDrawerScreen.kt"
 
 @Composable
 fun NavigationDrawerScreen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.NavigationDrawer,
         link = Url,
     ) {

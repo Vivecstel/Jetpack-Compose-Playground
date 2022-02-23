@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import com.halilibo.richtext.ui.*
 import com.halilibo.richtext.ui.material.MaterialRichText
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
 import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "externallibraries/ComposeRichTextUiMaterialScreen.kt"
 

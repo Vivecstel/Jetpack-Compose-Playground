@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.reusable
+package com.steleot.jetpackcompose.playground.ui.base.material
 
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.material.MaterialTheme
@@ -9,8 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
-import androidx.compose.material3.MaterialTheme as MaterialTheme3
-import androidx.compose.material3.Text as Text3
 
 @Composable
 fun TitleText(
@@ -19,18 +17,6 @@ fun TitleText(
     Text(
         text = title.capitalizeFirstLetter(),
         style = MaterialTheme.typography.h6,
-        maxLines = 1,
-        overflow = TextOverflow.Ellipsis
-    )
-}
-
-@Composable
-fun TitleText3(
-    title: String,
-) {
-    Text3(
-        text = title.capitalizeFirstLetter(),
-        style = MaterialTheme3.typography.titleLarge,
         maxLines = 1,
         overflow = TextOverflow.Ellipsis
     )

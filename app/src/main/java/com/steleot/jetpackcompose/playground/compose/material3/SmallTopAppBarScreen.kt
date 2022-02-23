@@ -11,14 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold3
 import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/SmallTopAppBarScreen.kt"
 
 @Composable
 fun SmallTopAppBarScreen() {
-    DefaultScaffold3(
+    DefaultScaffold(
         title = Material3NavRoutes.SmallTopAppBar,
         link = Url,
     ) {

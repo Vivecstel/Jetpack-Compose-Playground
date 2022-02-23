@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.reusable
+package com.steleot.jetpackcompose.playground.ui.base.material
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ListItem
