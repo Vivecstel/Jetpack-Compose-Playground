@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.*
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "externallibraries/LottieScreen.kt"

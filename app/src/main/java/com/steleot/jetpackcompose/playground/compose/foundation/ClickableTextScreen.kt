@@ -16,7 +16,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.shortToast
 

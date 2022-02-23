@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 import kotlinx.coroutines.launch

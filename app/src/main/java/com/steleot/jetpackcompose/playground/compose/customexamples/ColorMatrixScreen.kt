@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
-import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 

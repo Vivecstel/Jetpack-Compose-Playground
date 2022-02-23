@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 

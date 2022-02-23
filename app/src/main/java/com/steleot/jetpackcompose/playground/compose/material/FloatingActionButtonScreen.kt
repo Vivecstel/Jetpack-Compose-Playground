@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "material/FloatingActionButtonScreen.kt"

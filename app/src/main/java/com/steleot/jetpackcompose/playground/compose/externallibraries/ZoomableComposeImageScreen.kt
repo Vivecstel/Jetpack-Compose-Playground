@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import coil.compose.rememberAsyncImagePainter
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import me.rerere.zoomableimage.ZoomableImage

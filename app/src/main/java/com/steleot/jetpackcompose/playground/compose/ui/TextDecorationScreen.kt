@@ -11,7 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "ui/TextDecorationScreen.kt"

@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "customexamples/AnimatedTextScreen.kt"

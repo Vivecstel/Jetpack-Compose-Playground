@@ -17,7 +17,7 @@ import androidx.compose.ui.autofill.AutofillNode
 import androidx.compose.ui.autofill.AutofillType
 import androidx.compose.ui.platform.LocalAutofill
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "ui/LocalAutofillScreen.kt"

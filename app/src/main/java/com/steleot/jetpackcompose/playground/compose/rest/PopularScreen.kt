@@ -21,7 +21,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.CenteredCircularProgressIndicator
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar

@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "runtime/MovableContentOfScreen.kt"

@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import me.nikhilchaudhari.quarks.CreateParticles
 import me.nikhilchaudhari.quarks.particle.*

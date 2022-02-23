@@ -1,6 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.reusable
 
-import com.steleot.jetpackcompose.playground.navigation.*
+import com.steleot.jetpackcompose.playground.navigation.graph.*
 
 val ribbonRoutes = setOf(
     /* 4.9.0 */

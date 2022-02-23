@@ -12,7 +12,7 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "ui/LayoutScreen.kt"

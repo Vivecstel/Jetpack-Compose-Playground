@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.round
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 

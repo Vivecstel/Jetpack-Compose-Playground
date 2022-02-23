@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "ui/LocalFontFamilyResolverScreen.kt"

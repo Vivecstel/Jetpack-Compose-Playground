@@ -7,5 +7,6 @@ object Modules {
     const val UiBaseMaterial3 = ":ui:basematerial3"
     const val UtilsAndroidExtensions = ":utils:androidextensions"
     const val UtilsExtensions = ":utils:extensions"
+    const val Navigation = ":navigation"
     const val Resources = ":resources"
 }

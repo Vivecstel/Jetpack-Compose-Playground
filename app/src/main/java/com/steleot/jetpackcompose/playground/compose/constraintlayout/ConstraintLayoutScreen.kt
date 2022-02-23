@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.constraintlayout
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 val routes = listOf(
     ConstraintLayoutNavRoutes.Barrier,

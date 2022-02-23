@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.navigation.MaterialNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.roundToInt
 

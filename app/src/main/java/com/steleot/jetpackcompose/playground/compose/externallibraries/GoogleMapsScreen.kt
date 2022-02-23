@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.*
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "externallibraries/GoogleMapsScreen.kt"

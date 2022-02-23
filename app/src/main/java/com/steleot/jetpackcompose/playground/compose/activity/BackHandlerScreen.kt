@@ -18,7 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
-import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "activity/BackHandlerScreen.kt"

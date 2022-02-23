@@ -22,7 +22,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ActivityNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
 import com.steleot.jetpackcompose.playground.utils.shortToast

@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.rest
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes
 import com.steleot.jetpackcompose.playground.compose.animation.routes as animationRoutes
 import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as constraintLayoutRoutes

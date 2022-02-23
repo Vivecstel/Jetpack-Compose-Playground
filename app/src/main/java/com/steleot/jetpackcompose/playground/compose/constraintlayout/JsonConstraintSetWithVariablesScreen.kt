@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
-import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import org.intellij.lang.annotations.Language
 

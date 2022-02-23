@@ -39,7 +39,7 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter

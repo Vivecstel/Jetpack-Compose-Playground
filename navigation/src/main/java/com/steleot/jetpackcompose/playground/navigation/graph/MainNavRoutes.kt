@@ -1,0 +1,28 @@
+package com.steleot.jetpackcompose.playground.navigation.graph
+
+object MainNavRoutes {
+    const val Main = "main"
+    const val Search = "search"
+    const val Activity = "activity"
+    const val Animation = "animation"
+    const val ConstraintLayout = "constraint layout"
+    const val CustomExamples = "custom examples"
+    const val ExternalLibraries = "external libraries"
+    const val Foundation = "foundation"
+    const val Material = "material"
+    const val Material3 = "material 3"
+    const val MaterialIcons = "material icons"
+    const val MaterialIConsExtended = "material icons extended"
+    const val Navigation = "navigation"
+    const val Paging = "paging"
+    const val Runtime = "runtime"
+    const val Ui = "ui"
+    const val ViewModel = "view model"
+    const val Settings = "settings"
+    const val Popular = "popular"
+    const val Favorites = "favorites"
+    const val Discover = "discover"
+    const val New = "new"
+    const val Articles = "articles"
+    const val ReleaseNotes = "release notes"
+}

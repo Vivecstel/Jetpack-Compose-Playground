@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "customexamples/TearDropScreen.kt"

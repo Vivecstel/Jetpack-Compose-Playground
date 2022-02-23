@@ -17,7 +17,7 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.zachklipp.richtext.ui.printing.Printable
 import com.zachklipp.richtext.ui.printing.hideWhenPrinting

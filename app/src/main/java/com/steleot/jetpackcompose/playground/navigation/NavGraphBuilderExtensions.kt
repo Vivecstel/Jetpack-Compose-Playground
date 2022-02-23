@@ -33,6 +33,7 @@ import com.steleot.jetpackcompose.playground.compose.viewmodel.StateScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelFlowScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelLiveDataScreen
 import com.steleot.jetpackcompose.playground.compose.viewmodel.ViewModelScreen
+import com.steleot.jetpackcompose.playground.navigation.graph.*
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 
 const val FavoritesRoute = "${MainNavRoutes.Favorites}/{userId}"

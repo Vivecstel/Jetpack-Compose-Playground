@@ -19,7 +19,7 @@ import androidx.lifecycle.viewModelScope
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

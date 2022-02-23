@@ -11,7 +11,7 @@ import com.google.firebase.messaging.RemoteMessage
 import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.MainActivity
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import timber.log.Timber
 import kotlin.math.pow
 

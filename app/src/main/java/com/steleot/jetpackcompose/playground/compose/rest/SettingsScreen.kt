@@ -30,7 +30,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.messaging.FirebaseMessaging
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.datastore.ProtoManager
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ColorPalette
 import com.steleot.jetpackcompose.playground.theme.DarkThemeMode
 import com.steleot.jetpackcompose.playground.theme.ThemeState

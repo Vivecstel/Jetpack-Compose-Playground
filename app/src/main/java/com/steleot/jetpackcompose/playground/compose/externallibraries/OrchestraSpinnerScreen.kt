@@ -2,7 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 //import com.skydoves.orchestra.spinner.Spinner
 import androidx.compose.runtime.Composable
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "externallibraries/OrchestraSpinnerScreen.kt"

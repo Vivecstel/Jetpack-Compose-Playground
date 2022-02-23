@@ -18,7 +18,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 

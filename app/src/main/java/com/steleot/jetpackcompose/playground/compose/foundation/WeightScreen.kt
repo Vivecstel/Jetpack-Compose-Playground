@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "foundation/WeightScreen.kt"

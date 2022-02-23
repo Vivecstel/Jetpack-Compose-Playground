@@ -14,7 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.RuntimeNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

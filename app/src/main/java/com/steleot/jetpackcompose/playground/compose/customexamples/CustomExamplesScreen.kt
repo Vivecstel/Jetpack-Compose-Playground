@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.CustomExamplesNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 val routes = listOf(
     CustomExamplesNavRoutes.AdMobBanner,

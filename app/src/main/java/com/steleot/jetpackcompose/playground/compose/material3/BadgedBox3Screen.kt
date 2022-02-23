@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/BadgedBox3Screen.kt"

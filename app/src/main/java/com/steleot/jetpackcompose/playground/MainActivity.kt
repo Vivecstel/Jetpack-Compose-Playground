@@ -42,6 +42,7 @@ import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalProviders
 import com.steleot.jetpackcompose.playground.navigation.*
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.material.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors

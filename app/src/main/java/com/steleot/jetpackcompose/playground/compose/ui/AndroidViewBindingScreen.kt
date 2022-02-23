@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.viewinterop.AndroidView
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.databinding.AndroidViewBindingExampleBinding
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "ui/AndroidViewBindingScreen.kt"

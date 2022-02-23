@@ -41,7 +41,7 @@ import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.localproviders.LocalUser
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultListItem
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar

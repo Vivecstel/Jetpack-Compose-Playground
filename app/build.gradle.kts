@@ -43,6 +43,7 @@ dependencies {
     implementation(project(Modules.UiBaseMaterial3))
     implementation(project(Modules.UtilsAndroidExtensions))
     implementation(project(Modules.UtilsExtensions))
+    implementation(project(Modules.Navigation))
     implementation(project(Modules.Resources))
 
     implementation(androidx.composeAnimation)

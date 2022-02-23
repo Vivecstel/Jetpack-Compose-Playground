@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.material3
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 
 val routes = listOf(
     Material3NavRoutes.AlertDialog3,

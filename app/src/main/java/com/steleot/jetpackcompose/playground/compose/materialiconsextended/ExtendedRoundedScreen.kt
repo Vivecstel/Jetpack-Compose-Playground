@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.navigation.MaterialIconsExtendedNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "materialiconsextended/ExtendedRoundedScreen.kt"

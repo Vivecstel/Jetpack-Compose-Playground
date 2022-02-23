@@ -21,7 +21,7 @@ import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.ConstraintLayoutNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "constraintlayout/MotionLayout2Screen.kt"

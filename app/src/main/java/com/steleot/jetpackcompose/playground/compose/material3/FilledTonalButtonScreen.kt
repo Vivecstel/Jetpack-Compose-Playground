@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/FilledTonalButtonScreen.kt"

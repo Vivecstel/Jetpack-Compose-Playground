@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.navigation
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.navigation.NavBackStackEntry
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 const val NavigationDuration = 600
 private val fadeRoutes = listOf(

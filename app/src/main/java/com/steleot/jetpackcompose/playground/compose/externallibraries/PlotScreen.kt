@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 import com.madrapps.plot.line.DataPoint
 import com.madrapps.plot.line.LineGraph
 import com.madrapps.plot.line.LinePlot
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
