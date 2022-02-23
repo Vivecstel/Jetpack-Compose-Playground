@@ -13,15 +13,14 @@ apply<ComposeConfigurationPlugin>()
 
 android {
     compileSdk = AndroidConfiguration.compileSdk
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
-        }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
 dependencies {
     implementation(project(Modules.ThemeBase))
-    implementation(Libraries.composeUi)
-    implementation(Libraries.composeMaterial)
+    implementation(androidx.composeUi)
+    implementation(androidx.composeMaterial)
 }

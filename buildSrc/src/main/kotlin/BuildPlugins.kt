@@ -35,18 +35,6 @@ object BuildPlugins {
     /* https://developer.android.com/training/dependency-injection/hilt-android */
     const val hilt = "dagger.hilt.android.plugin"
 
-    /* https://github.com/runningcode/gradle-doctor */
-    const val gradleDoctor = "com.osacky.doctor"
-
-    /* https://github.com/protocolbuffers/protobuf */
-    const val protobuf = "com.google.protobuf"
-
-    /* https://github.com/Triple-T/gradle-play-publisher */
-    const val playPublisher = "com.github.triplet.play"
-
-    /* https://github.com/Kotlin/kotlinx.serialization */
-    const val serialization = "plugin.serialization"
-
     /* https://github.com/google/secrets-gradle-plugin */
     const val secrets = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
 }

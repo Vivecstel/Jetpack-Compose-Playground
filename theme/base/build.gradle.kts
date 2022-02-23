@@ -12,4 +12,8 @@ apply<BaseAndroidConfigurationPlugin>()
 
 android {
     compileSdk = AndroidConfiguration.compileSdk
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
 }

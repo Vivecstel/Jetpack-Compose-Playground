@@ -11,8 +11,12 @@ apply<BaseAndroidConfigurationPlugin>()
 
 android {
     compileSdk = AndroidConfiguration.compileSdk
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
 }
 
 dependencies {
-    implementation(Libraries.coreKtx)
+    implementation(androidx.coreKtx)
 }
