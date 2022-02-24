@@ -1,27 +1,26 @@
 [versions]
 
-compose = "1.2.0-alpha03"
-composeMaterial3 = "1.0.0-alpha05"
+compose = "1.2.0-alpha04"
+composeMaterial3 = "1.0.0-alpha06"
 profileInstaller = "1.2.0-alpha02"
 composeConstraint = "1.0.0"
 composePaging = "1.0.0-alpha14"
-navigation = "2.5.0-alpha02"
-glance = "1.0.0-alpha02"
+navigation = "2.5.0-alpha03"
+glance = "1.0.0-alpha03"
 core = "1.8.0-alpha04"
-activity = "1.5.0-alpha02"
-appCompat = "1.4.1"
+activity = "1.5.0-alpha03"
+appCompat = "1.6.0-alpha01"
 lifecycle = "2.5.0-alpha01"
 hiltCompose = "1.0.0"
 startUp = "1.2.0-alpha01"
 dataStore = "1.0.0"
-cameraX = "1.1.0-beta01"
-cameraView = "1.1.0-beta01"
+camera = "1.1.0-beta02"
 workManager = "2.8.0-alpha01"
 test = "1.4.1-alpha04"
 junit = "1.1.4-alpha04"
 espresso = "3.5.0-alpha04"
 uiAutomator = "2.2.0"
-benchmark = "1.1.0-beta03"
+benchmark = "1.1.0-beta04"
 
 [libraries]
 
@@ -93,10 +92,10 @@ startUp = { module = "androidx.startup:startup-runtime", version.ref = "startUp"
 dataStore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
 
 # https://developer.android.com/jetpack/androidx/releases/camera
-cameraxCore = { module = "androidx.camera:camera-core", version.ref = "cameraX" }
-camerax2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraX" }
-cameraxLifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraX" }
-cameraxView = { module = "androidx.camera:camera-view", version.ref = "cameraView" }
+cameraxCore = { module = "androidx.camera:camera-core", version.ref = "camera" }
+camerax2 = { module = "androidx.camera:camera-camera2", version.ref = "camera" }
+cameraxLifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera" }
+cameraxView = { module = "androidx.camera:camera-view", version.ref = "camera" }
 
 # https://developer.android.com/jetpack/androidx/releases/work
 workManager = { module = "androidx.work:work-runtime", version.ref = "workManager" }
