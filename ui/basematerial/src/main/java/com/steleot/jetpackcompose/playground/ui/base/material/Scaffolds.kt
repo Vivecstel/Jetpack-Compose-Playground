@@ -1,11 +1,11 @@
 package com.steleot.jetpackcompose.playground.ui.base.material
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.google.accompanist.insets.systemBarsPadding
 
 @Composable
 fun DefaultScaffold(

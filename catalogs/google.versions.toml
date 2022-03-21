@@ -1,13 +1,13 @@
 [versions]
 
-firebase = "29.1.0"
+firebase = "29.2.1"
 hilt = "2.41"
 protobuf = "4.0.0-rc-2"
 playCore = "1.10.3"
 playCoreKtx = "1.8.1"
-mapsCompose = "1.2.0"
+mapsCompose = "1.3.1"
 playServicesMaps = "18.0.2"
-accompanist = "0.24.3-alpha"
+accompanist = "0.24.4-alpha"
 adMob = "20.6.0"
 playServicesAuth = "20.1.0"
 
@@ -38,8 +38,7 @@ playCoreKtx = { module = "com.google.android.play:core-ktx", version.ref = "play
 mapsCompose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
 playServicesMaps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 
-# https://github.com/chrisbanes/accompanist
-accompanistInsets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
+# https://github.com/google/accompanist
 accompanistFlow = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
 accompanistPager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
 accompanistPagerIndicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
@@ -63,4 +62,4 @@ playServicesAuth = { module = "com.google.android.gms:play-services-auth", versi
 firebase = ["firebaseAnalytics", "firebaseCrashlytics", "firebaseFirestore", "firebaseMessaging", "firebaseInstallations", "firebaseAuth"]
 playCore = ["playCore", "playCoreKtx"]
 mapsCompose = ["mapsCompose", "playServicesMaps"]
-accompanist = ["accompanistInsets", "accompanistFlow", "accompanistPager", "accompanistPagerIndicators", "accompanistPagerIndicators", "accompanistSystemUicontroller", "accompanistSwipeRefresh", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationAnimation", "accompanistNavigationMaterial", "accompanistWebView"]
+accompanist = ["accompanistFlow", "accompanistPager", "accompanistPagerIndicators", "accompanistPagerIndicators", "accompanistSystemUicontroller", "accompanistSwipeRefresh", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationAnimation", "accompanistNavigationMaterial", "accompanistWebView"]

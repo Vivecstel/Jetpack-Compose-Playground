@@ -20,7 +20,6 @@
 - [GlideLandscapist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/GlideLandscapistScreen.kt)
 - [GoogleMaps](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/GoogleMapsScreen.kt)
 - [HtmlText](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/HtmlTextScreen.kt)
-- [InsetsAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/InsetsAccompanistScreen.kt)
 - [Lottie](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/LottieScreen.kt)
 - [NavigationAnimationAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/NavigationAnimationAccompanistScreen.kt)
 - [NavigationMaterialAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/NavigationMaterialAccompanistScreen.kt)

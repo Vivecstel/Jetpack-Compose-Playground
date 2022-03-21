@@ -427,7 +427,6 @@ fun NavGraphBuilder.addExternalLibraries(
     deepLinkComposable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.GoogleMaps) { GoogleMapsScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.HtmlText) { HtmlTextScreen() }
-    deepLinkComposable(route = ExternalLibrariesNavRoutes.InsetsAccompanist) { InsetsAccompanistScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
         NavigationAnimationAccompanistScreen()

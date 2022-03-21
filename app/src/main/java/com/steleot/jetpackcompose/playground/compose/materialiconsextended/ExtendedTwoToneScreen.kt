@@ -1,10 +1,9 @@
 package com.steleot.jetpackcompose.playground.compose.materialiconsextended
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.twotone.*
@@ -253,7 +252,6 @@ private val list = listOf(
 )
 
 @Preview
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun ExtendedTwoToneGrid() {
     LazyVerticalGrid(

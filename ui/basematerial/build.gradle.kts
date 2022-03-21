@@ -27,5 +27,4 @@ dependencies {
     implementation(androidx.composeMaterial)
     implementation(androidx.composeUi)
     implementation(androidx.composeActivity)
-    implementation(google.accompanistInsets)
 }

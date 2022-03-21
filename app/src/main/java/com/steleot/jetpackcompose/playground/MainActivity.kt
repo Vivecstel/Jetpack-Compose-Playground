@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -206,64 +205,62 @@ fun JetpackComposeApp(
                     navController.removeOnDestinationChangedListener(listener)
                 }
             }
-            ProvideWindowInsets {
-                LocalProviders(
-                    inAppReviewHelper, favoriteHelper, themeState, user, navController
+            LocalProviders(
+                inAppReviewHelper, favoriteHelper, themeState, user, navController
+            ) {
+                AnimatedNavHost(
+                    navController = navController,
+                    startDestination = MainNavRoutes.Main,
+                    enterTransition = { getEnterTransition(screenWidth) },
+                    exitTransition = { getExitTransition(-screenWidth) },
+                    popEnterTransition = { getEnterTransition(-screenWidth, true) },
+                    popExitTransition = { getExitTransition(screenWidth, true) }
                 ) {
-                    AnimatedNavHost(
-                        navController = navController,
-                        startDestination = MainNavRoutes.Main,
-                        enterTransition = { getEnterTransition(screenWidth) },
-                        exitTransition = { getExitTransition(-screenWidth) },
-                        popEnterTransition = { getEnterTransition(-screenWidth, true) },
-                        popExitTransition = { getExitTransition(screenWidth, true) }
-                    ) {
-                        /* main */
-                        addMainRoutes(
-                            firebaseAuth,
-                            googleSignInClient,
-                            themeState,
-                            setTheme = { newThemeState ->
-                                themeState = newThemeState
-                            }
-                        ) { newUser ->
-                            firebaseAnalytics.logEvent(
-                                if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
-                                Bundle().apply {
-                                    if (user != null) putString(
-                                        FirebaseAnalytics.Param.METHOD,
-                                        "google"
-                                    )
-                                })
-                            user = newUser
+                    /* main */
+                    addMainRoutes(
+                        firebaseAuth,
+                        googleSignInClient,
+                        themeState,
+                        setTheme = { newThemeState ->
+                            themeState = newThemeState
                         }
-                        /* activity */
-                        addActivityRoutes()
-                        /* animation */
-                        addAnimationRoutes()
-                        /* constraint layout */
-                        addConstraintLayoutRoutes()
-                        /* foundation */
-                        addFoundationRoutes()
-                        /* material */
-                        addMaterialRoutes()
-                        /* material 3 */
-                        addMaterial3Routes()
-                        /* material icons */
-                        addMaterialIconsRoutes()
-                        /* material icons extended */
-                        addMaterialIconsExtended()
-                        /* runtime */
-                        addRuntimeRoutes()
-                        /* ui */
-                        addUiRoutes()
-                        /* view model */
-                        addViewModelRoutes()
-                        /* custom examples */
-                        addCustomExamples()
-                        /* external */
-                        addExternalLibraries(systemUiController)
+                    ) { newUser ->
+                        firebaseAnalytics.logEvent(
+                            if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
+                            Bundle().apply {
+                                if (user != null) putString(
+                                    FirebaseAnalytics.Param.METHOD,
+                                    "google"
+                                )
+                            })
+                        user = newUser
                     }
+                    /* activity */
+                    addActivityRoutes()
+                    /* animation */
+                    addAnimationRoutes()
+                    /* constraint layout */
+                    addConstraintLayoutRoutes()
+                    /* foundation */
+                    addFoundationRoutes()
+                    /* material */
+                    addMaterialRoutes()
+                    /* material 3 */
+                    addMaterial3Routes()
+                    /* material icons */
+                    addMaterialIconsRoutes()
+                    /* material icons extended */
+                    addMaterialIconsExtended()
+                    /* runtime */
+                    addRuntimeRoutes()
+                    /* ui */
+                    addUiRoutes()
+                    /* view model */
+                    addViewModelRoutes()
+                    /* custom examples */
+                    addCustomExamples()
+                    /* external */
+                    addExternalLibraries(systemUiController)
                 }
             }
         }

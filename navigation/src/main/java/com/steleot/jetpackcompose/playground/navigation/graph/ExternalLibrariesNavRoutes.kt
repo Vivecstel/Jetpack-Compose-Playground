@@ -23,7 +23,6 @@ object ExternalLibrariesNavRoutes {
     const val GlideLandscapist = "glide landscapist"
     const val GoogleMaps = "google maps"
     const val HtmlText = "html text"
-    const val InsetsAccompanist = "insets accompanist"
     const val Lottie = "lottie"
     const val NavigationAnimationAccompanist = "navigation animation accompanist"
     const val NavigationMaterialAccompanist = "navigation material accompanist"
