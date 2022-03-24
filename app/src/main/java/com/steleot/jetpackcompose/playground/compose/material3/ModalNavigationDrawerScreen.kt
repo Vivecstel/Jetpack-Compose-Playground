@@ -15,12 +15,12 @@ import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material3/NavigationDrawerScreen.kt"
+private const val Url = "material3/ModalNavigationDrawerScreen.kt"
 
 @Composable
-fun NavigationDrawerScreen() {
+fun ModalNavigationDrawerScreen() {
     DefaultScaffold(
-        title = Material3NavRoutes.NavigationDrawer,
+        title = Material3NavRoutes.ModalNavigationDrawer,
         link = Url,
     ) {
         Column(
@@ -38,7 +38,7 @@ fun NavigationDrawerScreen() {
 private fun NavigationDrawerExample() {
     val scope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(DrawerValue.Closed)
-    NavigationDrawer(
+    ModalNavigationDrawer(
         drawerContent = {
             Column(
                 modifier = Modifier.fillMaxSize(),

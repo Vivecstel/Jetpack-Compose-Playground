@@ -250,8 +250,8 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.LocalTextStyle3) { LocalTextStyle3Screen() }
     deepLinkComposable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
     deepLinkComposable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.ModalNavigationDrawer) { ModalNavigationDrawerScreen() }
     deepLinkComposable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
-    deepLinkComposable(route = Material3NavRoutes.NavigationDrawer) { NavigationDrawerScreen() }
     deepLinkComposable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedCard) { OutlinedCardScreen() }

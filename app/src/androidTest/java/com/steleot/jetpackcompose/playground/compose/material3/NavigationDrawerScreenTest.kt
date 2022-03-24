@@ -15,7 +15,7 @@ class NavigationDrawerScreenTest {
     fun testNavigationDrawerScreen() {
         composeTestRule.setContent {
             TestTheme3 {
-                NavigationDrawerScreen()
+                ModalNavigationDrawerScreen()
             }
         }
         // todo

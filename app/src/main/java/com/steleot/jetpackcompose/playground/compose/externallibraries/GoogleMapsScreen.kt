@@ -48,8 +48,11 @@ private fun GoogleMapsExample() {
             ),
             uiSettings = MapUiSettings(compassEnabled = false),
         ) {
-            Marker(position = athens, title = "Athens")
-            Marker(position = LatLng(40.629269, 22.947412), title = "Thessaloniki")
+            Marker(state = rememberMarkerState(position = athens), title = "Athens")
+            Marker(
+                state = rememberMarkerState(position = LatLng(40.629269, 22.947412)),
+                title = "Thessaloniki"
+            )
         }
         if (!isMapLoaded) {
             AnimatedVisibility(
