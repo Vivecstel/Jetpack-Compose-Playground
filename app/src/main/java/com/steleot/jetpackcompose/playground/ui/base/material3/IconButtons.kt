@@ -1,22 +1,25 @@
-package com.steleot.jetpackcompose.playground.ui.base.material
+package com.steleot.jetpackcompose.playground.ui.base.material3
 
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.steleot.jetpackcompose.playground.R
 
 @Composable
-fun GoToGithubIconButton(link: String) {
+fun GoToGithubButton(link: String) {
     val context = LocalContext.current
     IconButton(onClick = {
         context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-            // todo stelios
             data = Uri.parse(link)
         })
     }) {
@@ -28,7 +31,7 @@ fun GoToGithubIconButton(link: String) {
 }
 
 @Composable
-fun BackArrowIconButton() {
+fun BackArrow() {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
     IconButton(onClick = {
         backDispatcher?.onBackPressedDispatcher?.onBackPressed()
@@ -48,17 +51,6 @@ fun SearchIconButton(
         Icon(
             imageVector = Icons.Filled.Search,
             contentDescription = stringResource(id = R.string.search),
-        )
-    }
-}
-
-@Composable
-fun OpenDrawerIconButton(
-    onClick: () -> Unit
-) {
-    IconButton(onClick = onClick) {
-        Icon(
-            Icons.Filled.Menu, contentDescription = stringResource(id = R.string.open_drawer)
         )
     }
 }

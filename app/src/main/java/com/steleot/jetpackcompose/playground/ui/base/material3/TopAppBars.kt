@@ -5,6 +5,9 @@ import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultDropdownMenu
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 @Composable
 fun DefaultSmallTopAppBar(
@@ -24,16 +27,14 @@ fun DefaultSmallTopAppBar(
         actions = {
             if (link != null) {
                 GoToGithubButton(link)
-                // todo stelios
-//                DefaultDropdownMenu(title) {
-//                    DropdownIconButton3(it)
-//                }
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton(it)
+                }
             } else if (shouldAllowSearch == true) {
-                // todo stelios
-//                val navController = LocalNavController.current
-//                SearchIconButton {
-//                    navController.navigate(MainNavRoutes.Search)
-//                }
+                val navController = LocalNavController.current
+                SearchIconButton {
+                    navController.navigate(MainNavRoutes.Search)
+                }
             }
         },
         colors = TopAppBarDefaults.smallTopAppBarColors(

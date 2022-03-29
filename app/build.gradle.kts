@@ -39,8 +39,6 @@ dependencies {
     implementation(project(Modules.ThemeBase))
     implementation(project(Modules.ThemeMaterial))
     implementation(project(Modules.ThemeMaterial3))
-    implementation(project(Modules.UiBaseMaterial))
-    implementation(project(Modules.UiBaseMaterial3))
     implementation(project(Modules.UtilsAndroidExtensions))
     implementation(project(Modules.UtilsExtensions))
     implementation(project(Modules.Navigation))

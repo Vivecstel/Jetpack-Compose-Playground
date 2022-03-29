@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include()
-
-
 dependencyResolutionManagement {
     versionCatalogs {
         create("androidx") { from(files("catalogs/androidx.versions.toml")) }
@@ -17,8 +14,6 @@ include(
     ":theme:base",
     ":theme:material",
     ":theme:material3",
-    ":ui:basematerial",
-    ":ui:basematerial3",
     ":utils:extensions",
     ":utils:androidextensions",
     ":navigation",

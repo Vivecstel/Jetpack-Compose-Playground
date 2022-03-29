@@ -4,6 +4,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.steleot.jetpackcompose.playground.compose.reusable.DefaultDropdownMenu
+import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 @Composable
 fun DefaultTopAppBar(
@@ -24,16 +27,14 @@ fun DefaultTopAppBar(
 
             if (link != null) {
                 GoToGithubIconButton(link)
-                // todo stelios
-//                DefaultDropdownMenu(title) {
-//                    DropdownIconButton(it)
-//                }
+                DefaultDropdownMenu(title) {
+                    DropdownIconButton(it)
+                }
             } else if (shouldAllowSearch == true) {
-                // todo stelios
-//                val navController = LocalNavController.current
-//                SearchIconButton {
-//                    navController.navigate(MainNavRoutes.Search)
-//                }
+                val navController = LocalNavController.current
+                SearchIconButton {
+                    navController.navigate(MainNavRoutes.Search)
+                }
             }
         },
         backgroundColor = MaterialTheme.colors.primary
@@ -57,11 +58,10 @@ fun MenuTopAppBar(
             }
         },
         actions = {
-            // todo stelios
-//            val navController = LocalNavController.current
-//            SearchIconButton {
-//                navController.navigate(MainNavRoutes.Search)
-//            }
+            val navController = LocalNavController.current
+            SearchIconButton {
+                navController.navigate(MainNavRoutes.Search)
+            }
         },
         backgroundColor = MaterialTheme.colors.primary
     )
