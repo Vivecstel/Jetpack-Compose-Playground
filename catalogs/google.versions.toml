@@ -1,6 +1,6 @@
 [versions]
 
-firebase = "29.2.1"
+firebase = "29.3.0"
 hilt = "2.41"
 protobuf = "4.0.0-rc-2"
 playCore = "1.10.3"
