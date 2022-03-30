@@ -1,9 +1,12 @@
 import com.google.protobuf.gradle.generateProtoTasks
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
-import java.io.FileInputStream
-import java.util.*
+import com.steleot.jetpackcompose.playground.plugins.AddBenchmarkBuildTypePlugin
+import com.steleot.jetpackcompose.playground.plugins.ApplicationAndroidConfigurationPlugin
+import com.steleot.jetpackcompose.playground.plugins.BaseAndroidConfigurationPlugin
+import com.steleot.jetpackcompose.playground.plugins.ComposeConfigurationPlugin
 
+@Suppress("UnstableApiUsage")
 plugins {
     id(BuildPlugins.androidApplication)
     kotlin(BuildPlugins.kotlinAndroid)
@@ -12,131 +15,129 @@ plugins {
     id(BuildPlugins.googleServices)
     id(BuildPlugins.crashlytics)
     id(BuildPlugins.hilt)
-    id(BuildPlugins.protobuf) version Versions.protobufPlugin
-    id(BuildPlugins.playPublisher) version Versions.playPublisher
-    kotlin(BuildPlugins.serialization) version Versions.kotlin
+    alias(gradleLibraries.plugins.protobuf)
+    alias(gradleLibraries.plugins.playPublisher)
+    alias(gradleLibraries.plugins.kotlinSerialization)
     id(BuildPlugins.secrets)
 }
 
+apply<AddBenchmarkBuildTypePlugin>()
+apply<ApplicationAndroidConfigurationPlugin>()
+apply<BaseAndroidConfigurationPlugin>()
+apply<ComposeConfigurationPlugin>()
+
 android {
     compileSdk = AndroidConfiguration.compileSdk
-    buildToolsVersion = Versions.buildTools
 
-    defaultConfig {
-        applicationId = AndroidConfiguration.appId
-        minSdk = AndroidConfiguration.minSdk
-        targetSdk = AndroidConfiguration.targetSdk
-        versionCode = AndroidConfiguration.versionCode
-        versionName = AndroidConfiguration.versionName
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        manifestPlaceholders.apply {
-            put("appHost", AndroidConfiguration.appHost)
-            put("appScheme", AndroidConfiguration.appId)
-        }
-        buildConfigField("String", "BASE_URL", AndroidConfiguration.baseUrl)
-        buildConfigField(
-            "String",
-            "DEEP_LINK_URI",
-            "\"${AndroidConfiguration.appHost}://${AndroidConfiguration.appId}\""
-        )
-    }
-
-    val isReleasedEnabled = rootProject.file("signing/signing_info.properties").exists()
-
-    signingConfigs {
-        if (isReleasedEnabled) {
-            val properties = Properties().apply {
-                load(FileInputStream(rootProject.file("signing/signing_info.properties")))
-            }
-
-            create("release") {
-                storeFile = rootProject.file(properties.getProperty("storeFile"))
-                storePassword = properties.getProperty("storePassword")
-                keyAlias = properties.getProperty("keyAlias")
-                keyPassword = properties.getProperty("keyPassword")
-            }
-        }
-    }
-
-    buildTypes {
-        create("benchmark") {
-            signingConfig = signingConfigs.getByName("debug")
-            isDebuggable = false
-        }
-        if (isReleasedEnabled) {
-            getByName("release") {
-                signingConfig = signingConfigs.getByName("release")
-                isMinifyEnabled = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "../config/proguard-rules.pro"
-                )
-            }
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
-    }
-
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
-            kotlinOptions.freeCompilerArgs = listOf(
-                "-Xskip-prerelease-check",
-                "-Xopt-in=kotlin.RequiresOptIn",
-                "-Xjvm-default=all"
-            )
-        }
-    }
-
-    buildFeatures {
-        compose = true
-        viewBinding = true
-
-        // Disable unused AGP features
-        aidl = false
-        renderScript = false
-        resValues = false
-        shaders = false
-    }
-
-    lint {
-        abortOnError = true
-    }
-
-    packagingOptions {
-        resources.excludes.add("**/attach_hotspot_windows.dll")
-        resources.excludes.add("META-INF/licenses/**")
-        resources.excludes.add("META-INF/AL2.0")
-        resources.excludes.add("META-INF/LGPL2.1")
-    }
-
-    bundle {
-        language {
-            enableSplit = false
-        }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn", "-Xjvm-default=all")
     }
 }
 
 dependencies {
-    AppDependencies.project.forEach { implementation(project(it)) }
-    AppDependencies.bom.forEach { implementation(platform(it)) }
-    AppDependencies.implementation.forEach { implementation(it) }
-    AppDependencies.kapt.forEach { kapt(it) }
-    AppDependencies.debug.forEach { debugImplementation(it) }
-    AppDependencies.androidTest.forEach { androidTestImplementation(it) }
+    implementation(project(Modules.ThemeBase))
+    implementation(project(Modules.ThemeMaterial))
+    implementation(project(Modules.ThemeMaterial3))
+    implementation(project(Modules.UtilsAndroidExtensions))
+    implementation(project(Modules.UtilsExtensions))
+    implementation(project(Modules.Navigation))
+    implementation(project(Modules.Resources))
+
+    implementation(androidx.composeAnimation)
+    implementation(androidx.composeAnimationGraphics)
+    implementation(androidx.composeCompiler)
+    implementation(androidx.composeFoundation)
+    implementation(androidx.composeMaterial)
+    implementation(androidx.composeMaterialIcons)
+    implementation(androidx.composeMaterial3)
+    implementation(androidx.composeRuntime)
+    implementation(androidx.composeLiveData)
+    implementation(androidx.composeUi)
+    implementation(androidx.composeUiUtil)
+    implementation(androidx.composeUiTooling)
+    implementation(androidx.profileInstaller)
+    implementation(androidx.composeNavigation)
+    implementation(androidx.glance)
+    implementation(androidx.composeConstraint)
+    implementation(androidx.composePaging)
+    implementation(androidx.composeActivity)
+    implementation(androidx.appCompat)
+    implementation(androidx.viewModel)
+    implementation(platform(google.firebaseBom))
+    implementation(google.bundles.firebase)
+    implementation(google.hilt)
+    implementation(androidx.hiltNavigation)
+    implementation(androidx.startUp)
+    implementation(rest.coroutines)
+    implementation(rest.coroutinesAndroid)
+    implementation(rest.coroutinesPlayServices)
+    implementation(androidx.dataStore)
+    implementation(google.protobufJavaLite)
+    implementation(google.bundles.playCore)
+    implementation(androidx.bundles.camerax)
+    implementation(androidx.workManager)
+    implementation(google.bundles.mapsCompose)
+    implementation(rest.retrofit)
+    implementation(platform(rest.okhttpBom))
+    implementation(rest.okhttp)
+    implementation(rest.okhttpLogging)
+    implementation(rest.kotlinxSerializationConverter)
+    implementation(rest.kotlinxSerialization)
+    implementation(google.bundles.accompanist)
+    implementation(rest.bundles.landscapist)
+    implementation(rest.orchestraBalloon)
+    implementation(rest.orchestraColorPicker)
+//  implementation(rest.orchestraSpinner)
+    implementation(rest.coil)
+    implementation(rest.coilCompose)
+    implementation(rest.glide)
+    implementation(rest.fresco)
+    implementation(rest.timber)
+    implementation(rest.lottie)
+    implementation(rest.ratingBar)
+    implementation(rest.revealSwipe)
+    implementation(rest.speedDial)
+    implementation(rest.fontAwesome)
+    implementation(rest.composeCharts)
+    implementation(rest.composeNeumorphism)
+    implementation(rest.composeMarkdown)
+    implementation(rest.composeBarcodes)
+    implementation(rest.composeRichtextUi)
+    implementation(rest.composeRichtextUiMaterial)
+    implementation(rest.composeRichtextPrinting)
+//  implementation(rest.composeRichtextSlideshow)
+    implementation(rest.stageStepBar)
+    implementation(rest.plot)
+    implementation(rest.composeTimelineView)
+    implementation(rest.composeParticleSystem)
+    implementation(rest.ssJetPackComposeProgressButton)
+    implementation(rest.gap)
+//  implementation(rest.permissionsUi)
+    implementation(rest.htmlText)
+    implementation(rest.snapper)
+    implementation(rest.composeShimmer)
+    implementation(rest.zoomableComposeImage)
+    implementation(rest.composeTreeMap)
+    implementation(google.adMob)
+    implementation(google.playServicesAuth)
+
+    kapt(google.hiltCompiler)
+    kapt(rest.glideCompiler)
+
+    debugImplementation(androidx.composeUiManifest)
+    androidTestImplementation(androidx.composeUiTest)
+    androidTestImplementation(androidx.composeUiJunit)
+    androidTestImplementation(androidx.navigationTest)
+    androidTestImplementation(androidx.testCore)
 }
 
 protobuf {
     protoc {
-        artifact = Libraries.protobufProtoc
+        val dependency = google.protobufProtoc.get()
+        val protobuf =
+            "${dependency.module.group}:${dependency.module.name}:${dependency.versionConstraint.requiredVersion}"
+        artifact = protobuf
     }
 
     generateProtoTasks {

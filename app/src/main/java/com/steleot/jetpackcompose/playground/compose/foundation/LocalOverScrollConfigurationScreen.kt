@@ -8,9 +8,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "foundation/LocalOverScrollConfigurationScreen.kt"
 

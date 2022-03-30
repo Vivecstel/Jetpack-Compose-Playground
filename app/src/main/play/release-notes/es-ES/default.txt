@@ -1,1 +1,1 @@
-Composición actualizada a 1.2.0-alpha03. Bibliotecas actualizadas. Atajos añadidos. Ejemplo actualizado de Google Maps. Se agregaron más ejemplos.
+Composición actualizada a 1.2.0-alpha06. Bibliotecas actualizadas. Se agregaron más ejemplos.

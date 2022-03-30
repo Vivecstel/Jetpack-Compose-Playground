@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 val routes = listOf(
     FoundationNavRoutes.AbsolutePadding,
@@ -27,11 +27,13 @@ val routes = listOf(
     FoundationNavRoutes.InteractionSource,
     FoundationNavRoutes.Intrinsic,
     FoundationNavRoutes.LazyColumn,
-    FoundationNavRoutes.LazyGrid,
+    FoundationNavRoutes.LazyHorizontalGrid,
     FoundationNavRoutes.LazyRow,
+    FoundationNavRoutes.LazyVerticalGrid,
     FoundationNavRoutes.LocalOverScrollConfiguration,
     FoundationNavRoutes.MatchParentSize,
     FoundationNavRoutes.Offset,
+//    FoundationNavRoutes.OnFocusedBoundsChanged,
     FoundationNavRoutes.PaddingFromBaseline,
     FoundationNavRoutes.PaddingFrom,
     FoundationNavRoutes.Padding,

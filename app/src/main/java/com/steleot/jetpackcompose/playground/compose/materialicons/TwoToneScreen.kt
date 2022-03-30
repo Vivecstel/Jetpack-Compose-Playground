@@ -1,67 +1,18 @@
 package com.steleot.jetpackcompose.playground.compose.materialicons
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.twotone.AccountBox
-import androidx.compose.material.icons.twotone.AccountCircle
-import androidx.compose.material.icons.twotone.Add
-import androidx.compose.material.icons.twotone.AddCircle
-import androidx.compose.material.icons.twotone.ArrowBack
-import androidx.compose.material.icons.twotone.ArrowDropDown
-import androidx.compose.material.icons.twotone.ArrowForward
-import androidx.compose.material.icons.twotone.Build
-import androidx.compose.material.icons.twotone.Call
-import androidx.compose.material.icons.twotone.Check
-import androidx.compose.material.icons.twotone.CheckCircle
-import androidx.compose.material.icons.twotone.Clear
-import androidx.compose.material.icons.twotone.Close
-import androidx.compose.material.icons.twotone.Create
-import androidx.compose.material.icons.twotone.DateRange
-import androidx.compose.material.icons.twotone.Delete
-import androidx.compose.material.icons.twotone.Done
-import androidx.compose.material.icons.twotone.Edit
-import androidx.compose.material.icons.twotone.Email
-import androidx.compose.material.icons.twotone.ExitToApp
-import androidx.compose.material.icons.twotone.Face
-import androidx.compose.material.icons.twotone.Favorite
-import androidx.compose.material.icons.twotone.FavoriteBorder
-import androidx.compose.material.icons.twotone.Home
-import androidx.compose.material.icons.twotone.Info
-import androidx.compose.material.icons.twotone.KeyboardArrowDown
-import androidx.compose.material.icons.twotone.KeyboardArrowLeft
-import androidx.compose.material.icons.twotone.KeyboardArrowRight
-import androidx.compose.material.icons.twotone.KeyboardArrowUp
-import androidx.compose.material.icons.twotone.List
-import androidx.compose.material.icons.twotone.LocationOn
-import androidx.compose.material.icons.twotone.Lock
-import androidx.compose.material.icons.twotone.MailOutline
-import androidx.compose.material.icons.twotone.Menu
-import androidx.compose.material.icons.twotone.MoreVert
-import androidx.compose.material.icons.twotone.Notifications
-import androidx.compose.material.icons.twotone.Person
-import androidx.compose.material.icons.twotone.Phone
-import androidx.compose.material.icons.twotone.Place
-import androidx.compose.material.icons.twotone.PlayArrow
-import androidx.compose.material.icons.twotone.Refresh
-import androidx.compose.material.icons.twotone.Search
-import androidx.compose.material.icons.twotone.Send
-import androidx.compose.material.icons.twotone.Settings
-import androidx.compose.material.icons.twotone.Share
-import androidx.compose.material.icons.twotone.ShoppingCart
-import androidx.compose.material.icons.twotone.Star
-import androidx.compose.material.icons.twotone.ThumbUp
-import androidx.compose.material.icons.twotone.Warning
+import androidx.compose.material.icons.twotone.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.MaterialIconsNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MaterialIconsNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "materialicons/TwoToneScreen.kt"
 
@@ -128,7 +79,6 @@ private val list = listOf(
 )
 
 @Preview
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun TwoToneGrid() {
     LazyVerticalGrid(

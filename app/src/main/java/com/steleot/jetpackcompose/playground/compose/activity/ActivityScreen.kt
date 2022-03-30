@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.activity
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ActivityNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 
 val routes = listOf(
     ActivityNavRoutes.BackHandler,

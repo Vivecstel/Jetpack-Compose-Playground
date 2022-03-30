@@ -61,13 +61,6 @@ exceptions:
   TooGenericExceptionCaught:
     active: false
 
-formatting:
-  active: true
-  android: false
-  autoCorrect: true
-  MaximumLineLength:
-    active: false
-
 naming:
   FunctionNaming:
     active: false

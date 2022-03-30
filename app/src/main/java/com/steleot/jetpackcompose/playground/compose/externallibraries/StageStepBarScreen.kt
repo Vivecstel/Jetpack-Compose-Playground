@@ -1,10 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,8 +11,8 @@ import com.loukwn.stagestepbar_compose.StageStepBar
 import com.loukwn.stagestepbar_compose.data.DrawnComponent
 import com.loukwn.stagestepbar_compose.data.StageStepBarConfig
 import com.loukwn.stagestepbar_compose.data.State
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val Url = "externallibraries/StageStepBarScreen.kt"
 

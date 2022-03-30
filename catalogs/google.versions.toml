@@ -1,0 +1,65 @@
+[versions]
+
+firebase = "29.3.0"
+hilt = "2.41"
+protobuf = "4.0.0-rc-2"
+playCore = "1.10.3"
+playCoreKtx = "1.8.1"
+mapsCompose = "2.0.0"
+playServicesMaps = "18.0.2"
+accompanist = "0.24.5-alpha"
+adMob = "20.6.0"
+playServicesAuth = "20.1.0"
+
+[libraries]
+
+# https://firebase.google.com/docs/android/learn-more
+firebaseBom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
+firebaseAnalytics = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebaseFirestore = { module = "com.google.firebase:firebase-firestore-ktx" }
+firebaseMessaging = { module = "com.google.firebase:firebase-messaging-ktx" }
+firebaseInstallations = { module = "com.google.firebase:firebase-installations-ktx" }
+firebaseAuth = { module = "com.google.firebase:firebase-auth-ktx" }
+
+# https://developer.android.com/training/dependency-injection/hilt-android
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# https://github.com/protocolbuffers/protobuf
+protobufProtoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+protobufJavaLite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+
+# https://developer.android.com/guide/playcore
+playCore = { module = "com.google.android.play:core", version.ref = "playCore" }
+playCoreKtx = { module = "com.google.android.play:core-ktx", version.ref = "playCoreKtx" }
+
+# https://github.com/googlemaps/android-maps-compose
+mapsCompose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+playServicesMaps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+
+# https://github.com/google/accompanist
+accompanistFlow = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
+accompanistPager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+accompanistPagerIndicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
+accompanistSystemUicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanistSwipeRefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
+accompanistPermissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+accompanistPlaceholderMaterial = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
+accompanistDrawablePainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanist" }
+accompanistNavigationAnimation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
+accompanistNavigationMaterial = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
+accompanistWebView = { module = "com.google.accompanist:accompanist-webview", version.ref = "accompanist" }
+
+# https://firebase.google.com/docs/admob/android/quick-start
+adMob = { module = "com.google.android.gms:play-services-ads", version.ref = "adMob" }
+
+# https://firebase.google.com/docs/auth/android/google-signin
+playServicesAuth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+
+[bundles]
+
+firebase = ["firebaseAnalytics", "firebaseCrashlytics", "firebaseFirestore", "firebaseMessaging", "firebaseInstallations", "firebaseAuth"]
+playCore = ["playCore", "playCoreKtx"]
+mapsCompose = ["mapsCompose", "playServicesMaps"]
+accompanist = ["accompanistFlow", "accompanistPager", "accompanistPagerIndicators", "accompanistPagerIndicators", "accompanistSystemUicontroller", "accompanistSwipeRefresh", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationAnimation", "accompanistNavigationMaterial", "accompanistWebView"]

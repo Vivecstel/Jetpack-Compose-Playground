@@ -1,11 +1,12 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 
+@Suppress("UnstableApiUsage")
 plugins {
-    kotlin(BuildPlugins.kotlinJvm) version Versions.kotlin
-    id(BuildPlugins.benManes) version Versions.benManes
-    id(BuildPlugins.detekt) version Versions.detekt
-    id(BuildPlugins.gradleDoctor) version Versions.doctor
+    alias(gradleLibraries.plugins.kotlinJvm)
+    alias(gradleLibraries.plugins.benManes)
+    alias(gradleLibraries.plugins.detekt)
+    alias(gradleLibraries.plugins.doctor)
 }
 
 buildscript {
@@ -13,11 +14,12 @@ buildscript {
         google()
     }
     dependencies {
-        classpath(GradleLibraries.androidPlugin)
-        classpath(GradleLibraries.googleServices)
-        classpath(GradleLibraries.crashlytics)
-        classpath(GradleLibraries.hiltPlugin)
-        classpath(GradleLibraries.secrets)
+        classpath(gradleLibraries.kotlinGradle)
+        classpath(gradleLibraries.androidPlugin)
+        classpath(gradleLibraries.googleServices)
+        classpath(gradleLibraries.crashlytics)
+        classpath(gradleLibraries.hiltPlugin)
+        classpath(gradleLibraries.secrets)
     }
 }
 
@@ -28,11 +30,18 @@ allprojects {
         maven("https://jitpack.io")
     }
 
+    // todo stelios revisit
     configurations.all {
         resolutionStrategy.force(
-            Libraries.composeAnimation, Libraries.composeFoundation, Libraries.composeRuntime,
-            Libraries.composeUi, Libraries.core, Libraries.coreKtx, Libraries.activity,
-            Libraries.viewModel, Libraries.liveData
+            androidx.composeAnimation,
+            androidx.composeFoundation,
+            androidx.composeRuntime,
+            androidx.composeUi,
+            androidx.core,
+            androidx.coreKtx,
+            androidx.activity,
+            androidx.viewModel,
+            androidx.liveData
         )
     }
 }

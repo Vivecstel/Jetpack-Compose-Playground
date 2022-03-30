@@ -2,7 +2,6 @@ package com.steleot.jetpackcompose.playground.compose.activity
 
 import android.Manifest
 import android.graphics.Bitmap
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.launch
@@ -23,10 +22,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.ActivityNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.ActivityNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.isCameraPermissionGranted
+import com.steleot.jetpackcompose.playground.utils.shortToast
 import com.steleot.jetpackcompose.playground.utils.startActivitySafe
+import timber.log.Timber
 
 private const val Url = "activity/LauncherForActivityResult1Screen.kt"
 
@@ -56,11 +57,15 @@ private fun LauncherForActivityResultExample() {
     val permissionLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
-                context.startActivitySafe {
-                    launcher.launch()
-                }
+                startActivitySafe(
+                    startActivity = { launcher.launch() },
+                    activityNotFoundAction = { e ->
+                        Timber.e(e)
+                        context.shortToast(R.string.activity_not_found)
+                    }
+                )
             } else {
-                Toast.makeText(context, R.string.permission_not_granted, Toast.LENGTH_SHORT).show()
+                context.shortToast(R.string.permission_not_granted)
             }
         }
 

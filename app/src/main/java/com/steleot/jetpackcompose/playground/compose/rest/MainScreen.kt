@@ -1,53 +1,19 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.AlertDialog
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Divider
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Article
-import androidx.compose.material.icons.filled.Extension
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Feedback
-import androidx.compose.material.icons.filled.Lightbulb
-import androidx.compose.material.icons.filled.NewReleases
-import androidx.compose.material.icons.filled.PrivacyTip
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ThumbUp
-import androidx.compose.material.rememberScaffoldState
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.key
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
+import androidx.compose.material.icons.filled.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -63,25 +29,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.AsyncImage
-import com.google.accompanist.insets.systemBarsPadding
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultCardListItem
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultListItem
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultTopAppBar
-import com.steleot.jetpackcompose.playground.compose.reusable.MenuTopAppBar
-import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
+import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.localproviders.LocalUser
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultListItem
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
+import com.steleot.jetpackcompose.playground.ui.base.material.MenuTopAppBar
 import com.steleot.jetpackcompose.playground.utils.GoogleSignContract
 import com.steleot.jetpackcompose.playground.utils.sendFeedback
+import com.steleot.jetpackcompose.playground.utils.shortToast
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
@@ -270,12 +236,17 @@ fun MainScreenWithDrawer(
                                             )
                                         }
                                     }
-                                    MenuAction.TOAST -> Toast.makeText(
-                                        context,
-                                        R.string.coming_soon,
-                                        Toast.LENGTH_LONG
-                                    ).show()
-                                    MenuAction.FEEDBACK -> context.sendFeedback()
+                                    MenuAction.TOAST -> context.shortToast(R.string.coming_soon)
+                                    MenuAction.FEEDBACK -> context.sendFeedback(
+                                        arrayOf("steleot@hotmail.com"),
+                                        context.getString(
+                                            R.string.feedback_on,
+                                            context.getString(R.string.app_name)
+                                        ),
+                                    ) { e ->
+                                        Timber.e(e)
+                                        context.shortToast(R.string.activity_not_found)
+                                    }
                                     MenuAction.PRIVACY_POLICY -> uriHandler.openUri(PrivacyPolicyUrl)
                                 }
                             }

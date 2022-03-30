@@ -1,0 +1,58 @@
+[versions]
+
+kotlin = "1.6.10"
+androidPlugin = "7.1.2"
+hilt = "2.41"
+googleServices = "4.3.10"
+crashlytics = "2.8.1"
+secrets = "2.0.1"
+detekt = "1.20.0-RC1"
+benManes = "0.42.0"
+doctor = "0.8.0"
+protobuf = "0.8.18"
+playPublisher = "3.7.0"
+
+[libraries]
+
+# https://kotlinlang.org/docs/gradle.html
+kotlinGradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# https://developer.android.com/studio/releases/gradle-plugin
+androidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidPlugin" }
+
+# https://developer.android.com/training/dependency-injection/hilt-android
+hiltPlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+
+# https://developers.google.com/android/guides/google-services-plugin
+googleServices = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+
+# https://firebase.google.com/docs/crashlytics/get-started?platform=android
+crashlytics = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "crashlytics" }
+
+# https://github.com/google/secrets-gradle-plugin
+secrets = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "secrets" }
+
+# https://developer.android.com/studio/releases/gradle-plugin
+androidGradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidPlugin" }
+
+[plugins]
+
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+# https://github.com/ben-manes/gradle-versions-plugin
+benManes = { id = "com.github.ben-manes.versions", version.ref = "benManes" }
+
+# https://github.com/detekt/detekt
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# https://github.com/protocolbuffers/protobuf
+doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
+
+# https://github.com/protocolbuffers/protobuf
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
+
+#  https://github.com/Triple-T/gradle-play-publisher
+playPublisher = { id = "com.github.triplet.play", version.ref = "playPublisher" }
+
+# https://github.com/Kotlin/kotlinx.serialization
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

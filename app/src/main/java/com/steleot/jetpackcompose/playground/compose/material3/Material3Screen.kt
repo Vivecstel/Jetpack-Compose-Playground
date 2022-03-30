@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.material3
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.Material3NavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 
 val routes = listOf(
     Material3NavRoutes.AlertDialog3,
@@ -31,19 +31,23 @@ val routes = listOf(
     Material3NavRoutes.LocalTextStyle3,
     Material3NavRoutes.MaterialTheme3,
     Material3NavRoutes.MediumTopAppBar,
+    Material3NavRoutes.ModalNavigationDrawer,
     Material3NavRoutes.NavigationBar,
-    Material3NavRoutes.NavigationDrawer,
     Material3NavRoutes.NavigationRail3,
     Material3NavRoutes.OutlinedButton3,
     Material3NavRoutes.OutlinedCard,
+    Material3NavRoutes.OutlinedTextField3,
     Material3NavRoutes.ProgressIndicator3,
     Material3NavRoutes.RadioButton3,
     Material3NavRoutes.Scaffold3,
+    Material3NavRoutes.Slider3,
     Material3NavRoutes.SmallFloatingActionButton,
     Material3NavRoutes.SmallTopAppBar,
     Material3NavRoutes.Surface3,
+    Material3NavRoutes.TabRow3,
     Material3NavRoutes.Text3,
     Material3NavRoutes.TextButton3,
+    Material3NavRoutes.TextField3,
 )
 
 @Composable

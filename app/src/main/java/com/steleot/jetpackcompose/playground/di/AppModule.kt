@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.di
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
@@ -28,6 +29,7 @@ object AppModule {
     @Singleton
     fun provideFirebaseAuth() = FirebaseAuth.getInstance()
 
+    @SuppressLint("MissingPermission")
     @Provides
     @Singleton
     fun provideFirebaseAnalytics(@ApplicationContext context: Context) =

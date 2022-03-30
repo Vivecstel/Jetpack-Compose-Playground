@@ -24,7 +24,6 @@
 - [LocalContext](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalContextScreen.kt)
 - [LocalDensity](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalDensityScreen.kt)
 - [LocalFocusManager](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalFocusManagerScreen.kt)
-- [LocalFontLoader](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalFontLoaderScreen.kt)
 - [LocalHapticFeedback](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalHapticFeedbackScreen.kt)
 - [LocalLayoutDirection](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalLayoutDirectionScreen.kt)
 - [LocalLifecycleOwner](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalLifecycleOwnerScreen.kt)

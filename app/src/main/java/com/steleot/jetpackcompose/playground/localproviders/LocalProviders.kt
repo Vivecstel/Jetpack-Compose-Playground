@@ -10,7 +10,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.theme.ThemeState
-import com.steleot.jetpackcompose.playground.theme.isDarkTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -27,8 +26,7 @@ fun LocalProviders(
         LocalFavoriteHelper provides favoriteHelper,
         LocalOverScrollConfiguration provides null,
         LocalThemeState provides themeState,
-        LocalIsDarkTheme provides isDarkTheme(
-            themeState.darkThemeMode,
+        LocalIsDarkTheme provides themeState.darkThemeMode.isDarkTheme(
             themeState.isSystemInDarkTheme
         ),
         LocalUser provides user,

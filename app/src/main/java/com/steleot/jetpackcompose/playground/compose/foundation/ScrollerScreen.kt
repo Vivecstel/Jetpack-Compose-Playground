@@ -15,12 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultScaffold
-import com.steleot.jetpackcompose.playground.navigation.FoundationNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
 private const val Url = "foundation/ScrollerScreen.kt"
@@ -87,7 +88,7 @@ private fun Square(index: Int) {
     Box(
         Modifier
             .size(75.dp, 200.dp)
-            .background(colors[index % colors.size]),
+            .background(Color(colors[index % colors.size])),
         contentAlignment = Alignment.Center
     ) {
         Text(index.toString())

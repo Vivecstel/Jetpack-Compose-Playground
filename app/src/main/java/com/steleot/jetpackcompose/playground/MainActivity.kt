@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,15 +12,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -30,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -47,26 +40,11 @@ import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppReviewHelper
 import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalProviders
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.addActivityRoutes
-import com.steleot.jetpackcompose.playground.navigation.addAnimationRoutes
-import com.steleot.jetpackcompose.playground.navigation.addConstraintLayoutRoutes
-import com.steleot.jetpackcompose.playground.navigation.addCustomExamples
-import com.steleot.jetpackcompose.playground.navigation.addExternalLibraries
-import com.steleot.jetpackcompose.playground.navigation.addFoundationRoutes
-import com.steleot.jetpackcompose.playground.navigation.addMainRoutes
-import com.steleot.jetpackcompose.playground.navigation.addMaterial3Routes
-import com.steleot.jetpackcompose.playground.navigation.addMaterialIconsExtended
-import com.steleot.jetpackcompose.playground.navigation.addMaterialIconsRoutes
-import com.steleot.jetpackcompose.playground.navigation.addMaterialRoutes
-import com.steleot.jetpackcompose.playground.navigation.addRuntimeRoutes
-import com.steleot.jetpackcompose.playground.navigation.addUiRoutes
-import com.steleot.jetpackcompose.playground.navigation.addViewModelRoutes
-import com.steleot.jetpackcompose.playground.navigation.getEnterTransition
-import com.steleot.jetpackcompose.playground.navigation.getExitTransition
-import com.steleot.jetpackcompose.playground.theme.JetpackComposePlaygroundTheme
+import com.steleot.jetpackcompose.playground.navigation.*
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.theme.ThemeState
-import com.steleot.jetpackcompose.playground.theme.getMaterialColors
+import com.steleot.jetpackcompose.playground.theme.material.JetpackComposePlaygroundTheme
+import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors
 import com.steleot.jetpackcompose.playground.utils.installer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -107,6 +85,7 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var googleSignInClient: GoogleSignInClient
 
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init(savedInstanceState)
@@ -226,64 +205,62 @@ fun JetpackComposeApp(
                     navController.removeOnDestinationChangedListener(listener)
                 }
             }
-            ProvideWindowInsets {
-                LocalProviders(
-                    inAppReviewHelper, favoriteHelper, themeState, user, navController
+            LocalProviders(
+                inAppReviewHelper, favoriteHelper, themeState, user, navController
+            ) {
+                AnimatedNavHost(
+                    navController = navController,
+                    startDestination = MainNavRoutes.Main,
+                    enterTransition = { getEnterTransition(screenWidth) },
+                    exitTransition = { getExitTransition(-screenWidth) },
+                    popEnterTransition = { getEnterTransition(-screenWidth, true) },
+                    popExitTransition = { getExitTransition(screenWidth, true) }
                 ) {
-                    AnimatedNavHost(
-                        navController = navController,
-                        startDestination = MainNavRoutes.Main,
-                        enterTransition = { getEnterTransition(screenWidth) },
-                        exitTransition = { getExitTransition(-screenWidth) },
-                        popEnterTransition = { getEnterTransition(-screenWidth, true) },
-                        popExitTransition = { getExitTransition(screenWidth, true) }
-                    ) {
-                        /* main */
-                        addMainRoutes(
-                            firebaseAuth,
-                            googleSignInClient,
-                            themeState,
-                            setTheme = { newThemeState ->
-                                themeState = newThemeState
-                            }
-                        ) { newUser ->
-                            firebaseAnalytics.logEvent(
-                                if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
-                                Bundle().apply {
-                                    if (user != null) putString(
-                                        FirebaseAnalytics.Param.METHOD,
-                                        "google"
-                                    )
-                                })
-                            user = newUser
+                    /* main */
+                    addMainRoutes(
+                        firebaseAuth,
+                        googleSignInClient,
+                        themeState,
+                        setTheme = { newThemeState ->
+                            themeState = newThemeState
                         }
-                        /* activity */
-                        addActivityRoutes()
-                        /* animation */
-                        addAnimationRoutes()
-                        /* constraint layout */
-                        addConstraintLayoutRoutes()
-                        /* foundation */
-                        addFoundationRoutes()
-                        /* material */
-                        addMaterialRoutes()
-                        /* material 3 */
-                        addMaterial3Routes()
-                        /* material icons */
-                        addMaterialIconsRoutes()
-                        /* material icons extended */
-                        addMaterialIconsExtended()
-                        /* runtime */
-                        addRuntimeRoutes()
-                        /* ui */
-                        addUiRoutes()
-                        /* view model */
-                        addViewModelRoutes()
-                        /* custom examples */
-                        addCustomExamples()
-                        /* external */
-                        addExternalLibraries(systemUiController)
+                    ) { newUser ->
+                        firebaseAnalytics.logEvent(
+                            if (user != null) FirebaseAnalytics.Event.LOGIN else "logout",
+                            Bundle().apply {
+                                if (user != null) putString(
+                                    FirebaseAnalytics.Param.METHOD,
+                                    "google"
+                                )
+                            })
+                        user = newUser
                     }
+                    /* activity */
+                    addActivityRoutes()
+                    /* animation */
+                    addAnimationRoutes()
+                    /* constraint layout */
+                    addConstraintLayoutRoutes()
+                    /* foundation */
+                    addFoundationRoutes()
+                    /* material */
+                    addMaterialRoutes()
+                    /* material 3 */
+                    addMaterial3Routes()
+                    /* material icons */
+                    addMaterialIconsRoutes()
+                    /* material icons extended */
+                    addMaterialIconsExtended()
+                    /* runtime */
+                    addRuntimeRoutes()
+                    /* ui */
+                    addUiRoutes()
+                    /* view model */
+                    addViewModelRoutes()
+                    /* custom examples */
+                    addCustomExamples()
+                    /* external */
+                    addExternalLibraries(systemUiController)
                 }
             }
         }

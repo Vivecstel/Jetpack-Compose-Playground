@@ -2,8 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.compose.rest.MainScreen
-import com.steleot.jetpackcompose.playground.navigation.MainNavRoutes
-import com.steleot.jetpackcompose.playground.navigation.UiNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 
 val routes = listOf(
     UiNavRoutes.AlignmentLine,
@@ -35,7 +35,7 @@ val routes = listOf(
     UiNavRoutes.LocalContext,
     UiNavRoutes.LocalDensity,
     UiNavRoutes.LocalFocusManager,
-    UiNavRoutes.LocalFontLoader,
+    UiNavRoutes.LocalFontFamilyResolver,
     UiNavRoutes.LocalHapticFeedback,
     UiNavRoutes.LocalLayoutDirection,
     UiNavRoutes.LocalLifecycleOwner,
