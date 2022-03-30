@@ -3,7 +3,7 @@ package com.steleot.jetpackcompose.playground.utils
 import com.steleot.jetpackcompose.playground.navigation.graph.*
 
 val ribbonRoutes = setOf(
-    /* 4.10.0 */
+    /* 4.9.0 */
     MainNavRoutes.Foundation,
     FoundationNavRoutes.LazyHorizontalGrid,
     MainNavRoutes.Material,
@@ -13,7 +13,6 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.Slider3,
     Material3NavRoutes.TabRow3,
     Material3NavRoutes.TextField3,
-    /* 4.9.0 */
     MainNavRoutes.Ui,
     UiNavRoutes.LocalFontFamilyResolver,
     /* 4.8.0 */
@@ -24,4 +23,7 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.OutlinedCard,
     MainNavRoutes.Runtime,
     RuntimeNavRoutes.MovableContentOf,
+    /* 4.7.0 */
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.GoogleMaps,
 )
