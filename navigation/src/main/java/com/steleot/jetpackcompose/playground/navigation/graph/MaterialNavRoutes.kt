@@ -17,6 +17,7 @@ object MaterialNavRoutes {
     const val DropdownMenu = "dropdown menu"
     const val FloatingActionButton = "floating action button"
     const val ExtendedFloatingActionButton = "extended floating action button"
+    const val FilterChip = "filter chip"
     const val Elevation = "elevation"
     const val ExposedDropdownMenuBox = "exposed dropdown menu box"
     const val IconButton = "icon button"

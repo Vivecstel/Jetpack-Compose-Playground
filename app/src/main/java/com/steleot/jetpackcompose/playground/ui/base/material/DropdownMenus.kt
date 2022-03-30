@@ -1,4 +1,4 @@
-package com.steleot.jetpackcompose.playground.compose.reusable
+package com.steleot.jetpackcompose.playground.ui.base.material
 
 import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem

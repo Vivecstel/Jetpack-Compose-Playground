@@ -5,7 +5,7 @@ import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.steleot.jetpackcompose.playground.compose.reusable.DefaultDropdownMenu
+import com.steleot.jetpackcompose.playground.ui.base.material.DefaultDropdownMenu
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 

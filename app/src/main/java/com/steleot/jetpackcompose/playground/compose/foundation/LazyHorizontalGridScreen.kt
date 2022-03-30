@@ -1,9 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
@@ -12,18 +9,18 @@ import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/LazyGridScreen.kt"
+private const val Url = "foundation/LazyHorizontalGridScreen.kt"
 
 @Composable
-fun LazyGridScreen() {
+fun LazyHorizontalGridScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.LazyGrid,
+        title = FoundationNavRoutes.LazyHorizontalGrid,
         link = Url,
     ) {
         val itemsList = (0..50).toList()
         val itemsIndexedList = listOf("A", "B", "C", "D", "E", "F")
 
-        LazyVerticalGrid(GridCells.Adaptive(80.dp)) {
+        LazyHorizontalGrid(GridCells.Adaptive(80.dp)) {
             items(itemsList) {
                 Text(stringResource(id = R.string.item, it))
             }

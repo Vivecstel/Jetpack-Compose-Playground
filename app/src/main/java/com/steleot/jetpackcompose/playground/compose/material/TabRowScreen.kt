@@ -92,7 +92,7 @@ private fun ContentColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableStateOf(0) }
     TabRow(
         selectedTabIndex = selectedTab.value,
-        backgroundColor = Color.Red
+        contentColor = Color.Red
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(

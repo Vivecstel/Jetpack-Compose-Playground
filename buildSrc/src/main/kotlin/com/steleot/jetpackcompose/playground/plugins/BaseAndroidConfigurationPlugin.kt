@@ -50,6 +50,7 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                         abortOnError = true
                     }
                     buildFeatures {
+                        buildConfig = extension is ApplicationExtension
                         aidl = false
                         renderScript = false
                         resValues = false

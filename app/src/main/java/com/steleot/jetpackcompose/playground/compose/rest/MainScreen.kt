@@ -35,7 +35,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
-import com.steleot.jetpackcompose.playground.compose.reusable.ribbonRoutes
+import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController

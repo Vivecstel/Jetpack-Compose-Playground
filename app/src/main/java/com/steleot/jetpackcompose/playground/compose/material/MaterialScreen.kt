@@ -22,6 +22,7 @@ val routes = listOf(
     MaterialNavRoutes.Divider,
     MaterialNavRoutes.FloatingActionButton,
     MaterialNavRoutes.ExtendedFloatingActionButton,
+    MaterialNavRoutes.FilterChip,
     MaterialNavRoutes.Elevation,
     MaterialNavRoutes.ExposedDropdownMenuBox,
     MaterialNavRoutes.IconToggleButton,

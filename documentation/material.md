@@ -18,6 +18,7 @@
 - [ExposedDropdownMenuBox](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ExposedDropdownMenuBoxScreen.kt)
 - [FloatingActionButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/FloatingActionButtonScreen.kt)
 - [ExtendedFloatingActionButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ExtendedFloatingActionButtonScreen.kt)
+- [FilterChip](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/FilterChipScreen.kt)
 - [IconButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/IconButtonScreen.kt)
 - [Icon](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/IconScreen.kt)
 - [IconToggleButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/IconToggleButtonScreen.kt)

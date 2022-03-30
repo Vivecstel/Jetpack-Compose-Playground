@@ -36,14 +36,18 @@ val routes = listOf(
     Material3NavRoutes.NavigationRail3,
     Material3NavRoutes.OutlinedButton3,
     Material3NavRoutes.OutlinedCard,
+    Material3NavRoutes.OutlinedTextField3,
     Material3NavRoutes.ProgressIndicator3,
     Material3NavRoutes.RadioButton3,
     Material3NavRoutes.Scaffold3,
+    Material3NavRoutes.Slider3,
     Material3NavRoutes.SmallFloatingActionButton,
     Material3NavRoutes.SmallTopAppBar,
     Material3NavRoutes.Surface3,
+    Material3NavRoutes.TabRow3,
     Material3NavRoutes.Text3,
     Material3NavRoutes.TextButton3,
+    Material3NavRoutes.TextField3,
 )
 
 @Composable

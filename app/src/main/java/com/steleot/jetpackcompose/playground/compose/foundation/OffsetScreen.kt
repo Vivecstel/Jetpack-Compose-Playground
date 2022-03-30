@@ -19,7 +19,7 @@ private const val Url = "foundation/OffsetScreen.kt"
 @Composable
 fun OffsetScreen() {
     DefaultScaffold(
-        title = FoundationNavRoutes.Box,
+        title = FoundationNavRoutes.Offset,
         link = Url,
     ) {
         Column(

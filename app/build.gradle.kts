@@ -31,7 +31,7 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
-        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn", "-Xjvm-default=all")
     }
 }
 
@@ -125,6 +125,7 @@ dependencies {
     kapt(google.hiltCompiler)
     kapt(rest.glideCompiler)
 
+    debugImplementation(androidx.composeUiManifest)
     androidTestImplementation(androidx.composeUiTest)
     androidTestImplementation(androidx.composeUiJunit)
     androidTestImplementation(androidx.navigationTest)
