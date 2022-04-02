@@ -1,1 +1,1 @@
-Updated compose to 1.2.0-alpha06. Updated libraries. Added more examples.
+Bug fixes.

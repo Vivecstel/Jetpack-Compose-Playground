@@ -1,1 +1,1 @@
-Compose auf 1.2.0-alpha06 aktualisiert. Aktualisierte Bibliotheken. Weitere Beispiele hinzugefügt.
+Fehlerbehebung

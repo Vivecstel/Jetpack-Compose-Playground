@@ -1,1 +1,1 @@
-Composición actualizada a 1.2.0-alpha06. Bibliotecas actualizadas. Se agregaron más ejemplos.
+Corrección de errores

@@ -1,1 +1,1 @@
-Composition mise à jour vers 1.2.0-alpha06. Bibliothèques mises à jour. Ajout d'autres exemples.
+Corrections de bogues
