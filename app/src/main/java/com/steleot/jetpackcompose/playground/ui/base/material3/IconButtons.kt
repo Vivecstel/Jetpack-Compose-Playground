@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.ui.base.material3
 
 import android.content.Intent
-import android.net.Uri
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -13,6 +12,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.core.net.toUri
 import com.steleot.jetpackcompose.playground.R
 
 @Composable
@@ -20,7 +20,7 @@ fun GoToGithubButton(link: String) {
     val context = LocalContext.current
     IconButton(onClick = {
         context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(link)
+            data = "${BuildConfig.BASE_URL}$link".toUri()
         })
     }) {
         Icon(
