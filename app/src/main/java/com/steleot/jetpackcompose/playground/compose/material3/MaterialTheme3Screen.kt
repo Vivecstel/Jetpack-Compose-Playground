@@ -64,8 +64,9 @@ private fun MaterialThemeExample() {
     MaterialTheme(colorScheme = colorScheme, typography = typography) {
         val theme = stringResource(id = if (inSystemDarkTheme) R.string.dark else R.string.light)
         ExtendedFloatingActionButton(
-            text = { Text(stringResource(id = R.string.material_theme_msg, theme)) },
             onClick = {}
-        )
+        ) {
+            Text(stringResource(id = R.string.material_theme_msg, theme))
+        }
     }
 }
