@@ -33,6 +33,7 @@ snapper = "0.2.0"
 composeShimmer = "1.0.2"
 zoomableComposeImage = "1.0.3"
 composeTreeMap = "0.0.2"
+heartSwitch = "1.0.0"
 
 [libraries]
 
@@ -147,6 +148,9 @@ zoomableComposeImage = { module = "com.github.re-ovo:ZoomableComposeImage", vers
 
 # https://github.com/overpas/compose-treemap-chart
 composeTreeMap = { module = "io.github.overpas:treemap-compose-android", version.ref = "composeTreeMap" }
+
+# https://github.com/overpas/compose-treemap-chart
+heartSwitch = { module = "com.github.popovanton0:heart-switch", version.ref = "heartSwitch" }
 
 [bundles]
 

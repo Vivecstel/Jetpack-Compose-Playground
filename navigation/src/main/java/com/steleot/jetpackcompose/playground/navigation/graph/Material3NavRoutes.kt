@@ -39,6 +39,7 @@ object Material3NavRoutes {
     const val SmallFloatingActionButton = "small floating action button"
     const val SmallTopAppBar = "small top app bar"
     const val Surface3 = "surface 3"
+    const val Switch3 = "switch 3"
     const val TabRow3 = "tab row 3"
     const val TextButton3 = "text button 3"
     const val Text3 = "text 3"

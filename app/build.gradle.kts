@@ -119,6 +119,7 @@ dependencies {
     implementation(rest.composeShimmer)
     implementation(rest.zoomableComposeImage)
     implementation(rest.composeTreeMap)
+    implementation(rest.heartSwitch)
     implementation(google.adMob)
     implementation(google.playServicesAuth)
 

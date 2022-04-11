@@ -37,12 +37,12 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.R
-import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
+import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import com.steleot.jetpackcompose.playground.compose.activity.routes as activityRoutes

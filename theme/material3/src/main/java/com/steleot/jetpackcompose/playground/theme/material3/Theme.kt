@@ -17,6 +17,7 @@ fun JetpackComposePlaygroundTheme(
             themeState.isSystemInDarkTheme
         ),
         typography = typography,
+        shapes = shapes,
         content = content
     )
 }

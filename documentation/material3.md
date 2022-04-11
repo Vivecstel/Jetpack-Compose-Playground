@@ -38,6 +38,7 @@
 - [SmallFloatingActionButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/SmallFloatingActionButtonScreen.kt)
 - [SmallTopAppBar](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/SmallTopAppBarScreen.kt)
 - [Surface3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/Surface3Screen.kt)
+- [Switch3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/Switch3Screen.kt)
 - [TabRow3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/TabRow3Screen.kt)
 - [TextButton3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/TextButton3Screen.kt)
 - [Text3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/Text3Screen.kt)

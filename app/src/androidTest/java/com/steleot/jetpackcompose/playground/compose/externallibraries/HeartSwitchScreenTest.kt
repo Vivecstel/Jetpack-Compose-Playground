@@ -5,16 +5,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
-class GoogleMapsScreenTest {
+class HeartSwitchScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testGoogleMapsScreen() {
+    fun testHeartSwitchScreen() {
         composeTestRule.setContent {
             TestTheme {
-                GoogleMapsScreen()
+                HeartSwitchScreen()
             }
         }
         // todo

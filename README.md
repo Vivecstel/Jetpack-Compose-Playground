@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 310 screens** with examples of **Jetpack Compose**.
+Offering **more than 315 screens** with examples of **Jetpack Compose**.
 
 <img src="documentation/screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 310 screens with
+has to offer and how it improves everyday Android UI development. It offers more 315 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -42,10 +42,10 @@ Download from:
  - [Animation](documentation/animation.md) (17 screens)
  - [Constraint Layout](documentation/constraintLayout.md) (11 screens)
  - [Custom Examples](documentation/customExamples.md) (17 screens)
- - [External Libraries](documentation/externalLibraries.md) (39 screens)
+ - [External Libraries](documentation/externalLibraries.md) (40 screens)
  - [Foundation](documentation/foundation.md) (45 screens)
  - [Material](documentation/material.md) (50 screens)
- - [Material 3 - Material you](documentation/material3.md) (42 screens)
+ - [Material 3 - Material you](documentation/material3.md) (43 screens)
  - [Material Icons](documentation/materialIcons.md) (5 screens)
  - [Material Icons Extended](documentation/materialIconsExtended.md) (5 screens)
  - [Navigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/navigation/NavigationScreen.kt) (1 screen)

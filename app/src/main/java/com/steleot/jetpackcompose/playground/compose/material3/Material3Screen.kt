@@ -44,6 +44,7 @@ val routes = listOf(
     Material3NavRoutes.SmallFloatingActionButton,
     Material3NavRoutes.SmallTopAppBar,
     Material3NavRoutes.Surface3,
+    Material3NavRoutes.Switch3,
     Material3NavRoutes.TabRow3,
     Material3NavRoutes.Text3,
     Material3NavRoutes.TextButton3,

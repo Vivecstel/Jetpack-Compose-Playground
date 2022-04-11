@@ -270,6 +270,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.Surface3) { Surface3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.Switch3) { Switch3Screen() }
     deepLinkComposable(route = Material3NavRoutes.TabRow3) { TabRow3Screen() }
     deepLinkComposable(route = Material3NavRoutes.TextButton3) { TextButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.Text3) { Text3Screen() }
@@ -441,6 +442,7 @@ fun NavGraphBuilder.addExternalLibraries(
     deepLinkComposable(route = ExternalLibrariesNavRoutes.Gap) { GapScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.GlideLandscapist) { GlideLandscapistScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.GoogleMaps) { GoogleMapsScreen() }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.HeartSwitch) { HeartSwitchScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.HtmlText) { HtmlTextScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.Lottie) { LottieScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.NavigationAnimationAccompanist) {
