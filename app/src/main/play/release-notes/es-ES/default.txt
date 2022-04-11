@@ -1,1 +1,1 @@
-Corrección de errores
+Actualizar bibliotecas. Se agregaron más ejemplos.
