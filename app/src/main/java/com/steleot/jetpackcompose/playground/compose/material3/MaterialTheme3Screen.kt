@@ -4,6 +4,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
@@ -50,6 +52,10 @@ private fun MaterialThemeExample() {
 
     val colorScheme = if (inSystemDarkTheme) lightColorScheme else darkColorScheme
 
+    val shapes = Shapes(
+        large = CutCornerShape(12.dp)
+    )
+
     val typography = Typography(
         headlineLarge = TextStyle(
             fontWeight = FontWeight.W300,
@@ -61,11 +67,12 @@ private fun MaterialThemeExample() {
         )
     )
 
-    MaterialTheme(colorScheme = colorScheme, typography = typography) {
+    MaterialTheme(colorScheme = colorScheme, shapes = shapes, typography = typography) {
         val theme = stringResource(id = if (inSystemDarkTheme) R.string.dark else R.string.light)
         ExtendedFloatingActionButton(
-            text = { Text(stringResource(id = R.string.material_theme_msg, theme)) },
             onClick = {}
-        )
+        ) {
+            Text(stringResource(id = R.string.material_theme_msg, theme))
+        }
     }
 }

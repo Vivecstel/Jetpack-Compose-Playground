@@ -38,6 +38,7 @@ complexity:
     ignorePrivate: true
   LongParameterList:
     functionThreshold: 10
+    constructorThreshold: 10
   LongMethod:
     threshold: 150
 

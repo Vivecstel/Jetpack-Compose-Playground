@@ -19,6 +19,7 @@
 - [Gap](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/GapScreen.kt)
 - [GlideLandscapist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/GlideLandscapistScreen.kt)
 - [GoogleMaps](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/GoogleMapsScreen.kt)
+- [HeartSwitch](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/HeartSwitchScreen.kt)
 - [HtmlText](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/HtmlTextScreen.kt)
 - [Lottie](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/LottieScreen.kt)
 - [NavigationAnimationAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/NavigationAnimationAccompanistScreen.kt)

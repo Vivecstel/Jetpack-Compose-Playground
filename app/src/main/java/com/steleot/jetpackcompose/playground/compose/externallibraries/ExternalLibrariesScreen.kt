@@ -27,6 +27,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Gap,
     ExternalLibrariesNavRoutes.GlideLandscapist,
     ExternalLibrariesNavRoutes.GoogleMaps,
+    ExternalLibrariesNavRoutes.HeartSwitch,
     ExternalLibrariesNavRoutes.HtmlText,
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.NavigationAnimationAccompanist,

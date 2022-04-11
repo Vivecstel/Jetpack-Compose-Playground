@@ -77,7 +77,8 @@ class PlaygroundFirebaseMessagingService : FirebaseMessagingService() {
         model: NotificationModel,
     ) {
         val (name, description) = when (model.type) {
-            NotificationType.NEW_VERSION -> getString(R.string.new_version) to getString(R.string.new_version_description)
+            NotificationType.NEW_VERSION ->
+                getString(R.string.new_version) to getString(R.string.new_version_description)
             else -> getString(R.string.showcase) to getString(R.string.showcase_description)
         }
         val builder = NotificationChannelCompat.Builder(

@@ -11,7 +11,7 @@ import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,6 +40,7 @@ fun ExtendedFloatingActionButton3Screen() {
             ColoredExtendedFloatingActionButton()
             ElevatedExtendedFloatingActionButton()
             ShapeExtendedFloatingActionButton()
+            AnimatedExtendedFloatingActionButton()
         }
     }
 }
@@ -99,6 +100,23 @@ private fun ShapeExtendedFloatingActionButton() {
         text = { Text(text = stringResource(id = R.string.star)) },
         onClick = {},
         shape = RectangleShape,
+        icon = {
+            Icon(
+                imageVector = Icons.Filled.Star,
+                contentDescription = null
+            )
+        }
+    )
+}
+
+@Preview
+@Composable
+private fun AnimatedExtendedFloatingActionButton() {
+    var expanded by remember { mutableStateOf(false) }
+    ExtendedFloatingActionButton(
+        text = { Text(text = stringResource(id = R.string.app_name)) },
+        onClick = { expanded = !expanded },
+        expanded = expanded,
         icon = {
             Icon(
                 imageVector = Icons.Filled.Star,

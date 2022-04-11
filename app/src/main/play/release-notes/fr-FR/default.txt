@@ -1,1 +1,1 @@
-Corrections de bogues
+Mettre à jour les bibliothèques. Ajout d'autres exemples.
