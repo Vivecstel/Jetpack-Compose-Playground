@@ -81,7 +81,6 @@
     <string name="index_header_args">Il s\'agit de l\'en-tête d\'index %1$d.</string>
     <string name="item_args">Il s\'agit de %1$d article.</string>
     <string name="html_text">Bonjour <b>Jetpack Compose Playground</b>. Cette <i><strike>phrase</strike>texte</i> est formatée<b>att<u>ed</u></b> en HTML simple. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Lien</a></string>
-    <string name="system_bar_insets">Barres système encarts:\nen haut: %1$d\ngauche: %2$d\ndroite: %3$d\nbas: %4$d</string>
     <string name="navigate_horizontal">Naviguer horizontalement</string>
     <string name="navigate_expand">Naviguer Développer</string>
     <string name="navigate_vertical">Naviguer verticalement</string>

@@ -81,7 +81,6 @@
     <string name="index_header_args">Это заголовок индекса %1$d.</string>
     <string name="item_args">Это %1$d предмет.</string>
     <string name="html_text">Здравствуйте, <b> площадка для создания Jetpack </b>. Это <i> <strike> текст </strike> предложение </i> имеет форму <b> att <u> ed </u> </b> в простом HTML. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground"> Ссылка </a></string>
-    <string name="system_bar_insets">Вставки системных полос:\nверху: %1$d\nслева: %2$d\nсправа: %3$d\nснизу: %4$d</string>
     <string name="navigate_horizontal">Навигация по горизонтали</string>
     <string name="navigate_expand">Навигация Развернуть</string>
     <string name="navigate_vertical">Вертикальная навигация</string>

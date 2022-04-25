@@ -138,7 +138,8 @@ protobuf {
         val dependency = google.protobufProtoc.get()
         val protobuf =
             "${dependency.module.group}:${dependency.module.name}:${dependency.versionConstraint.requiredVersion}"
-        artifact = protobuf
+        val suffix = if (osdetector.os == "osx") ":osx-x86_64" else ""
+        artifact = protobuf + suffix
     }
 
     generateProtoTasks {

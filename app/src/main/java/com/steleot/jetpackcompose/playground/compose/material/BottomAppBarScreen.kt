@@ -53,7 +53,7 @@ fun BottomAppBarScreen() {
         isFloatingActionButtonDocked = selectedLayout.value == 6
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.padding(it).fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {

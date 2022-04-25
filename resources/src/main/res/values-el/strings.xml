@@ -81,7 +81,6 @@
     <string name="index_header_args">Αυτή είναι η κεφαλίδα ευρετηρίου %1$d.</string>
     <string name="item_args">Αυτό είναι %1$d στοιχείο.</string>
     <string name="html_text">Γεια σας <b>Jetpack Compose Playground</b>. Αυτή η πρόταση <i><strike>text</strike></i> είναι μορφή<b>att<u>ed</u></b> σε απλό html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Σύνδεσμος</a></string>
-    <string name="system_bar_insets">Ένθετα ράβδων συστήματος:\nεπάνω: %1$d\nαριστερά: %2$d\nδεξιά: %3$d\nκάτω: %4$d</string>
     <string name="navigate_horizontal">Πλοήγηση Οριζόντια</string>
     <string name="navigate_expand">Πλοήγηση Ανάπτυξη</string>
     <string name="navigate_vertical">Πλοήγηση Κατακόρυφα</string>

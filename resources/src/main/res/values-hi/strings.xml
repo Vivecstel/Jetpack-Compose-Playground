@@ -81,7 +81,6 @@
     <string name="index_header_args">यह %1$d अनुक्रमणिका शीर्षलेख है।</string>
     <string name="item_args">यह %1$d आइटम है।</string>
     <string name="html_text">नमस्ते <b>जेटपैक खेल का मैदान लिखें</b>। यह <i><strike>पाठ</strike>वाक्य</i> सरल html में <b>att<u>ed</u></b> रूप है। <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">लिंक</a></string>
-    <string name="system_bar_insets">सिस्टम बार इनसेट:\nशीर्ष: %1$d\nबाएं: %2$d\nदाएं: %3$d\nनीचे: %4$dं</string>
     <string name="navigate_horizontal">क्षैतिज नेविगेट करें</string>
     <string name="navigate_expand">नेविगेट विस्तृत करें</string>
     <string name="navigate_vertical">लंबवत नेविगेट करें</string>

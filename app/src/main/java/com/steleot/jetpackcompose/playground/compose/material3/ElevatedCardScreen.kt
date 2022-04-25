@@ -75,7 +75,7 @@ private fun ShapeElevatedCard() {
 @Composable
 private fun ContainerColorElevatedCard() {
     ElevatedCard(
-        containerColor = Color.LightGray
+        colors = CardDefaults.elevatedCardColors(contentColor = Color.LightGray),
     ) {
         DefaultText()
     }
@@ -85,8 +85,10 @@ private fun ContainerColorElevatedCard() {
 @Composable
 private fun ContentColorElevatedCard() {
     ElevatedCard(
-        containerColor = Color.Black,
-        contentColor = Color.White
+        colors = CardDefaults.elevatedCardColors(
+            containerColor = Color.White,
+            contentColor = Color.Black,
+        ),
     ) {
         DefaultText()
     }
