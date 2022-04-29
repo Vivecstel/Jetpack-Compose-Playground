@@ -1,10 +1,13 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.layout.LazyLayout
 import androidx.compose.foundation.lazy.layout.LazyLayoutItemsProvider
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
+import timber.log.Timber
 
 private const val Url = "foundation/LazyLayoutScreen.kt"
 
@@ -39,15 +43,20 @@ fun LazyLayoutScreen() {
             }
         }
 
-        LazyLayout(itemsProvider = itemsProvider) {
-            val constraints = Constraints.fixedHeight(250)
+        LazyLayout(
+            itemsProvider = itemsProvider,
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
+        ) { constraints ->
             val items = mutableListOf<Placeable>()
             repeat(itemsProvider.itemsCount) { index ->
-                items.addAll(measure(index, constraints))
+                items.addAll(measure(index, Constraints.fixedHeight(150)))
             }
-            layout(250, 250) {
-                items.forEach {
-                    it.place(0, 0)
+            layout(constraints.maxWidth, constraints.maxHeight) {
+                var yPosition = 0
+                items.forEach { placeable ->
+                    placeable.placeRelative(x = 0, y = yPosition)
+                    Timber.d("STELIOS Y position: $yPosition")
+                    yPosition += placeable.height
                 }
             }
         }

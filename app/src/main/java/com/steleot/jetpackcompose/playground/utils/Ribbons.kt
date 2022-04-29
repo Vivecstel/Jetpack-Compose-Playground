@@ -4,6 +4,8 @@ import com.steleot.jetpackcompose.playground.navigation.graph.*
 
 val ribbonRoutes = setOf(
     /* 4.11.0 */
+    MainNavRoutes.Foundation,
+    FoundationNavRoutes.LazyLayout,
     MainNavRoutes.Material3,
     Material3NavRoutes.FilledIconButton,
     Material3NavRoutes.FilledTonalIconButton,
