@@ -9,7 +9,7 @@ mapsCompose = "2.1.0"
 playServicesMaps = "18.0.2"
 accompanist = "0.24.7-alpha"
 adMob = "20.6.0"
-playServicesAuth = "20.1.0"
+playServicesAuth = "20.2.0"
 
 [libraries]
 

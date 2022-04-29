@@ -28,6 +28,7 @@ val routes = listOf(
     FoundationNavRoutes.Intrinsic,
     FoundationNavRoutes.LazyColumn,
     FoundationNavRoutes.LazyHorizontalGrid,
+    FoundationNavRoutes.LazyLayout,
     FoundationNavRoutes.LazyRow,
     FoundationNavRoutes.LazyVerticalGrid,
     FoundationNavRoutes.LocalOverScrollConfiguration,

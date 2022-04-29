@@ -26,25 +26,24 @@ fun StringScreen() {
         link = Url,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
                 text = stringResource(id = R.string.string_resource),
-                modifier = Modifier.padding(16.dp)
             )
             Text(
                 text = stringResource(
                     id = R.string.string_with_format,
                     formatArgs = arrayOf(stringResource(id = R.string.app_name))
                 ),
-                modifier = Modifier.padding(16.dp)
             )
             stringArrayResource(id = R.array.string_array).forEach {
                 Text(
                     text = it,
-                    modifier = Modifier.padding(16.dp)
                 )
             }
         }

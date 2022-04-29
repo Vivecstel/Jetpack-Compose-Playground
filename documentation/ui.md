@@ -40,6 +40,7 @@
 - [OnPlaced](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnPlacedScreen.kt)
 - [OnSizeChanged](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnSizeChangedScreen.kt)
 - [Paint](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PaintScreen.kt)
+- [PluralString](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PluralStringScreen.kt)
 - [PathEffect](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PathEffectScreen.kt)
 - [PointerInput](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PointerInputScreen.kt)
 - [Popup](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/PopupScreen.kt)

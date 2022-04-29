@@ -2,7 +2,6 @@ package com.steleot.jetpackcompose.playground.ui.base.material
 
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons

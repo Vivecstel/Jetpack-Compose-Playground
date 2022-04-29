@@ -49,6 +49,7 @@ object UiNavRoutes {
     const val OnSizeChanged = "on size changed"
     const val Paint = "paint"
     const val PathEffect = "path effect"
+    const val PluralString = "plural string"
     const val PointerInput = "pointer input"
     const val Popup = "popup"
     const val Primitive = "primitive"

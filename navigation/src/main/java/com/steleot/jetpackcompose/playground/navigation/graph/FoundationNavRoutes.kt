@@ -23,6 +23,7 @@ object FoundationNavRoutes {
     const val Intrinsic = "intrinsic"
     const val LazyColumn = "lazy column"
     const val LazyHorizontalGrid = "lazy horizontal grid"
+    const val LazyLayout = "lazy layout"
     const val LazyRow = "lazy row"
     const val LazyVerticalGrid = "lazy vertical grid"
     const val LocalOverScrollConfiguration = "local overScroll configuration"

@@ -144,6 +144,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
     deepLinkComposable(route = FoundationNavRoutes.Intrinsic) { IntrinsicScreen() }
     deepLinkComposable(route = FoundationNavRoutes.LazyColumn) { LazyColumnScreen() }
     deepLinkComposable(route = FoundationNavRoutes.LazyHorizontalGrid) { LazyHorizontalGridScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.LazyLayout) { LazyLayoutScreen() }
     deepLinkComposable(route = FoundationNavRoutes.LazyRow) { LazyRowScreen() }
     deepLinkComposable(route = FoundationNavRoutes.LazyVerticalGrid) { LazyVerticalGridScreen() }
     deepLinkComposable(route = FoundationNavRoutes.LocalOverScrollConfiguration) {
@@ -242,7 +243,9 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.ExtendedFloatingActionButton3) {
         ExtendedFloatingActionButton3Screen()
     }
+    deepLinkComposable(route = Material3NavRoutes.FilledIconButton) { FilledIconButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.FilledTonalButton) { FilledTonalButtonScreen() }
+    deepLinkComposable(route = Material3NavRoutes.FilledTonalIconButton) { FilledTonalIconButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.FloatingActionButton3) { FloatingActionButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.IconButton3) { IconButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.Icon3) { Icon3Screen() }
@@ -262,6 +265,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedCard) { OutlinedCardScreen() }
+    deepLinkComposable(route = Material3NavRoutes.OutlinedIconButton) { OutlinedIconButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedTextField3) { OutlinedTextField3Screen() }
     deepLinkComposable(route = Material3NavRoutes.ProgressIndicator3) { ProgressIndicator3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
@@ -367,6 +371,7 @@ fun NavGraphBuilder.addUiRoutes() {
     deepLinkComposable(route = UiNavRoutes.OnSizeChanged) { OnSizeChangedScreen() }
     deepLinkComposable(route = UiNavRoutes.Paint) { PaintScreen() }
     deepLinkComposable(route = UiNavRoutes.PathEffect) { PathEffectScreen() }
+    deepLinkComposable(route = UiNavRoutes.PluralString) { PluralStringScreen() }
     deepLinkComposable(route = UiNavRoutes.PointerInput) { PointerInputScreen() }
     deepLinkComposable(route = UiNavRoutes.Popup) { PopupScreen() }
     deepLinkComposable(route = UiNavRoutes.Primitive) { PrimitiveScreen() }
