@@ -80,7 +80,6 @@
     <string name="index_header_args" tools:ignore="PluralsCandidate">This is %1$d index header.</string>
     <string name="item_args" tools:ignore="PluralsCandidate">This is %1$d item.</string>
     <string name="html_text">Hello <b>Jetpack Compose Playground</b>. This <i><strike>text</strike>sentence</i> is form<b>att<u>ed</u></b> in simple html. <a href="https://github.com/Vivecstel/Jetpack-Compose-Playground">Link</a></string>
-    <string name="system_bar_insets">System bars insets:\ntop: %1$d\nleft: %2$d\nright: %3$d\nbottom: %4$d</string>
     <string name="navigate_horizontal">Navigate Horizontal</string>
     <string name="navigate_expand">Navigate Expand</string>
     <string name="navigate_vertical">Navigate Vertical</string>

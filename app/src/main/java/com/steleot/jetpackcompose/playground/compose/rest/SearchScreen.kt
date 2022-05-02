@@ -102,7 +102,9 @@ fun SearchScreen() {
             )
         },
     ) {
-        LazyColumn {
+        LazyColumn(
+            modifier = Modifier.padding(it)
+        ) {
             items(filteredRoutes) { data ->
                 DefaultCardListItem(
                     text = getListAnnotatedString(

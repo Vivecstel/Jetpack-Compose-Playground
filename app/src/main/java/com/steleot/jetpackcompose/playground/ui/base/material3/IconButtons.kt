@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -16,6 +17,7 @@ import androidx.core.net.toUri
 import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.R
 
+// todo stelios remove tint when localcontentcolor is propagated correctly from topappbar correctly
 @Composable
 fun GoToGithubButton(link: String) {
     val context = LocalContext.current
@@ -27,6 +29,7 @@ fun GoToGithubButton(link: String) {
         Icon(
             imageVector = Icons.Filled.ExitToApp,
             contentDescription = stringResource(id = R.string.open_github),
+            tint = MaterialTheme.colorScheme.onPrimary
         )
     }
 }
@@ -40,6 +43,7 @@ fun BackArrow() {
         Icon(
             imageVector = Icons.Filled.ArrowBack,
             contentDescription = stringResource(id = R.string.back_arrow),
+            tint = MaterialTheme.colorScheme.onPrimary
         )
     }
 }
@@ -52,6 +56,7 @@ fun SearchIconButton(
         Icon(
             imageVector = Icons.Filled.Search,
             contentDescription = stringResource(id = R.string.search),
+            tint = MaterialTheme.colorScheme.onPrimary
         )
     }
 }
@@ -63,7 +68,8 @@ fun DropdownIconButton(
     IconButton(onClick = onClick) {
         Icon(
             Icons.Filled.MoreVert,
-            contentDescription = null
+            contentDescription = null,
+            tint = MaterialTheme.colorScheme.onPrimary
         )
     }
 }

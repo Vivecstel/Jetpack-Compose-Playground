@@ -21,6 +21,8 @@
 - [InteractionSource](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/InteractionSourceScreen.kt)
 - [Intrinsic](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/IntrinsicScreen.kt)
 - [LazyColumn](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyColumnScreen.kt)
+- [LazyHorizontalGrid](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyHorizontalGridScreen.kt)
+- [LazyLayout](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyLayoutScreen.kt)
 - [LazyRow](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyRowScreen.kt)
 - [LazyVeticalGrid](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LazyVeticalGridScreen.kt)
 - [LocalOverScrollConfiguration](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/LocalOverScrollConfigurationScreen.kt)

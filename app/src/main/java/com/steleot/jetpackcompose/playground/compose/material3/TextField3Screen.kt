@@ -42,7 +42,7 @@ fun TextField3Screen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultTextField()
-            BackgroundColorTextField()
+            ContainerColorTextField()
             StyledTextField()
             ImeActionTextField()
             PasswordKeyboardTypeTextField()
@@ -69,7 +69,7 @@ private fun DefaultTextField(
 
 @Preview
 @Composable
-private fun BackgroundColorTextField(text: String = stringResource(id = R.string.jetpack)) {
+private fun ContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
     val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
@@ -79,7 +79,7 @@ private fun BackgroundColorTextField(text: String = stringResource(id = R.string
             .padding(16.dp)
             .fillMaxWidth(),
         colors = TextFieldDefaults.textFieldColors(
-            backgroundColor = Color.Magenta
+            containerColor = Color.Magenta
         ),
     )
 }

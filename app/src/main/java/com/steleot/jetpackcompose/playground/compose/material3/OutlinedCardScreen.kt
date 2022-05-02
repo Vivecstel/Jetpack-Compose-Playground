@@ -27,7 +27,7 @@ private const val Url = "material3/OutlinedCardScreen.kt"
 @Composable
 fun OutlinedCardScreen() {
     DefaultScaffold(
-        title = Material3NavRoutes.Card3,
+        title = Material3NavRoutes.OutlinedCard,
         link = Url,
     ) {
         Column(
@@ -77,7 +77,9 @@ private fun ShapeOutlinedCard() {
 @Composable
 private fun ContainerColorOutlinedCard() {
     OutlinedCard(
-        containerColor = Color.LightGray
+        colors = CardDefaults.outlinedCardColors(
+            containerColor = Color.LightGray
+        )
     ) {
         DefaultText()
     }
@@ -87,8 +89,10 @@ private fun ContainerColorOutlinedCard() {
 @Composable
 private fun ContentColorOutlinedCard() {
     OutlinedCard(
-        containerColor = Color.Black,
-        contentColor = Color.White
+        colors = CardDefaults.outlinedCardColors(
+            containerColor = Color.Black,
+            contentColor = Color.White
+        ),
     ) {
         DefaultText()
     }

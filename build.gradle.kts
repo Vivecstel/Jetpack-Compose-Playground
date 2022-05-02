@@ -46,6 +46,13 @@ allprojects {
     }
 }
 
+doctor {
+
+    javaHome {
+        failOnError.set(false)
+    }
+}
+
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     checkForGradleUpdate = true
     outputDir = "${rootProject.buildDir}/dependencyUpdates"

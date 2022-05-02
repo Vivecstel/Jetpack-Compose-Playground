@@ -77,7 +77,7 @@ private fun ShapeCard() {
 @Composable
 private fun ContainerColorCard() {
     Card(
-        containerColor = Color.LightGray
+        colors = CardDefaults.cardColors(containerColor = Color.LightGray),
     ) {
         DefaultText()
     }
@@ -87,8 +87,10 @@ private fun ContainerColorCard() {
 @Composable
 private fun ContentColorCard() {
     Card(
-        containerColor = Color.Black,
-        contentColor = Color.White
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Black,
+            contentColor = Color.White,
+        ),
     ) {
         DefaultText()
     }

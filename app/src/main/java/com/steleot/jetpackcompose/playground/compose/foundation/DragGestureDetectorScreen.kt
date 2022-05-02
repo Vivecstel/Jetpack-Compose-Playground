@@ -8,8 +8,8 @@ import androidx.compose.foundation.gestures.forEachGesture
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.consumePositionChange
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.layout.onSizeChanged
@@ -56,7 +56,7 @@ private fun AwaitVerticalDragOrCancellationExample() {
                                     val originalY = offsetY.value
                                     val newValue = (originalY + over)
                                         .coerceIn(0f, height - 50.dp.toPx())
-                                    change.consumePositionChange()
+                                    if (change.positionChange() != Offset.Zero) change.consume()
                                     offsetY.value = newValue
                                 }
                             while (change != null && change.pressed) {
@@ -65,7 +65,7 @@ private fun AwaitVerticalDragOrCancellationExample() {
                                     val originalY = offsetY.value
                                     val newValue = (originalY + change.positionChange().y)
                                         .coerceIn(0f, height - 50.dp.toPx())
-                                    change.consumePositionChange()
+                                    if (change.positionChange() != Offset.Zero) change.consume()
                                     offsetY.value = newValue
                                 }
                             }
