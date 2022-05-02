@@ -30,7 +30,7 @@ fun LazyLayoutScreen() {
         title = FoundationNavRoutes.LazyLayout,
         link = Url,
     ) {
-        val itemsList = (0..50).toList()
+        val itemsList = (0..10).toList()
 
         val itemsProvider = itemProvider({ itemsList.size }) { index ->
             {
@@ -49,13 +49,12 @@ fun LazyLayoutScreen() {
         ) { constraints ->
             val items = mutableListOf<Placeable>()
             repeat(itemsProvider.itemsCount) { index ->
-                items.addAll(measure(index, Constraints.fixedHeight(150)))
+                items.addAll(measure(index, Constraints.fixedHeight(250)))
             }
             layout(constraints.maxWidth, constraints.maxHeight) {
                 var yPosition = 0
                 items.forEach { placeable ->
                     placeable.placeRelative(x = 0, y = yPosition)
-                    Timber.d("STELIOS Y position: $yPosition")
                     yPosition += placeable.height
                 }
             }
