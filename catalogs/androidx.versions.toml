@@ -1,11 +1,11 @@
 [versions]
 
-compose = "1.2.0-alpha08"
-composeMaterial3 = "1.0.0-alpha10"
+compose = "1.2.0-beta01"
+composeMaterial3 = "1.0.0-alpha11"
 profileInstaller = "1.2.0-alpha02"
 composeConstraint = "1.0.0"
 composePaging = "1.0.0-alpha14"
-navigation = "2.5.0-beta01"
+navigation = "2.5.0-rc01"
 glance = "1.0.0-alpha03"
 core = "1.8.0-alpha04"
 activity = "1.6.0-alpha03"
@@ -14,13 +14,13 @@ lifecycle = "2.5.0-alpha01"
 hiltCompose = "1.0.0"
 startUp = "1.2.0-alpha01"
 dataStore = "1.0.0"
-camera = "1.1.0-beta03"
+camera = "1.1.0-rc01"
 workManager = "2.8.0-alpha02"
 test = "1.4.1-alpha06"
 junit = "1.1.4-alpha06"
 espresso = "3.5.0-alpha06"
 uiAutomator = "2.2.0"
-benchmark = "1.1.0-rc01"
+benchmark = "1.1.0-rc02"
 
 [libraries]
 

@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "1.6.20"
+kotlin = "1.6.21"
 androidPlugin = "7.1.3"
 hilt = "2.41"
 googleServices = "4.3.10"
