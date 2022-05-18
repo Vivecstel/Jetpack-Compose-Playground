@@ -8,6 +8,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle-api:7.1.3")
+    implementation("com.android.tools.build:gradle-api:7.2.0")
     gradleApi()
 }

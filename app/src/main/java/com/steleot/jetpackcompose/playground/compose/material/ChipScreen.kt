@@ -64,7 +64,7 @@ private fun DefaultChip() {
 @Composable
 private fun DefaultText() {
     Text(
-        text = stringResource(id = R.string.app_name),
+        text = stringResource(id = R.string.android),
         modifier = Modifier.padding(8.dp)
     )
 }

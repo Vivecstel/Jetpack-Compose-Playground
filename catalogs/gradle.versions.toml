@@ -1,8 +1,8 @@
 [versions]
 
-kotlin = "1.6.20"
-androidPlugin = "7.1.3"
-hilt = "2.41"
+kotlin = "1.6.21"
+androidPlugin = "7.2.0"
+hilt = "2.42"
 googleServices = "4.3.10"
 crashlytics = "2.8.1"
 secrets = "2.0.1"

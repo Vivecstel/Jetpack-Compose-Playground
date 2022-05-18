@@ -1,13 +1,13 @@
 [versions]
 
-firebase = "29.3.1"
-hilt = "2.41"
 protobuf = "4.0.0-rc-2"
+firebase = "30.0.1"
+hilt = "2.42"
 playCore = "1.10.3"
 playCoreKtx = "1.8.1"
-mapsCompose = "2.1.0"
+mapsCompose = "2.1.1"
 playServicesMaps = "18.0.2"
-accompanist = "0.24.7-alpha"
+accompanist = "0.24.8-beta"
 adMob = "20.6.0"
 playServicesAuth = "20.2.0"
 
