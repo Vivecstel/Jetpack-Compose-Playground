@@ -3,5 +3,6 @@
     <plurals name="plural_resource">
         <item quantity="one">%d chanson trouvée.</item>
         <item quantity="many">%d chansons trouvées.</item>
+        <item quantity="other">%d chansons trouvées.</item>
     </plurals>
 </resources>

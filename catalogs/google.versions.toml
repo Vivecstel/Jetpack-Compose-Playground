@@ -1,7 +1,7 @@
 [versions]
 
 protobuf = "4.0.0-rc-2"
-firebase = "30.0.0"
+firebase = "30.0.1"
 hilt = "2.42"
 playCore = "1.10.3"
 playCoreKtx = "1.8.1"

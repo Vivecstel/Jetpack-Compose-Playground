@@ -4,5 +4,6 @@
         <item quantity="one">%d песня найдена.</item>
         <item quantity="few">%d песни найдены.</item>
         <item quantity="many">%d песни найдены.</item>
+        <item quantity="other">%d песни найдены.</item>
     </plurals>
 </resources>
