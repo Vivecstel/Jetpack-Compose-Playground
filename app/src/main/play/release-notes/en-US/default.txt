@@ -1,1 +1,1 @@
-Update libraries. Added more examples.
+Update libraries.
