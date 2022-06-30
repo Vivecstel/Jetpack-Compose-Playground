@@ -47,7 +47,7 @@ allprojects {
 }
 
 doctor {
-
+    warnWhenNotUsingParallelGC.set(false)
     javaHome {
         failOnError.set(false)
     }

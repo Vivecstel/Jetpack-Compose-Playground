@@ -57,7 +57,7 @@ private fun rememberAdMobWithLifecycle(
     val context = LocalContext.current
     val adView = remember {
         AdView(context).apply {
-            adSize = AdSize.BANNER
+            setAdSize(AdSize.BANNER)
             adUnitId = context.getString(adStringRes)
         }
     }

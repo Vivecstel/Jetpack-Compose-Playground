@@ -1,26 +1,28 @@
 [versions]
 
-compose = "1.2.0-beta02"
-composeMaterial3 = "1.0.0-alpha12"
-profileInstaller = "1.2.0-alpha02"
-composeConstraint = "1.0.0"
-composePaging = "1.0.0-alpha14"
-navigation = "2.5.0-rc01"
+compose = "1.3.0-alpha01"
+composeCompiler = "1.2.0"
+composeUi = "1.3.0-alpha01"
+composeMaterial3 = "1.0.0-alpha14"
+profileInstaller = "1.2.0-rc01"
+composeConstraint = "1.1.0-alpha03"
+composePaging = "1.0.0-alpha15"
+navigation = "2.5.0"
 glance = "1.0.0-alpha03"
 core = "1.8.0-alpha04"
-activity = "1.6.0-alpha03"
-appCompat = "1.6.0-alpha04"
+activity = "1.6.0-alpha05"
+appCompat = "1.6.0-alpha05"
 lifecycle = "2.5.0-alpha01"
 hiltCompose = "1.0.0"
 startUp = "1.2.0-alpha01"
 dataStore = "1.0.0"
-camera = "1.2.0-alpha01"
+camera = "1.2.0-alpha03"
 workManager = "2.8.0-alpha02"
-test = "1.4.1-alpha06"
-junit = "1.1.4-alpha06"
-espresso = "3.5.0-alpha06"
+test = "1.5.0-alpha01"
+junit = "1.1.4-alpha07"
+espresso = "3.5.0-alpha07"
 uiAutomator = "2.2.0"
-benchmark = "1.1.0-rc02"
+benchmark = "1.1.0"
 
 [libraries]
 
@@ -29,7 +31,7 @@ composeAnimation = { module = "androidx.compose.animation:animation", version.re
 composeAnimationGraphics = { module = "androidx.compose.animation:animation-graphics", version.ref = "compose" }
 
 # https://developer.android.com/jetpack/androidx/releases/compose-compiler
-composeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose" }
+composeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
 
 # https://developer.android.com/jetpack/androidx/releases/compose-foundation
 composeFoundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
@@ -46,11 +48,11 @@ composeRuntime = { module = "androidx.compose.runtime:runtime", version.ref = "c
 composeLiveData = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
 
 # https://developer.android.com/jetpack/androidx/releases/compose-ui
-composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose" }
-composeUiUtil = { module = "androidx.compose.ui:ui-util", version.ref = "compose" }
+composeUi = { module = "androidx.compose.ui:ui", version.ref = "composeUi" }
+composeUiUtil = { module = "androidx.compose.ui:ui-util", version.ref = "composeUi" }
 
 # https://developer.android.com/jetpack/androidx/releases/ui
-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "composeUi" }
 
 # https://developer.android.com/jetpack/androidx/releases/profileinstaller
 profileInstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileInstaller" }

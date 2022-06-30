@@ -12,6 +12,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -46,8 +48,8 @@ fun InputChipScreen() {
             LabelColorInputChip()
             DisabledContainerColorInputChip()
             DisabledLabelColorInputChip()
-            LeadingIconContentColorInputChip()
-            DisabledLeadingIconContentColorInputChip()
+            LeadingIconColorInputChip()
+            DisabledLeadingIconColorInputChip()
             AvatarInputChip()
             TrailingIconInputChip()
         }
@@ -57,8 +59,10 @@ fun InputChipScreen() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = { },
+        selected = state.value,
+        onClick = { state.value = !state.value },
         label =  { DefaultText() }
     )
 }
@@ -74,8 +78,10 @@ private fun DefaultText() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = { },
+        selected = state.value,
+        onClick = { state.value = !state.value },
         enabled = false,
         label =  { DefaultText() }
     )
@@ -84,8 +90,10 @@ private fun DisabledInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CutCornerShapeInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = { },
+        selected = state.value,
+        onClick = { state.value = !state.value },
         shape = CutCornerShape(12.dp),
         label =  { DefaultText() }
     )
@@ -94,8 +102,10 @@ private fun CutCornerShapeInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RoundedCornerShapeInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         shape = RoundedCornerShape(12.dp),
         label =  { DefaultText() }
     )
@@ -104,8 +114,10 @@ private fun RoundedCornerShapeInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BorderInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         border = InputChipDefaults.inputChipBorder(
             borderColor = Color.Red,
             borderWidth = 2.dp,
@@ -117,8 +129,10 @@ private fun BorderInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         leadingIcon = {
             Icon(
                 Icons.Filled.Android,
@@ -132,8 +146,10 @@ private fun LeadingIconInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         colors = InputChipDefaults.inputChipColors(
             containerColor = Color.Red
         ),
@@ -144,8 +160,10 @@ private fun ContainerColorInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LabelColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         colors = InputChipDefaults.inputChipColors(
             labelColor = Color.Green
         ),
@@ -156,8 +174,10 @@ private fun LabelColorInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledContainerColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         enabled = false,
         colors = InputChipDefaults.inputChipColors(
             disabledContainerColor = Color.Gray
@@ -169,8 +189,10 @@ private fun DisabledContainerColorInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLabelColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         enabled = false,
         colors = InputChipDefaults.inputChipColors(
             disabledContainerColor = Color.Gray,
@@ -182,9 +204,11 @@ private fun DisabledLabelColorInputChip() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun LeadingIconContentColorInputChip() {
+private fun LeadingIconColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         leadingIcon = {
             Icon(
                 Icons.Filled.Android,
@@ -192,7 +216,7 @@ private fun LeadingIconContentColorInputChip() {
             )
         },
         colors = InputChipDefaults.inputChipColors(
-            leadingIconContentColor = Color.Red
+            leadingIconColor = Color.Red
         ),
         label = { DefaultText() }
     )
@@ -200,9 +224,11 @@ private fun LeadingIconContentColorInputChip() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DisabledLeadingIconContentColorInputChip() {
+private fun DisabledLeadingIconColorInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         enabled = false,
         leadingIcon = {
             Icon(
@@ -213,7 +239,7 @@ private fun DisabledLeadingIconContentColorInputChip() {
         colors = InputChipDefaults.inputChipColors(
             disabledContainerColor = Color.Gray,
             disabledLabelColor = Color.Black,
-            disabledLeadingIconContentColor = Color.Black
+            disabledLeadingIconColor = Color.Black
         ),
         label = { DefaultText() }
     )
@@ -222,8 +248,10 @@ private fun DisabledLeadingIconContentColorInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AvatarInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         label = { DefaultText() },
         avatar = {
             Icon(
@@ -237,8 +265,10 @@ private fun AvatarInputChip() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TrailingIconInputChip() {
+    val state = remember { mutableStateOf(false) }
     InputChip(
-        onClick = {},
+        selected = state.value,
+        onClick = { state.value = !state.value },
         label = { DefaultText() },
         trailingIcon = {
             Icon(
