@@ -24,6 +24,7 @@
 - [InputChip](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/InputChipScreen.kt)
 - [LargeFloatingActionButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/LargeFloatingActionButtonScreen.kt)
 - [LargeTopAppBar](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/LargeTopAppBarScreen.kt)
+- [ListItem3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/ListItem3Screen.kt)
 - [LocalAbsoluteTonalElevation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/LocalAbsoluteTonalElevationScreen.kt)
 - [LocalContentColor3](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/LocalContentColor3Screen.kt)
 - [LocalMinimumTouchTargetEnforcement](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material3/LocalMinimumTouchTargetEnforcementScreen.kt)

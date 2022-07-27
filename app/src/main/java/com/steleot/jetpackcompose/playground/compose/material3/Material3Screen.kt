@@ -30,6 +30,7 @@ val routes = listOf(
     Material3NavRoutes.InputChip,
     Material3NavRoutes.LargeFloatingActionButton,
     Material3NavRoutes.LargeTopAppBar,
+    Material3NavRoutes.ListItem3,
     Material3NavRoutes.LocalAbsoluteTonalElevation,
     Material3NavRoutes.LocalContentColor3,
     Material3NavRoutes.LocalMinimumTouchTargetEnforcement,
