@@ -38,6 +38,7 @@ fun LargeTopAppBarScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultLargeTopAppBar() {
     LargeTopAppBar(
@@ -47,6 +48,7 @@ private fun DefaultLargeTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorLargeTopAppBar() {
     LargeTopAppBar(
@@ -59,6 +61,7 @@ private fun ContainerColorLargeTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun NavigationIconLargeTopAppBar() {
     CenterAlignedTopAppBar(

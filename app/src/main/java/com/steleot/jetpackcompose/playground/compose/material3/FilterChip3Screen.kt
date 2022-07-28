@@ -48,7 +48,7 @@ fun FilterChip3Screen() {
             DisabledLabelColorFilterChip()
             IconColorFilterChip()
             DisabledLeadingIconColorFilterChip()
-            IconFilterChip()
+            SelectedIconFilterChip()
             TrailingIconFilterChip()
         }
     }
@@ -245,17 +245,21 @@ private fun DisabledLeadingIconColorFilterChip() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun IconFilterChip() {
+private fun SelectedIconFilterChip() {
     val state = remember { mutableStateOf(false) }
     FilterChip(
         selected = state.value,
         onClick = { state.value = !state.value },
-        selectedIcon = {
-            Icon(
-                Icons.Filled.Done,
-                contentDescription = null,
-                modifier = Modifier.requiredSize(FilterChipDefaults.IconSize)
-            )
+        leadingIcon = if (state.value) {
+            {
+                Icon(
+                    Icons.Filled.Done,
+                    contentDescription = null,
+                    modifier = Modifier.requiredSize(FilterChipDefaults.IconSize)
+                )
+            }
+        } else {
+            null
         },
         label = { DefaultText() }
     )

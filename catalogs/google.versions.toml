@@ -7,7 +7,7 @@ playCore = "1.10.3"
 playCoreKtx = "1.8.1"
 mapsCompose = "2.5.3"
 playServicesMaps = "18.1.0"
-accompanist = "0.24.13-rc"
+accompanist = "0.25.0"
 adMob = "21.1.0"
 playServicesAuth = "20.2.0"
 

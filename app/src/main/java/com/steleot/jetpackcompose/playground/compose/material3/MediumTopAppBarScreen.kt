@@ -38,6 +38,7 @@ fun MediumTopAppBarScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultMediumTopAppBar() {
     MediumTopAppBar(
@@ -47,6 +48,7 @@ private fun DefaultMediumTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorMediumTopAppBar() {
     MediumTopAppBar(
@@ -59,6 +61,7 @@ private fun ContainerColorMediumTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun NavigationIconMediumTopAppBar() {
     MediumTopAppBar(
