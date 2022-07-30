@@ -25,6 +25,7 @@ object Material3NavRoutes {
     const val InputChip = "input chip"
     const val LargeFloatingActionButton = "large floating action button"
     const val LargeTopAppBar = "large top app bar"
+    const val ListItem3 = "list item 3"
     const val LocalAbsoluteTonalElevation = "local absolute tonal elevation"
     const val LocalContentColor3 = "local content color 3"
     const val LocalMinimumTouchTargetEnforcement = "local minimum touch target enforcement"

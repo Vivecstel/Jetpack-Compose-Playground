@@ -38,6 +38,7 @@ fun CenterAlignedTopAppBarScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultCenterAlignedTopAppBar() {
     CenterAlignedTopAppBar(
@@ -47,6 +48,7 @@ private fun DefaultCenterAlignedTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorCenterAlignedTopAppBar() {
     CenterAlignedTopAppBar(
@@ -59,6 +61,7 @@ private fun ContainerColorCenterAlignedTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun NavigationIconCenterAlignedTopAppBar() {
     CenterAlignedTopAppBar(

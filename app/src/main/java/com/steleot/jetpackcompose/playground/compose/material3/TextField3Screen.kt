@@ -5,6 +5,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -51,6 +52,7 @@ fun TextField3Screen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultTextField(
@@ -67,6 +69,7 @@ private fun DefaultTextField(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -84,6 +87,7 @@ private fun ContainerColorTextField(text: String = stringResource(id = R.string.
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -103,6 +107,7 @@ private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -121,6 +126,7 @@ private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpa
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -140,6 +146,7 @@ private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.s
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ShapedTextField(text: String = stringResource(id = R.string.jetpack)) {

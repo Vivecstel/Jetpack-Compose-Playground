@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.ui.base.material3
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -9,6 +10,7 @@ import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultDropdownMenu
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DefaultSmallTopAppBar(
     title: String,

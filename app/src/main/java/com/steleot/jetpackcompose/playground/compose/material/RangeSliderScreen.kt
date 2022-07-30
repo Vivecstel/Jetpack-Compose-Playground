@@ -47,7 +47,7 @@ fun RangeSliderScreen() {
 private fun DefaultRangeSlider() {
     val state = remember { mutableStateOf(0f..5f) }
     RangeSlider(
-        values = state.value,
+        value = state.value,
         onValueChange = {
             state.value = it
         },
@@ -61,7 +61,7 @@ private fun DefaultRangeSlider() {
 private fun RangedSlider() {
     val state = remember { mutableStateOf(0f..5f) }
     RangeSlider(
-        values = state.value,
+        value = state.value,
         onValueChange = {
             state.value = it
         },
@@ -76,7 +76,7 @@ private fun RangedSlider() {
 private fun SteppedSlider() {
     val state = remember { mutableStateOf(0f..5f) }
     RangeSlider(
-        values = state.value,
+        value = state.value,
         onValueChange = {
             state.value = it
         },
@@ -92,7 +92,7 @@ private fun SteppedSlider() {
 private fun ColoredSlider() {
     val state = remember { mutableStateOf(0f..5f) }
     RangeSlider(
-        values = state.value,
+        value = state.value,
         onValueChange = {
             state.value = it
         },
@@ -115,7 +115,7 @@ private fun EndListenerSlider() {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = stringResource(id = R.string.range_slider_value, endState.start))
         RangeSlider(
-            values = state.value,
+            value = state.value,
             onValueChange = {
                 state.value = it
             },

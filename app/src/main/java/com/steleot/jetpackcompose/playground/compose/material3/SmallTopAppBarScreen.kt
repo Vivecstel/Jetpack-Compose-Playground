@@ -34,6 +34,7 @@ fun SmallTopAppBarScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultSmallTopAppBar() {
     SmallTopAppBar(
@@ -43,6 +44,7 @@ private fun DefaultSmallTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorSmallTopAppBar() {
     SmallTopAppBar(
@@ -55,6 +57,7 @@ private fun ContainerColorSmallTopAppBar() {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun NavigationIconSmallTopAppBar() {
     SmallTopAppBar(

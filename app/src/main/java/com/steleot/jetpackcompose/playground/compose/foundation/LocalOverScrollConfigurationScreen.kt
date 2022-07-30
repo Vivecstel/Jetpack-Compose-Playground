@@ -1,8 +1,8 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.gestures.LocalOverScrollConfiguration
-import androidx.compose.foundation.gestures.OverScrollConfiguration
+import androidx.compose.foundation.LocalOverscrollConfiguration
+import androidx.compose.foundation.OverscrollConfiguration
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
@@ -22,7 +22,7 @@ fun LocalOverScrollConfigurationScreen() {
         link = Url,
     ) {
         CompositionLocalProvider(
-            LocalOverScrollConfiguration provides OverScrollConfiguration(
+            LocalOverscrollConfiguration provides OverscrollConfiguration(
                 MaterialTheme.colors.primaryVariant
             )
         ) {

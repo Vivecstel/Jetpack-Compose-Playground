@@ -1,7 +1,7 @@
 package com.steleot.jetpackcompose.playground.localproviders
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.gestures.LocalOverScrollConfiguration
+import androidx.compose.foundation.LocalOverscrollConfiguration
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -24,7 +24,7 @@ fun LocalProviders(
     CompositionLocalProvider(
         LocalInAppReviewer provides inAppReviewHelper,
         LocalFavoriteHelper provides favoriteHelper,
-        LocalOverScrollConfiguration provides null,
+        LocalOverscrollConfiguration provides null,
         LocalThemeState provides themeState,
         LocalIsDarkTheme provides themeState.darkThemeMode.isDarkTheme(
             themeState.isSystemInDarkTheme

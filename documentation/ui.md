@@ -34,6 +34,7 @@
 - [LocalUriHandler](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalUriHandlerScreen.kt)
 - [LocalViewConfiguration](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalViewConfigurationScreen.kt)
 - [LocalWindowInfo](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LocalWindowInfoScreen.kt)
+- [LookaheadLayout](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/LookaheadLayoutScreen.kt)
 - [ModifierLocal](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/ModifierLocalScreen.kt)
 - [NestedScroll](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/NestedScrollScreen.kt)
 - [OnGloballyPositioned](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/OnGloballyPositionedScreen.kt)

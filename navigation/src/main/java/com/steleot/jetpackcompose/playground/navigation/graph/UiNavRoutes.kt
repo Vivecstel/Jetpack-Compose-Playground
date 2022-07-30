@@ -41,6 +41,7 @@ object UiNavRoutes {
     const val LocalUriHandler = "local uri handler"
     const val LocalViewConfiguration = "local view configuration"
     const val LocalWindowInfo = "local window info"
+    const val LookaheadLayout = "lookahead layout"
     const val ModifierLocal = "modifier local"
     const val NestedScroll = "nested scroll"
     const val OnGloballyPositioned = "on globally positioned"
