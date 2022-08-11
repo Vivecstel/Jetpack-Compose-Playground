@@ -55,5 +55,6 @@
 - [TestTag](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TestTagScreen.kt)
 - [TextDecoration](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TextDecorationScreen.kt)
 - [TextIndent](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TextIndentScreen.kt)
+- [TextMeasurer](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/TextMeasurerScreen.kt)
 - [VisualTransformation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/VisualTransformationScreen.kt)
 - [ZIndex](app/src/main/java/com/steleot/jetpackcompose/playground/compose/ui/ZIndexScreen.kt)

@@ -16,6 +16,7 @@ import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
 private const val Url = "material3/BadgedBox3Screen.kt"
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BadgedBox3Screen() {
     DefaultScaffold(

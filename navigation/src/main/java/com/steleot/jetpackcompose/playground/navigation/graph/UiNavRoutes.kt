@@ -63,6 +63,7 @@ object UiNavRoutes {
     const val TestTag = "test tag"
     const val TextDecoration = "text decoration"
     const val TextIndent = "text indent"
+    const val TextMeasurer = "text measurer"
     const val VisualTransformation = "visual transformation"
     const val ZIndex = "z index"
 }

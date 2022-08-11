@@ -26,7 +26,7 @@ private const val Url = "ui/LookaheadLayoutScreen.kt"
 @Composable
 fun LookaheadLayoutScreen() {
     DefaultScaffold(
-        title = UiNavRoutes.LocalWindowInfo,
+        title = UiNavRoutes.LookaheadLayout,
         link = Url,
     ) {
         Column(

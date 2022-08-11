@@ -380,6 +380,7 @@ fun NavGraphBuilder.addUiRoutes() {
     deepLinkComposable(route = UiNavRoutes.TestTag) { TestTagScreen() }
     deepLinkComposable(route = UiNavRoutes.TextDecoration) { TextDecorationScreen() }
     deepLinkComposable(route = UiNavRoutes.TextIndent) { TextIndentScreen() }
+    deepLinkComposable(route = UiNavRoutes.TextMeasurer) { TextMeasurerScreen() }
     deepLinkComposable(route = UiNavRoutes.VisualTransformation) { VisualTransformationScreen() }
     deepLinkComposable(route = UiNavRoutes.ZIndex) { ZIndexScreen() }
 }

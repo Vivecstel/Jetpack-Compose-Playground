@@ -68,6 +68,7 @@ val routes = listOf(
     UiNavRoutes.TestTag,
     UiNavRoutes.TextDecoration,
     UiNavRoutes.TextIndent,
+    UiNavRoutes.TextMeasurer,
     UiNavRoutes.VisualTransformation,
     UiNavRoutes.ZIndex,
 )
