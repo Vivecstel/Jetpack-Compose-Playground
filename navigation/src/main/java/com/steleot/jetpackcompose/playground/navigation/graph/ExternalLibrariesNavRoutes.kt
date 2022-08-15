@@ -27,6 +27,7 @@ object ExternalLibrariesNavRoutes {
     const val Lottie = "lottie"
     const val NavigationAnimationAccompanist = "navigation animation accompanist"
     const val NavigationMaterialAccompanist = "navigation material accompanist"
+    const val Orbital = "orbital"
     const val OrchestraBalloon = "orchestra balloon"
     const val OrchestraColorPicker = "orchestra color picker"
     const val OrchestraSpinner = "orchestra spinner"

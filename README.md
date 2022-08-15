@@ -42,7 +42,7 @@ Download from:
 - [Animation](documentation/animation.md) (17 screens)
 - [Constraint Layout](documentation/constraintLayout.md) (11 screens)
 - [Custom Examples](documentation/customExamples.md) (17 screens)
-- [External Libraries](documentation/externalLibraries.md) (40 screens)
+- [External Libraries](documentation/externalLibraries.md) (41 screens)
 - [Foundation](documentation/foundation.md) (46 screens)
 - [Material](documentation/material.md) (50 screens)
 - [Material 3 - Material you](documentation/material3.md) (52 screens)

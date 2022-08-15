@@ -6,6 +6,8 @@ val ribbonRoutes = setOf(
     /* 4.15.0 */
     MainNavRoutes.Ui,
     UiNavRoutes.TextMeasurer,
+    MainNavRoutes.ExternalLibraries,
+    ExternalLibrariesNavRoutes.Orbital,
     /* 4.14.0 */
     MainNavRoutes.Ui,
     UiNavRoutes.LookaheadLayout,

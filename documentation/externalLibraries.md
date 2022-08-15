@@ -24,6 +24,7 @@
 - [Lottie](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/LottieScreen.kt)
 - [NavigationAnimationAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/NavigationAnimationAccompanistScreen.kt)
 - [NavigationMaterialAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/NavigationMaterialAccompanistScreen.kt)
+- [Orbital](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/OrbitalScreen.kt)
 - [OrchestraBalloon](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/OrchestraBalloonScreen.kt)
 - [OrchestraColorPicker](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/OrchestraColorPickerScreen.kt)
 - [PagerAccompanist](app/src/main/java/com/steleot/jetpackcompose/playground/compose/externallibraries/PagerAccompanistScreen.kt)

@@ -32,6 +32,7 @@ val routes = listOf(
     ExternalLibrariesNavRoutes.Lottie,
     ExternalLibrariesNavRoutes.NavigationAnimationAccompanist,
     ExternalLibrariesNavRoutes.NavigationMaterialAccompanist,
+    ExternalLibrariesNavRoutes.Orbital,
     ExternalLibrariesNavRoutes.OrchestraBalloon,
     ExternalLibrariesNavRoutes.OrchestraColorPicker,
 //    ExternalLibrariesNavRoutes.OrchestraSpinner,

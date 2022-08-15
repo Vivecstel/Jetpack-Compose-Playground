@@ -450,6 +450,7 @@ fun NavGraphBuilder.addExternalLibraries(
     deepLinkComposable(route = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist) {
         NavigationMaterialAccompanistScreen()
     }
+    deepLinkComposable(route = ExternalLibrariesNavRoutes.Orbital) { OrbitalScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraBalloon) { OrchestraBalloonScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraColorPicker) { OrchestraColorPickerScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.OrchestraSpinner) { OrchestraSpinnerScreen() }
