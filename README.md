@@ -48,10 +48,8 @@ Download from:
 - [Material 3 - Material you](documentation/material3.md) (52 screens)
 - [Material Icons](documentation/materialIcons.md) (5 screens)
 - [Material Icons Extended](documentation/materialIconsExtended.md) (5 screens)
-- [Navigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/navigation/NavigationScreen.kt) (
-  1 screen)
-- [Paging](app/src/main/java/com/steleot/jetpackcompose/playground/compose/paging/PagingScreen.kt) (
-  1 screen)
+- [Navigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/navigation/NavigationScreen.kt) (1 screen)
+- [Paging](app/src/main/java/com/steleot/jetpackcompose/playground/compose/paging/PagingScreen.kt) (1 screen)
 - [Runtime](documentation/runtime.md) (18 screens)
 - [Ui](documentation/ui.md) (59 screens)
 - [ViewModel](documentation/viewModel.md) (3 screens)
