@@ -5,9 +5,9 @@ retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.10"
 kotlinxSerializationConverter = "0.8.0"
 kotlinxSerialization = "1.4.0-RC"
-landscapist = "1.6.0"
+landscapist = "1.6.1"
 orchestra = "1.1.3"
-coil = "2.1.0"
+coil = "2.2.0"
 glide = "4.13.2"
 fresco = "2.6.0"
 timber = "5.0.1"
@@ -28,12 +28,13 @@ composeParticleSystem = "1.0.0-alpha02"
 ssJetPackComposeProgressButton = "1.0.7"
 gap = "1.1.0"
 permissionsUi = "0.1.8"
-htmlText = "1.2.0"
-snapper = "0.2.2"
+htmlText = "1.3.0"
+snapper = "0.3.0"
 composeShimmer = "1.0.3"
 zoomableComposeImage = "1.0.5"
 composeTreeMap = "0.0.3"
-heartSwitch = "1.0.0"
+heartSwitch = "1.1.0"
+orbital = "0.2.2-SNAPSHOT"
 
 [libraries]
 
@@ -151,6 +152,9 @@ composeTreeMap = { module = "io.github.overpas:treemap-compose-android", version
 
 # https://github.com/overpas/compose-treemap-chart
 heartSwitch = { module = "com.github.popovanton0:heart-switch", version.ref = "heartSwitch" }
+
+# https://github.com/skydoves/Orbital
+orbital = { module = "com.github.skydoves:orbital", version.ref = "orbital" }
 
 [bundles]
 

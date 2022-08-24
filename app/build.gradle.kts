@@ -122,6 +122,7 @@ dependencies {
     implementation(rest.heartSwitch)
     implementation(google.adMob)
     implementation(google.playServicesAuth)
+    implementation(rest.orbital)
 
     kapt(google.hiltCompiler)
     kapt(rest.glideCompiler)

@@ -1,20 +1,20 @@
-package com.steleot.jetpackcompose.playground.compose.ui
+package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.ui.test.junit4.createComposeRule
 import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
-class LookaheadLayoutScreenTest {
+class OrbitalScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testLookaheadLayoutScreen() {
+    fun testOrbitalScreen() {
         composeTestRule.setContent {
             TestTheme {
-                LookaheadLayoutScreen()
+                OrbitalScreen()
             }
         }
         // todo

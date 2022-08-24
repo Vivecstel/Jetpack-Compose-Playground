@@ -11,7 +11,7 @@ class ListItem3ScreenTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testLocalAbsoluteTonalElevationScreen() {
+    fun testListItem3ScreenTest() {
         composeTestRule.setContent {
             TestTheme3 {
                 ListItem3Screen()

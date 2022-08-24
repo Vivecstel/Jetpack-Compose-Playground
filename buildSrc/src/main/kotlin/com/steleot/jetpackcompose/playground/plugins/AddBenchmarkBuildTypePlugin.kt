@@ -25,10 +25,7 @@ abstract class AddBenchmarkBuildTypePlugin : Plugin<Project> {
                             signingConfig = extension.signingConfigs.getByName(DEBUG)
                             isMinifyEnabled = true
                             isDebuggable = true
-                            proguardFiles(
-                                extension.getDefaultProguardFile("proguard-android-optimize.txt"),
-                                "../config/proguard-rules.pro"
-                            )
+                            proguardFiles("..config/benchmark-rules.pro")
                         }
                     }
                 }

@@ -5,16 +5,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme
 import org.junit.Rule
 import org.junit.Test
 
-class LookaheadLayoutScreenTest {
+internal class TextMeasurerScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testLookaheadLayoutScreen() {
+    fun testTextMeasurerScreen() {
         composeTestRule.setContent {
             TestTheme {
-                LookaheadLayoutScreen()
+                TextMeasurerScreen()
             }
         }
         // todo
