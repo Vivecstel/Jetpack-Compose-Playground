@@ -32,7 +32,6 @@ fun Divider3Screen() {
             DefaultDivider()
             ColoredDivider()
             ThickDividerComponent()
-            IndentDivider()
         }
     }
 }
@@ -53,10 +52,4 @@ private fun ColoredDivider() {
 @Composable
 private fun ThickDividerComponent() {
     Divider(thickness = 12.dp)
-}
-
-@Preview
-@Composable
-private fun IndentDivider() {
-    Divider(startIndent = 12.dp)
 }

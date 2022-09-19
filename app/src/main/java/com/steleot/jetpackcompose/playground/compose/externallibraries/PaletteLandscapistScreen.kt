@@ -15,9 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.palette.graphics.Palette
-import com.skydoves.landscapist.CircularReveal
+import com.skydoves.landscapist.ImageOptions
+import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
+import com.skydoves.landscapist.components.rememberImageComponent
 import com.skydoves.landscapist.glide.GlideImage
-import com.skydoves.landscapist.palette.BitmapPalette
+import com.skydoves.landscapist.palette.PalettePlugin
+import com.skydoves.landscapist.placeholder.placeholder.PlaceholderPlugin
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
@@ -48,12 +51,16 @@ private fun PaletteLandscapistExample() {
     GlideImage(
         imageModel = randomSampleImageUrl(1),
         modifier = Modifier.size(150.dp),
-        contentScale = ContentScale.Crop,
-        circularReveal = CircularReveal(duration = 300),
-        placeHolder = Icons.Filled.Image,
-        error = Icons.Filled.Error,
-        bitmapPalette = BitmapPalette {
-            palette = it
+        imageOptions = ImageOptions(
+            contentScale = ContentScale.Crop,
+        ),
+        component = rememberImageComponent {
+            +PalettePlugin { palette = it }
+            +PlaceholderPlugin.Loading(Icons.Filled.Image)
+            +PlaceholderPlugin.Failure(Icons.Filled.Error)
+            +CircularRevealPlugin(
+                duration = 350
+            )
         }
     )
 
