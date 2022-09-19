@@ -20,8 +20,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.skydoves.landscapist.CircularReveal
+import com.skydoves.landscapist.ImageOptions
+import com.skydoves.landscapist.animation.circular.CircularRevealPlugin
+import com.skydoves.landscapist.components.rememberImageComponent
 import com.skydoves.landscapist.glide.GlideImage
+import com.skydoves.landscapist.placeholder.placeholder.PlaceholderPlugin
 import com.steleot.jetpackcompose.playground.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
@@ -45,10 +48,16 @@ fun GlideLandscapistScreen() {
             GlideImage(
                 imageModel = randomSampleImageUrl(),
                 modifier = Modifier.size(150.dp),
-                contentScale = ContentScale.Crop,
-                circularReveal = CircularReveal(duration = 300),
-                placeHolder = Icons.Filled.Image,
-                error = Icons.Filled.Error
+                component = rememberImageComponent {
+                    +PlaceholderPlugin.Loading(Icons.Filled.Image)
+                    +PlaceholderPlugin.Failure(Icons.Filled.Error)
+                    +CircularRevealPlugin(
+                        duration = 350
+                    )
+                },
+                imageOptions = ImageOptions(
+                    contentScale = ContentScale.Crop,
+                ),
             )
             GlideImage(
                 imageModel = randomSampleImageUrl(),
@@ -76,10 +85,16 @@ fun GlideLandscapistScreen() {
                 modifier = Modifier
                     .size(150.dp)
                     .clip(CircleShape),
-                contentScale = ContentScale.Crop,
-                circularReveal = CircularReveal(duration = 300),
-                placeHolder = Icons.Filled.Image,
-                error = Icons.Filled.Error
+                imageOptions = ImageOptions(
+                    contentScale = ContentScale.Crop,
+                ),
+                component = rememberImageComponent {
+                    +PlaceholderPlugin.Loading(Icons.Filled.Image)
+                    +PlaceholderPlugin.Failure(Icons.Filled.Error)
+                    +CircularRevealPlugin(
+                        duration = 350
+                    )
+                },
             )
         }
     }

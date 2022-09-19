@@ -33,29 +33,29 @@ fun SpeedDialFloatingActionButtonScreen() {
             SpeedDialFloatingActionButton(
                 onClick = { data ->
                     data?.let {
-                        Timber.d("Speed dial data: ${data.name}")
+                        Timber.d("Speed dial data: ${data.label}")
                     } ?: Timber.d("Speed dial null")
                 },
                 speedDialData = listOf(
                     SpeedDialData(
-                        name = stringResource(id = R.string.test_with_args, 1),
+                        label = stringResource(id = R.string.test_with_args, 1),
                         painter = painterResource(R.drawable.ic_baseline_alarm_24dp)
-                    ),
+                    ) { /* empty */ },
                     SpeedDialData(
-                        name = stringResource(id = R.string.test_with_args, 2),
+                        label = stringResource(id = R.string.test_with_args, 2),
                         painter = painterResource(
                             id =
                             R.drawable.ic_android
                         )
-                    ),
+                    ) { /* empty */ },
                     SpeedDialData(
-                        name = stringResource(id = R.string.test_with_args, 3),
+                        label = stringResource(id = R.string.test_with_args, 3),
                         painterResource = R.drawable.ic_baseline_alarm_24dp
-                    ),
+                    ) { /* empty */ },
                     SpeedDialData(
-                        name = stringResource(id = R.string.test_with_args, 4),
+                        label = stringResource(id = R.string.test_with_args, 4),
                         painterResource = R.drawable.ic_android
-                    )
+                    ) { /* empty */ },
                 )
             )
         }
