@@ -12,13 +12,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/AspectRationScreen.kt"
+private const val URL = "foundation/AspectRationScreen.kt"
 
 @Composable
 fun AspectRationScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.AspectRatio,
-        link = Url,
+        link = URL,
     ) {
         Column {
             Box(

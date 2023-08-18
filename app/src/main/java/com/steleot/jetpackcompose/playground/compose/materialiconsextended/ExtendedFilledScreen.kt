@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -14,13 +15,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "materialiconsextended/ExtendedFilledScreen.kt"
+private const val URL = "materialiconsextended/ExtendedFilledScreen.kt"
 
 @Composable
 fun ExtendedFilledScreen() {
     DefaultScaffold(
         title = MaterialIconsExtendedNavRoutes.ExtendedFilled,
-        link = Url,
+        link = URL,
     ) {
         ExtendedFilledGrid()
     }

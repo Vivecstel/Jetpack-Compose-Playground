@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -11,18 +12,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material/ModalBottomSheetLayoutScreen.kt"
+private const val URL = "material/ModalBottomSheetLayoutScreen.kt"
 
 @Composable
 fun ModalBottomSheetLayoutScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.ModalBottomSheetLayout,
-        link = Url,
+        link = URL,
     ) {
         ModalBottomSheetLayoutExample()
     }

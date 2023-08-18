@@ -8,13 +8,13 @@ import com.google.accompanist.web.rememberWebViewState
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/WebViewAccompanistScreen.kt"
+private const val URL = "externallibraries/WebViewAccompanistScreen.kt"
 
 @Composable
 fun WebViewAccompanistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.WebViewAccompanist,
-        link = Url,
+        link = URL,
     ) {
         WebViewExample()
     }

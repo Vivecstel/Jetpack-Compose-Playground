@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -10,17 +11,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/OffsetScreen.kt"
+private const val URL = "foundation/OffsetScreen.kt"
 
 @Composable
 fun OffsetScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Offset,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -60,7 +61,7 @@ private fun AbsoluteOffset() {
 @Preview
 @Composable
 private fun OffsetPx() {
-    var offset by remember { mutableStateOf(0) }
+    var offset by remember { mutableIntStateOf(0) }
     Text(
         stringResource(id = R.string.layout_offset_modifier),
         Modifier
@@ -72,7 +73,7 @@ private fun OffsetPx() {
 @Preview
 @Composable
 fun AbsoluteOffsetPx() {
-    var offset by remember { mutableStateOf(0) }
+    var offset by remember { mutableIntStateOf(0) }
     Text(
         stringResource(id = R.string.layout_offset_modifier),
         Modifier

@@ -1,12 +1,8 @@
-import com.google.protobuf.gradle.generateProtoTasks
-import com.google.protobuf.gradle.protobuf
-import com.google.protobuf.gradle.protoc
 import com.steleot.jetpackcompose.playground.plugins.AddBenchmarkBuildTypePlugin
 import com.steleot.jetpackcompose.playground.plugins.ApplicationAndroidConfigurationPlugin
 import com.steleot.jetpackcompose.playground.plugins.BaseAndroidConfigurationPlugin
 import com.steleot.jetpackcompose.playground.plugins.ComposeConfigurationPlugin
 
-@Suppress("UnstableApiUsage")
 plugins {
     id(BuildPlugins.androidApplication)
     kotlin(BuildPlugins.kotlinAndroid)
@@ -27,6 +23,7 @@ apply<BaseAndroidConfigurationPlugin>()
 apply<ComposeConfigurationPlugin>()
 
 android {
+    namespace = "com.steleot.jetpackcompose.playground"
     compileSdk = AndroidConfiguration.compileSdk
 
     kotlinOptions {
@@ -44,9 +41,10 @@ dependencies {
     implementation(project(Modules.Navigation))
     implementation(project(Modules.Resources))
 
+    implementation(platform(androidx.composeBom))
     implementation(androidx.composeAnimation)
     implementation(androidx.composeAnimationGraphics)
-    implementation(androidx.composeCompiler)
+//    implementation(androidx.composeCompiler)
     implementation(androidx.composeFoundation)
     implementation(androidx.composeMaterial)
     implementation(androidx.composeMaterialIcons)
@@ -128,6 +126,8 @@ dependencies {
     kapt(rest.glideCompiler)
 
     debugImplementation(androidx.composeUiManifest)
+    debugImplementation(androidx.tracing)
+    androidTestImplementation(platform(androidx.composeBom))
     androidTestImplementation(androidx.composeUiTest)
     androidTestImplementation(androidx.composeUiJunit)
     androidTestImplementation(androidx.navigationTest)

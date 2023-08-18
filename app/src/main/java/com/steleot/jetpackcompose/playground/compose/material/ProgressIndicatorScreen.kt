@@ -3,7 +3,9 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.LinearProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,13 +16,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/ProgressIndicatorScreen.kt"
+private const val URL = "material/ProgressIndicatorScreen.kt"
 
 @Composable
 fun ProgressIndicatorScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.ProgressIndicator,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

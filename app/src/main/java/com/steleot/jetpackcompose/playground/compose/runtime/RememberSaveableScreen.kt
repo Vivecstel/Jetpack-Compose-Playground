@@ -1,11 +1,13 @@
 package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -13,17 +15,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/RememberSaveableScreen.kt"
+private const val URL = "runtime/RememberSaveableScreen.kt"
 
 @Composable
 fun RememberSaveableScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.RememberSaveable,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -40,7 +42,7 @@ fun RememberSaveableScreen() {
 
 @Composable
 private fun RememberSaveableExample() {
-    var count by rememberSaveable { mutableStateOf(0) }
+    var count by rememberSaveable { mutableIntStateOf(0) }
     IntManipulateComponent(count) { value -> count = value }
 }
 

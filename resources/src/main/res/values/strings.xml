@@ -109,12 +109,16 @@
     <string name="dragged_pressed">Dragged and pressed</string>
     <string name="dragged">Dragged</string>
     <string name="pressed">Pressed</string>
+    <string name="hovered">Hovered</string>
+    <string name="unhovered">Unhovered</string>
+    <string name="magnifier_not_supported">Magnifier is not suppored on this platform.</string>
     <string name="interaction_source_message">Drag me horizontally, or press me!</string>
     <string name="max">Max</string>
     <string name="min">Min</string>
     <string name="taking_x_size">Taking the %1$s size here..</string>
     <string name="selected_color">Selected: %1$s color</string>
     <string name="selectable_text">This text is selectable</string>
+    <string name="selectable_text_with_hand">This text is selectable with hand</string>
     <string name="selectable_too">This one too</string>
     <string name="selectable_as_well">This one as well</string>
     <string name="not_selectable_text">But not this one</string>

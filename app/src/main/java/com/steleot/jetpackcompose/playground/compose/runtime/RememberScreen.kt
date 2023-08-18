@@ -3,23 +3,25 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/RememberScreen.kt"
+private const val URL = "runtime/RememberScreen.kt"
 
 @Composable
 fun RememberScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.Remember,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -36,10 +38,10 @@ fun RememberScreen() {
 
 @Composable
 private fun RememberExample() {
-    val count = remember { mutableStateOf(0) }
-    CustomButton(onClick = { count.value++ }) {
+    val count = remember { mutableIntStateOf(0) }
+    CustomButton(onClick = { count.intValue++ }) {
         Text(
-            stringResource(id = R.string.clicked_count, count.value),
+            stringResource(id = R.string.clicked_count, count.intValue),
             color = MaterialTheme.colors.onPrimary
         )
     }
@@ -47,7 +49,7 @@ private fun RememberExample() {
 
 @Composable
 private fun DestructuredRememberExample() {
-    val (count, setCount) = remember { mutableStateOf(0) }
+    val (count, setCount) = remember { mutableIntStateOf(0) }
     CustomButton(onClick = { setCount(count + 1) }) {
         Text(
             stringResource(id = R.string.clicked_count, count),
@@ -58,7 +60,7 @@ private fun DestructuredRememberExample() {
 
 @Composable
 private fun DelegatedRememberExample() {
-    var count by remember { mutableStateOf(0) }
+    var count by remember { mutableIntStateOf(0) }
     CustomButton(onClick = { count += 1 }) {
         Text(
             stringResource(id = R.string.clicked_count, count),

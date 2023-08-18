@@ -12,17 +12,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/CenterAlignedTopAppBarScreen.kt"
+private const val URL = "material3/CenterAlignedTopAppBarScreen.kt"
 
 @Composable
 fun CenterAlignedTopAppBarScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.CenterAlignedTopAppBar,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

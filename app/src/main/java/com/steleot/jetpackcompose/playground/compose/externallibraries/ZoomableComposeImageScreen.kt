@@ -12,13 +12,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import me.rerere.zoomableimage.ZoomableImage
 
-private const val Url = "externallibraries/ZoomableComposeImageScreen.kt"
+private const val URL = "externallibraries/ZoomableComposeImageScreen.kt"
 
 @Composable
 fun ZoomableComposeImageScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ZoomableComposeImage,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

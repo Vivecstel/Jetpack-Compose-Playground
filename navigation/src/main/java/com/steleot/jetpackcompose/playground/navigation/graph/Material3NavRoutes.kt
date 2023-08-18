@@ -9,7 +9,7 @@ object Material3NavRoutes {
     const val Card3 = "card 3"
     const val CenterAlignedTopAppBar = "center aligned top app bar"
     const val Checkbox3 = "checkbox 3"
-    const val Divider3 = "divider 3"
+    const val HorizontalDivider3 = "horizontal divider 3"
     const val DropdownMenu3 = "dropdown menu 3"
     const val ElevatedButton = "elevated button"
     const val ElevatedCard = "elevated card"

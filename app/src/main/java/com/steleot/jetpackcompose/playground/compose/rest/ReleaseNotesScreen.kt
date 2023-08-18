@@ -4,9 +4,13 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Card
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ExperimentalMaterialApi
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -23,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.api.GitHubService
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.CenteredCircularProgressIndicator
@@ -141,7 +145,7 @@ class ReleaseNotesViewModel @Inject constructor(
 }
 
 sealed class ReleaseNotesUiState {
-    object Loading : ReleaseNotesUiState()
+    data object Loading : ReleaseNotesUiState()
     class Error(
         @StringRes val messageRes: Int,
     ) : ReleaseNotesUiState()
@@ -151,8 +155,8 @@ sealed class ReleaseNotesUiState {
     ) : ReleaseNotesUiState()
 }
 
-private const val User = "Vivecstel"
-private const val Repo = "Jetpack-Compose-Playground"
+private const val USER = "Vivecstel"
+private const val REPO = "Jetpack-Compose-Playground"
 
 class ReleaseNotesRepository @Inject constructor(
     private val service: GitHubService
@@ -160,7 +164,7 @@ class ReleaseNotesRepository @Inject constructor(
 
     suspend fun getReleases(): Flow<ResultWrapper> {
         return flow {
-            emit(service.getReleases(User, Repo))
+            emit(service.getReleases(USER, REPO))
         }.map {
             ResultWrapper(it.map { release ->
                 Timber.d(release.toString())

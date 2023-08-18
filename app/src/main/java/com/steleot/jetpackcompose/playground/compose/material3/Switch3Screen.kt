@@ -19,13 +19,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/Switch3Screen.kt"
+private const val URL = "material3/Switch3Screen.kt"
 
 @Composable
 fun Switch3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.Switch3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

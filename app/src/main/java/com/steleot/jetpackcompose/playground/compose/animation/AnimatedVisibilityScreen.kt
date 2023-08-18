@@ -7,8 +7,11 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.FloatingActionButton
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -19,17 +22,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/AnimatedVisibilityScreen.kt"
+private const val URL = "animation/AnimatedVisibilityScreen.kt"
 
 @Composable
 fun AnimatedVisibilityScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.AnimatedVisibility,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -47,7 +50,6 @@ fun AnimatedVisibilityScreen() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun ColumnScope.AnimatedFloatingActionButton() {
     var expanded by remember { mutableStateOf(true) }
@@ -73,7 +75,6 @@ private fun ColumnScope.AnimatedFloatingActionButton() {
     Spacer(Modifier.requiredHeight(20.dp))
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun FadeTransition() {
     var visible by remember { mutableStateOf(true) }
@@ -99,7 +100,6 @@ private fun FadeTransition() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun ExpandShrinkVertically() {
     var visible by remember { mutableStateOf(true) }
@@ -128,7 +128,6 @@ private fun ExpandShrinkVertically() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun ExpandInShrinkOut() {
     var visible by remember { mutableStateOf(true) }
@@ -159,10 +158,9 @@ private fun ExpandInShrinkOut() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun ColumnAnimatedVisibility() {
-    var itemIndex by remember { mutableStateOf(0) }
+    var itemIndex by remember { mutableIntStateOf(0) }
     val colors = listOf(Color.Red, Color.Green, Color.Blue)
     Column(
         Modifier

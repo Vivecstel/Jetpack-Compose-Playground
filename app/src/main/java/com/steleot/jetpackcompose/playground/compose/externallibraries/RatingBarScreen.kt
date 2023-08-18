@@ -5,26 +5,25 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gowtham.ratingbar.RatingBar
-import com.gowtham.ratingbar.RatingBarConfig
 import com.gowtham.ratingbar.RatingBarStyle
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "externallibraries/RatingBarScreen.kt"
+private const val URL = "externallibraries/RatingBarScreen.kt"
 
 @Composable
 fun RatingBarScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.RatingBar,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -32,16 +31,17 @@ fun RatingBarScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultRatingBar()
-            HighlightedRatingBar()
+            FillRatingBar()
         }
     }
 }
 
 @Composable
 private fun DefaultRatingBar() {
-    var value: Float by rememberSaveable { mutableStateOf(3.5f) }
+    var value: Float by rememberSaveable { mutableFloatStateOf(3.5f) }
     RatingBar(
         value = value,
+        style = RatingBarStyle.Default,
         onValueChange = {
             value = it
         },
@@ -52,20 +52,17 @@ private fun DefaultRatingBar() {
 }
 
 @Composable
-private fun HighlightedRatingBar() {
-    var value: Float by rememberSaveable { mutableStateOf(3f) }
+private fun FillRatingBar() {
+    var value: Float by rememberSaveable { mutableFloatStateOf(3f) }
     RatingBar(
-
-        config = RatingBarConfig().apply {
-            numStars(6)
-            size(32.dp)
-            padding(8.dp)
-            style(RatingBarStyle.HighLighted)
-        },
         value = value,
+        style = RatingBarStyle.Fill(),
         onValueChange = {
             value = it
         },
+        numOfStars = 6,
+        size = 32.dp,
+        spaceBetween = 8.dp,
         onRatingChanged = {
             Timber.d("Rating change to $it")
         },

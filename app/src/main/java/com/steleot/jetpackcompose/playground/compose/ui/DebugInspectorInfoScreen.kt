@@ -14,13 +14,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/DebugInspectorInfoScreen.kt"
+private const val URL = "ui/DebugInspectorInfoScreen.kt"
 
 @Composable
 fun DebugInspectorInfoScreen() {
     DefaultScaffold(
         title = UiNavRoutes.DebugInspectorInfo,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

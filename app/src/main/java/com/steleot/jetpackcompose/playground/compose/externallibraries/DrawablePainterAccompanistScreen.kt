@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,17 +14,18 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
+import com.steleot.jetpackcompose.playground.R as R2
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/DrawablePainterAccompanistScreen.kt"
+private const val URL = "externallibraries/DrawablePainterAccompanistScreen.kt"
 
 @Composable
 fun DrawablePainterAccompanistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.DrawablePainterAccompanist,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -38,7 +40,7 @@ fun DrawablePainterAccompanistScreen() {
 @Composable
 private fun DrawablePainterExample() {
     val drawable =
-        AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_android)
+        AppCompatResources.getDrawable(LocalContext.current, R2.drawable.ic_android)
             ?.apply {
                 mutate()
                 setTint(MaterialTheme.colors.onSurface.toArgb())

@@ -13,16 +13,16 @@ import androidx.compose.ui.graphics.graphicsLayer
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/TransformableScreen.kt"
+private const val URL = "foundation/TransformableScreen.kt"
 
 @Composable
 fun TransformableScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Transformable,
-        link = Url,
+        link = URL,
     ) {
-        var scale by remember { mutableStateOf(1f) }
-        var rotation by remember { mutableStateOf(0f) }
+        var scale by remember { mutableFloatStateOf(1f) }
+        var rotation by remember { mutableFloatStateOf(0f) }
         var offset by remember { mutableStateOf(Offset.Zero) }
         val state = rememberTransformableState { zoomChange, offsetChange, rotationChange ->
             scale *= zoomChange

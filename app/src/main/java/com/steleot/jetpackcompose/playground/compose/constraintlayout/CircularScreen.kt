@@ -3,7 +3,9 @@ package com.steleot.jetpackcompose.playground.compose.constraintlayout
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.FloatingActionButton
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -15,13 +17,13 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/CircularScreen.kt"
+private const val URL = "constraintlayout/CircularScreen.kt"
 
 @Composable
 fun CircularScreen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.Circular,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

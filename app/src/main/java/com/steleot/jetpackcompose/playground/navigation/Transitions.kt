@@ -15,8 +15,7 @@ private val fadeRoutes = listOf(
     FavoritesRoute,
 )
 
-@OptIn(ExperimentalAnimationApi::class)
-fun AnimatedContentScope<NavBackStackEntry>.getEnterTransition(
+fun AnimatedContentTransitionScope<NavBackStackEntry>.getEnterTransition(
     screenWidth: Int,
     isItPop: Boolean = false,
 ): EnterTransition {
@@ -39,8 +38,7 @@ fun AnimatedContentScope<NavBackStackEntry>.getEnterTransition(
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
-fun AnimatedContentScope<NavBackStackEntry>.getExitTransition(
+fun AnimatedContentTransitionScope<NavBackStackEntry>.getExitTransition(
     screenWidth: Int,
     isItPop: Boolean = false,
 ): ExitTransition {

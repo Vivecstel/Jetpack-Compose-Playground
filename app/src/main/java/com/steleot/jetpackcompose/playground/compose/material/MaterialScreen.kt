@@ -40,6 +40,7 @@ val routes = listOf(
     MaterialNavRoutes.OutlinedButton,
     MaterialNavRoutes.OutlinedTextField,
     MaterialNavRoutes.ProgressIndicator,
+    MaterialNavRoutes.PullRefresh,
     MaterialNavRoutes.RadioButton,
     MaterialNavRoutes.RangeSlider,
     MaterialNavRoutes.Scaffold,

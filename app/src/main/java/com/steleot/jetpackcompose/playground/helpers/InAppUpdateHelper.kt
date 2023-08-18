@@ -15,7 +15,7 @@ import com.google.android.play.core.install.InstallStateUpdatedListener
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.utils.await
 import timber.log.Timber
 
@@ -46,8 +46,9 @@ class InAppUpdateHelperImpl(
                 if (UpdateAvailability.UPDATE_AVAILABLE == appUpdateInfo.updateAvailability()) {
                     Timber.d("Update available")
                     val shouldForceImmediateUpdate =
-                        appUpdateInfo.updatePriority() >= 4
-                                || appUpdateInfo.clientVersionStalenessDays() ?: -1 >= DAYS_FOR_IMMEDIATE_UPDATE
+                        (appUpdateInfo.updatePriority() >= 4
+                                || (appUpdateInfo.clientVersionStalenessDays()
+                            ?: -1) >= DAYS_FOR_IMMEDIATE_UPDATE)
                     if (shouldForceImmediateUpdate
                         && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
                     ) {

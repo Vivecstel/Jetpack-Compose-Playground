@@ -9,7 +9,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,17 +17,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/OutlinedCardScreen.kt"
+private const val URL = "material3/OutlinedCardScreen.kt"
 
 @Composable
 fun OutlinedCardScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.OutlinedCard,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -47,7 +46,6 @@ fun OutlinedCardScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultOutlinedCard() {
     OutlinedCard {
@@ -63,7 +61,6 @@ private fun DefaultText() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ShapeOutlinedCard() {
     OutlinedCard(
@@ -73,7 +70,6 @@ private fun ShapeOutlinedCard() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorOutlinedCard() {
     OutlinedCard(
@@ -85,7 +81,6 @@ private fun ContainerColorOutlinedCard() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContentColorOutlinedCard() {
     OutlinedCard(
@@ -98,7 +93,6 @@ private fun ContentColorOutlinedCard() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BorderOutlinedCard() {
     OutlinedCard(
@@ -108,7 +102,6 @@ private fun BorderOutlinedCard() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ElevationOutlinedCard() {
     OutlinedCard(

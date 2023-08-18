@@ -10,6 +10,7 @@ apply<AddBenchmarkBuildTypePlugin>()
 apply<BaseAndroidConfigurationPlugin>()
 
 android {
+    namespace = "com.steleot.jetpackcompose.playground.utils"
     compileSdk = AndroidConfiguration.compileSdk
 
     kotlinOptions {

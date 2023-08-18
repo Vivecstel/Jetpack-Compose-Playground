@@ -1,7 +1,9 @@
 package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -10,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
@@ -19,7 +21,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
-private const val Url = "runtime/ProduceStateScreen.kt"
+private const val URL = "runtime/ProduceStateScreen.kt"
 
 private val viewModel = ProduceStateViewModel()
 
@@ -27,7 +29,7 @@ private val viewModel = ProduceStateViewModel()
 fun ProduceStateScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.ProduceState,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -57,7 +59,6 @@ class ProduceStateViewModel {
         fun dispose()
     }
 
-    @Suppress("UNUSED_PARAMETER")
     fun registerPersonObserver(observer: (Person) -> Unit): Disposable {
         observer(Person("Jetpack Compose Playground"))
         return object : Disposable {
@@ -69,11 +70,11 @@ class ProduceStateViewModel {
 }
 
 private sealed class UiState<out T> {
-    object Loading : UiState<Nothing>()
+    data object Loading : UiState<Nothing>()
     class Data<T>(val data: T) : UiState<T>()
 }
 
-@Suppress("SameParameterValue", "UnnecessaryVariable")
+@Suppress("SameParameterValue")
 @Composable
 private fun ProduceStateExample(viewModel: ProduceStateViewModel) {
     val uiState by produceState<UiState<List<Person>>>(UiState.Loading, viewModel) {
@@ -95,7 +96,7 @@ private fun ProduceStateExample(viewModel: ProduceStateViewModel) {
     }
 }
 
-@Suppress("SameParameterValue", "UnnecessaryVariable")
+@Suppress("SameParameterValue")
 @Composable
 private fun ProduceStateAwaitDisposeExample(viewModel: ProduceStateViewModel) {
     val currentPerson by produceState<Person?>(null, viewModel) {

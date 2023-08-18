@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -27,13 +28,13 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.AsyncImage
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
+import com.steleot.jetpackcompose.playground.R as R2
 import com.steleot.jetpackcompose.playground.compose.customexamples.AdViewExample
 import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalIsDarkTheme
@@ -45,6 +46,7 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultListItem
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.ui.base.material.MenuTopAppBar
 import com.steleot.jetpackcompose.playground.utils.GoogleSignContract
+import com.steleot.jetpackcompose.playground.utils.navigateSafe
 import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import com.steleot.jetpackcompose.playground.utils.sendFeedback
 import com.steleot.jetpackcompose.playground.utils.shortToast
@@ -127,7 +129,7 @@ private val drawerItems = listOf(
     ),
 )
 
-private const val PrivacyPolicyUrl = "https://jetpack-compose-play.flycricket.io/privacy.html"
+private const val PRIVACY_POLY_URL = "https://jetpack-compose-play.flycricket.io/privacy.html"
 
 @Composable
 fun MainScreenWithDrawer(
@@ -230,7 +232,7 @@ fun MainScreenWithDrawer(
                                             return@launch
                                         }
                                         it.route?.let { route ->
-                                            navController.navigate(
+                                            navController.navigateSafe(
                                                 if (route == MainNavRoutes.Favorites) "$route/${user!!.uid}"
                                                 else route
                                             )
@@ -247,7 +249,7 @@ fun MainScreenWithDrawer(
                                         Timber.e(e)
                                         context.shortToast(R.string.activity_not_found)
                                     }
-                                    MenuAction.PRIVACY_POLICY -> uriHandler.openUri(PrivacyPolicyUrl)
+                                    MenuAction.PRIVACY_POLICY -> uriHandler.openUri(PRIVACY_POLY_URL)
                                 }
                             }
                         }
@@ -308,7 +310,6 @@ private fun DrawerUserItem(
     }
 }
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun BoxScope.SignedInUser(
     user: FirebaseUser,
@@ -375,7 +376,7 @@ private fun BoxScope.GoogleSignInButton(
         Row {
             Icon(
                 painter = painterResource(
-                    id = R.drawable.ic_google_icon
+                    id = R2.drawable.ic_google_icon
                 ),
                 contentDescription = stringResource(id = R.string.google_icon),
                 tint = Color.Unspecified,
@@ -436,7 +437,7 @@ fun MainScreenContent(
                     text = route,
                     hasRibbon = shouldShowRibbon
                 ) {
-                    navController.navigate(route)
+                    navController.navigateSafe(route)
                 }
             }
         }
@@ -464,7 +465,7 @@ sealed class DrawerListItemData {
         val menuAction: MenuAction = MenuAction.NAVIGATION
     ) : DrawerListItemData()
 
-    object DividerData : DrawerListItemData()
+    data object DividerData : DrawerListItemData()
 }
 
 enum class MenuAction {

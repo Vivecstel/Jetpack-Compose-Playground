@@ -4,11 +4,15 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
@@ -17,17 +21,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/RememberSaveableStateHolderScreen.kt"
+private const val URL = "runtime/RememberSaveableStateHolderScreen.kt"
 
 @Composable
 fun RememberSaveableStateHolderScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.RememberSaveableStateHolder,
-        link = Url,
+        link = URL,
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             var screen by rememberSaveable { mutableStateOf("screen1") }
@@ -66,7 +70,7 @@ private fun <T : Any> Navigation(
 
 @Composable
 private fun Screen1() {
-    var counter by rememberSaveable { mutableStateOf(0) }
+    var counter by rememberSaveable { mutableIntStateOf(0) }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

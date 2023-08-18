@@ -14,13 +14,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/PaintScreen.kt"
+private const val URL = "ui/PaintScreen.kt"
 
 @Composable
 fun PaintScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Paint,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

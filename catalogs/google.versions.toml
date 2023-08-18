@@ -1,15 +1,15 @@
 [versions]
 
 protobuf = "4.0.0-rc-2"
-firebase = "30.5.0"
-hilt = "2.43.2"
+firebase = "32.2.2"
+hilt = "2.47"
 playCore = "1.10.3"
 playCoreKtx = "1.8.1"
-mapsCompose = "2.7.0"
+mapsCompose = "2.14.0"
 playServicesMaps = "18.1.0"
-accompanist = "0.26.3-beta"
-adMob = "21.2.0"
-playServicesAuth = "20.3.0"
+accompanist = "0.33.0-alpha"
+adMob = "22.2.0"
+playServicesAuth = "20.6.0"
 
 [libraries]
 
@@ -40,14 +40,10 @@ playServicesMaps = { module = "com.google.android.gms:play-services-maps", versi
 
 # https://github.com/google/accompanist
 accompanistFlow = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
-accompanistPager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
-accompanistPagerIndicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
 accompanistSystemUicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
-accompanistSwipeRefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
 accompanistPermissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
 accompanistPlaceholderMaterial = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
 accompanistDrawablePainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanist" }
-accompanistNavigationAnimation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
 accompanistNavigationMaterial = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
 accompanistWebView = { module = "com.google.accompanist:accompanist-webview", version.ref = "accompanist" }
 
@@ -62,4 +58,4 @@ playServicesAuth = { module = "com.google.android.gms:play-services-auth", versi
 firebase = ["firebaseAnalytics", "firebaseCrashlytics", "firebaseFirestore", "firebaseMessaging", "firebaseInstallations", "firebaseAuth"]
 playCore = ["playCore", "playCoreKtx"]
 mapsCompose = ["mapsCompose", "playServicesMaps"]
-accompanist = ["accompanistFlow", "accompanistPager", "accompanistPagerIndicators", "accompanistPagerIndicators", "accompanistSystemUicontroller", "accompanistSwipeRefresh", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationAnimation", "accompanistNavigationMaterial", "accompanistWebView"]
+accompanist = ["accompanistFlow", "accompanistSystemUicontroller", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationMaterial", "accompanistWebView"]

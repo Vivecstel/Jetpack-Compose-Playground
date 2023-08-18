@@ -15,13 +15,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.navigation.graph.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "viewmodel/ViewModelLiveDataScreen.kt"
+private const val URL = "viewmodel/ViewModelLiveDataScreen.kt"
 
 @Composable
 fun ViewModelLiveDataScreen() {
     DefaultScaffold(
         title = ViewModelNavRoutes.LiveData,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

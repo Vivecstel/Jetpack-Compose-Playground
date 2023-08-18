@@ -14,7 +14,7 @@ val routes = listOf(
     Material3NavRoutes.Card3,
     Material3NavRoutes.CenterAlignedTopAppBar,
     Material3NavRoutes.Checkbox3,
-    Material3NavRoutes.Divider3,
+    Material3NavRoutes.HorizontalDivider3,
     Material3NavRoutes.DropdownMenu3,
     Material3NavRoutes.ElevatedButton,
     Material3NavRoutes.ElevatedCard,

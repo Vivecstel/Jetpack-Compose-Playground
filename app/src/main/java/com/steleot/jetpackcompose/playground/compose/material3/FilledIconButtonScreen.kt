@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Panorama
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -17,13 +16,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/FilledIconButtonScreen.kt"
+private const val URL = "material3/FilledIconButtonScreen.kt"
 
 @Composable
 fun FilledIconButtonScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.FilledIconButton,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -36,7 +35,6 @@ fun FilledIconButtonScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultFilledIconButton() {
     FilledIconButton(
@@ -51,7 +49,6 @@ private fun DefaultFilledIconButton() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledFilledIconButton() {
     FilledIconButton(

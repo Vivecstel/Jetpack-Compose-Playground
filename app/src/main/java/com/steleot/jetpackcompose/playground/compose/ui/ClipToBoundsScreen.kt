@@ -9,13 +9,13 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/ClipToBoundsScreen.kt"
+private const val URL = "ui/ClipToBoundsScreen.kt"
 
 @Composable
 fun ClipToBoundsScreen() {
     DefaultScaffold(
         title = UiNavRoutes.ClipToBounds,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

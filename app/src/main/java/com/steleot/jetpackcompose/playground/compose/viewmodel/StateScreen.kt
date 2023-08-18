@@ -14,13 +14,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.navigation.graph.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "viewmodel/StateScreen.kt"
+private const val URL = "viewmodel/StateScreen.kt"
 
 @Composable
 fun StateScreen() {
     DefaultScaffold(
         title = ViewModelNavRoutes.State,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

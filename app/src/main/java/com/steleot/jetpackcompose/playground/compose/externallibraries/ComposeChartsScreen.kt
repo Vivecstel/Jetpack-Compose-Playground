@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import hu.ma.charts.legend.data.LegendPosition
@@ -20,13 +20,13 @@ import hu.ma.charts.pie.PieChart
 import hu.ma.charts.pie.data.PieChartData
 import hu.ma.charts.pie.data.PieChartEntry
 
-private const val Url = "externallibraries/ComposeChartsScreen.kt"
+private const val URL = "externallibraries/ComposeChartsScreen.kt"
 
 @Composable
 fun ComposeChartsScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeCharts,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -38,7 +38,7 @@ fun ComposeChartsScreen() {
     }
 }
 
-private val Categories = listOf(
+private val categories = listOf(
     R.string.teams,
     R.string.locations,
     R.string.devices,
@@ -47,7 +47,7 @@ private val Categories = listOf(
     R.string.titles,
 )
 
-private val SimpleColors = listOf(
+private val simpleColors = listOf(
     Color.Black,
     Color.Blue,
     Color.Yellow,
@@ -63,11 +63,11 @@ private fun PieChartExample() {
             PieChartEntry(
                 value = value,
                 label = AnnotatedString(
-                    stringResource(id = Categories[idx])
+                    stringResource(id = categories[idx])
                 )
             )
         },
-        colors = SimpleColors,
+        colors = simpleColors,
         legendPosition = LegendPosition.End,
         legendShape = CircleShape,
     )

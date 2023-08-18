@@ -34,6 +34,7 @@
 - [OutlinedButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/OutlinedButtonScreen.kt)
 - [OutlinedTextField](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/OutlinedTextFieldScreen.kt)
 - [ProgressIndicator](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ProgressIndicatorScreen.kt)
+- [PullRefresh](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/PullRefreshScreen.kt)
 - [RadioButton](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/RadioButtonScreen.kt)
 - [RangeSlider](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/RangeSliderScreen.kt)
 - [Scaffold](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ScaffoldScreen.kt)

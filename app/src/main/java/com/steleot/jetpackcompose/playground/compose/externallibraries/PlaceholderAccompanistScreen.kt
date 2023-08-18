@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -15,25 +17,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
 import com.google.accompanist.placeholder.material.shimmer
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import kotlinx.coroutines.delay
 
-private const val Url = "externallibraries/PlaceholderAccompanistScreen.kt"
+private const val URL = "externallibraries/PlaceholderAccompanistScreen.kt"
 
 @Composable
 fun PlaceholderAccompanistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.PlaceholderAccompanist,
-        link = Url,
+        link = URL,
     ) {
         var isLoading by remember { mutableStateOf(true) }
         LaunchedEffect(isLoading) {
@@ -74,7 +75,6 @@ fun PlaceholderAccompanistScreen() {
     }
 }
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun PlaceholderItemExample(
     text: String,

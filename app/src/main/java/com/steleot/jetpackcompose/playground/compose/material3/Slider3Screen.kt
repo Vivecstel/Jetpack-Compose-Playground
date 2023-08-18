@@ -8,7 +8,7 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,13 +18,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/Slider3Screen.kt"
+private const val URL = "material3/Slider3Screen.kt"
 
 @Composable
 fun Slider3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.Slider3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -43,11 +43,11 @@ fun Slider3Screen() {
 @Preview
 @Composable
 private fun DefaultSlider() {
-    val state = remember { mutableStateOf(0f) }
+    val state = remember { mutableFloatStateOf(0f) }
     Slider(
-        value = state.value,
+        value = state.floatValue,
         onValueChange = {
-            state.value = it
+            state.floatValue = it
         },
         modifier = Modifier.padding(horizontal = 16.dp)
     )
@@ -56,11 +56,11 @@ private fun DefaultSlider() {
 @Preview
 @Composable
 private fun RangedSlider() {
-    val state = remember { mutableStateOf(0f) }
+    val state = remember { mutableFloatStateOf(0f) }
     Slider(
-        value = state.value,
+        value = state.floatValue,
         onValueChange = {
-            state.value = it
+            state.floatValue = it
         },
         modifier = Modifier.padding(horizontal = 16.dp),
         valueRange = 0f..2.5f,
@@ -70,11 +70,11 @@ private fun RangedSlider() {
 @Preview
 @Composable
 private fun SteppedSlider() {
-    val state = remember { mutableStateOf(0f) }
+    val state = remember { mutableFloatStateOf(0f) }
     Slider(
-        value = state.value,
+        value = state.floatValue,
         onValueChange = {
-            state.value = it
+            state.floatValue = it
         },
         modifier = Modifier.padding(horizontal = 16.dp),
         valueRange = 0f..2.5f,
@@ -85,11 +85,11 @@ private fun SteppedSlider() {
 @Preview
 @Composable
 private fun ColoredSlider() {
-    val state = remember { mutableStateOf(0f) }
+    val state = remember { mutableFloatStateOf(0f) }
     Slider(
-        value = state.value,
+        value = state.floatValue,
         onValueChange = {
-            state.value = it
+            state.floatValue = it
         },
         modifier = Modifier.padding(horizontal = 16.dp),
         steps = 5,
@@ -104,18 +104,18 @@ private fun ColoredSlider() {
 @Preview
 @Composable
 private fun EndListenerSlider() {
-    val state = remember { mutableStateOf(0f) }
-    val endState = remember { mutableStateOf(0f) }
+    val state = remember { mutableFloatStateOf(0f) }
+    val endState = remember { mutableFloatStateOf(0f) }
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(text = endState.value.toString())
+        Text(text = endState.floatValue.toString())
         Slider(
-            value = state.value,
+            value = state.floatValue,
             onValueChange = {
-                state.value = it
+                state.floatValue = it
             },
             modifier = Modifier.padding(horizontal = 16.dp),
             onValueChangeFinished = {
-                endState.value = state.value
+                endState.floatValue = state.floatValue
             },
             colors = SliderDefaults.colors(
                 thumbColor = Color.Red,

@@ -9,13 +9,13 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/OnKeyEventScreen.kt"
+private const val URL = "ui/OnKeyEventScreen.kt"
 
 @Composable
 fun OnKeyEventScreen() {
     DefaultScaffold(
         title = UiNavRoutes.OnKeyEvent,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -23,17 +23,17 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/TextField3Screen.kt"
+private const val URL = "material3/TextField3Screen.kt"
 
 @Composable
 fun TextField3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.TextField3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -52,7 +52,6 @@ fun TextField3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultTextField(
@@ -107,7 +106,6 @@ private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -126,7 +124,6 @@ private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpa
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -146,7 +143,6 @@ private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.s
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ShapedTextField(text: String = stringResource(id = R.string.jetpack)) {

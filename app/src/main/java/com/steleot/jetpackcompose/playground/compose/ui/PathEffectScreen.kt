@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/PathEffectScreen.kt"
+private const val URL = "ui/PathEffectScreen.kt"
 
 @Composable
 fun PathEffectScreen() {
@@ -30,7 +30,7 @@ fun PathEffectScreen() {
     }
     DefaultScaffold(
         title = UiNavRoutes.PathEffect,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

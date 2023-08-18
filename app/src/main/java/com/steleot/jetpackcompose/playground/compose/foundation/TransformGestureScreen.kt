@@ -15,13 +15,13 @@ import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoute
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.roundToInt
 
-private const val Url = "foundation/TransformGestureScreen.kt"
+private const val URL = "foundation/TransformGestureScreen.kt"
 
 @Composable
 fun TransformGestureScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.TransformGesture,
-        link = Url,
+        link = URL,
     ) {
         DetectTransformGesturesExample()
     }
@@ -29,10 +29,10 @@ fun TransformGestureScreen() {
 
 @Composable
 private fun DetectTransformGesturesExample() {
-    var angle by remember { mutableStateOf(0f) }
-    var zoom by remember { mutableStateOf(1f) }
-    var offsetX by remember { mutableStateOf(0f) }
-    var offsetY by remember { mutableStateOf(0f) }
+    var angle by remember { mutableFloatStateOf(0f) }
+    var zoom by remember { mutableFloatStateOf(1f) }
+    var offsetX by remember { mutableFloatStateOf(0f) }
+    var offsetY by remember { mutableFloatStateOf(0f) }
     Box(
         Modifier
             .offset { IntOffset(offsetX.roundToInt(), offsetY.roundToInt()) }

@@ -10,13 +10,13 @@ import androidx.compose.ui.layout.Layout
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/AlignmentLineScreen.kt"
+private const val URL = "ui/AlignmentLineScreen.kt"
 
 @Composable
 fun AlignmentLineScreen() {
     DefaultScaffold(
         title = UiNavRoutes.AlignmentLine,
-        link = Url,
+        link = URL,
     ) {
         val exampleLine = remember { FirstBaseline }
 

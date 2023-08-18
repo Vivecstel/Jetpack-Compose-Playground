@@ -14,13 +14,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/OnGloballyPositionedScreen.kt"
+private const val URL = "ui/OnGloballyPositionedScreen.kt"
 
 @Composable
 fun OnGloballyPositionedScreen() {
     DefaultScaffold(
         title = UiNavRoutes.OnGloballyPositioned,
-        link = Url,
+        link = URL,
     ) {
         Column(
             Modifier.onGloballyPositioned { coordinates ->

@@ -17,17 +17,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/AssistChipScreen.kt"
+private const val URL = "material3/AssistChipScreen.kt"
 
 @Composable
 fun AssistChipScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.AssistChip,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -53,7 +53,6 @@ fun AssistChipScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultAssistChip() {
     AssistChip(
@@ -70,7 +69,6 @@ private fun DefaultText() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledAssistChip() {
     AssistChip(
@@ -80,7 +78,6 @@ private fun DisabledAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CutCornerShapeAssistChip() {
     AssistChip(
@@ -90,7 +87,6 @@ private fun CutCornerShapeAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RoundedCornerShapeAssistChip() {
     AssistChip(
@@ -100,7 +96,6 @@ private fun RoundedCornerShapeAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BorderAssistChip() {
     AssistChip(
@@ -113,7 +108,6 @@ private fun BorderAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconAssistChip() {
     AssistChip(
@@ -128,7 +122,6 @@ private fun LeadingIconAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorAssistChip() {
     AssistChip(
@@ -140,7 +133,6 @@ private fun ContainerColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LabelColorAssistChip() {
     AssistChip(
@@ -152,7 +144,6 @@ private fun LabelColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledContainerColorAssistChip() {
     AssistChip(
@@ -165,7 +156,6 @@ private fun DisabledContainerColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLabelColorAssistChip() {
     AssistChip(
@@ -179,7 +169,6 @@ private fun DisabledLabelColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconContentColorAssistChip() {
     AssistChip(
@@ -197,7 +186,6 @@ private fun LeadingIconContentColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLeadingIconContentColorAssistChip() {
     AssistChip(
@@ -218,14 +206,13 @@ private fun DisabledLeadingIconContentColorAssistChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ElevatedAssistChip() {
     AssistChip(
         onClick = {},
         label = { DefaultText() },
         elevation = AssistChipDefaults.assistChipElevation(
-            defaultElevation = 8.dp,
+            elevation = 8.dp,
             pressedElevation = 16.dp
         ),
     )

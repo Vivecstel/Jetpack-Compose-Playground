@@ -6,6 +6,7 @@ import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,13 +20,13 @@ import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoute
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.roundToInt
 
-private const val Url = "foundation/DraggableScreen.kt"
+private const val URL = "foundation/DraggableScreen.kt"
 
 @Composable
 fun DraggableScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Draggable,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -45,7 +46,7 @@ private fun DraggableHorizontalBox() {
     val max = 300.dp
     val min = 0.dp
     val (minPx, maxPx) = with(LocalDensity.current) { min.toPx() to max.toPx() }
-    val offsetPosition = remember { mutableStateOf(0f) }
+    val offsetPosition = remember { mutableFloatStateOf(0f) }
 
     Box(
         modifier = Modifier
@@ -53,15 +54,15 @@ private fun DraggableHorizontalBox() {
             .draggable(
                 orientation = Orientation.Horizontal,
                 state = rememberDraggableState { delta ->
-                    val newValue = offsetPosition.value + delta
-                    offsetPosition.value = newValue.coerceIn(minPx, maxPx)
+                    val newValue = offsetPosition.floatValue + delta
+                    offsetPosition.floatValue = newValue.coerceIn(minPx, maxPx)
                 }
             )
             .background(MaterialTheme.colors.primary)
     ) {
         Box(
             Modifier
-                .offset { IntOffset(offsetPosition.value.roundToInt(), 0) }
+                .offset { IntOffset(offsetPosition.floatValue.roundToInt(), 0) }
                 .size(50.dp)
                 .background(Color.Red)
         )
@@ -71,8 +72,8 @@ private fun DraggableHorizontalBox() {
 @Composable
 private fun DraggableBox() {
     Box(modifier = Modifier.fillMaxSize()) {
-        var offsetX by remember { mutableStateOf(0f) }
-        var offsetY by remember { mutableStateOf(0f) }
+        var offsetX by remember { mutableFloatStateOf(0f) }
+        var offsetY by remember { mutableFloatStateOf(0f) }
 
         Box(
             Modifier

@@ -9,7 +9,6 @@ import timber.log.Timber
 import java.io.InputStream
 import java.io.OutputStream
 
-@Suppress("BlockingMethodInNonBlockingContext")
 object SettingsProtoSerializer : Serializer<SettingsProto> {
 
     override val defaultValue: SettingsProto

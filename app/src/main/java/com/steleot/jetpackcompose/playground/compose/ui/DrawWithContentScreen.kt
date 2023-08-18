@@ -9,13 +9,13 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/DrawWithContentScreen.kt"
+private const val URL = "ui/DrawWithContentScreen.kt"
 
 @Composable
 fun DrawWithContentScreen() {
     DefaultScaffold(
         title = UiNavRoutes.DrawWithContent,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

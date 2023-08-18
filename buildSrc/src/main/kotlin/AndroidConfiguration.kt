@@ -3,7 +3,7 @@
 object AndroidConfiguration {
 
     const val minSdk = 23
-    const val compileSdk = 33
+    const val compileSdk = 34
     const val targetSdk = compileSdk
 
     const val appId = "com.steleot.jetpackcompose.playground"

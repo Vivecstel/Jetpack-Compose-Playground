@@ -62,6 +62,7 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                             add("META-INF/licenses/**")
                             add("META-INF/AL2.0")
                             add("META-INF/LGPL2.1")
+                            add("META-INF/versions/9/previous-compilation-data.bin")
                         }
                     }
                 }
@@ -69,6 +70,6 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
     }
 
     companion object {
-        private const val BUILD_TOOLS = "31.0.0"
+        private const val BUILD_TOOLS = "33.0.2"
     }
 }

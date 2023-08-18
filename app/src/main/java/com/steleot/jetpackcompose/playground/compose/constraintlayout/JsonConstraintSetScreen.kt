@@ -4,8 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,17 +18,17 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/JsonConstraintSetScreen.kt"
+private const val URL = "constraintlayout/JsonConstraintSetScreen.kt"
 
 @Composable
 fun JsonConstraintSetScreen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.JsonConstraintSet,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -43,7 +46,7 @@ private fun JsonConstraintSetExample() {
         ConstraintSet(
             """
             {
-                Header: { exportAs: 'json contraint set example'},
+                Header: { exportAs: 'json constraint set example'},
                 g1: { type: 'vGuideline', start: 80 },
                 g2: { type: 'vGuideline', end: 80 },
                 button1: {

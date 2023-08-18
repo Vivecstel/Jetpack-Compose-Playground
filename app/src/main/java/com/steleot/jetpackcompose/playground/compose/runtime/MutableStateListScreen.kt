@@ -3,25 +3,28 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/MutableStateListScreen.kt"
+private const val URL = "runtime/MutableStateListScreen.kt"
 
 @Composable
 fun MutableStateListScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.MutableStateList,
-        link = Url,
+        link = URL,
     ) {
         MutableStateListExample()
     }

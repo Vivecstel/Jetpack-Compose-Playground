@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -14,12 +15,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 import kotlinx.coroutines.launch
 
-private const val Url = "material/SnackBarScreen.kt"
+private const val URL = "material/SnackBarScreen.kt"
 
 @Composable
 fun SnackBarScreen() {
@@ -31,7 +32,7 @@ fun SnackBarScreen() {
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.SnackBar,
-                link = Url,
+                link = URL,
             )
         },
         scaffoldState = state,

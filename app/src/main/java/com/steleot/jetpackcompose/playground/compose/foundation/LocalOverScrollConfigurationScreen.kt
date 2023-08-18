@@ -5,6 +5,7 @@ import androidx.compose.foundation.LocalOverscrollConfiguration
 import androidx.compose.foundation.OverscrollConfiguration
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -12,14 +13,14 @@ import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoute
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/LocalOverScrollConfigurationScreen.kt"
+private const val URL = "foundation/LocalOverScrollConfigurationScreen.kt"
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LocalOverScrollConfigurationScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.LocalOverScrollConfiguration,
-        link = Url,
+        link = URL,
     ) {
         CompositionLocalProvider(
             LocalOverscrollConfiguration provides OverscrollConfiguration(

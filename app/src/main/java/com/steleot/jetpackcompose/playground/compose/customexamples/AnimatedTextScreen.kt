@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.foundation.text.appendInlineContent
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -30,17 +32,17 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "customexamples/AnimatedTextScreen.kt"
+private const val URL = "customexamples/AnimatedTextScreen.kt"
 
 @Composable
 fun AnimatedTextScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.AnimatedText,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -107,13 +109,15 @@ private fun AnimatedTextExample() {
 private fun RotatingIconComponent() {
     val context = LocalContext.current
     val colors = MaterialTheme.colors
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "RotatingIconComponentInfiniteTransition"
+    )
     val rotation by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 360f,
         animationSpec = infiniteRepeatable(
             animation = tween(2000, easing = LinearEasing)
-        )
+        ), label = "RotatingIconComponentRotation",
     )
     Canvas(modifier = Modifier.size(18.dp)) {
         rotate(rotation) {
@@ -130,7 +134,9 @@ private fun RotatingIconComponent() {
 
 @Composable
 private fun ColorChangingTextComponent() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "ColorChangingTextComponentInfiniteTransition"
+    )
     val color by infiniteTransition.animateColor(
         initialValue = Color.Red,
         targetValue = Color.Blue,
@@ -142,7 +148,7 @@ private fun ColorChangingTextComponent() {
                 Color.Yellow at 1_000
                 Color.Magenta at 1_500
             }
-        )
+        ), label = "ColorChangingTextComponentColor",
     )
     Text(
         text = stringResource(id = R.string.compose),
@@ -156,13 +162,13 @@ private fun ColorChangingTextComponent() {
 
 @Composable
 private fun SizeChangingTextComponent() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(label = "")
     val size by infiniteTransition.animateFloat(
         initialValue = 10f,
         targetValue = 19f,
         animationSpec = infiniteRepeatable(
             animation = tween(2000, easing = LinearEasing)
-        )
+        ), label = ""
     )
     Text(
         text = stringResource(id = R.string.playground),

@@ -9,13 +9,13 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/ComposeRichTextSlideshowScreen.kt"
+private const val URL = "externallibraries/ComposeRichTextSlideshowScreen.kt"
 
 @Composable
 fun ComposeRichTextSlideshowScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeRichTextSlideshow,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -4,9 +4,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.CutCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ExtendedFloatingActionButton
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.FloatingActionButtonDefaults
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
@@ -19,17 +23,17 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/ExtendedFloatingActionButtonScreen.kt"
+private const val URL = "material/ExtendedFloatingActionButtonScreen.kt"
 
 @Composable
 fun ExtendedFloatingActionButtonScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.ExtendedFloatingActionButton,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

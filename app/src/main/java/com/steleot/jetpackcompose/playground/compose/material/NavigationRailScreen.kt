@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -7,17 +8,17 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.*
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/NavigationRailScreen.kt"
+private const val URL = "material/NavigationRailScreen.kt"
 
 @Composable
 fun NavigationRailScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.NavigationRail,
-        link = Url,
+        link = URL,
     ) {
         NavigationRailExample()
     }
@@ -25,7 +26,7 @@ fun NavigationRailScreen() {
 
 @Composable
 private fun NavigationRailExample() {
-    var selectedItem by remember { mutableStateOf(0) }
+    var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf(
         stringResource(id = R.string.home),
         stringResource(id = R.string.search),

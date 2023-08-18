@@ -13,17 +13,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.*
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/LottieScreen.kt"
+private const val URL = "externallibraries/LottieScreen.kt"
 
 @Composable
 fun LottieScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.Lottie,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -73,12 +73,12 @@ private fun LottieRepeatForeverWithAnimateLottieCompositionAsState() {
     )
 }
 
-private const val lottieUrl = "https://assets7.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"
+private const val LOTTIE_URL = "https://assets7.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"
 
 @Composable
 private fun LottieRepeatForeverWithLottieAnimatable() {
     val anim = rememberLottieAnimatable()
-    val composition by rememberLottieComposition(LottieCompositionSpec.Url(lottieUrl))
+    val composition by rememberLottieComposition(LottieCompositionSpec.Url(LOTTIE_URL))
     LaunchedEffect(composition) {
         anim.animate(
             composition,

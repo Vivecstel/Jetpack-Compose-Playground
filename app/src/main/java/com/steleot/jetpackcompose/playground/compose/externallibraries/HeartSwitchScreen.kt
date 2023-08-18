@@ -17,13 +17,13 @@ import com.popovanton0.heartswitch.HeartSwitch
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/HeartSwitchScreen.kt"
+private const val URL = "externallibraries/HeartSwitchScreen.kt"
 
 @Composable
 fun HeartSwitchScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.HeartSwitch,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

@@ -1,7 +1,9 @@
 package com.steleot.jetpackcompose.playground.compose.constraintlayout
 
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,18 +11,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "constraintlayout/CreateGuidelineScreen.kt"
+private const val URL = "constraintlayout/CreateGuidelineScreen.kt"
 
 @Composable
 fun CreateGuidelineScreen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.CreateGuideline,
-        link = Url,
+        link = URL,
     ) {
         CreateGuidelineExample()
     }

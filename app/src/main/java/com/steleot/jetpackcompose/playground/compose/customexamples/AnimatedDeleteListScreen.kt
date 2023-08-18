@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
@@ -14,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
@@ -30,7 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
@@ -43,13 +43,13 @@ import com.steleot.jetpackcompose.playground.compose.constraintlayout.routes as 
 import com.steleot.jetpackcompose.playground.compose.customexamples.routes as customExamplesRoutes
 import com.steleot.jetpackcompose.playground.compose.externallibraries.routes as externalRoutes
 
-private const val Url = "customexamples/AnimatedDeleteListScreen.kt"
+private const val URL = "customexamples/AnimatedDeleteListScreen.kt"
 
 @Composable
 fun AnimatedDeleteListScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.AnimatedDeleteList,
-        link = Url,
+        link = URL,
     ) {
         AnimatedDeleteListExample(routesList)
     }
@@ -62,7 +62,6 @@ internal val routesList
             customExamplesRoutes +
             externalRoutes).sorted()
 
-@OptIn(ExperimentalAnimationApi::class, ExperimentalMaterialApi::class)
 @Composable
 private fun AnimatedDeleteListExample(routes: List<String>) {
     val deletedRouteList = remember { mutableStateListOf<String>() }

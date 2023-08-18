@@ -19,17 +19,17 @@ import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/ImageScreen.kt"
+private const val URL = "foundation/ImageScreen.kt"
 
 @Composable
 fun ImageScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Image,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

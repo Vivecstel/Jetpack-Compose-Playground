@@ -13,13 +13,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/SingleValueFloatAnimationScreen.kt"
+private const val URL = "animation/SingleValueFloatAnimationScreen.kt"
 
 @Composable
 fun SingleValueFloatAnimationScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.SingleValueFloatAnimation,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -36,7 +36,8 @@ private fun SingleValueAnimationFloatExample() {
     var enabled by remember { mutableStateOf(true) }
     val value by animateFloatAsState(
         targetValue = if (enabled) 0f else 100f,
-        animationSpec = tween(500)
+        animationSpec = tween(500),
+        label = "SingleValueAnimationFloatExample"
     )
     Box(modifier = Modifier
         .padding(value.dp)

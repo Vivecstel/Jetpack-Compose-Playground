@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultDropdownMenu
+import com.steleot.jetpackcompose.playground.utils.navigateSafe
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,7 +36,7 @@ fun DefaultSmallTopAppBar(
             } else if (shouldAllowSearch == true) {
                 val navController = LocalNavController.current
                 SearchIconButton {
-                    navController.navigate(MainNavRoutes.Search)
+                    navController.navigateSafe(MainNavRoutes.Search)
                 }
             }
         },

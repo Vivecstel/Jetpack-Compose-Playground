@@ -12,13 +12,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/ClipScreen.kt"
+private const val URL = "ui/ClipScreen.kt"
 
 @Composable
 fun ClipScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Clip,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

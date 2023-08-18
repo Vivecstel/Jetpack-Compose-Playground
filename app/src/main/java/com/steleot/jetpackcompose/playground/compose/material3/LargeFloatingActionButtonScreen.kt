@@ -22,13 +22,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/LargeFloatingActionButtonScreen.kt"
+private const val URL = "material3/LargeFloatingActionButtonScreen.kt"
 
 @Composable
 fun LargeFloatingActionButtonScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.LargeFloatingActionButton,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

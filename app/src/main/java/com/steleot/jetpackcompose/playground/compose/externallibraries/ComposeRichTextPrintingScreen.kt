@@ -3,9 +3,13 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.OutlinedButton
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Print
@@ -16,7 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.zachklipp.richtext.ui.printing.Printable
@@ -24,13 +28,13 @@ import com.zachklipp.richtext.ui.printing.hideWhenPrinting
 import com.zachklipp.richtext.ui.printing.rememberPrintableController
 import com.zachklipp.richtext.ui.printing.responsivePadding
 
-private const val Url = "externallibraries/ComposeRichTextPrintingScreen.kt"
+private const val URL = "externallibraries/ComposeRichTextPrintingScreen.kt"
 
 @Composable
 fun ComposeRichTextPrintingScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeRichTextPrinting,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

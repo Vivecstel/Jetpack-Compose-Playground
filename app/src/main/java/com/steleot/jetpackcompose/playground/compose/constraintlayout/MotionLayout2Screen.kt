@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -18,31 +19,30 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintSet
-import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/MotionLayout2Screen.kt"
+private const val URL = "constraintlayout/MotionLayout2Screen.kt"
 
 @Composable
 fun MotionLayout2Screen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.MotionLayout2,
-        link = Url,
+        link = URL,
     ) {
         MotionLayout2Example()
     }
 }
 
-@OptIn(ExperimentalMotionApi::class)
 @Composable
 private fun MotionLayout2Example() {
     var animateToEnd by remember { mutableStateOf(false) }
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1000),
+        label = "MotionLayout2Example"
     )
     Column(Modifier.background(Color.White)) {
         MotionLayout(
@@ -181,7 +181,7 @@ private fun MotionLayout2Example() {
                     .layoutId("background")
                     .fillMaxSize()
                     .clickable(onClick = { animateToEnd = !animateToEnd })
-                    .background(motionProperties("background").value.color("color"))
+                    .background(customProperties("background").color("color"))
             )
 
             Box(
@@ -190,20 +190,20 @@ private fun MotionLayout2Example() {
                     .width(200.dp)
                     .height(200.dp)
                     .clip(CircleShape)
-                    .background(motionProperties("circle").value.color("color"))
+                    .background(customProperties("circle").color("color"))
             )
 
             Text(
                 text = stringResource(id = R.string.choose_style),
                 modifier = Modifier.layoutId("title"),
-                color = motionProperties("title").value.color("color"),
+                color = customProperties("title").color("color"),
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center
             )
             Text(
                 text = stringResource(id = R.string.day_or_night),
                 modifier = Modifier.layoutId("description"),
-                color = motionProperties("title").value.color("color"),
+                color = customProperties("title").color("color"),
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center
             )
@@ -213,7 +213,7 @@ private fun MotionLayout2Example() {
                     .width(300.dp)
                     .height(72.dp)
                     .clip(RoundedCornerShape(36.dp))
-                    .background(motionProperties("backgroundSwitch").value.color("color"))
+                    .background(customProperties("backgroundSwitch").color("color"))
             )
 
             Box(

@@ -7,7 +7,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -17,13 +19,13 @@ import com.google.maps.android.compose.*
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/GoogleMapsScreen.kt"
+private const val URL = "externallibraries/GoogleMapsScreen.kt"
 
 @Composable
 fun GoogleMapsScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.GoogleMaps,
-        link = Url,
+        link = URL,
     ) {
         GoogleMapsExample()
     }

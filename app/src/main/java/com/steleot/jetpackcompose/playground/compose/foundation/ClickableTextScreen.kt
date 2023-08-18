@@ -15,18 +15,18 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.shortToast
 
-private const val Url = "foundation/ClickableTextScreen.kt"
+private const val URL = "foundation/ClickableTextScreen.kt"
 
 @Composable
 fun ClickableTextScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.ClickableText,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

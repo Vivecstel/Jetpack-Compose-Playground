@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.sharp.KeyboardArrowUp
@@ -18,33 +19,32 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/MotionLayout3Screen.kt"
+private const val URL = "constraintlayout/MotionLayout3Screen.kt"
 
 @Composable
 fun MotionLayout3Screen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.MotionLayout3,
-        link = Url,
+        link = URL,
     ) {
         MotionLayout3Example()
     }
 }
 
-@OptIn(ExperimentalMotionApi::class)
 @Composable
 private fun MotionLayout3Example() {
     var animateToEnd by remember { mutableStateOf(false) }
 
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1000),
+        label = "MotionLayout3Example",
     )
     Column {
         MotionLayout(
@@ -129,7 +129,7 @@ private fun MotionLayout3Example() {
                     .height(78.dp)
                     .width(78.dp)
                     .clip(shape = CircleShape)
-                    .background(motionProperties("buttonSwipe").value.color("color"))
+                    .background(customProperties("buttonSwipe").color("color"))
                     .clickable(onClick = { animateToEnd = !animateToEnd })
 
             )

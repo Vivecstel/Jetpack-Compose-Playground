@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,17 +19,17 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.createBalloon
 import com.skydoves.orchestra.tooltips.BalloonAnchor
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/OrchestraBalloonScreen.kt"
+private const val URL = "externallibraries/OrchestraBalloonScreen.kt"
 
 @Composable
 fun OrchestraBalloonScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.OrchestraBalloon,
-        link = Url,
+        link = URL,
     ) {
         BalloonAnchorExample()
     }

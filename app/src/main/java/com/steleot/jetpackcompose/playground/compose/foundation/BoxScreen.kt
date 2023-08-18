@@ -10,13 +10,13 @@ import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/BoxScreen.kt"
+private const val URL = "foundation/BoxScreen.kt"
 
 @Composable
 fun BoxScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Box,
-        link = Url,
+        link = URL,
     ) {
         Box(
             modifier = Modifier

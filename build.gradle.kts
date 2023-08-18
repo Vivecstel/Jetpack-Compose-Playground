@@ -1,7 +1,6 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 
-@Suppress("UnstableApiUsage")
 plugins {
     alias(gradleLibraries.plugins.kotlinJvm)
     alias(gradleLibraries.plugins.benManes)
@@ -31,19 +30,19 @@ allprojects {
     }
 
     // todo stelios revisit
-    configurations.all {
-        resolutionStrategy.force(
-            androidx.composeAnimation,
-            androidx.composeFoundation,
-            androidx.composeRuntime,
-            androidx.composeUi,
-            androidx.core,
-            androidx.coreKtx,
-            androidx.activity,
-            androidx.viewModel,
-            androidx.liveData
-        )
-    }
+//    configurations.all {
+//        resolutionStrategy.force(
+//            androidx.composeAnimation,
+//            androidx.composeFoundation,
+//            androidx.composeRuntime,
+//            androidx.composeUi,
+//            androidx.core,
+//            androidx.coreKtx,
+//            androidx.activity,
+//            androidx.viewModel,
+//            androidx.liveData
+//        )
+//    }
 }
 
 doctor {
@@ -55,7 +54,7 @@ doctor {
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     checkForGradleUpdate = true
-    outputDir = "${rootProject.buildDir}/dependencyUpdates"
+    outputDir = "${rootProject.layout.buildDirectory.file("dependencyUpdates").get()}"
 }
 
 val detektAll by tasks.registering(Detekt::class) {
@@ -71,7 +70,7 @@ val detektAll by tasks.registering(Detekt::class) {
         xml.required.set(false)
         html {
             required.set(true)
-            outputLocation.set(file("${rootProject.buildDir}/reports/detekt-report.html"))
+            outputLocation.set(rootProject.layout.buildDirectory.file("reports/detekt-report.html"))
         }
         txt.required.set(false)
     }

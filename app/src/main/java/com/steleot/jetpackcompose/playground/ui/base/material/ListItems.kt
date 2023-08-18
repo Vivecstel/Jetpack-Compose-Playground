@@ -1,8 +1,12 @@
 package com.steleot.jetpackcompose.playground.ui.base.material
 
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ExperimentalMaterialApi
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ListItem
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,8 +27,8 @@ fun DefaultListItem(
         secondaryText = if (secondaryText != null) {
             {
                 Text(
-                    secondaryText,
-                    style = MaterialTheme.typography.caption,
+                    text = secondaryText,
+                    style = MaterialTheme.typography.body1
                 )
             }
         } else null,

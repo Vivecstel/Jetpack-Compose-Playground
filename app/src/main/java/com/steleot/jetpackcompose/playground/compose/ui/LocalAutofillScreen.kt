@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -20,13 +21,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/LocalAutofillScreen.kt"
+private const val URL = "ui/LocalAutofillScreen.kt"
 
 @Composable
 fun LocalAutofillScreen() {
     DefaultScaffold(
         title = UiNavRoutes.LocalAutofill,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

@@ -16,13 +16,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.PI
 import kotlin.math.cos
 
-private const val Url = "customexamples/CurvedScrollViewScreen.kt"
+private const val URL = "customexamples/CurvedScrollViewScreen.kt"
 
 @Composable
 fun CurvedScrollViewScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.CurvedScrollView,
-        link = Url,
+        link = URL,
     ) {
         CurvedScrollView(routes) { route ->
             DefaultCardListItem(text = route)

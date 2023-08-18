@@ -35,6 +35,7 @@ object MaterialNavRoutes {
     const val OutlinedButton = "outlined button"
     const val OutlinedTextField = "outlined text field"
     const val ProgressIndicator = "progress indicator"
+    const val PullRefresh = "pull refresh"
     const val RadioButton = "radio button"
     const val RangeSlider = "range slider"
     const val Scaffold = "scaffold"

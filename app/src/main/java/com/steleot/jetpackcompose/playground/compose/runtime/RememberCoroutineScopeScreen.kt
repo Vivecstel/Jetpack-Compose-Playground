@@ -1,8 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -13,19 +16,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val Url = "runtime/RememberCoroutineScopeScreen.kt"
+private const val URL = "runtime/RememberCoroutineScopeScreen.kt"
 
 @Composable
 fun RememberCoroutineScopeScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.RememberCoroutineScope,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -36,7 +39,7 @@ fun RememberCoroutineScopeScreen() {
     }
 }
 
-private const val Delay = 500L
+private const val DELAY = 500L
 
 @Composable
 private fun RememberCoroutineScopeExample() {
@@ -54,8 +57,8 @@ private fun RememberCoroutineScopeExample() {
             onValueChange = {
                 state.value = it
                 scope.launch {
-                    delay(Delay)
-                    delayedState.value = context.getString(R.string.text_with_delay, it.text, Delay)
+                    delay(DELAY)
+                    delayedState.value = context.getString(R.string.text_with_delay, it.text, DELAY)
                 }
             },
             textStyle = MaterialTheme.typography.body1,

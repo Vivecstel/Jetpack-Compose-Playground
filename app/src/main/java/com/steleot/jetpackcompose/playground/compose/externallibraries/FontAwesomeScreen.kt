@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,13 +14,13 @@ import com.guru.fontawesomecomposelib.FaIcons
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/FontAwesomeScreen.kt"
+private const val URL = "externallibraries/FontAwesomeScreen.kt"
 
 @Composable
 fun FontAwesomeScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.FontAwesome,
-        link = Url,
+        link = URL,
     ) {
         FontAwesomeGrid()
     }

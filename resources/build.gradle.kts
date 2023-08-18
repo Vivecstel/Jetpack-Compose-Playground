@@ -11,6 +11,7 @@ apply<BaseAndroidConfigurationPlugin>()
 apply<com.steleot.jetpackcompose.playground.plugins.ComposeConfigurationPlugin>()
 
 android {
+    namespace = "com.steleot.jetpackcompose.playground.resources"
     compileSdk = AndroidConfiguration.compileSdk
 
     kotlinOptions {

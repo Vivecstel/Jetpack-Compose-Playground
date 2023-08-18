@@ -4,7 +4,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -18,13 +20,13 @@ import by.overpass.treemapchart.core.tree.tree
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/ComposeTreeMapScreen.kt"
+private const val URL = "externallibraries/ComposeTreeMapScreen.kt"
 
 @Composable
 fun ComposeTreeMapScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeTreeMap,
-        link = Url,
+        link = URL,
     ) {
         ComposeShimmerExample()
     }

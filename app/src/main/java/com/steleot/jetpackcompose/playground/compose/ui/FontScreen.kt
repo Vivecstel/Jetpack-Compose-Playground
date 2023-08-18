@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -11,18 +12,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
+import com.steleot.jetpackcompose.playground.R as R2
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/FontScreen.kt"
+private const val URL = "ui/FontScreen.kt"
 
 @Preview
 @Composable
 fun FontScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Font,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -37,7 +39,7 @@ fun FontScreen() {
                 fontFamily = FontFamily(
                     listOf(
                         Font(
-                            resId = R.font.goblin_one_font,
+                            resId = R2.font.goblin_one_font,
                         )
                     )
                 )
@@ -50,7 +52,7 @@ fun FontScreen() {
                 fontFamily = FontFamily(
                     listOf(
                         Font(
-                            resId = R.font.reggae_one_font,
+                            resId = R2.font.reggae_one_font,
                         )
                     )
                 )

@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,13 +21,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
 import kotlin.math.ceil
 
-private const val Url = "customexamples/StaggeredGridListScreen.kt"
+private const val URL = "customexamples/StaggeredGridListScreen.kt"
 
 @Composable
 fun StaggeredGridListScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.StaggeredGridList,
-        link = Url,
+        link = URL,
     ) {
         StaggeredVerticalGrid(
             maxColumnWidth = 220.dp,

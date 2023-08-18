@@ -10,18 +10,18 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "material3/DropdownMenu3Screen.kt"
+private const val URL = "material3/DropdownMenu3Screen.kt"
 
 @Composable
 fun DropdownMenu3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.DropdownMenu3,
-        link = Url,
+        link = URL,
     ) {
         var expanded by remember { mutableStateOf(false) }
 
@@ -51,7 +51,7 @@ fun DropdownMenu3Screen() {
                     onClick = {
                         Timber.d("Settings clicked")
                     })
-                Divider()
+                HorizontalDivider()
                 DropdownMenuItem(
                     text = {
                         Text(stringResource(id = R.string.send_feedback))

@@ -12,13 +12,13 @@ import androidx.compose.ui.window.Popup
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/PopupScreen.kt"
+private const val URL = "ui/PopupScreen.kt"
 
 @Composable
 fun PopupScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Popup,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

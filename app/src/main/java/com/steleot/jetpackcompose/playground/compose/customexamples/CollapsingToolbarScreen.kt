@@ -15,9 +15,9 @@ import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavR
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 
-private const val Url = "customexamples/CollapsingToolbarScreen.kt"
-private const val MinHeight = 56f
-private const val MaxHeight = 168f
+private const val URL = "customexamples/CollapsingToolbarScreen.kt"
+private const val MIN_HEIGHT = 56f
+private const val MAX_HEIGHT = 168f
 
 @Composable
 fun CollapsingToolbarScreen() {
@@ -43,10 +43,12 @@ fun CollapsingToolbarScreen() {
 private fun TopScrollingContent(
     scrollState: ScrollState
 ) {
-    val dynamicHeight = (MaxHeight - scrollState.value).coerceIn(MinHeight, MaxHeight)
+    val dynamicHeight = (MAX_HEIGHT - scrollState.value).coerceIn(MIN_HEIGHT, MAX_HEIGHT)
     DefaultTopAppBar(
         title = CustomExamplesNavRoutes.CollapsingToolbar,
-        link = Url,
-        modifier = Modifier.heightIn(min = animateDpAsState(dynamicHeight.dp).value),
+        link = URL,
+        modifier = Modifier.heightIn(
+            min = animateDpAsState(dynamicHeight.dp, label = "TopScrollingContent").value
+        ),
     )
 }

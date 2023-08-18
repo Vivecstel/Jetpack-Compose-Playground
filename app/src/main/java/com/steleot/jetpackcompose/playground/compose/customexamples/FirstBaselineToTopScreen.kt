@@ -3,7 +3,9 @@ package com.steleot.jetpackcompose.playground.compose.customexamples
 import android.annotation.SuppressLint
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,18 +16,18 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "customexamples/FirstBaselineToTopScreen.kt"
+private const val URL = "customexamples/FirstBaselineToTopScreen.kt"
 
 @Composable
 fun FirstBaselineToTopScreen() {
     val paddingTop = 24.dp
     DefaultScaffold(
         title = CustomExamplesNavRoutes.FirstBaselineToTop,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -48,8 +50,8 @@ fun FirstBaselineToTopScreen() {
     }
 }
 
+@Suppress("UnusedReceiverParameter")
 @SuppressLint("ModifierFactoryUnreferencedReceiver")
-@Suppress("unused")
 private fun Modifier.firstBaselineToTop(
     firstBaselineToTop: Dp
 ) = Modifier.layout { measurable, constraints ->

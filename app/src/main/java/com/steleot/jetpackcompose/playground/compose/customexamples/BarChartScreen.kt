@@ -6,6 +6,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -21,13 +22,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.min
 import kotlin.random.Random
 
-private const val Url = "customexamples/BarChartScreen.kt"
+private const val URL = "customexamples/BarChartScreen.kt"
 
 @Composable
 fun BarChartScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.BarChart,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

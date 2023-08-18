@@ -15,7 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.net.toUri
 import com.steleot.jetpackcompose.playground.BuildConfig
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 
 // todo stelios remove tint when localcontentcolor is propagated correctly from topappbar correctly
 @Composable

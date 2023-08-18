@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -12,19 +13,19 @@ import androidx.compose.ui.unit.dp
 import com.simform.ssjetpackcomposeprogressbuttonlibrary.SSButtonState
 import com.simform.ssjetpackcomposeprogressbuttonlibrary.SSButtonType
 import com.simform.ssjetpackcomposeprogressbuttonlibrary.SSJetPackComposeProgressButton
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val Url = "externallibraries/SSJetPackComposeProgressButtonScreen.kt"
+private const val URL = "externallibraries/SSJetPackComposeProgressButtonScreen.kt"
 
 @Composable
 fun SSJetPackComposeProgressButtonScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.SSJetPackComposeProgressButton,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

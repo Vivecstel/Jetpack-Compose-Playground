@@ -12,6 +12,7 @@ apply<BaseAndroidConfigurationPlugin>()
 apply<ComposeConfigurationPlugin>()
 
 android {
+    namespace = "com.steleot.jetpackcompose.playground.theme.material"
     compileSdk = AndroidConfiguration.compileSdk
 
     kotlinOptions {
@@ -21,6 +22,7 @@ android {
 
 dependencies {
     api(project(Modules.ThemeBase))
+    implementation(platform(androidx.composeBom))
     implementation(androidx.composeUi)
     implementation(androidx.composeMaterial)
 }

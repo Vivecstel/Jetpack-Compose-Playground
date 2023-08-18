@@ -1,29 +1,30 @@
 package com.steleot.jetpackcompose.playground.compose.material3
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/TabRow3Screen.kt"
+private const val URL = "material3/TabRow3Screen.kt"
 
 @Composable
 fun TabRow3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.TabRow3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -46,15 +47,15 @@ fun TabRow3Screen() {
 
 @Composable
 private fun DefaultTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     TabRow(
-        selectedTabIndex = selectedTab.value
+        selectedTabIndex = selectedTab.intValue
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -67,16 +68,16 @@ private fun DefaultTabRow(tabs: List<String>) {
 
 @Composable
 private fun ContainerColorTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     TabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         containerColor = Color.Yellow
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -89,16 +90,16 @@ private fun ContainerColorTabRow(tabs: List<String>) {
 
 @Composable
 private fun ContentColorTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     TabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         contentColor = Color.Red
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -111,11 +112,11 @@ private fun ContentColorTabRow(tabs: List<String>) {
 
 @Composable
 private fun DividerTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     TabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         divider = {
-            Divider(
+            HorizontalDivider(
                 modifier = Modifier
                     .requiredHeight(8.dp)
                     .fillMaxWidth()
@@ -125,9 +126,9 @@ private fun DividerTabRow(tabs: List<String>) {
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }
             ) {
                 Text(
@@ -139,14 +140,15 @@ private fun DividerTabRow(tabs: List<String>) {
     }
 }
 
+@SuppressLint("AutoboxingStateValueProperty")
 @Composable
 private fun IndicatorTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     TabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         indicator = { tabPositions: List<TabPosition> ->
             val modifier = Modifier.tabIndicatorOffset(
-                tabPositions[selectedTab.value]
+                tabPositions[selectedTab.intValue]
             )
             Box(
                 modifier
@@ -161,9 +163,9 @@ private fun IndicatorTabRow(tabs: List<String>) {
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    index.also { selectedTab.value = it }
                 }) {
                 Text(
                     text = text,

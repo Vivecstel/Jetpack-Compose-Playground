@@ -1,16 +1,16 @@
 [versions]
 
-kotlin = "1.7.10"
-androidPlugin = "7.2.1"
-hilt = "2.43.2"
-googleServices = "4.3.14"
-crashlytics = "2.9.2"
+kotlin = "1.9.0"
+androidPlugin = "8.1.0"
+hilt = "2.47"
+googleServices = "4.3.15"
+crashlytics = "2.9.8"
 secrets = "2.0.1"
-detekt = "1.21.0"
-benManes = "0.42.0"
+detekt = "1.23.1"
+benManes = "0.47.0"
 doctor = "0.8.1"
-protobuf = "0.8.18"
-playPublisher = "3.7.0"
+protobuf = "0.9.4"
+playPublisher = "3.8.4"
 
 [libraries]
 

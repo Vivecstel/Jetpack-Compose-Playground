@@ -1,12 +1,15 @@
 package com.steleot.jetpackcompose.playground.ui.base.material
 
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.DropdownMenu
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.DropdownMenuItem
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.compose.rest.ShouldReload
 import com.steleot.jetpackcompose.playground.localproviders.LocalFavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController

@@ -12,13 +12,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/BoxWithConstraintsScreen.kt"
+private const val URL = "foundation/BoxWithConstraintsScreen.kt"
 
 @Composable
 fun BoxWithConstraintsScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.BoxWithConstraints,
-        link = Url,
+        link = URL,
     ) {
         BoxWithConstraints {
             val rectangleHeight = 100.dp

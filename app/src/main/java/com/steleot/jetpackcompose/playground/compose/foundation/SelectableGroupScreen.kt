@@ -2,7 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.RadioButton
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -11,17 +13,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/SelectableGroupScreen.kt"
+private const val URL = "foundation/SelectableGroupScreen.kt"
 
 @Composable
 fun SelectableGroupScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.SelectableGroup,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

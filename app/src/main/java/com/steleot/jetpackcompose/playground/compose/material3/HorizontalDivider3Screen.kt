@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,13 +14,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/Divider3Screen.kt"
+private const val URL = "material3/HorizontalDivider3Screen.kt"
 
 @Composable
-fun Divider3Screen() {
+fun HorizontalDivider3Screen() {
     DefaultScaffold(
-        title = Material3NavRoutes.Divider3,
-        link = Url,
+        title = Material3NavRoutes.HorizontalDivider3,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
@@ -39,17 +39,17 @@ fun Divider3Screen() {
 @Preview
 @Composable
 private fun DefaultDivider() {
-    Divider()
+    HorizontalDivider()
 }
 
 @Preview
 @Composable
 private fun ColoredDivider() {
-    Divider(color = Color.Red)
+    HorizontalDivider(color = Color.Red)
 }
 
 @Preview
 @Composable
 private fun ThickDividerComponent() {
-    Divider(thickness = 12.dp)
+    HorizontalDivider(thickness = 12.dp)
 }

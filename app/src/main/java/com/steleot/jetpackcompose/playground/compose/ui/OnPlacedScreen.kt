@@ -9,11 +9,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.layout.onPlaced
@@ -22,12 +23,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.round
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "ui/OnPlacedScreen.kt"
+private const val URL = "ui/OnPlacedScreen.kt"
 
 @Composable
 fun OnPlacedScreen() {
@@ -45,7 +46,7 @@ fun OnPlacedScreen() {
     var alignment by remember { mutableStateOf(Alignment.Center) }
     DefaultScaffold(
         title = UiNavRoutes.OnPlaced,
-        link = Url,
+        link = URL,
     ) {
         Box(
             modifier = Modifier
@@ -72,7 +73,6 @@ fun OnPlacedScreen() {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 private fun Modifier.animatePlacement(): Modifier = composed {
     val scope = rememberCoroutineScope()
     var targetOffset by remember { mutableStateOf(IntOffset.Zero) }

@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,17 +16,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "navigation/NavigationScreen.kt"
+private const val URL = "navigation/NavigationScreen.kt"
 
 @Composable
 fun NavigationScreen() {
     DefaultScaffold(
         title = MainNavRoutes.Navigation,
-        link = Url,
+        link = URL,
     ) {
         NavigationExample()
     }
@@ -44,9 +45,9 @@ private fun NavigationExample() {
 }
 
 sealed class Screen(val route: String, @StringRes val resourceId: Int) {
-    object Profile : Screen("profile", R.string.profile)
-    object Dashboard : Screen("dashboard", R.string.dashboard)
-    object Scrollable : Screen("scrollable", R.string.scrollable)
+    data object Profile : Screen("profile", R.string.profile)
+    data object Dashboard : Screen("dashboard", R.string.dashboard)
+    data object Scrollable : Screen("scrollable", R.string.scrollable)
 }
 
 @Composable

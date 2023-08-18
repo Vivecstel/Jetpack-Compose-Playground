@@ -10,13 +10,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import me.nikhilchaudhari.quarks.CreateParticles
 import me.nikhilchaudhari.quarks.particle.*
 
-private const val Url = "externallibraries/ComposeParticleSystemScreen.kt"
+private const val URL = "externallibraries/ComposeParticleSystemScreen.kt"
 
 @Composable
 fun ComposeParticleSystemScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeParticleSystem,
-        link = Url,
+        link = URL,
     ) {
         ComposeParticleSystemExample()
     }

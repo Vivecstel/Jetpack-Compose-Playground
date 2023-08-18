@@ -17,13 +17,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/IconButton3Screen.kt"
+private const val URL = "material3/IconButton3Screen.kt"
 
 @Composable
 fun IconButton3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.IconButton3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

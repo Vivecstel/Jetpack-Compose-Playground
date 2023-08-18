@@ -12,13 +12,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/SubComposeLayoutScreen.kt"
+private const val URL = "ui/SubComposeLayoutScreen.kt"
 
 @Composable
 fun SubComposeLayoutScreen() {
     DefaultScaffold(
         title = UiNavRoutes.SubComposeLayout,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

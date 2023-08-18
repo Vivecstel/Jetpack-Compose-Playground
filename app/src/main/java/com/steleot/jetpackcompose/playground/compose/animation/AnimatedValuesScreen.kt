@@ -15,13 +15,13 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import androidx.compose.animation.Animatable as AnimatableColor
 import androidx.compose.animation.core.Animatable as AnimatableFloat
 
-private const val Url = "animation/AnimatedValuesScreen.kt"
+private const val URL = "animation/AnimatedValuesScreen.kt"
 
 @Composable
 fun AnimatedValuesScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.AnimatedValues,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier

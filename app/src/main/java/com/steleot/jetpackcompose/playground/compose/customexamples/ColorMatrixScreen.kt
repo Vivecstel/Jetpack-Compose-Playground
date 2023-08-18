@@ -11,19 +11,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
-private const val Url = "customexamples/ColorMatrixScreen.kt"
+private const val URL = "customexamples/ColorMatrixScreen.kt"
 
 @Composable
 fun ColorMatrixScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.ColorMatrix,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -35,7 +34,6 @@ fun ColorMatrixScreen() {
     }
 }
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun ColorMatrixExample() {
     val matrix = ColorMatrix().apply {

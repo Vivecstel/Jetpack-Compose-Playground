@@ -11,13 +11,13 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/RotateScreen.kt"
+private const val URL = "ui/RotateScreen.kt"
 
 @Composable
 fun RotateScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Rotate,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
