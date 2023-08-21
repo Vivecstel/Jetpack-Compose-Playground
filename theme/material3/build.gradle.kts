@@ -22,7 +22,7 @@ android {
 
 dependencies {
     api(project(Modules.ThemeBase))
-    implementation(platform(androidx.composeBom))
-    implementation(androidx.composeUi)
-    implementation(androidx.composeMaterial3)
+    implementation(platform(libs.composeBom))
+    implementation(libs.composeUi)
+    implementation(libs.composeMaterial3)
 }

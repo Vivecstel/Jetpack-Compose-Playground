@@ -28,7 +28,7 @@ abstract class ComposeConfigurationPlugin : Plugin<Project> {
 
     @Suppress("UnstableApiUsage")
     private fun ComposeOptions.configure(project: Project) {
-        val androidx = project.extensions.getByType<VersionCatalogsExtension>().named("androidx")
+        val androidx = project.extensions.getByType<VersionCatalogsExtension>().named("libs")
         kotlinCompilerExtensionVersion = androidx.findVersion("composeCompiler").get().requiredVersion
     }
 }

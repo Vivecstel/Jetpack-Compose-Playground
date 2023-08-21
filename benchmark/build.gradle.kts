@@ -18,14 +18,15 @@ android {
     }
 
     targetProjectPath = ":app"
+    @Suppress("UnstableApiUsage")
     experimentalProperties["android.experimental.self-instrumenting"] = true
 }
 
 dependencies {
-    implementation(androidx.junit)
-    implementation(androidx.espressoCore)
-    implementation(androidx.uiAutomator)
-    implementation(androidx.benchmark)
+    implementation(libs.junit)
+    implementation(libs.espressoCore)
+    implementation(libs.uiAutomator)
+    implementation(libs.benchmark)
 }
 
 androidComponents {

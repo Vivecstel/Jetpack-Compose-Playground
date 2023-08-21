@@ -30,11 +30,6 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                                     versionName = AndroidConfiguration.versionName
                                 }
                             }
-                            is LibraryExtension -> {
-                                with(this@defaultConfig as LibraryDefaultConfig) {
-                                    targetSdk = AndroidConfiguration.targetSdk
-                                }
-                            }
                             is TestExtension -> {
                                 with(this@defaultConfig as TestDefaultConfig) {
                                     targetSdk = AndroidConfiguration.targetSdk
@@ -56,7 +51,7 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                         resValues = false
                         shaders = false
                     }
-                    packagingOptions {
+                    packaging {
                         resources.excludes.apply {
                             add("**/attach_hotspot_windows.dll")
                             add("META-INF/licenses/**")

@@ -1,0 +1,399 @@
+[versions]
+
+kotlin = "1.9.0"
+androidPlugin = "8.1.0"
+hilt = "2.47"
+googleServices = "4.3.15"
+crashlytics = "2.9.8"
+secrets = "2.0.1"
+detekt = "1.23.1"
+benManes = "0.47.0"
+doctor = "0.8.1"
+protobufPlugin = "0.9.4"
+playPublisher = "3.8.4"
+
+composeBom = "2023.09.00-alpha02"
+composeCompiler = "1.5.1"
+composeMaterial3 = "1.2.0-alpha05"
+profileInstaller = "1.3.1"
+composeConstraint = "1.1.0-alpha12"
+composePaging = "3.2.0"
+navigation = "2.7.0"
+glance = "1.0.0-rc01"
+core = "1.12.0-rc01"
+activity = "1.8.0-alpha06"
+appCompat = "1.7.0-alpha03"
+lifecycle = "2.7.0-alpha01"
+hiltCompose = "1.1.0-alpha01"
+startUp = "1.2.0-alpha02"
+dataStore = "1.1.0-alpha04"
+camera = "1.3.0-beta02"
+workManager = "2.9.0-alpha02"
+test = "1.6.0-alpha01"
+junit = "1.2.0-alpha01"
+espresso = "3.6.0-alpha01"
+uiAutomator = "2.3.0-alpha04"
+tracing = "1.3.0-alpha02"
+benchmark = "1.2.0-beta03"
+
+protobuf = "4.0.0-rc-2"
+firebase = "32.2.2"
+playCore = "1.10.3"
+playCoreKtx = "1.8.1"
+mapsCompose = "2.14.0"
+playServicesMaps = "18.1.0"
+accompanist = "0.33.0-alpha"
+adMob = "22.2.0"
+playServicesAuth = "20.6.0"
+
+coroutines = "1.7.3"
+retrofit = "2.9.0"
+okhttp = "5.0.0-alpha.11"
+kotlinxSerializationConverter = "1.0.0"
+kotlinxSerialization = "1.6.0-RC"
+landscapist = "2.2.7"
+orchestra = "1.2.0"
+coil = "2.4.0"
+glide = "4.15.1"
+fresco = "3.0.0"
+timber = "5.0.1"
+lottie = "6.1.0"
+ratingBar = "1.3.4"
+revealSwipe = "1.1.0"
+speedDial = "1.1.1"
+fontAwesome = "1.1.0"
+composeCharts = "0.3.6"
+composeNeumorphism = "1.0.0-alpha02"
+composeMarkdown = "0.3.4"
+composeBarcodes = "1.1.1"
+composeRichtext = "0.16.0"
+stageStepBar = "1.1.0"
+plot = "0.1.2"
+composeTimelineView = "1.0.2"
+composeParticleSystem = "1.0.0-alpha02"
+ssJetPackComposeProgressButton = "1.0.7"
+gap = "1.1.0"
+permissionsUi = "0.1.8"
+htmlText = "1.4.1"
+composeShimmer = "1.0.5"
+zoomableComposeImage = "1.0.5"
+composeTreeMap = "0.0.4"
+heartSwitch = "1.4.0"
+orbital = "0.2.4"
+
+[libraries]
+
+# https://kotlinlang.org/docs/gradle.html
+kotlinGradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# https://developer.android.com/studio/releases/gradle-plugin
+androidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidPlugin" }
+
+# https://developer.android.com/training/dependency-injection/hilt-android
+hiltPlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+
+# https://developers.google.com/android/guides/google-services-plugin
+googleServices = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+
+# https://firebase.google.com/docs/crashlytics/get-started?platform=android
+crashlytics = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "crashlytics" }
+
+# https://github.com/google/secrets-gradle-plugin
+secrets = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "secrets" }
+
+# https://developer.android.com/studio/releases/gradle-plugin
+androidGradleApi = { module = "com.android.tools.build:gradle-api", version.ref = "androidPlugin" }
+
+# https://github.com/chrisbanes/compose-bom
+composeBom = { module = "dev.chrisbanes.compose:compose-bom", version.ref = "composeBom" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-animation
+composeAnimation = { module = "androidx.compose.animation:animation" }
+composeAnimationGraphics = { module = "androidx.compose.animation:animation-graphics" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-compiler
+composeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-foundation
+composeFoundation = { module = "androidx.compose.foundation:foundation" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-material
+composeMaterial = { module = "androidx.compose.material:material" }
+composeMaterialIcons = { module = "androidx.compose.material:material-icons-extended" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-material3
+composeMaterial3 = { module = "androidx.compose.material3:material3", version.ref = "composeMaterial3" }
+composeMaterial3WindowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "composeMaterial3" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-runtime
+composeRuntime = { module = "androidx.compose.runtime:runtime" }
+composeLiveData = { module = "androidx.compose.runtime:runtime-livedata" }
+
+# https://developer.android.com/jetpack/androidx/releases/compose-ui
+composeUi = { module = "androidx.compose.ui:ui" }
+composeUiUtil = { module = "androidx.compose.ui:ui-util" }
+
+# https://developer.android.com/jetpack/androidx/releases/ui
+composeUiTooling = { module = "androidx.compose.ui:ui-tooling" }
+
+# https://developer.android.com/jetpack/androidx/releases/profileinstaller
+profileInstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileInstaller" }
+
+# https://developer.android.com/jetpack/compose/layout
+composeConstraint = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "composeConstraint" }
+
+# https://developer.android.com/jetpack/androidx/releases/paging
+composePaging = { module = "androidx.paging:paging-compose", version.ref = "composePaging" }
+
+# https://developer.android.com/jetpack/compose/navigation
+composeNavigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+
+# https://developer.android.com/jetpack/androidx/releases/glance
+glance = { module = "androidx.glance:glance-appwidget", version.ref = "glance" }
+
+# https://developer.android.com/jetpack/androidx/releases/core
+core = { module = "androidx.core:core", version.ref = "core" }
+coreKtx = { module = "androidx.core:core-ktx", version.ref = "core" }
+
+# https://developer.android.com/jetpack/androidx/releases/activity
+activity = { module = "androidx.activity:activity", version.ref = "activity" }
+composeActivity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+
+# https://developer.android.com/jetpack/androidx/releases/appcompat
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompat" }
+
+# https://developer.android.com/jetpack/androidx/releases/lifecycle
+viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+liveData = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "lifecycle" }
+
+# https://developer.android.com/training/dependency-injection/hilt-android
+hiltNavigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
+
+# https://developer.android.com/jetpack/androidx/releases/startup
+startUp = { module = "androidx.startup:startup-runtime", version.ref = "startUp" }
+
+# https://developer.android.com/topic/libraries/architecture/datastore
+dataStore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
+
+# https://developer.android.com/jetpack/androidx/releases/camera
+cameraxCore = { module = "androidx.camera:camera-core", version.ref = "camera" }
+camerax2 = { module = "androidx.camera:camera-camera2", version.ref = "camera" }
+cameraxLifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera" }
+cameraxView = { module = "androidx.camera:camera-view", version.ref = "camera" }
+
+# https://developer.android.com/jetpack/androidx/releases/work
+workManager = { module = "androidx.work:work-runtime", version.ref = "workManager" }
+
+# https://developer.android.com/jetpack/compose/testing
+composeUiTest = { module = "androidx.compose.ui:ui-test" }
+composeUiJunit = { module = "androidx.compose.ui:ui-test-junit4" }
+composeUiManifest = { module = "androidx.compose.ui:ui-test-manifest" }
+
+# https://developer.android.com/jetpack/compose/navigation
+navigationTest = { module = "androidx.navigation:navigation-testing", version.ref = "navigation" }
+
+# https://developer.android.com/jetpack/androidx/releases/test
+testCore = { module = "androidx.test:core", version.ref = "test" }
+junit = { module = "androidx.test.ext:junit", version.ref = "junit" }
+espressoCore = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+
+# https://developer.android.com/training/testing/other-components/ui-automator
+uiAutomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "uiAutomator" }
+
+tracing = { module = "androidx.tracing:tracing", version.ref = "tracing"}
+
+# https://developer.android.com/jetpack/androidx/releases/benchmark
+benchmark = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "benchmark" }
+
+# https://firebase.google.com/docs/android/learn-more
+firebaseBom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase" }
+firebaseAnalytics = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebaseFirestore = { module = "com.google.firebase:firebase-firestore-ktx" }
+firebaseMessaging = { module = "com.google.firebase:firebase-messaging-ktx" }
+firebaseInstallations = { module = "com.google.firebase:firebase-installations-ktx" }
+firebaseAuth = { module = "com.google.firebase:firebase-auth-ktx" }
+
+# https://developer.android.com/training/dependency-injection/hilt-android
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# https://github.com/protocolbuffers/protobuf
+protobufProtoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+protobufJavaLite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+
+# https://developer.android.com/guide/playcore
+playCore = { module = "com.google.android.play:core", version.ref = "playCore" }
+playCoreKtx = { module = "com.google.android.play:core-ktx", version.ref = "playCoreKtx" }
+
+# https://github.com/googlemaps/android-maps-compose
+mapsCompose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+playServicesMaps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+
+# https://github.com/google/accompanist
+accompanistFlow = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanist" }
+accompanistSystemUicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanistPermissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+accompanistPlaceholderMaterial = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
+accompanistDrawablePainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanist" }
+accompanistNavigationMaterial = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
+accompanistWebView = { module = "com.google.accompanist:accompanist-webview", version.ref = "accompanist" }
+
+# https://firebase.google.com/docs/admob/android/quick-start
+adMob = { module = "com.google.android.gms:play-services-ads", version.ref = "adMob" }
+
+# https://firebase.google.com/docs/auth/android/google-signin
+playServicesAuth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+
+# https://github.com/Kotlin/kotlinx.coroutines
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutinesPlayServices = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "coroutines" }
+
+# https://square.github.io/retrofit/
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+
+# https://github.com/square/okhttp
+okhttpBom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
+okhttp = { module = "com.squareup.okhttp3:okhttp" }
+okhttpLogging = { module = "com.squareup.okhttp3:logging-interceptor" }
+
+# https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
+kotlinxSerializationConverter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "kotlinxSerializationConverter" }
+
+# https://github.com/Kotlin/kotlinx.serialization
+kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+
+# https://github.com/skydoves/Landscapist
+landscapistCoil = { module = "com.github.skydoves:landscapist-coil", version.ref = "landscapist" }
+landscapistGlide = { module = "com.github.skydoves:landscapist-glide", version.ref = "landscapist" }
+landscapistFresco = { module = "com.github.skydoves:landscapist-fresco", version.ref = "landscapist" }
+landscapistAnimation = { module = "com.github.skydoves:landscapist-animation", version.ref = "landscapist" }
+landscapistPlaceholder = { module = "com.github.skydoves:landscapist-placeholder", version.ref = "landscapist" }
+landscapistPalette = { module = "com.github.skydoves:landscapist-palette", version.ref = "landscapist" }
+
+# https://github.com/skydoves/Orchestra
+orchestraBalloon = { module = "com.github.skydoves:orchestra-balloon", version.ref = "orchestra" }
+orchestraColorPicker = { module = "com.github.skydoves:orchestra-colorpicker", version.ref = "orchestra" }
+orchestraSpinner = { module = "com.github.skydoves:orchestra-spinner", version.ref = "orchestra" }
+
+# https://github.com/coil-kt/coil/
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+# https://github.com/bumptech/glide
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glideCompiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+
+# https://github.com/facebook/fresco
+fresco = { module = "com.facebook.fresco:fresco", version.ref = "fresco" }
+
+# https://github.com/JakeWharton/timber
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+# https://github.com/kazemihabib/compose-shimmer
+lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie" }
+
+# https://github.com/a914-gowtham/compose-ratingbar
+ratingBar = { module = "io.github.a914-gowtham:compose-ratingbar", version.ref = "ratingBar" }
+
+# https://github.com/ch4rl3x/RevealSwipe
+revealSwipe = { module = "de.charlex.compose:revealswipe", version.ref = "revealSwipe" }
+
+# https://github.com/ch4rl3x/SpeedDialFloatingActionButton
+speedDial = { module = "de.charlex.compose:speeddial", version.ref = "speedDial" }
+
+# https://github.com/Gurupreet/FontAwesomeCompose
+fontAwesome = { module = "com.github.Gurupreet:FontAwesomeCompose", version.ref = "fontAwesome" }
+
+# https://github.com/humawork/compose-charts
+composeCharts = { module = "ma.hu:compose-charts", version.ref = "composeCharts" }
+
+# https://github.com/CuriousNikhil/neumorphic-compose
+composeNeumorphism = { module = "me.nikhilchaudhari:composeNeumorphism", version.ref = "composeNeumorphism" }
+
+# https://github.com/jeziellago/compose-markdown
+composeMarkdown = { module = "com.github.jeziellago:compose-markdown", version.ref = "composeMarkdown" }
+
+# https://github.com/simonsickle/ComposedBarcodes
+composeBarcodes = { module = "com.simonsickle:composed-barcodes", version.ref = "composeBarcodes" }
+
+# https://github.com/halilozercan/compose-richtext
+composeRichtextUi = { module = "com.halilibo.compose-richtext:richtext-ui", version.ref = "composeRichtext" }
+composeRichtextUiMaterial = { module = "com.halilibo.compose-richtext:richtext-ui-material", version.ref = "composeRichtext" }
+composeRichtextPrinting = { module = "com.halilibo.compose-richtext:printing", version.ref = "composeRichtext" }
+composeRichtextSlideshow = { module = "com.halilibo.compose-richtext:richtext-slideshow", version.ref = "composeRichtext" }
+
+# https://github.com/loukwn/StageStepBar
+stageStepBar = { module = "com.github.loukwn.StageStepBar:stagestepbar-compose", version.ref = "stageStepBar" }
+
+# https://github.com/Madrapps/plot
+plot = { module = "com.github.madrapps:plot", version.ref = "plot" }
+
+# https://github.com/jisungbin/ComposeTimeLineView
+composeTimelineView = { module = "io.github.jisungbin:timelineview", version.ref = "composeTimelineView" }
+
+# https://github.com/CuriousNikhil/compose-particle-system
+composeParticleSystem = { module = "me.nikhilchaudhari:quarks", version.ref = "composeParticleSystem" }
+
+# https://github.com/SimformSolutionsPvtLtd/SSJetPackComposeProgressButton
+ssJetPackComposeProgressButton = { module = "com.github.SimformSolutionsPvtLtd:SSJetPackComposeProgressButton", version.ref = "ssJetPackComposeProgressButton" }
+
+# https://github.com/wasabeef/compose-gap
+gap = { module = "jp.wasabeef:gap", version.ref = "gap" }
+
+# https://github.com/warting/permissions-ui
+permissionsUi = { module = "se.warting.permissionsui:permissionsui", version.ref = "permissionsUi" }
+
+# https://github.com/ch4rl3x/HtmlText
+htmlText = { module = "de.charlex.compose:html-text", version.ref = "htmlText" }
+
+# https://github.com/valentinilk/compose-shimmer
+composeShimmer = { module = "com.valentinilk.shimmer:compose-shimmer", version.ref = "composeShimmer" }
+
+# https://github.com/re-ovo/ZoomableComposeImage
+zoomableComposeImage = { module = "com.github.re-ovo:ZoomableComposeImage", version.ref = "zoomableComposeImage" }
+
+# https://github.com/overpas/compose-treemap-chart
+composeTreeMap = { module = "io.github.overpas:treemap-compose-android", version.ref = "composeTreeMap" }
+
+# https://github.com/overpas/compose-treemap-chart
+heartSwitch = { module = "com.github.popovanton0:heart-switch", version.ref = "heartSwitch" }
+
+# https://github.com/skydoves/Orbital
+orbital = { module = "com.github.skydoves:orbital", version.ref = "orbital" }
+
+[bundles]
+
+camerax = ["cameraxCore", "camerax2", "cameraxLifecycle", "cameraxView"]
+
+firebase = ["firebaseAnalytics", "firebaseCrashlytics", "firebaseFirestore", "firebaseMessaging", "firebaseInstallations", "firebaseAuth"]
+playCore = ["playCore", "playCoreKtx"]
+mapsCompose = ["mapsCompose", "playServicesMaps"]
+accompanist = ["accompanistFlow", "accompanistSystemUicontroller", "accompanistPermissions", "accompanistPlaceholderMaterial", "accompanistDrawablePainter", "accompanistDrawablePainter", "accompanistNavigationMaterial", "accompanistWebView"]
+
+landscapist = ["landscapistCoil", "landscapistGlide", "landscapistFresco", "landscapistAnimation", "landscapistPlaceholder", "landscapistPalette"]
+
+[plugins]
+
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "benchmark"}
+
+# https://github.com/ben-manes/gradle-versions-plugin
+benManes = { id = "com.github.ben-manes.versions", version.ref = "benManes" }
+
+# https://github.com/detekt/detekt
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# https://github.com/protocolbuffers/protobuf
+doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
+
+# https://github.com/protocolbuffers/protobuf
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+
+#  https://github.com/Triple-T/gradle-play-publisher
+playPublisher = { id = "com.github.triplet.play", version.ref = "playPublisher" }
+
+# https://github.com/Kotlin/kotlinx.serialization
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

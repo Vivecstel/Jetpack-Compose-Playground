@@ -2,10 +2,10 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    alias(gradleLibraries.plugins.kotlinJvm)
-    alias(gradleLibraries.plugins.benManes)
-    alias(gradleLibraries.plugins.detekt)
-    alias(gradleLibraries.plugins.doctor)
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.benManes)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.doctor)
 }
 
 buildscript {
@@ -13,12 +13,12 @@ buildscript {
         google()
     }
     dependencies {
-        classpath(gradleLibraries.kotlinGradle)
-        classpath(gradleLibraries.androidPlugin)
-        classpath(gradleLibraries.googleServices)
-        classpath(gradleLibraries.crashlytics)
-        classpath(gradleLibraries.hiltPlugin)
-        classpath(gradleLibraries.secrets)
+        classpath(libs.kotlinGradle)
+        classpath(libs.androidPlugin)
+        classpath(libs.googleServices)
+        classpath(libs.crashlytics)
+        classpath(libs.hiltPlugin)
+        classpath(libs.secrets)
     }
 }
 
