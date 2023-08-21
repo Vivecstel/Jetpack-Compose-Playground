@@ -5,7 +5,9 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
@@ -27,18 +29,18 @@ fun GoogleMapsScreen() {
         title = ExternalLibrariesNavRoutes.GoogleMaps,
         link = URL,
     ) {
-        GoogleMapsExample()
+        GoogleMapsExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun GoogleMapsExample() {
+private fun GoogleMapsExample(paddingValues: PaddingValues) {
     var isMapLoaded by remember { mutableStateOf(false) }
     val athens = LatLng(37.983810, 23.727539)
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(athens, 8f)
     }
-    Box(Modifier.fillMaxSize()) {
+    Box(Modifier.fillMaxSize().padding(paddingValues = paddingValues)) {
         GoogleMap(
             modifier = Modifier.matchParentSize(),
             cameraPositionState = cameraPositionState,

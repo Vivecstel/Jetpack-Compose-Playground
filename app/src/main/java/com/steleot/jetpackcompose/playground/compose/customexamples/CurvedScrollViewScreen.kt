@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
@@ -24,7 +25,7 @@ fun CurvedScrollViewScreen() {
         title = CustomExamplesNavRoutes.CurvedScrollView,
         link = URL,
     ) {
-        CurvedScrollView(routes) { route ->
+        CurvedScrollView(routes, modifier = Modifier.padding(paddingValues = it)) { route ->
             DefaultCardListItem(text = route)
         }
     }
@@ -33,13 +34,14 @@ fun CurvedScrollViewScreen() {
 @Composable
 private fun <T> CurvedScrollView(
     items: List<T>,
+    modifier: Modifier = Modifier,
     contentSpacing: Dp = 8.dp,
     reversed: Boolean = false,
     itemContent: @Composable (item: T) -> Unit
 ) {
     val scrollState = rememberScrollState()
     var size by remember { mutableStateOf(IntSize.Zero) }
-    Box(modifier = Modifier.onSizeChanged { size = it }) {
+    Box(modifier = modifier.onSizeChanged { size = it }) {
         Layout(
             modifier = Modifier.verticalScroll(scrollState),
             content = { repeat(items.size) { itemContent(items[it]) } }

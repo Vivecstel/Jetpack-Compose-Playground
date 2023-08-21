@@ -37,7 +37,9 @@ fun AnimateItemPlacementScreen() {
         link = URL,
     ) {
         var list by remember { mutableStateOf((0..20).toList()) }
-        LazyColumn {
+        LazyColumn(
+            contentPadding = it
+        ) {
             item {
                 Box(
                     modifier = Modifier.fillMaxWidth()
@@ -50,9 +52,9 @@ fun AnimateItemPlacementScreen() {
                     }
                 }
             }
-            items(list, key = { it }) {
+            items(list, key = { item -> item }) { item ->
                 Text(
-                    stringResource(id = R.string.item, it),
+                    stringResource(id = R.string.item, item),
                     modifier = Modifier
                         .animateItemPlacement()
                         .padding(horizontal = 16.dp, vertical = 4.dp)

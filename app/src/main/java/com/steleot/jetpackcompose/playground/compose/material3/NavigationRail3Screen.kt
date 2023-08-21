@@ -1,11 +1,14 @@
 package com.steleot.jetpackcompose.playground.compose.material3
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
@@ -19,7 +22,9 @@ fun NavigationRail3Screen() {
         title = Material3NavRoutes.NavigationRail3,
         link = URL,
     ) {
-        NavigationRailExample()
+        Box(modifier = Modifier.padding(paddingValues = it)) {
+            NavigationRailExample()
+        }
     }
 }
 

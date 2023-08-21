@@ -27,7 +27,7 @@ fun LocalOverScrollConfigurationScreen() {
                 MaterialTheme.colors.primaryVariant
             )
         ) {
-            LazyColumn {
+            LazyColumn(contentPadding = it) {
                 items(routes) { route ->
                     DefaultCardListItem(route)
                 }

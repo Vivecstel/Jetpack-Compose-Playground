@@ -31,6 +31,7 @@ fun Checkbox3Screen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally

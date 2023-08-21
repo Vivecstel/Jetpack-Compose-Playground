@@ -8,8 +8,10 @@ import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -41,18 +43,19 @@ fun AnimatableScreen() {
         title = AnimationNavRoutes.Animatable,
         link = URL,
     ) {
-        AnimatableExample()
+        AnimatableExample(paddingValues = it)
     }
 }
 
 @SuppressLint("ReturnFromAwaitPointerEventScope")
 @Composable
-private fun AnimatableExample() {
+private fun AnimatableExample(paddingValues: PaddingValues) {
     val animatedOffset = remember { Animatable(Offset(0f, 0f), Offset.VectorConverter) }
 
     Box(
         Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .background(Color.LightGray)
             .pointerInput(Unit) {
                 coroutineScope {

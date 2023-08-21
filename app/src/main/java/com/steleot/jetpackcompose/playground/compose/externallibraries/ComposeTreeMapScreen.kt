@@ -2,8 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -28,7 +29,7 @@ fun ComposeTreeMapScreen() {
         title = ExternalLibrariesNavRoutes.ComposeTreeMap,
         link = URL,
     ) {
-        ComposeShimmerExample()
+        ComposeShimmerExample(paddingValues = it)
     }
 }
 
@@ -48,14 +49,14 @@ private val simpleTreeData = tree(10) {
 }
 
 @Composable
-private fun ComposeShimmerExample() {
+private fun ComposeShimmerExample(paddingValues: PaddingValues) {
     TreemapChart(
         data = simpleTreeData,
         evaluateItem = { it.toDouble() },
         treemapChartMeasurer = remember { SquarifiedMeasurer() },
         modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(),
+            .fillMaxSize()
+            .padding(paddingValues = paddingValues),
     ) { item ->
         TreemapItem(item = item)
     }

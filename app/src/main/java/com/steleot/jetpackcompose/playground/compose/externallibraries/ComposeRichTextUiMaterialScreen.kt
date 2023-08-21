@@ -30,6 +30,7 @@ fun ComposeRichTextUiMaterialScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally

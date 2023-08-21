@@ -34,6 +34,7 @@ fun OutlinedTextField3Screen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally

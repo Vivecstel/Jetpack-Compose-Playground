@@ -29,14 +29,16 @@ fun StaggeredGridListScreen() {
         title = CustomExamplesNavRoutes.StaggeredGridList,
         link = URL,
     ) {
-        StaggeredVerticalGrid(
-            maxColumnWidth = 220.dp,
-            modifier = Modifier
-                .padding(4.dp)
-                .verticalScroll(rememberScrollState())
-        ) {
-            routesList.forEachIndexed { index, route ->
-                StaggeredCard(index, route)
+        Box(modifier = Modifier.fillMaxSize().padding(paddingValues = it)) {
+            StaggeredVerticalGrid(
+                maxColumnWidth = 220.dp,
+                modifier = Modifier
+                    .padding(4.dp)
+                    .verticalScroll(rememberScrollState())
+            ) {
+                routesList.forEachIndexed { index, route ->
+                    StaggeredCard(index, route)
+                }
             }
         }
     }

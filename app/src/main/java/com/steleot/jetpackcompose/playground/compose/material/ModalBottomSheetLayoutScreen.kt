@@ -25,13 +25,13 @@ fun ModalBottomSheetLayoutScreen() {
         title = MaterialNavRoutes.ModalBottomSheetLayout,
         link = URL,
     ) {
-        ModalBottomSheetLayoutExample()
+        ModalBottomSheetLayoutExample(paddingValues = it)
     }
 }
 
 @Composable
 @OptIn(ExperimentalMaterialApi::class)
-private fun ModalBottomSheetLayoutExample() {
+private fun ModalBottomSheetLayoutExample(paddingValues: PaddingValues) {
     val state = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
     val scope = rememberCoroutineScope()
     ModalBottomSheetLayout(
@@ -57,6 +57,7 @@ private fun ModalBottomSheetLayoutExample() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = paddingValues)
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

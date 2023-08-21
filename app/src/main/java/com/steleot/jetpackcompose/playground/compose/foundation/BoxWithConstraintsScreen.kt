@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,7 +21,9 @@ fun BoxWithConstraintsScreen() {
         title = FoundationNavRoutes.BoxWithConstraints,
         link = URL,
     ) {
-        BoxWithConstraints {
+        BoxWithConstraints(
+            modifier = Modifier.padding(paddingValues = it)
+        ) {
             val rectangleHeight = 100.dp
             if (maxHeight < rectangleHeight * 2) {
                 Box(

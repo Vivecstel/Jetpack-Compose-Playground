@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,17 +31,17 @@ fun VerticalPagerScreen() {
         title = FoundationNavRoutes.VerticalPager,
         link = URL,
     ) {
-        VerticalPagerExample()
+        VerticalPagerExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun VerticalPagerExample() {
+private fun VerticalPagerExample(paddingValues: PaddingValues) {
     val state = rememberPagerState { 10 }
     VerticalPager(
         state = state,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) { page ->
         Box(
             modifier = Modifier

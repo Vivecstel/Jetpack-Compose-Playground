@@ -2,10 +2,8 @@ package com.steleot.jetpackcompose.playground.compose.material3
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-//noinspection UsingMaterialAndMaterial3Libraries
-import androidx.compose.material.ExperimentalMaterialApi
-//noinspection UsingMaterialAndMaterial3Libraries
-import androidx.compose.material.LocalMinimumTouchTargetEnforcement
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.LocalMinimumInteractiveComponentEnforcement
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -20,23 +18,24 @@ import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import timber.log.Timber
 
-private const val URL = "material3/LocalMinimumTouchTargetEnforcementScreen.kt"
+private const val URL = "material3/LocalMinimumInteractiveComponentEnforcement3Screen.kt"
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LocalMinimumTouchTargetEnforcementScreen() {
+fun LocalMinimumInteractiveComponentEnforcement3Screen() {
     DefaultScaffold(
-        title = Material3NavRoutes.LocalMinimumTouchTargetEnforcement,
+        title = Material3NavRoutes.LocalMinimumInteractiveComponentEnforcement3,
         link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(16.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            CompositionLocalProvider(LocalMinimumTouchTargetEnforcement provides false) {
+            CompositionLocalProvider(LocalMinimumInteractiveComponentEnforcement provides false) {
                 Text(text = stringResource(id = R.string.no_enforced_minimum))
                 Surface(
                     modifier = Modifier

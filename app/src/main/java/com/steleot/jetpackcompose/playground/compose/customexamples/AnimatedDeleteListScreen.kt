@@ -51,7 +51,7 @@ fun AnimatedDeleteListScreen() {
         title = CustomExamplesNavRoutes.AnimatedDeleteList,
         link = URL,
     ) {
-        AnimatedDeleteListExample(routesList)
+        AnimatedDeleteListExample(routesList, it)
     }
 }
 
@@ -63,9 +63,14 @@ internal val routesList
             externalRoutes).sorted()
 
 @Composable
-private fun AnimatedDeleteListExample(routes: List<String>) {
+private fun AnimatedDeleteListExample(
+    routes: List<String>,
+    paddingValues: PaddingValues,
+) {
     val deletedRouteList = remember { mutableStateListOf<String>() }
-    LazyColumn(contentPadding = PaddingValues(16.dp)) {
+    LazyColumn(
+        contentPadding = paddingValues
+    ) {
         itemsIndexed(routes) { index, route ->
             AnimatedVisibility(
                 visible = !deletedRouteList.contains(route),

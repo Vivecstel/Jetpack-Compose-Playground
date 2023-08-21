@@ -32,22 +32,21 @@ fun MotionLayout2Screen() {
         title = ConstraintLayoutNavRoutes.MotionLayout2,
         link = URL,
     ) {
-        MotionLayout2Example()
+        MotionLayout2Example(paddingValues = it)
     }
 }
 
 @Composable
-private fun MotionLayout2Example() {
+private fun MotionLayout2Example(paddingValues: PaddingValues) {
     var animateToEnd by remember { mutableStateOf(false) }
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
         animationSpec = tween(1000),
         label = "MotionLayout2Example"
     )
-    Column(Modifier.background(Color.White)) {
-        MotionLayout(
-            ConstraintSet(
-                """ {
+    MotionLayout(
+        ConstraintSet(
+            """ {
                 background: {
                     custom: {
                       color: '#ffffff'
@@ -107,9 +106,9 @@ private fun MotionLayout2Example() {
                     bottom: ['backgroundSwitch', 'bottom', 0]
                 }
              }"""
-            ),
-            ConstraintSet(
-                """ {
+        ),
+        ConstraintSet(
+            """ {
                 background: {
                     custom: {
                       color: '#000000'
@@ -170,88 +169,88 @@ private fun MotionLayout2Example() {
                     bottom: ['backgroundSwitch', 'bottom', 0]
                 }
               }"""
-            ),
-            progress = progress,
+        ),
+        progress = progress,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(paddingValues = paddingValues)
+            .background(Color.White)
+    ) {
+        Box(
             modifier = Modifier
+                .layoutId("background")
                 .fillMaxSize()
-                .background(Color.White)
-        ) {
-            Box(
-                modifier = Modifier
-                    .layoutId("background")
-                    .fillMaxSize()
-                    .clickable(onClick = { animateToEnd = !animateToEnd })
-                    .background(customProperties("background").color("color"))
-            )
+                .clickable(onClick = { animateToEnd = !animateToEnd })
+                .background(customProperties("background").color("color"))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("circle")
-                    .width(200.dp)
-                    .height(200.dp)
-                    .clip(CircleShape)
-                    .background(customProperties("circle").color("color"))
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("circle")
+                .width(200.dp)
+                .height(200.dp)
+                .clip(CircleShape)
+                .background(customProperties("circle").color("color"))
+        )
 
-            Text(
-                text = stringResource(id = R.string.choose_style),
-                modifier = Modifier.layoutId("title"),
-                color = customProperties("title").color("color"),
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = stringResource(id = R.string.day_or_night),
-                modifier = Modifier.layoutId("description"),
-                color = customProperties("title").color("color"),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundSwitch")
-                    .width(300.dp)
-                    .height(72.dp)
-                    .clip(RoundedCornerShape(36.dp))
-                    .background(customProperties("backgroundSwitch").color("color"))
-            )
+        Text(
+            text = stringResource(id = R.string.choose_style),
+            modifier = Modifier.layoutId("title"),
+            color = customProperties("title").color("color"),
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = stringResource(id = R.string.day_or_night),
+            modifier = Modifier.layoutId("description"),
+            color = customProperties("title").color("color"),
+            fontSize = 18.sp,
+            textAlign = TextAlign.Center
+        )
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundSwitch")
+                .width(300.dp)
+                .height(72.dp)
+                .clip(RoundedCornerShape(36.dp))
+                .background(customProperties("backgroundSwitch").color("color"))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("moonShadow")
-                    .width(170.dp)
-                    .height(170.dp)
-                    .clip(CircleShape)
-                    .background(Color.Black)
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("moonShadow")
+                .width(170.dp)
+                .height(170.dp)
+                .clip(CircleShape)
+                .background(Color.Black)
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("buttonSwitch")
-                    .width(150.dp)
-                    .height(72.dp)
-                    .clip(RoundedCornerShape(36.dp))
-                    .background(Color.Gray)
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("buttonSwitch")
+                .width(150.dp)
+                .height(72.dp)
+                .clip(RoundedCornerShape(36.dp))
+                .background(Color.Gray)
+        )
 
-            Text(
-                text = stringResource(id = R.string.light),
-                modifier = Modifier
-                    .layoutId("light")
-                    .width(150.dp),
-                color = Color.White,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = stringResource(id = R.string.dark),
-                modifier = Modifier
-                    .layoutId("dark")
-                    .width(150.dp),
-                color = Color.Black,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-        }
+        Text(
+            text = stringResource(id = R.string.light),
+            modifier = Modifier
+                .layoutId("light")
+                .width(150.dp),
+            color = Color.White,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = stringResource(id = R.string.dark),
+            modifier = Modifier
+                .layoutId("dark")
+                .width(150.dp),
+            color = Color.Black,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
     }
 }

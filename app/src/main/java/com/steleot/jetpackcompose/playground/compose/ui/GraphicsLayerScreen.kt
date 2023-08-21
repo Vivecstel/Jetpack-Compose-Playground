@@ -30,6 +30,7 @@ fun GraphicsLayerScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(vertical = 32.dp)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(32.dp),

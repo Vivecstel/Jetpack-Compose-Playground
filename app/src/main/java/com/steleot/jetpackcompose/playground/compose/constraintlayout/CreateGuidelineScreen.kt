@@ -1,6 +1,8 @@
 package com.steleot.jetpackcompose.playground.compose.constraintlayout
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -24,13 +26,13 @@ fun CreateGuidelineScreen() {
         title = ConstraintLayoutNavRoutes.CreateGuideline,
         link = URL,
     ) {
-        CreateGuidelineExample()
+        CreateGuidelineExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun CreateGuidelineExample() {
-    ConstraintLayout(Modifier.fillMaxSize()) {
+private fun CreateGuidelineExample(paddingValues: PaddingValues) {
+    ConstraintLayout(Modifier.fillMaxSize().padding(paddingValues = paddingValues)) {
         val b1 = createRef()
         val g1 = createGuidelineFromTop(75.dp)
         val g2 = createGuidelineFromBottom(75.dp)

@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ListItem
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
@@ -40,13 +42,13 @@ fun PullRefreshScreen() {
         title = MaterialNavRoutes.PullRefresh,
         link = URL,
     ) {
-        PullRefreshExample()
+        PullRefreshExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-private fun PullRefreshExample() {
+private fun PullRefreshExample(paddingValues: PaddingValues) {
     val refreshScope = rememberCoroutineScope()
     var refreshing by remember { mutableStateOf(false) }
     var itemCount by remember { mutableIntStateOf(15) }
@@ -61,7 +63,7 @@ private fun PullRefreshExample() {
     val state = rememberPullRefreshState(refreshing, ::refresh)
 
     Box(Modifier.pullRefresh(state)) {
-        LazyColumn(Modifier.fillMaxSize()) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = paddingValues) {
             if (!refreshing) {
                 items(itemCount) {
                     ListItem(

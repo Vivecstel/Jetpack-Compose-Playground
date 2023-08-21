@@ -36,7 +36,7 @@ fun NavigationMaterialAccompanistScreen() {
         title = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist,
         link = URL,
     ) {
-        NavigationMaterialExample()
+        NavigationMaterialExample(paddingValues = it)
     }
 }
 
@@ -49,12 +49,16 @@ private object Destinations {
 @SuppressLint("RestrictedApi")
 @OptIn(ExperimentalMaterialNavigationApi::class)
 @Composable
-private fun NavigationMaterialExample() {
+private fun NavigationMaterialExample(paddingValues: PaddingValues) {
     val navController = rememberNavController()
     val bottomSheetNavigator = rememberBottomSheetNavigator()
     navController.navigatorProvider += bottomSheetNavigator
     ModalBottomSheetLayout(bottomSheetNavigator) {
-        NavHost(navController, Destinations.Home) {
+        NavHost(
+            navController,
+            Destinations.Home,
+            modifier = Modifier.padding(paddingValues = paddingValues)
+        ) {
             composable(Destinations.Home) {
                 HomeScreen(
                     showSheet = {

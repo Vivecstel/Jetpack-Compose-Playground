@@ -26,10 +26,12 @@ fun LazyColumnScreen() {
         val itemsList = (0..50).toList()
         val itemsIndexedList = listOf("A", "B", "C", "D", "E", "F")
 
-        LazyColumn {
-            items(itemsList) {
+        LazyColumn(
+            contentPadding = it
+        ) {
+            items(itemsList) { item ->
                 Text(
-                    stringResource(id = R.string.item, it),
+                    stringResource(id = R.string.item, item),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)

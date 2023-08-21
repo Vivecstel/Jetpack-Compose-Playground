@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -24,14 +25,14 @@ fun ColumnScreen() {
         title = FoundationNavRoutes.Column,
         link = URL,
     ) {
-        DefaultColumn()
+        DefaultColumn(paddingValues = it)
     }
 }
 
 @Composable
-fun DefaultColumn() {
+fun DefaultColumn(paddingValues: PaddingValues) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) {
         Text(
             text = stringResource(id = R.string.item_args, 1),

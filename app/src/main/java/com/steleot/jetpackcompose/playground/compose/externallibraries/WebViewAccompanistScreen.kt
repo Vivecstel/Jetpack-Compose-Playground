@@ -1,6 +1,8 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.google.accompanist.web.WebView
@@ -16,15 +18,15 @@ fun WebViewAccompanistScreen() {
         title = ExternalLibrariesNavRoutes.WebViewAccompanist,
         link = URL,
     ) {
-        WebViewExample()
+        WebViewExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun WebViewExample() {
+private fun WebViewExample(paddingValues: PaddingValues) {
     val state = rememberWebViewState("https://github.com/Vivecstel/Jetpack-Compose-Playground")
     WebView(
         state = state,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     )
 }

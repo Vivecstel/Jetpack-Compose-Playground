@@ -6,7 +6,9 @@ import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -34,15 +36,21 @@ fun ScrollerScreen() {
         title = FoundationNavRoutes.Scroller,
         link = URL,
     ) {
-        ControlledScrollableRowExample()
+        ControlledScrollableRowExample(
+            paddingValues = it
+        )
     }
 }
 
 @Composable
-private fun ControlledScrollableRowExample() {
+private fun ControlledScrollableRowExample(
+    paddingValues: PaddingValues,
+) {
     val scrollState = rememberScrollState()
     val scope = rememberCoroutineScope()
-    Column {
+    Column(
+        modifier = Modifier.padding(paddingValues = paddingValues)
+    ) {
         Row(Modifier.horizontalScroll(scrollState)) {
             repeat(1000) { index ->
                 Square(index)

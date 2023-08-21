@@ -27,6 +27,7 @@ fun SpacerScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp)
         ) {
             columnList.forEachIndexed { index, text ->

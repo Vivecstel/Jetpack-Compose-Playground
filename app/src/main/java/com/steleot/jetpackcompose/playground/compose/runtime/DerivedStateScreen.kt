@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -22,18 +23,19 @@ fun DerivedStateScreen() {
         title = RuntimeNavRoutes.DerivedState,
         link = URL,
     ) {
-        DerivedStateExample()
+        DerivedStateExample(paddingValues = it)
     }
 }
 
 @Composable
-fun DerivedStateExample() {
+fun DerivedStateExample(paddingValues: PaddingValues) {
     var a by remember { mutableIntStateOf(0) }
     var b by remember { mutableIntStateOf(0) }
     val sum = remember { derivedStateOf { a + b } }
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .padding(32.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {

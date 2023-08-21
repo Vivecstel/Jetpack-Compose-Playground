@@ -2,8 +2,10 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
@@ -31,14 +33,14 @@ fun OrchestraBalloonScreen() {
         title = ExternalLibrariesNavRoutes.OrchestraBalloon,
         link = URL,
     ) {
-        BalloonAnchorExample()
+        BalloonAnchorExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun BalloonAnchorExample() {
+private fun BalloonAnchorExample(paddingValues: PaddingValues) {
     ConstraintLayout(
-        Modifier.fillMaxSize()
+        Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) {
         val (background, text) = createRefs()
         val context = LocalContext.current

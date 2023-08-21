@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
@@ -29,6 +30,7 @@ fun DropdownMenuScreen() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .wrapContentSize(Alignment.Center)
         ) {
             IconButton(onClick = { expanded = true }) {

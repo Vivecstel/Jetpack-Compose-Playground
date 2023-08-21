@@ -26,7 +26,9 @@ fun StickyHeaderScreen() {
         title = FoundationNavRoutes.StickyHeader,
         link = URL,
     ) {
-        LazyColumn {
+        LazyColumn(
+            contentPadding = it
+        ) {
             routesGrouped.forEach { (initial, routes) ->
                 stickyHeader {
                     Text(

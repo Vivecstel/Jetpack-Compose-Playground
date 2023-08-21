@@ -29,6 +29,7 @@ fun StringScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(16.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -42,9 +43,9 @@ fun StringScreen() {
                     formatArgs = arrayOf(stringResource(id = R.string.app_name))
                 ),
             )
-            stringArrayResource(id = R.array.string_array).forEach {
+            stringArrayResource(id = R.array.string_array).forEach { item ->
                 Text(
-                    text = it,
+                    text = item,
                 )
             }
         }

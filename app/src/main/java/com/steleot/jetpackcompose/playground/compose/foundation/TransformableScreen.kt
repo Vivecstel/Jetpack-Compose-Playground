@@ -5,6 +5,7 @@ import androidx.compose.foundation.gestures.rememberTransformableState
 import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -41,6 +42,7 @@ fun TransformableScreen() {
                 .transformable(state = state)
                 .background(Color.Blue)
                 .fillMaxSize()
+                .padding(paddingValues = it)
         )
     }
 }

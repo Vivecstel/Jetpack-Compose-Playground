@@ -49,6 +49,7 @@ dependencies {
     implementation(androidx.composeMaterial)
     implementation(androidx.composeMaterialIcons)
     implementation(androidx.composeMaterial3)
+    implementation(androidx.composeMaterial3WindowSizeClass)
     implementation(androidx.composeRuntime)
     implementation(androidx.composeLiveData)
     implementation(androidx.composeUi)

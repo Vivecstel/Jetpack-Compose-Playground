@@ -32,17 +32,17 @@ fun OrchestraColorPickerScreen() {
         title = ExternalLibrariesNavRoutes.OrchestraColorPicker,
         link = URL,
     ) {
-        OrchestraColorPickerExample()
+        OrchestraColorPickerExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun OrchestraColorPickerExample() {
+private fun OrchestraColorPickerExample(paddingValues: PaddingValues) {
     var selectedColor by remember { mutableStateOf(ColorEnvelope(0)) }
     val isPortrait = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
     Surface(
         color = MaterialTheme.colors.background,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) {
         ConstraintLayout(
             modifier = Modifier

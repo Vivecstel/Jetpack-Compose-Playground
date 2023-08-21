@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.materialicons
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -23,7 +24,7 @@ fun FilledScreen() {
         title = MaterialIconsNavRoutes.Filled,
         link = URL
     ) {
-        FilledGrid()
+        FilledGrid(paddingValues = it)
     }
 }
 
@@ -81,9 +82,10 @@ private val list = listOf(
 
 @Preview
 @Composable
-private fun FilledGrid() {
+private fun FilledGrid(paddingValues: PaddingValues = PaddingValues()) {
     LazyVerticalGrid(
-        GridCells.Adaptive(60.dp)
+        GridCells.Adaptive(60.dp),
+        modifier = Modifier.padding(paddingValues = paddingValues)
     ) {
         items(list) {
             Icon(imageVector = it, contentDescription = null, modifier = Modifier.padding(8.dp))

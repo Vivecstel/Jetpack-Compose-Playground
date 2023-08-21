@@ -428,8 +428,7 @@ fun MainScreenContent(
         }
     }
     LazyColumn(
-        modifier = Modifier
-            .padding(paddingValues)
+        contentPadding = paddingValues
     ) {
         items(routesWithRibbons) { (route, shouldShowRibbon) ->
             key(route) {

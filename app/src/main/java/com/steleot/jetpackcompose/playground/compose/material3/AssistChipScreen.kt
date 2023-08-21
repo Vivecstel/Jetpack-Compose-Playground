@@ -32,6 +32,7 @@ fun AssistChipScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -57,7 +58,10 @@ fun AssistChipScreen() {
 private fun DefaultAssistChip() {
     AssistChip(
         onClick = { },
-        label =  { DefaultText() }
+        label =  { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -74,7 +78,10 @@ private fun DisabledAssistChip() {
     AssistChip(
         onClick = { },
         enabled = false,
-        label =  { DefaultText() }
+        label =  { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            disabledContainerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -83,7 +90,10 @@ private fun CutCornerShapeAssistChip() {
     AssistChip(
         onClick = { },
         shape = CutCornerShape(12.dp),
-        label =  { DefaultText() }
+        label =  { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -92,7 +102,10 @@ private fun RoundedCornerShapeAssistChip() {
     AssistChip(
         onClick = {},
         shape = RoundedCornerShape(12.dp),
-        label =  { DefaultText() }
+        label =  { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -104,7 +117,10 @@ private fun BorderAssistChip() {
             borderColor = Color.Red,
             borderWidth = 2.dp,
         ),
-        label = { DefaultText() }
+        label = { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -118,7 +134,10 @@ private fun LeadingIconAssistChip() {
                 contentDescription = stringResource(id = R.string.android)
             )
         },
-        label = { DefaultText() }
+        label = { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        )
     )
 }
 
@@ -138,6 +157,7 @@ private fun LabelColorAssistChip() {
     AssistChip(
         onClick = {},
         colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
             labelColor = Color.Green
         ),
         label = { DefaultText() }
@@ -150,6 +170,7 @@ private fun DisabledContainerColorAssistChip() {
         onClick = {},
         enabled = false,
         colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
             disabledContainerColor = Color.Gray
         ),
         label = { DefaultText() }
@@ -162,6 +183,7 @@ private fun DisabledLabelColorAssistChip() {
         onClick = {},
         enabled = false,
         colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
             disabledContainerColor = Color.Gray,
             disabledLabelColor = Color.Black,
         ),
@@ -180,6 +202,7 @@ private fun LeadingIconContentColorAssistChip() {
             )
         },
         colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
             leadingIconContentColor = Color.Red
         ),
         label = { DefaultText() }
@@ -198,6 +221,7 @@ private fun DisabledLeadingIconContentColorAssistChip() {
             )
         },
         colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
             disabledContainerColor = Color.Gray,
             disabledLabelColor = Color.Black,
             disabledLeadingIconContentColor = Color.Black
@@ -211,6 +235,9 @@ private fun ElevatedAssistChip() {
     AssistChip(
         onClick = {},
         label = { DefaultText() },
+        colors = AssistChipDefaults.assistChipColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+        ),
         elevation = AssistChipDefaults.assistChipElevation(
             elevation = 8.dp,
             pressedElevation = 16.dp

@@ -38,12 +38,12 @@ fun InteractionSourceScreen() {
         title = FoundationNavRoutes.InteractionSource,
         link = URL,
     ) {
-        SimpleInteractionSourceExample()
+        SimpleInteractionSourceExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun SimpleInteractionSourceExample() {
+private fun SimpleInteractionSourceExample(paddingValues: PaddingValues) {
     val interactionSource = remember { MutableInteractionSource() }
 
     val draggable = Modifier.draggable(
@@ -72,6 +72,7 @@ private fun SimpleInteractionSourceExample() {
     Box(
         Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .wrapContentSize()
             .size(width = 240.dp, height = 80.dp)
     ) {

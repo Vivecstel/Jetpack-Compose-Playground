@@ -134,6 +134,7 @@
     <!-- material -->
     <string name="title">Title</string>
     <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
     <string name="show_args">Show %1$s</string>
     <string name="menu">Menu</string>
     <string name="select_args">Select %1$d</string>
@@ -176,6 +177,11 @@
     <string name="enforced_minimum">Enforced minimum touch target on surface (by default)</string>
     <string name="default_local_text_style">Using default Local Text Style</string>
     <string name="custom_local_text_style">Using custom Local Text Style</string>
+    <string name="set_date">Set date</string>
+    <string name="selected_date">Selected date timestamp: %1$d</string>
+    <string name="select_time">Select time</string>
+    <string name="entered_time">Entered time: %1$s</string>
+    <string name="set_time">Set time</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->

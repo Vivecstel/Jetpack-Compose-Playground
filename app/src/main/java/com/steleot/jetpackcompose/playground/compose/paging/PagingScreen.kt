@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.paging
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -35,12 +36,12 @@ fun PagingScreen() {
         title = MainNavRoutes.Paging,
         link = URL,
     ) {
-        PagingExample()
+        PagingExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun PagingExample() {
+private fun PagingExample(paddingValues: PaddingValues) {
     val myBackend = remember { FakeBackend() }
 
     val pager = remember {
@@ -55,7 +56,9 @@ private fun PagingExample() {
 
     val lazyPagingItems = pager.flow.collectAsLazyPagingItems()
 
-    LazyColumn {
+    LazyColumn(
+        contentPadding = paddingValues
+    ) {
         if (lazyPagingItems.loadState.refresh == LoadState.Loading) {
             item {
                 Text(

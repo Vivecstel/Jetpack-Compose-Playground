@@ -30,14 +30,14 @@ fun GestureAnimationScreen() {
         title = AnimationNavRoutes.GestureAnimation,
         link = URL,
     ) {
-        GestureAnimationExample()
+        GestureAnimationExample(paddingValues = it)
     }
 }
 
 private enum class ComponentState { Pressed, Released }
 
 @Composable
-private fun GestureAnimationExample() {
+private fun GestureAnimationExample(paddingValues: PaddingValues) {
     var useRed by remember { mutableStateOf(false) }
     var toState by remember { mutableStateOf(ComponentState.Released) }
     val modifier = Modifier.pointerInput(Unit) {
@@ -71,7 +71,7 @@ private fun GestureAnimationExample() {
             ComponentState.Released -> if (useRed) Color.Red else MaterialTheme.colors.secondary
         }
     }
-    Column {
+    Column(modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)) {
         Button(
             modifier = Modifier
                 .padding(10.dp)

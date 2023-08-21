@@ -26,6 +26,7 @@
 - [LocalAbsoluteElevation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalAbsoluteElevationScreen.kt)
 - [LocalContentAlpha](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalContentAlphaScreen.kt)
 - [LocalContentColor](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalContentColorScreen.kt)
+- [LocalMinimumInteractiveComponentEnforcement](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalMinimumInteractiveComponentEnforcementScreen.kt)
 - [LocalTextStyle](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/LocalTextStyleScreen.kt)
 - [MaterialTheme](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/MaterialThemeScreen.kt)
 - [ModalBottomSheetLayout](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ModalBottomSheetLayoutScreen.kt)

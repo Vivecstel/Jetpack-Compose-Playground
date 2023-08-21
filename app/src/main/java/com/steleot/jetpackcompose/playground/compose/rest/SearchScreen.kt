@@ -102,7 +102,7 @@ fun SearchScreen() {
         },
     ) {
         LazyColumn(
-            modifier = Modifier.padding(it)
+            contentPadding = it
         ) {
             items(filteredRoutes) { data ->
                 DefaultCardListItem(

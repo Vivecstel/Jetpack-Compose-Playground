@@ -6,6 +6,7 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -27,7 +28,7 @@ fun CameraXScreen() {
         title = CustomExamplesNavRoutes.CameraX,
         link = URL,
     ) {
-        CameraPreview()
+        CameraPreview(modifier = Modifier.padding(paddingValues = it))
     }
 }
 

@@ -36,10 +36,11 @@ fun LazyVerticalStaggeredGridScreen() {
             .wrapContentSize()
 
         LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Fixed(5)
+            columns = StaggeredGridCells.Fixed(5),
+            modifier = Modifier.padding(paddingValues = it),
         ) {
-            items(itemsList) {
-                Text(stringResource(id = R.string.item, it), modifier = itemModifier)
+            items(itemsList) { item ->
+                Text(stringResource(id = R.string.item, item), modifier = itemModifier)
             }
 
             item {

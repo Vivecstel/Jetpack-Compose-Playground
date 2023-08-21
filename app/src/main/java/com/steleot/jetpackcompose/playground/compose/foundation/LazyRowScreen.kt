@@ -25,9 +25,11 @@ fun LazyRowScreen() {
         val itemsList = (0..50).toList()
         val itemsIndexedList = listOf("A", "B", "C", "D", "E", "F")
 
-        LazyRow {
-            items(itemsList) {
-                Text(stringResource(id = R.string.item, it), modifier = Modifier.padding(16.dp))
+        LazyRow(
+            modifier = Modifier.padding(paddingValues = it),
+        ) {
+            items(itemsList) { item ->
+                Text(stringResource(id = R.string.item, item), modifier = Modifier.padding(16.dp))
             }
 
             item {

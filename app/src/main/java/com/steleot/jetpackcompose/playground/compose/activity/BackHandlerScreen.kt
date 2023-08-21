@@ -4,7 +4,9 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -32,14 +34,17 @@ fun BackHandlerScreen() {
         title = ActivityNavRoutes.BackHandler,
         link = URL,
     ) {
-        BackHandlerExample(navController)
+        BackHandlerExample(navController, it)
     }
 }
 
 private const val MAX_PRESSED = 4
 
 @Composable
-private fun BackHandlerExample(navController: NavHostController) {
+private fun BackHandlerExample(
+    navController: NavHostController,
+    paddingValues: PaddingValues,
+) {
     var backPressedCount by rememberSaveable { mutableIntStateOf(0) }
     BackHandler {
         if (backPressedCount >= MAX_PRESSED) {
@@ -52,7 +57,7 @@ private fun BackHandlerExample(navController: NavHostController) {
     val dispatcher = LocalOnBackPressedDispatcherOwner.current!!.onBackPressedDispatcher
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues),
         verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

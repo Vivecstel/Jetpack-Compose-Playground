@@ -29,17 +29,17 @@ fun PrimitiveScreen() {
         link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            repeat(integerResource(id = R.integer.integer_resource)) {
-                Text(text = it.toString())
+            repeat(integerResource(id = R.integer.integer_resource)) { item ->
+                Text(text = item.toString())
             }
 
-            integerArrayResource(id = R.array.integer_array).forEach {
+            integerArrayResource(id = R.array.integer_array).forEach { item ->
                 Text(
-                    text = it.toString(),
+                    text = item.toString(),
                     modifier = Modifier.padding(16.dp)
                 )
             }

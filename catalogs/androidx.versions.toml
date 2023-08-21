@@ -45,6 +45,7 @@ composeMaterialIcons = { module = "androidx.compose.material:material-icons-exte
 
 # https://developer.android.com/jetpack/androidx/releases/compose-material3
 composeMaterial3 = { module = "androidx.compose.material3:material3", version.ref = "composeMaterial3" }
+composeMaterial3WindowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "composeMaterial3" }
 
 # https://developer.android.com/jetpack/androidx/releases/compose-runtime
 composeRuntime = { module = "androidx.compose.runtime:runtime" }

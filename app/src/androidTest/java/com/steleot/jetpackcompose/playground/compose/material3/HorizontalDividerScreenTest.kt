@@ -5,16 +5,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme3
 import org.junit.Rule
 import org.junit.Test
 
-class HorizontalDivider3ScreenTest {
+class HorizontalDividerScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testCenterAlignedTopAppBarScreen() {
+    fun testHorizontalDividerScreen() {
         composeTestRule.setContent {
             TestTheme3 {
-                HorizontalDivider3Screen()
+                HorizontalDividerScreen()
             }
         }
         // todo

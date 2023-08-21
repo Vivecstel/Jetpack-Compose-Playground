@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,17 +31,17 @@ fun HorizontalPagerScreen() {
         title = FoundationNavRoutes.HorizontalPager,
         link = URL,
     ) {
-        HorizontalPagerExample()
+        HorizontalPagerExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun HorizontalPagerExample() {
+private fun HorizontalPagerExample(paddingValues: PaddingValues) {
     val state = rememberPagerState { 10 }
     HorizontalPager(
         state = state,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) { page ->
         Box(
             modifier = Modifier

@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,14 +25,14 @@ fun RowScreen() {
         title = FoundationNavRoutes.Row,
         link = URL,
     ) {
-        DefaultRow()
+        DefaultRow(paddingValues = it)
     }
 }
 
 @Composable
-fun DefaultRow() {
+fun DefaultRow(paddingValues: PaddingValues) {
     Row(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) {
         Text(
             text = stringResource(id = R.string.item, 1),

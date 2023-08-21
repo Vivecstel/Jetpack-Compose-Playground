@@ -31,12 +31,12 @@ fun LocalSoftwareKeyboardControllerScreen() {
         title = UiNavRoutes.LocalSoftwareKeyboardController,
         link = URL,
     ) {
-        LocalSoftwareKeyboardControllerExample()
+        LocalSoftwareKeyboardControllerExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun LocalSoftwareKeyboardControllerExample() {
+private fun LocalSoftwareKeyboardControllerExample(paddingValues: PaddingValues) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val context = LocalContext.current
 
@@ -44,7 +44,7 @@ private fun LocalSoftwareKeyboardControllerExample() {
     val (text, setText) = remember {
         mutableStateOf(context.getString(R.string.close_keyboard_with_ime))
     }
-    Column(Modifier.padding(16.dp)) {
+    Column(Modifier.fillMaxSize().padding(paddingValues = paddingValues).padding(16.dp)) {
         TextField(
             text,
             setText,

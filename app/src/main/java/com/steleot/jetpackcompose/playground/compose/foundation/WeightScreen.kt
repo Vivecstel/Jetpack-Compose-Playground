@@ -18,7 +18,7 @@ fun WeightScreen() {
         link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it)
         ) {
             Box(
                 modifier = Modifier

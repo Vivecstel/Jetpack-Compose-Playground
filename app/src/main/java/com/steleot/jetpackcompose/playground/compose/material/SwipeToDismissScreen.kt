@@ -5,6 +5,7 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -57,14 +58,16 @@ fun SwipeToDismissScreen() {
         title = MaterialNavRoutes.SwipeToDismiss,
         link = URL,
     ) {
-        SwipeToDismissExample()
+        SwipeToDismissExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-private fun SwipeToDismissExample() {
-    LazyColumn {
+private fun SwipeToDismissExample(
+    paddingValues: PaddingValues,
+) {
+    LazyColumn(contentPadding = paddingValues) {
         items(items) { item ->
             var unread by remember { mutableStateOf(false) }
             val dismissState = rememberDismissState(

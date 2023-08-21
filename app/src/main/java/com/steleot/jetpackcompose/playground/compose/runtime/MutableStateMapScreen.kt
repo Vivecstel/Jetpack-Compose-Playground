@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -26,12 +27,12 @@ fun MutableStateMapScreen() {
         title = RuntimeNavRoutes.MutableStateMap,
         link = URL,
     ) {
-        MutableStateMapExample()
+        MutableStateMapExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun MutableStateMapExample() {
+private fun MutableStateMapExample(paddingValues: PaddingValues) {
     val context = LocalContext.current
     var name by remember { mutableStateOf(context.getString(R.string.name_hint)) }
     var saying by remember { mutableStateOf(context.getString(R.string.saying)) }
@@ -46,6 +47,7 @@ private fun MutableStateMapExample() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {

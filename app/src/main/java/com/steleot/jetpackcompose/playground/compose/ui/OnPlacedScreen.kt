@@ -51,6 +51,7 @@ fun OnPlacedScreen() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp)
                 .border(1.dp, MaterialTheme.colors.primary)
         ) {

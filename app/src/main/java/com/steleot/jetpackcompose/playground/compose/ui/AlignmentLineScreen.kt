@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -31,8 +32,8 @@ fun AlignmentLineScreen() {
         Layout({
             LineProviderLayout(exampleLinePosition = 5)
             LineProviderLayout(exampleLinePosition = 10)
-        }, modifier = Modifier.background(Color.Red)) { measurables, constraints ->
-            val placeables = measurables.map { it.measure(constraints) }
+        }, modifier = Modifier.padding(paddingValues = it).background(Color.Red)) { measurables, constraints ->
+            val placeables = measurables.map { measurable -> measurable.measure(constraints) }
             layout(constraints.maxWidth, constraints.maxHeight) {
                 placeables[0].place(0, 50)
                 placeables[1].place(constraints.maxWidth / 2, 0)

@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -26,13 +27,13 @@ fun BottomDrawerScreen() {
         title = MaterialNavRoutes.BottomDrawer,
         link = URL,
     ) {
-        BottomDrawerExample()
+        BottomDrawerExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-private fun BottomDrawerExample() {
+private fun BottomDrawerExample(paddingValues: PaddingValues) {
     val scope = rememberCoroutineScope()
     val drawerState = rememberBottomDrawerState(initialValue = BottomDrawerValue.Closed)
     BottomDrawer(
@@ -65,7 +66,7 @@ private fun BottomDrawerExample() {
         drawerState = drawerState,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {

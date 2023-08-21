@@ -31,7 +31,7 @@ fun RememberCoroutineScopeScreen() {
         link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             RememberCoroutineScopeExample()

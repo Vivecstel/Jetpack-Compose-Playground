@@ -44,6 +44,7 @@ fun TextMeasurerScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceEvenly

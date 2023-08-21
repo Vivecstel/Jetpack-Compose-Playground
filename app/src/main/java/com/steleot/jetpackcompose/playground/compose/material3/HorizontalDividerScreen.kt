@@ -14,17 +14,18 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val URL = "material3/HorizontalDivider3Screen.kt"
+private const val URL = "material3/HorizontalDividerScreen.kt"
 
 @Composable
-fun HorizontalDivider3Screen() {
+fun HorizontalDividerScreen() {
     DefaultScaffold(
-        title = Material3NavRoutes.HorizontalDivider3,
+        title = Material3NavRoutes.HorizontalDivider,
         link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally

@@ -33,7 +33,12 @@ fun RememberSaveableStateHolderScreen() {
         title = RuntimeNavRoutes.RememberSaveableStateHolder,
         link = URL,
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues = it)
+                .padding(16.dp)
+        ) {
             var screen by rememberSaveable { mutableStateOf("screen1") }
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 Button(onClick = { screen = "screen1" }) {

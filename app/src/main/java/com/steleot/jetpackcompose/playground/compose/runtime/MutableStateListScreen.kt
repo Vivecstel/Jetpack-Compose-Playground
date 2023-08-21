@@ -26,12 +26,12 @@ fun MutableStateListScreen() {
         title = RuntimeNavRoutes.MutableStateList,
         link = URL,
     ) {
-        MutableStateListExample()
+        MutableStateListExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun MutableStateListExample() {
+private fun MutableStateListExample(paddingValues: PaddingValues) {
     val context = LocalContext.current
     var name by remember { mutableStateOf(context.getString(R.string.single_item)) }
     val names = remember { mutableStateListOf<String>() }
@@ -40,6 +40,7 @@ private fun MutableStateListExample() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .padding(16.dp)
     ) {
         Row {

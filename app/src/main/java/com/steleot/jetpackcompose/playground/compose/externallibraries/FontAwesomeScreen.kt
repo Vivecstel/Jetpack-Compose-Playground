@@ -1,5 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -22,7 +23,7 @@ fun FontAwesomeScreen() {
         title = ExternalLibrariesNavRoutes.FontAwesome,
         link = URL,
     ) {
-        FontAwesomeGrid()
+        FontAwesomeGrid(paddingValues = it)
     }
 }
 
@@ -114,9 +115,10 @@ private val list = listOf(
 )
 
 @Composable
-private fun FontAwesomeGrid() {
+private fun FontAwesomeGrid(paddingValues: PaddingValues) {
     LazyVerticalGrid(
-        GridCells.Adaptive(60.dp)
+        GridCells.Adaptive(60.dp),
+        modifier = Modifier.padding(paddingValues = paddingValues)
     ) {
         items(list) {
             FaIcon(

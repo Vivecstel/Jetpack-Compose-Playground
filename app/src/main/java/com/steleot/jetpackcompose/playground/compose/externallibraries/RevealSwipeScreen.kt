@@ -45,7 +45,7 @@ fun RevealSwipeScreen() {
         link = URL,
     ) {
         LazyColumn(
-            modifier = Modifier.padding(horizontal = 8.dp)
+            contentPadding = it
         ) {
             items(pairs) { pair ->
                 RevealSwipeExample(pair)

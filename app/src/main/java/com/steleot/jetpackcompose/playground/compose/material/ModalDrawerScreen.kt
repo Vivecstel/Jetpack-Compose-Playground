@@ -2,7 +2,9 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -24,12 +26,12 @@ fun ModalDrawerScreen() {
         title = MaterialNavRoutes.ModalDrawer,
         link = URL,
     ) {
-        ModalDrawerExample()
+        ModalDrawerExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun ModalDrawerExample() {
+private fun ModalDrawerExample(paddingValues: PaddingValues) {
     val scope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     ModalDrawer(
@@ -52,7 +54,7 @@ private fun ModalDrawerExample() {
         drawerState = drawerState
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {

@@ -33,7 +33,7 @@ fun SnapFlingBehaviorScreen() {
         val state = rememberLazyListState()
 
         LazyRow(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalAlignment = Alignment.CenterVertically,
             state = state,
             flingBehavior = rememberSnapFlingBehavior(lazyListState = state)

@@ -21,7 +21,7 @@ fun MovableContentOfScreen() {
         link = URL,
     ) {
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it)
         ) {
             MovableContentOfExample(
                 (1..25).toList()

@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,7 +24,7 @@ fun OnGloballyPositionedScreen() {
         link = URL,
     ) {
         Column(
-            Modifier.onGloballyPositioned { coordinates ->
+            Modifier.padding(paddingValues = it).onGloballyPositioned { coordinates ->
                 coordinates.size
                 coordinates.positionInWindow()
                 coordinates.positionInRoot()

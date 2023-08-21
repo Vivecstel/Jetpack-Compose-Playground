@@ -6,10 +6,12 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.awaitVerticalDragOrCancellation
 import androidx.compose.foundation.gestures.awaitVerticalTouchSlopOrCancellation
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -35,18 +37,19 @@ fun DragGestureDetectorScreen() {
         title = FoundationNavRoutes.DragGestureDetector,
         link = URL,
     ) {
-        AwaitVerticalDragOrCancellationExample()
+        AwaitVerticalDragOrCancellationExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun AwaitVerticalDragOrCancellationExample() {
+private fun AwaitVerticalDragOrCancellationExample(paddingValues: PaddingValues) {
     val offsetX = remember { mutableFloatStateOf(0f) }
     val offsetY = remember { mutableFloatStateOf(0f) }
     var height by remember { mutableFloatStateOf(0f) }
     Box(
         Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .onSizeChanged { height = it.height.toFloat() }
     ) {
         Box(

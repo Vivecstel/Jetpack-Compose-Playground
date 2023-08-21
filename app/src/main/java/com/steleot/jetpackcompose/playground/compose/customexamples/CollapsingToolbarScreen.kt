@@ -30,6 +30,7 @@ fun CollapsingToolbarScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(scrollState)
         ) {
             routesList.forEachIndexed { index, route ->

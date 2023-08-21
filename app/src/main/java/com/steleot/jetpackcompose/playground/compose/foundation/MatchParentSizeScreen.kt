@@ -24,6 +24,7 @@ fun MatchParentSizeScreen() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .background(Color.Red)
                 .padding(32.dp)
         ) {

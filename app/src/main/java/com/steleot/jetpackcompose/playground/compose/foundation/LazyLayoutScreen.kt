@@ -5,6 +5,7 @@ import androidx.compose.foundation.clipScrollableContainer
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.ScrollableDefaults
 import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -49,6 +50,8 @@ fun LazyLayoutScreen() {
         LazyLayout(
             itemProvider = { itemProvider },
             modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues = it)
                 .clipScrollableContainer(Orientation.Vertical)
                 .scrollable(
                     orientation = Orientation.Vertical,

@@ -27,6 +27,7 @@ object MaterialNavRoutes {
     const val LocalAbsoluteElevation = "local absolute elevation"
     const val LocalContentAlpha = "local content alpha"
     const val LocalContentColor = "local content color"
+    const val LocalMinimumInteractiveComponentEnforcement = "local minimum interactive component enforcement"
     const val LocalTextStyle = "local text style"
     const val MaterialTheme = "material theme"
     const val ModalBottomSheetLayout = "modal bottom sheet layout"

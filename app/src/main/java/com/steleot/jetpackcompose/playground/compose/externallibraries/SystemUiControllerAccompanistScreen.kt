@@ -4,7 +4,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -36,7 +38,7 @@ fun SystemUiControllerAccompanistScreen(
         title = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
         link = URL,
     ) {
-        SystemUiControllerExample(navController, systemUiController)
+        SystemUiControllerExample(navController, systemUiController, it)
     }
 }
 
@@ -44,6 +46,7 @@ fun SystemUiControllerAccompanistScreen(
 private fun SystemUiControllerExample(
     navController: NavHostController,
     systemUiController: SystemUiController,
+    paddingValues: PaddingValues,
 ) {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
     val useDarkIcons = MaterialTheme.colors.isLight
@@ -66,7 +69,7 @@ private fun SystemUiControllerExample(
     }
 
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().padding(paddingValues = paddingValues),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

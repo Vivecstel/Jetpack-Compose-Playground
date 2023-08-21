@@ -33,12 +33,12 @@ fun MotionLayout3Screen() {
         title = ConstraintLayoutNavRoutes.MotionLayout3,
         link = URL,
     ) {
-        MotionLayout3Example()
+        MotionLayout3Example(paddingValues = it)
     }
 }
 
 @Composable
-private fun MotionLayout3Example() {
+private fun MotionLayout3Example(paddingValues: PaddingValues) {
     var animateToEnd by remember { mutableStateOf(false) }
 
     val progress by animateFloatAsState(
@@ -46,14 +46,13 @@ private fun MotionLayout3Example() {
         animationSpec = tween(1000),
         label = "MotionLayout3Example",
     )
-    Column {
-        MotionLayout(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .background(Color.White),
-            motionScene = MotionScene(
-                """{
+    MotionLayout(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(paddingValues = paddingValues)
+            .background(Color.White),
+        motionScene = MotionScene(
+            """{
   ConstraintSets: {
     start: {
       backgroundSwipe: {
@@ -100,48 +99,47 @@ private fun MotionLayout3Example() {
   }
 }
 """
-            ),
-            progress = progress
-        ) {
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundSwipe")
-                    .height(450.dp)
-                    .width(80.dp)
-                    .clip(shape = RoundedCornerShape(40.dp))
-                    .background(Color.LightGray)
-                    .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
+        ),
+        progress = progress
+    ) {
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundSwipe")
+                .height(450.dp)
+                .width(80.dp)
+                .clip(shape = RoundedCornerShape(40.dp))
+                .background(Color.LightGray)
+                .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
 
-            )
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundButtonSwipe")
-                    .width(80.dp)
-                    .clip(shape = RoundedCornerShape(40.dp))
-                    .background(Color(0xFF4462D7.toInt()))
-                    .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundButtonSwipe")
+                .width(80.dp)
+                .clip(shape = RoundedCornerShape(40.dp))
+                .background(Color(0xFF4462D7.toInt()))
+                .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("buttonSwipe")
-                    .height(78.dp)
-                    .width(78.dp)
-                    .clip(shape = CircleShape)
-                    .background(customProperties("buttonSwipe").color("color"))
-                    .clickable(onClick = { animateToEnd = !animateToEnd })
+        Box(
+            modifier = Modifier
+                .layoutId("buttonSwipe")
+                .height(78.dp)
+                .width(78.dp)
+                .clip(shape = CircleShape)
+                .background(customProperties("buttonSwipe").color("color"))
+                .clickable(onClick = { animateToEnd = !animateToEnd })
 
-            )
-            Icon(
-                Icons.Sharp.KeyboardArrowUp,
-                contentDescription = stringResource(id = R.string.swipe_up),
-                tint = Color.White,
-                modifier = Modifier
-                    .layoutId("swipeUp")
-                    .width(40.dp)
-                    .height(40.dp)
-            )
-        }
+        )
+        Icon(
+            Icons.Sharp.KeyboardArrowUp,
+            contentDescription = stringResource(id = R.string.swipe_up),
+            tint = Color.White,
+            modifier = Modifier
+                .layoutId("swipeUp")
+                .width(40.dp)
+                .height(40.dp)
+        )
     }
 }

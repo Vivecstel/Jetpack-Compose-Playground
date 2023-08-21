@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowColumn
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -30,16 +31,17 @@ fun FlowColumnScreen() {
         title = FoundationNavRoutes.FlowColumn,
         link = URL,
     ) {
-        FlowColumnExample()
+        FlowColumnExample(paddingValues = it)
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun FlowColumnExample() {
+private fun FlowColumnExample(paddingValues: PaddingValues) {
     FlowColumn(
         Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
             .border(
                 border = BorderStroke(
                     width = 2.dp,

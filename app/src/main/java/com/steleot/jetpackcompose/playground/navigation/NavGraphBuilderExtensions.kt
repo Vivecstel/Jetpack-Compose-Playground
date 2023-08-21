@@ -209,6 +209,7 @@ fun NavGraphBuilder.addMaterialRoutes() {
     deepLinkComposable(route = MaterialNavRoutes.LocalAbsoluteElevation) { LocalAbsoluteElevationScreen() }
     deepLinkComposable(route = MaterialNavRoutes.LocalContentAlpha) { LocalContentAlphaScreen() }
     deepLinkComposable(route = MaterialNavRoutes.LocalContentColor) { LocalContentColorScreen() }
+    deepLinkComposable(route = MaterialNavRoutes.LocalMinimumInteractiveComponentEnforcement) { LocalMinimumInteractiveComponentEnforcementScreen() }
     deepLinkComposable(route = MaterialNavRoutes.LocalTextStyle) { LocalTextStyleScreen() }
     deepLinkComposable(route = MaterialNavRoutes.MaterialTheme) { MaterialThemeScreen() }
     deepLinkComposable(route = MaterialNavRoutes.ModalBottomSheetLayout) { ModalBottomSheetLayoutScreen() }
@@ -245,7 +246,8 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.Card3) { Card3Screen() }
     deepLinkComposable(route = Material3NavRoutes.CenterAlignedTopAppBar) { CenterAlignedTopAppBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.Checkbox3) { Checkbox3Screen() }
-    deepLinkComposable(route = Material3NavRoutes.HorizontalDivider3) { HorizontalDivider3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.DatePicker) { DatePickerScreen() }
+    deepLinkComposable(route = Material3NavRoutes.HorizontalDivider) { HorizontalDividerScreen() }
     deepLinkComposable(route = Material3NavRoutes.DropdownMenu3) { DropdownMenu3Screen() }
     deepLinkComposable(route = Material3NavRoutes.ElevatedButton) { ElevatedButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.ElevatedCard) { ElevatedCardScreen() }
@@ -266,23 +268,27 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.ListItem3) { ListItem3Screen() }
     deepLinkComposable(route = Material3NavRoutes.LocalAbsoluteTonalElevation) { LocalAbsoluteTonalElevationScreen() }
     deepLinkComposable(route = Material3NavRoutes.LocalContentColor3) { LocalContentColor3Screen() }
-    deepLinkComposable(route = Material3NavRoutes.LocalMinimumTouchTargetEnforcement) {
-        LocalMinimumTouchTargetEnforcementScreen()
+    deepLinkComposable(route = Material3NavRoutes.LocalMinimumInteractiveComponentEnforcement3) {
+        LocalMinimumInteractiveComponentEnforcement3Screen()
     }
     deepLinkComposable(route = Material3NavRoutes.LocalTextStyle3) { LocalTextStyle3Screen() }
     deepLinkComposable(route = Material3NavRoutes.MaterialTheme3) { MaterialTheme3Screen() }
     deepLinkComposable(route = Material3NavRoutes.MediumTopAppBar) { MediumTopAppBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.ModalNavigationDrawer) { ModalNavigationDrawerScreen() }
+    deepLinkComposable(route = Material3NavRoutes.MultiChoiceSegmentedButtonRow) { MultiChoiceSegmentedButtonRowScreen() }
     deepLinkComposable(route = Material3NavRoutes.NavigationBar) { NavigationBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.NavigationRail3) { NavigationRail3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedButton3) { OutlinedButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedCard) { OutlinedCardScreen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedIconButton) { OutlinedIconButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedTextField3) { OutlinedTextField3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.PlainTooltipBox) { PlainTooltipBoxScreen() }
     deepLinkComposable(route = Material3NavRoutes.ProgressIndicator3) { ProgressIndicator3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RangeSlider3) { RangeSlider3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.RichTooltipBox) { RichTooltipBoxScreen() }
     deepLinkComposable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.SingleChoiceSegmentedButtonRow) { SingleChoiceSegmentedButtonRowScreen() }
     deepLinkComposable(route = Material3NavRoutes.Slider3) { Slider3Screen() }
     deepLinkComposable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
@@ -293,6 +299,7 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.TextButton3) { TextButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.Text3) { Text3Screen() }
     deepLinkComposable(route = Material3NavRoutes.TextField3) { TextField3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.TimePicker) { TimePickerScreen() }
 }
 
 fun NavGraphBuilder.addMaterialIconsRoutes() {
