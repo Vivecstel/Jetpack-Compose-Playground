@@ -114,7 +114,6 @@ dependencies {
     implementation(rest.gap)
 //  implementation(rest.permissionsUi)
     implementation(rest.htmlText)
-    implementation(rest.snapper)
     implementation(rest.composeShimmer)
     implementation(rest.zoomableComposeImage)
     implementation(rest.composeTreeMap)

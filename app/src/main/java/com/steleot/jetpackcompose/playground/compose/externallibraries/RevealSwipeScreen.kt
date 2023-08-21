@@ -54,6 +54,7 @@ fun RevealSwipeScreen() {
     }
 }
 
+@Suppress("DEPRECATION")
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun RevealSwipeExample(

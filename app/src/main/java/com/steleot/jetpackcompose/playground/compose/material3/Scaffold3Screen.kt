@@ -18,7 +18,7 @@ import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
-import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultSmallTopAppBar
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.theme.material3.JetpackComposePlaygroundTheme as Theme3
 
 private const val URL = "material3/Scaffold3Screen.kt"
@@ -32,7 +32,7 @@ fun Scaffold3Screen() {
         Scaffold(
             modifier = Modifier.systemBarsPadding(),
             topBar = {
-                DefaultSmallTopAppBar(
+                DefaultTopAppBar(
                     title = Material3NavRoutes.Scaffold3,
                     link = URL,
                 )

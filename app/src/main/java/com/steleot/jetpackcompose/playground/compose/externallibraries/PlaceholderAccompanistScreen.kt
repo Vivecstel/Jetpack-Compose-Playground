@@ -30,6 +30,7 @@ import kotlinx.coroutines.delay
 
 private const val URL = "externallibraries/PlaceholderAccompanistScreen.kt"
 
+@Suppress("DEPRECATION")
 @Composable
 fun PlaceholderAccompanistScreen() {
     DefaultScaffold(

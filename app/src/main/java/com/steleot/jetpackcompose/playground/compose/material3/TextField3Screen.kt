@@ -5,7 +5,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -44,7 +43,7 @@ fun TextField3Screen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultTextField()
-            ContainerColorTextField()
+            FocusedContainerColorTextField()
             StyledTextField()
             ImeActionTextField()
             PasswordKeyboardTypeTextField()
@@ -69,10 +68,9 @@ private fun DefaultTextField(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-private fun ContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
+private fun FocusedContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
     val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
@@ -81,13 +79,12 @@ private fun ContainerColorTextField(text: String = stringResource(id = R.string.
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = Color.Magenta
+        colors = TextFieldDefaults.colors(
+            focusedContainerColor = Color.Magenta
         ),
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -98,7 +95,7 @@ private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)
             state.value = value
         },
         textStyle = TextStyle(color = Color.Magenta, fontSize = 20.sp),
-        colors = TextFieldDefaults.textFieldColors(
+        colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Blue,
         ),
         modifier = Modifier

@@ -24,7 +24,6 @@ interface InAppUpdateHelper {
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
 }
 
-@Suppress("unused")
 class InAppUpdateHelperImpl(
     private val activity: ComponentActivity,
     private val appUpdateManager: AppUpdateManager

@@ -5,7 +5,6 @@ import androidx.startup.Initializer
 import com.steleot.jetpackcompose.playground.BuildConfig
 import timber.log.Timber
 
-@Suppress("unused")
 class TimberInitializer : Initializer<Unit> {
 
     override fun create(context: Context) {

@@ -52,10 +52,12 @@ val routes = listOf(
     Material3NavRoutes.RangeSlider3,
     Material3NavRoutes.RichTooltipBox,
     Material3NavRoutes.Scaffold3,
+    Material3NavRoutes.SearchBar,
     Material3NavRoutes.SingleChoiceSegmentedButtonRow,
     Material3NavRoutes.Slider3,
     Material3NavRoutes.SmallFloatingActionButton,
-    Material3NavRoutes.SmallTopAppBar,
+    Material3NavRoutes.TopAppBar3,
+    Material3NavRoutes.SnackBar3,
     Material3NavRoutes.SuggestionChip,
     Material3NavRoutes.Surface3,
     Material3NavRoutes.Switch3,
@@ -64,6 +66,8 @@ val routes = listOf(
     Material3NavRoutes.TextButton3,
     Material3NavRoutes.TextField3,
     Material3NavRoutes.TimePicker,
+    Material3NavRoutes.VerticalDivider,
+    Material3NavRoutes.WindowWidthSizeClass,
 )
 
 @Composable

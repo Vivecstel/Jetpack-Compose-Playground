@@ -182,6 +182,10 @@
     <string name="select_time">Select time</string>
     <string name="entered_time">Entered time: %1$s</string>
     <string name="set_time">Set time</string>
+    <string name="failed_to_retrive_window_size_class">Failed to retrieve windowSizeClass</string>
+    <string name="search_hint">Search hint</string>
+    <string name="search_suggestion">Suggestion: %1$s</string>
+    <string name="search_additional_info">Additional info</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->

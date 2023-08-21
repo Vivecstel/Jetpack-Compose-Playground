@@ -29,7 +29,6 @@ ssJetPackComposeProgressButton = "1.0.7"
 gap = "1.1.0"
 permissionsUi = "0.1.8"
 htmlText = "1.4.1"
-snapper = "0.3.0"
 composeShimmer = "1.0.5"
 zoomableComposeImage = "1.0.5"
 composeTreeMap = "0.0.4"
@@ -140,9 +139,6 @@ permissionsUi = { module = "se.warting.permissionsui:permissionsui", version.ref
 
 # https://github.com/ch4rl3x/HtmlText
 htmlText = { module = "de.charlex.compose:html-text", version.ref = "htmlText" }
-
-# https://github.com/chrisbanes/snapper
-snapper = { module = "dev.chrisbanes.snapper:snapper", version.ref = "snapper" }
 
 # https://github.com/valentinilk/compose-shimmer
 composeShimmer = { module = "com.valentinilk.shimmer:compose-shimmer", version.ref = "composeShimmer" }

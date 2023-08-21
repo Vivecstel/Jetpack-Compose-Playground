@@ -7,7 +7,6 @@ import com.facebook.imagepipeline.backends.okhttp3.OkHttpImagePipelineConfigFact
 import okhttp3.OkHttpClient
 import timber.log.Timber
 
-@Suppress("unused")
 class FrescoInitiliazer : Initializer<Unit> {
 
     override fun create(context: Context) {

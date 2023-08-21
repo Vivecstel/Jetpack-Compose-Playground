@@ -57,6 +57,7 @@ private fun BottomRoundedArcShapeExample() {
     )
 }
 
+@Suppress("unused")
 private class BottomRoundedArcShape : Shape {
     override fun createOutline(
         size: Size,

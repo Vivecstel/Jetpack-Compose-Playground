@@ -27,7 +27,7 @@ fun DefaultScaffold(
         Scaffold(
             modifier = Modifier.systemBarsPadding(),
             topBar = {
-                DefaultSmallTopAppBar(title = title, link = link)
+                DefaultTopAppBar(title = title, link = link)
             },
             content = content
         )

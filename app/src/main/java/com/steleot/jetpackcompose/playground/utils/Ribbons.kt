@@ -33,6 +33,8 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.PlainTooltipBox,
     Material3NavRoutes.RichTooltipBox,
     Material3NavRoutes.SingleChoiceSegmentedButtonRow,
+    Material3NavRoutes.SearchBar,
+    Material3NavRoutes.SnackBar3,
     Material3NavRoutes.TimePicker,
     Material3NavRoutes.VerticalDivider,
     Material3NavRoutes.WindowWidthSizeClass,

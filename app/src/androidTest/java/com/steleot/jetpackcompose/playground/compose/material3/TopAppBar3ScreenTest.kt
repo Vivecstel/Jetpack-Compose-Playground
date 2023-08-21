@@ -5,16 +5,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme3
 import org.junit.Rule
 import org.junit.Test
 
-class SmallTopAppBarScreenTest {
+class TopAppBar3ScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testSmallTopAppBarScreen() {
+    fun testTopAppBar3Screen() {
         composeTestRule.setContent {
             TestTheme3 {
-                SmallTopAppBarScreen()
+                TopAppBar3Screen()
             }
         }
         // todo

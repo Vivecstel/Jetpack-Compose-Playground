@@ -69,8 +69,8 @@ private fun LottieRepeatForeverWithAnimateLottieCompositionAsState() {
         iterations = LottieConstants.IterateForever,
     )
     LottieAnimation(
-        composition,
-        progress,
+        composition = composition,
+        progress = { progress },
         modifier = Modifier.size(150.dp)
     )
 }
@@ -88,8 +88,8 @@ private fun LottieRepeatForeverWithLottieAnimatable() {
         )
     }
     LottieAnimation(
-        anim.composition,
-        anim.progress,
+        composition = anim.composition,
+        progress = { anim.progress },
         modifier = Modifier.size(150.dp)
     )
 }

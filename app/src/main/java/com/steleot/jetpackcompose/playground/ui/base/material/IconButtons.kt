@@ -9,7 +9,6 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
@@ -32,7 +31,6 @@ fun GoToGithubIconButton(link: String) {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun BackArrowIconButton() {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current

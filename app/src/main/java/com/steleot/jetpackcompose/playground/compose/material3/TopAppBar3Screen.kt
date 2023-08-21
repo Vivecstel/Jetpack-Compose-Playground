@@ -15,12 +15,12 @@ import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val URL = "material3/SmallTopAppBarScreen.kt"
+private const val URL = "material3/TopAppBar3Screen.kt"
 
 @Composable
-fun SmallTopAppBarScreen() {
+fun TopAppBar3Screen() {
     DefaultScaffold(
-        title = Material3NavRoutes.SmallTopAppBar,
+        title = Material3NavRoutes.TopAppBar3,
         link = URL,
     ) {
         Column(
@@ -28,17 +28,17 @@ fun SmallTopAppBarScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            DefaultSmallTopAppBar()
-            ContainerColorSmallTopAppBar()
-            NavigationIconSmallTopAppBar()
+            DefaultTopAppBar()
+            ContainerColorTopAppBar()
+            NavigationIconTopAppBar()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DefaultSmallTopAppBar() {
-    SmallTopAppBar(
+private fun DefaultTopAppBar() {
+    TopAppBar(
         title = {
             Text(text = stringResource(id = R.string.app_name))
         }
@@ -47,12 +47,12 @@ private fun DefaultSmallTopAppBar() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ContainerColorSmallTopAppBar() {
-    SmallTopAppBar(
+private fun ContainerColorTopAppBar() {
+    TopAppBar(
         title = {
             Text(text = stringResource(id = R.string.app_name))
         },
-        colors = TopAppBarDefaults.smallTopAppBarColors(
+        colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.tertiary
         )
     )
@@ -60,8 +60,8 @@ private fun ContainerColorSmallTopAppBar() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun NavigationIconSmallTopAppBar() {
-    SmallTopAppBar(
+private fun NavigationIconTopAppBar() {
+    TopAppBar(
         title = {
             Text(text = stringResource(id = R.string.app_name))
         },
@@ -73,7 +73,7 @@ private fun NavigationIconSmallTopAppBar() {
                 )
             }
         },
-        colors = TopAppBarDefaults.smallTopAppBarColors(
+        colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.primary
         )
     )

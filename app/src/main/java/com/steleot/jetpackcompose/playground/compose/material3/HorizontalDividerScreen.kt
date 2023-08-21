@@ -30,27 +30,27 @@ fun HorizontalDividerScreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            DefaultDivider()
-            ColoredDivider()
-            ThickDividerComponent()
+            DefaultHorizontalDivider()
+            ColoredHorizontalDivider()
+            ThickHorizontalDivider()
         }
     }
 }
 
 @Preview
 @Composable
-private fun DefaultDivider() {
+private fun DefaultHorizontalDivider() {
     HorizontalDivider()
 }
 
 @Preview
 @Composable
-private fun ColoredDivider() {
+private fun ColoredHorizontalDivider() {
     HorizontalDivider(color = Color.Red)
 }
 
 @Preview
 @Composable
-private fun ThickDividerComponent() {
+private fun ThickHorizontalDivider() {
     HorizontalDivider(thickness = 12.dp)
 }

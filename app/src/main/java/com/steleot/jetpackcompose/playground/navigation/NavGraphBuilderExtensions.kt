@@ -288,10 +288,11 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.RangeSlider3) { RangeSlider3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RichTooltipBox) { RichTooltipBoxScreen() }
     deepLinkComposable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.SearchBar) { SearchBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.SingleChoiceSegmentedButtonRow) { SingleChoiceSegmentedButtonRowScreen() }
     deepLinkComposable(route = Material3NavRoutes.Slider3) { Slider3Screen() }
     deepLinkComposable(route = Material3NavRoutes.SmallFloatingActionButton) { SmallFloatingActionButtonScreen() }
-    deepLinkComposable(route = Material3NavRoutes.SmallTopAppBar) { SmallTopAppBarScreen() }
+    deepLinkComposable(route = Material3NavRoutes.SnackBar3) { Snackbar3Screen() }
     deepLinkComposable(route = Material3NavRoutes.SuggestionChip) { SuggestionChipScreen() }
     deepLinkComposable(route = Material3NavRoutes.Surface3) { Surface3Screen() }
     deepLinkComposable(route = Material3NavRoutes.Switch3) { Switch3Screen() }
@@ -300,6 +301,9 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.Text3) { Text3Screen() }
     deepLinkComposable(route = Material3NavRoutes.TextField3) { TextField3Screen() }
     deepLinkComposable(route = Material3NavRoutes.TimePicker) { TimePickerScreen() }
+    deepLinkComposable(route = Material3NavRoutes.TopAppBar3) { TopAppBar3Screen() }
+    deepLinkComposable(route = Material3NavRoutes.VerticalDivider) { VerticalDividerScreen() }
+    deepLinkComposable(route = Material3NavRoutes.WindowWidthSizeClass) { WindowWidthSizeClassScreen() }
 }
 
 fun NavGraphBuilder.addMaterialIconsRoutes() {
@@ -482,7 +486,6 @@ fun NavGraphBuilder.addExternalLibraries(
     deepLinkComposable(route = ExternalLibrariesNavRoutes.Plot) { PlotScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.RatingBar) { RatingBarScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.RevealSwipe) { RevealSwipeScreen() }
-    deepLinkComposable(route = ExternalLibrariesNavRoutes.Snapper) { SnapperScreen() }
     deepLinkComposable(route = ExternalLibrariesNavRoutes.SpeedDialFloatingActionButton) {
         SpeedDialFloatingActionButtonScreen()
     }
