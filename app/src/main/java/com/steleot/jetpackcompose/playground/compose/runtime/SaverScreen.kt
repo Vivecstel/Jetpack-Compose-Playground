@@ -16,17 +16,18 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/SaverScreen.kt"
+private const val URL = "runtime/SaverScreen.kt"
 
 @Composable
 fun SaverScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.Saver,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(16.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally

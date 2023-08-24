@@ -17,21 +17,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/FilterChip3Screen.kt"
+private const val URL = "material3/FilterChip3Screen.kt"
 
 @Composable
 fun FilterChip3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.FilterChip3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)

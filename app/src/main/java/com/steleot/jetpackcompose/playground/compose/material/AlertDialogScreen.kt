@@ -3,9 +3,13 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CutCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.AlertDialog
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -16,20 +20,20 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/AlertDialogScreen.kt"
+private const val URL = "material/AlertDialogScreen.kt"
 
 @Composable
 fun AlertDialogScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.AlertDialog,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

@@ -1,9 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,15 +15,15 @@ import com.guru.fontawesomecomposelib.FaIcons
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/FontAwesomeScreen.kt"
+private const val URL = "externallibraries/FontAwesomeScreen.kt"
 
 @Composable
 fun FontAwesomeScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.FontAwesome,
-        link = Url,
+        link = URL,
     ) {
-        FontAwesomeGrid()
+        FontAwesomeGrid(paddingValues = it)
     }
 }
 
@@ -113,9 +115,10 @@ private val list = listOf(
 )
 
 @Composable
-private fun FontAwesomeGrid() {
+private fun FontAwesomeGrid(paddingValues: PaddingValues) {
     LazyVerticalGrid(
-        GridCells.Adaptive(60.dp)
+        GridCells.Adaptive(60.dp),
+        modifier = Modifier.padding(paddingValues = paddingValues)
     ) {
         items(list) {
             FaIcon(

@@ -13,17 +13,18 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/SizeScreen.kt"
+private const val URL = "foundation/SizeScreen.kt"
 
 @Composable
 fun SizeScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Size,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp),

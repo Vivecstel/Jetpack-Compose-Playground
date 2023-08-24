@@ -1,7 +1,10 @@
 package com.steleot.jetpackcompose.playground.service
 
+import android.Manifest
 import android.app.PendingIntent
 import android.content.Intent
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -10,7 +13,8 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.steleot.jetpackcompose.playground.BuildConfig
 import com.steleot.jetpackcompose.playground.MainActivity
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
+import com.steleot.jetpackcompose.playground.R as R2
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import timber.log.Timber
 import kotlin.math.pow
@@ -19,6 +23,14 @@ class PlaygroundFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(message: RemoteMessage) {
         Timber.d("Message received with data: ${message.data}")
+
+        if (ActivityCompat.checkSelfPermission(
+                this.applicationContext,
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
 
         val model = NotificationModel(
             message.data[NotificationId]?.toIntOrNull() ?: -1,
@@ -33,7 +45,7 @@ class PlaygroundFirebaseMessagingService : FirebaseMessagingService() {
         if (model.hasMissingData || model.isDataNotValid) return
 
         val builder = NotificationCompat.Builder(this, model.channelId)
-            .setSmallIcon(R.drawable.ic_notification) // todo stelios
+            .setSmallIcon(R2.drawable.ic_notification) // todo stelios
             .setContentTitle(model.title)
             .setContentText(model.text)
             .setPriority(model.priority)

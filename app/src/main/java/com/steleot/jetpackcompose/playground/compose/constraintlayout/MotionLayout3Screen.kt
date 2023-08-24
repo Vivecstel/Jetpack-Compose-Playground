@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.sharp.KeyboardArrowUp
@@ -18,42 +19,40 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/MotionLayout3Screen.kt"
+private const val URL = "constraintlayout/MotionLayout3Screen.kt"
 
 @Composable
 fun MotionLayout3Screen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.MotionLayout3,
-        link = Url,
+        link = URL,
     ) {
-        MotionLayout3Example()
+        MotionLayout3Example(paddingValues = it)
     }
 }
 
-@OptIn(ExperimentalMotionApi::class)
 @Composable
-private fun MotionLayout3Example() {
+private fun MotionLayout3Example(paddingValues: PaddingValues) {
     var animateToEnd by remember { mutableStateOf(false) }
 
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1000),
+        label = "MotionLayout3Example",
     )
-    Column {
-        MotionLayout(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .background(Color.White),
-            motionScene = MotionScene(
-                """{
+    MotionLayout(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(paddingValues = paddingValues)
+            .background(Color.White),
+        motionScene = MotionScene(
+            """{
   ConstraintSets: {
     start: {
       backgroundSwipe: {
@@ -100,48 +99,47 @@ private fun MotionLayout3Example() {
   }
 }
 """
-            ),
-            progress = progress
-        ) {
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundSwipe")
-                    .height(450.dp)
-                    .width(80.dp)
-                    .clip(shape = RoundedCornerShape(40.dp))
-                    .background(Color.LightGray)
-                    .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
+        ),
+        progress = progress
+    ) {
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundSwipe")
+                .height(450.dp)
+                .width(80.dp)
+                .clip(shape = RoundedCornerShape(40.dp))
+                .background(Color.LightGray)
+                .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
 
-            )
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundButtonSwipe")
-                    .width(80.dp)
-                    .clip(shape = RoundedCornerShape(40.dp))
-                    .background(Color(0xFF4462D7.toInt()))
-                    .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundButtonSwipe")
+                .width(80.dp)
+                .clip(shape = RoundedCornerShape(40.dp))
+                .background(Color(0xFF4462D7.toInt()))
+                .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(40.dp))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("buttonSwipe")
-                    .height(78.dp)
-                    .width(78.dp)
-                    .clip(shape = CircleShape)
-                    .background(motionProperties("buttonSwipe").value.color("color"))
-                    .clickable(onClick = { animateToEnd = !animateToEnd })
+        Box(
+            modifier = Modifier
+                .layoutId("buttonSwipe")
+                .height(78.dp)
+                .width(78.dp)
+                .clip(shape = CircleShape)
+                .background(customProperties("buttonSwipe").color("color"))
+                .clickable(onClick = { animateToEnd = !animateToEnd })
 
-            )
-            Icon(
-                Icons.Sharp.KeyboardArrowUp,
-                contentDescription = stringResource(id = R.string.swipe_up),
-                tint = Color.White,
-                modifier = Modifier
-                    .layoutId("swipeUp")
-                    .width(40.dp)
-                    .height(40.dp)
-            )
-        }
+        )
+        Icon(
+            Icons.Sharp.KeyboardArrowUp,
+            contentDescription = stringResource(id = R.string.swipe_up),
+            tint = Color.White,
+            modifier = Modifier
+                .layoutId("swipeUp")
+                .width(40.dp)
+                .height(40.dp)
+        )
     }
 }

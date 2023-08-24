@@ -1,11 +1,14 @@
 package com.steleot.jetpackcompose.playground.ui.base.material
 
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.utils.navigateSafe
 
 @Composable
 fun DefaultTopAppBar(
@@ -32,7 +35,7 @@ fun DefaultTopAppBar(
             } else if (shouldAllowSearch == true) {
                 val navController = LocalNavController.current
                 SearchIconButton {
-                    navController.navigate(MainNavRoutes.Search)
+                    navController.navigateSafe(MainNavRoutes.Search)
                 }
             }
         },
@@ -59,7 +62,7 @@ fun MenuTopAppBar(
         actions = {
             val navController = LocalNavController.current
             SearchIconButton {
-                navController.navigate(MainNavRoutes.Search)
+                navController.navigateSafe(MainNavRoutes.Search)
             }
         },
         backgroundColor = MaterialTheme.colors.primary

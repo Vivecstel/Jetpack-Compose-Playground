@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,16 +15,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/OnGloballyPositionedScreen.kt"
+private const val URL = "ui/OnGloballyPositionedScreen.kt"
 
 @Composable
 fun OnGloballyPositionedScreen() {
     DefaultScaffold(
         title = UiNavRoutes.OnGloballyPositioned,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            Modifier.onGloballyPositioned { coordinates ->
+            Modifier.padding(paddingValues = it).onGloballyPositioned { coordinates ->
                 coordinates.size
                 coordinates.positionInWindow()
                 coordinates.positionInRoot()

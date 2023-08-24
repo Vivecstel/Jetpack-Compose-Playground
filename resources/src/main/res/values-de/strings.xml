@@ -110,12 +110,16 @@
     <string name="dragged_pressed">Gezogen und gedrückt</string>
     <string name="dragged">Geschleppt</string>
     <string name="pressed">Gedrückt</string>
+    <string name="hovered">Schwebte</string>
+    <string name="unhovered">Unbewegt</string>
+    <string name="magnifier_not_supported">Lupe wird auf dieser Plattform nicht unterstützt.</string>
     <string name="interaction_source_message">Ziehen Sie mich horizontal oder drücken Sie mich!</string>
     <string name="max">Max</string>
     <string name="min">Mindest</string>
     <string name="taking_x_size">Nehmen Sie hier die Größe von %1$s..</string>
     <string name="selected_color">Ausgewählt: %1$s Farbe</string>
     <string name="selectable_text">Dieser Text ist auswählbar</string>
+    <string name="selectable_text_with_hand">Dieser Text ist per Hand wählbar</string>
     <string name="selectable_too">Dieses auch</string>
     <string name="selectable_as_well">Auch dieser</string>
     <string name="not_selectable_text">Aber nicht dieser</string>
@@ -131,6 +135,7 @@
     <!-- material -->
     <string name="title">Titel</string>
     <string name="cancel">Abbrechen</string>
+    <string name="ok">OK</string>
     <string name="show_args">%1$s anzeigen</string>
     <string name="menu">Speisekarte</string>
     <string name="select_args">Wählen Sie %1$d</string>
@@ -173,6 +178,15 @@
     <string name="enforced_minimum">Erzwungenes minimales Berührungsziel auf der Oberfläche (standardmäßig)</string>
     <string name="default_local_text_style">Verwenden des standardmäßigen lokalen Textstils</string>
     <string name="custom_local_text_style">Verwenden eines benutzerdefinierten lokalen Textstils</string>
+    <string name="set_date">Datum einstellen</string>
+    <string name="selected_date">Zeitstempel des ausgewählten Datums: %1$d</string>
+    <string name="select_time">Wählen Sie die Uhrzeit aus</string>
+    <string name="entered_time">Eingegebene Zeit: %1$s</string>
+    <string name="set_time">Zeit einstellen</string>
+    <string name="failed_to_retrive_window_size_class">windowSizeClass konnte nicht abgerufen werden</string>
+    <string name="search_hint">Suchhinweis</string>
+    <string name="search_suggestion">Vorschlag: %1$s</string>
+    <string name="search_additional_info">zusätzliche Information</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->

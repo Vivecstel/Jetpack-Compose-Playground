@@ -5,9 +5,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Card
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ExperimentalMaterialApi
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
@@ -17,13 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import de.charlex.compose.RevealDirection
 import de.charlex.compose.RevealSwipe
 
-private const val Url = "externallibraries/RevealSwipeScreen.kt"
+private const val URL = "externallibraries/RevealSwipeScreen.kt"
 
 private val pairs = listOf(
     Pair("item1", Color.Blue),
@@ -38,10 +42,10 @@ private val pairs = listOf(
 fun RevealSwipeScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.RevealSwipe,
-        link = Url,
+        link = URL,
     ) {
         LazyColumn(
-            modifier = Modifier.padding(horizontal = 8.dp)
+            contentPadding = it
         ) {
             items(pairs) { pair ->
                 RevealSwipeExample(pair)
@@ -50,6 +54,7 @@ fun RevealSwipeScreen() {
     }
 }
 
+@Suppress("DEPRECATION")
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun RevealSwipeExample(

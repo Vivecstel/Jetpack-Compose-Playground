@@ -16,16 +16,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "customexamples/AnimatedShowListScreen.kt"
+private const val URL = "customexamples/AnimatedShowListScreen.kt"
 
 @Composable
 fun AnimatedShowListScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.AnimatedShowList,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

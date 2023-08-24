@@ -6,7 +6,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.PedalBike
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.Text
@@ -17,20 +16,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/ListItem3Screen.kt"
+private const val URL = "material3/ListItem3Screen.kt"
 
 @Composable
 fun ListItem3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.ListItem3,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -44,11 +43,10 @@ fun ListItem3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultListItem() {
-    ListItem(headlineText = { DefaultText() })
+    ListItem(headlineContent = { DefaultText() })
 }
 
 @Composable
@@ -56,12 +54,11 @@ private fun DefaultText() {
     Text(text = stringResource(id = R.string.app_name))
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun LeadingContentListItem() {
     ListItem(
-        headlineText = { DefaultText() },
+        headlineContent = { DefaultText() },
         leadingContent = {
             Icon(
                 Icons.Filled.Palette,
@@ -72,32 +69,29 @@ private fun LeadingContentListItem() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun SupportingTextListItem() {
     ListItem(
-        headlineText = { DefaultText() },
-        supportingText = { DefaultText() }
+        headlineContent = { DefaultText() },
+        supportingContent = { DefaultText() }
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun OverlineTextListItem() {
     ListItem(
-        headlineText = { DefaultText() },
-        overlineText = { DefaultText() }
+        headlineContent = { DefaultText() },
+        overlineContent = { DefaultText() }
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun TrailingContentListItem() {
     ListItem(
-        headlineText = { DefaultText() },
+        headlineContent = { DefaultText() },
         trailingContent = {
             Icon(
                 Icons.Filled.Palette,
@@ -108,12 +102,11 @@ private fun TrailingContentListItem() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun FullListItem() {
     ListItem(
-        headlineText = { DefaultText() },
+        headlineContent = { DefaultText() },
         modifier = Modifier
             .padding(16.dp)
             .background(Color.Gray, RoundedCornerShape(8.dp))
@@ -125,8 +118,8 @@ private fun FullListItem() {
                 contentDescription = null,
             )
         },
-        supportingText = { DefaultText() },
-        overlineText = { DefaultText() },
+        supportingContent = { DefaultText() },
+        overlineContent = { DefaultText() },
         trailingContent = {
             Icon(
                 Icons.Filled.PedalBike,

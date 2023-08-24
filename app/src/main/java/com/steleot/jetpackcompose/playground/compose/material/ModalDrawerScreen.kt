@@ -2,7 +2,10 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -10,25 +13,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material/ModalDrawerScreen.kt"
+private const val URL = "material/ModalDrawerScreen.kt"
 
 @Composable
 fun ModalDrawerScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.ModalDrawer,
-        link = Url,
+        link = URL,
     ) {
-        ModalDrawerExample()
+        ModalDrawerExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun ModalDrawerExample() {
+private fun ModalDrawerExample(paddingValues: PaddingValues) {
     val scope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     ModalDrawer(
@@ -51,7 +54,7 @@ private fun ModalDrawerExample() {
         drawerState = drawerState
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {

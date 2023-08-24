@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -13,18 +14,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material/BackdropScaffoldScreen.kt"
+private const val URL = "material/BackdropScaffoldScreen.kt"
 
 @Composable
 fun BackdropScaffoldScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.BackdropScaffold,
-        link = Url,
+        link = URL,
     ) {
         BackdropScaffoldExample()
     }
@@ -35,7 +36,7 @@ fun BackdropScaffoldScreen() {
 fun BackdropScaffoldExample() {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    val selection = remember { mutableStateOf(1) }
+    val selection = remember { mutableIntStateOf(1) }
     val scaffoldState = rememberBackdropScaffoldState(BackdropValue.Concealed)
     LaunchedEffect(scaffoldState) {
         scaffoldState.reveal()
@@ -63,7 +64,7 @@ fun BackdropScaffoldExample() {
                     }
                 },
                 actions = {
-                    var clickCount by remember { mutableStateOf(0) }
+                    var clickCount by remember { mutableIntStateOf(0) }
                     IconButton(
                         onClick = {
                             scope.launch {
@@ -89,10 +90,10 @@ fun BackdropScaffoldExample() {
         },
         backLayerContent = {
             LazyColumn {
-                items(if (selection.value >= 3) 3 else 5) {
+                items(if (selection.intValue >= 3) 3 else 5) {
                     ListItem(
                         Modifier.clickable {
-                            selection.value = it
+                            selection.intValue = it
                             scope.launch { scaffoldState.conceal() }
                         },
                         text = { Text(context.getString(R.string.select_args, it)) }
@@ -104,7 +105,7 @@ fun BackdropScaffoldExample() {
             LazyColumn {
                 item {
                     Text(
-                        context.getString(R.string.selection_args, selection.value),
+                        context.getString(R.string.selection_args, selection.intValue),
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                     )
                 }

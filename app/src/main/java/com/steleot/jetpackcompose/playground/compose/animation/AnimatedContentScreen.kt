@@ -5,6 +5,7 @@ import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CutCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddShoppingCart
@@ -15,21 +16,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/AnimatedContentScreen.kt"
+private const val URL = "animation/AnimatedContentScreen.kt"
 
 @Composable
 fun AnimatedContentScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.AnimatedContent,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -39,22 +41,22 @@ fun AnimatedContentScreen() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimateIncrementDecrementExample() {
     Column(Modifier.padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        var count by remember { mutableStateOf(0) }
+        var count by remember { mutableIntStateOf(0) }
         AnimatedContent(
             targetState = count,
             transitionSpec = {
                 if (targetState > initialState) {
-                    slideInVertically(initialOffsetY = { it }) + fadeIn() with slideOutVertically(
+                    slideInVertically(initialOffsetY = { it }) + fadeIn() togetherWith slideOutVertically(
                         targetOffsetY = { -it }) + fadeOut()
                 } else {
-                    slideInVertically(initialOffsetY = { -it }) + fadeIn() with slideOutVertically(
+                    slideInVertically(initialOffsetY = { -it }) + fadeIn() togetherWith slideOutVertically(
                         targetOffsetY = { it }) + fadeOut()
                 }.using(SizeTransform(clip = false))
-            }
+            },
+            label = "AnimateIncrementDecrementExample"
         ) { targetCount ->
             Text("$targetCount", fontSize = 20.sp)
         }
@@ -67,14 +69,13 @@ private fun AnimateIncrementDecrementExample() {
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContentTransitionSpecExample() {
     var cartState by remember { mutableStateOf(CartState.Collapsed) }
-    val transitionSpec: AnimatedContentScope<CartState>.() -> ContentTransform =
+    val transitionSpec: AnimatedContentTransitionScope<CartState>.() -> ContentTransform =
         {
             fadeIn(animationSpec = tween(150, delayMillis = 150))
-                .with(fadeOut(animationSpec = tween(150)))
+                .togetherWith(fadeOut(animationSpec = tween(150)))
                 .using(
                     SizeTransform { initialSize, targetSize ->
                         if (CartState.Collapsed isTransitioningTo CartState.Expanded) {
@@ -96,7 +97,8 @@ private fun AnimatedContentTransitionSpecExample() {
         }
     AnimatedContent(
         targetState = cartState,
-        transitionSpec = transitionSpec
+        transitionSpec = transitionSpec,
+        label ="AnimatedContentTransitionSpecExample,"
     ) { state ->
         when (state) {
             CartState.Expanded -> ExpandedCart {

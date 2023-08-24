@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,17 +18,18 @@ import com.popovanton0.heartswitch.HeartSwitch
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/HeartSwitchScreen.kt"
+private const val URL = "externallibraries/HeartSwitchScreen.kt"
 
 @Composable
 fun HeartSwitchScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.HeartSwitch,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.rest
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandIn
@@ -13,13 +12,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
@@ -36,12 +35,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.BackArrowIconButton
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultCardListItem
 import com.steleot.jetpackcompose.playground.utils.capitalizeFirstLetter
+import com.steleot.jetpackcompose.playground.utils.navigateSafe
 import com.steleot.jetpackcompose.playground.utils.ribbonRoutes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -59,7 +59,6 @@ import com.steleot.jetpackcompose.playground.compose.runtime.routes as runtimeRo
 import com.steleot.jetpackcompose.playground.compose.ui.routes as uiRoutes
 import com.steleot.jetpackcompose.playground.compose.viewmodel.routes as viewModelRoutes
 
-@OptIn(ExperimentalAnimationApi::class, ExperimentalComposeUiApi::class)
 @Composable
 fun SearchScreen() {
     val viewModel: SearchViewModel = viewModel()
@@ -103,7 +102,7 @@ fun SearchScreen() {
         },
     ) {
         LazyColumn(
-            modifier = Modifier.padding(it)
+            contentPadding = it
         ) {
             items(filteredRoutes) { data ->
                 DefaultCardListItem(
@@ -118,14 +117,13 @@ fun SearchScreen() {
                     hasRibbon = data.hasRibbon
                 ) {
                     keyboardController?.hide()
-                    navController.navigate(data.route)
+                    navController.navigateSafe(data.route)
                 }
             }
         }
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun SearchTextField(
     searchText: TextFieldValue,

@@ -1,9 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.materialiconsextended
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
@@ -14,15 +16,15 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialIconsExtendedNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "materialiconsextended/ExtendedOutlinedScreen.kt"
+private const val URL = "materialiconsextended/ExtendedOutlinedScreen.kt"
 
 @Composable
 fun ExtendedOutlinedScreen() {
     DefaultScaffold(
         title = MaterialIconsExtendedNavRoutes.ExtendedOutlined,
-        link = Url,
+        link = URL,
     ) {
-        ExtendedOutlinedGrid()
+        ExtendedOutlinedGrid(paddingValues = it)
     }
 }
 
@@ -253,9 +255,10 @@ private val list = listOf(
 
 @Preview
 @Composable
-private fun ExtendedOutlinedGrid() {
+private fun ExtendedOutlinedGrid(paddingValues: PaddingValues = PaddingValues()) {
     LazyVerticalGrid(
-        GridCells.Adaptive(60.dp)
+        GridCells.Adaptive(60.dp),
+        modifier = Modifier.padding(paddingValues = paddingValues),
     ) {
         items(list) {
             Icon(imageVector = it, contentDescription = null, modifier = Modifier.padding(8.dp))

@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
@@ -12,21 +13,21 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.PointMode
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/CanvasScreen.kt"
+private const val URL = "foundation/CanvasScreen.kt"
 
 @Composable
 fun CanvasScreen() {
     val context = LocalContext.current
     DefaultScaffold(
         title = FoundationNavRoutes.Canvas,
-        link = Url,
+        link = URL,
     ) {
         Canvas(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
         ) {
             drawRect(
                 Color.Red,

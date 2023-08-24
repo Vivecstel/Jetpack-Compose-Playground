@@ -2,8 +2,11 @@ package com.steleot.jetpackcompose.playground.compose.customexamples
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Surface
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,16 +17,16 @@ import androidx.compose.ui.unit.sp
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "customexamples/TearDropScreen.kt"
+private const val URL = "customexamples/TearDropScreen.kt"
 
 @Composable
 fun TearDropScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.TearDrop,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -32,7 +35,7 @@ fun TearDropScreen() {
     }
 }
 
-private val TearDropShape = RoundedCornerShape(
+private val tearDropShape = RoundedCornerShape(
     topStartPercent = 50,
     topEndPercent = 50,
     bottomEndPercent = 10,
@@ -45,7 +48,7 @@ fun TearDrop(
     modifier: Modifier = Modifier
 ) {
     Surface(
-        shape = TearDropShape,
+        shape = tearDropShape,
         color = MaterialTheme.colors.primary,
         modifier = modifier
             .padding(24.dp)

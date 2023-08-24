@@ -3,6 +3,8 @@ package com.steleot.jetpackcompose.playground.compose.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -15,11 +17,11 @@ import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/VisualTransformationScreen.kt"
+private const val URL = "ui/VisualTransformationScreen.kt"
 
 @Composable
 fun VisualTransformationScreen() {
@@ -28,24 +30,24 @@ fun VisualTransformationScreen() {
     val creditCard = remember { mutableStateOf(TextFieldValue(text = "1234567890123456")) }
     DefaultScaffold(
         title = UiNavRoutes.VisualTransformation,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             OutlinedTextField(
                 value = password.value,
-                onValueChange = { password.value = it },
-                visualTransformation = {
-                    passwordFilter(it)
+                onValueChange = { value -> password.value = value },
+                visualTransformation = { transformation ->
+                    passwordFilter(transformation)
                 })
             OutlinedTextField(
                 value = creditCard.value,
-                onValueChange = { creditCard.value = it },
-                visualTransformation = {
-                    creditCardFilter(it)
+                onValueChange = { value -> creditCard.value = value },
+                visualTransformation = { transformation ->
+                    creditCardFilter(transformation)
                 })
         }
     }

@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material3
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -22,17 +23,18 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/LargeFloatingActionButtonScreen.kt"
+private const val URL = "material3/LargeFloatingActionButtonScreen.kt"
 
 @Composable
 fun LargeFloatingActionButtonScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.LargeFloatingActionButton,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally

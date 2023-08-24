@@ -3,8 +3,11 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Surface
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -21,25 +24,25 @@ import com.skydoves.orchestra.colorpicker.ColorPicker
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/OrchestraColorPickerScreen.kt"
+private const val URL = "externallibraries/OrchestraColorPickerScreen.kt"
 
 @Composable
 fun OrchestraColorPickerScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.OrchestraColorPicker,
-        link = Url,
+        link = URL,
     ) {
-        OrchestraColorPickerExample()
+        OrchestraColorPickerExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun OrchestraColorPickerExample() {
+private fun OrchestraColorPickerExample(paddingValues: PaddingValues) {
     var selectedColor by remember { mutableStateOf(ColorEnvelope(0)) }
     val isPortrait = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
     Surface(
         color = MaterialTheme.colors.background,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(paddingValues = paddingValues)
     ) {
         ConstraintLayout(
             modifier = Modifier

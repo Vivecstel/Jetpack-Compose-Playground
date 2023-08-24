@@ -14,16 +14,16 @@ import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesN
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/PlotScreen.kt"
+private const val URL = "externallibraries/PlotScreen.kt"
 
 @Composable
 fun PlotScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.Plot,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

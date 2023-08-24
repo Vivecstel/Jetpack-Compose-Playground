@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material3
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -10,21 +11,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material3/ModalNavigationDrawerScreen.kt"
+private const val URL = "material3/ModalNavigationDrawerScreen.kt"
 
 @Composable
 fun ModalNavigationDrawerScreen() {
     DefaultScaffold(
         title = Material3NavRoutes.ModalNavigationDrawer,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -33,7 +34,6 @@ fun ModalNavigationDrawerScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun NavigationDrawerExample() {
     val scope = rememberCoroutineScope()

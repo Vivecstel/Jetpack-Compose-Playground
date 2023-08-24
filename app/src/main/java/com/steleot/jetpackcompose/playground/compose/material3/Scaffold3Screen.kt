@@ -14,16 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalThemeState
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
-import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultSmallTopAppBar
+import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultTopAppBar
 import com.steleot.jetpackcompose.playground.theme.material3.JetpackComposePlaygroundTheme as Theme3
 
-private const val Url = "material3/Scaffold3Screen.kt"
+private const val URL = "material3/Scaffold3Screen.kt"
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Scaffold3Screen() {
     val themeState = LocalThemeState.current
@@ -33,9 +32,9 @@ fun Scaffold3Screen() {
         Scaffold(
             modifier = Modifier.systemBarsPadding(),
             topBar = {
-                DefaultSmallTopAppBar(
+                DefaultTopAppBar(
                     title = Material3NavRoutes.Scaffold3,
-                    link = Url,
+                    link = URL,
                 )
             },
             floatingActionButtonPosition = FabPosition.End,

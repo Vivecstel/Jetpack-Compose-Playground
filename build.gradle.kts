@@ -1,49 +1,24 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 
-@Suppress("UnstableApiUsage")
-plugins {
-    alias(gradleLibraries.plugins.kotlinJvm)
-    alias(gradleLibraries.plugins.benManes)
-    alias(gradleLibraries.plugins.detekt)
-    alias(gradleLibraries.plugins.doctor)
-}
-
 buildscript {
     repositories {
         google()
-    }
-    dependencies {
-        classpath(gradleLibraries.kotlinGradle)
-        classpath(gradleLibraries.androidPlugin)
-        classpath(gradleLibraries.googleServices)
-        classpath(gradleLibraries.crashlytics)
-        classpath(gradleLibraries.hiltPlugin)
-        classpath(gradleLibraries.secrets)
+        mavenCentral()
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
-    }
-
-    // todo stelios revisit
-    configurations.all {
-        resolutionStrategy.force(
-            androidx.composeAnimation,
-            androidx.composeFoundation,
-            androidx.composeRuntime,
-            androidx.composeUi,
-            androidx.core,
-            androidx.coreKtx,
-            androidx.activity,
-            androidx.viewModel,
-            androidx.liveData
-        )
-    }
+plugins {
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.androidApplication) apply false
+    alias(libs.plugins.googleServices) apply false
+    alias(libs.plugins.crashlytics) apply false
+    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.secrets)
+    alias(libs.plugins.baselineProfile) apply false
+    alias(libs.plugins.benManes)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.doctor)
 }
 
 doctor {
@@ -55,7 +30,7 @@ doctor {
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
     checkForGradleUpdate = true
-    outputDir = "${rootProject.buildDir}/dependencyUpdates"
+    outputDir = "${rootProject.layout.buildDirectory.file("dependencyUpdates").get()}"
 }
 
 val detektAll by tasks.registering(Detekt::class) {
@@ -71,7 +46,7 @@ val detektAll by tasks.registering(Detekt::class) {
         xml.required.set(false)
         html {
             required.set(true)
-            outputLocation.set(file("${rootProject.buildDir}/reports/detekt-report.html"))
+            outputLocation.set(rootProject.layout.buildDirectory.file("reports/detekt-report.html"))
         }
         txt.required.set(false)
     }

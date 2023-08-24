@@ -5,21 +5,23 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/ScrollableTabRowScreen.kt"
+private const val URL = "material/ScrollableTabRowScreen.kt"
 
 @Composable
 fun ScrollableTabRowScreen() {
@@ -36,11 +38,12 @@ fun ScrollableTabRowScreen() {
     )
     DefaultScaffold(
         title = MaterialNavRoutes.ScrollableTabRow,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -59,15 +62,15 @@ fun ScrollableTabRowScreen() {
 private fun ScrollableTabRowExample(
     tabs: List<String>
 ) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value
+        selectedTabIndex = selectedTab.intValue
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -80,16 +83,16 @@ private fun ScrollableTabRowExample(
 
 @Composable
 private fun EdgePaddingTabRowExample(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         edgePadding = 0.dp
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -102,16 +105,16 @@ private fun EdgePaddingTabRowExample(tabs: List<String>) {
 
 @Composable
 private fun BackgroundColorScrollableTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         backgroundColor = Color.Yellow
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -124,16 +127,16 @@ private fun BackgroundColorScrollableTabRow(tabs: List<String>) {
 
 @Composable
 private fun ContentColorScrollableTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         backgroundColor = Color.Red
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,
@@ -146,9 +149,9 @@ private fun ContentColorScrollableTabRow(tabs: List<String>) {
 
 @Composable
 private fun DividerScrollableTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         divider = {
             Divider(
                 modifier = Modifier
@@ -160,9 +163,9 @@ private fun DividerScrollableTabRow(tabs: List<String>) {
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }
             ) {
                 Text(
@@ -176,12 +179,12 @@ private fun DividerScrollableTabRow(tabs: List<String>) {
 
 @Composable
 private fun IndicatorScrollableTabRow(tabs: List<String>) {
-    val selectedTab = remember { mutableStateOf(0) }
+    val selectedTab = remember { mutableIntStateOf(0) }
     ScrollableTabRow(
-        selectedTabIndex = selectedTab.value,
+        selectedTabIndex = selectedTab.intValue,
         indicator = { tabPositions: List<TabPosition> ->
             val modifier = Modifier.tabIndicatorOffset(
-                tabPositions[selectedTab.value]
+                tabPositions[selectedTab.intValue]
             )
             Box(
                 modifier
@@ -196,9 +199,9 @@ private fun IndicatorScrollableTabRow(tabs: List<String>) {
     ) {
         tabs.forEachIndexed { index, text ->
             Tab(
-                selected = selectedTab.value == index,
+                selected = selectedTab.intValue == index,
                 onClick = {
-                    selectedTab.value = index
+                    selectedTab.intValue = index
                 }) {
                 Text(
                     text = text,

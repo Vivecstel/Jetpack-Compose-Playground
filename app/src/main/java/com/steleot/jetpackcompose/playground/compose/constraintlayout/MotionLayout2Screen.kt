@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -18,36 +19,34 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintSet
-import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/MotionLayout2Screen.kt"
+private const val URL = "constraintlayout/MotionLayout2Screen.kt"
 
 @Composable
 fun MotionLayout2Screen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.MotionLayout2,
-        link = Url,
+        link = URL,
     ) {
-        MotionLayout2Example()
+        MotionLayout2Example(paddingValues = it)
     }
 }
 
-@OptIn(ExperimentalMotionApi::class)
 @Composable
-private fun MotionLayout2Example() {
+private fun MotionLayout2Example(paddingValues: PaddingValues) {
     var animateToEnd by remember { mutableStateOf(false) }
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1000),
+        label = "MotionLayout2Example"
     )
-    Column(Modifier.background(Color.White)) {
-        MotionLayout(
-            ConstraintSet(
-                """ {
+    MotionLayout(
+        ConstraintSet(
+            """ {
                 background: {
                     custom: {
                       color: '#ffffff'
@@ -107,9 +106,9 @@ private fun MotionLayout2Example() {
                     bottom: ['backgroundSwitch', 'bottom', 0]
                 }
              }"""
-            ),
-            ConstraintSet(
-                """ {
+        ),
+        ConstraintSet(
+            """ {
                 background: {
                     custom: {
                       color: '#000000'
@@ -170,88 +169,88 @@ private fun MotionLayout2Example() {
                     bottom: ['backgroundSwitch', 'bottom', 0]
                 }
               }"""
-            ),
-            progress = progress,
+        ),
+        progress = progress,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(paddingValues = paddingValues)
+            .background(Color.White)
+    ) {
+        Box(
             modifier = Modifier
+                .layoutId("background")
                 .fillMaxSize()
-                .background(Color.White)
-        ) {
-            Box(
-                modifier = Modifier
-                    .layoutId("background")
-                    .fillMaxSize()
-                    .clickable(onClick = { animateToEnd = !animateToEnd })
-                    .background(motionProperties("background").value.color("color"))
-            )
+                .clickable(onClick = { animateToEnd = !animateToEnd })
+                .background(customProperties("background").color("color"))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("circle")
-                    .width(200.dp)
-                    .height(200.dp)
-                    .clip(CircleShape)
-                    .background(motionProperties("circle").value.color("color"))
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("circle")
+                .width(200.dp)
+                .height(200.dp)
+                .clip(CircleShape)
+                .background(customProperties("circle").color("color"))
+        )
 
-            Text(
-                text = stringResource(id = R.string.choose_style),
-                modifier = Modifier.layoutId("title"),
-                color = motionProperties("title").value.color("color"),
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = stringResource(id = R.string.day_or_night),
-                modifier = Modifier.layoutId("description"),
-                color = motionProperties("title").value.color("color"),
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
-            )
-            Box(
-                modifier = Modifier
-                    .layoutId("backgroundSwitch")
-                    .width(300.dp)
-                    .height(72.dp)
-                    .clip(RoundedCornerShape(36.dp))
-                    .background(motionProperties("backgroundSwitch").value.color("color"))
-            )
+        Text(
+            text = stringResource(id = R.string.choose_style),
+            modifier = Modifier.layoutId("title"),
+            color = customProperties("title").color("color"),
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = stringResource(id = R.string.day_or_night),
+            modifier = Modifier.layoutId("description"),
+            color = customProperties("title").color("color"),
+            fontSize = 18.sp,
+            textAlign = TextAlign.Center
+        )
+        Box(
+            modifier = Modifier
+                .layoutId("backgroundSwitch")
+                .width(300.dp)
+                .height(72.dp)
+                .clip(RoundedCornerShape(36.dp))
+                .background(customProperties("backgroundSwitch").color("color"))
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("moonShadow")
-                    .width(170.dp)
-                    .height(170.dp)
-                    .clip(CircleShape)
-                    .background(Color.Black)
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("moonShadow")
+                .width(170.dp)
+                .height(170.dp)
+                .clip(CircleShape)
+                .background(Color.Black)
+        )
 
-            Box(
-                modifier = Modifier
-                    .layoutId("buttonSwitch")
-                    .width(150.dp)
-                    .height(72.dp)
-                    .clip(RoundedCornerShape(36.dp))
-                    .background(Color.Gray)
-            )
+        Box(
+            modifier = Modifier
+                .layoutId("buttonSwitch")
+                .width(150.dp)
+                .height(72.dp)
+                .clip(RoundedCornerShape(36.dp))
+                .background(Color.Gray)
+        )
 
-            Text(
-                text = stringResource(id = R.string.light),
-                modifier = Modifier
-                    .layoutId("light")
-                    .width(150.dp),
-                color = Color.White,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = stringResource(id = R.string.dark),
-                modifier = Modifier
-                    .layoutId("dark")
-                    .width(150.dp),
-                color = Color.Black,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Center
-            )
-        }
+        Text(
+            text = stringResource(id = R.string.light),
+            modifier = Modifier
+                .layoutId("light")
+                .width(150.dp),
+            color = Color.White,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = stringResource(id = R.string.dark),
+            modifier = Modifier
+                .layoutId("dark")
+                .width(150.dp),
+            color = Color.Black,
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
     }
 }

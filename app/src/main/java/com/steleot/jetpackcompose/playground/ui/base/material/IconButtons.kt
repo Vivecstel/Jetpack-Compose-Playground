@@ -2,18 +2,19 @@ package com.steleot.jetpackcompose.playground.ui.base.material
 
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.core.net.toUri
 import com.steleot.jetpackcompose.playground.BuildConfig
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 
 @Composable
 fun GoToGithubIconButton(link: String) {
@@ -30,7 +31,6 @@ fun GoToGithubIconButton(link: String) {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun BackArrowIconButton() {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current

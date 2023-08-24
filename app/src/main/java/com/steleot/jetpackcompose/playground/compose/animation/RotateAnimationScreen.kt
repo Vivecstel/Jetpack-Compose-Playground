@@ -13,16 +13,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/RotateAnimationScreen.kt"
+private const val URL = "animation/RotateAnimationScreen.kt"
 
 @Composable
 fun RotateAnimationScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.RotateAnimation,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -33,14 +33,17 @@ fun RotateAnimationScreen() {
 
 @Composable
 private fun RotateAnimationExample() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "RotateAnimationExampleInfiniteTransition",
+    )
     val rotation by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 360f,
         animationSpec = infiniteRepeatable(
             animation = tween(3000, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
-        )
+        ),
+        label = "RotateAnimationExampleRotation",
     )
     Box(modifier = Modifier.fillMaxSize()) {
         Canvas(

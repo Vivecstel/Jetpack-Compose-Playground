@@ -6,6 +6,7 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -14,25 +15,23 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.steleot.jetpackcompose.playground.compose.externallibraries.PermissionsAccompanistExample
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import timber.log.Timber
 
-private const val Url = "customexamples/CameraXScreen.kt"
+private const val URL = "customexamples/CameraXScreen.kt"
 
 @Composable
 fun CameraXScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.CameraX,
-        link = Url,
+        link = URL,
     ) {
-        CameraPreview()
+        CameraPreview(modifier = Modifier.padding(paddingValues = it))
     }
 }
 
-@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 private fun CameraPreview(
     modifier: Modifier = Modifier,

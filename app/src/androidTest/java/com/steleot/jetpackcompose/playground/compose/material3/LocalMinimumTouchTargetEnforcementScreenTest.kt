@@ -14,7 +14,7 @@ class LocalMinimumTouchTargetEnforcementScreenTest {
     fun testLocalMinimumTouchTargetEnforcementScreen() {
         composeTestRule.setContent {
             TestTheme3 {
-                LocalMinimumTouchTargetEnforcementScreen()
+                LocalMinimumInteractiveComponentEnforcement3Screen()
             }
         }
         // todo

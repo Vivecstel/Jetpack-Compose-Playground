@@ -3,11 +3,15 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
@@ -26,28 +30,29 @@ import com.skydoves.landscapist.coil.CoilImage
 import com.skydoves.landscapist.components.rememberImageComponent
 import com.skydoves.landscapist.placeholder.placeholder.PlaceholderPlugin
 import com.skydoves.landscapist.placeholder.shimmer.ShimmerPlugin
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
-private const val Url = "externallibraries/CoilLandscapistScreen.kt"
+private const val URL = "externallibraries/CoilLandscapistScreen.kt"
 
 @Composable
 fun CoilLandscapistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.CoilLandscapist,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CoilImage(
-                imageModel = randomSampleImageUrl(),
+                imageModel = { randomSampleImageUrl() },
                 modifier = Modifier.size(150.dp),
                 imageOptions = ImageOptions(
                     contentScale = ContentScale.Crop,
@@ -61,7 +66,7 @@ fun CoilLandscapistScreen() {
                 },
             )
             CoilImage(
-                imageModel = randomSampleImageUrl(),
+                imageModel = { randomSampleImageUrl() },
                 modifier = Modifier.size(150.dp),
                 loading = {
                     ConstraintLayout(
@@ -83,7 +88,7 @@ fun CoilLandscapistScreen() {
                 })
             val background = MaterialTheme.colors.background
             CoilImage(
-                imageModel = randomSampleImageUrl(),
+                imageModel = { randomSampleImageUrl() },
                 modifier = Modifier.size(150.dp),
                 component = rememberImageComponent {
                     +ShimmerPlugin(

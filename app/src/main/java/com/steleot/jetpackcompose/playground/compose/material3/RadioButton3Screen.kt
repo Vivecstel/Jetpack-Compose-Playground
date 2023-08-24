@@ -3,7 +3,6 @@ package com.steleot.jetpackcompose.playground.compose.material3
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -16,21 +15,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/RadioButton3Screen.kt"
+private const val URL = "material3/RadioButton3Screen.kt"
 
 @Composable
 fun RadioButton3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.RadioButton3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -47,7 +47,6 @@ fun RadioButton3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultRadioButton(
@@ -62,7 +61,6 @@ private fun DefaultRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledRadioButton(
@@ -78,7 +76,6 @@ private fun DisabledRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun SelectedColorRadioButton(
@@ -96,7 +93,6 @@ private fun SelectedColorRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun UnselectedColorRadioButton(
@@ -114,7 +110,6 @@ private fun UnselectedColorRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledSelectedColorRadioButton(
@@ -132,7 +127,6 @@ private fun DisabledSelectedColorRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledUnselectedColorRadioButton(
@@ -150,7 +144,6 @@ private fun DisabledUnselectedColorRadioButton(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RadioButtonWithLabel(
     text: String = stringResource(id = R.string.app_name)
@@ -172,7 +165,6 @@ private fun RadioButtonWithLabel(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun RadioButtonGroup(

@@ -1,25 +1,29 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clipScrollableContainer
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.ScrollableDefaults
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.layout.LazyLayout
 import androidx.compose.foundation.lazy.layout.LazyLayoutItemProvider
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/LazyLayoutScreen.kt"
+private const val URL = "foundation/LazyLayoutScreen.kt"
 
 // TODO stelios
 @OptIn(ExperimentalFoundationApi::class)
@@ -27,9 +31,9 @@ private const val Url = "foundation/LazyLayoutScreen.kt"
 fun LazyLayoutScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.LazyLayout,
-        link = Url,
+        link = URL,
     ) {
-        val itemsList = (0..10).toList()
+        val itemsList = (0..20).toList()
 
         val itemProvider = itemProvider({ itemsList.size }) { index ->
             Text(
@@ -37,24 +41,37 @@ fun LazyLayoutScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
+                    .height(height = 50.dp)
             )
         }
 
+        val scrollState = rememberScrollState()
+
         LazyLayout(
-            itemProvider = itemProvider,
+            itemProvider = { itemProvider },
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState())
+                .padding(paddingValues = it)
+                .clipScrollableContainer(Orientation.Vertical)
+                .scrollable(
+                    orientation = Orientation.Vertical,
+                    reverseDirection = true,
+                    interactionSource = null,
+                    flingBehavior = ScrollableDefaults.flingBehavior(),
+                    state = scrollState,
+                    overscrollEffect = ScrollableDefaults.overscrollEffect(),
+                    enabled = true
+                )
         ) { constraints ->
             val items = mutableListOf<Placeable>()
             repeat(itemProvider.itemCount) { index ->
-                items.addAll(measure(index, Constraints.fixedHeight(250)))
+                items.add(measure(index, constraints)[0])
             }
+            var yPosition = -scrollState.value
             layout(constraints.maxWidth, constraints.maxHeight) {
-                var yPosition = 0
                 items.forEach { placeable ->
                     placeable.placeRelative(x = 0, y = yPosition)
-                    yPosition += placeable.height
+                    yPosition += placeable.measuredHeight
                 }
             }
         }
@@ -69,7 +86,7 @@ private fun itemProvider(
     return object : LazyLayoutItemProvider {
 
         @Composable
-        override fun Item(index: Int) {
+        override fun Item(index: Int, key: Any) {
             itemContent(index)
         }
 
@@ -77,8 +94,6 @@ private fun itemProvider(
             get() = itemCount()
 
         override fun getKey(index: Int) = index
-
-        override val keyToIndexMap: Map<Any, Int> = emptyMap()
 
         override fun getContentType(index: Int): Any? = null
     }

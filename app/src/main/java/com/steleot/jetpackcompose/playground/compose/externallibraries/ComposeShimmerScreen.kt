@@ -11,16 +11,16 @@ import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesN
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.valentinilk.shimmer.shimmer
 
-private const val Url = "externallibraries/ComposeShimmerScreen.kt"
+private const val URL = "externallibraries/ComposeShimmerScreen.kt"
 
 @Composable
 fun ComposeShimmerScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeShimmer,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

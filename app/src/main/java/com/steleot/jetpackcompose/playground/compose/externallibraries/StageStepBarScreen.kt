@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,16 +15,16 @@ import com.loukwn.stagestepbar_compose.data.State
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/StageStepBarScreen.kt"
+private const val URL = "externallibraries/StageStepBarScreen.kt"
 
 @Composable
 fun StageStepBarScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.StageStepBar,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

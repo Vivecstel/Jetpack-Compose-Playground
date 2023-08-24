@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -10,17 +11,18 @@ import androidx.compose.ui.graphics.Color
 import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "foundation/BoxScreen.kt"
+private const val URL = "foundation/BoxScreen.kt"
 
 @Composable
 fun BoxScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.Box,
-        link = Url,
+        link = URL,
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .background(Color.Yellow),
             contentAlignment = Alignment.Center
         ) {

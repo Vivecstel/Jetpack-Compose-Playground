@@ -1,7 +1,9 @@
 package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -10,23 +12,26 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import me.nikhilchaudhari.quarks.CreateParticles
 import me.nikhilchaudhari.quarks.particle.*
 
-private const val Url = "externallibraries/ComposeParticleSystemScreen.kt"
+private const val URL = "externallibraries/ComposeParticleSystemScreen.kt"
 
 @Composable
 fun ComposeParticleSystemScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ComposeParticleSystem,
-        link = Url,
+        link = URL,
     ) {
-        ComposeParticleSystemExample()
+        ComposeParticleSystemExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun ComposeParticleSystemExample() {
+private fun ComposeParticleSystemExample(
+    paddingValues: PaddingValues,
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
     ) {
         CreateParticles(
             modifier = Modifier.fillMaxSize(),

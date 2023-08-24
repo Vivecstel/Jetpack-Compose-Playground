@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -12,16 +13,16 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 import me.rerere.zoomableimage.ZoomableImage
 
-private const val Url = "externallibraries/ZoomableComposeImageScreen.kt"
+private const val URL = "externallibraries/ZoomableComposeImageScreen.kt"
 
 @Composable
 fun ZoomableComposeImageScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.ZoomableComposeImage,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

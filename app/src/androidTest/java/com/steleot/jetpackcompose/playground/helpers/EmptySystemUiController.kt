@@ -10,6 +10,7 @@ class EmptySystemUiController : SystemUiController {
     override var isStatusBarVisible: Boolean = false
     override var navigationBarDarkContentEnabled: Boolean = false
     override var statusBarDarkContentEnabled: Boolean = false
+    override var systemBarsBehavior: Int = 0
 
     override fun setNavigationBarColor(
         color: Color,

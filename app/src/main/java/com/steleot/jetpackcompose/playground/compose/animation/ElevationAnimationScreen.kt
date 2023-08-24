@@ -14,16 +14,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/ElevationAnimationScreen.kt"
+private const val URL = "animation/ElevationAnimationScreen.kt"
 
 @Composable
 fun ElevationAnimationScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.ElevationAnimation,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -34,14 +34,17 @@ fun ElevationAnimationScreen() {
 
 @Composable
 private fun ElevationAnimationExample() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "ElevationAnimationExampleInfiniteTransition"
+    )
     val elevation by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 25f,
         animationSpec = infiniteRepeatable(
             animation = tween(1500, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
-        )
+        ),
+        label = "ElevationAnimationExampleElevation",
     )
     Box(
         Modifier

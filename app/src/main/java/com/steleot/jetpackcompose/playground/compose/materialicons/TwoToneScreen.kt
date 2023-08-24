@@ -1,9 +1,11 @@
 package com.steleot.jetpackcompose.playground.compose.materialicons
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.twotone.*
@@ -14,15 +16,15 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialIconsNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "materialicons/TwoToneScreen.kt"
+private const val URL = "materialicons/TwoToneScreen.kt"
 
 @Composable
 fun TwoToneScreen() {
     DefaultScaffold(
         title = MaterialIconsNavRoutes.TwoTone,
-        link = Url,
+        link = URL,
     ) {
-        TwoToneGrid()
+        TwoToneGrid(paddingValues = it)
     }
 }
 
@@ -80,9 +82,10 @@ private val list = listOf(
 
 @Preview
 @Composable
-private fun TwoToneGrid() {
+private fun TwoToneGrid(paddingValues: PaddingValues = PaddingValues()) {
     LazyVerticalGrid(
-        GridCells.Adaptive(60.dp)
+        GridCells.Adaptive(60.dp),
+        modifier = Modifier.padding(paddingValues = paddingValues),
     ) {
         items(list) {
             Icon(imageVector = it, contentDescription = null, modifier = Modifier.padding(8.dp))

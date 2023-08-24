@@ -4,6 +4,7 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -15,21 +16,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/CrossfadeAnimationScreen.kt"
+private const val URL = "animation/CrossfadeAnimationScreen.kt"
 
 @Composable
 fun CrossfadeAnimationScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.CrossfadeAnimation,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -51,7 +53,10 @@ private fun CrossfadeTextAnimation() {
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Crossfade(targetState = current) {
+        Crossfade(
+            targetState = current,
+            label = "CrossfadeTextAnimation",
+        ) {
             Text(
                 text = it.value,
                 modifier = Modifier
@@ -72,7 +77,10 @@ private fun CrossfadeColorAnimation() {
     val current = remember { mutableStateOf(colors[0]) }
 
     Column(modifier = Modifier.fillMaxWidth()) {
-        Crossfade(targetState = current) {
+        Crossfade(
+            targetState = current,
+            label = "CrossfadeColorAnimation",
+        ) {
             Box(
                 Modifier
                     .fillMaxWidth()

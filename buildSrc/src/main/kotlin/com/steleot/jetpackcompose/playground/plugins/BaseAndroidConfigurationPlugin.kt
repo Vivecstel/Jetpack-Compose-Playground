@@ -30,11 +30,6 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                                     versionName = AndroidConfiguration.versionName
                                 }
                             }
-                            is LibraryExtension -> {
-                                with(this@defaultConfig as LibraryDefaultConfig) {
-                                    targetSdk = AndroidConfiguration.targetSdk
-                                }
-                            }
                             is TestExtension -> {
                                 with(this@defaultConfig as TestDefaultConfig) {
                                     targetSdk = AndroidConfiguration.targetSdk
@@ -56,12 +51,13 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
                         resValues = false
                         shaders = false
                     }
-                    packagingOptions {
+                    packaging {
                         resources.excludes.apply {
                             add("**/attach_hotspot_windows.dll")
                             add("META-INF/licenses/**")
                             add("META-INF/AL2.0")
                             add("META-INF/LGPL2.1")
+                            add("META-INF/versions/9/previous-compilation-data.bin")
                         }
                     }
                 }
@@ -69,6 +65,6 @@ abstract class BaseAndroidConfigurationPlugin : Plugin<Project> {
     }
 
     companion object {
-        private const val BUILD_TOOLS = "31.0.0"
+        private const val BUILD_TOOLS = "33.0.2"
     }
 }

@@ -9,26 +9,28 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
+import com.steleot.jetpackcompose.playground.R as R2
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/AnimatedVectorScreen.kt"
+private const val URL = "animation/AnimatedVectorScreen.kt"
 
 @Composable
 fun AnimatedVectorScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.AnimatedVector,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -42,7 +44,7 @@ fun AnimatedVectorScreen() {
 private fun AnimatorVectorExample() {
     var atEnd by remember { mutableStateOf(false) }
     val painter = rememberAnimatedVectorPainter(
-        AnimatedImageVector.animatedVectorResource(id = R.drawable.animated_vector_example),
+        AnimatedImageVector.animatedVectorResource(id = R2.drawable.animated_vector_example),
         atEnd
     )
     Image(

@@ -5,9 +5,13 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -17,26 +21,26 @@ import com.google.maps.android.compose.*
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/GoogleMapsScreen.kt"
+private const val URL = "externallibraries/GoogleMapsScreen.kt"
 
 @Composable
 fun GoogleMapsScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.GoogleMaps,
-        link = Url,
+        link = URL,
     ) {
-        GoogleMapsExample()
+        GoogleMapsExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun GoogleMapsExample() {
+private fun GoogleMapsExample(paddingValues: PaddingValues) {
     var isMapLoaded by remember { mutableStateOf(false) }
     val athens = LatLng(37.983810, 23.727539)
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(athens, 8f)
     }
-    Box(Modifier.fillMaxSize()) {
+    Box(Modifier.fillMaxSize().padding(paddingValues = paddingValues)) {
         GoogleMap(
             modifier = Modifier.matchParentSize(),
             cameraPositionState = cameraPositionState,

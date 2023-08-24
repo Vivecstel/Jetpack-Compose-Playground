@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
@@ -8,7 +9,7 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.TableChart
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,29 +18,29 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material/BottomNavigationScreen.kt"
+private const val URL = "material/BottomNavigationScreen.kt"
 
 @Composable
 fun BottomNavigationScreen() {
-    val selectedBottomNavigationView = remember { mutableStateOf(0) }
-    val selectedBottomNavigationItem = remember { mutableStateOf(0) }
+    val selectedBottomNavigationView = remember { mutableIntStateOf(0) }
+    val selectedBottomNavigationItem = remember { mutableIntStateOf(0) }
     DefaultScaffold(
         title = MaterialNavRoutes.BottomNavigation,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
                 onClick = {
-                    selectedBottomNavigationView.value =
-                        if (selectedBottomNavigationView.value == 2) 0 else selectedBottomNavigationView.value + 1
+                    selectedBottomNavigationView.intValue =
+                        if (selectedBottomNavigationView.intValue == 2) 0 else selectedBottomNavigationView.intValue + 1
                 }
             ) {
                 Text(
@@ -52,8 +53,8 @@ fun BottomNavigationScreen() {
             Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = {
-                    selectedBottomNavigationItem.value =
-                        if (selectedBottomNavigationItem.value == 4) 0 else selectedBottomNavigationItem.value + 1
+                    selectedBottomNavigationItem.intValue =
+                        if (selectedBottomNavigationItem.intValue == 4) 0 else selectedBottomNavigationItem.intValue + 1
                 }
             ) {
                 Text(
@@ -64,7 +65,7 @@ fun BottomNavigationScreen() {
                 )
             }
             Spacer(modifier = Modifier.height(32.dp))
-            HelperView(selectedBottomNavigationView.value, selectedBottomNavigationItem.value)
+            HelperView(selectedBottomNavigationView.intValue, selectedBottomNavigationItem.intValue)
         }
     }
 }
@@ -75,7 +76,7 @@ private fun HelperView(
     selectedBottomNavigationView: Int = 0,
     selectedBottomNavigationItem: Int = 0,
 ) {
-    val selectedItem = remember { mutableStateOf(0) }
+    val selectedItem = remember { mutableIntStateOf(0) }
     Column {
         when (selectedBottomNavigationView) {
             0 -> StandardBottomNavigation {
@@ -94,7 +95,7 @@ private fun HelperView(
 @Preview
 @Composable
 private fun RowScope.HelperNavigationItems(
-    selectedItem: MutableState<Int> = mutableStateOf(0),
+    selectedItem: MutableState<Int> = mutableIntStateOf(0),
     selectedNavigationItem: Int = 0,
     items: List<Pair<String, ImageVector>> = listOf(
         Pair(stringResource(id = R.string.person), Icons.Filled.Person),

@@ -1,6 +1,7 @@
 package com.steleot.jetpackcompose.playground.compose.runtime
 
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.movableContentOf
@@ -11,16 +12,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.RuntimeNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "runtime/MovableContentOfScreen.kt"
+private const val URL = "runtime/MovableContentOfScreen.kt"
 
 @Composable
 fun MovableContentOfScreen() {
     DefaultScaffold(
         title = RuntimeNavRoutes.MovableContentOf,
-        link = Url,
+        link = URL,
     ) {
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it)
         ) {
             MovableContentOfExample(
                 (1..25).toList()

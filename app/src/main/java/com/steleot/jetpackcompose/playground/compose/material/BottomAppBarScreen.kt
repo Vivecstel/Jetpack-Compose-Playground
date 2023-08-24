@@ -2,11 +2,12 @@ package com.steleot.jetpackcompose.playground.compose.material
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,25 +15,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultTopAppBar
 
-private const val Url = "material/BottomAppBarScreen.kt"
+private const val URL = "material/BottomAppBarScreen.kt"
 
 @Composable
 fun BottomAppBarScreen() {
-    val selectedLayout = remember { mutableStateOf(0) }
+    val selectedLayout = remember { mutableIntStateOf(0) }
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
             DefaultTopAppBar(
                 title = MaterialNavRoutes.BottomAppBar,
-                link = Url,
+                link = URL,
             )
         },
         bottomBar = {
-            when (selectedLayout.value) {
+            when (selectedLayout.intValue) {
                 0 -> DefaultBottomAppBar()
                 1 -> BackgroundColorBottomAppBar()
                 2 -> ContentColorBottomAppBar()
@@ -41,7 +42,7 @@ fun BottomAppBarScreen() {
             }
         },
         floatingActionButton = {
-            if (selectedLayout.value == 5 || selectedLayout.value == 6) {
+            if (selectedLayout.intValue == 5 || selectedLayout.intValue == 6) {
                 FloatingActionButton(onClick = {}) {
                     Icon(
                         Icons.Filled.Add,
@@ -50,7 +51,7 @@ fun BottomAppBarScreen() {
                 }
             }
         },
-        isFloatingActionButtonDocked = selectedLayout.value == 6
+        isFloatingActionButtonDocked = selectedLayout.intValue == 6
     ) {
         Column(
             modifier = Modifier
@@ -61,8 +62,8 @@ fun BottomAppBarScreen() {
         ) {
             Button(
                 onClick = {
-                    selectedLayout.value =
-                        if (selectedLayout.value == 6) 0 else selectedLayout.value + 1
+                    selectedLayout.intValue =
+                        if (selectedLayout.intValue == 6) 0 else selectedLayout.intValue + 1
                 }
             ) {
                 Text(text = stringResource(id = R.string.switch_args, "Bottom app bar"))

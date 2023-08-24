@@ -3,8 +3,10 @@ package com.steleot.jetpackcompose.playground.compose.foundation
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -15,24 +17,24 @@ import com.steleot.jetpackcompose.playground.navigation.graph.FoundationNavRoute
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlin.math.roundToInt
 
-private const val Url = "foundation/TransformGestureScreen.kt"
+private const val URL = "foundation/TransformGestureScreen.kt"
 
 @Composable
 fun TransformGestureScreen() {
     DefaultScaffold(
         title = FoundationNavRoutes.TransformGesture,
-        link = Url,
+        link = URL,
     ) {
-        DetectTransformGesturesExample()
+        DetectTransformGesturesExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun DetectTransformGesturesExample() {
-    var angle by remember { mutableStateOf(0f) }
-    var zoom by remember { mutableStateOf(1f) }
-    var offsetX by remember { mutableStateOf(0f) }
-    var offsetY by remember { mutableStateOf(0f) }
+private fun DetectTransformGesturesExample(paddingValues: PaddingValues) {
+    var angle by remember { mutableFloatStateOf(0f) }
+    var zoom by remember { mutableFloatStateOf(1f) }
+    var offsetX by remember { mutableFloatStateOf(0f) }
+    var offsetY by remember { mutableFloatStateOf(0f) }
     Box(
         Modifier
             .offset { IntOffset(offsetX.roundToInt(), offsetY.roundToInt()) }
@@ -53,5 +55,6 @@ private fun DetectTransformGesturesExample() {
                 )
             }
             .fillMaxSize()
+            .padding(paddingValues = paddingValues)
     )
 }

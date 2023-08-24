@@ -1,13 +1,13 @@
 # Jetpack Compose Playground
 
-Offering **more than 325 screens** with examples of **Jetpack Compose**.
+Offering **more than 355 screens** with examples of **Jetpack Compose**.
 
 <img src="documentation/screenshots/jetpack_compose_playground.gif" width="300"/>
 
 ## Introduction
 
 **Jetpack Compose Playground** is a showcase application and repository showing what Jetpack Compose
-has to offer and how it improves everyday Android UI development. It offers more 325 screens with
+has to offer and how it improves everyday Android UI development. It offers more 355 screens with
 examples. Based on [official link](https://developer.android.com/jetpack/compose) and
 the [docs](https://developer.android.com/jetpack/compose/documentation), the application has screens
 with examples for most components and cases. This application is supposed to be used by developers
@@ -40,18 +40,18 @@ Download from:
 
 - [Activity](documentation/activity.md) (3 screens)
 - [Animation](documentation/animation.md) (17 screens)
-- [Constraint Layout](documentation/constraintLayout.md) (11 screens)
-- [Custom Examples](documentation/customExamples.md) (17 screens)
-- [External Libraries](documentation/externalLibraries.md) (41 screens)
-- [Foundation](documentation/foundation.md) (46 screens)
-- [Material](documentation/material.md) (50 screens)
-- [Material 3 - Material you](documentation/material3.md) (52 screens)
+- [Constraint Layout](documentation/constraintLayout.md) (14 screens)
+- [Custom Examples](documentation/customExamples.md) (19 screens)
+- [External Libraries](documentation/externalLibraries.md) (35 screens)
+- [Foundation](documentation/foundation.md) (59 screens)
+- [Material](documentation/material.md) (52 screens)
+- [Material 3 - Material you](documentation/material3.md) (62 screens)
 - [Material Icons](documentation/materialIcons.md) (5 screens)
 - [Material Icons Extended](documentation/materialIconsExtended.md) (5 screens)
 - [Navigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/navigation/NavigationScreen.kt) (1 screen)
 - [Paging](app/src/main/java/com/steleot/jetpackcompose/playground/compose/paging/PagingScreen.kt) (1 screen)
 - [Runtime](documentation/runtime.md) (18 screens)
-- [Ui](documentation/ui.md) (59 screens)
+- [Ui](documentation/ui.md) (61 screens)
 - [ViewModel](documentation/viewModel.md) (3 screens)
 
 ## Instructions

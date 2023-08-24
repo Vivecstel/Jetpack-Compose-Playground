@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,22 +19,21 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
 import com.steleot.jetpackcompose.playground.navigation.graph.CustomExamplesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
-private const val Url = "customexamples/BottomRoundedArcShapeScreen.kt"
+private const val URL = "customexamples/BottomRoundedArcShapeScreen.kt"
 
 @Composable
 fun BottomRoundedArcShapeScreen() {
     DefaultScaffold(
         title = CustomExamplesNavRoutes.BottomRoundedArcShape,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -42,7 +42,6 @@ fun BottomRoundedArcShapeScreen() {
     }
 }
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun BottomRoundedArcShapeExample() {
     Image(
@@ -58,6 +57,7 @@ private fun BottomRoundedArcShapeExample() {
     )
 }
 
+@Suppress("unused")
 private class BottomRoundedArcShape : Shape {
     override fun createOutline(
         size: Size,

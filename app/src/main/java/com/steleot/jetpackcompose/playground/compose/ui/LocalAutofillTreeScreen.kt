@@ -4,13 +4,13 @@ import androidx.compose.runtime.Composable
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/LocalAutofillTreeScreen.kt"
+private const val URL = "ui/LocalAutofillTreeScreen.kt"
 
 @Composable
 fun LocalAutofillTreeScreen() {
     DefaultScaffold(
         title = UiNavRoutes.LocalAutofillTree,
-        link = Url,
+        link = URL,
     ) {
         // todo
     }

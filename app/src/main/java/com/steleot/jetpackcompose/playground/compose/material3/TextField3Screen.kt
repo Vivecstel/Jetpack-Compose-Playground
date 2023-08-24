@@ -5,7 +5,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -23,27 +22,28 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "material3/TextField3Screen.kt"
+private const val URL = "material3/TextField3Screen.kt"
 
 @Composable
 fun TextField3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.TextField3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DefaultTextField()
-            ContainerColorTextField()
+            FocusedContainerColorTextField()
             StyledTextField()
             ImeActionTextField()
             PasswordKeyboardTypeTextField()
@@ -52,7 +52,6 @@ fun TextField3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultTextField(
@@ -69,10 +68,9 @@ private fun DefaultTextField(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-private fun ContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
+private fun FocusedContainerColorTextField(text: String = stringResource(id = R.string.jetpack)) {
     val state = remember { mutableStateOf(TextFieldValue(text = text)) }
     TextField(
         value = state.value,
@@ -81,13 +79,12 @@ private fun ContainerColorTextField(text: String = stringResource(id = R.string.
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = Color.Magenta
+        colors = TextFieldDefaults.colors(
+            focusedContainerColor = Color.Magenta
         ),
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -98,7 +95,7 @@ private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)
             state.value = value
         },
         textStyle = TextStyle(color = Color.Magenta, fontSize = 20.sp),
-        colors = TextFieldDefaults.textFieldColors(
+        colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Blue,
         ),
         modifier = Modifier
@@ -107,7 +104,6 @@ private fun StyledTextField(text: String = stringResource(id = R.string.jetpack)
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -126,7 +122,6 @@ private fun ImeActionTextField(text: String = stringResource(id = R.string.jetpa
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.string.jetpack)) {
@@ -146,7 +141,6 @@ private fun PasswordKeyboardTypeTextField(text: String = stringResource(id = R.s
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun ShapedTextField(text: String = stringResource(id = R.string.jetpack)) {

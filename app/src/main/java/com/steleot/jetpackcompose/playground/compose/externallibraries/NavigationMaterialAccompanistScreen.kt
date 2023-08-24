@@ -2,9 +2,13 @@ package com.steleot.jetpackcompose.playground.compose.externallibraries
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.ButtonDefaults
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,20 +23,20 @@ import com.google.accompanist.navigation.material.ExperimentalMaterialNavigation
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.bottomSheet
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import java.util.*
 
-private const val Url = "externallibraries/NavigationMaterialAccompanistScreen.kt"
+private const val URL = "externallibraries/NavigationMaterialAccompanistScreen.kt"
 
 @Composable
 fun NavigationMaterialAccompanistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.NavigationMaterialAccompanist,
-        link = Url,
+        link = URL,
     ) {
-        NavigationMaterialExample()
+        NavigationMaterialExample(paddingValues = it)
     }
 }
 
@@ -45,12 +49,16 @@ private object Destinations {
 @SuppressLint("RestrictedApi")
 @OptIn(ExperimentalMaterialNavigationApi::class)
 @Composable
-private fun NavigationMaterialExample() {
+private fun NavigationMaterialExample(paddingValues: PaddingValues) {
     val navController = rememberNavController()
     val bottomSheetNavigator = rememberBottomSheetNavigator()
     navController.navigatorProvider += bottomSheetNavigator
     ModalBottomSheetLayout(bottomSheetNavigator) {
-        NavHost(navController, Destinations.Home) {
+        NavHost(
+            navController,
+            Destinations.Home,
+            modifier = Modifier.padding(paddingValues = paddingValues)
+        ) {
             composable(Destinations.Home) {
                 HomeScreen(
                     showSheet = {

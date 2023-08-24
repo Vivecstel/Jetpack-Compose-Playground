@@ -8,7 +8,7 @@ import androidx.compose.material.icons.filled.TableChart
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,22 +17,22 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/NavigationBarScreen.kt"
+private const val URL = "material3/NavigationBarScreen.kt"
 
 @Composable
 fun NavigationBarScreen() {
-    val selectedNavigationBar = remember { mutableStateOf(0) }
-    val selectedNavigationBarItem = remember { mutableStateOf(0) }
+    val selectedNavigationBar = remember { mutableIntStateOf(0) }
+    val selectedNavigationBarItem = remember { mutableIntStateOf(0) }
     DefaultScaffold(
         title = Material3NavRoutes.NavigationBar,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -43,8 +43,8 @@ fun NavigationBarScreen() {
             ) {
                 Button(
                     onClick = {
-                        selectedNavigationBar.value =
-                            if (selectedNavigationBar.value == 2) 0 else selectedNavigationBar.value + 1
+                        selectedNavigationBar.intValue =
+                            if (selectedNavigationBar.intValue == 2) 0 else selectedNavigationBar.intValue + 1
                     }
                 ) {
                     Text(
@@ -57,8 +57,8 @@ fun NavigationBarScreen() {
                 Spacer(modifier = Modifier.height(32.dp))
                 Button(
                     onClick = {
-                        selectedNavigationBarItem.value =
-                            if (selectedNavigationBarItem.value == 4) 0 else selectedNavigationBarItem.value + 1
+                        selectedNavigationBarItem.intValue =
+                            if (selectedNavigationBarItem.intValue == 4) 0 else selectedNavigationBarItem.intValue + 1
                     }
                 ) {
                     Text(
@@ -70,8 +70,8 @@ fun NavigationBarScreen() {
                 }
                 Spacer(modifier = Modifier.height(32.dp))
                 HelperView(
-                    selectedNavigationBar.value,
-                    selectedNavigationBarItem.value
+                    selectedNavigationBar.intValue,
+                    selectedNavigationBarItem.intValue
                 )
             }
         }
@@ -83,7 +83,7 @@ private fun HelperView(
     selectedNavigationBar: Int = 0,
     selectedNavigationBarItem: Int = 0,
 ) {
-    val selectedItem = remember { mutableStateOf(0) }
+    val selectedItem = remember { mutableIntStateOf(0) }
     Column {
         when (selectedNavigationBar) {
             0 -> StandardNavigationBar {
@@ -101,7 +101,7 @@ private fun HelperView(
 
 @Composable
 private fun RowScope.HelperNavigationBarItems(
-    selectedItem: MutableState<Int> = mutableStateOf(0),
+    selectedItem: MutableState<Int> = mutableIntStateOf(0),
     selectedNavigationItem: Int = 0,
     items: List<Pair<String, ImageVector>> = listOf(
         Pair(stringResource(id = R.string.person), Icons.Filled.Person),

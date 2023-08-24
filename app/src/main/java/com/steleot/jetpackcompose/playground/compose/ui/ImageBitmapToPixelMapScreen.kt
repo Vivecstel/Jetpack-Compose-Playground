@@ -2,6 +2,7 @@ package com.steleot.jetpackcompose.playground.compose.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,17 +13,18 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/ImageBitmapToPixelMapScreen.kt"
+private const val URL = "ui/ImageBitmapToPixelMapScreen.kt"
 
 @Composable
 fun ImageBitmapToPixelMapScreen() {
     DefaultScaffold(
         title = UiNavRoutes.ImageBitmapToPixelMap,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues = it)
                 .padding(32.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally

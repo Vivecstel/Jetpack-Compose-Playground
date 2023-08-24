@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
@@ -25,17 +26,17 @@ import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesN
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import com.steleot.jetpackcompose.playground.utils.randomSampleImageUrl
 
-private const val Url = "externallibraries/PaletteLandscapistScreen.kt"
+private const val URL = "externallibraries/PaletteLandscapistScreen.kt"
 
 @Composable
 fun PaletteLandscapistScreen() {
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.PaletteLandscapist,
-        link = Url,
+        link = URL,
     )
     {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -49,7 +50,7 @@ private fun PaletteLandscapistExample() {
     var palette by remember { mutableStateOf<Palette?>(null) }
 
     GlideImage(
-        imageModel = randomSampleImageUrl(1),
+        imageModel = { randomSampleImageUrl(1) },
         modifier = Modifier.size(150.dp),
         imageOptions = ImageOptions(
             contentScale = ContentScale.Crop,

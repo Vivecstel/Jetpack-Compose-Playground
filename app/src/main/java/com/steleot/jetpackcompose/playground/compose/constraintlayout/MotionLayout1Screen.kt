@@ -5,11 +5,15 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -17,41 +21,38 @@ import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
 import androidx.constraintlayout.compose.ConstraintSet
-import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.layoutId
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "constraintlayout/MotionLayout1Screen.kt"
+private const val URL = "constraintlayout/MotionLayout1Screen.kt"
 
 @Composable
 fun MotionLayout1Screen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.MotionLayout1,
-        link = Url,
+        link = URL,
     ) {
-        MotionLayout1Example()
+        MotionLayout1Example(paddingValues = it)
     }
 }
 
-@OptIn(ExperimentalMotionApi::class)
 @Composable
-private fun MotionLayout1Example() {
+private fun MotionLayout1Example(paddingValues: PaddingValues) {
     var animateToEnd by remember { mutableStateOf(false) }
     val progress by animateFloatAsState(
         targetValue = if (animateToEnd) 1f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1000),
+        label = "MotionLayout1Example"
     )
 
-    Column(Modifier.background(Color.White)) {
-        MotionLayout(
-            ConstraintSet(
-                """ {
+    MotionLayout(
+        ConstraintSet(
+            """ {
                     background: { 
                 width: "spread",
                 height: 60,
@@ -99,9 +100,9 @@ private fun MotionLayout1Example() {
                 bottom: ['v1', 'bottom', 0]
                 }
             } """
-            ),
-            ConstraintSet(
-                """ {
+        ),
+        ConstraintSet(
+            """ {
                 background: { 
                 width: "spread",
                 height: 250,
@@ -153,57 +154,57 @@ private fun MotionLayout1Example() {
                 bottom: ['v1', 'bottom', 0]
                 }
             } """
-            ),
-            progress = progress,
+        ),
+        progress = progress,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+            .padding(paddingValues = paddingValues)
+    ) {
+        Box(
             modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White)
-        ) {
-            Box(
-                modifier = Modifier
-                    .layoutId("background", "box")
-                    .background(Color.Cyan)
-                    .clickable(onClick = { animateToEnd = !animateToEnd })
-            )
-            Button(
-                onClick = { animateToEnd = !animateToEnd },
-                modifier = Modifier
-                    .layoutId("v1", "box")
-                    .background(Color.Blue),
-                shape = RoundedCornerShape(0f)
-            ) {}
+                .layoutId("background", "box")
+                .background(Color.Cyan)
+                .clickable(onClick = { animateToEnd = !animateToEnd })
+        )
+        Button(
+            onClick = { animateToEnd = !animateToEnd },
+            modifier = Modifier
+                .layoutId("v1", "box")
+                .background(Color.Blue),
+            shape = RoundedCornerShape(0f)
+        ) {}
 
-            Text(
-                text = stringResource(id = R.string.motion_layout_compose),
-                modifier = Modifier.layoutId("title"),
-                color = Color.Black,
-                fontSize = motionProperties("title").value.fontSize("textSize")
-            )
-            Text(
-                text = stringResource(id = R.string.app_name),
-                modifier = Modifier.layoutId("description"),
-                color = Color.Black,
-                fontSize = motionProperties("description").value.fontSize("textSize")
-            )
-            Box(
-                modifier = Modifier
-                    .layoutId("list", "box")
-                    .background(Color.Gray)
-            )
-            Icon(
-                Icons.Filled.PlayArrow,
-                contentDescription = stringResource(id = R.string.play),
-                tint = Color.Black,
-                modifier = Modifier.layoutId("play")
-            )
+        Text(
+            text = stringResource(id = R.string.motion_layout_compose),
+            modifier = Modifier.layoutId("title"),
+            color = Color.Black,
+            fontSize = customProperties("title").fontSize("textSize")
+        )
+        Text(
+            text = stringResource(id = R.string.app_name),
+            modifier = Modifier.layoutId("description"),
+            color = Color.Black,
+            fontSize = customProperties("description").fontSize("textSize")
+        )
+        Box(
+            modifier = Modifier
+                .layoutId("list", "box")
+                .background(Color.Gray)
+        )
+        Icon(
+            Icons.Filled.PlayArrow,
+            contentDescription = stringResource(id = R.string.play),
+            tint = Color.Black,
+            modifier = Modifier.layoutId("play")
+        )
 
-            Icon(
-                Icons.Filled.Close,
-                contentDescription = stringResource(id = R.string.close),
-                tint = Color.Black,
-                modifier = Modifier.layoutId("close")
-            )
+        Icon(
+            Icons.Filled.Close,
+            contentDescription = stringResource(id = R.string.close),
+            tint = Color.Black,
+            modifier = Modifier.layoutId("close")
+        )
 
-        }
     }
 }

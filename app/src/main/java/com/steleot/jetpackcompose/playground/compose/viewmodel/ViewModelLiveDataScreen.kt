@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.viewmodel
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -15,16 +16,16 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.steleot.jetpackcompose.playground.navigation.graph.ViewModelNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "viewmodel/ViewModelLiveDataScreen.kt"
+private const val URL = "viewmodel/ViewModelLiveDataScreen.kt"
 
 @Composable
 fun ViewModelLiveDataScreen() {
     DefaultScaffold(
         title = ViewModelNavRoutes.LiveData,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

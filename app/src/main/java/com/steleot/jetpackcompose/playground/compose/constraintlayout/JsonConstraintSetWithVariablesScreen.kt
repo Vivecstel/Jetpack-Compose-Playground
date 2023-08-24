@@ -3,6 +3,8 @@ package com.steleot.jetpackcompose.playground.compose.constraintlayout
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,16 +16,16 @@ import com.steleot.jetpackcompose.playground.navigation.graph.ConstraintLayoutNa
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import org.intellij.lang.annotations.Language
 
-private const val Url = "constraintlayout/JsonConstraintSetWithVariablesScreen.kt"
+private const val URL = "constraintlayout/JsonConstraintSetWithVariablesScreen.kt"
 
 @Composable
 fun JsonConstraintSetWithVariablesScreen() {
     DefaultScaffold(
         title = ConstraintLayoutNavRoutes.JsonConstraintSetWithVariables,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

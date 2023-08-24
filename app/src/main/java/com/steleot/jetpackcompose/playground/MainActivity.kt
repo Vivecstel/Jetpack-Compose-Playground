@@ -5,12 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -24,8 +24,8 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -42,6 +42,7 @@ import com.steleot.jetpackcompose.playground.helpers.InAppUpdateHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalProviders
 import com.steleot.jetpackcompose.playground.navigation.*
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.theme.ThemeState
 import com.steleot.jetpackcompose.playground.theme.material.JetpackComposePlaygroundTheme
 import com.steleot.jetpackcompose.playground.theme.material.getMaterialColors
@@ -130,6 +131,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         inAppUpdateHelper.onActivityResult(requestCode, resultCode, data)
@@ -137,8 +139,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Suppress("ControlFlowWithEmptyBody")
-@OptIn(ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun JetpackComposeApp(
     firebaseAuth: FirebaseAuth,
@@ -189,7 +189,7 @@ fun JetpackComposeApp(
         JetpackComposePlaygroundTheme(
             themeState = themeState,
         ) {
-            val navController = rememberAnimatedNavController()
+            val navController = rememberNavController()
             DisposableEffect(Unit) {
                 val listener =
                     NavController.OnDestinationChangedListener { _, destination, _ ->
@@ -208,7 +208,7 @@ fun JetpackComposeApp(
             LocalProviders(
                 inAppReviewHelper, favoriteHelper, themeState, user, navController
             ) {
-                AnimatedNavHost(
+                NavHost(
                     navController = navController,
                     startDestination = MainNavRoutes.Main,
                     enterTransition = { getEnterTransition(screenWidth) },

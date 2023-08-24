@@ -16,11 +16,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.helpers.FavoriteHelper
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.*
+import com.steleot.jetpackcompose.playground.utils.navigateSafe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -69,7 +70,7 @@ fun FavoritesScreen(
                                 DefaultCardListItem(
                                     text = route,
                                 ) {
-                                    navController.navigate(route)
+                                    navController.navigateSafe(route)
                                 }
                             }
                         }
@@ -130,7 +131,7 @@ class FavoritesViewModel @Inject constructor(
 }
 
 sealed class FavoritesUiState {
-    object Loading : FavoritesUiState()
+    data object Loading : FavoritesUiState()
 
     class Error(
         @StringRes val messageRes: Int,

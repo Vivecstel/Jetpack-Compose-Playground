@@ -5,6 +5,7 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -19,16 +20,16 @@ import androidx.compose.ui.unit.dp
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/InfiniteTransitionScreen.kt"
+private const val URL = "animation/InfiniteTransitionScreen.kt"
 
 @Composable
 fun InfiniteTransitionScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.InfiniteTransition,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -40,7 +41,9 @@ fun InfiniteTransitionScreen() {
 
 @Composable
 private fun InfiniteTransitionExample() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "InfiniteTransitionExampleInfiniteTransition",
+    )
 
     val scale by infiniteTransition.animateFloat(
         initialValue = 2f,
@@ -48,7 +51,8 @@ private fun InfiniteTransitionExample() {
         animationSpec = infiniteRepeatable(
             animation = tween(1000),
             repeatMode = RepeatMode.Restart
-        )
+        ),
+        label = "InfiniteTransitionExampleScale",
     )
 
     val color by infiniteTransition.animateColor(
@@ -57,7 +61,8 @@ private fun InfiniteTransitionExample() {
         animationSpec = infiniteRepeatable(
             animation = tween(1000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
-        )
+        ),
+        label = "InfiniteTransitionExampleColor",
     )
 
     Box(Modifier.fillMaxWidth()) {
@@ -77,7 +82,9 @@ private fun InfiniteTransitionExample() {
 
 @Composable
 private fun InfiniteLoading() {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(
+        label = "InfiniteLoadingInfiniteTransition",
+    )
     val alpha by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 1f,
@@ -87,7 +94,8 @@ private fun InfiniteLoading() {
                 0.7f at 500
             },
             repeatMode = RepeatMode.Reverse
-        )
+        ),
+        label = "InfiniteLoadingAlpha",
     )
     Row(
         modifier = Modifier

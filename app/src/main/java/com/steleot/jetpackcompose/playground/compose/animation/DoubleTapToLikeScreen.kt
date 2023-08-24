@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -16,20 +18,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.AnimationNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "animation/DoubleTapToLikeScreen.kt"
+private const val URL = "animation/DoubleTapToLikeScreen.kt"
 
 @Composable
 fun DoubleTapToLikeScreen() {
     DefaultScaffold(
         title = AnimationNavRoutes.DoubleTapToLike,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -38,7 +40,6 @@ fun DoubleTapToLikeScreen() {
     }
 }
 
-@Suppress("TransitionPropertiesLabel")
 @Composable
 private fun DoubleTapToLike() {
     var transitionState by remember {
@@ -77,7 +78,8 @@ private fun DoubleTapToLike() {
                         tween(durationMillis = 200)
                     else -> snap()
                 }
-            }
+            },
+            label = "DoubleTapToLikeAlpha",
         ) {
             if (it == LikedStates.Liked) 1f else 0f
         }
@@ -91,7 +93,8 @@ private fun DoubleTapToLike() {
                         tween(200)
                     else -> snap()
                 }
-            }
+            },
+            label = "DoubleTapToLikeScale",
         ) {
             when (it) {
                 LikedStates.Initial -> 0f

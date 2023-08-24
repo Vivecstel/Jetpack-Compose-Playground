@@ -4,9 +4,14 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Button
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -16,13 +21,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.localproviders.LocalNavController
 import com.steleot.jetpackcompose.playground.navigation.graph.ExternalLibrariesNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "externallibraries/SystemUiControllerAccompanistScreen.kt"
+private const val URL = "externallibraries/SystemUiControllerAccompanistScreen.kt"
 
 @Composable
 fun SystemUiControllerAccompanistScreen(
@@ -31,9 +36,9 @@ fun SystemUiControllerAccompanistScreen(
     val navController = LocalNavController.current
     DefaultScaffold(
         title = ExternalLibrariesNavRoutes.SystemUiControllerAccompanist,
-        link = Url,
+        link = URL,
     ) {
-        SystemUiControllerExample(navController, systemUiController)
+        SystemUiControllerExample(navController, systemUiController, it)
     }
 }
 
@@ -41,6 +46,7 @@ fun SystemUiControllerAccompanistScreen(
 private fun SystemUiControllerExample(
     navController: NavHostController,
     systemUiController: SystemUiController,
+    paddingValues: PaddingValues,
 ) {
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current
     val useDarkIcons = MaterialTheme.colors.isLight
@@ -63,7 +69,7 @@ private fun SystemUiControllerExample(
     }
 
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().padding(paddingValues = paddingValues),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

@@ -15,16 +15,16 @@ import androidx.compose.ui.unit.offset
 import com.steleot.jetpackcompose.playground.navigation.graph.UiNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
-private const val Url = "ui/LayoutScreen.kt"
+private const val URL = "ui/LayoutScreen.kt"
 
 @Composable
 fun LayoutScreen() {
     DefaultScaffold(
         title = UiNavRoutes.Layout,
-        link = Url,
+        link = URL,
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(paddingValues = it),
             verticalArrangement = Arrangement.spacedBy(32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

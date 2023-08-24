@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.compose.material
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -13,19 +14,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MaterialNavRoutes
 import com.steleot.jetpackcompose.playground.theme.colors
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.launch
 
-private const val Url = "material/BottomSheetScaffoldScreen.kt"
+private const val URL = "material/BottomSheetScaffoldScreen.kt"
 
 @Composable
 fun BottomSheetScaffoldScreen() {
     DefaultScaffold(
         title = MaterialNavRoutes.BottomSheetScaffold,
-        link = Url,
+        link = URL,
     ) {
         BottomSheetScaffoldExample()
     }
@@ -76,7 +77,7 @@ fun BottomSheetScaffoldExample() {
             )
         },
         floatingActionButton = {
-            var clickCount by remember { mutableStateOf(0) }
+            var clickCount by remember { mutableIntStateOf(0) }
             FloatingActionButton(
                 onClick = {
                     scope.launch {

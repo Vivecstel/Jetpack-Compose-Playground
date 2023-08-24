@@ -1,12 +1,17 @@
 package com.steleot.jetpackcompose.playground.compose.paging
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Card
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.CircularProgressIndicator
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -16,28 +21,27 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.paging.*
 import androidx.paging.compose.collectAsLazyPagingItems
-import androidx.paging.compose.itemsIndexed
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.MainNavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 import kotlinx.coroutines.delay
 import java.util.*
 import kotlin.math.ceil
 
-private const val Url = "paging/PagingScreen.kt"
+private const val URL = "paging/PagingScreen.kt"
 
 @Composable
 fun PagingScreen() {
     DefaultScaffold(
         title = MainNavRoutes.Paging,
-        link = Url,
+        link = URL,
     ) {
-        PagingExample()
+        PagingExample(paddingValues = it)
     }
 }
 
 @Composable
-private fun PagingExample() {
+private fun PagingExample(paddingValues: PaddingValues) {
     val myBackend = remember { FakeBackend() }
 
     val pager = remember {
@@ -52,7 +56,9 @@ private fun PagingExample() {
 
     val lazyPagingItems = pager.flow.collectAsLazyPagingItems()
 
-    LazyColumn {
+    LazyColumn(
+        contentPadding = paddingValues
+    ) {
         if (lazyPagingItems.loadState.refresh == LoadState.Loading) {
             item {
                 Text(
@@ -64,7 +70,10 @@ private fun PagingExample() {
             }
         }
 
-        itemsIndexed(lazyPagingItems) { index, item ->
+        items(
+            count = lazyPagingItems.itemCount,
+        ) { index ->
+            val item = lazyPagingItems[index]
             Card(
                 Modifier.padding(8.dp),
                 backgroundColor = MaterialTheme.colors.primary

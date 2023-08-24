@@ -6,7 +6,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -17,21 +16,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.steleot.jetpackcompose.playground.R
+import com.steleot.jetpackcompose.playground.resources.R
 import com.steleot.jetpackcompose.playground.navigation.graph.Material3NavRoutes
 import com.steleot.jetpackcompose.playground.ui.base.material3.DefaultScaffold
 
-private const val Url = "material3/Checkbox3Screen.kt"
+private const val URL = "material3/Checkbox3Screen.kt"
 
 @Composable
 fun Checkbox3Screen() {
     DefaultScaffold(
         title = Material3NavRoutes.Checkbox3,
-        link = Url,
+        link = URL,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(it)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -49,7 +49,6 @@ fun Checkbox3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DefaultCheckbox() {
@@ -62,7 +61,6 @@ private fun DefaultCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun CheckedColorCheckbox() {
@@ -78,7 +76,6 @@ private fun CheckedColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun UncheckedColorCheckbox() {
@@ -94,7 +91,6 @@ private fun UncheckedColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun CheckmarkColorCheckbox() {
@@ -110,7 +106,6 @@ private fun CheckmarkColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledCheckedColorCheckbox() {
@@ -127,7 +122,6 @@ private fun DisabledCheckedColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledUncheckedColorCheckbox() {
@@ -144,7 +138,6 @@ private fun DisabledUncheckedColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledIndeterminateColorCheckbox() {
@@ -161,7 +154,6 @@ private fun DisabledIndeterminateColorCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun DisabledCheckbox() {
@@ -175,7 +167,6 @@ private fun DisabledCheckbox() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 private fun LabeledCheckbox() {
