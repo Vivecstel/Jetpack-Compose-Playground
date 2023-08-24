@@ -110,12 +110,16 @@
     <string name="dragged_pressed">Arrastrado y presionado</string>
     <string name="dragged">Arrastrado</string>
     <string name="pressed">Presionado</string>
+    <string name="hovered">Flotado</string>
+    <string name="unhovered">Sin flotar</string>
+    <string name="magnifier_not_supported">La lupa no es compatible con esta plataforma.</string>
     <string name="interaction_source_message">¡Arrástrame horizontalmente o presióname!</string>
     <string name="max">Max</string>
     <string name="min">Min</string>
     <string name="taking_x_size">Tomando el tamaño %1$s aquí..</string>
     <string name="selected_color">Seleccionado: %1$s color</string>
     <string name="selectable_text">Este texto es seleccionable</string>
+    <string name="selectable_text_with_hand">Este texto se puede seleccionar a mano.</string>
     <string name="selectable_too">Este también</string>
     <string name="selectable_as_well">Este también</string>
     <string name="not_selectable_text">Pero no este</string>
@@ -131,6 +135,7 @@
     <!-- material -->
     <string name="title">Título</string>
     <string name="cancel">Cancelar</string>
+    <string name="ok">DE ACUERDO</string>
     <string name="show_args">Mostrar %1$s</string>
     <string name="menu">Menú</string>
     <string name="select_args">Seleccionar %1$d</string>
@@ -173,6 +178,15 @@
     <string name="enforced_minimum">Objetivo de toque mínimo obligatorio en la superficie (por defecto)</string>
     <string name="default_local_text_style">Uso del estilo de texto local predeterminado</string>
     <string name="custom_local_text_style">Uso de estilo de texto local personalizado</string>
+    <string name="set_date">Define la fecha</string>
+    <string name="selected_date">Marca de tiempo de fecha seleccionada: %1$d</string>
+    <string name="select_time">Seleccionar hora</string>
+    <string name="entered_time">Hora ingresada: %1$s</string>
+    <string name="set_time">Fijar tiempo</string>
+    <string name="failed_to_retrive_window_size_class">No se pudo recuperar windowSizeClass</string>
+    <string name="search_hint">Sugerencia de búsqueda</string>
+    <string name="search_suggestion">Sugerencia: %1$s</string>
+    <string name="search_additional_info">información adicional</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->

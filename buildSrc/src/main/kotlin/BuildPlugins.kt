@@ -37,4 +37,6 @@ object BuildPlugins {
 
     /* https://github.com/google/secrets-gradle-plugin */
     const val secrets = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
+
+    const val baselineProfile = "androidx.baselineprofile"
 }

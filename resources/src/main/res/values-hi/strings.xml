@@ -110,12 +110,16 @@
     <string name="dragged_pressed">घसीटा और दबाया गया</string>
     <string name="dragged">घसीटा</string>
     <string name="pressed">दब गया</string>
+    <string name="hovered">आगे पीछे करता</string>
+    <string name="unhovered">अप्रकाशित</string>
+    <string name="magnifier_not_supported">Mइस प्लेटफ़ॉर्म पर मैग्निफ़ायर समर्थित नहीं है.</string>
     <string name="interaction_source_message">मुझे क्षैतिज रूप से खींचें, या मुझे दबाएं!</string>
     <string name="max">मैक्स</string>
     <string name="min">मिनट</string>
     <string name="taking_x_size">यहाँ %1$s आकार ले रहा हूँ..</string>
     <string name="selected_color">चयनित: %1$s रंग</string>
     <string name="selectable_text">यह पाठ चयन योग्य है</string>
+    <string name="selectable_text_with_hand">यह पाठ हाथ से चयन योग्य है</string>
     <string name="selectable_too">यह भी</string>
     <string name="selectable_as_well">यह भी</string>
     <string name="not_selectable_text">लेकिन यह नहीं</string>
@@ -131,6 +135,7 @@
     <!-- material -->
     <string name="title">शीर्षक</string>
     <string name="cancel">रद्द करें</string>
+    <string name="ok">ठीक है</string>
     <string name="show_args">%1$s. दिखाएं</string>
     <string name="menu">मेन्यू</string>
     <string name="select_args">%1$d. चुनें</string>
@@ -173,6 +178,15 @@
     <string name="enforced_minimum">सतह पर लागू न्यूनतम स्पर्श लक्ष्य (डिफ़ॉल्ट रूप से)</string>
     <string name="default_local_text_style">डिफ़ॉल्ट स्थानीय पाठ शैली का उपयोग करना</string>
     <string name="custom_local_text_style">कस्टम स्थानीय पाठ शैली का उपयोग करना</string>
+    <string name="set_date">तारीख सेट करें</string>
+    <string name="selected_date">चयनित दिनांक टाइमस्टैम्प: %1$d</string>
+    <string name="select_time">समय चुनें</string>
+    <string name="entered_time">प्रविष्ट समय: %1$s</string>
+    <string name="set_time">निर्धारित समय</string>
+    <string name="failed_to_retrive_window_size_class">windowSizeClass पुनर्प्राप्त करने में विफल</string>
+    <string name="search_hint">खोज संकेत</string>
+    <string name="search_suggestion">सुझाव: %1$s</string>
+    <string name="search_additional_info">अतिरिक्त जानकारी</string>
     <!-- material icons -->
     <!-- material icons extended -->
     <!-- navigation -->

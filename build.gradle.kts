@@ -1,48 +1,24 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 
-plugins {
-    alias(libs.plugins.kotlinJvm)
-    alias(libs.plugins.benManes)
-    alias(libs.plugins.detekt)
-    alias(libs.plugins.doctor)
-}
-
 buildscript {
     repositories {
         google()
-    }
-    dependencies {
-        classpath(libs.kotlinGradle)
-        classpath(libs.androidPlugin)
-        classpath(libs.googleServices)
-        classpath(libs.crashlytics)
-        classpath(libs.hiltPlugin)
-        classpath(libs.secrets)
+        mavenCentral()
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
-    }
-
-    // todo stelios revisit
-//    configurations.all {
-//        resolutionStrategy.force(
-//            androidx.composeAnimation,
-//            androidx.composeFoundation,
-//            androidx.composeRuntime,
-//            androidx.composeUi,
-//            androidx.core,
-//            androidx.coreKtx,
-//            androidx.activity,
-//            androidx.viewModel,
-//            androidx.liveData
-//        )
-//    }
+plugins {
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.androidApplication) apply false
+    alias(libs.plugins.googleServices) apply false
+    alias(libs.plugins.crashlytics) apply false
+    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.secrets)
+    alias(libs.plugins.baselineProfile) apply false
+    alias(libs.plugins.benManes)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.doctor)
 }
 
 doctor {

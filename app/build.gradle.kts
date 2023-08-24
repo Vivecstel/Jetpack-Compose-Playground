@@ -1,4 +1,3 @@
-import com.steleot.jetpackcompose.playground.plugins.AddBenchmarkBuildTypePlugin
 import com.steleot.jetpackcompose.playground.plugins.ApplicationAndroidConfigurationPlugin
 import com.steleot.jetpackcompose.playground.plugins.BaseAndroidConfigurationPlugin
 import com.steleot.jetpackcompose.playground.plugins.ComposeConfigurationPlugin
@@ -15,9 +14,9 @@ plugins {
     alias(libs.plugins.playPublisher)
     alias(libs.plugins.kotlinSerialization)
     id(BuildPlugins.secrets)
+    id(BuildPlugins.baselineProfile)
 }
 
-apply<AddBenchmarkBuildTypePlugin>()
 apply<ApplicationAndroidConfigurationPlugin>()
 apply<BaseAndroidConfigurationPlugin>()
 apply<ComposeConfigurationPlugin>()
@@ -131,6 +130,8 @@ dependencies {
     androidTestImplementation(libs.composeUiJunit)
     androidTestImplementation(libs.navigationTest)
     androidTestImplementation(libs.testCore)
+
+    baselineProfile(project(":benchmark"))
 }
 
 protobuf {

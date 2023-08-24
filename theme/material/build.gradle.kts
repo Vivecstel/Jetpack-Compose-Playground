@@ -1,4 +1,3 @@
-import com.steleot.jetpackcompose.playground.plugins.AddBenchmarkBuildTypePlugin
 import com.steleot.jetpackcompose.playground.plugins.BaseAndroidConfigurationPlugin
 import com.steleot.jetpackcompose.playground.plugins.ComposeConfigurationPlugin
 
@@ -7,7 +6,6 @@ plugins {
     kotlin(BuildPlugins.kotlinAndroid)
 }
 
-apply<AddBenchmarkBuildTypePlugin>()
 apply<BaseAndroidConfigurationPlugin>()
 apply<ComposeConfigurationPlugin>()
 

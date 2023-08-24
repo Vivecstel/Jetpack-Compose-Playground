@@ -111,7 +111,7 @@
     <string name="pressed">Pressed</string>
     <string name="hovered">Hovered</string>
     <string name="unhovered">Unhovered</string>
-    <string name="magnifier_not_supported">Magnifier is not suppored on this platform.</string>
+    <string name="magnifier_not_supported">Magnifier is not supported on this platform.</string>
     <string name="interaction_source_message">Drag me horizontally, or press me!</string>
     <string name="max">Max</string>
     <string name="min">Min</string>

@@ -39,16 +39,30 @@ abstract class ApplicationAndroidConfigurationPlugin : Plugin<Project> {
                         }
                     }
                     buildTypes {
+                        getByName("debug") {
+                            isMinifyEnabled = false
+                            isShrinkResources = false
+                        }
                         if (isReleasedEnabled) {
-                            getByName(RELEASE) {
+                            val release = getByName(RELEASE) {
                                 signingConfig = extension.signingConfigs.getByName(RELEASE)
+                                isDebuggable = false
                                 isMinifyEnabled = true
+                                isShrinkResources = true
                                 proguardFiles(
                                     extension.getDefaultProguardFile("proguard-android-optimize.txt"),
                                     "../config/proguard-rules.pro"
                                 )
                             }
+
+                            create(BENCHMARK) {
+                                initWith(release)
+                                signingConfig = signingConfigs.getByName("debug")
+                                matchingFallbacks.add("release")
+                                proguardFiles("../config/benchmark-rules.pro")
+                            }
                         }
+
                     }
                 }
             }
@@ -84,6 +98,7 @@ abstract class ApplicationAndroidConfigurationPlugin : Plugin<Project> {
 
     companion object {
         private const val RELEASE = "release"
+        private const val BENCHMARK = "benchmark"
         private const val BASE_URL = "BASE_URL"
         private const val DEEP_LINK_URI = "DEEP_LINK_URI"
         private const val STRING = "String"
