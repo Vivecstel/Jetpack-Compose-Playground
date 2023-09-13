@@ -40,8 +40,8 @@ fun MultiChoiceSegmentedButtonRowScreen() {
             MultiChoiceSegmentedButtonRow {
                 options.forEachIndexed { index, resource ->
                     SegmentedButton(
-                        shape = SegmentedButtonDefaults.shape(
-                            position = index,
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = index,
                             count = options.size
                         ),
                         onCheckedChange = {
