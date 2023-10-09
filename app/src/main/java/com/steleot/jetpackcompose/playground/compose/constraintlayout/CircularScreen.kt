@@ -9,6 +9,8 @@ import androidx.compose.material.FloatingActionButton
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.MenuOpen
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -57,7 +59,7 @@ private fun CircularExample() {
                 circular(fab1, 72.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Filled.MenuOpen, contentDescription = null)
+            Icon(Icons.AutoMirrored.Filled.MenuOpen, contentDescription = null)
         }
 
         FloatingActionButton(
@@ -66,7 +68,7 @@ private fun CircularExample() {
                 circular(fab1, 144.0f, 100.dp)
             }
         ) {
-            Icon(Icons.Filled.MenuBook, contentDescription = null)
+            Icon(Icons.AutoMirrored.Filled.MenuBook, contentDescription = null)
         }
 
         FloatingActionButton(

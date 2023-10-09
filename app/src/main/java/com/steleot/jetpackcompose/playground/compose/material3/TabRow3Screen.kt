@@ -48,7 +48,7 @@ fun TabRow3Screen() {
 @Composable
 private fun DefaultTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
-    TabRow(
+    PrimaryTabRow(
         selectedTabIndex = selectedTab.intValue
     ) {
         tabs.forEachIndexed { index, text ->
@@ -69,7 +69,7 @@ private fun DefaultTabRow(tabs: List<String>) {
 @Composable
 private fun ContainerColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
-    TabRow(
+    PrimaryTabRow(
         selectedTabIndex = selectedTab.intValue,
         containerColor = Color.Yellow
     ) {
@@ -91,7 +91,7 @@ private fun ContainerColorTabRow(tabs: List<String>) {
 @Composable
 private fun ContentColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
-    TabRow(
+    PrimaryTabRow(
         selectedTabIndex = selectedTab.intValue,
         contentColor = Color.Red
     ) {
@@ -113,7 +113,7 @@ private fun ContentColorTabRow(tabs: List<String>) {
 @Composable
 private fun DividerTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
-    TabRow(
+    PrimaryTabRow(
         selectedTabIndex = selectedTab.intValue,
         divider = {
             HorizontalDivider(
@@ -144,7 +144,7 @@ private fun DividerTabRow(tabs: List<String>) {
 @Composable
 private fun IndicatorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
-    TabRow(
+    PrimaryTabRow(
         selectedTabIndex = selectedTab.intValue,
         indicator = { tabPositions: List<TabPosition> ->
             val modifier = Modifier.tabIndicatorOffset(
