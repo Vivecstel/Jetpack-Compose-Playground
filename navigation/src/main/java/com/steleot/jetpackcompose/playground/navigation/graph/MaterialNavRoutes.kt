@@ -8,7 +8,6 @@ object MaterialNavRoutes {
     const val BottomAppBar = "bottom app bar"
     const val BottomDrawer = "bottom drawer layout"
     const val BottomNavigation = "bottom navigation"
-    const val BottomSheetScaffold = "bottom sheet scaffold"
     const val Button = "button"
     const val Card = "card"
     const val Checkbox = "checkbox"

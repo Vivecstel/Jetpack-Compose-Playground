@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.items
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.twotone.*
 import androidx.compose.material.icons.twotone.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -33,9 +34,9 @@ private val list = listOf(
     Icons.TwoTone.AccountCircle,
     Icons.TwoTone.AddCircle,
     Icons.TwoTone.Add,
-    Icons.TwoTone.ArrowBack,
+    Icons.AutoMirrored.TwoTone.ArrowBack,
     Icons.TwoTone.ArrowDropDown,
-    Icons.TwoTone.ArrowForward,
+    Icons.AutoMirrored.TwoTone.ArrowForward,
     Icons.TwoTone.Build,
     Icons.TwoTone.Call,
     Icons.TwoTone.CheckCircle,
@@ -48,17 +49,17 @@ private val list = listOf(
     Icons.TwoTone.Done,
     Icons.TwoTone.Edit,
     Icons.TwoTone.Email,
-    Icons.TwoTone.ExitToApp,
+    Icons.AutoMirrored.TwoTone.ExitToApp,
     Icons.TwoTone.Face,
     Icons.TwoTone.FavoriteBorder,
     Icons.TwoTone.Favorite,
     Icons.TwoTone.Home,
     Icons.TwoTone.Info,
     Icons.TwoTone.KeyboardArrowDown,
-    Icons.TwoTone.KeyboardArrowLeft,
-    Icons.TwoTone.KeyboardArrowRight,
+    Icons.AutoMirrored.TwoTone.KeyboardArrowLeft,
+    Icons.AutoMirrored.TwoTone.KeyboardArrowRight,
     Icons.TwoTone.KeyboardArrowUp,
-    Icons.TwoTone.List,
+    Icons.AutoMirrored.TwoTone.List,
     Icons.TwoTone.LocationOn,
     Icons.TwoTone.Lock,
     Icons.TwoTone.MailOutline,
@@ -71,7 +72,7 @@ private val list = listOf(
     Icons.TwoTone.PlayArrow,
     Icons.TwoTone.Refresh,
     Icons.TwoTone.Search,
-    Icons.TwoTone.Send,
+    Icons.AutoMirrored.TwoTone.Send,
     Icons.TwoTone.Settings,
     Icons.TwoTone.Share,
     Icons.TwoTone.ShoppingCart,

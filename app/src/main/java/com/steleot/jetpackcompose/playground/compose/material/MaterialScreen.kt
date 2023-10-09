@@ -13,7 +13,6 @@ val routes = listOf(
     MaterialNavRoutes.BottomAppBar,
     MaterialNavRoutes.BottomDrawer,
     MaterialNavRoutes.BottomNavigation,
-    MaterialNavRoutes.BottomSheetScaffold,
     MaterialNavRoutes.Button,
     MaterialNavRoutes.Card,
     MaterialNavRoutes.Checkbox,

@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.items
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.sharp.*
 import androidx.compose.material.icons.sharp.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -33,9 +34,9 @@ private val list = listOf(
     Icons.Sharp.AccountCircle,
     Icons.Sharp.AddCircle,
     Icons.Sharp.Add,
-    Icons.Sharp.ArrowBack,
+    Icons.AutoMirrored.Sharp.ArrowBack,
     Icons.Sharp.ArrowDropDown,
-    Icons.Sharp.ArrowForward,
+    Icons.AutoMirrored.Sharp.ArrowForward,
     Icons.Sharp.Build,
     Icons.Sharp.Call,
     Icons.Sharp.CheckCircle,
@@ -48,17 +49,17 @@ private val list = listOf(
     Icons.Sharp.Done,
     Icons.Sharp.Edit,
     Icons.Sharp.Email,
-    Icons.Sharp.ExitToApp,
+    Icons.AutoMirrored.Sharp.ExitToApp,
     Icons.Sharp.Face,
     Icons.Sharp.FavoriteBorder,
     Icons.Sharp.Favorite,
     Icons.Sharp.Home,
     Icons.Sharp.Info,
     Icons.Sharp.KeyboardArrowDown,
-    Icons.Sharp.KeyboardArrowLeft,
-    Icons.Sharp.KeyboardArrowRight,
+    Icons.AutoMirrored.Sharp.KeyboardArrowLeft,
+    Icons.AutoMirrored.Sharp.KeyboardArrowRight,
     Icons.Sharp.KeyboardArrowUp,
-    Icons.Sharp.List,
+    Icons.AutoMirrored.Sharp.List,
     Icons.Sharp.LocationOn,
     Icons.Sharp.Lock,
     Icons.Sharp.MailOutline,
@@ -71,7 +72,7 @@ private val list = listOf(
     Icons.Sharp.PlayArrow,
     Icons.Sharp.Refresh,
     Icons.Sharp.Search,
-    Icons.Sharp.Send,
+    Icons.AutoMirrored.Sharp.Send,
     Icons.Sharp.Settings,
     Icons.Sharp.Share,
     Icons.Sharp.ShoppingCart,

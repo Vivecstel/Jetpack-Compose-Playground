@@ -5,16 +5,16 @@ import com.steleot.jetpackcompose.playground.compose.theme.TestTheme3
 import org.junit.Rule
 import org.junit.Test
 
-class PlainTooltipBoxScreenTest {
+class RichTooltipScreenTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testPlainTooltipBoxScreen() {
+    fun testRichTooltipScreen() {
         composeTestRule.setContent {
             TestTheme3 {
-                PlainTooltipBoxScreen()
+                RichTooltipScreen()
             }
         }
         // todo

@@ -42,8 +42,8 @@ fun SingleChoiceSegmentedButtonRowScreen() {
             SingleChoiceSegmentedButtonRow {
                 options.forEachIndexed { index, resource ->
                     SegmentedButton(
-                        shape = SegmentedButtonDefaults.shape(
-                            position = index,
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = index,
                             count = options.size
                         ),
                         onClick = { selectedIndex = index },

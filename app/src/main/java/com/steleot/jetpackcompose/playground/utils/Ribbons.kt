@@ -3,6 +3,7 @@ package com.steleot.jetpackcompose.playground.utils
 import com.steleot.jetpackcompose.playground.navigation.graph.*
 
 val ribbonRoutes = setOf(
+    /* 5.1.0 */
     /* 5.0.0 */
     MainNavRoutes.ConstraintLayout,
     ConstraintLayoutNavRoutes.ConstraintGridDsl,
@@ -30,8 +31,8 @@ val ribbonRoutes = setOf(
     Material3NavRoutes.DatePicker,
     Material3NavRoutes.HorizontalDivider,
     Material3NavRoutes.MultiChoiceSegmentedButtonRow,
-    Material3NavRoutes.PlainTooltipBox,
-    Material3NavRoutes.RichTooltipBox,
+    Material3NavRoutes.PlainTooltip,
+    Material3NavRoutes.RichTooltip,
     Material3NavRoutes.SingleChoiceSegmentedButtonRow,
     Material3NavRoutes.SearchBar,
     Material3NavRoutes.SnackBar3,

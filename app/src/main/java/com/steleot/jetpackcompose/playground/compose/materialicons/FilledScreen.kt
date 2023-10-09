@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.items
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -33,9 +34,9 @@ private val list = listOf(
     Icons.Filled.AccountCircle,
     Icons.Filled.AddCircle,
     Icons.Filled.Add,
-    Icons.Filled.ArrowBack,
+    Icons.AutoMirrored.Filled.ArrowBack,
     Icons.Filled.ArrowDropDown,
-    Icons.Filled.ArrowForward,
+    Icons.AutoMirrored.Filled.ArrowForward,
     Icons.Filled.Build,
     Icons.Filled.Call,
     Icons.Filled.CheckCircle,
@@ -48,17 +49,17 @@ private val list = listOf(
     Icons.Filled.Done,
     Icons.Filled.Edit,
     Icons.Filled.Email,
-    Icons.Filled.ExitToApp,
+    Icons.AutoMirrored.Filled.ExitToApp,
     Icons.Filled.Face,
     Icons.Filled.FavoriteBorder,
     Icons.Filled.Favorite,
     Icons.Filled.Home,
     Icons.Filled.Info,
     Icons.Filled.KeyboardArrowDown,
-    Icons.Filled.KeyboardArrowLeft,
-    Icons.Filled.KeyboardArrowRight,
+    Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+    Icons.AutoMirrored.Filled.KeyboardArrowRight,
     Icons.Filled.KeyboardArrowUp,
-    Icons.Filled.List,
+    Icons.AutoMirrored.Filled.List,
     Icons.Filled.LocationOn,
     Icons.Filled.Lock,
     Icons.Filled.MailOutline,
@@ -71,7 +72,7 @@ private val list = listOf(
     Icons.Filled.PlayArrow,
     Icons.Filled.Refresh,
     Icons.Filled.Search,
-    Icons.Filled.Send,
+    Icons.AutoMirrored.Filled.Send,
     Icons.Filled.Settings,
     Icons.Filled.Share,
     Icons.Filled.ShoppingCart,

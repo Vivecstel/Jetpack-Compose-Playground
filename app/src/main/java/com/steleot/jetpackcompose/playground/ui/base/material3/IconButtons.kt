@@ -3,8 +3,8 @@ package com.steleot.jetpackcompose.playground.ui.base.material3
 import android.content.Intent
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
@@ -27,7 +27,7 @@ fun GoToGithubButton(link: String) {
         })
     }) {
         Icon(
-            imageVector = Icons.Filled.ExitToApp,
+            imageVector = Icons.AutoMirrored.Filled.ExitToApp,
             contentDescription = stringResource(id = R.string.open_github),
             tint = MaterialTheme.colorScheme.onPrimary
         )
@@ -41,7 +41,7 @@ fun BackArrow() {
         backDispatcher?.onBackPressedDispatcher?.onBackPressed()
     }) {
         Icon(
-            imageVector = Icons.Filled.ArrowBack,
+            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
             contentDescription = stringResource(id = R.string.back_arrow),
             tint = MaterialTheme.colorScheme.onPrimary
         )

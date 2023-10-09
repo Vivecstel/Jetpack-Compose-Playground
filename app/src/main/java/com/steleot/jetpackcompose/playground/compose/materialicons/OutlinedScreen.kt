@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.items
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.*
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -33,9 +34,9 @@ private val list = listOf(
     Icons.Outlined.AccountCircle,
     Icons.Outlined.AddCircle,
     Icons.Outlined.Add,
-    Icons.Outlined.ArrowBack,
+    Icons.AutoMirrored.Outlined.ArrowBack,
     Icons.Outlined.ArrowDropDown,
-    Icons.Outlined.ArrowForward,
+    Icons.AutoMirrored.Outlined.ArrowForward,
     Icons.Outlined.Build,
     Icons.Outlined.Call,
     Icons.Outlined.CheckCircle,
@@ -48,17 +49,17 @@ private val list = listOf(
     Icons.Outlined.Done,
     Icons.Outlined.Edit,
     Icons.Outlined.Email,
-    Icons.Outlined.ExitToApp,
+    Icons.AutoMirrored.Outlined.ExitToApp,
     Icons.Outlined.Face,
     Icons.Outlined.FavoriteBorder,
     Icons.Outlined.Favorite,
     Icons.Outlined.Home,
     Icons.Outlined.Info,
     Icons.Outlined.KeyboardArrowDown,
-    Icons.Outlined.KeyboardArrowLeft,
-    Icons.Outlined.KeyboardArrowRight,
+    Icons.AutoMirrored.Outlined.KeyboardArrowLeft,
+    Icons.AutoMirrored.Outlined.KeyboardArrowRight,
     Icons.Outlined.KeyboardArrowUp,
-    Icons.Outlined.List,
+    Icons.AutoMirrored.Outlined.List,
     Icons.Outlined.LocationOn,
     Icons.Outlined.Lock,
     Icons.Outlined.MailOutline,
@@ -71,7 +72,7 @@ private val list = listOf(
     Icons.Outlined.PlayArrow,
     Icons.Outlined.Refresh,
     Icons.Outlined.Search,
-    Icons.Outlined.Send,
+    Icons.AutoMirrored.Outlined.Send,
     Icons.Outlined.Settings,
     Icons.Outlined.Share,
     Icons.Outlined.ShoppingCart,

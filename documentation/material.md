@@ -7,7 +7,6 @@
 - [BottomAppBar](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomAppBarScreen.kt)
 - [BottomDrawer](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomDrawerScreen.kt)
 - [BottomNavigation](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomNavigationScreen.kt)
-- [BottomSheetScaffold](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/BottomSheetScaffoldScreen.kt)
 - [Button](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/ButtonScreen.kt)
 - [Card](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/CardScreen.kt)
 - [Checkbox](app/src/main/java/com/steleot/jetpackcompose/playground/compose/material/CheckboxScreen.kt)

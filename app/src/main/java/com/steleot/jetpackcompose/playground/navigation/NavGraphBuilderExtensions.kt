@@ -190,7 +190,6 @@ fun NavGraphBuilder.addMaterialRoutes() {
     deepLinkComposable(route = MaterialNavRoutes.BottomAppBar) { BottomAppBarScreen() }
     deepLinkComposable(route = MaterialNavRoutes.BottomDrawer) { BottomDrawerScreen() }
     deepLinkComposable(route = MaterialNavRoutes.BottomNavigation) { BottomNavigationScreen() }
-    deepLinkComposable(route = MaterialNavRoutes.BottomSheetScaffold) { BottomSheetScaffoldScreen() }
     deepLinkComposable(route = MaterialNavRoutes.Button) { ButtonScreen() }
     deepLinkComposable(route = MaterialNavRoutes.Card) { CardScreen() }
     deepLinkComposable(route = MaterialNavRoutes.Checkbox) { CheckboxScreen() }
@@ -282,11 +281,11 @@ fun NavGraphBuilder.addMaterial3Routes() {
     deepLinkComposable(route = Material3NavRoutes.OutlinedCard) { OutlinedCardScreen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedIconButton) { OutlinedIconButtonScreen() }
     deepLinkComposable(route = Material3NavRoutes.OutlinedTextField3) { OutlinedTextField3Screen() }
-    deepLinkComposable(route = Material3NavRoutes.PlainTooltipBox) { PlainTooltipBoxScreen() }
+    deepLinkComposable(route = Material3NavRoutes.PlainTooltip) { PlainTooltipScreen() }
     deepLinkComposable(route = Material3NavRoutes.ProgressIndicator3) { ProgressIndicator3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RadioButton3) { RadioButton3Screen() }
     deepLinkComposable(route = Material3NavRoutes.RangeSlider3) { RangeSlider3Screen() }
-    deepLinkComposable(route = Material3NavRoutes.RichTooltipBox) { RichTooltipBoxScreen() }
+    deepLinkComposable(route = Material3NavRoutes.RichTooltip) { RichTooltipScreen() }
     deepLinkComposable(route = Material3NavRoutes.Scaffold3) { Scaffold3Screen() }
     deepLinkComposable(route = Material3NavRoutes.SearchBar) { SearchBarScreen() }
     deepLinkComposable(route = Material3NavRoutes.SingleChoiceSegmentedButtonRow) { SingleChoiceSegmentedButtonRowScreen() }
