@@ -1,7 +1,6 @@
 package com.steleot.jetpackcompose.playground.compose.foundation
 
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.MagnifierStyle
+import android.os.Build
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +30,6 @@ import com.steleot.jetpackcompose.playground.ui.base.material.DefaultScaffold
 
 private const val URL = "foundation/MagnifierScreen.kt"
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MagnifierScreen() {
     DefaultScaffold(
@@ -40,7 +38,7 @@ fun MagnifierScreen() {
     ) {
         var magnifierCenter by remember { mutableStateOf(Offset.Unspecified) }
 
-        if (!MagnifierStyle.Default.isSupported) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
             Text(
                 text = stringResource(id = R.string.magnifier_not_supported),
                 modifier = Modifier.padding(all = 16.dp)

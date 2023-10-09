@@ -3,22 +3,62 @@
     <fields>;
 }
 
+# retrofit
+-keepattributes Signature, InnerClasses, EnclosingMethod
+
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+
+-keepattributes AnnotationDefault
+
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+-dontwarn javax.annotation.**
+
+-dontwarn kotlin.Unit
+
+-dontwarn retrofit2.KotlinExtensions
+-dontwarn retrofit2.KotlinExtensions$*
+
+-if interface * { @retrofit2.http.* <methods>; }
+-keep,allowobfuscation interface <1>
+
+-if interface * { @retrofit2.http.* <methods>; }
+-keep,allowobfuscation interface * extends <1>
+
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+-if interface * { @retrofit2.http.* public *** *(...); }
+-keep,allowoptimization,allowshrinking,allowobfuscation class <3>
+
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+
 # kotlin x serialization
--keepattributes *Annotation*, InnerClasses
--dontnote kotlinx.serialization.AnnotationsKt
--keepclassmembers class kotlinx.serialization.json.** {
-    *** Companion;
+-if @kotlinx.serialization.Serializable class **
+-keepclassmembers class <1> {
+    static <1>$Companion Companion;
 }
--keepclasseswithmembers class kotlinx.serialization.json.** {
+
+-if @kotlinx.serialization.Serializable class ** {
+    static **$* *;
+}
+-keepclassmembers class <2>$<3> {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keep,includedescriptorclasses class com.steleot.jetpackcompose.playground.**$$serializer { *; }
--keepclassmembers class com.steleot.jetpackcompose.playground.** {
-    *** Companion;
+
+-if @kotlinx.serialization.Serializable class ** {
+    public static ** INSTANCE;
 }
--keepclasseswithmembers class com.steleot.jetpackcompose.playground.** {
+-keepclassmembers class <1> {
+    public static <1> INSTANCE;
     kotlinx.serialization.KSerializer serializer(...);
 }
+
+-dontnote kotlinx.serialization.**
+-dontwarn kotlinx.serialization.internal.ClassValueReferences
 
 # Remove compose tracing
 -assumenosideeffects public class androidx.compose.runtime.ComposerKt {
