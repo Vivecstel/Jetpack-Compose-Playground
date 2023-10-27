@@ -138,6 +138,7 @@ fun NavGraphBuilder.addFoundationRoutes() {
     deepLinkComposable(route = FoundationNavRoutes.CombinedClickable) { CombinedClickableScreen() }
     deepLinkComposable(route = FoundationNavRoutes.DefaultMinSize) { DefaultMinSizeScreen() }
     deepLinkComposable(route = FoundationNavRoutes.Draggable) { DraggableScreen() }
+    deepLinkComposable(route = FoundationNavRoutes.Draggable2d) { Draggable2dScreen() }
     deepLinkComposable(route = FoundationNavRoutes.DragGestureDetector) { DragGestureDetectorScreen() }
     deepLinkComposable(route = FoundationNavRoutes.Focusable) { FocusableScreen() }
     deepLinkComposable(route = FoundationNavRoutes.HorizontalPager) { HorizontalPagerScreen() }

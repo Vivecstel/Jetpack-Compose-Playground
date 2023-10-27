@@ -24,6 +24,7 @@ val routes = listOf(
     FoundationNavRoutes.Column,
     FoundationNavRoutes.CombinedClickable,
     FoundationNavRoutes.DefaultMinSize,
+    FoundationNavRoutes.Draggable2d,
     FoundationNavRoutes.Draggable,
     FoundationNavRoutes.DragGestureDetector,
     FoundationNavRoutes.Focusable,
