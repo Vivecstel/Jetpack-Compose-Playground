@@ -18,6 +18,7 @@
 - [Column](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/ColumnScreen.kt)
 - [CombinedClickable](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/CombinedClickableScreen.kt)
 - [DefaultMinSize](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DefaultMinSizeScreen.kt)
+- [Draggable2d](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/Draggable2dScreen.kt)
 - [Draggable](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DraggableScreen.kt)
 - [DragGestureDetector](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/DragGestureDetectorScreen.kt)
 - [FlowColumn](app/src/main/java/com/steleot/jetpackcompose/playground/compose/foundation/FlowColumnScreen.kt)

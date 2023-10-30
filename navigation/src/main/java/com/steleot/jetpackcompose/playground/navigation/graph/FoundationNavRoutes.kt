@@ -20,6 +20,7 @@ object FoundationNavRoutes {
     const val CombinedClickable = "combined clickable"
     const val DefaultMinSize = "default min size"
     const val DragGestureDetector = "drag gesture detector"
+    const val Draggable2d = "draggable 2d"
     const val Draggable = "draggable"
     const val FlowColumn = "flow column"
     const val FlowRow = "flow row"
