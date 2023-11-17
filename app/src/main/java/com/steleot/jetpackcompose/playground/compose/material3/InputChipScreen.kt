@@ -57,7 +57,6 @@ fun InputChipScreen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -76,7 +75,6 @@ private fun DefaultText() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -88,7 +86,6 @@ private fun DisabledInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CutCornerShapeInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -100,7 +97,6 @@ private fun CutCornerShapeInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RoundedCornerShapeInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -112,7 +108,6 @@ private fun RoundedCornerShapeInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BorderInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -120,6 +115,8 @@ private fun BorderInputChip() {
         selected = state.value,
         onClick = { state.value = !state.value },
         border = InputChipDefaults.inputChipBorder(
+            enabled = true,
+            selected = false,
             borderColor = Color.Red,
             borderWidth = 2.dp,
         ),
@@ -127,7 +124,6 @@ private fun BorderInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -144,7 +140,6 @@ private fun LeadingIconInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -158,7 +153,6 @@ private fun ContainerColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LabelColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -172,7 +166,6 @@ private fun LabelColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledContainerColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -187,7 +180,6 @@ private fun DisabledContainerColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLabelColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -203,7 +195,6 @@ private fun DisabledLabelColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -223,7 +214,6 @@ private fun LeadingIconColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLeadingIconColorInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -246,7 +236,6 @@ private fun DisabledLeadingIconColorInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AvatarInputChip() {
     val state = remember { mutableStateOf(false) }
@@ -263,7 +252,6 @@ private fun AvatarInputChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TrailingIconInputChip() {
     val state = remember { mutableStateOf(false) }
