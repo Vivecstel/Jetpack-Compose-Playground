@@ -45,6 +45,7 @@ fun TabRow3Screen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
@@ -66,6 +67,7 @@ private fun DefaultTabRow(tabs: List<String>) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
@@ -88,6 +90,7 @@ private fun ContainerColorTabRow(tabs: List<String>) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContentColorTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
@@ -110,6 +113,7 @@ private fun ContentColorTabRow(tabs: List<String>) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DividerTabRow(tabs: List<String>) {
     val selectedTab = remember { mutableIntStateOf(0) }
@@ -140,6 +144,7 @@ private fun DividerTabRow(tabs: List<String>) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("AutoboxingStateValueProperty")
 @Composable
 private fun IndicatorTabRow(tabs: List<String>) {

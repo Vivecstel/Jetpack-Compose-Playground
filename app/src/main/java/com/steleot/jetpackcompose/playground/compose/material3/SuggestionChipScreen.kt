@@ -98,6 +98,7 @@ private fun BorderSuggestionChip() {
     SuggestionChip(
         onClick = {},
         border = SuggestionChipDefaults.suggestionChipBorder(
+            enabled = true,
             borderColor = Color.Red,
             borderWidth = 2.dp,
         ),

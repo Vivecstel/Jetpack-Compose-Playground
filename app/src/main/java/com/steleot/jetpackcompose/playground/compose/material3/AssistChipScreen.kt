@@ -114,6 +114,7 @@ private fun BorderAssistChip() {
     AssistChip(
         onClick = {},
         border = AssistChipDefaults.assistChipBorder(
+            enabled = true,
             borderColor = Color.Red,
             borderWidth = 2.dp,
         ),

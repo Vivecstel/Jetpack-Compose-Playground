@@ -55,7 +55,6 @@ fun FilterChip3Screen() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DefaultFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -74,7 +73,6 @@ private fun DefaultText() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -86,7 +84,6 @@ private fun DisabledFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CutCornerShapeFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -98,7 +95,6 @@ private fun CutCornerShapeFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RoundedCornerShapeFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -110,7 +106,6 @@ private fun RoundedCornerShapeFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BorderFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -118,6 +113,8 @@ private fun BorderFilterChip() {
         selected = state.value,
         onClick = { state.value = !state.value },
         border = FilterChipDefaults.filterChipBorder(
+            enabled = true,
+            selected = false,
             borderColor = Color.Red,
             borderWidth = 2.dp
         ),
@@ -125,7 +122,6 @@ private fun BorderFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LeadingIconFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -142,7 +138,6 @@ private fun LeadingIconFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainerColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -156,7 +151,6 @@ private fun ContainerColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LabelColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -170,7 +164,6 @@ private fun LabelColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledContainerColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -185,7 +178,6 @@ private fun DisabledContainerColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLabelColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -201,7 +193,6 @@ private fun DisabledLabelColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun IconColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -221,7 +212,6 @@ private fun IconColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DisabledLeadingIconColorFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -244,7 +234,6 @@ private fun DisabledLeadingIconColorFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SelectedIconFilterChip() {
     val state = remember { mutableStateOf(false) }
@@ -266,7 +255,6 @@ private fun SelectedIconFilterChip() {
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TrailingIconFilterChip() {
     val state = remember { mutableStateOf(false) }
